@@ -1,25 +1,25 @@
 # Collaboration Loops
 
-## Planning loop
+## Planning
 
-Define objective, scope, constraints, and expected outputs.
+Set objective, scope, constraints, and expected output.
 
-## Implementation loop
+## Implementation
 
-Execute small changes, validate, and keep traceable notes.
+Execute small scoped changes and keep traceable notes.
 
-## Review loop
+## Review
 
-Check output against quality gates and repository rules.
+Validate changes against quality gates and repository rules.
 
-## Compression loop
+## Compression
 
-Summarize progress and reduce context to essential facts for continuity.
+Summarize outcomes so future sessions can resume quickly.
 
-## Retrospective loop
+## Retrospective
 
-Capture what worked, what failed, and what should change next.
+Capture lessons learned and update process guidance if needed.
 
-## Human approval loop
+## Human approval
 
-Pause for human decision before major architecture, dependency, or risk-impacting changes.
+Pause before major architecture, dependency, or risk-impacting changes.

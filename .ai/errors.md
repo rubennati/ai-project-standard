@@ -1,5 +1,7 @@
 # Errors and Recovery Notes
 
-Use this file to record process errors, incorrect assumptions, and corrective actions.
+Record only substantive process errors and corrective actions.
 
-No errors recorded yet.
+If there are no active errors, keep this file unchanged.
+
+No errors recorded.

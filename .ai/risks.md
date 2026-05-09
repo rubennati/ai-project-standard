@@ -1,5 +1,5 @@
 # Risks
 
-- Governance drift if `.ai/state.md` is not maintained
-- Inconsistent review quality if branch and PR rules are bypassed
-- Ambiguity in ownership for architecture decisions
+- Governance drift if `state.md` and `decisions.md` are not updated
+- Reduced review quality if branch and PR policies are bypassed
+- Ownership ambiguity for architecture decisions

@@ -1,19 +1,19 @@
 # Current State
 
 - Current phase: Human review and refinement
-- Current objective: Validate and refine the bootstrap repository standard
+- Current objective: Validate bootstrap standards and reduce workspace maintenance overhead
 - Current branch: `feature/bootstrap-repository`
 
-## Status
+## Snapshot
 
-- Bootstrap structure is in place for root governance files, `docs/`, `.github/`, and `.ai/` workspace.
+- Bootstrap structure exists and is stable.
+- Current work focuses on consistency, consolidation, and clarity.
 
-## Next steps
+## Immediate next steps
 
-1. Review consistency across policy and workflow documents
-2. Confirm branch protection settings for `main`
-3. Confirm CI scope for documentation quality checks
-4. Approve refinements and proceed in small iterations
+1. Finalize `.ai/` file responsibility boundaries
+2. Confirm branch protection and CI policy defaults
+3. Approve baseline wording for first public draft
 
 ## Open questions
 
@@ -24,5 +24,5 @@
 ## Active constraints
 
 - No application code during standard-definition phase
-- Documentation must remain concise and practical
+- Keep `.ai/` files concise and low-overhead
 - Human approval required for commit, push, merge, and major governance changes

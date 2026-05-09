@@ -11,7 +11,7 @@ Use this directory for AI operational context only.
 
 ## Core files
 
-- Planning and execution: `tasks.md`, `loops.md`, `progress.md`
-- Decisions and constraints: `decisions.md`, `quality-gates.md`, `secure-development.md`
-- Risk tracking: `risks.md`, `errors.md`
-- Domain guidance: `domains/`
+- Execution status: `state.md`, `tasks.md`, `progress.md`
+- Governance memory: `decisions.md`, `quality-gates.md`, `secure-development.md`
+- Risk and failure tracking: `risks.md`, `errors.md`
+- Working patterns: `loops.md`, `domains/`

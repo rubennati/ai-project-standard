@@ -2,9 +2,10 @@
 
 ## Active
 
-- Validate initial templates with maintainers
-- Confirm license selection and branch protection defaults
+- Review and approve baseline repository wording
+- Confirm branch protection defaults for `main`
+- Decide CI quality gate depth for documentation checks
 
 ## Backlog
 
-- Add optional checklists for release and incident response
+- Add optional release and incident-response checklists when needed

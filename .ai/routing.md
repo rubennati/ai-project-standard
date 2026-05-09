@@ -1,26 +1,26 @@
 # Routing Guide
 
-Select context files based on task type.
+Use minimal context for each task type.
 
 ## Project setup
 
-Read: `project-brief.md`, `rules.md`, `quality-gates.md`
+Read: `project-brief.md`, `state.md`, `rules.md`
 
 ## Coding
 
-Read: `rules.md`, `domains/coding.md`, `quality-gates.md`, `secure-development.md`
+Read: `state.md`, `rules.md`, `domains/coding.md`, `quality-gates.md`, `secure-development.md`
 
 ## Documentation
 
-Read: `rules.md`, `domains/documentation.md`, `quality-gates.md`
+Read: `state.md`, `rules.md`, `domains/documentation.md`, `quality-gates.md`
 
 ## Review
 
-Read: `quality-gates.md`, `tasks.md`, `risks.md`, `errors.md`
+Read: `state.md`, `tasks.md`, `quality-gates.md`, `risks.md`
 
 ## Security
 
-Read: `secure-development.md`, `domains/testing.md`, `risks.md`
+Read: `state.md`, `secure-development.md`, `risks.md`, `domains/testing.md`
 
 ## Continuation after interruption
 
@@ -28,4 +28,4 @@ Read: `state.md`, `progress.md`, `tasks.md`, `decisions.md`
 
 ## Architecture work
 
-Read: `domains/architecture.md`, `decisions.md`, `rules.md`
+Read: `state.md`, `domains/architecture.md`, `decisions.md`, `rules.md`
