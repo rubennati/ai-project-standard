@@ -1,0 +1,81 @@
+# AI Project Standard
+
+![Draft](https://img.shields.io/badge/status-early%20draft-orange)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![CI](https://img.shields.io/badge/ci-placeholder-lightgrey)
+
+> Early draft: this repository is a work in progress and will be refined through maintainer review.
+
+AI Project Standard is an open-source repository template for long-term human and AI collaboration.
+
+## Why this exists
+
+Many repositories have prompts but lack durable structure, review rules, and continuity practices. This project provides a practical baseline that combines:
+- professional open-source repository standards
+- a dedicated AI workspace layer for operational context
+
+## Who this is for
+
+- Maintainers of open-source or internal engineering projects
+- Teams introducing AI agents into daily workflows
+- Organizations that require traceability and human oversight
+
+## What this is / What this is not
+
+### What this is
+- A project structure and collaboration standard
+- A repository baseline with governance, workflows, and review controls
+- A shared workspace model for AI task routing, state, and decisions
+
+### What this is not
+- Not an application starter with business logic
+- Not a prompt dump without process controls
+- Not a replacement for human accountability
+
+## Repository contents
+
+- Root governance files: contribution, security, conduct, changelog, roadmap
+- `.github/`: issue templates, pull request template, and CI workflow
+- `docs/`: project workflow and policy documentation
+- `.ai/`: AI workspace for routing, state, decisions, and quality loops
+
+## AI workspace layer
+
+The `.ai/` directory stores operational context used during AI-assisted execution. It helps preserve continuity across sessions while keeping project-facing documentation separate.
+
+See `docs/ai-workspace-layer.md` for model details.
+
+## Git workflow
+
+This repository uses GitHub Flow / trunk-based development:
+- `main` is stable and protected
+- work happens on short-lived branches (`feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`)
+- pull requests are required before merge
+
+See `docs/git-workflow.md` and `docs/branch-protection.md`.
+
+## Quick start
+
+1. Create a short-lived branch from `main`.
+2. Read `CONTRIBUTING.md`, `AGENTS.md`, and `.ai/index.md`.
+3. For AI-assisted work, load `.ai/state.md` and `.ai/routing.md`.
+4. Make focused changes and open a pull request.
+
+## Project structure
+
+- `.github/` - platform templates and automation
+- `docs/` - human-facing standards and workflows
+- `.ai/` - AI operational workspace
+- root files - governance and contribution policy
+
+## Roadmap
+
+Current priorities are documented in `ROADMAP.md`.
+
+## Contributing
+
+Contributions are welcome. See `CONTRIBUTING.md`.
+
+## Collaboration philosophy
+
+AI-native collaboration requires explicit boundaries, decision records, and routine human review. The structure should keep work understandable and auditable over time.
