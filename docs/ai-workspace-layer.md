@@ -1,20 +1,20 @@
 # AI Workspace Layer
 
-## Purpose of `.ai/`
+## Purpose
 
-The `.ai/` directory provides a structured workspace for AI-assisted execution, memory, and coordination.
+`.ai/` is the operational workspace for AI-assisted execution in this repository.
 
 ## Why separation matters
 
-Separating `.ai/` from normal documentation keeps operational agent state isolated from project-facing documentation and policy files.
+Keeping `.ai/` separate from `docs/` and root governance files prevents process state from being mixed with project-facing documentation.
 
-## Key functions
+## Core responsibilities
 
-- Project memory (`.ai/state.md`, `.ai/progress.md`, `.ai/decisions.md`)
-- Task routing (`.ai/routing.md`)
-- Quality and process loops (`.ai/loops.md`, `.ai/quality-gates.md`)
-- Risk and error tracking (`.ai/risks.md`, `.ai/errors.md`)
+- Store current state and progress (`state.md`, `progress.md`)
+- Route tasks to relevant context (`routing.md`)
+- Record decisions and constraints (`decisions.md`, `rules.md`)
+- Maintain quality and risk controls (`quality-gates.md`, `risks.md`, `errors.md`)
 
-## Long-term collaboration
+## Long-term value
 
-Long-term human and AI collaboration requires durable state, explicit decisions, and repeatable workflows. The workspace exists to support continuity across sessions and tools.
+This structure supports continuity, handoff, and reviewability across humans and AI tools.

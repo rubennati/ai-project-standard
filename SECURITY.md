@@ -2,6 +2,8 @@
 
 ## Reporting a vulnerability
 
+Security contact: TODO before first public release.
+
 Please report potential vulnerabilities privately to project maintainers.
 
 Include:

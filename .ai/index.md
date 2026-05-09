@@ -1,23 +1,17 @@
 # AI Workspace Index
 
-This directory is the AI collaboration workspace for this repository.
+Use this directory for AI operational context only.
 
-## Start here
+## Start sequence
 
-1. `setup-interview.md`
-2. `project-brief.md`
-3. `state.md`
-4. `routing.md`
-5. `rules.md`
+1. `project-brief.md`
+2. `state.md`
+3. `routing.md`
+4. `rules.md`
 
-## Operational files
+## Core files
 
-- `loops.md`
-- `progress.md`
-- `decisions.md`
-- `tasks.md`
-- `risks.md`
-- `errors.md`
-- `quality-gates.md`
-- `secure-development.md`
-- `domains/`
+- Planning and execution: `tasks.md`, `loops.md`, `progress.md`
+- Decisions and constraints: `decisions.md`, `quality-gates.md`, `secure-development.md`
+- Risk tracking: `risks.md`, `errors.md`
+- Domain guidance: `domains/`

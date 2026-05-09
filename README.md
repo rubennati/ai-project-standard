@@ -1,67 +1,81 @@
 # AI Project Standard
 
-AI Project Standard is an open-source template for teams that want reliable long-term collaboration between humans and AI agents.
+![Draft](https://img.shields.io/badge/status-early%20draft-orange)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![CI](https://img.shields.io/badge/ci-placeholder-lightgrey)
+
+> Early draft: this repository is a work in progress and will be refined through maintainer review.
+
+AI Project Standard is an open-source repository template for long-term human and AI collaboration.
 
 ## Why this exists
 
-Many repositories include ad hoc prompts but lack stable project structure, governance, and continuity rules. This project provides a practical baseline that combines:
-- modern open-source repository standards
-- a dedicated AI workspace layer for shared operational context
-
-The goal is repeatable, maintainable collaboration over time, not one-off automation.
+Many repositories have prompts but lack durable structure, review rules, and continuity practices. This project provides a practical baseline that combines:
+- professional open-source repository standards
+- a dedicated AI workspace layer for operational context
 
 ## Who this is for
 
 - Maintainers of open-source or internal engineering projects
-- Teams introducing AI agents into daily development workflows
-- Organizations that need auditability, continuity, and human oversight
+- Teams introducing AI agents into daily workflows
+- Organizations that require traceability and human oversight
 
-## What this repository contains
+## What this is / What this is not
 
-- Core open-source project documents (`README`, `CONTRIBUTING`, `SECURITY`, issue templates, CI)
-- A `docs/` section describing standards, workflows, and collaboration practices
-- A separated `.ai/` workspace for agent routing, project memory, state, and quality loops
+### What this is
+- A project structure and collaboration standard
+- A repository baseline with governance, workflows, and review controls
+- A shared workspace model for AI task routing, state, and decisions
+
+### What this is not
+- Not an application starter with business logic
+- Not a prompt dump without process controls
+- Not a replacement for human accountability
+
+## Repository contents
+
+- Root governance files: contribution, security, conduct, changelog, roadmap
+- `.github/`: issue templates, pull request template, and CI workflow
+- `docs/`: project workflow and policy documentation
+- `.ai/`: AI workspace for routing, state, decisions, and quality loops
 
 ## AI workspace layer
 
-The `.ai/` directory is the operational layer for AI-assisted work. It stores task routing, project state, decisions, quality gates, and progress tracking so work can continue across sessions and tools.
+The `.ai/` directory stores operational context used during AI-assisted execution. It helps preserve continuity across sessions while keeping project-facing documentation separate.
 
-This repository is not only a prompt collection. It is a project structure and collaboration standard.
+See `docs/ai-workspace-layer.md` for model details.
 
 ## Git workflow
 
-This project uses a GitHub Flow / trunk-based model:
-- `main` stays stable and protected
+This repository uses GitHub Flow / trunk-based development:
+- `main` is stable and protected
 - work happens on short-lived branches (`feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`)
 - pull requests are required before merge
 
-See `docs/git-workflow.md` for details.
+See `docs/git-workflow.md` and `docs/branch-protection.md`.
 
 ## Quick start
 
-1. Create a branch from `main` using the branch naming conventions.
+1. Create a short-lived branch from `main`.
 2. Read `CONTRIBUTING.md`, `AGENTS.md`, and `.ai/index.md`.
-3. For AI-assisted work, initialize context from `.ai/state.md` and `.ai/routing.md`.
+3. For AI-assisted work, load `.ai/state.md` and `.ai/routing.md`.
 4. Make focused changes and open a pull request.
 
-## Project structure overview
+## Project structure
 
-- `.github/` - issue templates, automation, and platform configuration
-- `docs/` - human-facing project standards and guides
-- `.ai/` - AI workspace layer (routing, memory, loops, state, decisions)
-- root files - governance and contribution policies
+- `.github/` - platform templates and automation
+- `docs/` - human-facing standards and workflows
+- `.ai/` - AI operational workspace
+- root files - governance and contribution policy
 
 ## Roadmap
 
-The near-term roadmap is documented in `ROADMAP.md` and focuses on:
-- maturing templates and checklists
-- improving quality gates
-- validating collaboration workflows in real projects
+Current priorities are documented in `ROADMAP.md`.
 
 ## Contributing
 
-Contributions are welcome. Please review `CONTRIBUTING.md` for workflow, scope, and review expectations.
+Contributions are welcome. See `CONTRIBUTING.md`.
 
-## Philosophy of AI-native collaboration
+## Collaboration philosophy
 
-AI-native collaboration requires clear boundaries, explicit decision records, and regular human review. The repository structure should make context durable and work reproducible across people and tools.
+AI-native collaboration requires explicit boundaries, decision records, and routine human review. The structure should keep work understandable and auditable over time.
