@@ -1,5 +1,8 @@
 # Tasks
 
+> If this file conflicts with current git state (branch, PRs, commits), trust git.
+
+
 ## Active
 
 - Review and approve baseline repository wording
