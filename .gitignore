@@ -10,3 +10,6 @@ Thumbs.db
 # Local environment
 .env
 .env.local
+
+# AI tooling (local-only)
+.claude/settings.local.json
