@@ -1,106 +1,375 @@
 # Practical AI Collaboration
 
-This page describes how AI tools fit into a normal GitHub workflow. It assumes you already use AI for code or documentation and want a working model that scales beyond a few sessions.
+This guide covers real-world workflows for solo maintainers and small teams working with AI systems such as Claude, Copilot, Codex, Cursor, and similar tools in the same repository.
 
-## Core mental model
+## The Core Principle: GitHub Is Your Coordination Layer
 
-Treat AI tools as contributors, not owners. They produce changes; humans review and merge. The repository's existing rules — branch naming, PR review, scope limits — apply to AI work the same way they apply to human work.
+You do not need a separate coordination system for most small-team AI work. GitHub's native features already handle multi-AI and human collaboration:
 
-## How AI fits into GitHub Flow
+- Branches show what is being worked on.
+- Pull requests document intent, status, and review.
+- Commits record decisions at the point they are made.
+- PR comments carry feedback and between-session context.
 
-- AI works on a short-lived branch, just like a human contributor.
-- Output appears as a pull request, not as a direct commit to `main`.
-- Reviewers evaluate the diff, not the prompt or the model.
-- The PR is the unit of work, the unit of review, and the unit of accountability.
+Instead of treating `.ai/state.md` as the single source of truth, keep durable coordination in GitHub. This works because GitHub is visible to humans and AI systems, versioned, reviewable, and tied directly to the code or documentation being changed.
 
-For branch naming and lifecycle, see `docs/git-workflow.md`.
+Use `.ai/` files when they add useful operational context. Do not maintain them as a second, parallel project tracker when branch names and PRs already tell the truth.
 
-## Why short-lived branches and reviewable PRs matter
+## Scenarios and Workflows
 
-- Smaller, scoped diffs are easier to read and easier to revert.
-- Long-lived AI branches accumulate unrelated changes and get harder to review with each commit.
-- A short branch keeps the diff inside what one human can hold in their head.
+### Scenario 1: Solo Maintainer with Occasional AI Assistance
 
-## Why direct commits to `main` are discouraged
+Use this when you mostly work alone and occasionally ask an AI system to help with a bug fix, documentation improvement, or small feature.
 
-- AI output can be plausible and wrong; the PR is the only honest correctness check.
-- `main` needs to stay deployable and trustworthy. Bypassing review erodes that.
-- Once unreviewed AI changes land on `main`, the only recovery is more PRs.
+Workflow:
 
-See `docs/branch-protection.md` for the protection rules that enforce this in practice.
+1. Identify the work.
+2. Create a branch such as `fix/typo-in-readme` or `docs/clarify-workflow`.
+3. Use Copilot inline, Claude in chat, Codex, Cursor, or another AI tool to assist.
+4. Review the changes yourself.
+5. Create a PR with a clear description.
+6. Merge when the change is ready.
 
-## Draft PR vs normal PR
+You can usually skip:
 
-- Open a draft PR for work in progress, exploration, or AI output that has not been self-checked.
-- Promote to "ready for review" once the diff is the size you want and you would defend it yourself.
-- Drafts make direction visible without claiming completion.
+- Detailed `.ai/` state updates for every small task.
+- Complex branch protection rules beyond what protects `main`.
+- Team review cycles that require people who do not exist.
 
-## Small, iterative PRs
+Keep:
 
-- One concern per PR. Resist bundling "while I was in there" cleanups.
-- Smaller diffs get reviewed faster and merged sooner.
-- If a PR grows during work, split it before requesting review.
+- A branch naming convention.
+- PR descriptions that explain what changed and why.
+- Review through PRs, even when the reviewer is future-you.
 
-## Human approval and merge responsibility
+Example:
 
-- Merge is a human action. The merging human owns the change after merge.
-- Reviewing means understanding the diff, not glancing at it.
-- Approve only what you would have written, or what you could defend in a postmortem.
+```text
+Branch: docs/fix-outdated-workflow-reference
+PR title: Fix outdated docs reference in git-workflow.md
+PR description: Removed a reference to a non-existent routing file and linked to the actual documentation.
+```
 
-## AI-generated changes are proposals, not truth
+No `.ai/state.md` update is needed for a small, self-contained correction. The PR is the state.
 
-- Treat AI suggestions like work from a competent colleague who is occasionally confidently wrong.
-- Verify claims that are easy to check: file existence, function signatures, test results, command output.
-- The diff is the contract. Prompts, reasoning, and explanations are context, not evidence.
+### Scenario 2: Small Team with One AI System
 
-## Multiple AI systems coexisting
+Use this when two or three people collaborate and one AI tool is used as an assistant.
 
-Different tools (Claude, Copilot, Codex, others) make different stylistic choices. To prevent conflict:
+Workflow:
 
-- Apply the same repo rules to all of them: branch naming, PR review, scope limits, no direct `main` commits.
-- Use shared instruction files (`AGENTS.md`, the `.ai/` workspace) as the lingua franca, so each tool reads the same context.
-- One agent per task per branch. Avoid multiple AI systems pushing to the same branch simultaneously — the resulting diff becomes nobody's work.
-- If two tools disagree, the human makes the call.
+1. Person A opens an issue describing the work.
+2. Person A or B creates a branch and starts work, possibly with AI assistance.
+3. The AI system reads the issue, branch name, and relevant repository instructions.
+4. Person B reviews the PR and adds comments or suggestions.
+5. Person A addresses feedback and updates the branch.
+6. The PR is merged when approved.
 
-## AI as contributor, not owner
+Where `.ai/` files help:
 
-- AI does not decide what gets merged.
-- AI does not define project direction or scope.
-- AI does not close PRs, dismiss reviews, or modify branch protection.
-- AI follows repo policy; it does not write it.
+- `.ai/state.md` can track the current project focus.
+- `.ai/decisions.md` can record architectural or governance choices.
+- `.ai/routing.md` can point each task type to the right context.
 
-## Reviewability and traceability over autonomy
+Keep `.ai/` minimal:
 
-- A PR a maintainer can read in five minutes is more valuable than an autonomous system whose output they cannot audit.
-- Clean commits, scoped PRs, and a working `.ai/` decision log outlast any specific AI tool.
-- Autonomy is not a substitute for human accountability — it shifts the failure mode, it does not remove it.
+- Update `.ai/state.md` only when the team changes major focus.
+- Use `.ai/decisions.md` for decisions that will outlive the current branch.
+- Do not maintain empty files such as `.ai/errors.md` or `.ai/risks.md` unless they contain real entries.
 
-## Keeping operational context lightweight
+Example:
 
-- A small, current `.ai/` workspace beats a large, stale one.
-- Update only what is load-bearing for the next session.
-- If a file goes stale, fix it or delete it. Do not keep it as decoration.
-- Treat git as the source of truth when state files disagree with reality.
+```text
+Issue #12: Improve branch protection documentation
+Branch: docs/branch-protection-clarity
+PR description: Addresses #12. Adds minimal and strict branch protection examples and updates .ai/state.md to reflect the current objective.
+```
 
-## Solo maintainer vs small team
+Rule of thumb: update `.ai/state.md` when a person would need it to catch up after a day away from the project, not when everyone is working synchronously.
 
-**Solo maintainer:**
+### Scenario 3: One Maintainer with Multiple AI Systems in Parallel Sessions
 
-- PR required, even on your own work. The PR is the friction that catches AI errors.
-- Self-review the diff before merge as if a colleague wrote it.
-- Skip rules that require people who do not exist (mandatory second reviewer, code-owner sign-off).
+The risk is state collision. Claude might be drafting documentation while Copilot is checking links and Codex is tightening workflow language. If every session edits `.ai/state.md`, the last update can overwrite useful context from another session.
 
-**Small team:**
+Safe workflow:
 
-- Add a reviewer requirement once there are at least two active maintainers.
-- Designate review responsibility per area to avoid bottlenecks.
-- Keep policies the team will actually follow. Aspirational rules that get bypassed train people to ignore policy in general.
+1. Use GitHub branches as the coordination point.
+2. Give each AI session its own branch.
+3. Have each session read the PR description, PR comments, branch name, and recent commits.
+4. Keep the human maintainer as the coordinator.
+5. Review and merge each PR in the order that makes sense.
 
-## Common failure patterns
+Example:
 
-- **Large AI dumps**: a single PR with hundreds of changed lines that no one reviews properly. Split before requesting review.
-- **Stale `.ai/` state**: status files no one has updated for weeks. The fix is honest staleness contracts, smaller files, or deletion — not more files.
-- **Over-engineered governance**: rules and checks the team will not follow. Match policy to actual capacity.
-- **Direct commits to `main`**: bypass the only review checkpoint. The fix is branch protection, not "remembering to use PRs".
-- **Treating AI output as authoritative**: skipping review because "the AI ran the tests". Read the diff.
-- **Fix-up commits right after merge**: signal that the original PR was merged before it was ready. The fix is slowing down the review pass, not adding more PRs.
+```text
+Session 1: Claude
+Branch: feature/improve-readme-clarity
+Work: Draft README improvements and open a PR with examples.
+
+Session 2: Copilot
+Branch: docs/add-malformed-links-section
+Work: Check for broken internal links and open a separate PR with findings.
+```
+
+Why this works:
+
+- There is no shared `.ai/state.md` collision.
+- PR comments provide session continuity.
+- GitHub history is permanent and reviewable.
+- The human maintainer controls merge order.
+
+Document in each PR:
+
+- What the AI system was asked to do.
+- What files it touched.
+- Any assumptions it made about project structure.
+- Any remaining questions or risks.
+
+### Scenario 4: One Maintainer with an Interrupted AI Session
+
+Use this when work starts in one AI system, gets interrupted, and needs to be resumed later by another system or by a human.
+
+Workflow:
+
+1. Before the session ends, or immediately after interruption, create a PR from the current branch.
+2. Mark the PR as draft if the work is incomplete.
+3. Write a PR description that explains what was attempted, what succeeded, what failed, and what remains.
+4. Resume later by reading the PR description, commits, branch state, and review comments.
+
+Example draft PR description:
+
+```markdown
+## Draft: Refactor documentation structure
+
+### What was done
+- Moved docs/getting-started.md content to docs/onboarding.md.
+- Updated cross-references in docs/index.md.
+- Found a broken reference in .ai/routing.md.
+
+### What still needs work
+- Add the missing domain files or remove stale routing references.
+- Check all links in the new structure.
+- Update README.md to reference the new docs layout.
+
+### Ready for
+- Another AI session or maintainer to continue from branch `docs/refactor-structure`.
+```
+
+This is stronger than relying on `.ai/state.md` alone because the PR is attached to the actual branch, visible in review, and naturally updated as the work changes.
+
+### Scenario 5: Mixed Human and AI Contributions in One PR
+
+Use this when a human starts a change, asks AI for help, then refines the result before opening or updating a PR.
+
+Workflow:
+
+1. Start work locally on a branch.
+2. Ask an AI system for help with a specific part.
+3. Review and refine the AI-generated changes.
+4. Push the branch with clear commits.
+5. Open a PR with a complete description of the work.
+
+Example PR note:
+
+```text
+Implemented feature X with AI assistance.
+
+Changes:
+- Initial implementation: maintainer
+- Edge case refinement: Claude, reviewed by maintainer
+- Testing and final cleanup: maintainer
+
+Reviewer note:
+AI-assisted changes are in commits abc1234..def5678. Please review those carefully.
+```
+
+GitHub shows the full commit history, so reviewers can inspect exactly what changed.
+
+## When to Use `.ai/` Files
+
+Use `.ai/state.md` when:
+
+- A team of three or more people works asynchronously.
+- Work is being handed off for several days.
+- The repository needs a current operational snapshot beyond any single PR.
+- The project phase or objective changes.
+
+Skip `.ai/state.md` updates when:
+
+- The work is a small, self-contained PR.
+- You are working solo and the branch plus PR description are clear.
+- The update would duplicate what is already obvious from GitHub.
+
+Use `.ai/decisions.md` when:
+
+- You make an architectural or governance choice that affects future work.
+- You reject a meaningful alternative and want future contributors to know why.
+- The decision is broader than a single PR.
+
+Skip `.ai/decisions.md` when:
+
+- The change is obvious from the commit message or PR discussion.
+- You are only restating an existing documented workflow.
+- The note would become stale immediately after merge.
+
+Avoid maintaining empty operational files. `.ai/errors.md`, `.ai/risks.md`, and `.ai/tasks.md` are useful only when they contain real, current entries.
+
+## Draft PRs vs Normal PRs
+
+Use a draft PR for:
+
+- Work in progress.
+- Incomplete AI sessions.
+- Exploratory changes.
+- Branches waiting for direction or feedback.
+
+Use a normal PR for:
+
+- Complete, self-contained changes.
+- Work ready for review and merge.
+- Changes where the maintainer can explain and defend the diff.
+
+Draft PRs are especially useful when one AI system resumes another system's work. The draft state prevents accidental merge signals while preserving all context in GitHub.
+
+## Practical Rules for Small Teams
+
+### Rule 1: Branch Names Are Documentation
+
+Good branch names:
+
+- `fix/broken-link-in-ai-routing`
+- `docs/add-ai-collaboration-guide`
+- `feature/improve-readme-clarity`
+
+Weak branch names:
+
+- `fix/docs`
+- `update-stuff`
+- `misc`
+
+### Rule 2: PR Descriptions Beat State Files for Session Context
+
+Include in every PR:
+
+- What changed and why.
+- Any assumptions made.
+- Any unresolved questions.
+- Whether AI assisted the work and what it contributed.
+
+### Rule 3: Use PR Comments for Between-Session Context
+
+Example:
+
+```text
+Human: The link in routing.md still points to a file that does not exist.
+AI session: Fixed in the latest commit and updated the docs index.
+```
+
+PR comments are durable, visible, and tied to the work under review.
+
+### Rule 4: Commit to `main` Only Through Merged PRs
+
+- Always use a PR, even when working solo.
+- Keep `main` stable and reviewable.
+- Treat direct commits to `main` as an exception that requires explicit human approval and a strong reason.
+
+### Rule 5: Merge Sooner Rather Than Later
+
+- Do not let PRs stay open for weeks.
+- Prefer small, merged PRs over large, stalled ones.
+- For small teams, daily or every-few-days merge cadence is usually healthier than long-running branches.
+
+## Coexistence of Multiple AI Systems
+
+The same repository can use Claude, Copilot, Codex, Cursor, and other tools without collision when they share GitHub as the coordination layer.
+
+AI systems usually cannot read each other's chat context:
+
+- Claude does not see Copilot's previous session.
+- Copilot does not see Claude's memory from yesterday.
+- Codex does not automatically inherit another tool's private reasoning.
+
+That is acceptable. Each system should start fresh from shared repository context:
+
+1. `README.md` for project scope.
+2. `CONTRIBUTING.md` for contribution rules.
+3. `AGENTS.md` for AI-specific instructions.
+4. The current branch name for the task boundary.
+5. The PR description for work status.
+6. Recent commits for what actually changed.
+7. Open issues and PR comments for requested follow-up.
+
+No collision occurs when:
+
+- Each AI system works on its own branch.
+- PRs are merged in sequence.
+- The human maintainer chooses merge order.
+- `.ai/state.md` is used as helpful context, not as a bottleneck.
+
+Example:
+
+```text
+Claude branch: feature/improve-readme
+Copilot branch: docs/fix-broken-links
+Maintainer action: Review both PRs and merge them in order.
+```
+
+After merge, the next session reads the updated `main` branch and starts from the current repository state.
+
+## Avoiding Context Loss
+
+The biggest risk in multi-session AI work is losing context. Prevent it by leaving context where the next contributor will naturally look.
+
+Before ending a session:
+
+1. Commit the work, even if the branch is incomplete.
+2. Create a PR, using draft status when appropriate.
+3. Document what was done and what remains in the PR description.
+4. Add PR comments for gotchas, patterns, or review questions.
+
+When resuming:
+
+1. Read the PR description.
+2. Read recent commits.
+3. Inspect the branch diff.
+4. Check review comments and unresolved conversations.
+
+Do not rely on:
+
+- `.ai/state.md` as the only continuity mechanism.
+- AI chat history that may be lost or unavailable.
+- Code comments for session notes.
+
+GitHub PR comments are the session bridge.
+
+## Real Expectations: When This Gets Hard
+
+This works smoothly for:
+
+- Solo maintainers with occasional AI assistance.
+- Two- or three-person teams using one primary AI system.
+- Clear, bounded tasks such as bug fixes, documentation updates, and focused refactors.
+- Synchronous or loosely asynchronous work.
+
+This gets complicated with:
+
+- Five or more people and multiple AI systems active at once.
+- Long, interdependent work such as repository-wide refactors.
+- Coordination that requires AI systems to sequence work across several branches.
+- Teams with high turnover and heavy onboarding needs.
+
+In those cases, add more structure: stronger `.ai/` workspace discipline, formal decision logs, ownership boundaries, stricter branch protection, and clearer review requirements. Do not start there unless the project needs it.
+
+## Summary
+
+For solo maintainers and small teams:
+
+1. Use GitHub branches and PRs as the coordination layer.
+2. Write clear PR descriptions because they are the session bridge.
+3. Use `.ai/` files only when team size, task complexity, or handoff needs justify them.
+4. Treat draft PRs as incomplete work.
+5. Commit early enough to create checkpoints.
+6. Keep AI systems on separate branches.
+7. Trust the merge process to provide review, ordering, and accountability.
+
+Practical mantra: if a workflow works for humans passing changes through GitHub, it can work for mixed human and AI teams too.

@@ -54,6 +54,8 @@ This repository uses GitHub Flow / trunk-based development:
 
 See `docs/git-workflow.md` and `docs/branch-protection.md`.
 
+For practical AI-assisted branch and PR workflows, see `docs/practical-ai-collaboration.md`.
+
 ## Quick start
 
 1. Create a short-lived branch from `main`.
