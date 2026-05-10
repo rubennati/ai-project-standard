@@ -7,3 +7,4 @@ This documentation set defines the project baseline and collaboration model.
 - [Open Source Project Standard](./open-source-project-standard.md)
 - [Git Workflow](./git-workflow.md)
 - [Branch Protection](./branch-protection.md)
+- [Practical AI Collaboration](./practical-ai-collaboration.md)
