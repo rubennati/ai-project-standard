@@ -8,4 +8,4 @@ Start with:
 - `.ai/routing.md`
 
 Follow repository policies in root files and `docs/`.
-Do not commit, push, or merge unless a human explicitly approves those actions.
+For commit, push, and merge rules see the "Approval" section in `AGENTS.md`.

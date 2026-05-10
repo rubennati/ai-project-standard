@@ -10,7 +10,7 @@ Follow repository standards and keep outputs concise, technical, and reviewable.
 
 ## Approval and execution constraints
 
-- Do not commit, push, or merge without explicit human approval
+- For commit, push, and merge rules see the "Approval" section in `AGENTS.md`
 - Keep changes scoped and ready for pull request review
 
 ## AI workflow

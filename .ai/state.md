@@ -1,5 +1,8 @@
 # Current State
 
+> If this file conflicts with current git state (branch, PRs, commits), trust git.
+
+
 - Current phase: Human review and refinement
 - Current objective: Validate bootstrap standards and reduce workspace maintenance overhead
 - Current branch: `feature/bootstrap-repository`
