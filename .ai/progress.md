@@ -10,3 +10,8 @@ Use this file for milestone-level updates only.
 - Repository baseline created (`docs/`, `.github/`, root governance files, `.ai/` workspace)
 - Workflow and branch protection guidance added
 - Public draft polish applied (README structure, MIT license, security contact placeholder)
+
+## 2026-05-10
+
+- Pre-release governance refinements: defined "human approval" in `AGENTS.md`, filled SECURITY contact via GitHub Security Advisories, added baseline `.gitignore`, split branch-protection guidance into minimum vs scaling-up, added `.ai/` staleness contract (PR #3).
+- Added `docs/practical-ai-collaboration.md` covering solo-maintainer and small-team AI workflows; linked from `docs/index.md` (PR #4).

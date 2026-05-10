@@ -2,30 +2,28 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-
-- Current phase: Human review and refinement
-- Current objective: Validate bootstrap standards and reduce workspace maintenance overhead
-- Current branch: `feature/bootstrap-repository`
+- Current phase: Pre-release refinement
+- Current objective: Keep governance, docs, and `.ai/` state consistent ahead of the first public release.
 
 ## Snapshot
 
-- Bootstrap structure exists and is stable.
-- Current work focuses on consistency, consolidation, and clarity.
+- Bootstrap structure is stable.
+- Pre-release governance refinements landed in PR #3 (approval definition, SECURITY contact, `.gitignore`, branch-protection split, staleness contract).
+- Practical AI collaboration guide landed in PR #4 (`docs/practical-ai-collaboration.md`).
 
 ## Immediate next steps
 
-1. Finalize `.ai/` file responsibility boundaries
-2. Confirm branch protection and CI policy defaults
-3. Approve baseline wording for first public draft
+1. Apply branch-protection settings on `main` per `docs/branch-protection.md`.
+2. Refine the practical AI collaboration guide based on review feedback.
+3. Tag a release once the standard is considered stable for first public use.
 
 ## Open questions
 
-- Should markdown linting be required in CI now?
-- Should code owner review be mandatory for policy files?
+- Should markdown linting be required in CI?
 - What release cadence should be used for standard updates?
 
 ## Active constraints
 
-- No application code during standard-definition phase
-- Keep `.ai/` files concise and low-overhead
-- Human approval required for commit, push, merge, and major governance changes
+- No application code during standard-definition phase.
+- Keep `.ai/` files concise and low-overhead.
+- For commit, push, and merge rules see the "Approval" section in `AGENTS.md`.
