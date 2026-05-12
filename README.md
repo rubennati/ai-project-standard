@@ -29,6 +29,12 @@ See [docs/standard.md](docs/standard.md) for the conceptual definition, [docs/pr
 
 This repository can also be used as a GitHub template (enabled from v0.2.0).
 
+## Website
+
+The public site lives at <https://rubennati.github.io/ai-project-standard/> (from v0.2.0). It carries use-case walk-throughs, deep guides, and the blog. The site source is in [site/](site/) and is built and deployed by [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+**Maintainer setup (one-time, after merging the v0.2.0 release):** Settings → Pages → Source: "GitHub Actions". The first push to `main` that touches `site/`, `docs/`, or the workflow then triggers a deploy.
+
 ## Who this is for
 
 - Maintainers of open-source or internal engineering projects
