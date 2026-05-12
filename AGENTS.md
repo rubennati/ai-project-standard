@@ -1,6 +1,7 @@
 # Agent Instructions
 
 Before starting work, always read:
+
 - `.ai/index.md`
 - `.ai/state.md`
 - `.ai/routing.md`

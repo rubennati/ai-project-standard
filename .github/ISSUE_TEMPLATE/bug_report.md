@@ -29,4 +29,3 @@ What happened instead?
 How does this affect contributors or maintainers?
 
 ## Proposed fix (optional)
-

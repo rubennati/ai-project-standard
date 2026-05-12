@@ -1,0 +1,9 @@
+# Local previews and dev URLs.
+^http://localhost
+^http://127\.0\.0\.1
+
+# GitHub anchor-like fragments that are rendered by GitHub, not present in raw markdown.
+^#
+
+# Email links (we don't probe SMTP).
+^mailto:
