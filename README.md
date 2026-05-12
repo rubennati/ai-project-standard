@@ -105,6 +105,8 @@ Current priorities are documented in `ROADMAP.md`.
 
 Contributions are welcome. See `CONTRIBUTING.md`.
 
+For questions or open-ended discussion, use [GitHub Discussions](https://github.com/rubennati/ai-project-standard/discussions). For bug reports and concrete feature requests, open an Issue. See [SUPPORT.md](SUPPORT.md) for the split.
+
 ## Collaboration philosophy
 
 AI-native collaboration requires explicit boundaries, decision records, and routine human review. The structure should keep work understandable and auditable over time.

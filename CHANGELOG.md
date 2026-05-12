@@ -14,6 +14,44 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 - `site/src/layouts/Base.astro` — footer no longer applies blanket `opacity-70` to the container. The "MIT licensed" label uses an explicit zinc-700 (light) / zinc-300 (dark) so it stays clearly readable, and the "Source on GitHub" link renders at the full cobalt accent. Resolves the Lighthouse accessibility warning on the home page.
 
+### Security — Astro CVE-2026-41067
+
+- `site/package.json` — upgraded `astro` from `^5.5.0` to `^6.1.6` to patch [CVE-2026-41067](https://github.com/advisories/GHSA-j687-52p2-xcff) (Moderate, CVSS 6.1) — XSS via incomplete `</script>` tag sanitisation in `define:vars`. Installed runtime version: 6.3.1.
+
+### Changed — Astro 6 toolchain alignment
+
+- `site/package.json` — `@astrojs/mdx` bumped to `^5.0.0` to match Astro 6's peer requirement; `tailwindcss` and the Tailwind plugin pinned to `^4.3.0`.
+- `site/postcss.config.mjs` (new) — Tailwind v4 now wires through `@tailwindcss/postcss`. Astro 6 ships Rolldown as its bundler and `@tailwindcss/vite` does not yet fully support it; the PostCSS plugin is the stable path.
+- `site/astro.config.mjs` — `@tailwindcss/vite` import and `vite.plugins` block removed; Tailwind is picked up via PostCSS automatically.
+- `.github/workflows/pages.yml` — `actions/setup-node` pinned to Node 22 (Astro 6 requires `>=22.12`).
+- `site/README.md` — local-dev note updated for Node 22 + PostCSS Tailwind setup.
+
+### Added — OSS standard expansion
+
+- `SUPPORT.md` — explicit issues-vs-Discussions guidance with response-time expectations. Stops the issue tracker from becoming a support forum.
+- `docs/open-source-project-standard.md` — substantially expanded. Now covers DCO vs CLA (inbound rights), governance sized to project scale, issues vs Discussions, release engineering, health metrics, trust signals, and an explicit list of practices this standard does NOT mandate (anti-cargo-cult section).
+- `README.md` — short Contributing-section addition pointing at Discussions vs Issues + SUPPORT.md.
+- `docs/index.md`, `docs/profiles.md` — link the new SUPPORT.md, add it to the OSS and Combined profile lists.
+
+### Added — Security baseline
+
+- `docs/security-baseline.md` — new minimum security-posture document covering repository-level controls (private vulnerability reporting, secret scanning, Dependabot, code scanning, branch protection), CI/CD hardening (minimum permissions, SHA pinning, OIDC), AI-specific controls (sandboxing, tool allow-listing, personal vs. team settings), and a pointer to the OWASP Top 10 for LLM Applications.
+- `.github/workflows/ci.yml` — top-level `permissions: contents: read` added; jobs can broaden as needed.
+- `docs/ai-tools.md` — new "Model Context Protocol (MCP)" section explaining where MCP configuration lives, the personal-vs-team-settings split, and the third-party-code mindset for MCP servers.
+- `.ai/secure-development.md` — short pointer to the new public baseline, plus an explicit note about MCP/tool privilege model.
+- `docs/index.md`, `docs/profiles.md` — surface `docs/security-baseline.md` in the doc index, OSS profile, AI profile, and Combined profile (CI profile-completeness check updated accordingly).
+
+### Added — Tool extension conventions
+
+- `docs/ai-tools.md` — new "Optional tool extensions" section documenting agreed paths for team-versioned settings (`.claude/settings.json`, `.codex/config.toml`), personal gitignored overrides (`CLAUDE.local.md`, `.claude/settings.local.json`, `AGENTS.override.md`), path-specific GitHub Copilot instructions (`.github/instructions/**/*.instructions.md` with `applyTo:` frontmatter), and the cross-tool skills directory convention (`.claude/skills/`, `.agents/skills/`, `.github/skills/`).
+- No empty stub files committed by design — adopters wire extensions in when they need them.
+
+### Added — AGENTS.md workflow upgrade
+
+- `AGENTS.md` — new "Workflow" section codifying the Understand → Plan → Implement → Verify → Review loop. Plan-first becomes the explicit norm for non-trivial work.
+- `AGENTS.md` — new "Standard quality commands" section recommending the `lint`/`test`/`build`/`typecheck` convention for adopters. Verifiable goals are the main quality lever for agents.
+- `AGENTS.md` — new "Overrides and local files" section documenting `AGENTS.override.md`, path-specific Copilot instructions (`.github/instructions/`), and the team vs. personal Claude settings split.
+
 ### Added — Reputation files
 
 - `CITATION.cff` — academic-citation metadata. GitHub renders a "Cite this repository" button automatically when this file is present.
