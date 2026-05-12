@@ -13,6 +13,7 @@ This repository is both a reusable template and a reference implementation for a
 ## Why this exists
 
 Many repositories have prompts but lack durable structure, review rules, and continuity practices. This project provides a practical baseline that combines:
+
 - professional open-source repository standards
 - a dedicated AI workspace layer for operational context
 
@@ -37,11 +38,13 @@ This repository can also be used as a GitHub template (enabled from v0.2.0).
 ## What this is / What this is not
 
 ### What this is
+
 - A project structure and collaboration standard
 - A repository baseline with governance, workflows, and review controls
 - A shared workspace model for AI task routing, state, and decisions
 
 ### What this is not
+
 - Not an application starter with business logic
 - Not a prompt dump without process controls
 - Not a replacement for human accountability
@@ -62,6 +65,7 @@ See `docs/ai-workspace-layer.md` for model details.
 ## Git workflow
 
 This repository uses GitHub Flow / trunk-based development:
+
 - `main` is stable and protected
 - work happens on short-lived branches (`feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`)
 - pull requests are required before merge

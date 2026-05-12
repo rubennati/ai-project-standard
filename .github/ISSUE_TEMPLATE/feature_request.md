@@ -19,4 +19,3 @@ Describe the proposed improvement.
 List any alternatives and trade-offs.
 
 ## Additional context
-

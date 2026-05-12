@@ -4,15 +4,19 @@ on:
   pull_request:
   push:
     branches: [main]
+  schedule:
+    # Weekly strict link check (Mondays 06:00 UTC).
+    - cron: '0 6 * * 1'
 
 jobs:
   docs-check:
+    name: Structural docs check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate markdown files exist
+      - name: Validate required files exist
         run: |
           test -f README.md
           test -f CONTRIBUTING.md
@@ -23,3 +27,58 @@ jobs:
         run: |
           test -d docs
           test -d .ai
+
+  profile-completeness:
+    name: Profile completeness
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run profile check
+        run: bash .github/scripts/check-profiles.sh
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@v18
+        with:
+          globs: |
+            **/*.md
+            !site/node_modules
+            !site/dist
+            !site/.astro
+            !.ai
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: cache-lychee-${{ github.sha }}
+          restore-keys: cache-lychee-
+
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Strict on the weekly cron; advisory on PRs and pushes (external
+          # 4xx/5xx flakes are common and shouldn't block reviews).
+          fail: ${{ github.event_name == 'schedule' }}
+          args: >-
+            --cache
+            --max-cache-age 7d
+            --no-progress
+            --exclude-mail
+            --exclude-loopback
+            './**/*.md'

@@ -5,6 +5,7 @@
 Please report potential vulnerabilities privately via [GitHub Security Advisories](https://github.com/rubennati/ai-project-standard/security/advisories/new).
 
 Include:
+
 - affected file or workflow
 - risk description
 - reproduction steps (if applicable)

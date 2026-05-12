@@ -1,0 +1,38 @@
+{
+  // Relaxed config for a documentation-and-standards repository.
+  // We optimise for human readability and review velocity, not strict prose rules.
+  "config": {
+    "default": true,
+
+    // Disable hard line-length limit — long prose lines are fine; reviewers wrap.
+    "MD013": false,
+
+    // Allow inline HTML for accessibility hints and edge layout cases.
+    "MD033": false,
+
+    // Don't require the first line to be a top-level heading
+    // (some files start with frontmatter or admonitions).
+    "MD041": false,
+
+    // Multiple top-level headings can be valid in a navigation/index file.
+    "MD025": false,
+
+    // Allow duplicate headings under different parents (e.g. "### Added"
+    // in every version block of a Keep-a-Changelog file).
+    "MD024": { "siblings_only": true },
+
+    // Allow trailing punctuation in headings (e.g. questions).
+    "MD026": false,
+
+    // Table-column-style is too pedantic for our purposes — GitHub renders
+    // tables consistently regardless of pipe alignment.
+    "MD060": false
+  },
+  "ignores": [
+    "site/node_modules/**",
+    "site/dist/**",
+    "site/.astro/**",
+    ".ai/**",
+    "node_modules/**"
+  ]
+}

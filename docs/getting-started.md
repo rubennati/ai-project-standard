@@ -7,6 +7,7 @@ Read `README.md` to understand scope and constraints.
 ## 2) Review contribution and workflow rules
 
 Read:
+
 - `CONTRIBUTING.md`
 - `docs/git-workflow.md`
 - `AGENTS.md`
@@ -14,6 +15,7 @@ Read:
 ## 3) Initialize AI collaboration context
 
 Read:
+
 - `.ai/index.md`
 - `.ai/state.md`
 - `.ai/routing.md`
