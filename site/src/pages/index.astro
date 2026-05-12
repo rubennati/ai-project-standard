@@ -3,19 +3,21 @@ import Base from "../layouts/Base.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Base title="AI Project Standard" description="A reusable repository standard for long-term human and AI collaboration. Open Source baseline plus Human-AI Collaboration baseline.">
+<Base
+  title="AI Project Standard"
+  description="A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, software engineering, knowledge and documentation."
+>
   <section class="flex flex-col gap-6">
     <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-      A repository standard for long-term human and AI collaboration.
+      A starting baseline for open-source projects that use AI.
     </h1>
-    <p class="max-w-2xl text-lg opacity-80">
-      Both a reusable template and a reference implementation. Adopt the Open Source baseline,
-      the Human-AI Collaboration baseline, or both — in one repository, one version stream.
+    <p class="max-w-2xl text-lg">
+      Four pillars, three profiles, five adoption paths. Clone the template, browse the playbook.
     </p>
     <div class="flex flex-wrap gap-4">
       <a
         href={`${base}use-cases`}
-        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:opacity-90"
+        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:bg-[var(--color-accent-hover)]"
       >
         See the use cases
       </a>
@@ -28,35 +30,81 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <section class="mt-20 grid gap-8 sm:grid-cols-3">
-    <article class="flex flex-col gap-2">
-      <h2 class="text-xl font-semibold">OSS-only</h2>
-      <p class="opacity-80">
-        Governance, contribution rules, security policy, and CI for a credible open-source project.
-        No AI files.
-      </p>
-    </article>
-    <article class="flex flex-col gap-2">
-      <h2 class="text-xl font-semibold">AI-only</h2>
-      <p class="opacity-80">
-        Source-of-truth instructions, an operational <code>.ai/</code> workspace, and multi-tool pointer files.
-        Drops into an existing repository.
-      </p>
-    </article>
-    <article class="flex flex-col gap-2">
-      <h2 class="text-xl font-semibold">Combined</h2>
-      <p class="opacity-80">
-        Both baselines in one repository — the full reference implementation, ready as a GitHub template.
-      </p>
-    </article>
+  <section class="mt-20 flex flex-col gap-4">
+    <h2 class="text-2xl font-semibold">Four pillars</h2>
+    <div class="grid gap-8 sm:grid-cols-2">
+      <article class="flex flex-col gap-2">
+        <h3 class="text-lg font-semibold">Human-AI collaboration</h3>
+        <p>
+          <code>AGENTS.md</code> as the source of truth, multi-tool pointer files for Claude Code,
+          Codex, GitHub Copilot, and Cursor, and the operational <code>.ai/</code> workspace.
+        </p>
+      </article>
+      <article class="flex flex-col gap-2">
+        <h3 class="text-lg font-semibold">Open-source operations</h3>
+        <p>
+          README, LICENSE, contribution rules, security policy, support guide, issue and PR templates,
+          code owners, funding, citation.
+        </p>
+      </article>
+      <article class="flex flex-col gap-2">
+        <h3 class="text-lg font-semibold">Software engineering</h3>
+        <p>
+          CI workflows, versioning policy, Git workflow, branch protection, dependency automation,
+          security baseline, OpenSSF Scorecard.
+        </p>
+      </article>
+      <article class="flex flex-col gap-2">
+        <h3 class="text-lg font-semibold">Knowledge and documentation</h3>
+        <p>
+          The strict in-repo <code>docs/</code> reader and this knowledge layer — long-form guides,
+          comparisons, blog, research.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="mt-20 flex flex-col gap-4">
+    <h2 class="text-2xl font-semibold">Three profiles</h2>
+    <div class="grid gap-8 sm:grid-cols-3">
+      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">Open Source</h3>
+        <p>Governance, contribution, security, CI. No AI files.</p>
+      </article>
+      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">Human-AI Collaboration</h3>
+        <p>
+          <code>AGENTS.md</code>, multi-tool pointers, <code>.ai/</code> workspace. Drops into an
+          existing repository.
+        </p>
+      </article>
+      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">Combined</h3>
+        <p>All four pillars. The full reference implementation in this repository.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="mt-20 flex flex-col gap-4">
+    <h2 class="text-2xl font-semibold">Five adoption paths</h2>
+    <ol class="ml-5 list-decimal space-y-2">
+      <li>Greenfield AI-native project — Combined profile, day one.</li>
+      <li>AI into an existing repository — Human-AI Collaboration profile alongside what already exists.</li>
+      <li>Clean open-source start — Open Source profile only.</li>
+      <li>Professionalising an existing open-source project — pull in the parts that are missing.</li>
+      <li>AI and open source from scratch — Combined profile, full stack.</li>
+    </ol>
+    <p>
+      Walk-throughs for each path live in <a href={`${base}use-cases`}>Use cases</a>.
+    </p>
   </section>
 
   <section class="mt-20 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">Why it exists</h2>
-    <p class="max-w-3xl opacity-80">
-      Many repositories carry prompts but lack durable structure, review rules, and continuity practices.
-      This standard fills that gap with short, opinionated files that work across Claude, Codex, GitHub Copilot,
-      and Cursor — without forcing a particular tool on adopters.
+    <h2 class="text-2xl font-semibold">Two-layer architecture</h2>
+    <p class="max-w-3xl">
+      The repository is the operational layer — workflows, AI state, governance, templates. This site
+      is the knowledge layer — explanations, comparisons, tutorials, research. The repository itself
+      serves as the reference implementation: every file and workflow runs here, not just on paper.
     </p>
   </section>
 </Base>

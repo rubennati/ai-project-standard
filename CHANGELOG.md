@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Positioning refresh: four pillars, five adoption paths
+
+Removes all "what this is not" / justification wording and reframes the standard descriptively. Adopters now see what they get, not why we're allowed to call it a standard.
+
+- `README.md` — main block rewritten. New "four pillars, three profiles, five adoption paths" framing. Old "Why this exists", "What this is / What this is not", duplicate philosophy paragraphs removed. Repository-structure section condensed; `.ai/` framed as operational state rather than documentation.
+- `docs/standard.md` — restructured around the new framing. New sections: Four pillars, Three adoption profiles, Five adoption paths, Two-layer architecture (with explicit "the repository serves as the reference implementation"). Old "What the standard is / is not" sections deleted; "Out of scope" renamed to "Boundaries" and kept as a neutral inventory item.
+- `site/src/pages/index.astro` — full home-page rewrite. Hero: "A starting baseline for open-source projects that use AI." Four-pillar grid, three-profile grid, five-path list, two-layer architecture statement.
+- `site/src/pages/about.astro` — descriptive rewrite without justification framing.
+
+No file moves, no API or path changes. The new framing is additive and stylistic; profile lists in `docs/profiles.md` are untouched.
+
 ### Changed — Pin GitHub Actions to commit SHAs
 
 - `.github/workflows/*.yml` — every third-party and `actions/*` reference is now pinned to a full commit SHA with a `# vN` trailing comment for readability. Tag-based references (`@v4`) are mutable and have been compromised in the past; SHA pinning closes that vector. Dependabot's `github-actions` ecosystem (added separately) will keep these SHAs current. Closes the OpenSSF Scorecard "Pinned-Dependencies" gap (1/10 → expected ~8/10 on the next scan).
