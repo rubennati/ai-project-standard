@@ -6,13 +6,15 @@ The repository's strict reader documentation lives in `/docs`. This site is the 
 
 ## Local development
 
+Astro 6 requires Node `>=22.12`.
+
 ```bash
 cd site
 npm install
 npm run dev
 ```
 
-The site runs at `http://localhost:4321/ai-project-standard/`. The `/ai-project-standard/` base path matches the production GitHub Pages URL.
+The site runs at `http://localhost:4321/`.
 
 ## Production build
 
@@ -41,6 +43,6 @@ The `docs` content collection (reading from `../docs/**/*.md`) and the `<SEO>` c
 ## Conventions
 
 - No client-side JavaScript framework. Plain Astro components with islands only when needed.
-- Tailwind v4 via `@tailwindcss/vite`. Global styles in `src/styles/global.css`.
+- Tailwind v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`). Global styles in `src/styles/global.css`. We use the PostCSS plugin instead of `@tailwindcss/vite` because Astro 6 switched its bundler to Rolldown, which the Vite plugin does not yet fully support.
 - Dark/light follows the system preference; no toggle in v0.2.0.
 - The site is **minimal by design** for v0.2.0 — RSS, JSON-LD, dynamic blog, and advanced SEO land in v0.3.0+.
