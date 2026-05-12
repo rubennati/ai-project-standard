@@ -3,10 +3,21 @@ interface Props {
   title: string;
   description: string;
   ogType?: "website" | "article";
+  /**
+   * Path or absolute URL to a social preview image (recommended 1200x630 PNG).
+   * When omitted, og:image / twitter:image are skipped to avoid pointing at a
+   * missing file. Add a real export and reference it here for rich previews.
+   */
+  image?: string;
 }
 
-const { title, description, ogType = "website" } = Astro.props;
+const { title, description, ogType = "website", image } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
+const imageUrl = image
+  ? image.startsWith("http")
+    ? image
+    : new URL(image, Astro.site).toString()
+  : undefined;
 const siteName = "AI Project Standard";
 ---
 
@@ -19,7 +30,11 @@ const siteName = "AI Project Standard";
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:url" content={canonical} />
+{imageUrl && <meta property="og:image" content={imageUrl} />}
+{imageUrl && <meta property="og:image:width" content="1200" />}
+{imageUrl && <meta property="og:image:height" content="630" />}
 
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content={imageUrl ? "summary_large_image" : "summary"} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
+{imageUrl && <meta name="twitter:image" content={imageUrl} />}
