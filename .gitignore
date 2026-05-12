@@ -13,3 +13,8 @@ Thumbs.db
 
 # AI tooling (local-only)
 .claude/settings.local.json
+
+# Astro site (site/)
+site/node_modules/
+site/dist/
+site/.astro/

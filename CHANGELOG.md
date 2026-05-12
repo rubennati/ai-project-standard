@@ -14,6 +14,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - `CONTRIBUTING.md` — new "Versioning" section defining MAJOR/MINOR/PATCH for the standard.
 - `README.md` — positioning sentence and Profiles section linking to the new docs.
 - `docs/index.md` — restructured into grouped sections (the standard, OSS baseline, Human-AI Collaboration baseline).
+- `site/` — minimal Astro skeleton for the GitHub Pages knowledge layer (Astro 5, Tailwind v4). Includes a base layout and five static pages (Home, Use cases, Profiles, About, Blog stub). No content collection, no RSS, no JSON-LD — those land in later PRs by design.
+- `site/public/robots.txt` and Astro sitemap integration configured.
+- `.gitignore` — exclude `site/node_modules/`, `site/dist/`, `site/.astro/`.
 
 ## [0.1.0] - 2026-05-12
 
