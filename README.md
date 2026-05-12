@@ -1,5 +1,6 @@
 # AI Project Standard
 
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fai-standard.rubennati.at&up_message=live&down_message=down&label=site)](https://ai-standard.rubennati.at)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![CI](https://github.com/rubennati/ai-project-standard/actions/workflows/ci.yml/badge.svg)](https://github.com/rubennati/ai-project-standard/actions/workflows/ci.yml)
 [![Pages](https://github.com/rubennati/ai-project-standard/actions/workflows/pages.yml/badge.svg)](https://github.com/rubennati/ai-project-standard/actions/workflows/pages.yml)
