@@ -27,3 +27,15 @@ If a change is larger than the current task's scope (architecture, dependencies,
 - Keep changes focused and reviewable
 - Preserve documentation quality for both humans and AI systems
 - Prefer explicit trade-offs over implicit assumptions
+
+## Tool-specific pointer files
+
+This file is the source of truth for all AI tools. Tool-specific files exist only because each tool reads its own path:
+
+- `CLAUDE.md` — Claude Code
+- `.github/copilot-instructions.md` — GitHub Copilot
+- `.cursor/rules/00-project.mdc` — Cursor
+
+Pointer files MUST stay short (target: ≤20 lines) and MUST defer to this file for any rule that is not specific to the tool. Do not duplicate rules across pointer files; add them here instead.
+
+See `docs/ai-tools.md` for the full list of supported tools and how to add a new one.

@@ -1,0 +1,15 @@
+---
+description: AI Project Standard — defer to AGENTS.md
+alwaysApply: true
+---
+
+# Project rules pointer
+
+The source of truth for this repository is `AGENTS.md` at the project root.
+
+Before suggesting changes, read:
+
+- `AGENTS.md` — core rules, approval model, scope discipline.
+- `.ai/index.md`, `.ai/state.md`, `.ai/routing.md` — operational context.
+
+Commit, push, and merge rules are in the "Approval" section of `AGENTS.md`. Do not duplicate rules here; this file intentionally stays minimal.
