@@ -8,6 +8,11 @@ on:
     # Weekly strict link check (Mondays 06:00 UTC).
     - cron: '0 6 * * 1'
 
+# Minimum permissions for the whole workflow; jobs may broaden as needed.
+# See docs/security-baseline.md for the rationale.
+permissions:
+  contents: read
+
 jobs:
   docs-check:
     name: Structural docs check

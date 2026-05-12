@@ -1,0 +1,56 @@
+# Dependabot configuration.
+#
+# Pairs with the always-on Dependabot security updates (enabled in the
+# repository's Security settings). This file adds *version* updates so
+# routine drift on Astro, Tailwind, and GitHub Actions is caught early
+# instead of accumulating into one risky jump.
+#
+# Updates are weekly and grouped so a typical week produces one or two
+# PRs per ecosystem instead of a flood. See docs:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates
+version: 2
+
+updates:
+  # Site dependencies (Astro, Tailwind, integrations).
+  - package-ecosystem: npm
+    directory: /site
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Etc/UTC
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'deps(site)'
+      include: scope
+    labels:
+      - dependencies
+      - site
+    groups:
+      site-minor-and-patch:
+        update-types:
+          - minor
+          - patch
+      # Majors stay ungrouped so each MAJOR PR can be reviewed individually
+      # (Astro 6 → 7 etc. usually needs deliberate verification).
+
+  # GitHub Actions used in .github/workflows/*.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: '06:00'
+      timezone: Etc/UTC
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: 'ci'
+      include: scope
+    labels:
+      - dependencies
+      - ci
+    groups:
+      actions-minor-and-patch:
+        update-types:
+          - minor
+          - patch
