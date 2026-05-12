@@ -1,0 +1,132 @@
+---
+import { getCollection, render } from "astro:content";
+import type { GetStaticPaths } from "astro";
+import Base from "../../layouts/Base.astro";
+import { docTitle, docDescription } from "../../utils/docs";
+
+export const getStaticPaths = (async () => {
+  const entries = await getCollection("docs");
+  return entries
+    // The docs/index.md entry is rendered by pages/docs/index.astro,
+    // not by this dynamic route.
+    .filter((entry) => entry.id !== "index")
+    .map((entry) => ({
+      params: { slug: entry.id },
+      props: { entry },
+    }));
+}) satisfies GetStaticPaths;
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const base = import.meta.env.BASE_URL;
+const title = docTitle(entry);
+const description = docDescription(entry);
+---
+
+<Base title={`${title} — AI Project Standard`} description={description} ogType="article">
+  <nav class="mb-6 text-sm opacity-70">
+    <a href={`${base}docs`}>Documentation</a>
+    <span class="mx-2">/</span>
+    <span>{title}</span>
+  </nav>
+
+  <article class="prose-content">
+    <Content />
+  </article>
+
+  <hr class="my-12 border-black/10 dark:border-white/10" />
+  <p class="text-sm opacity-70">
+    Source: <a
+      href={`https://github.com/rubennati/ai-project-standard/blob/main/docs/${entry.id}.md`}>docs/{entry.id}.md</a
+    > — edits land here on the next deploy.
+  </p>
+</Base>
+
+<style is:global>
+  .prose-content {
+    line-height: 1.65;
+  }
+  .prose-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 1rem;
+  }
+  .prose-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 2rem 0 0.75rem;
+  }
+  .prose-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.5rem 0 0.5rem;
+  }
+  .prose-content p {
+    margin: 0.75rem 0;
+  }
+  .prose-content ul,
+  .prose-content ol {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+  }
+  .prose-content ul {
+    list-style: disc;
+  }
+  .prose-content ol {
+    list-style: decimal;
+  }
+  .prose-content li {
+    margin: 0.25rem 0;
+  }
+  .prose-content code {
+    background: rgba(0, 0, 0, 0.06);
+    padding: 0.1em 0.3em;
+    border-radius: 0.25rem;
+    font-size: 0.92em;
+  }
+  @media (prefers-color-scheme: dark) {
+    .prose-content code {
+      background: rgba(255, 255, 255, 0.08);
+    }
+  }
+  .prose-content pre {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+  @media (prefers-color-scheme: dark) {
+    .prose-content pre {
+      background: rgba(255, 255, 255, 0.06);
+    }
+  }
+  .prose-content pre code {
+    background: transparent;
+    padding: 0;
+  }
+  .prose-content table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  .prose-content th,
+  .prose-content td {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+  }
+  @media (prefers-color-scheme: dark) {
+    .prose-content th,
+    .prose-content td {
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+  .prose-content blockquote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    opacity: 0.85;
+  }
+</style>
