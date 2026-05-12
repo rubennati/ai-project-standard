@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Reputation files
+
+- `CITATION.cff` — academic-citation metadata. GitHub renders a "Cite this repository" button automatically when this file is present.
+- `.github/FUNDING.yml` — Sponsor-button stub. All options are commented out by default; uncomment what you want to expose.
+- `.github/CODEOWNERS` — catch-all owner so PR reviews are auto-requested. Path-specific rules can be added as the team grows.
+
 ### Added — PR 5 (docs reader + minimal SEO)
 
 - `site/src/content.config.ts` — Astro 5 content collection that reads `../docs/**/*.md` directly. Single source of truth: no copies, no sync — every doc change re-renders on the next build.

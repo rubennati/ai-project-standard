@@ -1,0 +1,7 @@
+# Code owners — drives automatic review requests on pull requests.
+# Syntax: https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Catch-all: every path is owned by the maintainer. Add path-specific lines
+# as the team grows (e.g. site/ → frontend folk, .ai/ → AI maintainers).
+
+* @rubennati
