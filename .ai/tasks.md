@@ -4,7 +4,6 @@
 
 ## Active
 
-- Apply branch-protection settings on `main` per `docs/branch-protection.md`
 - Refine the practical AI collaboration guide based on review feedback
 
 ## Backlog

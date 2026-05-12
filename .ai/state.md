@@ -10,12 +10,12 @@
 - Bootstrap structure is stable.
 - Pre-release governance refinements landed in PR #3 (approval definition, SECURITY contact, `.gitignore`, branch-protection split, staleness contract).
 - Practical AI collaboration guide landed in PR #4 (`docs/practical-ai-collaboration.md`).
+- Branch protection on `main` is in place via a Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked).
 
 ## Immediate next steps
 
-1. Apply branch-protection settings on `main` per `docs/branch-protection.md`.
-2. Refine the practical AI collaboration guide based on review feedback.
-3. Tag a release once the standard is considered stable for first public use.
+1. Refine the practical AI collaboration guide based on review feedback.
+2. Tag a release once the standard is considered stable for first public use.
 
 ## Open questions
 
