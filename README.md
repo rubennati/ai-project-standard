@@ -29,6 +29,12 @@ See [docs/standard.md](docs/standard.md) for the conceptual definition, [docs/pr
 
 This repository can also be used as a GitHub template (enabled from v0.2.0).
 
+## Website
+
+The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It carries use-case walk-throughs, deep guides, and the blog. The site source is in [site/](site/) and is built and deployed by [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+
+**Maintainer setup (one-time):** Settings → Pages → Source: "GitHub Actions". The custom domain is pinned via [`site/public/CNAME`](site/public/CNAME) so each deploy preserves it.
+
 ## Who this is for
 
 - Maintainers of open-source or internal engineering projects
