@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — README badges
+
+- `README.md` — new live website-status badge (`shields.io/website`) linking to <https://ai-standard.rubennati.at>. Sits alongside the existing License / CI / Pages / OpenSSF Scorecard badges.
+
+### Fixed — Footer contrast (Lighthouse a11y 91 → ~100)
+
+- `site/src/layouts/Base.astro` — footer no longer applies blanket `opacity-70` to the container. The "MIT licensed" label uses an explicit zinc-700 (light) / zinc-300 (dark) so it stays clearly readable, and the "Source on GitHub" link renders at the full cobalt accent. Resolves the Lighthouse accessibility warning on the home page.
+
 ### Security — Astro CVE-2026-41067
 
 - `site/package.json` — upgraded `astro` from `^5.5.0` to `^6.1.6` to patch [CVE-2026-41067](https://github.com/advisories/GHSA-j687-52p2-xcff) (Moderate, CVSS 6.1) — XSS via incomplete `</script>` tag sanitisation in `define:vars`. Installed runtime version: 6.3.1.
