@@ -33,6 +33,7 @@ See [standard.md](./standard.md) for the conceptual definition and [adoption.md]
 | `docs/standard.md` | ✓ | ✓ | The standard itself. |
 | `docs/profiles.md` | ✓ | ✓ | This file. |
 | `docs/adoption.md` | ✓ | ✓ | Adoption guide. |
+| `docs/security-baseline.md` | ✓ | ✓ | Minimum security posture (added in v0.2.0). |
 | `AGENTS.md` | – | ✓ | Source of truth for AI tools. |
 | `CLAUDE.md` | – | ✓ | Pointer to AGENTS.md. |
 | `.github/copilot-instructions.md` | – | ✓ | Pointer to AGENTS.md. |
@@ -64,6 +65,7 @@ docs/index.md
 docs/standard.md
 docs/profiles.md
 docs/adoption.md
+docs/security-baseline.md
 ```
 
 ## AI-only profile
@@ -97,6 +99,7 @@ docs/index.md
 docs/standard.md
 docs/profiles.md
 docs/adoption.md
+docs/security-baseline.md
 docs/ai-workspace-layer.md
 docs/practical-ai-collaboration.md
 docs/ai-tools.md
@@ -149,6 +152,7 @@ docs/index.md
 docs/standard.md
 docs/profiles.md
 docs/adoption.md
+docs/security-baseline.md
 docs/ai-workspace-layer.md
 docs/practical-ai-collaboration.md
 docs/ai-tools.md

@@ -37,6 +37,18 @@ ChatGPT's web interface does not read any in-repo file. Project memory and custo
 
 Tool-specific files MUST stay short (target: ≤20 lines) and MUST defer to `AGENTS.md` for any rule that is not specific to the tool. If you find yourself copying a rule into a pointer file, move it to `AGENTS.md` instead. This rule is also stated in `AGENTS.md`.
 
+## Model Context Protocol (MCP)
+
+The [Model Context Protocol](https://modelcontextprotocol.io/) is the emerging standard for connecting LLMs and agents to external tools, data sources, and APIs. Claude Code, Codex CLI, Gemini CLI, and a growing number of clients speak MCP natively.
+
+This standard does not bundle MCP servers, but the conventions are:
+
+- **Per-project MCP configuration** lives in the tool-specific settings file (`.codex/config.toml` for Codex, `.claude/settings.json` for Claude Code).
+- **Personal MCP servers** belong in your gitignored `*.local.*` files, never the team-versioned ones.
+- **Treat MCP servers as third-party code** — they read your repo and run with your agent's privileges. See [`docs/security-baseline.md`](./security-baseline.md) → AI-specific controls.
+
+If an MCP server is critical to a workflow, document the setup steps in `AGENTS.md` so every contributor (and every agent session) reaches the same toolchain.
+
 ## How to add support for a new tool
 
 1. Read what file the tool expects and where.
