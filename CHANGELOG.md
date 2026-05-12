@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Tool extension conventions
+
+- `docs/ai-tools.md` — new "Optional tool extensions" section documenting agreed paths for team-versioned settings (`.claude/settings.json`, `.codex/config.toml`), personal gitignored overrides (`CLAUDE.local.md`, `.claude/settings.local.json`, `AGENTS.override.md`), path-specific GitHub Copilot instructions (`.github/instructions/**/*.instructions.md` with `applyTo:` frontmatter), and the cross-tool skills directory convention (`.claude/skills/`, `.agents/skills/`, `.github/skills/`).
+- No empty stub files committed by design — adopters wire extensions in when they need them.
+
 ### Added — Reputation files
 
 - `CITATION.cff` — academic-citation metadata. GitHub renders a "Cite this repository" button automatically when this file is present.
