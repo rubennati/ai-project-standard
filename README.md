@@ -1,8 +1,10 @@
 # AI Project Standard
 
-![Draft](https://img.shields.io/badge/status-early%20draft-orange)
-![License](https://img.shields.io/badge/license-MIT-blue)
-![CI](https://img.shields.io/badge/ci-placeholder-lightgrey)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/rubennati/ai-project-standard/actions/workflows/ci.yml/badge.svg)](https://github.com/rubennati/ai-project-standard/actions/workflows/ci.yml)
+[![Pages](https://github.com/rubennati/ai-project-standard/actions/workflows/pages.yml/badge.svg)](https://github.com/rubennati/ai-project-standard/actions/workflows/pages.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/rubennati/ai-project-standard/badge)](https://scorecard.dev/viewer/?uri=github.com/rubennati/ai-project-standard)
+![Status](https://img.shields.io/badge/status-early%20draft-orange)
 
 > Early draft: this repository is a work in progress and will be refined through maintainer review.
 
