@@ -1,0 +1,43 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="About — AI Project Standard" description="About the AI Project Standard, its philosophy, and its maintainer.">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">About</h1>
+
+  <section class="mt-8 flex flex-col gap-4">
+    <p class="max-w-3xl opacity-80">
+      This repository is both a reusable template and a reference implementation for adopting Open Source
+      and/or Human-AI Collaboration standards.
+    </p>
+    <p class="max-w-3xl opacity-80">
+      The standard separates the operational layer (the repository, kept short and dense) from the knowledge
+      layer (this site, where long-form explanations and use cases live). The goal is a baseline that stays
+      useful for both humans and AI tools across years, not weeks.
+    </p>
+  </section>
+
+  <section class="mt-12 flex flex-col gap-3">
+    <h2 class="text-2xl font-semibold">Maintainer</h2>
+    <p class="opacity-80">
+      Created and maintained by <a href="https://github.com/rubennati">Ruben Nati</a>. Contributions welcome —
+      see the <a href="https://github.com/rubennati/ai-project-standard/blob/main/CONTRIBUTING.md">contribution guide</a>.
+    </p>
+  </section>
+
+  <section class="mt-10 flex flex-col gap-3">
+    <h2 class="text-2xl font-semibold">License</h2>
+    <p class="opacity-80">
+      Released under the MIT License. See the <a href="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE">LICENSE</a> file.
+    </p>
+  </section>
+
+  <section class="mt-10 flex flex-col gap-3">
+    <h2 class="text-2xl font-semibold">Acknowledgements</h2>
+    <p class="opacity-80">
+      The standard draws on the <code>AGENTS.md</code> cross-vendor convention popularised by the Codex CLI,
+      GitHub Copilot's instructions file, Cursor's MDC rules format, and the wider open-source community's work
+      on contribution and governance baselines.
+    </p>
+  </section>
+</Base>

@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "A repository standard for long-term human and AI collaboration." } = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-screen flex-col">
+    <header class="border-b border-black/10 dark:border-white/10">
+      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <a href={base} class="font-semibold no-underline">AI Project Standard</a>
+        <ul class="flex gap-6 text-sm">
+          <li><a href={`${base}use-cases`}>Use cases</a></li>
+          <li><a href={`${base}profiles`}>Profiles</a></li>
+          <li><a href={`${base}blog`}>Blog</a></li>
+          <li><a href={`${base}about`}>About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
+      <slot />
+    </main>
+
+    <footer class="border-t border-black/10 dark:border-white/10">
+      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-6 text-sm opacity-70 sm:flex-row sm:justify-between">
+        <span>AI Project Standard — MIT licensed.</span>
+        <span>
+          <a href="https://github.com/rubennati/ai-project-standard">Source on GitHub</a>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
