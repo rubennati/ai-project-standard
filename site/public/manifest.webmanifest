@@ -1,0 +1,18 @@
+{
+  "name": "AI Project Standard",
+  "short_name": "AI Std",
+  "description": "A repository standard for long-term human and AI collaboration.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a3a8c",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
