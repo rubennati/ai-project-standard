@@ -19,3 +19,4 @@ Use this file for milestone-level updates only.
 ## 2026-05-12
 
 - Verified branch protection on `main` is active via Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked); removed the corresponding task.
+- Prepared `v0.1.0` release: filled CHANGELOG with first-release entry, moved the practical-AI-guide refinement task to backlog (pending pilot-usage feedback), and updated state to reflect release phase.
