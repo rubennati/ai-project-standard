@@ -1,0 +1,7 @@
+# Funding configuration — surfaces "Sponsor" buttons on the repo page.
+# Enable any platform you want to accept support through. Comment out lines
+# you don't use. See https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+
+# github: [rubennati]              # Enable after activating GitHub Sponsors on your account.
+# ko_fi: rubennati                 # Replace with your Ko-fi handle.
+# custom: ["https://your-donation-link"]

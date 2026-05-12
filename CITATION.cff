@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+title: AI Project Standard
+message: "If you use this standard, please cite it as below."
+type: software
+authors:
+  - given-names: Ruben
+    family-names: Nati
+    affiliation: Independent
+repository-code: "https://github.com/rubennati/ai-project-standard"
+url: "https://ai-standard.rubennati.at"
+license: MIT
+keywords:
+  - ai
+  - human-ai-collaboration
+  - open-source
+  - repository-standard
+  - template
+  - claude
+  - codex
+  - copilot
+  - cursor
+abstract: >-
+  AI Project Standard is a reusable repository template and reference
+  implementation for adopting Open Source and/or Human-AI Collaboration
+  standards. Three profiles (OSS-only, AI-only, Combined) share one
+  repository and one version stream, with multi-tool pointer files for
+  Claude Code, OpenAI Codex, GitHub Copilot, and Cursor.
