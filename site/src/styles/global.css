@@ -4,46 +4,62 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --color-accent: oklch(63% 0.18 252);
+  /* Cobalt-leaning blue: lower lightness + chroma than a screen-bright blue. */
+  --color-accent: oklch(45% 0.14 258);
+  --color-accent-hover: oklch(40% 0.14 258);
 }
 
-:root {
-  color-scheme: light dark;
-}
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
 
-html {
-  font-family: var(--font-sans);
-  scroll-behavior: smooth;
-}
-
-@media (prefers-reduced-motion: reduce) {
   html {
-    scroll-behavior: auto;
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
   }
-}
 
-body {
-  background: white;
-  color: oklch(20% 0.02 250);
-  min-height: 100vh;
-}
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
 
-@media (prefers-color-scheme: dark) {
   body {
-    background: oklch(15% 0.02 250);
-    color: oklch(92% 0.01 250);
+    background: white;
+    color: oklch(20% 0.02 250);
+    min-height: 100vh;
   }
-}
 
-a {
-  color: var(--color-accent);
-}
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: oklch(15% 0.02 250);
+      color: oklch(92% 0.01 250);
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    /* Lift the accent for dark mode so contrast against dark backgrounds stays readable. */
+    :root {
+      --color-accent: oklch(70% 0.13 258);
+      --color-accent-hover: oklch(78% 0.13 258);
+    }
+  }
 
-code,
-pre {
-  font-family: var(--font-mono);
+  /*
+   * Default link color uses the cobalt accent. Wrapped in @layer base so
+   * Tailwind utility classes like `text-white` can override it without
+   * specificity hacks — without the layer, this unlayered rule would win
+   * against Tailwind's layered utilities.
+   */
+  a {
+    color: var(--color-accent);
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  code,
+  pre {
+    font-family: var(--font-mono);
+  }
 }
