@@ -8,11 +8,25 @@
 
 AI Project Standard is an open-source repository template for long-term human and AI collaboration.
 
+This repository is both a reusable template and a reference implementation for adopting Open Source and/or Human-AI Collaboration standards.
+
 ## Why this exists
 
 Many repositories have prompts but lack durable structure, review rules, and continuity practices. This project provides a practical baseline that combines:
 - professional open-source repository standards
 - a dedicated AI workspace layer for operational context
+
+## Profiles
+
+The standard is composed of two independent baselines, available in three adoption profiles:
+
+- **OSS-only** — open-source governance without AI files.
+- **AI-only** — Human-AI Collaboration files for an existing repository.
+- **Combined** — both baselines, as in this repository.
+
+See [docs/standard.md](docs/standard.md) for the conceptual definition, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps.
+
+This repository can also be used as a GitHub template (enabled from v0.2.0).
 
 ## Who this is for
 

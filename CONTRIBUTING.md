@@ -26,3 +26,15 @@ This repository defines project structure and collaboration standards. Contribut
 - Documentation is updated where needed
 - Changes follow branch naming and workflow rules
 - Human review requested
+
+## Versioning
+
+This repository is itself a versioned standard. Releases follow Semantic Versioning, applied to the standard's adopter-facing surface — not to internal file structure.
+
+- **MAJOR** — renaming or removing a required file or profile path; changing the meaning of a profile; redefining `AGENTS.md` core rules (approval model, branch policy). Adopters need a migration step.
+- **MINOR** — adding new files, profiles, optional documents, new CI checks that don't fail existing adopters, new AI tool support. Adopters can pull in changes selectively.
+- **PATCH** — wording fixes, typo corrections, internal restructuring of existing files that doesn't change adopter-facing paths.
+
+Every MAJOR release lists adopter-impacting changes under a `### Breaking changes for adopters` subsection in `CHANGELOG.md`.
+
+See [docs/adoption.md](docs/adoption.md) for the recommended update workflow for downstream adopters.
