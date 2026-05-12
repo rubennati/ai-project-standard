@@ -10,7 +10,7 @@
 
 AI Project Standard is a starting baseline for open-source projects that use AI.
 
-**Four pillars, one repository:** human-AI collaboration, open-source operations, software engineering, knowledge and documentation. Adoptable as the full template, in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering five common starting points from greenfield AI-native projects to AI adoption in existing repositories.
+**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable as the full template, in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
 
 The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
 
@@ -22,13 +22,12 @@ The repository is the operational layer — workflows, AI state, governance, tem
 | **Human-AI Collaboration** | Drop AI conventions into an existing repository. |
 | **Combined** | Both, as in this repository. |
 
-Common adoption paths the standard is designed for:
+Four common adoption paths — a 2×2 grid of *new vs. existing* × *with vs. without AI*:
 
-1. Greenfield AI-native project.
+1. New project, with AI from day one.
 2. AI into an existing repository (brownfield).
-3. Clean open-source start.
+3. New open-source project, no AI.
 4. Professionalising an existing open-source project.
-5. AI and open source from scratch.
 
 See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps. Available as a GitHub template from v0.2.0.
 
