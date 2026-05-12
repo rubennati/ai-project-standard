@@ -1,0 +1,36 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { docTitle, docDescription, sortDocs } from "../../utils/docs";
+
+const base = import.meta.env.BASE_URL;
+const all = await getCollection("docs");
+// Hide the docs/index.md entry from the listing — its content lives at the
+// top of this page.
+const entries = sortDocs(all.filter((entry) => entry.id !== "index"));
+---
+
+<Base
+  title="Documentation — AI Project Standard"
+  description="Reader version of the in-repo documentation: the standard, profiles, adoption, AI workspace, Git workflow, and more."
+>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Documentation</h1>
+  <p class="mt-4 max-w-2xl opacity-80">
+    The reader version of the strict in-repo docs at
+    <a href="https://github.com/rubennati/ai-project-standard/tree/main/docs">/docs</a>.
+    For long-form guides and use-case walk-throughs, see <a href={`${base}use-cases`}>Use cases</a>.
+  </p>
+
+  <ul class="mt-12 grid gap-6 sm:grid-cols-2">
+    {
+      entries.map((entry) => (
+        <li class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+          <a href={`${base}docs/${entry.id}`} class="text-lg font-semibold no-underline">
+            {docTitle(entry)}
+          </a>
+          <p class="mt-2 text-sm opacity-80">{docDescription(entry)}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>
