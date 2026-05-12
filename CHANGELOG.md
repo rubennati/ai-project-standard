@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Dependabot version updates
+
+- `.github/dependabot.yml` — weekly version updates for the `/site` npm ecosystem and the repo-wide `github-actions` ecosystem. Minor and patch bumps are grouped into one PR per ecosystem per week; majors stay un-grouped so each can be reviewed deliberately. Pairs with the already-on Dependabot *security* updates. Closes the Scorecard "Dependency-Update-Tool" gap.
+
 ### Added — Reputation files
 
 - `CITATION.cff` — academic-citation metadata. GitHub renders a "Cite this repository" button automatically when this file is present.
