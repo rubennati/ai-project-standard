@@ -7,6 +7,7 @@ This documentation set defines the project baseline and collaboration model.
 - [The Standard](./standard.md) — what the standard is, mandatory vs optional, philosophy
 - [Profiles](./profiles.md) — exact file lists for OSS-only, AI-only, and combined adoption
 - [Adoption](./adoption.md) — how to adopt each profile and update across versions
+- [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
 
 ## Getting started
 
