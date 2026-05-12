@@ -1,0 +1,32 @@
+---
+import Base from "../layouts/Base.astro";
+const base = import.meta.env.BASE_URL;
+---
+
+<Base
+  title="Page not found — AI Project Standard"
+  description="The page you requested could not be found."
+>
+  <section class="flex flex-col items-start gap-6">
+    <p class="text-sm uppercase tracking-widest opacity-60">404</p>
+    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Page not found.</h1>
+    <p class="max-w-2xl text-lg opacity-80">
+      The link you followed might be outdated, or the page may have moved. Try one of the entry
+      points below.
+    </p>
+    <div class="flex flex-wrap gap-4">
+      <a
+        href={base}
+        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:bg-[var(--color-accent-hover)]"
+      >
+        Go home
+      </a>
+      <a
+        href={`${base}docs`}
+        class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
+      >
+        Browse the docs
+      </a>
+    </div>
+  </section>
+</Base>

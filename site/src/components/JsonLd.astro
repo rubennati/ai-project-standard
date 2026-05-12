@@ -1,0 +1,64 @@
+---
+/**
+ * JSON-LD structured data for search engines.
+ *
+ * Renders one or more schemas. Defaults to Organization + WebSite + SoftwareSourceCode
+ * which together describe "who" maintains the repo, "where" the site lives, and
+ * "what" the code project is. Page-specific schemas (BreadcrumbList, Article, etc.)
+ * can be appended via the `extra` prop.
+ */
+interface Props {
+  extra?: Record<string, unknown>[];
+}
+
+const { extra = [] } = Astro.props;
+
+const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
+const repoUrl = "https://github.com/rubennati/ai-project-standard";
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "AI Project Standard",
+  url: site,
+  logo: `${site}icon.svg`,
+  sameAs: [repoUrl],
+};
+
+const website = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "AI Project Standard",
+  url: site,
+  description:
+    "A repository standard for long-term human and AI collaboration. Open Source baseline and Human-AI Collaboration baseline in one reference implementation.",
+};
+
+const softwareSourceCode = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareSourceCode",
+  name: "AI Project Standard",
+  description:
+    "Reusable repository template and reference implementation for adopting Open Source and Human-AI Collaboration standards.",
+  codeRepository: repoUrl,
+  url: site,
+  license: "https://opensource.org/licenses/MIT",
+  programmingLanguage: "Markdown",
+  author: {
+    "@type": "Person",
+    name: "Ruben Nati",
+    url: "https://github.com/rubennati",
+  },
+};
+
+const schemas = [organization, website, softwareSourceCode, ...extra];
+---
+
+{
+  schemas.map((schema) => (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(schema)}
+    />
+  ))
+}
