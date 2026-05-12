@@ -31,9 +31,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - Minor markdown formatting fixes in `README.md`, `SECURITY.md`, `AGENTS.md`, `docs/getting-started.md`, and the issue templates to satisfy the new lint rules. No content changes.
 - `README.md` — new "Website" section documenting the Pages URL and the one-time maintainer setup step.
 
-### Added — PR 6 (Pages deploy)
+### Added — PR 6 (Pages deploy + custom domain)
 
 - `.github/workflows/pages.yml` — builds `site/` with Node 20 LTS and Astro 5, uploads the artifact, and deploys via `actions/deploy-pages@v4`. Triggered by pushes to `main` that touch `site/`, `docs/`, or the workflow itself, plus `workflow_dispatch`. Concurrency group `pages` with `cancel-in-progress: false`.
+- `site/public/CNAME` — pins the custom domain `ai-standard.rubennati.at` so each Actions-based deploy preserves it (GitHub Pages settings alone don't survive workflow deploys).
+- `site/astro.config.mjs` — `site` updated to the custom domain; `base` removed (custom domain serves from root).
+- `site/public/robots.txt` — sitemap URL updated to the custom domain.
 
 ## [0.1.0] - 2026-05-12
 
