@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Pin GitHub Actions to commit SHAs
+
+- `.github/workflows/*.yml` — every third-party and `actions/*` reference is now pinned to a full commit SHA with a `# vN` trailing comment for readability. Tag-based references (`@v4`) are mutable and have been compromised in the past; SHA pinning closes that vector. Dependabot's `github-actions` ecosystem (added separately) will keep these SHAs current. Closes the OpenSSF Scorecard "Pinned-Dependencies" gap (1/10 → expected ~8/10 on the next scan).
+
 ### Added — Dependabot version updates
 
 - `.github/dependabot.yml` — weekly version updates for the `/site` npm ecosystem and the repo-wide `github-actions` ecosystem. Minor and patch bumps are grouped into one PR per ecosystem per week; majors stay un-grouped so each can be reviewed deliberately. Pairs with the already-on Dependabot *security* updates. Closes the Scorecard "Dependency-Update-Tool" gap.
