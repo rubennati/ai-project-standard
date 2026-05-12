@@ -1,6 +1,6 @@
 # The AI Project Standard
 
-A starting baseline for open-source projects that use AI. Four pillars — human-AI collaboration, open-source operations, software engineering, knowledge and documentation. Three adoption profiles — Open Source, Human-AI Collaboration, Combined.
+A starting baseline for open-source projects that use AI. Four pillars — human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Three adoption profiles — Open Source, Human-AI Collaboration, Combined.
 
 This document is the inventory: pillars, profiles, adoption paths, mandatory files, optional add-ons, and the versioning policy. Deeper reasoning, architecture rationale, comparisons, and use-case walk-throughs live on the [knowledge layer](https://ai-standard.rubennati.at).
 
@@ -10,7 +10,7 @@ Each pillar is delivered as files, conventions, and workflows in the repository,
 
 1. **Human-AI collaboration** — `AGENTS.md` as the source of truth, multi-tool pointer files (Claude Code, OpenAI Codex, GitHub Copilot, Cursor), the `.ai/` operational workspace, the practical-collaboration guide.
 2. **Open-source operations** — `README`, `LICENSE`, `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, `SUPPORT`, issue and PR templates, `CODEOWNERS`, `FUNDING`, `CITATION`.
-3. **Software engineering** — CI workflows (lint, link check, profile completeness), versioning policy, Git workflow, branch protection, dependency automation, security baseline, OpenSSF Scorecard.
+3. **Engineering operations** — CI workflows (lint, link check, profile completeness), versioning policy, Git workflow, branch protection, dependency automation, security baseline, OpenSSF Scorecard.
 4. **Knowledge and documentation** — the in-repo `docs/` strict reader and the Astro-powered public knowledge layer (long-form, SEO, blog, research).
 
 ## Three adoption profiles
@@ -19,19 +19,18 @@ The four pillars are exposed in three adoption profiles that share one repositor
 
 - **Open Source profile** — pillars 2, 3, 4 without AI files.
 - **Human-AI Collaboration profile** — pillar 1 plus operational state; drops into an existing repository without redoing OSS scaffolding.
-- **Combined profile** — all four pillars; the full reference implementation in this repository.
+- **Combined profile** — all four pillars; the working reference in this repository.
 
 See [profiles.md](./profiles.md) for the exact file lists and [adoption.md](./adoption.md) for adoption steps.
 
-## Five adoption paths
+## Four adoption paths
 
-The common starting points the standard is designed for:
+The common starting points the standard is designed for — a 2×2 grid of *new vs. existing project* × *with vs. without AI*:
 
-1. **Greenfield AI-native project** — Combined profile, full template, day one.
+1. **New project, with AI from day one** — Combined profile, full template.
 2. **AI into an existing repository (brownfield)** — Human-AI Collaboration profile alongside whatever the repository already has. The most common case in practice.
-3. **Clean open-source start** — Open Source profile only; AI files stay out.
+3. **New open-source project, no AI** — Open Source profile only.
 4. **Professionalising an existing open-source project** — pull in Open Source profile pieces (governance, security, CI) where they are missing.
-5. **AI and open source from scratch** — Combined profile, with the operational, knowledge, and engineering layers wired up.
 
 Walk-throughs for each path live on the [knowledge layer](https://ai-standard.rubennati.at/use-cases).
 
@@ -42,7 +41,7 @@ The standard is split across two layers by design:
 - **Operational layer (this repository)** — short, dense files used during day-to-day work. `.ai/` is operational state, not documentation. `docs/` is the strict reader. Root files are governance. No marketing, no long-form essays.
 - **Knowledge layer (the GitHub Pages site)** — the public face. Use-case walk-throughs, deep guides, blog, comparisons, research, SEO. Pulls content from `docs/` where appropriate; adds long-form content of its own.
 
-The repository itself serves as the reference implementation — every file, workflow, and convention runs in this repository, not just on paper.
+The repository itself serves as the working reference — every file, workflow, and convention runs in this repository, not just on paper.
 
 ## Mandatory files
 

@@ -5,14 +5,14 @@ const base = import.meta.env.BASE_URL;
 
 <Base
   title="AI Project Standard"
-  description="A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, software engineering, knowledge and documentation."
+  description="A starting baseline for open-source projects that use AI. Curated conventions across four pillars — human-AI collaboration, open-source operations, engineering operations, knowledge and documentation."
 >
   <section class="flex flex-col gap-6">
     <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
       A starting baseline for open-source projects that use AI.
     </h1>
     <p class="max-w-2xl text-lg">
-      Four pillars, three profiles, five adoption paths. Clone the template, browse the playbook.
+      Curated conventions across four pillars. Clone the whole template, adopt by profile, or pick the pieces that fit.
     </p>
     <div class="flex flex-wrap gap-4">
       <a
@@ -48,7 +48,7 @@ const base = import.meta.env.BASE_URL;
         </p>
       </article>
       <article class="flex flex-col gap-2">
-        <h3 class="text-lg font-semibold">Software engineering</h3>
+        <h3 class="text-lg font-semibold">Engineering operations</h3>
         <p>
           CI workflows, versioning policy, Git workflow, branch protection, dependency automation,
           security baseline, OpenSSF Scorecard.
@@ -80,19 +80,18 @@ const base = import.meta.env.BASE_URL;
       </article>
       <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
         <h3 class="text-lg font-semibold">Combined</h3>
-        <p>All four pillars. The full reference implementation in this repository.</p>
+        <p>All four pillars. The working reference in this repository.</p>
       </article>
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">Five adoption paths</h2>
+    <h2 class="text-2xl font-semibold">Four adoption paths</h2>
     <ol class="ml-5 list-decimal space-y-2">
-      <li>Greenfield AI-native project — Combined profile, day one.</li>
+      <li>New project, with AI from day one — Combined profile.</li>
       <li>AI into an existing repository — Human-AI Collaboration profile alongside what already exists.</li>
-      <li>Clean open-source start — Open Source profile only.</li>
+      <li>New open-source project, no AI — Open Source profile only.</li>
       <li>Professionalising an existing open-source project — pull in the parts that are missing.</li>
-      <li>AI and open source from scratch — Combined profile, full stack.</li>
     </ol>
     <p>
       Walk-throughs for each path live in <a href={`${base}use-cases`}>Use cases</a>.
@@ -104,7 +103,7 @@ const base = import.meta.env.BASE_URL;
     <p class="max-w-3xl">
       The repository is the operational layer — workflows, AI state, governance, templates. This site
       is the knowledge layer — explanations, comparisons, tutorials, research. The repository itself
-      serves as the reference implementation: every file and workflow runs here, not just on paper.
+      serves as the working reference: every file and workflow runs here, not just on paper.
     </p>
   </section>
 </Base>

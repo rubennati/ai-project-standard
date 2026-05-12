@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Positioning refinements (stacked on the refresh)
+
+Self-critical follow-up to the positioning refresh — four honest corrections.
+
+- **Hero subtitle** rewritten from a three-number taxonomy ("Four pillars, three profiles, five adoption paths. Clone the template, browse the playbook.") to a value-first phrasing: "Curated conventions across four pillars. Clone the whole template, adopt by profile, or pick the pieces that fit." The numbers still appear, but in the sections below where they get explained.
+- **Pillar 3 renamed** from "Software engineering" to "Engineering operations" everywhere (`README.md`, `docs/standard.md`, `site/src/pages/index.astro`, JSON-LD). Parallel to "Open-source operations" (Pillar 2), and honest: we ship operations (CI, dependency, supply-chain, security workflows), not engineering depth.
+- **Adoption paths collapsed** from five to four. Path 1 ("Greenfield AI-native") and Path 5 ("AI and open source from scratch") were near-duplicates; merged into a single "New project, with AI from day one". The remaining four form a clean 2×2 grid of *new vs. existing* × *with vs. without AI*.
+- **"Reference implementation" → "working reference"** everywhere it referred to this repository (`docs/standard.md`, `docs/profiles.md` future-state, `site/src/pages/index.astro`, `site/src/pages/profiles.astro`). The phrase was technically aspirational (a reference implementation is a living app), where "working reference" describes what we actually are: a repository where the conventions and workflows run.
+
+No structural changes, no file moves. Stylistic and honest.
+
 ### Changed — Positioning refresh: four pillars, five adoption paths
 
 Removes all "what this is not" / justification wording and reframes the standard descriptively. Adopters now see what they get, not why we're allowed to call it a standard.
