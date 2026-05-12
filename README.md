@@ -8,28 +8,29 @@
 
 > Early draft: this repository is a work in progress and will be refined through maintainer review.
 
-AI Project Standard is an open-source repository template for long-term human and AI collaboration.
+AI Project Standard is a starting baseline for open-source projects that use AI.
 
-This repository is both a reusable template and a reference implementation for adopting Open Source and/or Human-AI Collaboration standards.
+**Four pillars, one repository:** human-AI collaboration, open-source operations, software engineering, knowledge and documentation. Adoptable as the full template, in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering five common starting points from greenfield AI-native projects to AI adoption in existing repositories.
 
-## Why this exists
+The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
 
-Many repositories have prompts but lack durable structure, review rules, and continuity practices. This project provides a practical baseline that combines:
+## Profiles and paths
 
-- professional open-source repository standards
-- a dedicated AI workspace layer for operational context
+| Profile | When to pick it |
+|---|---|
+| **Open Source** | A clean open-source baseline without AI files. |
+| **Human-AI Collaboration** | Drop AI conventions into an existing repository. |
+| **Combined** | Both, as in this repository. |
 
-## Profiles
+Common adoption paths the standard is designed for:
 
-The standard is composed of two independent baselines, available in three adoption profiles:
+1. Greenfield AI-native project.
+2. AI into an existing repository (brownfield).
+3. Clean open-source start.
+4. Professionalising an existing open-source project.
+5. AI and open source from scratch.
 
-- **OSS-only** — open-source governance without AI files.
-- **AI-only** — Human-AI Collaboration files for an existing repository.
-- **Combined** — both baselines, as in this repository.
-
-See [docs/standard.md](docs/standard.md) for the conceptual definition, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps.
-
-This repository can also be used as a GitHub template (enabled from v0.2.0).
+See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps. Available as a GitHub template from v0.2.0.
 
 ## Website
 
@@ -37,50 +38,14 @@ The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It ca
 
 **Maintainer setup (one-time):** Settings → Pages → Source: "GitHub Actions". The custom domain is pinned via [`site/public/CNAME`](site/public/CNAME) so each deploy preserves it.
 
-## Who this is for
+## Repository structure
 
-- Maintainers of open-source or internal engineering projects
-- Teams introducing AI agents into daily workflows
-- Organizations that require traceability and human oversight
+- `.github/` — platform templates, workflows, automation
+- `docs/` — strict reader documentation
+- `.ai/` — AI operational workspace (state, routing, decisions)
+- Root files — governance, contribution policy, security, support
 
-## What this is / What this is not
-
-### What this is
-
-- A project structure and collaboration standard
-- A repository baseline with governance, workflows, and review controls
-- A shared workspace model for AI task routing, state, and decisions
-
-### What this is not
-
-- Not an application starter with business logic
-- Not a prompt dump without process controls
-- Not a replacement for human accountability
-
-## Repository contents
-
-- Root governance files: contribution, security, conduct, changelog, roadmap
-- `.github/`: issue templates, pull request template, and CI workflow
-- `docs/`: project workflow and policy documentation
-- `.ai/`: AI workspace for routing, state, decisions, and quality loops
-
-## AI workspace layer
-
-The `.ai/` directory stores operational context used during AI-assisted execution. It helps preserve continuity across sessions while keeping project-facing documentation separate.
-
-See `docs/ai-workspace-layer.md` for model details.
-
-## Git workflow
-
-This repository uses GitHub Flow / trunk-based development:
-
-- `main` is stable and protected
-- work happens on short-lived branches (`feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`)
-- pull requests are required before merge
-
-See `docs/git-workflow.md` and `docs/branch-protection.md`.
-
-For practical AI-assisted branch and PR workflows, see `docs/practical-ai-collaboration.md`.
+The `.ai/` directory is **operational state**, not documentation. It holds the AI's execution context, task tracking, and continuity layer. See [`docs/ai-workspace-layer.md`](docs/ai-workspace-layer.md) for the model.
 
 ## Quick start
 
@@ -89,12 +54,7 @@ For practical AI-assisted branch and PR workflows, see `docs/practical-ai-collab
 3. For AI-assisted work, load `.ai/state.md` and `.ai/routing.md`.
 4. Make focused changes and open a pull request.
 
-## Project structure
-
-- `.github/` - platform templates and automation
-- `docs/` - human-facing standards and workflows
-- `.ai/` - AI operational workspace
-- root files - governance and contribution policy
+See [`docs/git-workflow.md`](docs/git-workflow.md), [`docs/branch-protection.md`](docs/branch-protection.md), and [`docs/practical-ai-collaboration.md`](docs/practical-ai-collaboration.md) for the workflow detail.
 
 ## Roadmap
 

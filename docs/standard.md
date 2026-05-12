@@ -1,71 +1,74 @@
 # The AI Project Standard
 
-This document defines the standard itself: what it is, what it is not, what is mandatory, and what is optional.
+A starting baseline for open-source projects that use AI. Four pillars — human-AI collaboration, open-source operations, software engineering, knowledge and documentation. Three adoption profiles — Open Source, Human-AI Collaboration, Combined.
 
-This repository is both a reusable template and a reference implementation for adopting Open Source and/or Human-AI Collaboration standards.
+This document is the inventory: pillars, profiles, adoption paths, mandatory files, optional add-ons, and the versioning policy. Deeper reasoning, architecture rationale, comparisons, and use-case walk-throughs live on the [knowledge layer](https://ai-standard.rubennati.at).
 
-## What the standard is
+## Four pillars
 
-A small, opinionated set of repository conventions that make a project safe for long-term collaboration between humans and AI systems. It covers structure, governance, review controls, and operational state — not application code.
+Each pillar is delivered as files, conventions, and workflows in the repository, with long-form explanations on the knowledge layer.
 
-The standard is delivered as:
+1. **Human-AI collaboration** — `AGENTS.md` as the source of truth, multi-tool pointer files (Claude Code, OpenAI Codex, GitHub Copilot, Cursor), the `.ai/` operational workspace, the practical-collaboration guide.
+2. **Open-source operations** — `README`, `LICENSE`, `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, `SUPPORT`, issue and PR templates, `CODEOWNERS`, `FUNDING`, `CITATION`.
+3. **Software engineering** — CI workflows (lint, link check, profile completeness), versioning policy, Git workflow, branch protection, dependency automation, security baseline, OpenSSF Scorecard.
+4. **Knowledge and documentation** — the in-repo `docs/` strict reader and the Astro-powered public knowledge layer (long-form, SEO, blog, research).
 
-- a fixed file layout (governance, workspace, docs),
-- a small set of mandatory documents,
-- an optional set of supporting documents,
-- a versioning policy for the standard itself.
+## Three adoption profiles
 
-## What the standard is not
+The four pillars are exposed in three adoption profiles that share one repository and one version stream:
 
-- An application starter or framework.
-- A prompt collection.
-- A replacement for human accountability or code review.
-- A guarantee of quality — it provides structure, the team provides discipline.
+- **Open Source profile** — pillars 2, 3, 4 without AI files.
+- **Human-AI Collaboration profile** — pillar 1 plus operational state; drops into an existing repository without redoing OSS scaffolding.
+- **Combined profile** — all four pillars; the full reference implementation in this repository.
 
-## Two baselines, one repository
+See [profiles.md](./profiles.md) for the exact file lists and [adoption.md](./adoption.md) for adoption steps.
 
-The standard is composed of two independent baselines that can be adopted separately or together:
+## Five adoption paths
 
-### Open Source baseline
+The common starting points the standard is designed for:
 
-The minimum set of governance, licensing, and contribution controls needed to run a credible open-source project. Targets maintainers and contributors. Covers README, LICENSE, contribution rules, security policy, code of conduct, issue and pull-request templates, CI, and the Git workflow.
+1. **Greenfield AI-native project** — Combined profile, full template, day one.
+2. **AI into an existing repository (brownfield)** — Human-AI Collaboration profile alongside whatever the repository already has. The most common case in practice.
+3. **Clean open-source start** — Open Source profile only; AI files stay out.
+4. **Professionalising an existing open-source project** — pull in Open Source profile pieces (governance, security, CI) where they are missing.
+5. **AI and open source from scratch** — Combined profile, with the operational, knowledge, and engineering layers wired up.
 
-### Human-AI Collaboration baseline
+Walk-throughs for each path live on the [knowledge layer](https://ai-standard.rubennati.at/use-cases).
 
-The minimum set of files and conventions that make a repository legible to AI tools (Claude, Codex, GitHub Copilot, Cursor, and others) and keep human oversight intact. Covers `AGENTS.md`, tool-specific pointer files, the `.ai/` operational workspace, and the practical-collaboration guide.
+## Two-layer architecture
+
+The standard is split across two layers by design:
+
+- **Operational layer (this repository)** — short, dense files used during day-to-day work. `.ai/` is operational state, not documentation. `docs/` is the strict reader. Root files are governance. No marketing, no long-form essays.
+- **Knowledge layer (the GitHub Pages site)** — the public face. Use-case walk-throughs, deep guides, blog, comparisons, research, SEO. Pulls content from `docs/` where appropriate; adds long-form content of its own.
+
+The repository itself serves as the reference implementation — every file, workflow, and convention runs in this repository, not just on paper.
+
+## Mandatory files
+
+### Open Source profile
+
+`README.md`, `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`, a pull-request template, at least one issue template, a CI workflow, a documented Git workflow.
+
+### Human-AI Collaboration profile
+
+`AGENTS.md` as the source of truth, at least one tool-specific pointer file (e.g. `CLAUDE.md`), and a minimum `.ai/` workspace with `index.md`, `state.md`, `routing.md`, and `rules.md`.
 
 ### Combined profile
 
-Most projects benefit from adopting both baselines. The combined profile is the full set of files in this repository.
+Everything from both profiles above, in one repository.
 
-See [profiles.md](./profiles.md) for the exact file lists per profile, and [adoption.md](./adoption.md) for how to adopt each.
+## Optional add-ons
 
-## Architectural philosophy
+Roadmap, decision log, risk and error logs, domain notes, additional tool pointer files, branch-protection documentation, extended CI checks, GitHub Pages knowledge layer, `SUPPORT.md`, `CITATION.cff`, `FUNDING.yml`, `CODEOWNERS`, security baseline doc.
 
-The standard is split across two layers, by design:
+## Boundaries
 
-- **Operational layer (the repository):** short, dense, English files used during day-to-day work. `.ai/` is operational state; `docs/` is the strict reader; root files are governance. No marketing, no long-form essays.
-- **Knowledge layer (the GitHub Pages site, from v0.2.0):** the public face. Use-case walk-throughs, deep guides, blog, SEO, branding. Pulls content from `docs/` where appropriate; adds long-form content of its own.
+Outside the standard's scope — adopt these separately if needed:
 
-This separation keeps the repository scannable and the public site expressive without either bleeding into the other.
-
-## Mandatory, optional, out of scope
-
-### Mandatory for the Open Source baseline
-
-`README.md`, `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`, a pull-request template, at least one issue template, a CI workflow, and a documented Git workflow.
-
-### Mandatory for the Human-AI Collaboration baseline
-
-`AGENTS.md` as the source of truth, at least one tool-specific pointer file (e.g., `CLAUDE.md`), and a minimum `.ai/` workspace with `index.md`, `state.md`, `routing.md`, and `rules.md`.
-
-### Optional everywhere
-
-Roadmap, decision log, risk and error logs, domain notes, additional tool pointer files, branch-protection documentation, extended CI checks, GitHub Pages site.
-
-### Out of scope
-
-Code generation, application-specific guidance, language- or framework-specific conventions, secrets management beyond pointing at platform features, organizational governance beyond what a single repository needs.
+- Application code, language- or framework-specific conventions.
+- Secrets management beyond pointing at platform features.
+- Organisational governance beyond what a single repository needs.
 
 ## Versioning
 
@@ -74,8 +77,9 @@ The standard follows Semantic Versioning. See the `Versioning` section in [CONTR
 ## How to read the rest of the documentation
 
 - [profiles.md](./profiles.md) — exact file lists per profile.
-- [adoption.md](./adoption.md) — how to adopt each profile in a new or existing repository.
+- [adoption.md](./adoption.md) — adoption steps for each path.
 - [ai-workspace-layer.md](./ai-workspace-layer.md) — the role and shape of `.ai/`.
 - [practical-ai-collaboration.md](./practical-ai-collaboration.md) — real-world AI workflows.
-- [open-source-project-standard.md](./open-source-project-standard.md) — the OSS-baseline view.
+- [ai-tools.md](./ai-tools.md) — multi-tool conventions and supported AI tools.
+- [open-source-project-standard.md](./open-source-project-standard.md) — the open-source baseline view.
 - [git-workflow.md](./git-workflow.md), [branch-protection.md](./branch-protection.md) — Git conventions and protection rules.
