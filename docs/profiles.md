@@ -19,6 +19,7 @@ See [standard.md](./standard.md) for the conceptual definition and [adoption.md]
 | `CONTRIBUTING.md` | ✓ | – | Includes the Versioning policy. |
 | `CODE_OF_CONDUCT.md` | ✓ | – | |
 | `SECURITY.md` | ✓ | – | |
+| `SUPPORT.md` | ✓ | – | Issues vs Discussions guidance (added in v0.2.0). |
 | `ROADMAP.md` | ✓ | – | |
 | `CHANGELOG.md` | ✓ | – | Keep a Changelog format. |
 | `.github/ISSUE_TEMPLATE/bug_report.md` | ✓ | – | |
@@ -50,6 +51,7 @@ LICENSE
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 SECURITY.md
+SUPPORT.md
 ROADMAP.md
 CHANGELOG.md
 .github/ISSUE_TEMPLATE/bug_report.md
@@ -112,6 +114,7 @@ LICENSE
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 SECURITY.md
+SUPPORT.md
 ROADMAP.md
 CHANGELOG.md
 AGENTS.md
