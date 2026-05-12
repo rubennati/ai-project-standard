@@ -21,4 +21,5 @@ This documentation set defines the project baseline and collaboration model.
 ## Human-AI Collaboration baseline
 
 - [AI Workspace Layer](./ai-workspace-layer.md)
+- [AI Tools](./ai-tools.md)
 - [Practical AI Collaboration](./practical-ai-collaboration.md)

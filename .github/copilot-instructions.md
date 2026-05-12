@@ -1,18 +1,12 @@
 # Copilot Instructions
 
-Follow repository standards and keep outputs concise, technical, and reviewable.
+This file is a thin pointer. The source of truth for all AI tools is `AGENTS.md` at the project root.
 
-## Conventions
+Before proposing changes:
 
-- Use branch names: `feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`
-- Do not propose direct commits to `main`
-- Keep documentation changes accurate and structured
+- Read `AGENTS.md` for core rules and the approval model.
+- Read `.ai/routing.md` and `.ai/rules.md` for operational context.
+- Use branch names: `feature/*`, `fix/*`, `docs/*`, `refactor/*`, `experiment/*`.
+- Do not propose direct commits to `main`.
 
-## Approval and execution constraints
-
-- For commit, push, and merge rules see the "Approval" section in `AGENTS.md`
-- Keep changes scoped and ready for pull request review
-
-## AI workflow
-
-Follow `.ai/routing.md` and `.ai/rules.md` before suggesting implementation steps.
+Keep outputs concise, technical, and reviewable. Do not duplicate repository-wide rules here; add them to `AGENTS.md` instead.
