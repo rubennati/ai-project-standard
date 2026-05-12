@@ -6,11 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+<<<<<<< feature/tool-extension-conventions
+### Added — Tool extension conventions
+
+- `docs/ai-tools.md` — new "Optional tool extensions" section documenting agreed paths for team-versioned settings (`.claude/settings.json`, `.codex/config.toml`), personal gitignored overrides (`CLAUDE.local.md`, `.claude/settings.local.json`, `AGENTS.override.md`), path-specific GitHub Copilot instructions (`.github/instructions/**/*.instructions.md` with `applyTo:` frontmatter), and the cross-tool skills directory convention (`.claude/skills/`, `.agents/skills/`, `.github/skills/`).
+- No empty stub files committed by design — adopters wire extensions in when they need them.
+=======
 ### Added — AGENTS.md workflow upgrade
 
 - `AGENTS.md` — new "Workflow" section codifying the Understand → Plan → Implement → Verify → Review loop. Plan-first becomes the explicit norm for non-trivial work.
 - `AGENTS.md` — new "Standard quality commands" section recommending the `lint`/`test`/`build`/`typecheck` convention for adopters. Verifiable goals are the main quality lever for agents.
 - `AGENTS.md` — new "Overrides and local files" section documenting `AGENTS.override.md`, path-specific Copilot instructions (`.github/instructions/`), and the team vs. personal Claude settings split.
+>>>>>>> main
 
 ### Added — Reputation files
 
