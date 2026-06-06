@@ -1,0 +1,14 @@
+AI Project Standard
+
+Public website for the AI Project Standard project. The site currently covers the project baseline and related guidance for professional AI use in technical projects.
+
+Important public sections:
+- https://ai-standard.rubennati.at/
+- https://ai-standard.rubennati.at/use-cases
+- https://ai-standard.rubennati.at/profiles
+- https://ai-standard.rubennati.at/docs
+- https://ai-standard.rubennati.at/about
+
+Notes:
+- The /docs section is a public reader view of repository documentation.
+- The /blog page exists but is currently a placeholder.

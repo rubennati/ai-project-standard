@@ -7,12 +7,16 @@ interface Props {
   title: string;
   description?: string;
   ogType?: "website" | "article";
+  schemaType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
+  extraSchemas?: Record<string, unknown>[];
 }
 
 const {
   title,
   description = "A repository standard for long-term human and AI collaboration.",
   ogType = "website",
+  schemaType = "WebPage",
+  extraSchemas = [],
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
 ---
@@ -27,12 +31,11 @@ const base = import.meta.env.BASE_URL;
     <meta name="theme-color" content="#243b66" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
-    {/* TODO: replace with the real verification token from Google Search Console. */}
-    <meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN" />
     <SEO title={title} description={description} ogType={ogType} />
-    <JsonLd />
+    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} />
   </head>
   <body class="flex min-h-screen flex-col">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="border-b border-black/10 dark:border-white/10">
       <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
         <a href={base} class="font-semibold no-underline">AI Project Standard</a>
@@ -46,7 +49,7 @@ const base = import.meta.env.BASE_URL;
       </nav>
     </header>
 
-    <main class="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
+    <main id="main-content" class="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
       <slot />
     </main>
 
