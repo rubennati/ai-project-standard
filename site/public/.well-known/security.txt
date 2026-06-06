@@ -1,0 +1,4 @@
+Contact: https://github.com/rubennati/ai-project-standard/security/advisories/new
+Preferred-Languages: en, de
+Canonical: https://ai-standard.rubennati.at/.well-known/security.txt
+Expires: 2027-06-06T00:00:00.000Z

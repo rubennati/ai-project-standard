@@ -2,19 +2,23 @@
 /**
  * JSON-LD structured data for search engines.
  *
- * Renders one or more schemas. Defaults to Organization + WebSite + SoftwareSourceCode
- * which together describe "who" maintains the repo, "where" the site lives, and
- * "what" the code project is. Page-specific schemas (BreadcrumbList, Article, etc.)
- * can be appended via the `extra` prop.
+ * Renders page-aware schemas. The homepage gets Organization + WebSite, while
+ * other pages get a page-level schema by default. Page-specific schemas
+ * (BreadcrumbList, Article, etc.) can be appended via the `extra` prop.
  */
 interface Props {
+  title: string;
+  description: string;
+  pageType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
   extra?: Record<string, unknown>[];
 }
 
-const { extra = [] } = Astro.props;
+const { title, description, pageType = "WebPage", extra = [] } = Astro.props;
 
 const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
 const repoUrl = "https://github.com/rubennati/ai-project-standard";
+const pageUrl = Astro.url.toString();
+const isHomePage = Astro.url.pathname === "/";
 
 const organization = {
   "@context": "https://schema.org",
@@ -34,29 +38,27 @@ const website = {
     "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, engineering operations, knowledge and documentation.",
 };
 
-const softwareSourceCode = {
+const page = {
   "@context": "https://schema.org",
-  "@type": "SoftwareSourceCode",
-  name: "AI Project Standard",
-  description:
-    "Reusable repository template for adopting Open Source and Human-AI Collaboration conventions. Four pillars, three profiles, four adoption paths.",
-  codeRepository: repoUrl,
-  url: site,
-  license: "https://opensource.org/licenses/MIT",
-  programmingLanguage: "Markdown",
-  author: {
-    "@type": "Person",
-    name: "Ruben Nati",
-    url: "https://github.com/rubennati",
+  "@type": pageType,
+  name: title,
+  description,
+  url: pageUrl,
+  isPartOf: {
+    "@type": "WebSite",
+    name: "AI Project Standard",
+    url: site,
   },
 };
 
-const schemas = [organization, website, softwareSourceCode, ...extra];
+const baseSchemas = isHomePage ? [organization, website] : [page];
+const schemas = [...baseSchemas, ...extra];
 ---
 
 {
   schemas.map((schema) => (
     <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify(schema)}
     />

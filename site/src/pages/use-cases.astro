@@ -3,7 +3,11 @@ import Base from "../layouts/Base.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Base title="Use cases — AI Project Standard" description="Three concrete use cases the standard is designed for.">
+<Base
+  title="Use cases — AI Project Standard"
+  description="Three concrete use cases the standard is designed for."
+  schemaType="CollectionPage"
+>
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Use cases</h1>
   <p class="mt-4 max-w-2xl opacity-80">
     The standard targets three concrete situations. Each maps to a profile in <a href={`${base}profiles`}>Profiles</a>.

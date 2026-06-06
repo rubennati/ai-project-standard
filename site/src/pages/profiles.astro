@@ -3,7 +3,11 @@ import Base from "../layouts/Base.astro";
 const base = import.meta.env.BASE_URL;
 ---
 
-<Base title="Profiles — AI Project Standard" description="Three adoption profiles: OSS-only, AI-only, and Combined.">
+<Base
+  title="Profiles — AI Project Standard"
+  description="Three adoption profiles: OSS-only, AI-only, and Combined."
+  schemaType="CollectionPage"
+>
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Profiles</h1>
   <p class="mt-4 max-w-2xl opacity-80">
     Three profiles share one repository and one version stream. Pick the profile that matches your context.
