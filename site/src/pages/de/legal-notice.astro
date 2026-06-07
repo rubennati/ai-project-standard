@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getUi } from "../../i18n/ui";
+const ui = getUi("de");
+---
+
+<Base
+  title={ui.legalNotice}
+  description={ui.legalNoticeDescription}
+  locale="de"
+  routeKey="legalNotice"
+>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.legalNotice}</h1>
+
+  <section class="mt-8 max-w-3xl space-y-4">
+    <p>{ui.legalNoticeCopy}</p>
+    <p>{ui.legalNoticeNote}</p>
+  </section>
+</Base>

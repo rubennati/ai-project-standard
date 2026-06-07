@@ -1,0 +1,103 @@
+---
+import type { TermEntry } from "../../data/terms";
+import {
+  getGlossaryPath,
+  getLocalizedTermContent,
+  getTermPath,
+} from "../../data/term-utils";
+import { getUi, type SiteLocale } from "../../i18n/ui";
+
+interface Props {
+  lang: SiteLocale;
+  term: TermEntry;
+  allTerms: TermEntry[];
+}
+
+const { lang, term, allTerms } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const localized = getLocalizedTermContent(term, lang);
+const relatedEntries = term.related.map((name) => allTerms.find((candidate) => candidate.term === name)).filter(Boolean) as TermEntry[];
+const unresolvedRelated = term.related.filter((name) => !allTerms.some((candidate) => candidate.term === name));
+const ui = getUi(lang);
+---
+
+<article class="flex flex-col gap-8">
+  <header class="flex flex-col gap-4">
+    <nav aria-label="Breadcrumb" class="text-sm text-zinc-700 dark:text-zinc-300">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a href={lang === "de" ? `${base}de` : base} class="font-medium">{ui.breadcrumbHome}</a></li>
+        <li aria-hidden="true">/</li>
+        <li><a href={`${base}${getGlossaryPath(lang)}`} class="font-medium">{ui.glossaryIndex}</a></li>
+        <li aria-hidden="true">/</li>
+        <li class="text-zinc-900 dark:text-zinc-100">{localized.term}</li>
+      </ol>
+    </nav>
+
+    <div class="flex flex-col gap-2">
+      <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{localized.term}</h1>
+      <p class="max-w-3xl text-lg">{localized.shortDefinition}</p>
+    </div>
+  </header>
+
+  {localized.explanation && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.explanation}</h2>
+      <p class="max-w-3xl leading-7">{localized.explanation}</p>
+    </section>
+  )}
+
+  {localized.aiContext && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.aiContext}</h2>
+      <p class="max-w-3xl leading-7">{localized.aiContext}</p>
+    </section>
+  )}
+
+  {term.commonConfusion && term.commonConfusion.length > 0 && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.commonConfusion}</h2>
+      <ul class="list-disc pl-5">
+        {term.commonConfusion.map((item) => <li>{item}</li>)}
+      </ul>
+    </section>
+  )}
+
+  {(relatedEntries.length > 0 || unresolvedRelated.length > 0) && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.relatedTerms}</h2>
+      <ul class="flex flex-wrap gap-3">
+        {
+          relatedEntries.map((entry) => (
+            <li>
+              <a
+                href={`${base}${getTermPath(entry, lang)}`}
+                class="inline-flex rounded-full border border-black/10 px-3 py-1.5 text-sm no-underline dark:border-white/10"
+              >
+                {getLocalizedTermContent(entry, lang).term}
+              </a>
+            </li>
+          ))
+        }
+        {unresolvedRelated.map((item) => <li class="text-sm text-zinc-700 dark:text-zinc-300">{item}</li>)}
+      </ul>
+    </section>
+  )}
+
+  {term.aliases.length > 0 && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.aliases}</h2>
+      <p>{term.aliases.join(", ")}</p>
+    </section>
+  )}
+
+  {term.observedIn.length > 0 && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.observedIn}</h2>
+      <p>{term.observedIn.join(", ")}</p>
+    </section>
+  )}
+
+  <div>
+    <a href={`${base}${getGlossaryPath(lang)}`} class="font-medium">{ui.backToGlossary}</a>
+  </div>
+</article>

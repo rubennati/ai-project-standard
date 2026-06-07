@@ -1,15 +1,15 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getUi } from "../i18n/ui";
+import Base from "../../layouts/Base.astro";
+import { getUi } from "../../i18n/ui";
 const base = import.meta.env.BASE_URL;
-const ui = getUi("en");
+const ui = getUi("de");
 ---
 
 <Base
   title={ui.homeTitle}
   description={ui.homeDescription}
   schemaType="WebSite"
-  locale="en"
+  locale="de"
   routeKey="home"
 >
   <section class="flex flex-col gap-6">
@@ -17,13 +17,13 @@ const ui = getUi("en");
     <p class="max-w-2xl text-lg">{ui.homeLead}</p>
     <div class="flex flex-wrap gap-4">
       <a
-        href={`${base}about`}
+        href={`${base}de/about`}
         class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:bg-[var(--color-accent-hover)]"
       >
         {ui.aboutKnowledgeBase}
       </a>
       <a
-        href={`${base}glossary`}
+        href={`${base}de/glossary`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
         {ui.glossaryIndex}
@@ -57,8 +57,8 @@ const ui = getUi("en");
     <h2 class="text-2xl font-semibold">{ui.firstOrientationLayer}</h2>
     <p class="max-w-3xl">{ui.firstOrientationLayerCopy}</p>
     <p>
-      The project's technical reference remains available under <a href={`${base}docs`}>{ui.docs}</a>,
-      and the supporting term index remains available under <a href={`${base}glossary`}>{ui.glossaryIndex}</a>.
+      Die technische Referenz des Projekts bleibt unter <a href={`${base}docs`}>{ui.docs}</a> verfuegbar,
+      und der unterstuetzende Begriffsindex bleibt unter <a href={`${base}de/glossary`}>{ui.glossaryIndex}</a> erreichbar.
     </p>
   </section>
 </Base>

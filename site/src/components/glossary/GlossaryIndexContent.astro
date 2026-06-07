@@ -1,0 +1,195 @@
+---
+import type { TermEntry } from "../../data/terms";
+import {
+  getLocalizedTermContent,
+  getSourceBuckets,
+  getTermSlug,
+  getTermPath,
+  isProductLabel,
+  productKinds,
+  sourceChoiceLabels,
+  sourceChoices,
+} from "../../data/term-utils";
+import { getUi, type SiteLocale } from "../../i18n/ui";
+
+interface Props {
+  lang: SiteLocale;
+  terms: TermEntry[];
+}
+
+const { lang, terms } = Astro.props;
+const base = import.meta.env.BASE_URL;
+const ui = getUi(lang);
+
+const sortedTerms = [...terms].sort((a, b) => {
+  const productSort = Number(productKinds.has(a.kind)) - Number(productKinds.has(b.kind));
+  return productSort || a.term.localeCompare(b.term, "en");
+});
+---
+
+<section class="flex flex-col gap-4">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.glossaryTitle}</h1>
+  <p class="max-w-3xl text-lg">{ui.glossaryDescription}</p>
+  <p class="max-w-3xl text-sm leading-6 text-zinc-700 dark:text-zinc-300">{ui.glossaryIntro}</p>
+</section>
+
+<section class="mt-10 rounded-xl border border-black/10 bg-black/[0.02] p-4 dark:border-white/10 dark:bg-white/[0.03]">
+  <form class="grid gap-4" data-glossary-filters>
+    <label class="flex flex-col gap-1 text-sm font-medium">
+      {ui.search}
+      <input
+        class="rounded-md border border-black/10 bg-white px-3 py-2 text-base text-black outline-none transition focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/20 dark:border-white/10 dark:bg-black dark:text-white dark:focus-visible:border-white dark:focus-visible:ring-white/20"
+        type="search"
+        name="query"
+        placeholder={ui.searchPlaceholder}
+        autocomplete="off"
+        data-filter-query
+      />
+    </label>
+
+    <div class="grid gap-3 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+      <label class="flex items-center gap-3 rounded-md border border-black/10 bg-white px-3 py-2 text-sm font-medium dark:border-white/10 dark:bg-black">
+        <input
+          type="checkbox"
+          class="h-4 w-4 accent-black dark:accent-white"
+          data-filter-include-products
+        />
+        {ui.includeProductLabels}
+      </label>
+
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        {ui.whereDidISeeIt}
+        <select
+          class="rounded-md border border-black/10 bg-white px-3 py-2 text-base text-black outline-none transition focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/20 dark:border-white/10 dark:bg-black dark:text-white dark:focus-visible:border-white dark:focus-visible:ring-white/20"
+          name="source"
+          data-filter-source
+        >
+          <option value="">{ui.allSources}</option>
+          {
+            sourceChoices.map((choice) => (
+              <option value={choice}>{sourceChoiceLabels[lang][choice]}</option>
+            ))
+          }
+        </select>
+      </label>
+    </div>
+  </form>
+</section>
+
+<section class="mt-8">
+  <p
+    class="mb-4 text-sm text-zinc-700 dark:text-zinc-300"
+    data-glossary-count
+    data-prefix={ui.showing}
+    data-singular={ui.entry}
+    data-plural={ui.entries}
+  >
+    {ui.showing} {sortedTerms.length} {sortedTerms.length === 1 ? ui.entry : ui.entries}.
+  </p>
+
+  <ul class="divide-y divide-black/10 border-y border-black/10 dark:divide-white/10 dark:border-white/10" data-glossary-list>
+    {
+      sortedTerms.map((entry) => {
+        const localized = getLocalizedTermContent(entry, lang);
+        const searchText = [
+          entry.term,
+          localized.term,
+          entry.shortDefinition,
+          localized.shortDefinition,
+          entry.explanation ?? "",
+          localized.explanation ?? "",
+          entry.aiContext ?? "",
+          localized.aiContext ?? "",
+          ...entry.observedIn,
+          ...entry.aliases,
+          ...entry.related,
+          ...(entry.commonConfusion ?? []),
+        ]
+          .join(" ")
+          .toLowerCase();
+        const sourceBuckets = getSourceBuckets(entry);
+        const isProduct = isProductLabel(entry);
+
+        return (
+            <li
+              class="py-4"
+              data-term-item
+              data-slug={getTermSlug(entry)}
+            data-product={String(isProduct)}
+            data-source-buckets={sourceBuckets.join("|")}
+            data-search={searchText}
+          >
+            <a
+              href={`${base}${getTermPath(entry, lang)}`}
+              class="block rounded-md outline-none focus-visible:ring-2 focus-visible:ring-black/20 dark:focus-visible:ring-white/20"
+            >
+              <span class="block text-lg font-semibold">
+                {localized.term}
+                {localized.term !== entry.term && (
+                  <span class="ml-2 text-sm font-normal text-zinc-600 dark:text-zinc-400">
+                    {entry.term}
+                  </span>
+                )}
+                {isProduct && (
+                  <span class="ml-2 align-middle text-xs font-medium uppercase tracking-wide text-zinc-600 dark:text-zinc-400">
+                    {ui.productLabel}
+                  </span>
+                )}
+              </span>
+              <span class="mt-1 block text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+                {localized.shortDefinition}
+              </span>
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
+
+<script is:inline>
+  (() => {
+    const root = document.querySelector("[data-glossary-filters]");
+    const list = document.querySelector("[data-glossary-list]");
+    const count = document.querySelector("[data-glossary-count]");
+    if (!root || !list || !count) return;
+
+    const queryInput = root.querySelector("[data-filter-query]");
+    const includeProductsInput = root.querySelector("[data-filter-include-products]");
+    const sourceSelect = root.querySelector("[data-filter-source]");
+    const items = Array.from(list.querySelectorAll("[data-term-item]"));
+
+    const update = () => {
+      const query = (queryInput?.value ?? "").trim().toLowerCase();
+      const includeProducts = Boolean(includeProductsInput?.checked);
+      const source = sourceSelect?.value ?? "";
+      const queryActive = query.length > 0;
+      const prefix = count.getAttribute("data-prefix") ?? "Showing";
+      const singular = count.getAttribute("data-singular") ?? "entry";
+      const plural = count.getAttribute("data-plural") ?? "entries";
+
+      let visible = 0;
+
+      for (const item of items) {
+        const searchable = item.getAttribute("data-search") ?? "";
+        const isProduct = item.getAttribute("data-product") === "true";
+        const sourceBuckets = (item.getAttribute("data-source-buckets") ?? "").split("|");
+
+        const matchesQuery = query === "" || searchable.includes(query);
+        const matchesSource = source === "" || sourceBuckets.includes(source);
+        const allowProduct = includeProducts || queryActive;
+        const show = matchesQuery && matchesSource && (!isProduct || allowProduct);
+
+        item.hidden = !show;
+        if (show) visible += 1;
+      }
+
+      count.textContent = `${prefix} ${visible} ${visible === 1 ? singular : plural}.`;
+    };
+
+    queryInput?.addEventListener("input", update);
+    includeProductsInput?.addEventListener("change", update);
+    sourceSelect?.addEventListener("change", update);
+    update();
+  })();
+</script>

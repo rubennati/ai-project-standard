@@ -11,14 +11,15 @@ interface Props {
   description: string;
   pageType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
   extra?: Record<string, unknown>[];
+  lang?: string;
 }
 
-const { title, description, pageType = "WebPage", extra = [] } = Astro.props;
+const { title, description, pageType = "WebPage", extra = [], lang = "en" } = Astro.props;
 
 const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
 const repoUrl = "https://github.com/rubennati/ai-project-standard";
 const pageUrl = Astro.url.toString();
-const isHomePage = Astro.url.pathname === "/";
+const isHomePage = ["/", "/de", "/de/"].includes(Astro.url.pathname);
 
 const organization = {
   "@context": "https://schema.org",
@@ -34,8 +35,8 @@ const website = {
   "@type": "WebSite",
   name: "AI Project Standard",
   url: site,
-  description:
-    "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, engineering operations, knowledge and documentation.",
+  inLanguage: lang,
+  description,
 };
 
 const page = {
@@ -44,6 +45,7 @@ const page = {
   name: title,
   description,
   url: pageUrl,
+  inLanguage: lang,
   isPartOf: {
     "@type": "WebSite",
     name: "AI Project Standard",

@@ -1,0 +1,81 @@
+---
+import GlossaryTermContent from "../../../components/glossary/GlossaryTermContent.astro";
+import { terms } from "../../../data/terms";
+import {
+  getGlossaryPath,
+  getLocalizedTermContent,
+  getTermPath,
+  getTermSlug,
+} from "../../../data/term-utils";
+import { getUi } from "../../../i18n/ui";
+import Base from "../../../layouts/Base.astro";
+
+export function getStaticPaths() {
+  return terms.map((term) => ({
+    params: { slug: getTermSlug(term) },
+    props: { term },
+  }));
+}
+
+const { term } = Astro.props as { term: (typeof terms)[number] };
+const localized = getLocalizedTermContent(term, "de");
+const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
+const pageUrl = new URL(getTermPath(term, "de"), site).toString();
+const glossaryUrl = new URL(getGlossaryPath("de"), site).toString();
+const ui = getUi("de");
+
+const extraSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": term.schemaType ?? "DefinedTerm",
+    name: localized.term,
+    description: localized.shortDefinition,
+    url: pageUrl,
+    inLanguage: "de",
+    inDefinedTermSet: glossaryUrl,
+    alternateName:
+      localized.term === term.term
+        ? term.aliases.length > 0
+          ? term.aliases
+          : undefined
+        : [term.term, ...term.aliases],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Startseite",
+        item: site,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: ui.glossaryIndex,
+        item: glossaryUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: localized.term,
+        item: pageUrl,
+      },
+    ],
+  },
+];
+---
+
+<Base
+  title={`${localized.term} — ${ui.glossaryTitle}`}
+  description={localized.shortDefinition}
+  ogType="article"
+  schemaType="WebPage"
+  extraSchemas={extraSchemas}
+  locale="de"
+  routeKey="glossaryTerm"
+  termSlug={getTermSlug(term)}
+>
+  <GlossaryTermContent lang="de" term={term} allTerms={terms} />
+</Base>

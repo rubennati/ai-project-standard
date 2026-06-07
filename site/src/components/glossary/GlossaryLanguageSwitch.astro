@@ -1,0 +1,21 @@
+---
+import { getUi, type SiteLocale } from "../../i18n/ui";
+
+interface Props {
+  currentLang: SiteLocale;
+  enHref: string;
+  deHref: string;
+}
+
+const { currentLang, enHref, deHref } = Astro.props;
+const ui = getUi(currentLang);
+---
+
+<nav
+  aria-label={ui.language}
+  class="flex flex-wrap items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300"
+>
+  <span class="font-medium">{ui.language}:</span>
+  <a href={enHref} aria-current={currentLang === "en" ? "page" : undefined}>{ui.english}</a>
+  <a href={deHref} aria-current={currentLang === "de" ? "page" : undefined}>{ui.german}</a>
+</nav>

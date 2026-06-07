@@ -1,0 +1,19 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getUi } from "../../i18n/ui";
+const ui = getUi("de");
+---
+
+<Base
+  title={ui.privacyPolicy}
+  description={ui.privacyPolicyDescription}
+  locale="de"
+  routeKey="privacyPolicy"
+>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.privacyPolicy}</h1>
+
+  <section class="mt-8 max-w-3xl space-y-4">
+    <p>{ui.privacyPolicyCopy}</p>
+    <p>{ui.privacyPolicyNote}</p>
+  </section>
+</Base>

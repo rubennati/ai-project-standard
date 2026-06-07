@@ -1,14 +1,14 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getUi } from "../i18n/ui";
-const ui = getUi("en");
+import Base from "../../layouts/Base.astro";
+import { getUi } from "../../i18n/ui";
+const ui = getUi("de");
 ---
 
 <Base
   title={`${ui.aboutTitle} — AI Project Standard`}
   description={ui.aboutDescription}
   schemaType="AboutPage"
-  locale="en"
+  locale="de"
   routeKey="about"
 >
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.aboutTitle}</h1>
@@ -21,17 +21,17 @@ const ui = getUi("en");
   <section class="mt-12 flex flex-col gap-3">
     <h2 class="text-2xl font-semibold">{ui.maintainer}</h2>
     <p>
-      Created and maintained by <a href="https://github.com/rubennati">Ruben Nati</a>. Contributions
-      welcome — see the
-      <a href="https://github.com/rubennati/ai-project-standard/blob/main/CONTRIBUTING.md">contribution guide</a>.
+      Erstellt und gepflegt von <a href="https://github.com/rubennati">Ruben Nati</a>. Beitraege
+      sind willkommen. Siehe dazu den
+      <a href="https://github.com/rubennati/ai-project-standard/blob/main/CONTRIBUTING.md">Contribution Guide</a>.
     </p>
   </section>
 
   <section class="mt-10 flex flex-col gap-3">
     <h2 class="text-2xl font-semibold">{ui.license}</h2>
     <p>
-      Released under the MIT License. See the
-      <a href="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE">LICENSE</a> file.
+      Veroeffentlicht unter der MIT-Lizenz. Siehe die
+      <a href="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE">LICENSE</a>-Datei.
     </p>
   </section>
 

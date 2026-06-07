@@ -3,6 +3,8 @@ interface Props {
   title: string;
   description: string;
   ogType?: "website" | "article";
+  alternates?: Array<{ href: string; hreflang: string }>;
+  xDefaultHref?: string;
   /**
    * Path or absolute URL to a social preview image (recommended 1200x630 PNG).
    * When omitted, og:image / twitter:image are skipped to avoid pointing at a
@@ -11,7 +13,7 @@ interface Props {
   image?: string;
 }
 
-const { title, description, ogType = "website", image } = Astro.props;
+const { title, description, ogType = "website", image, alternates = [], xDefaultHref } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).toString();
 const imageUrl = image
   ? image.startsWith("http")
@@ -24,6 +26,12 @@ const siteName = "AI Project Standard";
 <title>{title}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+{
+  alternates.map((alternate) => (
+    <link rel="alternate" hreflang={alternate.hreflang} href={alternate.href} />
+  ))
+}
+{xDefaultHref && <link rel="alternate" hreflang="x-default" href={xDefaultHref} />}
 
 <meta property="og:type" content={ogType} />
 <meta property="og:site_name" content={siteName} />

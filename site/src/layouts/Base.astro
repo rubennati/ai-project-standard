@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import SEO from "../components/SEO.astro";
 import JsonLd from "../components/JsonLd.astro";
+import GlossaryLanguageSwitch from "../components/glossary/GlossaryLanguageSwitch.astro";
+import { getAlternateLocale, getLocalizedPath, type LocalizedRouteKey } from "../i18n/routes";
+import { getUi, type SiteLocale } from "../i18n/ui";
 
 interface Props {
   title: string;
@@ -9,6 +12,9 @@ interface Props {
   ogType?: "website" | "article";
   schemaType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
   extraSchemas?: Record<string, unknown>[];
+  locale?: SiteLocale;
+  routeKey?: LocalizedRouteKey;
+  termSlug?: string;
 }
 
 const {
@@ -17,12 +23,36 @@ const {
   ogType = "website",
   schemaType = "WebPage",
   extraSchemas = [],
+  locale = "en",
+  routeKey,
+  termSlug,
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const ui = getUi(locale);
+const alternateLocale = getAlternateLocale(locale);
+const lang = locale;
+const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
+const localizedHome = toHref(getLocalizedPath(locale, "home"));
+const localizedAbout = toHref(getLocalizedPath(locale, "about"));
+const localizedGlossary = toHref(getLocalizedPath(locale, "glossaryIndex"));
+const localizedLegal = toHref(getLocalizedPath(locale, "legalNotice"));
+const localizedPrivacy = toHref(getLocalizedPath(locale, "privacyPolicy"));
+const docsHref = `${base}docs`;
+const hasAlternate = Boolean(routeKey);
+const alternatePath = routeKey
+  ? getLocalizedPath(alternateLocale, routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)
+  : undefined;
+const alternates = routeKey
+  ? [
+      { hreflang: "en", href: toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+      { hreflang: "de", href: toHref(getLocalizedPath("de", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+    ]
+  : [];
+const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,22 +61,31 @@ const base = import.meta.env.BASE_URL;
     <meta name="theme-color" content="#243b66" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
-    <SEO title={title} description={description} ogType={ogType} />
-    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} />
+    <SEO title={title} description={description} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
+    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
     <header class="border-b border-black/10 dark:border-white/10">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href={base} class="font-semibold no-underline">AI Project Standard</a>
-        <ul class="flex gap-6 text-sm">
-          <li><a href={`${base}use-cases`}>Use cases</a></li>
-          <li><a href={`${base}profiles`}>Profiles</a></li>
-          <li><a href={`${base}docs`}>Docs</a></li>
-          <li><a href={`${base}blog`}>Blog</a></li>
-          <li><a href={`${base}about`}>About</a></li>
-        </ul>
-      </nav>
+      <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <nav class="flex items-center justify-between gap-6">
+          <a href={localizedHome} class="font-semibold no-underline">AI Project Standard</a>
+          <ul class="flex gap-6 text-sm">
+            <li><a href={localizedHome}>{ui.home}</a></li>
+            <li><a href={docsHref}>{ui.docs}</a></li>
+            <li><a href={localizedAbout}>{ui.about}</a></li>
+          </ul>
+        </nav>
+        {
+          hasAlternate && alternatePath && (
+            <GlossaryLanguageSwitch
+              currentLang={locale}
+              enHref={toHref(getLocalizedPath("en", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+              deHref={toHref(getLocalizedPath("de", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+            />
+          )
+        }
+      </div>
     </header>
 
     <main id="main-content" class="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
@@ -56,7 +95,12 @@ const base = import.meta.env.BASE_URL;
     <footer class="border-t border-black/10 dark:border-white/10">
       <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-6 text-sm sm:flex-row sm:justify-between">
         <span class="text-zinc-700 dark:text-zinc-300">AI Project Standard — MIT licensed.</span>
-        <a href="https://github.com/rubennati/ai-project-standard" class="font-medium">Source on GitHub</a>
+        <div class="flex flex-wrap gap-4">
+          <a href={localizedGlossary} class="font-medium">{ui.glossaryIndex}</a>
+          <a href={localizedLegal} class="font-medium">{ui.legalNotice}</a>
+          <a href={localizedPrivacy} class="font-medium">{ui.privacyPolicy}</a>
+          <a href="https://github.com/rubennati/ai-project-standard" class="font-medium">{ui.sourceOnGitHub}</a>
+        </div>
       </div>
     </footer>
   </body>
