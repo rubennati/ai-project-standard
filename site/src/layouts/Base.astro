@@ -31,6 +31,7 @@ const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
 const alternateLocale = getAlternateLocale(locale);
 const lang = locale;
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
 const localizedHome = toHref(getLocalizedPath(locale, "home"));
 const localizedAbout = toHref(getLocalizedPath(locale, "about"));
@@ -38,6 +39,10 @@ const localizedGlossary = toHref(getLocalizedPath(locale, "glossaryIndex"));
 const localizedLegal = toHref(getLocalizedPath(locale, "legalNotice"));
 const localizedPrivacy = toHref(getLocalizedPath(locale, "privacyPolicy"));
 const docsHref = `${base}docs`;
+const isActive = (href: string) => {
+  const normalized = href.replace(/\/$/, "") || "/";
+  return currentPath === normalized || (normalized !== "/" && currentPath.startsWith(`${normalized}/`));
+};
 const hasAlternate = Boolean(routeKey);
 const alternatePath = routeKey
   ? getLocalizedPath(alternateLocale, routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)
@@ -67,24 +72,64 @@ const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey
   <body class="flex min-h-screen flex-col">
     <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
     <header class="border-b border-black/10 dark:border-white/10">
-      <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-4 sm:flex-row sm:items-center sm:justify-between">
-        <nav class="flex items-center justify-between gap-6">
-          <a href={localizedHome} class="font-semibold no-underline">AI Project Standard</a>
-          <ul class="flex gap-6 text-sm">
-            <li><a href={localizedHome}>{ui.home}</a></li>
-            <li><a href={docsHref}>{ui.docs}</a></li>
-            <li><a href={localizedAbout}>{ui.about}</a></li>
-          </ul>
-        </nav>
-        {
-          hasAlternate && alternatePath && (
-            <GlossaryLanguageSwitch
-              currentLang={locale}
-              enHref={toHref(getLocalizedPath("en", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
-              deHref={toHref(getLocalizedPath("de", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
-            />
-          )
-        }
+      <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-8">
+          <a href={localizedHome} class="shrink-0 font-semibold leading-none no-underline">
+            AI Project Standard
+          </a>
+          <nav aria-label={ui.primaryNavigation} class="flex flex-wrap items-center gap-2 text-sm">
+            <a
+              href={localizedHome}
+              aria-current={isActive(localizedHome) ? "page" : undefined}
+              class:list={{
+                "rounded-full px-3 py-1.5 no-underline transition": true,
+                "bg-black/5 font-semibold text-black dark:bg-white/10 dark:text-white":
+                  isActive(localizedHome),
+                "text-zinc-700 hover:bg-black/5 hover:text-black dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white":
+                  !isActive(localizedHome),
+              }}
+            >
+              {ui.home}
+            </a>
+            <a
+              href={docsHref}
+              aria-current={isActive(docsHref) ? "page" : undefined}
+              class:list={{
+                "rounded-full px-3 py-1.5 no-underline transition": true,
+                "bg-black/5 font-semibold text-black dark:bg-white/10 dark:text-white":
+                  isActive(docsHref),
+                "text-zinc-700 hover:bg-black/5 hover:text-black dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white":
+                  !isActive(docsHref),
+              }}
+            >
+              {ui.docs}
+            </a>
+            <a
+              href={localizedAbout}
+              aria-current={isActive(localizedAbout) ? "page" : undefined}
+              class:list={{
+                "rounded-full px-3 py-1.5 no-underline transition": true,
+                "bg-black/5 font-semibold text-black dark:bg-white/10 dark:text-white":
+                  isActive(localizedAbout),
+                "text-zinc-700 hover:bg-black/5 hover:text-black dark:text-zinc-300 dark:hover:bg-white/10 dark:hover:text-white":
+                  !isActive(localizedAbout),
+              }}
+            >
+              {ui.about}
+            </a>
+          </nav>
+        </div>
+        <div class="flex items-center justify-end">
+          {
+            hasAlternate && alternatePath && (
+              <GlossaryLanguageSwitch
+                currentLang={locale}
+                enHref={toHref(getLocalizedPath("en", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+                deHref={toHref(getLocalizedPath("de", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+              />
+            )
+          }
+        </div>
       </div>
     </header>
 
@@ -93,9 +138,9 @@ const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey
     </main>
 
     <footer class="border-t border-black/10 dark:border-white/10">
-      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-6 text-sm sm:flex-row sm:justify-between">
+      <div class="mx-auto flex max-w-5xl flex-col gap-3 px-6 py-6 text-sm sm:flex-row sm:items-center sm:justify-between">
         <span class="text-zinc-700 dark:text-zinc-300">AI Project Standard — MIT licensed.</span>
-        <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
           <a href={localizedGlossary} class="font-medium">{ui.glossaryIndex}</a>
           <a href={localizedLegal} class="font-medium">{ui.legalNotice}</a>
           <a href={localizedPrivacy} class="font-medium">{ui.privacyPolicy}</a>
