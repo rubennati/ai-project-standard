@@ -13,20 +13,20 @@ const ui = getUi(currentLang);
 
 <nav
   aria-label={ui.language}
-  class="inline-flex items-center gap-3 text-sm text-zinc-700 dark:text-zinc-300"
+  class="inline-flex items-center gap-2 text-sm text-zinc-700 dark:text-zinc-300"
 >
-  <span class="text-xs font-semibold uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
+  <span class="sr-only">
     {ui.language}
   </span>
-  <div class="inline-flex rounded-full border border-black/10 bg-black/[0.03] p-1 dark:border-white/10 dark:bg-white/[0.06]">
+  <div class="inline-flex rounded-full border border-black/10 bg-black/[0.03] p-1 shadow-sm dark:border-white/10 dark:bg-white/[0.06]">
     <a
       href={enHref}
       aria-current={currentLang === "en" ? "page" : undefined}
       class:list={{
-        "rounded-full px-3 py-1 font-semibold no-underline transition": true,
+        "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] no-underline transition": true,
         "bg-white text-black shadow-sm dark:bg-black dark:text-white":
           currentLang === "en",
-        "text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white":
+        "text-zinc-600 hover:bg-white/70 hover:text-black dark:text-zinc-400 dark:hover:bg-black/70 dark:hover:text-white":
           currentLang !== "en",
       }}
     >
@@ -36,10 +36,10 @@ const ui = getUi(currentLang);
       href={deHref}
       aria-current={currentLang === "de" ? "page" : undefined}
       class:list={{
-        "rounded-full px-3 py-1 font-semibold no-underline transition": true,
+        "rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] no-underline transition": true,
         "bg-white text-black shadow-sm dark:bg-black dark:text-white":
           currentLang === "de",
-        "text-zinc-600 hover:text-black dark:text-zinc-400 dark:hover:text-white":
+        "text-zinc-600 hover:bg-white/70 hover:text-black dark:text-zinc-400 dark:hover:bg-black/70 dark:hover:text-white":
           currentLang !== "de",
       }}
     >

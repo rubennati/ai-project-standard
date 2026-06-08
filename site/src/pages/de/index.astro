@@ -12,9 +12,9 @@ const ui = getUi("de");
   locale="de"
   routeKey="home"
 >
-  <section class="flex flex-col gap-6">
+  <section class="flex flex-col gap-6 rounded-2xl border border-black/10 bg-black/[0.02] px-6 py-8 dark:border-white/10 dark:bg-white/[0.03] sm:px-8 sm:py-10">
     <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{ui.homeHeading}</h1>
-    <p class="max-w-2xl text-lg">{ui.homeLead}</p>
+    <p class="max-w-3xl text-lg leading-8">{ui.homeLead}</p>
     <div class="flex flex-wrap gap-4">
       <a
         href={`${base}de/about`}
@@ -26,14 +26,14 @@ const ui = getUi("de");
         href={`${base}de/glossary`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
-        {ui.glossaryIndex}
+        {ui.glossarySecondaryLink}
       </a>
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">{ui.firstOrientationLayer}</h2>
-    <div class="grid gap-8 sm:grid-cols-2">
+    <h2 class="text-2xl font-semibold">{ui.whatThisSiteIsFor}</h2>
+    <div class="grid gap-6 sm:grid-cols-2">
       <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
         <h3 class="text-lg font-semibold">{ui.collectTerms}</h3>
         <p>{ui.collectTermsCopy}</p>
@@ -54,11 +54,21 @@ const ui = getUi("de");
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">{ui.firstOrientationLayer}</h2>
-    <p class="max-w-3xl">{ui.firstOrientationLayerCopy}</p>
-    <p>
-      Die technische Referenz des Projekts bleibt unter <a href={`${base}docs`}>{ui.docs}</a> verfügbar,
-      und der unterstützende Begriffsindex bleibt unter <a href={`${base}de/glossary`}>{ui.glossaryIndex}</a> erreichbar.
-    </p>
+    <h2 class="text-2xl font-semibold">{ui.whatIsAvailableNow}</h2>
+    <p class="max-w-3xl leading-7">{ui.whatIsAvailableNowCopy}</p>
+    <div class="grid gap-6 sm:grid-cols-3">
+      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">{ui.glossaryNow}</h3>
+        <p class="mt-2 leading-7">{ui.glossaryNowCopy}</p>
+      </article>
+      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">{ui.termPagesNow}</h3>
+        <p class="mt-2 leading-7">{ui.termPagesNowCopy}</p>
+      </article>
+      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+        <h3 class="text-lg font-semibold">{ui.docsNow}</h3>
+        <p class="mt-2 leading-7">{ui.docsNowCopy}</p>
+      </article>
+    </div>
   </section>
 </Base>

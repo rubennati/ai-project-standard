@@ -68,9 +68,9 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agent",
         shortDefinition:
-          "Ein System, das Ziele verfolgt, Schritte auswaehlt, Werkzeuge nutzt oder Aktionen ueber mehrere Schritte hinweg koordiniert.",
+          "Ein System, das Ziele verfolgt, Schritte auswählt, Werkzeuge nutzt oder Aktionen über mehrere Schritte hinweg koordiniert.",
         explanation:
-          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den naechsten Schritt auswaehlen und manchmal Werkzeuge oder andere Systeme nutzen, um ein Ziel zu erreichen.",
+          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den nächsten Schritt auswählen und manchmal Werkzeuge oder andere Systeme nutzen, um ein Ziel zu erreichen.",
         aiContext:
           "In KI-Produkten meint das Wort meist ein System, das mit etwas Autonomie handeln kann, statt nur auf einen einzelnen Prompt zu antworten.",
       },
@@ -91,7 +91,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agentic AI",
         shortDefinition:
-          "KI mit Fokus auf zielgerichtetes Handeln, Werkzeugnutzung und mehrschrittige Ausfuehrung.",
+          "KI mit Fokus auf zielgerichtetes Handeln, Werkzeugnutzung und mehrschrittige Ausführung.",
       },
     },
   },
@@ -110,7 +110,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agentic Workflow",
         shortDefinition:
-          "Ein Ablauf, in dem ein KI-System mehrere Schritte plant oder ausfuehrt, statt nur eine einzelne Antwort zu geben.",
+          "Ein Ablauf, in dem ein KI-System mehrere Schritte plant oder ausführt, statt nur eine einzelne Antwort zu geben.",
       },
     },
   },
@@ -129,7 +129,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "KI",
         shortDefinition:
-          "Ein Oberbegriff fuer Systeme, die Aufgaben ausfuehren, die mit Wahrnehmung, Schlussfolgern, Vorhersage oder Generierung verbunden sind.",
+          "Ein Oberbegriff für Systeme, die Aufgaben ausführen, die mit Wahrnehmung, Schlussfolgern, Vorhersage oder Generierung verbunden sind.",
       },
     },
   },
@@ -147,7 +147,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Der Einsatz von KI zum Schreiben, Erklaeren, Ueberarbeiten oder Pruefen von Code bei gleichbleibender menschlicher Verantwortung.",
+          "Der Einsatz von KI zum Schreiben, Erklären, Überarbeiten oder Prüfen von Code bei gleichbleibender menschlicher Verantwortung.",
       },
     },
   },
@@ -165,7 +165,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Der Einsatz von KI fuer breitere Softwarearbeit wie Coding, Debugging, Analyse, Dokumentation oder Planung.",
+          "Der Einsatz von KI für breitere Softwarearbeit wie Coding, Debugging, Analyse, Dokumentation oder Planung.",
       },
     },
   },
@@ -183,7 +183,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Der Einsatz von KI fuer breitere Engineering-Arbeit, einschliesslich Code, Systeme, Dokumentation, Arbeitsablaeufe und Entscheidungen.",
+          "Der Einsatz von KI für breitere Engineering-Arbeit, einschließlich Code, Systeme, Dokumentation, Arbeitsabläufe und Entscheidungen.",
       },
     },
   },
@@ -291,7 +291,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "OpenAIs chatbasiertes KI-Produkt fuer den Umgang mit Modellen, Werkzeugen und Produktfunktionen.",
+          "OpenAIs chatbasiertes KI-Produkt für den Umgang mit Modellen, Werkzeugen und Produktfunktionen.",
       },
     },
   },
@@ -380,9 +380,9 @@ export const terms: TermEntry[] = [
       de: {
         term: "Kontext",
         shortDefinition:
-          "Die Informationen, die ein Modell bei einer Antwort beruecksichtigen kann, einschliesslich Anweisungen, Eingaben und abgerufener Inhalte.",
+          "Die Informationen, die ein Modell bei einer Antwort berücksichtigen kann, einschließlich Anweisungen, Eingaben und abgerufener Inhalte.",
         explanation:
-          "Kontext ist alles, was das Modell fuer die aktuelle Anfrage sehen kann, zum Beispiel dein Prompt, fruehere Nachrichten, hochgeladene Dateien oder abgerufene Notizen.",
+          "Kontext ist alles, was das Modell für die aktuelle Anfrage sehen kann, zum Beispiel dein Prompt, frühere Nachrichten, hochgeladene Dateien oder abgerufene Notizen.",
         aiContext:
           "In KI- und LLM-Workflows ist Kontext zentral, weil Modelle deine privaten Dateien, aktuelle Aufgabe oder Projektregeln nicht automatisch kennen.",
       },
@@ -462,7 +462,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein vorkonfigurierter ChatGPT-aehnlicher Assistent mit eigenen Anweisungen, Verhalten oder Werkzeugzugriff.",
+          "Ein vorkonfigurierter ChatGPT-ähnlicher Assistent mit eigenen Anweisungen, Verhalten oder Werkzeugzugriff.",
       },
     },
   },
@@ -493,7 +493,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Deep Research",
         shortDefinition:
-          "Ein KI-gestuetzter Recherchemodus, der mehrere Schritte, Quellen und Zusammenfassungen kombiniert.",
+          "Ein KI-gestützter Recherchemodus, der mehrere Schritte, Quellen und Zusammenfassungen kombiniert.",
       },
     },
   },
@@ -526,9 +526,9 @@ export const terms: TermEntry[] = [
       de: {
         term: "Embedding",
         shortDefinition:
-          "Eine numerische Bedeutungsdarstellung, die fuer Aehnlichkeitsvergleiche oder Retrieval-Workflows genutzt wird.",
+          "Eine numerische Bedeutungsdarstellung, die für Ähnlichkeitsvergleiche oder Retrieval-Workflows genutzt wird.",
         aiContext:
-          "In KI-Systemen werden Embeddings oft fuer Retrieval, semantische Suche, Clustering und Empfehlung genutzt. Hier ist nicht irgendeine mathematische Einbettung gemeint, sondern meist eine Vektordarstellung von Bedeutung.",
+          "In KI-Systemen werden Embeddings oft für Retrieval, semantische Suche, Clustering und Empfehlung genutzt. Hier ist nicht irgendeine mathematische Einbettung gemeint, sondern meist eine Vektordarstellung von Bedeutung.",
       },
     },
   },
@@ -588,7 +588,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Mechanismus, mit dem ein Modell strukturierte Werkzeugaktionen anfordern kann, statt nur freien Text zurueckzugeben.",
+          "Ein Mechanismus, mit dem ein Modell strukturierte Werkzeugaktionen anfordern kann, statt nur freien Text zurückzugeben.",
       },
     },
   },
@@ -624,7 +624,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Eine Ausgabe, die glaubwuerdig klingt, aber falsch, unbelegt oder erfunden ist.",
+          "Eine Ausgabe, die glaubwürdig klingt, aber falsch, unbelegt oder erfunden ist.",
       },
     },
   },
@@ -642,7 +642,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein strukturierter Graph aus Entitaeten und Beziehungen, der Retrieval, Schlussfolgern oder Navigation unterstuetzen kann.",
+          "Ein strukturierter Graph aus Entitäten und Beziehungen, der Retrieval, Schlussfolgern oder Navigation unterstützen kann.",
       },
     },
   },
@@ -660,7 +660,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Large Language Model, das textaehnliche Sequenzen auf Basis von Training und Kontext verarbeitet und erzeugt.",
+          "Ein Large Language Model, das textähnliche Sequenzen auf Basis von Training und Kontext verarbeitet und erzeugt.",
       },
     },
   },
@@ -706,9 +706,9 @@ export const terms: TermEntry[] = [
         shortDefinition:
           "Model Context Protocol, ein Protokoll zum Verbinden von Modellen oder Agenten mit Werkzeugen und Kontextquellen.",
         explanation:
-          "MCP ist eine Moeglichkeit, eine KI-Anwendung ueber ein gemeinsames Protokoll mit Werkzeugen oder Datenquellen zu verbinden, statt fuer jede Verbindung eine eigene Sonderloesung zu bauen.",
+          "MCP ist eine Möglichkeit, eine KI-Anwendung über ein gemeinsames Protokoll mit Werkzeugen oder Datenquellen zu verbinden, statt für jede Verbindung eine eigene Sonderlösung zu bauen.",
         aiContext:
-          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit ueber Chat-Text hinaus mit strukturierten Werkzeugen, Dateien und Systemen arbeiten koennen.",
+          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit über Chat-Text hinaus mit strukturierten Werkzeugen, Dateien und Systemen arbeiten können.",
       },
     },
   },
@@ -727,7 +727,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Memory",
         shortDefinition:
-          "Gespeicherte Informationen, die ein KI-System ueber mehrere Interaktionen hinweg wiederverwenden kann.",
+          "Gespeicherte Informationen, die ein KI-System über mehrere Interaktionen hinweg wiederverwenden kann.",
       },
     },
   },
@@ -812,9 +812,9 @@ export const terms: TermEntry[] = [
         shortDefinition:
           "Die Eingabeanweisung, Frage oder das Material, das die Antwort eines Modells steuert.",
         explanation:
-          "Ein Prompt kann eine Frage, Anweisung, ein Beispiel oder ein Kontextblock sein. Schon kleine Formulierungsunterschiede koennen zu deutlich anderen Ergebnissen fuehren.",
+          "Ein Prompt kann eine Frage, Anweisung, ein Beispiel oder ein Kontextblock sein. Schon kleine Formulierungsunterschiede können zu deutlich anderen Ergebnissen führen.",
         aiContext:
-          "In der KI- und LLM-Nutzung sind Prompts nicht nur Texteingaben, sondern ein zentrales Steuerungsmittel fuer Struktur, Ton und Aufgabenrahmen.",
+          "In der KI- und LLM-Nutzung sind Prompts nicht nur Texteingaben, sondern ein zentrales Steuerungsmittel für Struktur, Ton und Aufgabenrahmen.",
       },
     },
   },
@@ -833,7 +833,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Prompting",
         shortDefinition:
-          "Die Praxis, Prompts so zu gestalten, dass Qualitaet, Struktur oder Nützlichkeit der Ausgabe beeinflusst werden.",
+          "Die Praxis, Prompts so zu gestalten, dass Qualität, Struktur oder Nützlichkeit der Ausgabe beeinflusst werden.",
       },
     },
   },
@@ -858,9 +858,9 @@ export const terms: TermEntry[] = [
         shortDefinition:
           "Retrieval-Augmented Generation, ein Ansatz, bei dem gefundene Informationen vor der Antwort in den Modellkontext eingebracht werden.",
         explanation:
-          "RAG bedeutet, dass das Modell vor dem Antworten relevantes Material nachschlaegt. Das hilft besonders dann, wenn Genauigkeit wichtig ist oder Antworten auf bestimmten Dokumenten basieren sollen.",
+          "RAG bedeutet, dass das Modell vor dem Antworten relevantes Material nachschlägt. Das hilft besonders dann, wenn Genauigkeit wichtig ist oder Antworten auf bestimmten Dokumenten basieren sollen.",
         aiContext:
-          "In KI-Systemen wird RAG genutzt, um Antworten auf reale Inhalte wie Handbuecher, Richtlinien, Repositories oder internes Wissen zu stuetzen.",
+          "In KI-Systemen wird RAG genutzt, um Antworten auf reale Inhalte wie Handbücher, Richtlinien, Repositories oder internes Wissen zu stützen.",
       },
     },
   },
@@ -878,7 +878,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Modell, das auf strukturiertes Schlussfolgern, Planung oder mehrschrittiges Problemlosen ausgerichtet ist.",
+          "Ein Modell, das auf strukturiertes Schlussfolgern, Planung oder mehrschrittiges Problemlösen ausgerichtet ist.",
       },
     },
   },
@@ -962,7 +962,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein hoeherstufiger Prompt, der Anweisungen, Ton, Grenzen oder Verhalten fuer ein Modell oder einen Assistenten festlegt.",
+          "Ein höherstufiger Prompt, der Anweisungen, Ton, Grenzen oder Verhalten für ein Modell oder einen Assistenten festlegt.",
       },
     },
   },
@@ -998,7 +998,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Die Faehigkeit eines Modells oder Agenten, externe Werkzeuge aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
+          "Die Fähigkeit eines Modells oder Agenten, externe Werkzeuge aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
       },
     },
   },
@@ -1028,7 +1028,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Eine Datenbank, die Vektoren speichert und aehnlichkeitsbasierte Suche unterstuetzt.",
+          "Eine Datenbank, die Vektoren speichert und ähnlichkeitsbasierte Suche unterstützt.",
       },
     },
   },
@@ -1046,7 +1046,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Retrieval-Verfahren, das aehnliche Inhalte ueber den Vergleich von Vektordarstellungen findet.",
+          "Ein Retrieval-Verfahren, das ähnliche Inhalte über den Vergleich von Vektordarstellungen findet.",
       },
     },
   },
@@ -1069,11 +1069,11 @@ export const terms: TermEntry[] = [
       de: {
         term: "Vibe Coding",
         shortDefinition:
-          "Eine informelle Bezeichnung fuer Programmieren, das stark auf KI-Generierung und schnelle Iteration setzt.",
+          "Eine informelle Bezeichnung für Programmieren, das stark auf KI-Generierung und schnelle Iteration setzt.",
         explanation:
-          "Vibe Coding meint meist, mit KI-generiertem Code schnell voranzugehen und die Loesung waehrenddessen zu formen, statt alles vorab stark zu planen.",
+          "Vibe Coding meint meist, mit KI-generiertem Code schnell voranzugehen und die Lösung währenddessen zu formen, statt alles vorab stark zu planen.",
         aiContext:
-          "Der Begriff gehoert zur Kultur der KI-unterstuetzten Entwicklung, in der Code durch schnelle Prompt-, Editier- und Feedback-Schleifen mit einem KI-System entsteht.",
+          "Der Begriff gehört zur Kultur der KI-unterstützten Entwicklung, in der Code durch schnelle Prompt-, Editier- und Feedback-Schleifen mit einem KI-System entsteht.",
       },
     },
   },
@@ -1114,7 +1114,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Claude",
         shortDefinition:
-          "Anthropics KI-Assistent und Produktfamilie fuer Chat, Schreiben, Analyse und werkzeuggestuetzte Arbeit.",
+          "Anthropics KI-Assistent und Produktfamilie für Chat, Schreiben, Analyse und werkzeuggestützte Arbeit.",
       },
     },
   },
@@ -1142,7 +1142,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Anthropics codefokussierter Claude-Workflow fuer Repositories, Terminals und Entwickleraufgaben.",
+          "Anthropics codefokussierter Claude-Workflow für Repositories, Terminals und Entwickleraufgaben.",
       },
     },
   },
@@ -1170,7 +1170,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein OpenAI-Produktname fuer KI-gestuetzte Coding-Workflows, Agenten oder Entwicklererlebnisse.",
+          "Ein OpenAI-Produktname für KI-gestützte Coding-Workflows, Agenten oder Entwicklererlebnisse.",
       },
     },
   },
@@ -1198,7 +1198,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Googles KI-Assistent und modellgestuetzte Produktfamilie fuer Chat, Workspace und Entwicklererlebnisse.",
+          "Googles KI-Assistent und modellgestützte Produktfamilie für Chat, Workspace und Entwicklererlebnisse.",
       },
     },
   },
@@ -1226,7 +1226,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Microsofts KI-Assistentenmarke fuer Chat, Produktivitaet und Entwicklererlebnisse.",
+          "Microsofts KI-Assistentenmarke für Chat, Produktivität und Entwicklererlebnisse.",
       },
     },
   },
@@ -1255,7 +1255,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Perplexity",
         shortDefinition:
-          "Ein KI-Antwortsystem mit webgestuetzten Ergebnissen und Quellenhinweisen.",
+          "Ein KI-Antwortsystem mit webgestützten Ergebnissen und Quellenhinweisen.",
       },
     },
   },
@@ -1277,7 +1277,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Produkt- oder UI-Label fuer KI-Suchfunktionen, die ueber den aktuellen Chat hinaus externe, verbundene oder indexierte Informationen nutzen.",
+          "Ein Produkt- oder UI-Label für KI-Suchfunktionen, die über den aktuellen Chat hinaus externe, verbundene oder indexierte Informationen nutzen.",
       },
     },
   },

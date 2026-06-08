@@ -20,6 +20,7 @@
 - The glossary now has a stronger German translation foundation for the highest-visibility terms, and the `Search` entry is framed as an AI tool/product feature rather than a generic search concept.
 - The site now has a cleaner localization foundation with Astro i18n config, centralized UI strings, localized page-shell routes for `en` and `de`, layout-level language switching, and multilingual SEO alternates.
 - The header and language switch received a small polish pass so the shell reads more intentionally, while language switching remains route-based and privacy-friendly.
+- The live site shell and homepage received a public-readiness polish pass, including stronger header balance, cleaner homepage positioning, and broader cleanup of visible German spelling.
 
 ## Immediate next steps
 

@@ -9,6 +9,7 @@ export const ui = {
     language: "Language",
     englishShort: "EN",
     germanShort: "DE",
+    brandTagline: "AI knowledge base",
     home: "Home",
     docs: "Docs",
     about: "About",
@@ -50,23 +51,32 @@ export const ui = {
     homeLead:
       "AI terms and product names change quickly. Different tools often use the same words in different ways, or mean slightly different things.",
     aboutKnowledgeBase: "About this knowledge base",
+    glossarySecondaryLink: "Browse the term index",
     collectTerms: "Collect terms",
     collectTermsCopy:
       "This project collects important AI terms, product concepts, and their relationships in a simple, understandable form.",
-    clarifyDifferences: "Clarify differences",
+    clarifyDifferences: "Clarify meaning",
     clarifyDifferencesCopy:
       "Terms like agent, memory, RAG, or workflow are often used differently. The site makes those differences easier to see over time.",
-    understandingBeforeImplementation: "Understanding before implementation",
+    understandingBeforeImplementation: "Understand before implementation",
     understandingBeforeImplementationCopy:
       "Before deeper architecture or implementation topics are added, the focus stays on a clear shared understanding of the basics.",
     knowledgeBaseInProgress: "Knowledge base in progress",
     knowledgeBaseInProgressCopy:
       "This site is not finished. It is growing into a knowledge base for professional AI use in technical projects.",
-    firstOrientationLayer: "A first orientation layer",
-    firstOrientationLayerCopy:
-      "As a first step, the site provides a simple, maintained overview of central AI terms. Over time, deeper explanations, comparisons, and practical guides can grow from that foundation.",
-    docsAndGlossaryCopy:
-      "The project's technical reference remains available under Docs, and the supporting term index remains available under Glossary Index.",
+    whatThisSiteIsFor: "What this site is for",
+    whatIsAvailableNow: "What is available now",
+    whatIsAvailableNowCopy:
+      "The site is still growing. Today, it offers a maintained entry point into AI terminology while keeping technical repository documentation separate.",
+    glossaryNow: "Term index",
+    glossaryNowCopy:
+      "Use the glossary index to find AI, LLM, tooling, and product terms quickly.",
+    termPagesNow: "Term pages",
+    termPagesNowCopy:
+      "Open an individual term page when you want a plain-language explanation, AI context, and related terms.",
+    docsNow: "Technical reference",
+    docsNowCopy:
+      "Repository-specific reference material remains under Docs so the knowledge layer stays focused and readable.",
     aboutTitle: "About",
     aboutDescription: "About the AI Project Standard, its architecture, and its maintainer.",
     aboutIntro:
@@ -94,6 +104,7 @@ export const ui = {
   de: {
     skipToMain: "Zum Hauptinhalt springen",
     language: "Sprache",
+    brandTagline: "KI-Wissensbasis",
     home: "Startseite",
     docs: "Docs",
     about: "Über",
@@ -137,10 +148,11 @@ export const ui = {
     homeLead:
       "KI-Begriffe und Produktnamen ändern sich schnell. Verschiedene Werkzeuge verwenden oft dieselben Wörter unterschiedlich oder mit leicht anderer Bedeutung.",
     aboutKnowledgeBase: "Über diese Wissensbasis",
+    glossarySecondaryLink: "Begriffsindex öffnen",
     collectTerms: "Begriffe sammeln",
     collectTermsCopy:
       "Dieses Projekt sammelt wichtige KI-Begriffe, Produktkonzepte und ihre Beziehungen in einer einfachen und verständlichen Form.",
-    clarifyDifferences: "Unterschiede klaeren",
+    clarifyDifferences: "Bedeutungen klären",
     clarifyDifferencesCopy:
       "Begriffe wie Agent, Memory, RAG oder Workflow werden oft unterschiedlich verwendet. Die Website macht diese Unterschiede mit der Zeit leichter sichtbar.",
     understandingBeforeImplementation: "Verstehen vor Umsetzung",
@@ -149,11 +161,19 @@ export const ui = {
     knowledgeBaseInProgress: "Wissensbasis im Aufbau",
     knowledgeBaseInProgressCopy:
       "Diese Website ist noch nicht fertig. Sie wächst zu einer Wissensbasis für den professionellen Einsatz von KI in technischen Projekten.",
-    firstOrientationLayer: "Eine erste Orientierungsebene",
-    firstOrientationLayerCopy:
-      "Als erster Schritt bietet die Website einen einfachen, gepflegten Überblick über zentrale KI-Begriffe. Später können daraus tiefere Erklärungen, Vergleiche und praktische Leitfäden wachsen.",
-    docsAndGlossaryCopy:
-      "Die technische Referenz des Projekts bleibt unter Docs verfügbar, und der unterstützende Begriffsindex bleibt unter Glossarindex erreichbar.",
+    whatThisSiteIsFor: "Wofür diese Website da ist",
+    whatIsAvailableNow: "Was heute schon verfügbar ist",
+    whatIsAvailableNowCopy:
+      "Die Website wächst noch. Aktuell bietet sie einen gepflegten Einstieg in KI-Begriffe und hält die technische Repository-Dokumentation bewusst getrennt.",
+    glossaryNow: "Begriffsindex",
+    glossaryNowCopy:
+      "Über den Glossarindex lassen sich KI-, LLM-, Tooling- und Produktbegriffe schnell finden.",
+    termPagesNow: "Begriffsseiten",
+    termPagesNowCopy:
+      "Die einzelnen Begriffsseiten erklären einen Begriff in einfacher Sprache, im KI-Kontext und mit verwandten Begriffen.",
+    docsNow: "Technische Referenz",
+    docsNowCopy:
+      "Repository-spezifische Referenzinhalte bleiben unter Docs, damit die Wissensebene klar und lesbar bleibt.",
     aboutTitle: "Über",
     aboutDescription: "Über den AI Project Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
