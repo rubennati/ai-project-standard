@@ -15,7 +15,10 @@ export type LocalizedRouteKey =
   | "dataFlowsDeletion"
   | "dataFlowsConsent"
   | "secureSetup"
-  | "secureSetupAccess";
+  | "secureSetupAccess"
+  | "start"
+  | "startEmployee"
+  | "startDecisionMaker";
 
 export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
 
@@ -60,6 +63,12 @@ export const getLocalizedPath = (
       return `${prefix}/secure-setup`;
     case "secureSetupAccess":
       return `${prefix}/secure-setup/before-you-grant-access`;
+    case "start":
+      return `${prefix}/start`;
+    case "startEmployee":
+      return `${prefix}/start/employee`;
+    case "startDecisionMaker":
+      return `${prefix}/start/decision-maker`;
   }
 };
 

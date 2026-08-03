@@ -64,6 +64,7 @@ const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey
 // glossary, the use cases, the profile comparison — lives in the footer, where
 // people look things up rather than navigate.
 const primaryNav = [
+  { href: toHref(getLocalizedPath(locale, "start")), label: ui.start },
   { href: docsHref, label: ui.docs },
   { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
   { href: toHref(getLocalizedPath(locale, "secureSetup")), label: ui.secureSetup },
