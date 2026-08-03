@@ -60,12 +60,11 @@ const alternates = routeKey
 const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
 
 // Header carries the destinations a reader comes for. No "Home" entry — the
-// wordmark is already the home link. Reference material (glossary, profile
-// comparison) lives in the footer, where people look things up rather than
-// navigate.
+// wordmark is already the home link. Reference and adoption material — the
+// glossary, the use cases, the profile comparison — lives in the footer, where
+// people look things up rather than navigate.
 const primaryNav = [
   { href: docsHref, label: ui.docs },
-  { href: `${base}use-cases`, label: ui.useCases },
   { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
   { href: toHref(getLocalizedPath(locale, "secureSetup")), label: ui.secureSetup },
   { href: toHref(getLocalizedPath(locale, "law")), label: ui.law },
@@ -89,6 +88,7 @@ const footerSections = [
     heading: ui.footerProject,
     links: [
       { href: localizedGlossary, label: ui.glossary },
+      { href: `${base}use-cases`, label: ui.useCases },
       { href: `${base}profiles`, label: ui.profiles },
       { href: repoUrl, label: ui.technicalRepository, external: true },
       { href: `${repoUrl}/blob/main/CONTRIBUTING.md`, label: ui.contribute, external: true },
