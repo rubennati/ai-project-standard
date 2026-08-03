@@ -16,6 +16,9 @@ export const ui = {
     about: "About",
     primaryNavigation: "Primary navigation",
     glossaryIndex: "Glossary Index",
+    glossary: "Glossary",
+    useCases: "Use cases",
+    profiles: "Profiles",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
     sourceOnGitHub: "Source on GitHub",
@@ -60,7 +63,7 @@ export const ui = {
       "A maintained index of AI, LLM, tooling, and product terms. Use it to find a term and open its definition page.",
     glossaryIntro:
       "This is a working index of AI- and LLM-near vocabulary. Deeper explanations live on the term pages, while broader guides and project documentation will stay separate.",
-    homeTitle: "AI Project Standard",
+    homeTitle: "AI Standard",
     homeDescription: "An evolving knowledge base for AI terminology, concepts, and relationships.",
     homeHeading: "An evolving knowledge base for AI terminology and concepts.",
     homeLead:
@@ -93,7 +96,7 @@ export const ui = {
     docsNowCopy:
       "Repository-specific reference material remains under Docs so the knowledge layer stays focused and readable.",
     aboutTitle: "About",
-    aboutDescription: "About the AI Project Standard, its architecture, and its maintainer.",
+    aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
     aboutIntro:
       "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, software engineering, knowledge and documentation.",
     aboutLayerCopy:
@@ -106,8 +109,8 @@ export const ui = {
     acknowledgements: "Acknowledgements",
     acknowledgementsCopy:
       "The standard draws on the AGENTS.md cross-vendor convention, tool instruction formats, and broader open-source governance practices.",
-    legalNoticeDescription: "Legal notice and contact address for the AI Project Standard website.",
-    legalNoticeCopy: "This is the legal notice for the AI Project Standard website.",
+    legalNoticeDescription: "Legal notice and contact address for the AI Standard website.",
+    legalNoticeCopy: "This is the legal notice for the AI Standard website.",
     legalNoticeHeading: "Who operates this site",
     operatorLabel: "Operator",
     registeredAsLabel: "Registered as",
@@ -119,9 +122,9 @@ export const ui = {
     privacyInline: "privacy policy",
     purposeCopy:
       "a knowledge base on AI terminology and project conventions. It sells nothing, carries no advertising and collects no data \u2014 see",
-    privacyPolicyDescription: "Placeholder privacy policy page for the AI Project Standard website.",
+    privacyPolicyDescription: "Placeholder privacy policy page for the AI Standard website.",
     privacyPolicyCopy:
-      "This is a placeholder privacy policy page for the AI Project Standard website.",
+      "This is a placeholder privacy policy page for the AI Standard website.",
     privacyPolicyNote:
       "It will later cover privacy, data protection, and GDPR-related information relevant to this site.",
   },
@@ -135,6 +138,9 @@ export const ui = {
     about: "Über",
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
+    glossary: "Glossar",
+    useCases: "Anwendungsfälle",
+    profiles: "Profile",
     legalNotice: "Impressum",
     privacyPolicy: "Datenschutz",
     sourceOnGitHub: "Quelle auf GitHub",
@@ -181,7 +187,7 @@ export const ui = {
       "Ein gepflegter Index für KI-, LLM-, Tooling- und Produktbegriffe. Er hilft dabei, einen Begriff zu finden und die passende Erklärungsseite zu öffnen.",
     glossaryIntro:
       "Dies ist ein Arbeitsindex für KI- und LLM-nahe Begriffe. Tiefere Erklärungen liegen auf den einzelnen Begriffseiten. Breitere Guides und Projektdokumentation werden später getrennt ausgebaut.",
-    homeTitle: "AI Project Standard",
+    homeTitle: "AI Standard",
     homeDescription: "Eine wachsende Wissensbasis für KI-Begriffe, Konzepte und Zusammenhänge.",
     homeHeading: "Eine wachsende Wissensbasis für KI-Begriffe und Konzepte.",
     homeLead:
@@ -214,7 +220,7 @@ export const ui = {
     docsNowCopy:
       "Repository-spezifische Referenzinhalte bleiben unter Docs, damit die Wissensebene klar und lesbar bleibt.",
     aboutTitle: "Über",
-    aboutDescription: "Über den AI Project Standard, seine Architektur und seinen Maintainer.",
+    aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
       "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Vier Säulen: Mensch-KI-Zusammenarbeit, Open-Source-Betrieb, Software Engineering sowie Wissen und Dokumentation.",
     aboutLayerCopy:
@@ -240,9 +246,9 @@ export const ui = {
     privacyInline: "Datenschutz",
     purposeCopy:
       "eine Wissensbasis zu KI-Begriffen und Projektkonventionen. Sie verkauft nichts, enthält keine Werbung und erhebt keine Daten \u2014 siehe",
-    privacyPolicyDescription: "Platzhalterseite für die Datenschutzerklärung der AI Project Standard Website.",
+    privacyPolicyDescription: "Platzhalterseite für die Datenschutzerklärung der AI-Standard-Website.",
     privacyPolicyCopy:
-      "Dies ist eine Platzhalterseite für die Datenschutzerklärung der AI Project Standard Website.",
+      "Dies ist eine Platzhalterseite für die Datenschutzerklärung der AI-Standard-Website.",
     privacyPolicyNote:
       "Sie wird später für diese Website relevante Datenschutz- und DSGVO-Informationen abdecken.",
   },

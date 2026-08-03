@@ -24,7 +24,7 @@ const isHomePage = ["/", "/de", "/de/"].includes(Astro.url.pathname);
 const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "AI Project Standard",
+  name: "AI Standard",
   url: site,
   logo: `${site}icon.svg`,
   sameAs: [repoUrl],
@@ -33,7 +33,7 @@ const organization = {
 const website = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "AI Project Standard",
+  name: "AI Standard",
   url: site,
   inLanguage: lang,
   description,
@@ -48,7 +48,7 @@ const page = {
   inLanguage: lang,
   isPartOf: {
     "@type": "WebSite",
-    name: "AI Project Standard",
+    name: "AI Standard",
     url: site,
   },
 };
