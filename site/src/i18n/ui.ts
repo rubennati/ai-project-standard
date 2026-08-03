@@ -127,7 +127,7 @@ export const ui = {
       "Where the data goes, per tool class \u2014 chat, coding agents, MCP servers, automation platforms. The route, the servers, the jurisdiction, how long it is kept, and whether \u201cdeleted\u201d means deleted.",
     doorAllowed: "What you are allowed to do",
     doorAllowedCopy:
-      "Two questions, often confused. Personal data is a matter of data protection law; source code, client material and anything under an NDA is a matter of confidentiality \u2014 no less binding for not being personal. Private use differs from company use, generated content carries a labelling duty, and much of it is already law.",
+      "Two questions, often confused. Personal data is a matter of data protection law; source code, client material and anything under an NDA is a matter of confidentiality \u2014 no less binding for not being personal. Private use differs from company use, some generated content already has to be labelled, and the duty is narrower than it first sounds.",
     doorSetup: "How to set it up",
     doorSetupCopy:
       "An agent with access to a repository or a server can do a great deal. What to restrict before you grant it, and the conventions that keep the work reviewable afterwards.",
@@ -293,7 +293,7 @@ export const ui = {
       "Wohin die Daten gehen, je Werkzeugklasse \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und ob \u201egelöscht\u201c wirklich gelöscht heißt.",
     doorAllowed: "Was du darfst",
     doorAllowedCopy:
-      "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, generierte Inhalte sind kennzeichnungspflichtig, und einiges davon ist bereits Gesetz.",
+      "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, manche generierten Inhalte müssen gekennzeichnet werden, und die Pflicht ist enger, als sie zunächst klingt.",
     doorSetup: "Wie du es einrichtest",
     doorSetupCopy:
       "Ein Agent mit Zugriff auf ein Repository oder einen Server kann viel. Was du einschränken solltest, bevor du ihn lässt \u2014 und die Konventionen, die die Arbeit danach überprüfbar halten.",
