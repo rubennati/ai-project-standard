@@ -37,6 +37,10 @@ const alternateLocale = getAlternateLocale(locale);
 const lang = locale;
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
+// hreflang needs fully-qualified URLs. Relative ones are silently ignored, so
+// the whole language pairing counts for nothing — which is what Lighthouse
+// flagged, and what a crawler would have done quietly.
+const toAbsolute = (path: string) => new URL(toHref(path), Astro.site).toString();
 const localizedHome = toHref(getLocalizedPath(locale, "home"));
 const localizedAbout = toHref(getLocalizedPath(locale, "about"));
 const localizedGlossary = toHref(getLocalizedPath(locale, "glossaryIndex"));
@@ -53,19 +57,18 @@ const alternatePath = routeKey
   : undefined;
 const alternates = routeKey
   ? [
-      { hreflang: "en", href: toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
-      { hreflang: "de", href: toHref(getLocalizedPath("de", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+      { hreflang: "en", href: toAbsolute(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+      { hreflang: "de", href: toAbsolute(getLocalizedPath("de", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
     ]
   : [];
-const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
+const xDefaultHref = routeKey ? toAbsolute(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
 
-// Header carries the destinations a reader comes for. No "Home" entry — the
+// Header carries the subjects a reader arrives for. No "Home" entry — the
 // wordmark is already the home link. Reference and adoption material — the
-// glossary, the use cases, the profile comparison — lives in the footer, where
-// people look things up rather than navigate.
+// repository docs, the glossary, the use cases, the profile comparison — lives
+// in the footer, where people look things up rather than navigate.
 const primaryNav = [
   { href: toHref(getLocalizedPath(locale, "start")), label: ui.start },
-  { href: docsHref, label: ui.docs },
   { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
   { href: toHref(getLocalizedPath(locale, "secureSetup")), label: ui.secureSetup },
   { href: toHref(getLocalizedPath(locale, "law")), label: ui.law },
@@ -88,6 +91,7 @@ const footerSections = [
     id: "footer-project",
     heading: ui.footerProject,
     links: [
+      { href: docsHref, label: ui.docs },
       { href: localizedGlossary, label: ui.glossary },
       { href: `${base}use-cases`, label: ui.useCases },
       { href: `${base}profiles`, label: ui.profiles },

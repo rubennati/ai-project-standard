@@ -26,9 +26,24 @@ const {
   license = "https://creativecommons.org/licenses/by/4.0/",
 } = Astro.props;
 
+import { lastmodForUrl } from "../../scripts/git-lastmod.mjs";
+import { operator } from "../data/site";
+
 const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
 const repoUrl = "https://github.com/rubennati/ai-project-standard";
 const pageUrl = Astro.url.toString();
+
+// dateModified comes from the same git lookup that feeds the sitemap, so the
+// two can never disagree. Undefined when a page has no commit history yet, in
+// which case the field is simply omitted rather than guessed.
+const modified = lastmodForUrl(new URL(Astro.url.pathname, site).toString());
+const author = { "@type": "Person", name: operator.name };
+const publisher = {
+  "@type": "Organization",
+  name: "AI Standard",
+  url: site,
+  logo: { "@type": "ImageObject", url: `${site}icon.svg` },
+};
 const isHomePage = ["/", "/de", "/de/"].includes(Astro.url.pathname);
 
 const organization = {
@@ -58,6 +73,18 @@ const page = {
   url: pageUrl,
   inLanguage: lang,
   license,
+  // Article requires a headline and expects author, publisher and dates.
+  // Without them the markup is present but incomplete, which earns nothing.
+  ...(pageType === "Article"
+    ? {
+        headline: title,
+        author,
+        publisher,
+        ...(modified ? { dateModified: modified, datePublished: modified } : {}),
+      }
+    : modified
+      ? { dateModified: modified }
+      : {}),
   isPartOf: {
     "@type": "WebSite",
     name: "AI Standard",

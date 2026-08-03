@@ -24,7 +24,7 @@ const CLAUDE_TRAINING =
 const en: Article = {
   title: "What you agree to when you allow training",
   description:
-    "The visible question is training. The operative one is storage — and the two are the same switch. What that consent actually covers, and what it does not.",
+    "The visible question is training. The operative one is storage — and both are the same switch. What that consent actually covers.",
   lead: "Almost everyone asks whether a tool trains on their input. Far fewer ask what has to be true before it could.",
   sections: [
     {
@@ -97,7 +97,7 @@ const en: Article = {
 const de: Article = {
   title: "Wozu du zustimmst, wenn du Training erlaubst",
   description:
-    "Die sichtbare Frage ist das Training. Die eigentliche ist die Speicherung — und beides ist derselbe Schalter. Was diese Zustimmung wirklich umfasst, und was nicht.",
+    "Die sichtbare Frage ist Training, die eigentliche ist Speicherung — und beides ist derselbe Schalter. Was die Zustimmung wirklich umfasst.",
   lead: "Fast alle fragen, ob ein Werkzeug mit ihrer Eingabe trainiert. Deutlich weniger fragen, was zutreffen muss, damit es das überhaupt könnte.",
   sections: [
     {

@@ -20,7 +20,7 @@ const OWASP_LLM = "https://genai.owasp.org/";
 const en: Article = {
   title: "Before you grant access",
   description:
-    "What to change on day one, what to check before an agent gets a folder, and why a skill you installed once is the part most likely to hurt you.",
+    "What to change on day one, what to check before an agent gets a folder, and why installed skills are the part most likely to hurt you.",
   lead: "Nothing here is new security thinking. What is new is that the tools are driven in plain language, so the decision to hand something broad access is now made by people who were never asked to think about it.",
   sections: [
     {
@@ -105,7 +105,7 @@ const en: Article = {
 const de: Article = {
   title: "Bevor du Zugriff gibst",
   description:
-    "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent einen Ordner bekommt, und warum ein einmal installierter Skill der Teil ist, der dir am ehesten schadet.",
+    "Was du am ersten Tag umstellst, was du vor dem Ordnerzugriff prüfst, und warum installierte Skills am ehesten schaden.",
   lead: "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Werkzeuge in normaler Sprache bedient werden — die Entscheidung, etwas breit zugreifen zu lassen, treffen jetzt Leute, die nie danach gefragt wurden.",
   sections: [
     {

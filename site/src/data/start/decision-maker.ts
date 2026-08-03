@@ -18,7 +18,7 @@ const AI_ACT_ART_4 = "https://artificialintelligenceact.eu/article/4/";
 const en: Article = {
   title: "I decide for others — where do I start?",
   description:
-    "You already have an obligation under the AI Act that most organisations have not noticed. What to decide first, why banning tools produces shadow IT, and what cannot be delegated.",
+    "You already have an AI Act duty most organisations miss. What to decide first, and why banning tools produces shadow IT.",
   lead: "The question is usually framed as whether to allow AI. That decision was made for you some time ago, by people in your organisation who needed to get something done.",
   sections: [
     {
@@ -107,7 +107,7 @@ const en: Article = {
 const de: Article = {
   title: "Ich entscheide für andere — wo fange ich an?",
   description:
-    "Sie haben bereits eine Pflicht aus dem AI Act, die den meisten Organisationen entgangen ist. Was zuerst zu entscheiden ist, warum Verbote Schatten-IT erzeugen, und was sich nicht delegieren lässt.",
+    "Sie haben bereits eine AI-Act-Pflicht, die kaum jemand kennt. Was zuerst zu entscheiden ist und warum Verbote Schatten-IT erzeugen.",
   lead: "Die Frage wird meist so gestellt, ob man KI erlauben soll. Diese Entscheidung ist längst gefallen — getroffen von Leuten in Ihrer Organisation, die etwas erledigen mussten.",
   sections: [
     {

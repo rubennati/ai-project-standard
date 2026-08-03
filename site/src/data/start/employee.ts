@@ -15,7 +15,7 @@ export const CHECKED = "2026-08-03";
 const en: Article = {
   title: "I am employed — may I use AI at work?",
   description:
-    "What to find out before you paste work material into an AI tool, whom to ask, and what to do when nobody in the company has decided yet.",
+    "What to find out before pasting work material into an AI tool, whom to ask, and what to do when nobody has decided yet.",
   lead: "You are not the one who gets to decide this, and that is the useful starting point rather than a limitation.",
   sections: [
     {
@@ -103,7 +103,7 @@ const en: Article = {
 const de: Article = {
   title: "Ich bin angestellt — darf ich KI bei der Arbeit verwenden?",
   description:
-    "Was du klären solltest, bevor du Arbeitsmaterial in ein KI-Werkzeug gibst, wen du fragst, und was du tust, wenn im Unternehmen noch niemand entschieden hat.",
+    "Was du vor dem Einfügen von Arbeitsmaterial klärst, wen du fragst, und was du tust, wenn niemand entschieden hat.",
   lead: "Du bist nicht derjenige, der das entscheidet — und genau das ist der nützliche Ausgangspunkt, keine Einschränkung.",
   sections: [
     {

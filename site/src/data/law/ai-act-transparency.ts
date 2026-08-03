@@ -26,7 +26,7 @@ const ARTICLE_50 = "https://artificialintelligenceact.eu/article/50/";
 const en: Article = {
   title: "AI Act: labelling AI-generated content",
   description:
-    "Article 50 of the EU AI Act has applied since 2 August 2026. What has to be disclosed, who is obliged, and what the transition period actually covers.",
+    "Article 50 of the EU AI Act has applied since 2 August 2026. What must be disclosed, who is obliged, and what the transition covers.",
   lead: "The transparency rules of the EU AI Act are no longer upcoming. They apply, and they reach far past the systems classified as high-risk.",
   sections: [
     {
@@ -89,7 +89,7 @@ const en: Article = {
 const de: Article = {
   title: "AI Act: Kennzeichnung KI-generierter Inhalte",
   description:
-    "Artikel 50 des EU AI Act gilt seit 2. August 2026. Was offengelegt werden muss, wen es trifft, und was die Übergangsfrist wirklich abdeckt.",
+    "Artikel 50 des EU AI Act gilt seit 2. August 2026. Was offengelegt werden muss, wen es trifft, und was die Übergangsfrist abdeckt.",
   lead: "Die Transparenzregeln des EU AI Act stehen nicht mehr bevor. Sie gelten — und sie reichen weit über die als hochriskant eingestuften Systeme hinaus.",
   sections: [
     {

@@ -20,7 +20,7 @@ const TRADE_SECRETS = "https://eur-lex.europa.eu/eli/dir/2016/943/oj";
 const en: Article = {
   title: "What may go into an AI tool?",
   description:
-    "Personal data and confidential material are two different questions with two different answers. What each one actually requires, and a short path through them.",
+    "Personal data and confidentiality are two questions with two different answers. What each requires, and a short path through them.",
   lead: "Almost every version of this question collapses two regimes into one. They have different rules, different consequences and different people who come after you when it goes wrong.",
   sections: [
     {
@@ -102,7 +102,7 @@ const en: Article = {
 const de: Article = {
   title: "Was darf in ein KI-Werkzeug hinein?",
   description:
-    "Personenbezogene Daten und vertrauliches Material sind zwei verschiedene Fragen mit zwei verschiedenen Antworten. Was jede verlangt — und ein kurzer Weg hindurch.",
+    "Personenbezogene Daten und Vertraulichkeit sind zwei Fragen mit zwei Antworten. Was jede verlangt, und ein kurzer Weg hindurch.",
   lead: "Fast jede Fassung dieser Frage wirft zwei Regelwerke zusammen. Sie haben unterschiedliche Regeln, unterschiedliche Folgen und unterschiedliche Leute, die sich melden, wenn es schiefgeht.",
   sections: [
     {

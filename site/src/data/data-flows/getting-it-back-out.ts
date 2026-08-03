@@ -20,7 +20,7 @@ const EDPB_CLOUD_ACT =
 const en: Article = {
   title: "Getting it back out",
   description:
-    "Deleting is harder than sending. What the right to erasure obliges you to do, why EU processing is not the same as EU jurisdiction, and where a local model genuinely fits.",
+    "Deleting is harder than sending: the right to erasure, why EU hosting is not EU jurisdiction, and where local models genuinely fit.",
   lead: "The hard question is not what you may send. It is what happens when someone asks you to take it back — and whether you can show that you did.",
   sections: [
     {
@@ -86,7 +86,7 @@ const en: Article = {
 const de: Article = {
   title: "Wieder herausbekommen",
   description:
-    "Löschen ist schwerer als hineingeben. Was das Recht auf Löschung von dir verlangt, warum Verarbeitung in der EU nicht dasselbe ist wie EU-Zuständigkeit, und wo ein lokales Modell wirklich passt.",
+    "Löschen ist schwerer als hineingeben: das Recht auf Löschung, warum EU-Verarbeitung nicht EU-Zuständigkeit heißt, und wo lokale Modelle passen.",
   lead: "Die schwierige Frage ist nicht, was du hineingeben darfst. Sie lautet, was passiert, wenn jemand es zurückverlangt — und ob du zeigen kannst, dass du es getan hast.",
   sections: [
     {

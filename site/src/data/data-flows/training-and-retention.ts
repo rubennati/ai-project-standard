@@ -27,7 +27,7 @@ const CLAUDE_CODE_DATA = "https://code.claude.com/docs/en/data-usage";
 const en: Article = {
   title: "Does the tool train on what you type?",
   description:
-    "Whether your input trains a model is decided by which plan you are on, not by which vendor you picked. What is true for OpenAI and Anthropic today, which setting to check, and what it changes.",
+    "Whether your input trains a model is decided by your plan tier, not the vendor. What is true today, which setting to check, and what it changes.",
   lead: "Most people ask the question about the vendor. The vendor is rarely the answer. Both of the vendors below draw the same line, and they draw it between plan tiers.",
   sections: [
     {
@@ -109,7 +109,7 @@ const en: Article = {
 const de: Article = {
   title: "Trainiert das Werkzeug mit dem, was du eingibst?",
   description:
-    "Ob deine Eingabe ein Modell trainiert, entscheidet der Tarif, nicht der Anbieter. Was heute bei OpenAI und Anthropic gilt, welche Einstellung du prüfen solltest, und was sie ändert.",
+    "Ob deine Eingabe ein Modell trainiert, entscheidet der Tarif, nicht der Anbieter. Was heute gilt und welche Einstellung du prüfen solltest.",
   lead: "Die meisten stellen die Frage dem Anbieter. Der Anbieter ist selten die Antwort. Beide unten geprüften Anbieter ziehen dieselbe Grenze — und zwar zwischen den Tarifstufen.",
   sections: [
     {
