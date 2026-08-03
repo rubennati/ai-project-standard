@@ -102,8 +102,8 @@ export const ui = {
       "Written from a security practitioner's desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
     homeStance:
       "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
-    homePrimaryLink: "I work for someone else",
-    homeSecondaryLink: "I decide for others",
+    homePrimaryLink: "Does it train on what I type?",
+    homeSecondaryLink: "What may I put in?",
     doorMore: "Read the section",
     homeArticles: "Everything written so far",
     homeArticlesLead:
@@ -268,8 +268,8 @@ export const ui = {
       "Geschrieben aus der Sicht eines Security-Praktikers. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
     homeStance:
       "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
-    homePrimaryLink: "Ich bin angestellt",
-    homeSecondaryLink: "Ich entscheide für andere",
+    homePrimaryLink: "Trainiert es mit dem, was ich eingebe?",
+    homeSecondaryLink: "Was darf ich hineingeben?",
     doorMore: "Zum Bereich",
     homeArticles: "Alles bisher Geschriebene",
     homeArticlesLead:
