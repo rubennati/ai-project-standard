@@ -19,7 +19,9 @@ These belong in every workflow file. They cost nothing and shrink the blast radi
 
 ### Minimum permissions
 
-GitHub workflows inherit broad `GITHUB_TOKEN` permissions by default. Always declare the minimum your workflow needs at the top of the file, and override per-job where higher access is required.
+The `GITHUB_TOKEN` default is inherited down the chain repository → organization → enterprise, so it is not knowable from the workflow file alone. Enterprises, organizations not owned by an enterprise, and personal-account repositories created after 2 February 2023 default to a read-only token; entities created before that date keep the permissive read/write default, and a repository created today inside an older organization still inherits it. Do not rely on any default: declare the minimum your workflow needs at the top of the file, and override per-job where higher access is required. Declaring a `permissions` block at all sets every scope you do not list to `none`, which is what makes the top-level declaration effective.
+
+Sources: [GitHub changelog, 2 February 2023](https://github.blog/changelog/2023-02-02-github-actions-updating-the-default-github_token-permissions-to-read-only/) and the [`permissions` workflow syntax reference](https://docs.github.com/actions/reference/workflows-and-actions/workflow-syntax#permissions).
 
 ```yaml
 permissions:
@@ -33,15 +35,17 @@ jobs:
     # ...
 ```
 
-### Pin third-party actions to a full SHA
+### Pin every action to a full SHA
 
-Tag-based references (`@v4`) are mutable. Compromised action releases have happened. For untrusted third-party actions, pin to the immutable commit SHA:
+Tag-based references (`@v4`) are mutable, and compromised action releases have happened. Pin every action — third-party *and* official `actions/*` — to the immutable commit SHA, with a trailing version comment so the version stays readable:
 
 ```yaml
-- uses: lycheeverse/lychee-action@a3046df3bc09bce6b8e8bbc7d3b29b1efa9b2b25 # v2
+- uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
 ```
 
-Official `actions/*` actions are also pinnable; this standard ships them at version tags for readability and relies on Dependabot to update them. Adopters with stricter supply-chain requirements should pin all actions to SHAs.
+This standard SHA-pins every action in `.github/workflows/*.yml`, official ones included. Dependabot's `github-actions` ecosystem opens grouped PRs that bump both the SHA and its version comment, so pinning does not mean going stale. It also satisfies the OpenSSF Scorecard [Pinned-Dependencies](https://github.com/ossf/scorecard/blob/main/docs/checks.md#pinned-dependencies) check.
+
+Note that Dependabot only parses workflow files, never markdown. The pin in the example above is therefore maintained by hand and can drift from the one CI actually runs.
 
 ### Prefer OIDC over long-lived secrets
 

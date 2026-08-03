@@ -1,7 +1,9 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getUi } from "../../i18n/ui";
+import { getPrivacySections } from "../../data/privacy";
 const ui = getUi("de");
+const sections = getPrivacySections("de");
 ---
 
 <Base
@@ -12,8 +14,32 @@ const ui = getUi("de");
 >
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.privacyPolicy}</h1>
 
-  <section class="mt-8 max-w-3xl space-y-4">
-    <p>{ui.privacyPolicyCopy}</p>
-    <p>{ui.privacyPolicyNote}</p>
-  </section>
+  <div class="mt-8 max-w-2xl">
+    {
+      sections.map((section) => (
+        <section class="mt-8 first:mt-2">
+          <h2 class="text-xl font-semibold">{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p class="mt-3">{paragraph}</p>
+          ))}
+          {section.list && (
+            <ul class="mt-3 flex list-disc flex-col gap-1 pl-5">
+              {section.list.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+          {section.links && (
+            <ul class="mt-3 flex flex-col gap-1">
+              {section.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))
+    }
+  </div>
 </Base>

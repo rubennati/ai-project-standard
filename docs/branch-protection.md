@@ -9,6 +9,9 @@ Apply these protection rules to `main`. Start with the minimum and add more as t
 - Block force pushes
 - Block branch deletion
 - Restrict direct pushes to maintainers
+- **Leave the bypass list empty** — in a ruleset, clear "Bypass list"; in a classic branch protection rule, tick "Do not allow bypassing the above settings"
+
+The last one is not optional decoration. Repository admins and org owners bypass every rule above it by default, so without it the other five are advisory rather than enforced — and on a solo project the one account that would bypass them is the one doing the work.
 
 These can be enforced by one person and do not depend on a second reviewer or on CI.
 

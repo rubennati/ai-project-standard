@@ -12,7 +12,13 @@ Thumbs.db
 .env.local
 
 # AI tooling (local-only)
+# Documented as ignored in AGENTS.md and docs/ai-tools.md — the patterns have to
+# be here for that to be true, or a contributor following the docs commits a
+# personal token with `git add -A`.
 .claude/settings.local.json
+**/*.local.json
+CLAUDE.local.md
+AGENTS.override.md
 
 # Astro site (site/)
 site/node_modules/

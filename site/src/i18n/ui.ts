@@ -98,7 +98,7 @@ export const ui = {
     aboutTitle: "About",
     aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
     aboutIntro:
-      "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, software engineering, knowledge and documentation.",
+      "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, engineering operations, knowledge and documentation.",
     aboutLayerCopy:
       "The repository is the operational layer: workflows, AI state, governance, templates. This site is the knowledge layer: explanations, comparisons, tutorials, research, and blog.",
     maintainer: "Maintainer",
@@ -121,12 +121,8 @@ export const ui = {
     purposeLabel: "Purpose of this site:",
     privacyInline: "privacy policy",
     purposeCopy:
-      "a knowledge base on AI terminology and project conventions. It sells nothing, carries no advertising and collects no data \u2014 see",
-    privacyPolicyDescription: "Placeholder privacy policy page for the AI Standard website.",
-    privacyPolicyCopy:
-      "This is a placeholder privacy policy page for the AI Standard website.",
-    privacyPolicyNote:
-      "It will later cover privacy, data protection, and GDPR-related information relevant to this site.",
+      "a knowledge base on AI terminology and project conventions. It sells nothing, carries no advertising, sets no cookies and runs no tracking or analytics. Delivery runs through Cloudflare and GitHub Pages, which log visitors' IP addresses for security and availability \u2014 see",
+    privacyPolicyDescription: "How the AI Standard website handles personal data: no cookies, no analytics, and what the hosting providers log.",
   },
   de: {
     skipToMain: "Zum Hauptinhalt springen",
@@ -222,7 +218,7 @@ export const ui = {
     aboutTitle: "Über",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
-      "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Vier Säulen: Mensch-KI-Zusammenarbeit, Open-Source-Betrieb, Software Engineering sowie Wissen und Dokumentation.",
+      "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Vier Säulen: Mensch-KI-Zusammenarbeit, Open-Source-Betrieb, Engineering Operations sowie Wissen und Dokumentation.",
     aboutLayerCopy:
       "Das Repository ist die operative Ebene: Workflows, AI-Status, Governance und Templates. Diese Website ist die Wissensebene: Erklärungen, Vergleiche, Tutorials, Recherche und Blog.",
     maintainer: "Maintainer",
@@ -245,12 +241,8 @@ export const ui = {
     purposeLabel: "Zweck dieser Website:",
     privacyInline: "Datenschutz",
     purposeCopy:
-      "eine Wissensbasis zu KI-Begriffen und Projektkonventionen. Sie verkauft nichts, enthält keine Werbung und erhebt keine Daten \u2014 siehe",
-    privacyPolicyDescription: "Platzhalterseite für die Datenschutzerklärung der AI-Standard-Website.",
-    privacyPolicyCopy:
-      "Dies ist eine Platzhalterseite für die Datenschutzerklärung der AI-Standard-Website.",
-    privacyPolicyNote:
-      "Sie wird später für diese Website relevante Datenschutz- und DSGVO-Informationen abdecken.",
+      "eine Wissensbasis zu KI-Begriffen und Projektkonventionen. Sie verkauft nichts, enthält keine Werbung, setzt keine Cookies und verwendet weder Tracking noch Analyse. Die Auslieferung läuft über Cloudflare und GitHub Pages, die IP-Adressen der Besucher zu Sicherheits- und Verfügbarkeitszwecken protokollieren \u2014 siehe",
+    privacyPolicyDescription: "Wie die AI-Standard-Website mit personenbezogenen Daten umgeht: keine Cookies, keine Analyse, und was die Hosting-Anbieter protokollieren.",
   },
 } as const;
 

@@ -38,11 +38,14 @@ npm run check
 - `src/styles/` — Tailwind entry point and any global CSS.
 - `public/` — static assets copied verbatim (`robots.txt`, favicons later).
 
-The `docs` content collection (reading from `../docs/**/*.md`) and the `<SEO>` component land in a later PR.
+- `src/data/` — content that is neither UI string nor page: operator details, the glossary, the privacy policy.
+- `scripts/` — build-time helpers, currently the git-based sitemap `<lastmod>` lookup.
+
+The `docs` content collection reads `../docs/**/*.md` directly, so repository documentation renders here without being copied.
 
 ## Conventions
 
 - No client-side JavaScript framework. Plain Astro components with islands only when needed.
-- Tailwind v4 via `@tailwindcss/postcss` (configured in `postcss.config.mjs`). Global styles in `src/styles/global.css`. We use the PostCSS plugin instead of `@tailwindcss/vite` because Astro 6 switched its bundler to Rolldown, which the Vite plugin does not yet fully support.
-- Dark/light follows the system preference; no toggle in v0.2.0.
-- The site is **minimal by design** for v0.2.0 — RSS, JSON-LD, dynamic blog, and advanced SEO land in v0.3.0+.
+- Tailwind v4 via `@tailwindcss/vite` (configured in `astro.config.mjs`). Global styles in `src/styles/global.css`. The PostCSS plugin was used while the site ran on Astro 6; under Astro 7 and Vite 8 it breaks, because Vite resolves the `@import "tailwindcss"` as a file path before PostCSS runs.
+- Dark/light follows the system preference; no toggle.
+- Sitemap `<lastmod>` comes from each page's git history, never the build clock — see `scripts/git-lastmod.mjs`.

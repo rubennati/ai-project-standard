@@ -2,8 +2,8 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- Current phase: First release (`v0.1.0`)
-- Current objective: Ship `v0.1.0` as the starting point for pilot usage; iterate based on real-world feedback.
+- Current phase: Post-`v0.2.0`; `v0.1.0` and `v0.2.0` are both tagged and released.
+- Current objective: Reposition the site as the knowledge layer on secure and lawful AI use, and clear the content audit before merging `feature/site-content-architecture`.
 
 ## Snapshot
 
@@ -11,7 +11,7 @@
 - Pre-release governance refinements landed in PR #3 (approval definition, SECURITY contact, `.gitignore`, branch-protection split, staleness contract).
 - Practical AI collaboration guide landed in PR #4 (`docs/practical-ai-collaboration.md`).
 - Branch protection on `main` is in place via a Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked).
-- `v0.1.0` release prepared in CHANGELOG; waiting for tag and GitHub release.
+- `v0.1.0` and `v0.2.0` are tagged; both now have CHANGELOG sections.
 - On `feature/site-content-architecture`, the `site/` glossary work is being reshaped into an English-first AI vocabulary and definitions layer with vendor-specific UI labels called out explicitly.
 - The glossary UI now defaults to core AI vocabulary, with product/UI labels opt-in and a compact row-based layout.
 - The glossary is now being converted into a supporting index with individual term detail pages under `/glossary/`.
@@ -24,12 +24,14 @@
 - Sitemap entries carry a real `<lastmod>`, taken from the commit date of each page's source file rather than the build clock; `site/scripts/git-lastmod.mjs` owns the route-to-source mapping and omits the date when git history is unavailable.
 - The site build moved to Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
 - The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
-- Open decision: whether "AI Standard" replaces "AI Project Standard" in the page title, `og:site_name` and JSON-LD, or stays a visual wordmark only. The legal notice still needs the media owner's name and postal address.
+- The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name. Legal notice carries the full operator disclosure.
 
 ## Immediate next steps
 
-1. Maintainer tags `v0.1.0` on `main` and creates the GitHub release.
-2. Collect pilot-usage feedback and iterate on docs (especially `practical-ai-collaboration.md`).
+1. Maintainer supplies the operator details the legal notice still lacks: a second contact channel besides email (§ 5 Abs 1 Z 3 ECG), the competent Gewerbebehörde (Z 5), chamber, Gewerbewortlaut and applicable trade law (Z 6), and the Unternehmensgegenstand (§ 25 MedienG).
+2. Legal review of the legal notice and privacy policy before `feature/site-content-architecture` is merged.
+3. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
+4. Reposition the homepage around secure and lawful AI use rather than the glossary.
 
 ## Open questions
 

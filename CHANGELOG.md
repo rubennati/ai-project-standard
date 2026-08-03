@@ -142,6 +142,24 @@ No file moves, no API or path changes. The new framing is additive and stylistic
 - `site/astro.config.mjs` — `site` updated to the custom domain; `base` removed (custom domain serves from root).
 - `site/public/robots.txt` — sitemap URL updated to the custom domain.
 
+## [0.2.0] - 2026-05-12
+
+Reconstructed from the commits the `v0.2.0` tag contains. The tag was released
+without a section here; this closes that gap rather than rewriting history.
+
+### Added
+
+- Documentation set: `docs/standard.md`, `docs/profiles.md`, `docs/adoption.md`.
+- Multi-AI baseline: cross-vendor `AGENTS.md` convention with tool-specific pointer files.
+- Minimal Astro site under `site/`, deployed to GitHub Pages and pinned to the custom domain `ai-standard.rubennati.at`.
+- Docs reader on the site, reading `docs/**/*.md` directly, plus minimal SEO and navigation.
+- Reputation files: `CITATION.cff`, `FUNDING.yml`, `CODEOWNERS`.
+
+### Changed
+
+- CI hardened with markdown lint, link check, and a profile completeness check.
+- Accent colour deepened for stronger contrast in light and dark mode, fixing invisible button text.
+
 ## [0.1.0] - 2026-05-12
 
 First public release of the repository standard. Intended as a starting point for pilot usage; expect iteration based on real-world feedback.

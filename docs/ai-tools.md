@@ -75,12 +75,23 @@ Example `.claude/settings.json`:
 Example `.codex/config.toml`:
 
 ```toml
-[mcp]
-# servers = [{ name = "github", command = "mcp-server-github" }]
+# Sandbox: keep the agent inside the workspace, with no outbound network.
+sandbox_mode = "workspace-write"
 
-[sandbox]
-# network = "deny-by-default"
+[sandbox_workspace_write]
+network_access = false
+
+# MCP: one table per server, allow-listed explicitly.
+[mcp_servers.github]
+command = "mcp-server-github"
+args = []
 ```
+
+These are the two controls `docs/security-baseline.md` requires under AI-specific
+controls, so the keys are left uncommented — commented-out configuration enforces
+nothing. Key names follow the
+[Codex configuration reference](https://github.com/openai/codex/blob/main/docs/config.md);
+verify them against your installed version before copying.
 
 ### Personal, gitignored overrides
 
