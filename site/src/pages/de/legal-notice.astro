@@ -1,6 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getUi } from "../../i18n/ui";
+import { contactEmail } from "../../data/site";
 const ui = getUi("de");
 ---
 
@@ -14,6 +15,11 @@ const ui = getUi("de");
 
   <section class="mt-8 max-w-3xl space-y-4">
     <p>{ui.legalNoticeCopy}</p>
-    <p>{ui.legalNoticeNote}</p>
+
+    <h2 class="pt-4 text-xl font-semibold">{ui.contact}</h2>
+    <p>{ui.legalNoticeContactIntro}</p>
+    <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+
+    <p class="pt-4 text-sm text-zinc-600 dark:text-zinc-400">{ui.legalNoticeOutstanding}</p>
   </section>
 </Base>

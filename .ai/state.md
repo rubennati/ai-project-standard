@@ -21,6 +21,10 @@
 - The site now has a cleaner localization foundation with Astro i18n config, centralized UI strings, localized page-shell routes for `en` and `de`, layout-level language switching, and multilingual SEO alternates.
 - The header and language switch received a small polish pass so the shell reads more intentionally, while language switching remains route-based and privacy-friendly.
 - The live site shell and homepage received a public-readiness polish pass, including stronger header balance, cleaner homepage positioning, and broader cleanup of visible German spelling.
+- Sitemap entries carry a real `<lastmod>`, taken from the commit date of each page's source file rather than the build clock; `site/scripts/git-lastmod.mjs` owns the route-to-source mapping and omits the date when git history is unavailable.
+- The site build moved to Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
+- The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
+- Open decision: whether "AI Standard" replaces "AI Project Standard" in the page title, `og:site_name` and JSON-LD, or stays a visual wordmark only. The legal notice still needs the media owner's name and postal address.
 
 ## Immediate next steps
 

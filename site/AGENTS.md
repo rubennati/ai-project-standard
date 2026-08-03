@@ -15,6 +15,19 @@ Site principles:
 - stable URLs and maintainability
 - no AI/vector search, RAG, embeddings, chatbot, analytics, or broad taxonomy unless explicitly requested
 
+Per-page checklist:
+
+`Base.astro` already emits `<title>`, the meta description, the canonical URL, Open Graph and Twitter tags, JSON-LD, and the sitemap entry. Three props are real decisions and are the only things to get right when adding a page:
+
+- `description` — always, and unique. Base falls back to one generic sentence, so a forgotten description gives the page the same text as every other, which search engines treat as thin or duplicate.
+- `routeKey` — required as soon as a page exists in both locales. It drives `hreflang` and the language switch. Without it the two language versions compete as duplicates instead of being linked as a pair.
+- `schemaType` — `CollectionPage` for list pages, `Article` for posts. Defaults to `WebPage`.
+
+Also:
+
+- sitemap `<lastmod>` is the commit date of a page's source file, resolved in `scripts/git-lastmod.mjs`. A new route backed by a dynamic path or a data file needs a rule there, or it ships without a date.
+- renaming a published route needs an entry in `redirects` in `astro.config.mjs`. The old URL is already in the sitemap Google was given.
+
 Verification:
 
 - use a Node version compatible with Astro 6
