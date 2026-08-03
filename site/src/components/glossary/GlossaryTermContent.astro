@@ -18,6 +18,17 @@ const base = import.meta.env.BASE_URL;
 const localized = getLocalizedTermContent(term, lang);
 const relatedEntries = term.related.map((name) => allTerms.find((candidate) => candidate.term === name)).filter(Boolean) as TermEntry[];
 const unresolvedRelated = term.related.filter((name) => !allTerms.some((candidate) => candidate.term === name));
+
+// Confusable terms are stored under their English name. Where that name matches
+// an entry we have, show it translated and link it — otherwise a German page
+// ends up naming the English term, which is exactly the confusion the section
+// is there to clear up.
+const confusable = (term.commonConfusion ?? []).map((name) => {
+  const entry = allTerms.find((candidate) => candidate.term === name);
+  return entry
+    ? { label: getLocalizedTermContent(entry, lang).term, href: `${base}${getTermPath(entry, lang)}` }
+    : { label: name };
+});
 const ui = getUi(lang);
 ---
 
@@ -53,11 +64,13 @@ const ui = getUi(lang);
     </section>
   )}
 
-  {term.commonConfusion && term.commonConfusion.length > 0 && (
+  {confusable.length > 0 && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.commonConfusion}</h2>
       <ul class="list-disc pl-5">
-        {term.commonConfusion.map((item) => <li>{item}</li>)}
+        {confusable.map((item) => (
+          <li>{item.href ? <a href={item.href}>{item.label}</a> : item.label}</li>
+        ))}
       </ul>
     </section>
   )}

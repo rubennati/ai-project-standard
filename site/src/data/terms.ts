@@ -1,5 +1,6 @@
 export type TermKind =
   | "general-ai-term"
+  | "data-protection-term"
   | "ai-architecture-term"
   | "ai-work-term"
   | "platform-ui-term"
@@ -1278,6 +1279,76 @@ export const terms: TermEntry[] = [
       de: {
         shortDefinition:
           "Ein Produkt- oder UI-Label für KI-Suchfunktionen, die über den aktuellen Chat hinaus externe, verbundene oder indexierte Informationen nutzen.",
+      },
+    },
+  },
+  {
+    term: "Pseudonymisation",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Replacing identifying details so the data can no longer be attributed to a person without extra information that is kept separately. The data stays personal data.",
+    explanation:
+      "You swap names, addresses or numbers for placeholders and keep the mapping somewhere else, under lock. Anyone holding only the processed text cannot tell who it is about. Anyone holding the mapping can reverse it \u2014 and that reversibility is the whole point of the term. Article 4(5) GDPR requires the additional information to be kept separately and protected by technical and organisational measures.",
+    aiContext:
+      "This is what most \u201canonymise before you paste it into the AI\u201d workflows actually do: replace names with Person 1, send the text to an external model, then put the real names back afterwards. It lowers the risk considerably and it is worth doing. It does not take the processing out of the GDPR: pseudonymised data remains personal data, so the legal basis, the processor agreement and the third-country question all still apply.",
+    observedIn: ["General AI usage", "Model documentation"],
+    status: "stable",
+    stability: "stable",
+    aliases: ["Pseudonymization"],
+    related: ["Anonymisation"],
+    commonConfusion: ["Anonymisation"],
+    sources: [
+      {
+        label: "Art. 4(5) GDPR \u2014 definition of pseudonymisation",
+        href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj#d1e1489-1-1",
+      },
+      {
+        label: "Recital 26 GDPR \u2014 pseudonymised data is still personal data",
+        href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      },
+    ],
+    translations: {
+      de: {
+        term: "Pseudonymisierung",
+        shortDefinition:
+          "Identifizierende Angaben werden ersetzt, sodass ohne zusätzliche, getrennt aufbewahrte Informationen kein Personenbezug mehr herstellbar ist. Es bleiben personenbezogene Daten.",
+        explanation:
+          "Namen, Adressen oder Nummern werden durch Platzhalter ersetzt, die Zuordnung liegt getrennt und geschützt. Wer nur den bearbeiteten Text hat, erkennt die Person nicht. Wer die Zuordnung hat, kann sie wiederherstellen \u2014 und genau diese Umkehrbarkeit macht den Begriff aus. Art. 4 Z 5 DSGVO verlangt, dass die zusätzlichen Informationen gesondert aufbewahrt und durch technische und organisatorische Ma\u00dfnahmen geschützt werden.",
+        aiContext:
+          "Das ist es, was die meisten Verfahren tun, die als \u201eanonymisieren, bevor es in die KI geht\u201c beschrieben werden: Namen durch Person 1 ersetzen, Text an ein externes Modell schicken, danach die echten Namen wieder einsetzen. Das senkt das Risiko erheblich und ist sinnvoll. Es nimmt die Verarbeitung aber nicht aus der DSGVO heraus: Pseudonymisierte Daten bleiben personenbezogen, Rechtsgrundlage, Auftragsverarbeitung und Drittlandfrage bleiben bestehen.",
+      },
+    },
+  },
+  {
+    term: "Anonymisation",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Processing that removes the link to a person for good, so the result is no longer personal data and the GDPR no longer applies to it.",
+    explanation:
+      "The test is not whether the obvious identifiers are gone, but whether the person can still be singled out by anyone, by any means reasonably likely to be used \u2014 including by combining the data with something else. If you keep a mapping that lets you reverse the step, it is not anonymisation. Recital 26 GDPR puts anonymous information outside the Regulation entirely, which is exactly why the bar for claiming it is high.",
+    aiContext:
+      "The word gets used loosely for anything that hides names before text is sent to a model. That matters here, because the two terms have opposite legal consequences: anonymous data falls out of the GDPR, pseudonymised data does not. Describing a reversible process as anonymisation is a claim you cannot support \u2014 and on a page about data protection it is the kind of error a reader will notice.",
+    observedIn: ["General AI usage", "Model documentation"],
+    status: "stable",
+    stability: "stable",
+    aliases: ["Anonymization"],
+    related: ["Pseudonymisation"],
+    commonConfusion: ["Pseudonymisation", "Redaction"],
+    sources: [
+      {
+        label: "Recital 26 GDPR \u2014 anonymous information falls outside the Regulation",
+        href: "https://eur-lex.europa.eu/eli/reg/2016/679/oj",
+      },
+    ],
+    translations: {
+      de: {
+        term: "Anonymisierung",
+        shortDefinition:
+          "Verarbeitung, die den Personenbezug dauerhaft aufhebt, sodass keine personenbezogenen Daten mehr vorliegen und die DSGVO nicht mehr greift.",
+        explanation:
+          "Ma\u00dfstab ist nicht, ob die offensichtlichen Kennzeichen entfernt wurden, sondern ob die Person mit allen Mitteln, deren Einsatz nach allgemeinem Ermessen wahrscheinlich ist, noch herausgegriffen werden kann \u2014 auch durch Zusammenführung mit anderen Daten. Wer eine Zuordnung behält, mit der sich der Schritt rückgängig machen lässt, anonymisiert nicht. Erwägungsgrund 26 DSGVO nimmt anonyme Informationen vollständig aus der Verordnung heraus \u2014 deshalb ist die Hürde für diese Behauptung hoch.",
+        aiContext:
+          "Der Begriff wird locker für alles verwendet, was Namen verbirgt, bevor Text an ein Modell geht. Das ist hier von Bedeutung, weil beide Begriffe gegensätzliche Rechtsfolgen haben: Anonyme Daten fallen aus der DSGVO, pseudonymisierte nicht. Ein umkehrbares Verfahren als Anonymisierung zu bezeichnen, ist eine Behauptung, die sich nicht halten lässt.",
       },
     },
   },
