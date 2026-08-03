@@ -1352,4 +1352,37 @@ export const terms: TermEntry[] = [
       },
     },
   },
+  {
+    term: "Fine-tuning",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Continuing the training of an existing model on additional examples, so the changed behaviour sits in the model's own weights.",
+    explanation:
+      "A base model is trained once, at great expense, on very broad material. Fine-tuning takes that finished model and trains it further on a narrower set of examples \u2014 the result is a changed model, not a changed prompt. It is the only one of the common approaches where the new knowledge or behaviour actually ends up inside the model.",
+    aiContext:
+      "This is the word that makes \u201cwe trained it on our data\u201d ambiguous, and the ambiguity is usually commercial. A product sold as specialised for law or medicine is far more often a system prompt plus retrieval over a document set than a fine-tuned model. Both can be good products. They differ in cost, in where your data ends up, and in what happens when the underlying model is replaced \u2014 so it is worth asking which one you are buying.",
+    observedIn: ["General AI usage", "Developer tools", "AI vendor marketing"],
+    status: "review",
+    stability: "medium",
+    aliases: ["Finetuning", "Fine tuning"],
+    related: ["RAG", "Embedding"],
+    commonConfusion: ["RAG", "Prompting"],
+    sources: [
+      {
+        label: "OpenAI \u2014 fine-tuning guide",
+        href: "https://platform.openai.com/docs/guides/fine-tuning",
+      },
+    ],
+    translations: {
+      de: {
+        term: "Fine-Tuning",
+        shortDefinition:
+          "Ein bestehendes Modell wird mit zusätzlichen Beispielen weitertrainiert, sodass das veränderte Verhalten in den Gewichten des Modells selbst liegt.",
+        explanation:
+          "Ein Basismodell wird einmal und sehr teuer auf breitem Material trainiert. Fine-Tuning nimmt dieses fertige Modell und trainiert es mit einer engeren Beispielmenge weiter \u2014 heraus kommt ein verändertes Modell, kein veränderter Prompt. Es ist der einzige der gängigen Ansätze, bei dem das neue Wissen tatsächlich im Modell landet.",
+        aiContext:
+          "Dieses Wort macht „wir haben es mit unseren Daten trainiert“ mehrdeutig, und die Mehrdeutigkeit ist meist eine geschäftliche. Ein Produkt, das als spezialisiert auf Recht oder Medizin verkauft wird, ist weit häufiger ein System-Prompt plus Abruf über eine Dokumentensammlung als ein feinabgestimmtes Modell. Beides kann gut sein. Sie unterscheiden sich in den Kosten, darin wo deine Daten landen, und darin was passiert, wenn das zugrunde liegende Modell ausgetauscht wird \u2014 also lohnt die Frage, was genau man kauft.",
+      },
+    },
+  },
 ];
