@@ -12,6 +12,14 @@ export const ui = {
     home: "Home",
     docs: "Docs",
     blog: "Blog",
+    dataFlows: "Data flows",
+    dataFlowsTitle: "Data flows",
+    dataFlowsDescription:
+      "Where your input actually goes: which plans train on it, how long it is kept, and what to check before you paste anything.",
+    dataFlowsIntro:
+      "What leaves your machine when you use an AI tool, and what happens to it there. Each section is labelled with what kind of claim it is and when it was last checked \u2014 vendor defaults change without notice.",
+    dataFlowsMore:
+      "More is being written: what a coding agent reads from your repository, what an MCP server actually gets to see, and where the servers stand.",
     law: "Law",
     about: "About",
     lawTitle: "Law",
@@ -136,6 +144,14 @@ export const ui = {
     home: "Startseite",
     docs: "Docs",
     blog: "Blog",
+    dataFlows: "Datenflüsse",
+    dataFlowsTitle: "Datenflüsse",
+    dataFlowsDescription:
+      "Wohin deine Eingabe tatsächlich geht: welche Tarife damit trainieren, wie lange sie aufbewahrt wird, und was du prüfen solltest, bevor du etwas hineinkopierst.",
+    dataFlowsIntro:
+      "Was deinen Rechner verlässt, wenn du ein KI-Werkzeug nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
+    dataFlowsMore:
+      "Weiteres entsteht: was ein Coding-Agent aus deinem Repository liest, was ein MCP-Server tatsächlich zu sehen bekommt, und wo die Server stehen.",
     law: "Recht",
     about: "Über",
     lawTitle: "Recht",

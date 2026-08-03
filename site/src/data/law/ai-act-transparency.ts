@@ -13,7 +13,7 @@
  * as such rather than presented as settled law.
  */
 import type { SiteLocale } from "../../i18n/ui";
-import type { EvidenceLevel } from "../evidence";
+import type { Article } from "../article";
 
 export const CHECKED = "2026-08-03";
 
@@ -23,23 +23,7 @@ const EC_GUIDELINES =
   "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content";
 const ARTICLE_50 = "https://artificialintelligenceact.eu/article/50/";
 
-export interface LawSection {
-  heading: string;
-  level: EvidenceLevel;
-  checked?: string;
-  paragraphs: string[];
-  list?: string[];
-  links?: { label: string; href: string }[];
-}
-
-export interface LawArticle {
-  title: string;
-  description: string;
-  lead: string;
-  sections: LawSection[];
-}
-
-const en: LawArticle = {
+const en: Article = {
   title: "AI Act: labelling AI-generated content",
   description:
     "Article 50 of the EU AI Act has applied since 2 August 2026. What has to be disclosed, who is obliged, and what the transition period actually covers.",
@@ -102,7 +86,7 @@ const en: LawArticle = {
   ],
 };
 
-const de: LawArticle = {
+const de: Article = {
   title: "AI Act: Kennzeichnung KI-generierter Inhalte",
   description:
     "Artikel 50 des EU AI Act gilt seit 2. August 2026. Was offengelegt werden muss, wen es trifft, und was die Übergangsfrist wirklich abdeckt.",
@@ -165,5 +149,5 @@ const de: LawArticle = {
   ],
 };
 
-export const getAiActTransparency = (locale: SiteLocale): LawArticle =>
+export const getAiActTransparency = (locale: SiteLocale): Article =>
   locale === "de" ? de : en;

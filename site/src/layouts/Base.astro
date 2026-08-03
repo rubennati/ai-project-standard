@@ -66,6 +66,7 @@ const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey
 const primaryNav = [
   { href: docsHref, label: ui.docs },
   { href: `${base}use-cases`, label: ui.useCases },
+  { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
   { href: toHref(getLocalizedPath(locale, "law")), label: ui.law },
   { href: `${base}blog`, label: ui.blog },
   { href: localizedAbout, label: ui.about },
