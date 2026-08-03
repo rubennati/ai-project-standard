@@ -56,6 +56,13 @@ const alternates = routeKey
   : [];
 const xDefaultHref = routeKey ? toHref(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
 
+const primaryNav = [
+  { href: localizedHome, label: ui.home },
+  { href: docsHref, label: ui.docs },
+  { href: localizedGlossary, label: ui.glossaryIndex },
+  { href: localizedAbout, label: ui.about },
+];
+
 const copyrightYear = new Date().getFullYear();
 
 // Pre-filled issue so a reader reporting a problem does not have to describe
@@ -73,16 +80,16 @@ const footerSections = [
     links: [
       { href: localizedAbout, label: ui.footerAbout },
       { href: localizedGlossary, label: ui.glossaryIndex },
-      { href: repoUrl, label: ui.sourceOnGitHub },
-      { href: `${repoUrl}/blob/main/CONTRIBUTING.md`, label: ui.contribute },
+      { href: repoUrl, label: ui.technicalRepository, external: true },
+      { href: `${repoUrl}/blob/main/CONTRIBUTING.md`, label: ui.contribute, external: true },
     ],
   },
   {
     id: "footer-trust",
     heading: ui.footerTrust,
     links: [
-      { href: reportProblemUrl, label: ui.reportProblem },
-      { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability },
+      { href: reportProblemUrl, label: ui.reportProblem, external: true },
+      { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability, external: true },
       { href: `${base}.well-known/security.txt`, label: ui.securityTxt },
     ],
   },
@@ -92,6 +99,7 @@ const footerSections = [
     links: [
       { href: localizedLegal, label: ui.legalNotice },
       { href: localizedPrivacy, label: ui.privacyPolicy },
+      { href: `${repoUrl}/blob/main/LICENSE`, label: ui.codeLicense, external: true },
     ],
   },
 ];
@@ -113,63 +121,36 @@ const footerSections = [
   <body class="flex min-h-screen flex-col">
     <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
     <header class="border-b border-black/10 bg-white/85 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-950/80">
-      <div class="mx-auto flex max-w-5xl flex-col gap-4 px-6 py-4 lg:flex-row lg:items-center lg:justify-between">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-10">
-          <a href={localizedHome} class="shrink-0 no-underline text-black dark:text-white">
-            <span class="block text-base font-semibold tracking-tight">
-              {/* Accent on "AI" — the distinctive half of the name. Live text
-                  rather than an image, so it stays crisp and translatable, and
-                  a flat accent colour rather than a gradient, so the >7:1
-                  contrast the accent was tuned for still holds. */}
-              <span class="text-[var(--color-accent)]">AI</span><span> Standard</span>
-            </span>
-            <span class="mt-1 block text-xs uppercase tracking-[0.18em] text-zinc-500 dark:text-zinc-400">
-              {ui.brandTagline}
-            </span>
-          </a>
-          <nav aria-label={ui.primaryNavigation} class="flex flex-wrap items-center gap-2 text-sm">
-            <a
-              href={localizedHome}
-              aria-current={isActive(localizedHome) ? "page" : undefined}
-              class:list={{
-                "rounded-full border px-3 py-1.5 no-underline transition": true,
-                "border-black/10 bg-black/[0.045] font-semibold text-black dark:border-white/10 dark:bg-white/[0.12] dark:text-white":
-                  isActive(localizedHome),
-                "border-transparent text-zinc-700 hover:border-black/10 hover:bg-black/[0.03] hover:text-black dark:text-zinc-300 dark:hover:border-white/10 dark:hover:bg-white/[0.08] dark:hover:text-white":
-                  !isActive(localizedHome),
-              }}
-            >
-              {ui.home}
-            </a>
-            <a
-              href={docsHref}
-              aria-current={isActive(docsHref) ? "page" : undefined}
-              class:list={{
-                "rounded-full border px-3 py-1.5 no-underline transition": true,
-                "border-black/10 bg-black/[0.045] font-semibold text-black dark:border-white/10 dark:bg-white/[0.12] dark:text-white":
-                  isActive(docsHref),
-                "border-transparent text-zinc-700 hover:border-black/10 hover:bg-black/[0.03] hover:text-black dark:text-zinc-300 dark:hover:border-white/10 dark:hover:bg-white/[0.08] dark:hover:text-white":
-                  !isActive(docsHref),
-              }}
-            >
-              {ui.docs}
-            </a>
-            <a
-              href={localizedAbout}
-              aria-current={isActive(localizedAbout) ? "page" : undefined}
-              class:list={{
-                "rounded-full border px-3 py-1.5 no-underline transition": true,
-                "border-black/10 bg-black/[0.045] font-semibold text-black dark:border-white/10 dark:bg-white/[0.12] dark:text-white":
-                  isActive(localizedAbout),
-                "border-transparent text-zinc-700 hover:border-black/10 hover:bg-black/[0.03] hover:text-black dark:text-zinc-300 dark:hover:border-white/10 dark:hover:bg-white/[0.08] dark:hover:text-white":
-                  !isActive(localizedAbout),
-              }}
-            >
-              {ui.about}
-            </a>
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 py-4">
+        {/* Weight and colour split the name into readable parts, the way
+            SecDockBlue does. Live text rather than an image, and a flat accent
+            rather than a gradient, so the >7:1 contrast still holds. */}
+        <a
+          href={localizedHome}
+          class="shrink-0 text-base tracking-tight no-underline text-black dark:text-white"
+        >
+          <span class="font-bold text-[var(--color-accent)]">AI</span>{" "}<span
+            class="font-normal text-zinc-600 dark:text-zinc-400">Project</span
+          >{" "}<span class="font-semibold">Standard</span>
+        </a>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <nav aria-label={ui.primaryNavigation} class="flex flex-wrap items-center gap-6">
+            {
+              primaryNav.map((item) => (
+                <a
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  class:list={{
+                    "no-underline hover:underline": true,
+                    "font-semibold": isActive(item.href),
+                  }}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
           </nav>
-        </div>
-        <div class="flex items-center justify-end lg:pl-6">
           {
             hasAlternate && alternatePath && (
               <GlossaryLanguageSwitch
@@ -188,22 +169,30 @@ const footerSections = [
     </main>
 
     <footer class="border-t border-black/10 dark:border-white/10">
-      <div class="mx-auto max-w-5xl px-6 py-10 text-sm">
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mx-auto max-w-5xl px-6 pt-6 pb-10 text-sm">
+        <div class="grid gap-x-8 gap-y-6 [grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))]">
           {
             footerSections.map((section) => (
               <nav aria-labelledby={section.id}>
                 <h2
                   id={section.id}
-                  class="text-xs font-semibold uppercase tracking-[0.14em] text-zinc-500 dark:text-zinc-400"
+                  class="mb-2 text-xs font-semibold uppercase tracking-[0.06em] text-zinc-600 dark:text-zinc-400"
                 >
                   {section.heading}
                 </h2>
-                <ul class="mt-3 flex flex-col gap-2">
+                <ul class="grid gap-y-[0.35rem]">
                   {section.links.map((link) => (
                     <li>
-                      <a href={link.href} class="text-zinc-700 dark:text-zinc-300">
+                      <a
+                        href={link.href}
+                        class="text-zinc-700 no-underline hover:underline dark:text-zinc-300"
+                      >
                         {link.label}
+                        {link.external && (
+                          <span aria-hidden="true" class="ml-0.5">
+                            ↗
+                          </span>
+                        )}
                       </a>
                     </li>
                   ))}
@@ -214,11 +203,23 @@ const footerSections = [
         </div>
 
         <p
-          class="mt-10 flex flex-wrap items-center gap-x-2 gap-y-1 border-t border-black/10 pt-6 text-zinc-600 dark:border-white/10 dark:text-zinc-400"
+          class="mt-7 flex flex-col gap-y-[0.4rem] text-xs leading-relaxed text-zinc-600 sm:flex-row sm:flex-wrap sm:gap-x-[0.6rem] sm:gap-y-[0.35rem] dark:text-zinc-400"
         >
-          <span>© {copyrightYear} AI Standard</span>
-          <span aria-hidden="true">·</span>
-          <a href={`${repoUrl}/blob/main/LICENSE`}>{ui.codeLicense}</a>
+          <span>© {copyrightYear} AI Project Standard</span>
+          <span aria-hidden="true" class="hidden sm:inline">·</span>
+          <span>
+            {ui.finePrintCode}{" "}
+            <a href={`${repoUrl}/blob/main/LICENSE`} class="text-inherit underline underline-offset-2"
+              >MIT</a
+            >
+          </span>
+          <span aria-hidden="true" class="hidden sm:inline">·</span>
+          <span>
+            {ui.finePrintSiteContent}{" "}
+            <a href={localizedLegal} class="text-inherit underline underline-offset-2"
+              >{ui.licenceNotDecided}</a
+            >
+          </span>
         </p>
       </div>
     </footer>
