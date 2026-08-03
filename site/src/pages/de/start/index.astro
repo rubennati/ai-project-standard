@@ -1,0 +1,44 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { getUi } from "../../../i18n/ui";
+import { getEmployeeStart, CHECKED as CHECKED_EMP } from "../../../data/start/employee";
+import { getDecisionMakerStart, CHECKED as CHECKED_DEC } from "../../../data/start/decision-maker";
+
+const locale = "de" as const;
+const base = import.meta.env.BASE_URL;
+const ui = getUi(locale);
+
+const articles = [
+  { ...getEmployeeStart(locale), href: `${base}de/start/employee`, checked: CHECKED_EMP },
+  { ...getDecisionMakerStart(locale), href: `${base}de/start/decision-maker`, checked: CHECKED_DEC },
+];
+---
+
+<Base
+  title={ui.startTitle}
+  description={ui.startDescription}
+  schemaType="CollectionPage"
+  locale={locale}
+  routeKey="start"
+>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.startTitle}</h1>
+  <p class="mt-4 max-w-2xl text-lg leading-8">{ui.startIntro}</p>
+
+  <ul class="mt-10 flex max-w-2xl flex-col gap-6">
+    {
+      articles.map((article) => (
+        <li class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+          <h2 class="text-lg font-semibold">
+            <a href={article.href}>{article.title}</a>
+          </h2>
+          <p class="mt-2 leading-7">{article.description}</p>
+          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
+            <time datetime={article.checked}>{article.checked}</time>
+          </p>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="mt-8 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.startMore}</p>
+</Base>

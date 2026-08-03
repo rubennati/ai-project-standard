@@ -18,7 +18,7 @@ export function docDescription(entry: DocEntry): string {
   const body = entry.body?.replace(FIRST_H1, "") ?? "";
   const paragraph = body.match(FIRST_PARAGRAPH)?.[1];
   if (paragraph) return paragraph.slice(0, 200);
-  return "AI Project Standard documentation.";
+  return "AI Standard documentation.";
 }
 
 function humanizeSlug(slug: string): string {

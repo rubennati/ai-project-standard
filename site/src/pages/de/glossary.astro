@@ -1,0 +1,17 @@
+---
+import GlossaryIndexContent from "../../components/glossary/GlossaryIndexContent.astro";
+import { terms } from "../../data/terms";
+import { getUi } from "../../i18n/ui";
+import Base from "../../layouts/Base.astro";
+const ui = getUi("de");
+---
+
+<Base
+  title={ui.glossaryTitle}
+  description={ui.glossaryDescription}
+  schemaType="CollectionPage"
+  locale="de"
+  routeKey="glossaryIndex"
+>
+  <GlossaryIndexContent lang="de" terms={terms} />
+</Base>

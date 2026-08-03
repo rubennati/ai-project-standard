@@ -7,3 +7,6 @@
 
 # Email links (we don't probe SMTP).
 ^mailto:
+
+# Placeholder in docs/website-audit.md — the reader substitutes their own domain.
+^https://<DOMAIN

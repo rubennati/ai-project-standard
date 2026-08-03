@@ -2,6 +2,10 @@
 import "../styles/global.css";
 import SEO from "../components/SEO.astro";
 import JsonLd from "../components/JsonLd.astro";
+import GlossaryLanguageSwitch from "../components/glossary/GlossaryLanguageSwitch.astro";
+import { getAlternateLocale, getLocalizedPath, type LocalizedRouteKey } from "../i18n/routes";
+import { getUi, type SiteLocale } from "../i18n/ui";
+import { repoUrl } from "../data/site";
 
 interface Props {
   title: string;
@@ -9,6 +13,11 @@ interface Props {
   ogType?: "website" | "article";
   schemaType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
   extraSchemas?: Record<string, unknown>[];
+  locale?: SiteLocale;
+  routeKey?: LocalizedRouteKey;
+  termSlug?: string;
+  /** Overridden by pages rendered from `docs/`, which are MIT, not CC BY. */
+  license?: string;
 }
 
 const {
@@ -17,12 +26,102 @@ const {
   ogType = "website",
   schemaType = "WebPage",
   extraSchemas = [],
+  locale = "en",
+  routeKey,
+  termSlug,
+  license,
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
+const ui = getUi(locale);
+const alternateLocale = getAlternateLocale(locale);
+const lang = locale;
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
+// hreflang needs fully-qualified URLs. Relative ones are silently ignored, so
+// the whole language pairing counts for nothing — which is what Lighthouse
+// flagged, and what a crawler would have done quietly.
+const toAbsolute = (path: string) => new URL(toHref(path), Astro.site).toString();
+const localizedHome = toHref(getLocalizedPath(locale, "home"));
+const localizedAbout = toHref(getLocalizedPath(locale, "about"));
+const localizedGlossary = toHref(getLocalizedPath(locale, "glossaryIndex"));
+const localizedLegal = toHref(getLocalizedPath(locale, "legalNotice"));
+const localizedPrivacy = toHref(getLocalizedPath(locale, "privacyPolicy"));
+const docsHref = `${base}docs`;
+const isActive = (href: string) => {
+  const normalized = href.replace(/\/$/, "") || "/";
+  return currentPath === normalized || (normalized !== "/" && currentPath.startsWith(`${normalized}/`));
+};
+const hasAlternate = Boolean(routeKey);
+const alternatePath = routeKey
+  ? getLocalizedPath(alternateLocale, routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)
+  : undefined;
+const alternates = routeKey
+  ? [
+      { hreflang: "en", href: toAbsolute(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+      { hreflang: "de", href: toAbsolute(getLocalizedPath("de", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) },
+    ]
+  : [];
+const xDefaultHref = routeKey ? toAbsolute(getLocalizedPath("en", routeKey, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined)) : undefined;
+
+// Header carries the subjects a reader arrives for. No "Home" entry — the
+// wordmark is already the home link. Reference and adoption material — the
+// repository docs, the glossary, the use cases, the profile comparison — lives
+// in the footer, where people look things up rather than navigate.
+const primaryNav = [
+  { href: toHref(getLocalizedPath(locale, "start")), label: ui.start },
+  { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
+  { href: toHref(getLocalizedPath(locale, "secureSetup")), label: ui.secureSetup },
+  { href: toHref(getLocalizedPath(locale, "law")), label: ui.law },
+  { href: `${base}blog`, label: ui.blog },
+  { href: localizedAbout, label: ui.about },
+];
+
+const copyrightYear = new Date().getFullYear();
+
+// Pre-filled issue so a reader reporting a problem does not have to describe
+// which page they were on — the title and URL are already in the body.
+const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
+const reportProblemUrl = `${repoUrl}/issues/new?${new URLSearchParams({
+  title: `Site: ${title}`,
+  body: `**Page:** ${title}\n**URL:** ${pageUrl}\n\n**What is wrong or unclear:**\n\n`,
+}).toString()}`;
+
+const footerSections = [
+  {
+    id: "footer-project",
+    heading: ui.footerProject,
+    links: [
+      { href: docsHref, label: ui.docs },
+      { href: localizedGlossary, label: ui.glossary },
+      { href: `${base}use-cases`, label: ui.useCases },
+      { href: `${base}profiles`, label: ui.profiles },
+      { href: repoUrl, label: ui.technicalRepository, external: true },
+      { href: `${repoUrl}/blob/main/CONTRIBUTING.md`, label: ui.contribute, external: true },
+    ],
+  },
+  {
+    id: "footer-trust",
+    heading: ui.footerTrust,
+    links: [
+      { href: reportProblemUrl, label: ui.reportProblem, external: true },
+      { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability, external: true },
+      { href: `${base}.well-known/security.txt`, label: ui.securityTxt },
+    ],
+  },
+  {
+    id: "footer-legal",
+    heading: ui.footerLegal,
+    links: [
+      { href: localizedLegal, label: ui.legalNotice },
+      { href: localizedPrivacy, label: ui.privacyPolicy },
+      { href: `${repoUrl}/blob/main/LICENSE`, label: ui.codeLicense, external: true },
+    ],
+  },
+];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -31,22 +130,53 @@ const base = import.meta.env.BASE_URL;
     <meta name="theme-color" content="#243b66" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
-    <SEO title={title} description={description} ogType={ogType} />
-    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} />
+    <SEO title={title} description={description} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
+    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} />
   </head>
   <body class="flex min-h-screen flex-col">
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="border-b border-black/10 dark:border-white/10">
-      <nav class="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href={base} class="font-semibold no-underline">AI Project Standard</a>
-        <ul class="flex gap-6 text-sm">
-          <li><a href={`${base}use-cases`}>Use cases</a></li>
-          <li><a href={`${base}profiles`}>Profiles</a></li>
-          <li><a href={`${base}docs`}>Docs</a></li>
-          <li><a href={`${base}blog`}>Blog</a></li>
-          <li><a href={`${base}about`}>About</a></li>
-        </ul>
-      </nav>
+    <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
+    <header class="border-b border-black/10 bg-white/85 backdrop-blur-sm dark:border-white/10 dark:bg-zinc-950/80">
+      <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-between gap-x-6 gap-y-3 px-6 py-4">
+        {/* Weight and colour split the name into readable parts, the way
+            SecDockBlue does. Live text rather than an image, and a flat accent
+            rather than a gradient, so the >7:1 contrast still holds. */}
+        <a
+          href={localizedHome}
+          class="shrink-0 text-base tracking-tight no-underline text-black dark:text-white"
+        >
+          <span class="font-bold text-[var(--color-accent)]">AI</span>{" "}<span
+            class="font-semibold">Standard</span
+          >
+        </a>
+
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+          <nav aria-label={ui.primaryNavigation} class="flex flex-wrap items-center gap-6">
+            {
+              primaryNav.map((item) => (
+                <a
+                  href={item.href}
+                  aria-current={isActive(item.href) ? "page" : undefined}
+                  class:list={{
+                    "no-underline hover:underline": true,
+                    "font-semibold": isActive(item.href),
+                  }}
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </nav>
+          {
+            hasAlternate && alternatePath && (
+              <GlossaryLanguageSwitch
+                currentLang={locale}
+                enHref={toHref(getLocalizedPath("en", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+                deHref={toHref(getLocalizedPath("de", routeKey!, routeKey === "glossaryTerm" ? { slug: termSlug } : undefined))}
+              />
+            )
+          }
+        </div>
+      </div>
     </header>
 
     <main id="main-content" class="mx-auto w-full max-w-5xl flex-1 px-6 py-12">
@@ -54,9 +184,60 @@ const base = import.meta.env.BASE_URL;
     </main>
 
     <footer class="border-t border-black/10 dark:border-white/10">
-      <div class="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-6 text-sm sm:flex-row sm:justify-between">
-        <span class="text-zinc-700 dark:text-zinc-300">AI Project Standard — MIT licensed.</span>
-        <a href="https://github.com/rubennati/ai-project-standard" class="font-medium">Source on GitHub</a>
+      <div class="mx-auto max-w-5xl px-6 pt-6 pb-10 text-sm">
+        <div class="grid gap-x-8 gap-y-6 [grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))]">
+          {
+            footerSections.map((section) => (
+              <nav aria-labelledby={section.id}>
+                <h2
+                  id={section.id}
+                  class="mb-2 text-xs font-semibold uppercase tracking-[0.06em] text-zinc-600 dark:text-zinc-400"
+                >
+                  {section.heading}
+                </h2>
+                <ul class="grid gap-y-[0.35rem]">
+                  {section.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="text-zinc-700 no-underline hover:underline dark:text-zinc-300"
+                      >
+                        {link.label}
+                        {link.external && (
+                          <span aria-hidden="true" class="ml-0.5">
+                            ↗
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))
+          }
+        </div>
+
+        <p
+          class="mt-7 flex flex-col gap-y-[0.4rem] text-xs leading-relaxed text-zinc-600 sm:flex-row sm:flex-wrap sm:gap-x-[0.6rem] sm:gap-y-[0.35rem] dark:text-zinc-400"
+        >
+          <span>© {copyrightYear} AI Standard</span>
+          <span aria-hidden="true" class="hidden sm:inline">·</span>
+          <span>
+            {ui.finePrintCode}{" "}
+            <a href={`${repoUrl}/blob/main/LICENSE`} class="text-inherit underline underline-offset-2"
+              >MIT</a
+            >
+          </span>
+          <span aria-hidden="true" class="hidden sm:inline">·</span>
+          <span>
+            {ui.finePrintSiteContent}{" "}
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              rel="license"
+              class="text-inherit underline underline-offset-2">{ui.contentLicence}</a
+            >
+          </span>
+        </p>
       </div>
     </footer>
   </body>

@@ -67,6 +67,18 @@ jobs:
       - name: Checkout
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
 
+      # docs/security-baseline.md teaches SHA-pinning using this workflow's own
+      # lychee pin as the example. Dependabot bumps workflows but never parses
+      # markdown, so the example silently went stale once already and shipped a
+      # SHA that does not resolve. Fail here instead.
+      - name: Pinning example matches the pin CI runs
+        run: |
+          pin=$(grep -o 'lycheeverse/lychee-action@[0-9a-f]\{40\}' .github/workflows/ci.yml | head -1)
+          grep -q "$pin" docs/security-baseline.md || {
+            echo "::error file=docs/security-baseline.md::Example pin differs from $pin in ci.yml"
+            exit 1
+          }
+
       - name: Restore lychee cache
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:

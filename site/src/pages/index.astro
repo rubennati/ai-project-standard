@@ -1,110 +1,80 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getUi } from "../i18n/ui";
 const base = import.meta.env.BASE_URL;
+const ui = getUi("en");
+
+// Topic statements, not links: these describe what the site is for, and the
+// pages behind two of them are still being written. Linking them now would
+// promise something that does not exist.
+const doors = [
+  { heading: ui.doorPaste, copy: ui.doorPasteCopy },
+  { heading: ui.doorAllowed, copy: ui.doorAllowedCopy },
+  { heading: ui.doorSetup, copy: ui.doorSetupCopy },
+];
+
+const available = [
+  { heading: ui.nowStandard, copy: ui.nowStandardCopy, href: `${base}docs` },
+  { heading: ui.nowUseCases, copy: ui.nowUseCasesCopy, href: `${base}use-cases` },
+  { heading: ui.nowGlossary, copy: ui.nowGlossaryCopy, href: `${base}glossary` },
+];
 ---
 
 <Base
-  title="AI Project Standard"
-  description="A starting baseline for open-source projects that use AI. Curated conventions across four pillars — human-AI collaboration, open-source operations, engineering operations, knowledge and documentation."
+  title={ui.homeTitle}
+  description={ui.homeDescription}
   schemaType="WebSite"
+  locale="en"
+  routeKey="home"
 >
   <section class="flex flex-col gap-6">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">
-      A starting baseline for open-source projects that use AI.
-    </h1>
-    <p class="max-w-2xl text-lg">
-      Curated conventions across four pillars. Clone the whole template, adopt by profile, or pick the pieces that fit.
-    </p>
+    <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{ui.homeHeading}</h1>
+    <p class="max-w-3xl text-lg leading-8">{ui.homeLead}</p>
+    <p class="max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.homeStance}</p>
     <div class="flex flex-wrap gap-4">
       <a
-        href={`${base}use-cases`}
-        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:bg-[var(--color-accent-hover)]"
+        href={`${base}docs`}
+        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
       >
-        See the use cases
+        {ui.homePrimaryLink}
       </a>
       <a
-        href={`${base}profiles`}
+        href={`${base}glossary`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
-        Compare profiles
+        {ui.homeSecondaryLink}
       </a>
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">Four pillars</h2>
-    <div class="grid gap-8 sm:grid-cols-2">
-      <article class="flex flex-col gap-2">
-        <h3 class="text-lg font-semibold">Human-AI collaboration</h3>
-        <p>
-          <code>AGENTS.md</code> as the source of truth, multi-tool pointer files for Claude Code,
-          Codex, GitHub Copilot, and Cursor, and the operational <code>.ai/</code> workspace.
-        </p>
-      </article>
-      <article class="flex flex-col gap-2">
-        <h3 class="text-lg font-semibold">Open-source operations</h3>
-        <p>
-          README, LICENSE, contribution rules, security policy, support guide, issue and PR templates,
-          code owners, funding, citation.
-        </p>
-      </article>
-      <article class="flex flex-col gap-2">
-        <h3 class="text-lg font-semibold">Engineering operations</h3>
-        <p>
-          CI workflows, versioning policy, Git workflow, branch protection, dependency automation,
-          security baseline, OpenSSF Scorecard.
-        </p>
-      </article>
-      <article class="flex flex-col gap-2">
-        <h3 class="text-lg font-semibold">Knowledge and documentation</h3>
-        <p>
-          The strict in-repo <code>docs/</code> reader and this knowledge layer — long-form guides,
-          comparisons, blog, research.
-        </p>
-      </article>
+    <h2 class="text-2xl font-semibold">{ui.whatThisSiteIsFor}</h2>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {
+        doors.map((door) => (
+          <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
+            <h3 class="text-lg font-semibold">{door.heading}</h3>
+            <p class="leading-7">{door.copy}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">Three profiles</h2>
-    <div class="grid gap-8 sm:grid-cols-3">
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">Open Source</h3>
-        <p>Governance, contribution, security, CI. No AI files.</p>
-      </article>
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">Human-AI Collaboration</h3>
-        <p>
-          <code>AGENTS.md</code>, multi-tool pointers, <code>.ai/</code> workspace. Drops into an
-          existing repository.
-        </p>
-      </article>
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">Combined</h3>
-        <p>All four pillars. The working reference in this repository.</p>
-      </article>
+    <h2 class="text-2xl font-semibold">{ui.whatIsAvailableNow}</h2>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {
+        available.map((item) => (
+          <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+            <h3 class="text-lg font-semibold">
+              <a href={item.href}>{item.heading}</a>
+            </h3>
+            <p class="mt-2 leading-7">{item.copy}</p>
+          </article>
+        ))
+      }
     </div>
-  </section>
-
-  <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">Four adoption paths</h2>
-    <ol class="ml-5 list-decimal space-y-2">
-      <li>New project, with AI from day one — Combined profile.</li>
-      <li>AI into an existing repository — Human-AI Collaboration profile alongside what already exists.</li>
-      <li>New open-source project, no AI — Open Source profile only.</li>
-      <li>Professionalising an existing open-source project — pull in the parts that are missing.</li>
-    </ol>
-    <p>
-      Walk-throughs for each path live in <a href={`${base}use-cases`}>Use cases</a>.
-    </p>
-  </section>
-
-  <section class="mt-20 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">Two-layer architecture</h2>
-    <p class="max-w-3xl">
-      The repository is the operational layer — workflows, AI state, governance, templates. This site
-      is the knowledge layer — explanations, comparisons, tutorials, research. The repository itself
-      serves as the working reference: every file and workflow runs here, not just on paper.
-    </p>
+    <p class="mt-2 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.stillWriting}</p>
   </section>
 </Base>

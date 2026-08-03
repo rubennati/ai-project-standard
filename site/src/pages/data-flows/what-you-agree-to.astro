@@ -1,0 +1,52 @@
+---
+import Base from "../../layouts/Base.astro";
+import EvidenceLabel from "../../components/EvidenceLabel.astro";
+import { getWhatYouAgreeTo } from "../../data/data-flows/what-you-agree-to";
+
+const locale = "en" as const;
+const article = getWhatYouAgreeTo(locale);
+---
+
+<Base
+  title={article.title}
+  description={article.description}
+  ogType="article"
+  schemaType="Article"
+  locale={locale}
+  routeKey="dataFlowsConsent"
+>
+  <article class="max-w-2xl">
+    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{article.title}</h1>
+    <p class="mt-4 text-lg leading-8">{article.lead}</p>
+
+    {
+      article.sections.map((section) => (
+        <section class="mt-10">
+          <h2 class="text-xl font-semibold">{section.heading}</h2>
+          <div class="mt-2">
+            <EvidenceLabel level={section.level} locale={locale} checked={section.checked} />
+          </div>
+          {section.paragraphs.map((paragraph) => (
+            <p class="mt-3 leading-7">{paragraph}</p>
+          ))}
+          {section.list && (
+            <ul class="mt-3 flex list-disc flex-col gap-1 pl-5 leading-7">
+              {section.list.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+          {section.links && (
+            <ul class="mt-3 flex flex-col gap-1 text-sm">
+              {section.links.map((link) => (
+                <li>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))
+    }
+  </article>
+</Base>

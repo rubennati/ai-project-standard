@@ -1,0 +1,76 @@
+import { defaultLocale, type SiteLocale } from "./ui";
+
+export type LocalizedRouteKey =
+  | "home"
+  | "about"
+  | "glossaryIndex"
+  | "glossaryTerm"
+  | "legalNotice"
+  | "privacyPolicy"
+  | "law"
+  | "lawAiActTransparency"
+  | "lawWhatMayGoIn"
+  | "dataFlows"
+  | "dataFlowsTraining"
+  | "dataFlowsDeletion"
+  | "dataFlowsConsent"
+  | "secureSetup"
+  | "secureSetupAccess"
+  | "start"
+  | "startEmployee"
+  | "startDecisionMaker";
+
+export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
+
+export const getLocaleFromPathname = (pathname: string): SiteLocale =>
+  pathname === "/de" || pathname.startsWith("/de/") ? "de" : defaultLocale;
+
+export const getLocalizedPath = (
+  locale: SiteLocale,
+  routeKey: LocalizedRouteKey,
+  options?: { slug?: string },
+) => {
+  const prefix = locale === "de" ? "/de" : "";
+
+  switch (routeKey) {
+    case "home":
+      return prefix || "/";
+    case "about":
+      return `${prefix}/about`;
+    case "glossaryIndex":
+      return `${prefix}/glossary`;
+    case "glossaryTerm":
+      return `${prefix}/glossary/${options?.slug ?? ""}`.replace(/\/+$/, "");
+    case "legalNotice":
+      return `${prefix}/legal-notice`;
+    case "privacyPolicy":
+      return `${prefix}/privacy-policy`;
+    case "law":
+      return `${prefix}/law`;
+    case "lawAiActTransparency":
+      return `${prefix}/law/ai-act-transparency`;
+    case "lawWhatMayGoIn":
+      return `${prefix}/law/what-may-go-in`;
+    case "dataFlows":
+      return `${prefix}/data-flows`;
+    case "dataFlowsTraining":
+      return `${prefix}/data-flows/training-and-retention`;
+    case "dataFlowsConsent":
+      return `${prefix}/data-flows/what-you-agree-to`;
+    case "dataFlowsDeletion":
+      return `${prefix}/data-flows/getting-it-back-out`;
+    case "secureSetup":
+      return `${prefix}/secure-setup`;
+    case "secureSetupAccess":
+      return `${prefix}/secure-setup/before-you-grant-access`;
+    case "start":
+      return `${prefix}/start`;
+    case "startEmployee":
+      return `${prefix}/start/employee`;
+    case "startDecisionMaker":
+      return `${prefix}/start/decision-maker`;
+  }
+};
+
+export const getAlternateLocale = (locale: SiteLocale): SiteLocale =>
+  locale === "de" ? "en" : "de";

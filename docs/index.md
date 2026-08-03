@@ -8,6 +8,8 @@ This documentation set defines the project baseline and collaboration model.
 - [Profiles](./profiles.md) — exact file lists for OSS-only, AI-only, and combined adoption
 - [Adoption](./adoption.md) — how to adopt each profile and update across versions
 - [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
+- [Website Audit Prompt](./website-audit.md) — reusable prompt for checking a published site for legal, privacy, security and discoverability defects
+- [Forkable Repository](./forkable-repository.md) — keeping operator-specific personal data out of a public repository, so a fork publishes placeholders
 
 ## Getting started
 

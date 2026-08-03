@@ -2,8 +2,8 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- Current phase: First release (`v0.1.0`)
-- Current objective: Ship `v0.1.0` as the starting point for pilot usage; iterate based on real-world feedback.
+- Current phase: Post-`v0.2.0`; `v0.1.0` and `v0.2.0` are both tagged and released.
+- Current objective: Reposition the site as the knowledge layer on secure and lawful AI use, and clear the content audit before merging `feature/site-content-architecture`.
 
 ## Snapshot
 
@@ -11,12 +11,31 @@
 - Pre-release governance refinements landed in PR #3 (approval definition, SECURITY contact, `.gitignore`, branch-protection split, staleness contract).
 - Practical AI collaboration guide landed in PR #4 (`docs/practical-ai-collaboration.md`).
 - Branch protection on `main` is in place via a Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked).
-- `v0.1.0` release prepared in CHANGELOG; waiting for tag and GitHub release.
+- `v0.1.0` and `v0.2.0` are tagged; both now have CHANGELOG sections.
+- On `feature/site-content-architecture`, the `site/` glossary work is being reshaped into an English-first AI vocabulary and definitions layer with vendor-specific UI labels called out explicitly.
+- The glossary UI now defaults to core AI vocabulary, with product/UI labels opt-in and a compact row-based layout.
+- The glossary is now being converted into a supporting index with individual term detail pages under `/glossary/`.
+- The glossary term pages now separate short definition, explanation, and AI-specific context more clearly.
+- The glossary now has parallel English and German routes (`/glossary/`, `/glossary/[slug]/`, `/de/glossary/`, `/de/glossary/[slug]/`) with language switching, linked related terms, and expanded AI/product vocabulary.
+- The glossary now has a stronger German translation foundation for the highest-visibility terms, and the `Search` entry is framed as an AI tool/product feature rather than a generic search concept.
+- The site now has a cleaner localization foundation with Astro i18n config, centralized UI strings, localized page-shell routes for `en` and `de`, layout-level language switching, and multilingual SEO alternates.
+- The header and language switch received a small polish pass so the shell reads more intentionally, while language switching remains route-based and privacy-friendly.
+- The live site shell and homepage received a public-readiness polish pass, including stronger header balance, cleaner homepage positioning, and broader cleanup of visible German spelling.
+- Sitemap entries carry a real `<lastmod>`, taken from the commit date of each page's source file rather than the build clock; `site/scripts/git-lastmod.mjs` owns the route-to-source mapping and omits the date when git history is unavailable.
+- The site build moved to Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
+- The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
+- The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name.
+- Licensing is settled: the repository including `docs/` stays MIT, texts written for the site are CC BY 4.0. Both are stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT rather than CC BY.
+- The site has moved from documenting the repository to being a knowledge layer on secure and lawful AI use. Four sections carry it: Start (entry points by decision authority), Data flows, Law, and Setting up safely.
+- Every substantive claim carries an evidence level — fact, measured, law, assessment, advice — with a check date on factual claims. `site/src/data/evidence.ts` owns the definitions and the condition each level has to meet before it may be published.
+- Article content lives in typed modules under `site/src/data/`, one per article, bilingual, so pages stay presentational.
+- Lighthouse measures 100 across performance, accessibility, best practices, SEO and agentic browsing on six page types in both locales.
 
 ## Immediate next steps
 
-1. Maintainer tags `v0.1.0` on `main` and creates the GitHub release.
-2. Collect pilot-usage feedback and iterate on docs (especially `practical-ai-collaboration.md`).
+1. Legal review of the legal notice and privacy policy before `feature/site-content-architecture` is merged. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
+2. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
+3. Reposition the homepage around secure and lawful AI use rather than the glossary.
 
 ## Open questions
 

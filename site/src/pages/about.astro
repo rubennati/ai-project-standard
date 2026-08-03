@@ -1,28 +1,25 @@
 ---
 import Base from "../layouts/Base.astro";
+import { getUi } from "../i18n/ui";
+const ui = getUi("en");
 ---
 
 <Base
-  title="About — AI Project Standard"
-  description="About the AI Project Standard, its architecture, and its maintainer."
+  title={`${ui.aboutTitle} — AI Standard`}
+  description={ui.aboutDescription}
   schemaType="AboutPage"
+  locale="en"
+  routeKey="about"
 >
-  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">About</h1>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.aboutTitle}</h1>
 
   <section class="mt-8 flex flex-col gap-4">
-    <p class="max-w-3xl">
-      A starting baseline for open-source projects that use AI. Four pillars — human-AI collaboration,
-      open-source operations, software engineering, knowledge and documentation. Three adoption
-      profiles. Five common adoption paths.
-    </p>
-    <p class="max-w-3xl">
-      The repository is the operational layer: workflows, AI state, governance, templates. This site
-      is the knowledge layer: explanations, comparisons, tutorials, research, blog.
-    </p>
+    <p class="max-w-3xl">{ui.aboutIntro}</p>
+    <p class="max-w-3xl">{ui.aboutLayerCopy}</p>
   </section>
 
   <section class="mt-12 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">Maintainer</h2>
+    <h2 class="text-2xl font-semibold">{ui.maintainer}</h2>
     <p>
       Created and maintained by <a href="https://github.com/rubennati">Ruben Nati</a>. Contributions
       welcome — see the
@@ -31,7 +28,7 @@ import Base from "../layouts/Base.astro";
   </section>
 
   <section class="mt-10 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">License</h2>
+    <h2 class="text-2xl font-semibold">{ui.license}</h2>
     <p>
       Released under the MIT License. See the
       <a href="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE">LICENSE</a> file.
@@ -39,11 +36,7 @@ import Base from "../layouts/Base.astro";
   </section>
 
   <section class="mt-10 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">Acknowledgements</h2>
-    <p>
-      The standard draws on the <code>AGENTS.md</code> cross-vendor convention popularised by the
-      Codex CLI, GitHub Copilot's instructions file, Cursor's MDC rules format, and the wider
-      open-source community's work on contribution and governance baselines.
-    </p>
+    <h2 class="text-2xl font-semibold">{ui.acknowledgements}</h2>
+    <p>{ui.acknowledgementsCopy}</p>
   </section>
 </Base>

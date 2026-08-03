@@ -1,14 +1,41 @@
-AI Project Standard
+# AI Standard
 
-Public website for the AI Project Standard project. The site currently covers the project baseline and related guidance for professional AI use in technical projects.
+> A security practitioner's view on using AI at work: where your data goes, what you are allowed to put in, and what the law already requires. Austria first, then the EU.
 
-Important public sections:
-- https://ai-standard.rubennati.at/
-- https://ai-standard.rubennati.at/use-cases
-- https://ai-standard.rubennati.at/profiles
-- https://ai-standard.rubennati.at/docs
-- https://ai-standard.rubennati.at/about
+Every substantive claim carries an evidence label — Fact, Measured, Law, Assessment or Recommendation — and factual claims carry the date they were last checked against a primary source. Vendor behaviour changes without notice, so a claim here without a date should be treated as unverified.
 
-Notes:
-- The /docs section is a public reader view of repository documentation.
-- The /blog page exists but is currently a placeholder.
+Available in English at the paths below and in German under `/de/`.
+
+## Start here
+
+- [Where to start](https://ai-standard.rubennati.at/start): Entry points sorted by what you are allowed to decide rather than by how much you already know.
+- [I am employed](https://ai-standard.rubennati.at/start/employee): What to find out before using AI on work material, whom to ask, and what is not yours to decide.
+- [I decide for others](https://ai-standard.rubennati.at/start/decision-maker): The AI literacy duty under AI Act Art. 4, why shadow IT is a procurement result, and what to settle before choosing a tool.
+
+## Data flows
+
+- [Does the tool train on what you type?](https://ai-standard.rubennati.at/data-flows/training-and-retention): Training is decided by the plan tier, not the vendor. Includes the trap of a developer tool on a personal account.
+- [What you agree to when you allow training](https://ai-standard.rubennati.at/data-flows/what-you-agree-to): Allowing training is first of all allowing storage, and the two are the same switch.
+- [Getting it back out](https://ai-standard.rubennati.at/data-flows/getting-it-back-out): Erasure requests, why EU processing is not EU jurisdiction, and where a local model genuinely fits.
+
+## Law
+
+- [What may go into an AI tool?](https://ai-standard.rubennati.at/law/what-may-go-in): Personal data and confidentiality are two regimes with two different answers.
+- [AI Act Article 50](https://ai-standard.rubennati.at/law/ai-act-transparency): Transparency and labelling duties, applicable since 2 August 2026.
+
+## Setting up safely
+
+- [Before you grant access](https://ai-standard.rubennati.at/secure-setup/before-you-grant-access): Day-one settings, checking a directory before an agent gets it, and why a technical boundary beats an instruction in a prompt.
+
+## Reference
+
+- [Glossary](https://ai-standard.rubennati.at/glossary): AI, data protection and tooling terms, with the confusable ones paired.
+- [Documentation](https://ai-standard.rubennati.at/docs): The underlying repository standard, rendered from its source.
+- [Use cases](https://ai-standard.rubennati.at/use-cases): Four starting points for adopting that standard.
+- [About](https://ai-standard.rubennati.at/about): What this site is and who maintains it.
+
+## Optional
+
+- [Repository](https://github.com/rubennati/ai-project-standard): The source of the standard and of this site. MIT licensed.
+- [Legal notice](https://ai-standard.rubennati.at/legal-notice): Operator details and licensing. Text written for this site is CC BY 4.0 — attribution required, commercial use permitted; `/docs` pages are MIT.
+- [Privacy policy](https://ai-standard.rubennati.at/privacy-policy): No cookies, no analytics, no third-party resources; what the hosting providers log.

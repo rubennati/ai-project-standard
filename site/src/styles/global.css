@@ -7,6 +7,13 @@
   /* Deep cobalt — tuned for >7:1 contrast against white and white text against it. */
   --color-accent: oklch(40% 0.17 258);
   --color-accent-hover: oklch(34% 0.17 258);
+  /*
+   * Text placed *on* the accent. It cannot be a fixed white: the accent lifts
+   * in dark mode so it stays readable as text on a dark background, and white
+   * on that lifted blue measures 2.54:1 — an unreadable primary button. This
+   * flips with the scheme so the pairing holds in both.
+   */
+  --color-on-accent: white;
 }
 
 @layer base {
@@ -41,6 +48,8 @@
     :root {
       --color-accent: oklch(72% 0.16 258);
       --color-accent-hover: oklch(80% 0.16 258);
+      /* The lifted accent is bright, so text on it has to go dark. */
+      --color-on-accent: oklch(18% 0.02 250);
     }
   }
 
@@ -50,12 +59,17 @@
    * specificity hacks — without the layer, this unlayered rule would win
    * against Tailwind's layered utilities.
    */
+  /*
+   * Links are underlined by default. Colour alone fails WCAG 1.4.1 for links
+   * inside a block of text — a reader who cannot distinguish the hue has no
+   * way to tell a link from the sentence around it. Navigation, footer and
+   * buttons opt out explicitly with `no-underline`, where position and shape
+   * already carry the affordance.
+   */
   a {
     color: var(--color-accent);
-  }
-
-  a:hover {
     text-decoration: underline;
+    text-underline-offset: 0.2em;
   }
 
   .skip-link {

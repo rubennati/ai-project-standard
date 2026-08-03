@@ -1,0 +1,41 @@
+---
+import { getEvidenceCopy, type EvidenceLevel } from "../data/evidence";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  level: EvidenceLevel;
+  locale: SiteLocale;
+  /** ISO date the claim was last verified. Expected for fact, measured and law. */
+  checked?: string;
+}
+
+const { level, locale, checked } = Astro.props;
+const { label, meaning } = getEvidenceCopy(locale, level);
+
+// The badge stays compact: three sections in a row on the same level would
+// otherwise repeat the same sentence three times. The meaning is carried on
+// the element itself, so it is available on hover and to assistive technology,
+// and the page states it once in full.
+const tone: Record<EvidenceLevel, string> = {
+  fact: "border-black/20 dark:border-white/25",
+  measured: "border-black/20 dark:border-white/25",
+  law: "border-[var(--color-accent)]/50",
+  assessment: "border-dashed border-black/30 dark:border-white/35",
+  advice: "border-dashed border-black/30 dark:border-white/35",
+};
+---
+
+<p
+  title={meaning}
+  aria-label={`${label}: ${meaning}`}
+  class={`inline-flex items-baseline gap-x-2 rounded-full border px-3 py-1 text-xs ${tone[level]}`}
+>
+  <span class="font-semibold uppercase tracking-[0.06em]">{label}</span>
+  {
+    checked && (
+      <time datetime={checked} class="text-zinc-600 dark:text-zinc-400">
+        {checked}
+      </time>
+    )
+  }
+</p>
