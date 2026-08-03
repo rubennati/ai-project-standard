@@ -1,8 +1,18 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getUi } from "../i18n/ui";
-import { contactEmail } from "../data/site";
+import { contactEmail, operator } from "../data/site";
+const base = import.meta.env.BASE_URL;
 const ui = getUi("en");
+
+const rows = [
+  { label: ui.operatorLabel, value: operator.name },
+  { label: ui.registeredAsLabel, value: operator.company },
+  { label: ui.addressLabel, value: operator.address },
+  { label: ui.emailLabel, value: contactEmail, href: `mailto:${contactEmail}` },
+  { label: ui.companyRegisterLabel, value: operator.companyRegister },
+  { label: ui.vatLabel, value: operator.vatId },
+];
 ---
 
 <Base
@@ -13,13 +23,28 @@ const ui = getUi("en");
 >
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.legalNotice}</h1>
 
-  <section class="mt-8 max-w-3xl space-y-4">
-    <p>{ui.legalNoticeCopy}</p>
+  <section class="mt-8 max-w-2xl">
+    <h2 class="text-xl font-semibold">{ui.legalNoticeHeading}</h2>
 
-    <h2 class="pt-4 text-xl font-semibold">{ui.contact}</h2>
-    <p>{ui.legalNoticeContactIntro}</p>
-    <p><a href={`mailto:${contactEmail}`}>{contactEmail}</a></p>
+    <dl class="mt-6 grid grid-cols-1 sm:grid-cols-[minmax(0,14rem)_1fr]">
+      {
+        rows.map((row) => (
+          <div class="contents">
+            <dt class="border-t border-black/10 py-3 text-zinc-600 dark:border-white/10 dark:text-zinc-400">
+              {row.label}
+            </dt>
+            <dd class="border-black/10 pb-3 sm:border-t sm:py-3 dark:border-white/10">
+              {row.href ? <a href={row.href}>{row.value}</a> : row.value}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
 
-    <p class="pt-4 text-sm text-zinc-600 dark:text-zinc-400">{ui.legalNoticeOutstanding}</p>
+    <p class="mt-8 border-t border-black/10 pt-6 dark:border-white/10">
+      <strong class="font-semibold">{ui.purposeLabel}</strong>{" "}
+      {ui.purposeCopy}{" "}
+      <a href={`${base}privacy-policy`}>{ui.privacyInline}</a>.
+    </p>
   </section>
 </Base>
