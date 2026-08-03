@@ -20,6 +20,14 @@ export const ui = {
       "What leaves your machine when you use an AI tool, and what happens to it there. Each section is labelled with what kind of claim it is and when it was last checked \u2014 vendor defaults change without notice.",
     dataFlowsMore:
       "More is being written: what a coding agent reads from your repository, what an MCP server actually gets to see, and where the servers stand.",
+    secureSetup: "Setup",
+    secureSetupTitle: "Setting it up safely",
+    secureSetupDescription:
+      "What to change on day one, what to check before an agent gets access, and where a technical boundary belongs instead of a sentence in a prompt.",
+    secureSetupIntro:
+      "None of this is new security thinking. What changed is that these tools are driven in plain language, so the decisions are now made by people who were never asked to think about them.",
+    secureSetupMore:
+      "More is being written: what a coding agent actually reads, and building an MCP server as a control point rather than a convenience.",
     law: "Law",
     about: "About",
     lawTitle: "Law",
@@ -152,6 +160,14 @@ export const ui = {
       "Was deinen Rechner verlässt, wenn du ein KI-Werkzeug nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
     dataFlowsMore:
       "Weiteres entsteht: was ein Coding-Agent aus deinem Repository liest, was ein MCP-Server tatsächlich zu sehen bekommt, und wo die Server stehen.",
+    secureSetup: "Einrichten",
+    secureSetupTitle: "Sicher einrichten",
+    secureSetupDescription:
+      "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent Zugriff bekommt, und wo eine technische Grenze hingehört statt eines Satzes im Prompt.",
+    secureSetupIntro:
+      "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Werkzeuge in normaler Sprache bedient werden — die Entscheidungen treffen jetzt Leute, die nie danach gefragt wurden.",
+    secureSetupMore:
+      "Weiteres entsteht: was ein Coding-Agent tatsächlich liest, und einen MCP-Server als Kontrollpunkt zu bauen statt als Bequemlichkeit.",
     law: "Recht",
     about: "Über",
     lawTitle: "Recht",

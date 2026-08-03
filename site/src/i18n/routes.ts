@@ -12,7 +12,9 @@ export type LocalizedRouteKey =
   | "lawWhatMayGoIn"
   | "dataFlows"
   | "dataFlowsTraining"
-  | "dataFlowsDeletion";
+  | "dataFlowsDeletion"
+  | "secureSetup"
+  | "secureSetupAccess";
 
 export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
 
@@ -51,6 +53,10 @@ export const getLocalizedPath = (
       return `${prefix}/data-flows/training-and-retention`;
     case "dataFlowsDeletion":
       return `${prefix}/data-flows/getting-it-back-out`;
+    case "secureSetup":
+      return `${prefix}/secure-setup`;
+    case "secureSetupAccess":
+      return `${prefix}/secure-setup/before-you-grant-access`;
   }
 };
 
