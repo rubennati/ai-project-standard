@@ -41,3 +41,18 @@ Rationale: The previous "do not commit, push, or merge without explicit human ap
 Decision: The Astro site uses English as the canonical locale with parallel German routes under `/de/`. Localization is implemented with Astro i18n configuration, centralized UI strings, explicit localized route files for the current public pages, and term-level fallback from German to English where translations are missing.
 
 Rationale: This keeps the first multilingual foundation small, reviewable, and SEO-safe while avoiding a one-off glossary-only translation layer. It also leaves room to scale into broader site localization later without changing the public English route structure.
+
+## 2026-08-03 - Site content licence
+
+Decision: Texts written for the website are licensed CC BY 4.0. The repository,
+including everything under `docs/`, stays MIT. CC BY-NC was rejected: the site
+renders `docs/*.md` directly, and those files are already MIT, which
+irrevocably permits commercial use — an NC clause would have contradicted the
+repository on the same text. NC is also undefined at the edges, and a standard
+depends on being adopted, companies included.
+
+## 2026-08-03 - Site brand name
+
+Decision: The website is branded "AI Standard" everywhere, metadata included.
+The repository keeps the name `ai-project-standard`. A visible brand that
+disagrees with `og:site_name` would hand search engines the other name.
