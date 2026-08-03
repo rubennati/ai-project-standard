@@ -1,6 +1,7 @@
 ---
 import Base from "../../../layouts/Base.astro";
 import { getUi } from "../../../i18n/ui";
+import { getGettingItBackOut, CHECKED as CHECKED_OUT } from "../../../data/data-flows/getting-it-back-out";
 import { getTrainingAndRetention, CHECKED } from "../../../data/data-flows/training-and-retention";
 
 const locale = "de" as const;
@@ -9,6 +10,7 @@ const ui = getUi(locale);
 
 const articles = [
   { ...getTrainingAndRetention(locale), href: `${base}de/data-flows/training-and-retention`, checked: CHECKED },
+  { ...getGettingItBackOut(locale), href: `${base}de/data-flows/getting-it-back-out`, checked: CHECKED_OUT },
 ];
 ---
 
