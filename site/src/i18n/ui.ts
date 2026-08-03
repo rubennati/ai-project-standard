@@ -12,7 +12,15 @@ export const ui = {
     home: "Home",
     docs: "Docs",
     blog: "Blog",
+    law: "Law",
     about: "About",
+    lawTitle: "Law",
+    lawDescription:
+      "What the law requires when you use AI at work \u2014 Austria first, then the EU. Each claim names its norm and the date it was checked.",
+    lawIntro:
+      "Rules that are already in force, not ones that are coming. Every section carries a label saying what kind of claim it is \u2014 a legal requirement, a reading of one, or what I would do about it \u2014 with the date it was last checked against the source.",
+    lawMore:
+      "More is being written: what you may put into a tool when it belongs to a client, and where the line runs between private and company use.",
     primaryNavigation: "Primary navigation",
     glossaryIndex: "Glossary Index",
     glossary: "Glossary",
@@ -128,7 +136,15 @@ export const ui = {
     home: "Startseite",
     docs: "Docs",
     blog: "Blog",
+    law: "Recht",
     about: "Über",
+    lawTitle: "Recht",
+    lawDescription:
+      "Was das Gesetz beim Einsatz von KI im Arbeitsalltag verlangt \u2014 Österreich zuerst, dann die EU. Jede Aussage nennt ihre Norm und das Datum der Prüfung.",
+    lawIntro:
+      "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Abschnitt trägt eine Kennzeichnung, welche Art von Aussage er ist \u2014 gesetzliche Pflicht, deren Auslegung, oder was ich dazu tun würde \u2014 samt Datum der letzten Prüfung an der Quelle.",
+    lawMore:
+      "Weiteres entsteht: was in ein Werkzeug hineindarf, wenn es Kundenmaterial ist, und wo die Grenze zwischen privater und betrieblicher Nutzung verläuft.",
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
     glossary: "Glossar",

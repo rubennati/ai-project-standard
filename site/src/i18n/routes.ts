@@ -6,7 +6,9 @@ export type LocalizedRouteKey =
   | "glossaryIndex"
   | "glossaryTerm"
   | "legalNotice"
-  | "privacyPolicy";
+  | "privacyPolicy"
+  | "law"
+  | "lawAiActTransparency";
 
 export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
 
@@ -33,6 +35,10 @@ export const getLocalizedPath = (
       return `${prefix}/legal-notice`;
     case "privacyPolicy":
       return `${prefix}/privacy-policy`;
+    case "law":
+      return `${prefix}/law`;
+    case "lawAiActTransparency":
+      return `${prefix}/law/ai-act-transparency`;
   }
 };
 
