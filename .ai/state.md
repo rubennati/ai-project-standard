@@ -26,6 +26,10 @@
 - The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
 - The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name.
 - Licensing is settled: the repository including `docs/` stays MIT, texts written for the site are CC BY 4.0. Both are stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT rather than CC BY.
+- The site has moved from documenting the repository to being a knowledge layer on secure and lawful AI use. Four sections carry it: Start (entry points by decision authority), Data flows, Law, and Setting up safely.
+- Every substantive claim carries an evidence level — fact, measured, law, assessment, advice — with a check date on factual claims. `site/src/data/evidence.ts` owns the definitions and the condition each level has to meet before it may be published.
+- Article content lives in typed modules under `site/src/data/`, one per article, bilingual, so pages stay presentational.
+- Lighthouse measures 100 across performance, accessibility, best practices, SEO and agentic browsing on six page types in both locales.
 
 ## Immediate next steps
 
