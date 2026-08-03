@@ -3,6 +3,21 @@ import Base from "../layouts/Base.astro";
 import { getUi } from "../i18n/ui";
 const base = import.meta.env.BASE_URL;
 const ui = getUi("en");
+
+// Topic statements, not links: these describe what the site is for, and the
+// pages behind two of them are still being written. Linking them now would
+// promise something that does not exist.
+const doors = [
+  { heading: ui.doorPaste, copy: ui.doorPasteCopy },
+  { heading: ui.doorAllowed, copy: ui.doorAllowedCopy },
+  { heading: ui.doorSetup, copy: ui.doorSetupCopy },
+];
+
+const available = [
+  { heading: ui.nowStandard, copy: ui.nowStandardCopy, href: `${base}docs` },
+  { heading: ui.nowUseCases, copy: ui.nowUseCasesCopy, href: `${base}use-cases` },
+  { heading: ui.nowGlossary, copy: ui.nowGlossaryCopy, href: `${base}glossary` },
+];
 ---
 
 <Base
@@ -13,62 +28,53 @@ const ui = getUi("en");
   routeKey="home"
 >
   <section class="flex flex-col gap-6">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{ui.homeHeading}</h1>
+    <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{ui.homeHeading}</h1>
     <p class="max-w-3xl text-lg leading-8">{ui.homeLead}</p>
+    <p class="max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.homeStance}</p>
     <div class="flex flex-wrap gap-4">
       <a
-        href={`${base}about`}
+        href={`${base}docs`}
         class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-white no-underline hover:bg-[var(--color-accent-hover)]"
       >
-        {ui.aboutKnowledgeBase}
+        {ui.homePrimaryLink}
       </a>
       <a
         href={`${base}glossary`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
-        {ui.glossarySecondaryLink}
+        {ui.homeSecondaryLink}
       </a>
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
     <h2 class="text-2xl font-semibold">{ui.whatThisSiteIsFor}</h2>
-    <div class="grid gap-6 sm:grid-cols-2">
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.collectTerms}</h3>
-        <p>{ui.collectTermsCopy}</p>
-      </article>
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.clarifyDifferences}</h3>
-        <p>{ui.clarifyDifferencesCopy}</p>
-      </article>
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.understandingBeforeImplementation}</h3>
-        <p>{ui.understandingBeforeImplementationCopy}</p>
-      </article>
-      <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.knowledgeBaseInProgress}</h3>
-        <p>{ui.knowledgeBaseInProgressCopy}</p>
-      </article>
+    <div class="grid gap-6 sm:grid-cols-3">
+      {
+        doors.map((door) => (
+          <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
+            <h3 class="text-lg font-semibold">{door.heading}</h3>
+            <p class="leading-7">{door.copy}</p>
+          </article>
+        ))
+      }
     </div>
   </section>
 
   <section class="mt-20 flex flex-col gap-4">
     <h2 class="text-2xl font-semibold">{ui.whatIsAvailableNow}</h2>
-    <p class="max-w-3xl leading-7">{ui.whatIsAvailableNowCopy}</p>
     <div class="grid gap-6 sm:grid-cols-3">
-      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.glossaryNow}</h3>
-        <p class="mt-2 leading-7">{ui.glossaryNowCopy}</p>
-      </article>
-      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.termPagesNow}</h3>
-        <p class="mt-2 leading-7">{ui.termPagesNowCopy}</p>
-      </article>
-      <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
-        <h3 class="text-lg font-semibold">{ui.docsNow}</h3>
-        <p class="mt-2 leading-7">{ui.docsNowCopy}</p>
-      </article>
+      {
+        available.map((item) => (
+          <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
+            <h3 class="text-lg font-semibold">
+              <a href={item.href}>{item.heading}</a>
+            </h3>
+            <p class="mt-2 leading-7">{item.copy}</p>
+          </article>
+        ))
+      }
     </div>
+    <p class="mt-2 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.stillWriting}</p>
   </section>
 </Base>

@@ -9,7 +9,6 @@ export const ui = {
     language: "Language",
     englishShort: "EN",
     germanShort: "DE",
-    brandTagline: "AI knowledge base",
     home: "Home",
     docs: "Docs",
     blog: "Blog",
@@ -21,12 +20,9 @@ export const ui = {
     profiles: "Profiles",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
-    sourceOnGitHub: "Source on GitHub",
-    footerNavigation: "Footer",
     footerProject: "Project",
     footerTrust: "Trust",
     footerLegal: "Legal",
-    footerAbout: "About this knowledge base",
     technicalRepository: "Technical repository",
     codeLicense: "MIT (code)",
     finePrintCode: "Code",
@@ -49,13 +45,11 @@ export const ui = {
     includeProductLabels: "Include product/UI labels",
     whereDidISeeIt: "Where did I see it?",
     allSources: "All sources",
-    noResults: "No results.",
     showing: "Showing",
     entry: "entry",
     entries: "entries",
     productLabel: "product label",
     breadcrumbHome: "Home",
-    breadcrumbGlossary: "Glossary Index",
     explanation: "Plain-language explanation",
     aiContext: "AI context",
     commonConfusion: "Common confusion",
@@ -69,37 +63,39 @@ export const ui = {
     glossaryIntro:
       "This is a working index of AI- and LLM-near vocabulary. Deeper explanations live on the term pages, while broader guides and project documentation will stay separate.",
     homeTitle: "AI Standard",
-    homeDescription: "An evolving knowledge base for AI terminology, concepts, and relationships.",
-    homeHeading: "An evolving knowledge base for AI terminology and concepts.",
+    homeDescription:
+      "What actually happens when you use AI at work: where your data goes, what you are allowed to put in, and what the law already requires.",
+    homeHeading: "What actually happens when you use AI at work.",
     homeLead:
-      "AI terms and product names change quickly. Different tools often use the same words in different ways, or mean slightly different things.",
-    aboutKnowledgeBase: "About this knowledge base",
-    glossarySecondaryLink: "Browse the term index",
-    collectTerms: "Collect terms",
-    collectTermsCopy:
-      "This project collects important AI terms, product concepts, and their relationships in a simple, understandable form.",
-    clarifyDifferences: "Clarify meaning",
-    clarifyDifferencesCopy:
-      "Terms like agent, memory, RAG, or workflow are often used differently. The site makes those differences easier to see over time.",
-    understandingBeforeImplementation: "Understand before implementation",
-    understandingBeforeImplementationCopy:
-      "Before deeper architecture or implementation topics are added, the focus stays on a clear shared understanding of the basics.",
-    knowledgeBaseInProgress: "Knowledge base in progress",
-    knowledgeBaseInProgressCopy:
-      "This site is not finished. It is growing into a knowledge base for professional AI use in technical projects.",
+      "Written from a security practitioner's desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
+    homeStance:
+      "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
+    homePrimaryLink: "The standard",
+    homeSecondaryLink: "Look up a term",
+
     whatThisSiteIsFor: "What this site is for",
-    whatIsAvailableNow: "What is available now",
-    whatIsAvailableNowCopy:
-      "The site is still growing. Today, it offers a maintained entry point into AI terminology while keeping technical repository documentation separate.",
-    glossaryNow: "Term index",
-    glossaryNowCopy:
-      "Use the glossary index to find AI, LLM, tooling, and product terms quickly.",
-    termPagesNow: "Term pages",
-    termPagesNowCopy:
-      "Open an individual term page when you want a plain-language explanation, AI context, and related terms.",
-    docsNow: "Technical reference",
-    docsNowCopy:
-      "Repository-specific reference material remains under Docs so the knowledge layer stays focused and readable.",
+    doorPaste: "Before you paste",
+    doorPasteCopy:
+      "Where the data goes, per tool class \u2014 chat, coding agents, MCP servers, automation platforms. The route, the servers, the jurisdiction, how long it is kept, and whether \u201cdeleted\u201d means deleted.",
+    doorAllowed: "What you are allowed to do",
+    doorAllowedCopy:
+      "Two questions, often confused. Personal data is a matter of data protection law; source code, client material and anything under an NDA is a matter of confidentiality \u2014 no less binding for not being personal. Private use differs from company use, generated content carries a labelling duty, and much of it is already law.",
+    doorSetup: "How to set it up",
+    doorSetupCopy:
+      "An agent with access to a repository or a server can do a great deal. What to restrict before you grant it, and the conventions that keep the work reviewable afterwards.",
+
+    whatIsAvailableNow: "What is here today",
+    nowStandard: "The standard",
+    nowStandardCopy:
+      "Repository conventions for working with AI, kept in the repository underneath and rendered here.",
+    nowUseCases: "Use cases",
+    nowUseCasesCopy:
+      "Four starting points, from a new project to professionalising an existing one.",
+    nowGlossary: "Glossary",
+    nowGlossaryCopy: "Terms, for when you need to know what someone actually means.",
+    stillWriting:
+      "Still being written: the tool-by-tool data-flow guides, the legal section, and the blog. This site is growing. What is here is maintained; what is missing is named rather than faked.",
+
     aboutTitle: "About",
     aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
     aboutIntro:
@@ -107,15 +103,11 @@ export const ui = {
     aboutLayerCopy:
       "The repository is the operational layer: workflows, AI state, governance, templates. This site is the knowledge layer: explanations, comparisons, tutorials, research, and blog.",
     maintainer: "Maintainer",
-    maintainerCopy:
-      "Created and maintained by Ruben Nati. Contributions are welcome through the contribution guide.",
     license: "License",
-    licenseCopy: "Released under the MIT License.",
     acknowledgements: "Acknowledgements",
     acknowledgementsCopy:
       "The standard draws on the AGENTS.md cross-vendor convention, tool instruction formats, and broader open-source governance practices.",
     legalNoticeDescription: "Legal notice and contact address for the AI Standard website.",
-    legalNoticeCopy: "This is the legal notice for the AI Standard website.",
     legalNoticeHeading: "Who operates this site",
     operatorLabel: "Operator",
     registeredAsLabel: "Registered as",
@@ -133,7 +125,6 @@ export const ui = {
   de: {
     skipToMain: "Zum Hauptinhalt springen",
     language: "Sprache",
-    brandTagline: "KI-Wissensbasis",
     home: "Startseite",
     docs: "Docs",
     blog: "Blog",
@@ -145,12 +136,9 @@ export const ui = {
     profiles: "Profile",
     legalNotice: "Impressum",
     privacyPolicy: "Datenschutz",
-    sourceOnGitHub: "Quelle auf GitHub",
-    footerNavigation: "Fußzeile",
     footerProject: "Projekt",
     footerTrust: "Vertrauen",
     footerLegal: "Rechtliches",
-    footerAbout: "Über diese Wissensbasis",
     technicalRepository: "Technisches Repository",
     codeLicense: "MIT (Code)",
     finePrintCode: "Code",
@@ -175,13 +163,11 @@ export const ui = {
     includeProductLabels: "Produkt- und UI-Begriffe einblenden",
     whereDidISeeIt: "Wo habe ich den Begriff gesehen?",
     allSources: "Alle Quellen",
-    noResults: "Keine Treffer.",
     showing: "Zeige",
     entry: "Eintrag",
     entries: "Einträge",
     productLabel: "Produktbegriff",
     breadcrumbHome: "Startseite",
-    breadcrumbGlossary: "Glossarindex",
     explanation: "Einfache Erklärung",
     aiContext: "KI-Kontext",
     commonConfusion: "Häufige Verwechslungen",
@@ -195,37 +181,39 @@ export const ui = {
     glossaryIntro:
       "Dies ist ein Arbeitsindex für KI- und LLM-nahe Begriffe. Tiefere Erklärungen liegen auf den einzelnen Begriffseiten. Breitere Guides und Projektdokumentation werden später getrennt ausgebaut.",
     homeTitle: "AI Standard",
-    homeDescription: "Eine wachsende Wissensbasis für KI-Begriffe, Konzepte und Zusammenhänge.",
-    homeHeading: "Eine wachsende Wissensbasis für KI-Begriffe und Konzepte.",
+    homeDescription:
+      "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert: wohin die Daten gehen, was hinein darf, und was das Gesetz längst verlangt.",
+    homeHeading: "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert.",
     homeLead:
-      "KI-Begriffe und Produktnamen ändern sich schnell. Verschiedene Werkzeuge verwenden oft dieselben Wörter unterschiedlich oder mit leicht anderer Bedeutung.",
-    aboutKnowledgeBase: "Über diese Wissensbasis",
-    glossarySecondaryLink: "Begriffsindex öffnen",
-    collectTerms: "Begriffe sammeln",
-    collectTermsCopy:
-      "Dieses Projekt sammelt wichtige KI-Begriffe, Produktkonzepte und ihre Beziehungen in einer einfachen und verständlichen Form.",
-    clarifyDifferences: "Bedeutungen klären",
-    clarifyDifferencesCopy:
-      "Begriffe wie Agent, Memory, RAG oder Workflow werden oft unterschiedlich verwendet. Die Website macht diese Unterschiede mit der Zeit leichter sichtbar.",
-    understandingBeforeImplementation: "Verstehen vor Umsetzung",
-    understandingBeforeImplementationCopy:
-      "Bevor tiefere Architektur- oder Umsetzungsthemen hinzukommen, liegt der Fokus auf einem klaren gemeinsamen Verständnis der Grundlagen.",
-    knowledgeBaseInProgress: "Wissensbasis im Aufbau",
-    knowledgeBaseInProgressCopy:
-      "Diese Website ist noch nicht fertig. Sie wächst zu einer Wissensbasis für den professionellen Einsatz von KI in technischen Projekten.",
-    whatThisSiteIsFor: "Wofür diese Website da ist",
-    whatIsAvailableNow: "Was heute schon verfügbar ist",
-    whatIsAvailableNowCopy:
-      "Die Website wächst noch. Aktuell bietet sie einen gepflegten Einstieg in KI-Begriffe und hält die technische Repository-Dokumentation bewusst getrennt.",
-    glossaryNow: "Begriffsindex",
-    glossaryNowCopy:
-      "Über den Glossarindex lassen sich KI-, LLM-, Tooling- und Produktbegriffe schnell finden.",
-    termPagesNow: "Begriffsseiten",
-    termPagesNowCopy:
-      "Die einzelnen Begriffsseiten erklären einen Begriff in einfacher Sprache, im KI-Kontext und mit verwandten Begriffen.",
-    docsNow: "Technische Referenz",
-    docsNowCopy:
-      "Repository-spezifische Referenzinhalte bleiben unter Docs, damit die Wissensebene klar und lesbar bleibt.",
+      "Geschrieben aus der Sicht eines Security-Praktikers. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
+    homeStance:
+      "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
+    homePrimaryLink: "Zum Standard",
+    homeSecondaryLink: "Begriffe nachschlagen",
+
+    whatThisSiteIsFor: "Wofür diese Seite da ist",
+    doorPaste: "Bevor du etwas hineinkopierst",
+    doorPasteCopy:
+      "Wohin die Daten gehen, je Werkzeugklasse \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und ob \u201egelöscht\u201c wirklich gelöscht heißt.",
+    doorAllowed: "Was du darfst",
+    doorAllowedCopy:
+      "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, generierte Inhalte sind kennzeichnungspflichtig, und einiges davon ist bereits Gesetz.",
+    doorSetup: "Wie du es einrichtest",
+    doorSetupCopy:
+      "Ein Agent mit Zugriff auf ein Repository oder einen Server kann viel. Was du einschränken solltest, bevor du ihn lässt \u2014 und die Konventionen, die die Arbeit danach überprüfbar halten.",
+
+    whatIsAvailableNow: "Was es heute gibt",
+    nowStandard: "Der Standard",
+    nowStandardCopy:
+      "Repository-Konventionen für die Arbeit mit KI, gepflegt im Repository darunter und hier dargestellt.",
+    nowUseCases: "Anwendungsfälle",
+    nowUseCasesCopy:
+      "Vier Ausgangspunkte, vom neuen Projekt bis zur Professionalisierung eines bestehenden.",
+    nowGlossary: "Glossar",
+    nowGlossaryCopy: "Begriffe, wenn du wissen musst, was jemand tatsächlich meint.",
+    stillWriting:
+      "Noch in Arbeit: die Datenfluss-Leitfäden je Werkzeug, der Rechtsteil und der Blog. Diese Seite wächst. Was da ist, wird gepflegt; was fehlt, wird benannt statt vorgetäuscht.",
+
     aboutTitle: "Über",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
@@ -233,15 +221,11 @@ export const ui = {
     aboutLayerCopy:
       "Das Repository ist die operative Ebene: Workflows, AI-Status, Governance und Templates. Diese Website ist die Wissensebene: Erklärungen, Vergleiche, Tutorials, Recherche und Blog.",
     maintainer: "Maintainer",
-    maintainerCopy:
-      "Erstellt und gepflegt von Ruben Nati. Beiträge sind über den Contribution Guide willkommen.",
     license: "Lizenz",
-    licenseCopy: "Veröffentlicht unter der MIT-Lizenz.",
     acknowledgements: "Danksagung",
     acknowledgementsCopy:
       "Der Standard baut auf der AGENTS.md-Konvention, Werkzeug-Anweisungsformaten und breiteren Open-Source-Governance-Praktiken auf.",
     legalNoticeDescription: "Impressum und Kontaktadresse der AI-Project-Standard-Website.",
-    legalNoticeCopy: "Dies ist das Impressum der AI-Project-Standard-Website.",
     legalNoticeHeading: "Wer diese Website betreibt",
     operatorLabel: "Betreiber",
     registeredAsLabel: "Firmenwortlaut",
