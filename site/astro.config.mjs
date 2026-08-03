@@ -2,12 +2,23 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
+import { lastmodForUrl } from './scripts/git-lastmod.mjs';
 
 export default defineConfig({
   // Custom domain served from the repository root.
   site: 'https://ai-standard.rubennati.at',
   trailingSlash: 'ignore',
-  integrations: [sitemap(), mdx()],
+  integrations: [
+    sitemap({
+      // Dates come from each page's own git history, not from the build clock.
+      // Pages whose source cannot be resolved are emitted without a lastmod.
+      serialize(item) {
+        const lastmod = lastmodForUrl(item.url);
+        return lastmod ? { ...item, lastmod } : item;
+      },
+    }),
+    mdx(),
+  ],
   vite: {
     // Tailwind v4 through its Vite plugin. The PostCSS plugin was only a
     // workaround for Astro 6, whose Rolldown build did not support the Vite
