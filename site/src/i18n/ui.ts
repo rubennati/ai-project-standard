@@ -12,7 +12,7 @@ export const ui = {
     home: "Home",
     docs: "Docs",
     blog: "Blog",
-    dataFlows: "Data flows",
+    dataFlows: "Your data",
     dataFlowsTitle: "Data flows",
     dataFlowsDescription:
       "Where your input actually goes: which plans train on it, how long it is kept, and what to check before you paste anything.",
@@ -28,7 +28,7 @@ export const ui = {
       "What applies to you depends less on how experienced you are than on what you are in a position to decide, and whose material is at stake when you get it wrong.",
     startMore:
       "Two more are being written: using AI privately, and running a one-person business or small company where you decide everything and carry all of it.",
-    secureSetup: "Setup",
+    secureSetup: "Settings & access",
     secureSetupTitle: "Setting it up safely",
     secureSetupDescription:
       "What to change on day one, what to check before an agent gets access, and where a technical boundary belongs instead of a sentence in a prompt.",
@@ -102,8 +102,24 @@ export const ui = {
       "Written from a security practitioner's desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
     homeStance:
       "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
-    homePrimaryLink: "The standard",
-    homeSecondaryLink: "Look up a term",
+    homePrimaryLink: "Where do I start?",
+    homeSecondaryLink: "What happens to my data?",
+    doorMore: "Read the section",
+    homeArticles: "Everything written so far",
+    homeArticlesLead:
+      "Each one labelled with what kind of claim it makes, and when it was last checked against the source.",
+    howToRead: "How to read this site",
+    howToReadLead:
+      "Every section of every article says what kind of claim it is making, and factual claims carry the date they were last checked against the source. Vendor behaviour changes without notice — a claim without a date is not wrong yet, it is unfalsifiable.",
+    repoHeading: "There is a repository underneath this",
+    repoCopy:
+      "The conventions this site describes are kept in a public repository, and the site is built directly from it. That matters if you write software \u2014 you can read the source, copy it, or adopt it. If it means nothing to you, ignore it: nothing on this site requires it.",
+    repoContains:
+      "Inside it: the AGENTS.md convention for working with several AI tools on one codebase, a security baseline with CI hardening, branch protection rules, adoption profiles, and the operational `.ai/` workspace. The repository runs on its own conventions rather than only describing them.",
+    repoLink: "Read the documentation here",
+    repoLinkExternal: "The repository on GitHub",
+    glossaryAside:
+      "Terms are explained as they come up. If you need to look one up on its own, the glossary is in the footer of every page.",
 
     whatThisSiteIsFor: "What this site is for",
     doorPaste: "Before you paste",
@@ -160,7 +176,7 @@ export const ui = {
     home: "Startseite",
     docs: "Docs",
     blog: "Blog",
-    dataFlows: "Datenflüsse",
+    dataFlows: "Deine Daten",
     dataFlowsTitle: "Datenflüsse",
     dataFlowsDescription:
       "Wohin deine Eingabe tatsächlich geht: welche Tarife damit trainieren, wie lange sie aufbewahrt wird, und was du prüfen solltest, bevor du etwas hineinkopierst.",
@@ -176,7 +192,7 @@ export const ui = {
       "Was für dich gilt, hängt weniger davon ab, wie erfahren du bist, als davon, was du entscheiden darfst — und wessen Material auf dem Spiel steht, wenn es schiefgeht.",
     startMore:
       "Zwei weitere entstehen: KI privat nutzen, und ein Einzelunternehmen oder eine kleine Firma führen, wo du alles entscheidest und alles trägst.",
-    secureSetup: "Einrichten",
+    secureSetup: "Einstellungen & Zugriff",
     secureSetupTitle: "Sicher einrichten",
     secureSetupDescription:
       "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent Zugriff bekommt, und wo eine technische Grenze hingehört statt eines Satzes im Prompt.",
@@ -252,8 +268,24 @@ export const ui = {
       "Geschrieben aus der Sicht eines Security-Praktikers. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
     homeStance:
       "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
-    homePrimaryLink: "Zum Standard",
-    homeSecondaryLink: "Begriffe nachschlagen",
+    homePrimaryLink: "Wo fange ich an?",
+    homeSecondaryLink: "Was passiert mit meinen Daten?",
+    doorMore: "Zum Bereich",
+    homeArticles: "Alles bisher Geschriebene",
+    homeArticlesLead:
+      "Jeder gekennzeichnet, welche Art von Aussage er macht und wann er zuletzt an der Quelle geprüft wurde.",
+    howToRead: "Wie diese Seite zu lesen ist",
+    howToReadLead:
+      "Jeder Abschnitt jedes Beitrags sagt, welche Art von Aussage er macht, und Tatsachenaussagen tragen das Datum ihrer letzten Prüfung an der Quelle. Anbieter ändern ihr Verhalten ohne Ankündigung — eine Aussage ohne Datum ist nicht falsch, sie ist unüberprüfbar.",
+    repoHeading: "Darunter liegt ein Repository",
+    repoCopy:
+      "Die Konventionen, die diese Seite beschreibt, liegen in einem öffentlichen Repository, und die Seite wird direkt daraus gebaut. Das ist wichtig, wenn du Software schreibst \u2014 du kannst den Quelltext lesen, kopieren oder übernehmen. Sagt dir das nichts, ignorier es: Nichts auf dieser Seite setzt es voraus.",
+    repoContains:
+      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Werkzeugen an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, Adoptionsprofile und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben.",
+    repoLink: "Dokumentation hier lesen",
+    repoLinkExternal: "Das Repository auf GitHub",
+    glossaryAside:
+      "Begriffe werden dort erklärt, wo sie vorkommen. Wenn du einen einzeln nachschlagen willst: Das Glossar steht im Footer jeder Seite.",
 
     whatThisSiteIsFor: "Wofür diese Seite da ist",
     doorPaste: "Bevor du etwas hineinkopierst",
