@@ -24,14 +24,14 @@
 - Sitemap entries carry a real `<lastmod>`, taken from the commit date of each page's source file rather than the build clock; `site/scripts/git-lastmod.mjs` owns the route-to-source mapping and omits the date when git history is unavailable.
 - The site build moved to Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
 - The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
-- The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name. Legal notice carries the full operator disclosure.
+- The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name.
+- Licensing is settled: the repository including `docs/` stays MIT, texts written for the site are CC BY 4.0. Both are stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT rather than CC BY.
 
 ## Immediate next steps
 
-1. Maintainer supplies the operator details the legal notice still lacks: a second contact channel besides email (§ 5 Abs 1 Z 3 ECG), the competent Gewerbebehörde (Z 5), chamber, Gewerbewortlaut and applicable trade law (Z 6), and the Unternehmensgegenstand (§ 25 MedienG).
-2. Legal review of the legal notice and privacy policy before `feature/site-content-architecture` is merged.
-3. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
-4. Reposition the homepage around secure and lawful AI use rather than the glossary.
+1. Legal review of the legal notice and privacy policy before `feature/site-content-architecture` is merged. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
+2. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
+3. Reposition the homepage around secure and lawful AI use rather than the glossary.
 
 ## Open questions
 

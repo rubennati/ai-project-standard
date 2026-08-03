@@ -16,6 +16,8 @@ interface Props {
   locale?: SiteLocale;
   routeKey?: LocalizedRouteKey;
   termSlug?: string;
+  /** Overridden by pages rendered from `docs/`, which are MIT, not CC BY. */
+  license?: string;
 }
 
 const {
@@ -27,6 +29,7 @@ const {
   locale = "en",
   routeKey,
   termSlug,
+  license,
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
@@ -120,7 +123,7 @@ const footerSections = [
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
     <SEO title={title} description={description} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
-    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} />
+    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} />
   </head>
   <body class="flex min-h-screen flex-col">
     <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
@@ -220,8 +223,10 @@ const footerSections = [
           <span aria-hidden="true" class="hidden sm:inline">·</span>
           <span>
             {ui.finePrintSiteContent}{" "}
-            <a href={localizedLegal} class="text-inherit underline underline-offset-2"
-              >{ui.licenceNotDecided}</a
+            <a
+              href="https://creativecommons.org/licenses/by/4.0/"
+              rel="license"
+              class="text-inherit underline underline-offset-2">{ui.contentLicence}</a
             >
           </span>
         </p>

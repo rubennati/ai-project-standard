@@ -31,7 +31,12 @@ export const ui = {
     codeLicense: "MIT (code)",
     finePrintCode: "Code",
     finePrintSiteContent: "Site content",
-    licenceNotDecided: "licence not yet decided",
+    contentLicence: "CC BY 4.0",
+    licensingHeading: "Licensing",
+    licensingCode:
+      "The repository — the code and the documentation inside it, including the pages rendered from it under /docs/ — is under the MIT licence.",
+    licensingContent:
+      "The texts written for this site are under Creative Commons Attribution 4.0 International. Reuse them, commercially included, as long as you credit the source.",
     contribute: "Contribute",
     reportProblem: "Report a problem with this page",
     reportVulnerability: "Report a vulnerability",
@@ -118,6 +123,7 @@ export const ui = {
     emailLabel: "Email",
     companyRegisterLabel: "Company register",
     vatLabel: "VAT identification number",
+    moreContact: "Issues, security advisories and further contact routes are in the repository:",
     purposeLabel: "Purpose of this site:",
     privacyInline: "privacy policy",
     purposeCopy:
@@ -149,7 +155,12 @@ export const ui = {
     codeLicense: "MIT (Code)",
     finePrintCode: "Code",
     finePrintSiteContent: "Website-Inhalte",
-    licenceNotDecided: "Lizenz noch nicht festgelegt",
+    contentLicence: "CC BY 4.0",
+    licensingHeading: "Lizenzen",
+    licensingCode:
+      "Das Repository — der Code und die darin enthaltene Dokumentation, einschließlich der daraus erzeugten Seiten unter /docs/ — steht unter der MIT-Lizenz.",
+    licensingContent:
+      "Die eigens für diese Website verfassten Texte stehen unter Creative Commons Namensnennung 4.0 International. Weiterverwendung, auch kommerziell, ist bei Nennung der Quelle erlaubt.",
     contribute: "Mitwirken",
     reportProblem: "Problem auf dieser Seite melden",
     reportVulnerability: "Sicherheitslücke melden",
@@ -238,6 +249,7 @@ export const ui = {
     emailLabel: "E-Mail",
     companyRegisterLabel: "Firmenbuch",
     vatLabel: "UID-Nummer",
+    moreContact: "Issues, Security Advisories und weitere Kontaktwege finden sich im Repository:",
     purposeLabel: "Zweck dieser Website:",
     privacyInline: "Datenschutz",
     purposeCopy:

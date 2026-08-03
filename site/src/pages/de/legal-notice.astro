@@ -1,7 +1,7 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getUi } from "../../i18n/ui";
-import { contactEmail, operator } from "../../data/site";
+import { contactEmail, operator, repoUrl } from "../../data/site";
 const base = import.meta.env.BASE_URL;
 const ui = getUi("de");
 
@@ -40,6 +40,21 @@ const rows = [
         ))
       }
     </dl>
+
+    <p class="mt-6">
+      {ui.moreContact}{" "}
+      <a href={repoUrl}>github.com/rubennati/ai-project-standard</a>
+    </p>
+
+    <h2 class="mt-10 pt-6 text-xl font-semibold">{ui.licensingHeading}</h2>
+    <p class="mt-3">
+      {ui.licensingCode}{" "}
+      <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>
+    </p>
+    <p class="mt-3">
+      {ui.licensingContent}{" "}
+      <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+    </p>
 
     <p class="mt-8 border-t border-black/10 pt-6 dark:border-white/10">
       <strong class="font-semibold">{ui.purposeLabel}</strong>{" "}
