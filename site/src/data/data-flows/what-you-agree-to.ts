@@ -77,7 +77,7 @@ const en: Article = {
       heading: "“Trained on our data” usually is not training",
       level: "assessment",
       paragraphs: [
-        "A tool sold as specialised for law, medicine or a particular industry is more often a system prompt plus retrieval over a document collection than a model that was fine-tuned. Both can be perfectly good products, and the marketing rarely distinguishes them.",
+        "“Specialised for law” or “for medicine” describes the product, not how it was built. Behind that word can sit a fine-tuned model, retrieval over a curated document collection, rule-based checks on top of a general model, a system prompt — or several of those at once. All of them can make a perfectly good product, and the marketing rarely distinguishes them.",
         "It is worth asking which one you are buying, because the answers differ in the ways that matter to you: what it cost to build, where your material ends up, and what happens when the underlying model is replaced. The words to ask with are fine-tuning and retrieval — and asking is usually enough to find out.",
       ],
     },
@@ -154,7 +154,7 @@ const de: Article = {
       heading: "„Mit unseren Daten trainiert“ ist meist kein Training",
       level: "assessment",
       paragraphs: [
-        "Ein Werkzeug, das als spezialisiert auf Recht, Medizin oder eine Branche verkauft wird, ist häufiger ein System-Prompt plus Abruf über eine Dokumentensammlung als ein feinabgestimmtes Modell. Beides kann ein gutes Produkt sein, und das Marketing unterscheidet es selten.",
+        "„Spezialisiert auf Recht“ oder „auf Medizin“ beschreibt das Produkt, nicht seinen Aufbau. Dahinter kann ein feinabgestimmtes Modell stecken, ein Abruf über eine kuratierte Dokumentensammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
         "Die Frage lohnt sich trotzdem, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen man fragt, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
       ],
     },

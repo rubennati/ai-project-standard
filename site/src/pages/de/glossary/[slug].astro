@@ -31,7 +31,8 @@ const extraSchemas = [
     name: localized.term,
     description: localized.shortDefinition,
     url: pageUrl,
-    inLanguage: "de",
+    // Honest even if a future entry lands before its translation does.
+    inLanguage: localized.definitionLanguage,
     inDefinedTermSet: glossaryUrl,
     alternateName:
       localized.term === term.term

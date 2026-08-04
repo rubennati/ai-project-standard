@@ -49,7 +49,7 @@ const en: Article = {
       checked: CHECKED,
       paragraphs: [
         "A service can run on servers in Frankfurt and still belong to a US company. The distinction matters more than the marketing suggests: the EDPB and the EDPS have stated jointly that the US CLOUD Act allows US authorities to require disclosure of data by US-based providers regardless of where that data is stored.",
-        "So “EU data centre” answers a question about latency and about where processing happens. It does not by itself answer the question of who can compel access. Which entity holds the contract, and under which jurisdiction it sits, is the part worth checking.",
+        "So “EU data centre” answers a real question and a narrower one than it is sold as. Where processing happens shapes the transfer route, which sub-processors are involved and what a provider can commit to contractually — none of that is nothing. What it does not settle, by itself, is who can compel access. Which entity holds the contract, and under which jurisdiction it sits, is the part worth checking.",
       ],
       links: [{ label: "EDPB and EDPS — joint response on the US CLOUD Act", href: EDPB_CLOUD_ACT }],
     },
@@ -65,8 +65,9 @@ const en: Article = {
       heading: "Where a local model genuinely fits",
       level: "assessment",
       paragraphs: [
-        "A local model will not match the large hosted ones, and pretending otherwise helps nobody. But the comparison assumes you need what a chat interface trained you to expect: an answer within seconds.",
-        "Plenty of work does not need that. A classification step in an automation chain, a nightly batch, an extraction job over documents — if it takes three minutes or thirty, or runs overnight, the quality gap narrows against a decisive advantage: the material never leaves your control. That is the case where local stops being a compromise and starts being the better fit.",
+        "At open-ended work, the large hosted models are ahead today, and pretending otherwise helps nobody. Whether that gap closes is a forecast, and this page does not make one. But the comparison assumes you need what a chat interface trained you to expect: an answer within seconds.",
+        "Plenty of work does not need that. A classification step in an automation chain, a nightly batch, an extraction job over documents — if it takes three minutes or thirty, or runs overnight, the quality gap narrows against a decisive advantage: the material can stay inside your own infrastructure. That is the case where local stops being a compromise and starts being the better fit.",
+        "Can, not does. Running the model locally is not the same as running the workload locally, and the difference is where people get caught: an embedding call to a hosted API, a cloud vector store, telemetry, a plugin, a monitoring agent, a model pulled from a registry at startup. Locally executed only means locally processed if the whole path is local — which is a thing you check, not a thing you assume.",
         "Local is not automatically safer, though. You take on patching, access control, backups and monitoring yourself, and a badly run box under a desk is worse than a well-run hosted service. What you gain is sovereignty over the data; what you take on is the security work that someone else was doing for you.",
       ],
     },
@@ -116,7 +117,7 @@ const de: Article = {
       checked: CHECKED,
       paragraphs: [
         "Ein Dienst kann auf Servern in Frankfurt laufen und trotzdem einem US-Unternehmen gehören. Der Unterschied wiegt schwerer, als das Marketing nahelegt: EDPB und EDPS haben gemeinsam festgehalten, dass der US CLOUD Act US-Behörden erlaubt, von in den USA ansässigen Anbietern die Herausgabe von Daten zu verlangen — unabhängig davon, wo diese Daten gespeichert sind.",
-        "„Rechenzentrum in der EU“ beantwortet damit eine Frage zur Latenz und zum Ort der Verarbeitung. Es beantwortet für sich genommen nicht die Frage, wer Zugriff erzwingen kann. Welche Gesellschaft der Vertragspartner ist und welchem Recht sie untersteht, ist der Teil, den man prüfen sollte.",
+        "„Rechenzentrum in der EU“ beantwortet damit eine echte Frage — nur eine engere, als der Begriff verspricht. Der Verarbeitungsort prägt den Übermittlungsweg, die beteiligten Unterauftragsverarbeiter und das, was ein Anbieter vertraglich zusagen kann; nichts davon ist belanglos. Was er für sich genommen nicht klärt, ist, wer Zugriff erzwingen kann. Welche Gesellschaft der Vertragspartner ist und welchem Recht sie untersteht, ist der Teil, den man prüfen sollte.",
       ],
       links: [
         { label: "EDPB und EDPS — gemeinsame Stellungnahme zum US CLOUD Act", href: EDPB_CLOUD_ACT },
@@ -134,8 +135,9 @@ const de: Article = {
       heading: "Wo ein lokales Modell wirklich passt",
       level: "assessment",
       paragraphs: [
-        "Ein lokales Modell wird die großen gehosteten nicht einholen, und etwas anderes zu behaupten hilft niemandem. Nur unterstellt der Vergleich, dass du brauchst, woran dich die Chat-Oberfläche gewöhnt hat: eine Antwort in Sekunden.",
-        "Viel Arbeit braucht das nicht. Ein Klassifizierungsschritt in einer Automatisierungskette, ein nächtlicher Stapellauf, eine Extraktion über Dokumente — ob das drei Minuten oder dreißig dauert oder über Nacht läuft, ist gleichgültig. Dann schrumpft der Qualitätsabstand gegen einen entscheidenden Vorteil: Das Material verlässt deinen Bereich nie. Genau dort hört lokal auf, ein Kompromiss zu sein, und wird zur besseren Wahl.",
+        "Bei offenen Aufgaben sind die großen gehosteten Modelle heute voraus, und etwas anderes zu behaupten hilft niemandem. Ob sich dieser Abstand schließt, ist eine Prognose — diese Seite stellt keine. Nur unterstellt der Vergleich, dass du brauchst, woran dich die Chat-Oberfläche gewöhnt hat: eine Antwort in Sekunden.",
+        "Viel Arbeit braucht das nicht. Ein Klassifizierungsschritt in einer Automatisierungskette, ein nächtlicher Stapellauf, eine Extraktion über Dokumente — ob das drei Minuten oder dreißig dauert oder über Nacht läuft, ist gleichgültig. Dann schrumpft der Qualitätsabstand gegen einen entscheidenden Vorteil: Das Material kann in der eigenen Infrastruktur bleiben. Genau dort hört lokal auf, ein Kompromiss zu sein, und wird zur besseren Wahl.",
+        "Kann, nicht tut. Das Modell lokal auszuführen ist nicht dasselbe, wie die Arbeitslast lokal zu betreiben — und genau daran scheitern die meisten: ein Embedding-Aufruf an eine gehostete API, ein Vektorspeicher in der Cloud, Telemetrie, ein Plugin, ein Überwachungsdienst, ein Modell, das beim Start aus einer Registry geladen wird. Lokal ausgeführt heißt nur dann lokal verarbeitet, wenn der ganze Datenweg lokal bleibt — und das prüft man, statt es anzunehmen.",
         "Lokal ist deshalb aber nicht automatisch sicherer. Patches, Zugriffskontrolle, Sicherungen und Überwachung übernimmst du selbst, und eine schlecht betriebene Kiste unter dem Schreibtisch ist schlechter als ein gut betriebener gehosteter Dienst. Du gewinnst Souveränität über die Daten; du übernimmst die Sicherheitsarbeit, die vorher jemand anderes gemacht hat.",
       ],
     },
