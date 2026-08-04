@@ -31,7 +31,7 @@ const {
 } = Astro.props;
 
 import { lastmodForUrl } from "../../scripts/git-lastmod.mjs";
-import { operator } from "../data/site";
+import { author as authorName } from "../data/site";
 
 const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
 const repoUrl = "https://github.com/rubennati/ai-project-standard";
@@ -41,7 +41,7 @@ const pageUrl = Astro.url.toString();
 // two can never disagree. Undefined when a page has no commit history yet, in
 // which case the field is simply omitted rather than guessed.
 const modified = lastmodForUrl(new URL(Astro.url.pathname, site).toString());
-const author = { "@type": "Person", name: operator.name };
+const author = { "@type": "Person", name: authorName };
 const publisher = {
   "@type": "Organization",
   name: "AI Standard",

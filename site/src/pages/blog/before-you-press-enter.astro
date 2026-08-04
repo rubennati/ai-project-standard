@@ -4,7 +4,7 @@ import EvidenceLabel from "../../components/EvidenceLabel.astro";
 import JourneyFigure from "../../components/JourneyFigure.astro";
 import ReachFigure from "../../components/ReachFigure.astro";
 import { getUi } from "../../i18n/ui";
-import { operator } from "../../data/site";
+import { author } from "../../data/site";
 import { getLocalizedPath } from "../../i18n/routes";
 import { getBeforeYouPressEnter, CHECKED, PUBLISHED } from "../../data/blog/before-you-press-enter";
 
@@ -26,7 +26,7 @@ const article = getBeforeYouPressEnter(locale);
     <p class="text-sm text-zinc-700 dark:text-zinc-300">
       <a href={getLocalizedPath(locale, "blogIndex")}>{ui.blogBackToIndex}</a>
       <span aria-hidden="true"> · </span>
-      <span>By <span rel="author">{operator.name}</span></span>
+      <span>By <span rel="author">{author}</span></span>
       <span aria-hidden="true"> · </span>
       <time datetime={PUBLISHED}>{PUBLISHED}</time>
       <span aria-hidden="true"> · </span>

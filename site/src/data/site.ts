@@ -31,3 +31,14 @@ export const operator = {
   companyRegister: "FN 510221a, Handelsgericht Wien",
   vatId: "ATU74404968",
 };
+
+/**
+ * Byline name, deliberately separate from `operator.name`.
+ *
+ * The legal notice needs the full registered name; a byline needs the name a
+ * reader would use, and an academic degree adds nothing to whether a claim
+ * checks out. Not abbreviated to an initial: that is the convention for
+ * withholding an identity, which works against what a byline is for — and the
+ * legal notice names the author in full one click away regardless.
+ */
+export const author = "Ruben Nati";

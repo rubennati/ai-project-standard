@@ -2,7 +2,7 @@
 import Base from "../../layouts/Base.astro";
 import { getUi } from "../../i18n/ui";
 import { getBlogPosts, getPlannedPosts } from "../../data/blog";
-import { operator } from "../../data/site";
+import { author } from "../../data/site";
 
 const locale = "de" as const;
 const ui = getUi(locale);
@@ -30,7 +30,7 @@ const planned = getPlannedPosts(locale);
           <p class="text-sm text-zinc-700 dark:text-zinc-300">
             <time datetime={post.published}>{post.published}</time>
             <span aria-hidden="true"> · </span>
-            <span>Von {operator.name}</span>
+            <span>Von {author}</span>
           </p>
           <h2 class="mt-1 text-xl font-semibold">
             <a href={post.href}>{post.title}</a>
