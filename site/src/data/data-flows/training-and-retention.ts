@@ -39,10 +39,10 @@ const CLAUDE_RETENTION =
   "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-personal-data";
 
 const en: Article = {
-  title: "Does the tool train on what you type?",
+  title: "Are your chats used for model training?",
   description:
-    "Whether your input trains a model is decided by your plan tier, not the vendor. What is true today, which setting to check, and what it changes.",
-  lead: "Most people ask the question about the vendor. The vendor is rarely the answer. Both of the vendors below draw the same line, and they draw it between plan tiers.",
+    "Whether your input is used for model training depends on the product, the account type and the settings. The published defaults of the providers checked, with the date they were checked.",
+  lead: "Whether your input is used for model training depends far more on the account and plan you are signed into than on which provider you chose. Both providers checked below draw the line in the same place.",
   sections: [
     {
       heading: "The rule worth remembering",
@@ -128,10 +128,10 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Trainiert das Werkzeug mit dem, was du eingibst?",
+  title: "Werden deine Eingaben für das Modelltraining verwendet?",
   description:
-    "Ob deine Eingabe ein Modell trainiert, entscheidet der Tarif, nicht der Anbieter. Was heute gilt und welche Einstellung du prüfen solltest.",
-  lead: "Die meisten stellen die Frage dem Anbieter. Der Anbieter ist selten die Antwort. Beide unten geprüften Anbieter ziehen dieselbe Grenze — und zwar zwischen den Tarifstufen.",
+    "Ob deine Eingaben für das Modelltraining verwendet werden, hängt von Produkt, Kontotyp und Einstellungen ab. Die veröffentlichten Voreinstellungen der geprüften Anbieter, mit Prüfdatum.",
+  lead: "Ob deine Eingaben für das Modelltraining verwendet werden, hängt weit mehr vom Konto und Tarif ab als davon, für welchen Anbieter du dich entschieden hast. Beide unten geprüften Anbieter ziehen die Grenze an derselben Stelle.",
   sections: [
     {
       heading: "Die Regel, die man sich merken sollte",
@@ -178,7 +178,7 @@ const de: Article = {
       checked: CHECKED,
       paragraphs: [
         "Claude Code aus einem Free-, Pro- oder Max-Konto fällt unter die Verbraucher-Trainingseinstellung — Coding-Sitzungen eingeschlossen. Dass es ein Entwicklerwerkzeug ist, stellt es nicht auf kommerzielle Bedingungen; das Konto tut es.",
-        "Das ist der erste Punkt, den du prüfen solltest, wenn du mit KI programmierst. Die Denkweise „ich benutze ein professionelles Werkzeug, also gelten professionelle Regeln“ ist genau verkehrt herum — und es ist die Annahme, mit der am ehesten Kundenquellcode dort landet, wo er nicht hinsollte.",
+        "Das ist der erste Punkt, den du prüfen solltest, wenn du mit KI programmierst. Die Denkweise „ich benutze ein professionelles Tool, also gelten professionelle Regeln“ ist genau verkehrt herum — und es ist die Annahme, mit der am ehesten Kundenquellcode dort landet, wo er nicht hinsollte.",
       ],
       links: [{ label: "Claude Code — Datennutzung", href: CLAUDE_CODE_DATA }],
     },
@@ -199,8 +199,8 @@ const de: Article = {
       heading: "Was konkret zu tun ist",
       level: "advice",
       paragraphs: [
-        "Öffne bei jedem KI-Werkzeug, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Werkzeug und ist der wirksamste Punkt auf dieser Seite.",
-        "Prüfe, unter welchem Konto dein Coding-Werkzeug läuft, nicht welches Werkzeug es ist. Ist es dein privates Konto, gelten Verbraucherbedingungen für den Code deines Kunden.",
+        "Öffne bei jedem KI-Tool, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Tool und ist der wirksamste Punkt auf dieser Seite.",
+        "Prüfe, unter welchem Konto dein Coding-Tool läuft, nicht welches Tool es ist. Ist es dein privates Konto, gelten Verbraucherbedingungen für den Code deines Kunden.",
         "Für alles, was einem Kunden gehört, sind Geschäftstarif oder API die Grundlage: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
         "Notier dir das Datum der Prüfung. Diese Seite trägt aus demselben Grund eines: Die Voreinstellungen ändern sich ohne Ankündigung, und eine Einstellung, die du letztes Jahr geprüft hast, sagt nichts über heute.",
       ],

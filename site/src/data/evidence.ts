@@ -80,7 +80,7 @@ const copy: Record<SiteLocale, Record<EvidenceLevel, LevelCopy>> = {
         "Hier getestet. Aufbau, Version und Datum sind angegeben, damit du es wiederholen kannst. Das Ergebnis gilt für diesen Aufbau, nicht automatisch für andere.",
     },
     law: {
-      label: "Recht",
+      label: "Rechtslage",
       meaning:
         "Gibt eine benannte Norm oder offizielle Leitlinie wieder, mit Rechtsraum und Prüfstand. Die Anwendung auf einen konkreten Fall ist als Einschätzung gekennzeichnet. Keine Rechtsberatung.",
     },

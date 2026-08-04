@@ -18,10 +18,10 @@ const EDPB_CLOUD_ACT =
   "https://www.edpb.europa.eu/our-work-tools/our-documents/letters/edpb-edps-joint-response-libe-committee-impact-us-cloud-act_en";
 
 const en: Article = {
-  title: "Getting it back out",
+  title: "Deleting chats and data from an AI service",
   description:
-    "Deleting is harder than sending: the right to erasure, why EU hosting is not EU jurisdiction, and where local models genuinely fit.",
-  lead: "The hard question is not what you may send. It is what happens when someone asks you to take it back — and whether you can show that you did.",
+    "What deleting a chat actually removes, which deletion duties exist, why EU hosting is not EU jurisdiction, and where local models fit.",
+  lead: "Deleting a conversation removes what you can see. What remains in backups, logs or a model that was already trained is a different question — and one you should be able to answer before someone asks you to delete something.",
   sections: [
     {
       heading: "Deletion requests arrive from two different directions",
@@ -86,10 +86,10 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Wieder herausbekommen",
+  title: "Chats und Daten löschen: Was wirklich entfernt wird",
   description:
-    "Löschen ist schwerer als hineingeben: das Recht auf Löschung, warum EU-Verarbeitung nicht EU-Zuständigkeit heißt, und wo lokale Modelle passen.",
-  lead: "Die schwierige Frage ist nicht, was du hineingeben darfst. Sie lautet, was passiert, wenn jemand es zurückverlangt — und ob du zeigen kannst, dass du es getan hast.",
+    "Was beim Löschen eines Chats tatsächlich entfernt wird, welche Löschpflichten bestehen, warum EU-Hosting nicht EU-Zuständigkeit bedeutet und wo lokale Modelle passen.",
+  lead: "Wer eine Unterhaltung löscht, entfernt zunächst das, was sichtbar ist. Was in Sicherungen, Protokollen oder einem bereits trainierten Modell verbleibt, ist eine andere Frage — und du solltest sie beantworten können, bevor jemand eine Löschung von dir verlangt.",
   sections: [
     {
       heading: "Löschverlangen kommen aus zwei verschiedenen Richtungen",
@@ -99,7 +99,7 @@ const de: Article = {
         "Verlangt ein Kunde, sein Material zu entfernen, ist das eine vertragliche Angelegenheit. Sie richtet sich nach dem, was ihr vereinbart habt, und gilt unabhängig davon, ob überhaupt eine personenbezogene Angabe im Spiel ist — ein Architekturdokument ohne einen einzigen Namen bleibt seines.",
         "Art. 17 DSGVO ist etwas anderes. Es ist das Recht einer betroffenen Person auf Löschung ihrer eigenen personenbezogenen Daten, es greift nur bei einem der dort genannten Gründe, und Art. 17 Abs. 3 nimmt Fälle ausdrücklich aus. Wer es ausübt, muss nicht dein Kunde sein: Es kann jemand sein, der im Material des Kunden bloß genannt wird — der Fall, den kaum jemand einplant.",
         "Beides zu vermischen führt in beide Richtungen zu falschen Antworten: Löschung zusagen, wo eine Aufbewahrungspflicht besteht — oder ein vertragliches Verlangen ablehnen, weil es einen DSGVO-Grund nicht erfüllt, den es nie erfüllen musste.",
-        "Gemeinsam ist beiden die praktische Anforderung. Du musst wissen, welche Unterhaltungen das Material enthielten, ob das Werkzeug sie noch aufbewahrt, und ob etwas in einen Trainingslauf gegangen ist. Wenn ja, entfernt das Löschen der Unterhaltung es nicht aus einem bereits trainierten Modell — die Anbieter sagen das selbst: Die Einstellung auszuschalten verhindert künftige Läufe, nicht die vergangenen.",
+        "Gemeinsam ist beiden die praktische Anforderung. Du musst wissen, welche Unterhaltungen das Material enthielten, ob das Tool sie noch aufbewahrt, und ob etwas in einen Trainingslauf gegangen ist. Wenn ja, entfernt das Löschen der Unterhaltung es nicht aus einem bereits trainierten Modell — die Anbieter sagen das selbst: Die Einstellung auszuschalten verhindert künftige Läufe, nicht die vergangenen.",
       ],
       links: [{ label: "Art. 17 DSGVO — Recht auf Löschung", href: GDPR_ART_17 }],
     },
@@ -146,7 +146,7 @@ const de: Article = {
       level: "advice",
       paragraphs: [
         "Lösch Unterhaltungen, die Kundenmaterial enthielten, sobald du damit fertig bist. Das ist die billigste Maßnahme auf dieser Seite und dauert Sekunden.",
-        "Notier, welches Werkzeug du für welches Kundenprojekt verwendet hast. Ohne das wird ein Löschverlangen zur Raterei, und Raterei kann man nicht schriftlich bestätigen.",
+        "Notier, welches Tool du für welches Kundenprojekt verwendet hast. Ohne das wird ein Löschverlangen zur Raterei, und Raterei kann man nicht schriftlich bestätigen.",
         "Für alles, was du auf Verlangen löschen können musst: dort arbeiten, wo dir Löschung vertraglich geschuldet ist — Geschäftstarif mit Auftragsverarbeitungsvertrag, nicht Verbraucherkonto.",
         "Frag, wer der Vertragspartner ist, nicht nur, wo die Server stehen. Die Antwort entscheidet, wer Zugriff erzwingen kann.",
         "Bevor du einem Kunden zusagst, dass etwas gelöscht werden kann: prüf, ob du es auch belegen könntest. Wenn nicht, sag es, bevor das Material hineingeht, und nicht danach.",

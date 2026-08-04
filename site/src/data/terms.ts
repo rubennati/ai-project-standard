@@ -69,9 +69,9 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agent",
         shortDefinition:
-          "Ein System, das Ziele verfolgt, Schritte auswählt, Werkzeuge nutzt oder Aktionen über mehrere Schritte hinweg koordiniert.",
+          "Ein System, das Ziele verfolgt, Schritte auswählt, Tools nutzt oder Aktionen über mehrere Schritte hinweg koordiniert.",
         explanation:
-          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den nächsten Schritt auswählen und manchmal Werkzeuge oder andere Systeme nutzen, um ein Ziel zu erreichen.",
+          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den nächsten Schritt auswählen und manchmal Tools oder andere Systeme nutzen, um ein Ziel zu erreichen.",
         aiContext:
           "In KI-Produkten meint das Wort meist ein System, das mit etwas Autonomie handeln kann, statt nur auf einen einzelnen Prompt zu antworten.",
       },
@@ -92,7 +92,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agentic AI",
         shortDefinition:
-          "KI mit Fokus auf zielgerichtetes Handeln, Werkzeugnutzung und mehrschrittige Ausführung.",
+          "KI mit Fokus auf zielgerichtetes Handeln, Tool-Nutzung und mehrschrittige Ausführung.",
       },
     },
   },
@@ -238,7 +238,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein dialogorientiertes KI-Produkt oder ein eingerichteter Helfer, der auf Eingaben antwortet und dabei Gedächtnis oder Werkzeuge nutzen kann.",
+          "Ein dialogorientiertes KI-Produkt oder ein eingerichteter Helfer, der auf Eingaben antwortet und dabei Gedächtnis oder Tools nutzen kann.",
       },
     },
   },
@@ -274,7 +274,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Herstellerbezeichnung für ein Werkzeug, das Webinhalte oder Online-Quellen aus der KI-Umgebung heraus abruft.",
+          "Herstellerbezeichnung für ein Tool, das Webinhalte oder Online-Quellen aus der KI-Umgebung heraus abruft.",
       },
     },
   },
@@ -334,7 +334,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "OpenAIs chatbasiertes KI-Produkt für den Umgang mit Modellen, Werkzeugen und Produktfunktionen.",
+          "OpenAIs chatbasiertes KI-Produkt für den Umgang mit Modellen, Tools und Produktfunktionen.",
       },
     },
   },
@@ -394,7 +394,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Bezeichnung in der Oberfläche für programmierbezogene Abläufe, Werkzeuge oder Sitzungen innerhalb eines KI-Produkts.",
+          "Bezeichnung in der Oberfläche für programmierbezogene Abläufe, Tools oder Sitzungen innerhalb eines KI-Produkts.",
       },
     },
   },
@@ -566,7 +566,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein vorkonfigurierter ChatGPT-ähnlicher Assistent mit eigenen Anweisungen, Verhalten oder Werkzeugzugriff.",
+          "Ein vorkonfigurierter ChatGPT-ähnlicher Assistent mit eigenen Anweisungen, Verhalten oder Tool-Zugriff.",
       },
     },
   },
@@ -621,7 +621,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Bezeichnung in der Oberfläche für das Weitergeben von Arbeit an ein anderes Werkzeug, einen anderen Modus oder Ausführungsweg. Die genaue Bedeutung hängt vom Produkt ab.",
+          "Bezeichnung in der Oberfläche für das Weitergeben von Arbeit an ein anderes Tool, einen anderen Modus oder Ausführungsweg. Die genaue Bedeutung hängt vom Produkt ab.",
       },
     },
   },
@@ -716,7 +716,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Mechanismus, mit dem ein Modell strukturierte Werkzeugaktionen anfordern kann, statt nur freien Text zurückzugeben.",
+          "Ein Mechanismus, mit dem ein Modell strukturierte Tool-Aktionen anfordern kann, statt nur freien Text zurückzugeben.",
       },
     },
   },
@@ -838,11 +838,11 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Model Context Protocol, ein Protokoll zum Verbinden von Modellen oder Agenten mit Werkzeugen und Kontextquellen.",
+          "Model Context Protocol, ein Protokoll zum Verbinden von Modellen oder Agenten mit Tools und Kontextquellen.",
         explanation:
-          "MCP ist eine Möglichkeit, eine KI-Anwendung über ein gemeinsames Protokoll mit Werkzeugen oder Datenquellen zu verbinden, statt für jede Verbindung eine eigene Sonderlösung zu bauen.",
+          "MCP ist eine Möglichkeit, eine KI-Anwendung über ein gemeinsames Protokoll mit Tools oder Datenquellen zu verbinden, statt für jede Verbindung eine eigene Sonderlösung zu bauen.",
         aiContext:
-          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit über Chat-Text hinaus mit strukturierten Werkzeugen, Dateien und Systemen arbeiten können.",
+          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit über Chat-Text hinaus mit strukturierten Tools, Dateien und Systemen arbeiten können.",
       },
     },
   },
@@ -933,7 +933,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Wiederverwendbare Erweiterungen, die einer KI-Umgebung Werkzeuge, Integrationen oder gebündelte Fähigkeiten hinzufügen.",
+          "Wiederverwendbare Erweiterungen, die einer KI-Umgebung Tools, Integrationen oder gebündelte Fähigkeiten hinzufügen.",
       },
     },
   },
@@ -1186,7 +1186,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Die Fähigkeit eines Modells oder Agenten, externe Werkzeuge aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
+          "Die Fähigkeit eines Modells oder Agenten, externe Tools aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
       },
     },
   },
@@ -1314,7 +1314,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Claude",
         shortDefinition:
-          "Anthropics KI-Assistent und Produktfamilie für Chat, Schreiben, Analyse und werkzeuggestützte Arbeit.",
+          "Anthropics KI-Assistent und Produktfamilie für Chat, Schreiben, Analyse und toolgestützte Arbeit.",
       },
     },
   },

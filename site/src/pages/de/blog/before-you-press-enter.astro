@@ -6,7 +6,7 @@ import ReachFigure from "../../../components/ReachFigure.astro";
 import { getUi } from "../../../i18n/ui";
 import { operator } from "../../../data/site";
 import { getLocalizedPath } from "../../../i18n/routes";
-import { getBeforeYouPressEnter, PUBLISHED } from "../../../data/blog/before-you-press-enter";
+import { getBeforeYouPressEnter, CHECKED, PUBLISHED } from "../../../data/blog/before-you-press-enter";
 
 const locale = "de" as const;
 const ui = getUi(locale);
@@ -29,9 +29,14 @@ const article = getBeforeYouPressEnter(locale);
       <span>Von <span rel="author">{operator.name}</span></span>
       <span aria-hidden="true"> · </span>
       <time datetime={PUBLISHED}>{PUBLISHED}</time>
+      <span aria-hidden="true"> · </span>
+      <span>{ui.blogReviewed} <time datetime={CHECKED}>{CHECKED}</time></span>
     </p>
 
     <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{article.title}</h1>
+    {article.subtitle && (
+      <p class="mt-2 text-xl text-zinc-700 dark:text-zinc-300">{article.subtitle}</p>
+    )}
     <p class="mt-4 text-lg leading-8">{article.lead}</p>
 
     {

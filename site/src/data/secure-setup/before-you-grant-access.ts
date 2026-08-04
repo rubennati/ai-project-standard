@@ -18,13 +18,13 @@ const OWASP_SKILLS = "https://owasp.org/www-project-agentic-skills-top-10/";
 const OWASP_LLM = "https://genai.owasp.org/";
 
 const en: Article = {
-  title: "Before you grant access",
+  title: "Before you give an AI agent access",
   description:
     "What to change on day one, what to check before an agent gets a folder, and why installed skills are the part most likely to hurt you.",
-  lead: "Nothing here is new security thinking. What is new is that the tools are driven in plain language, so the decision to hand something broad access is now made by people who were never asked to think about it.",
+  lead: "The same security principles apply to AI agents as to any other software: as few permissions as possible, clearly bounded access, traceable actions. What is new is how easily far-reaching permissions can now be granted, and by whom.",
   sections: [
     {
-      heading: "The switches worth changing on day one",
+      heading: "The settings to check first",
       level: "advice",
       paragraphs: [
         "Three settings, once per tool, and you are past the majority of the avoidable exposure.",
@@ -44,7 +44,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "The old principles did not stop applying",
+      heading: "The established principles still apply",
       level: "assessment",
       paragraphs: [
         "Least privilege, need to know, separation of duties, logging. None of this was retired because the interface became conversational. An agent is a piece of software acting with your credentials, and it should hold fewer rights than you do, not the same ones.",
@@ -52,7 +52,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Skills and connectors are where it multiplies",
+      heading: "Skills and connectors widen the attack surface",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -73,7 +73,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Instructions can arrive inside the content",
+      heading: "Prompt injection: when content itself contains instructions",
       level: "assessment",
       paragraphs: [
         "An agent that reads a document, a web page or a ticket is reading text that someone else may have written. If it acts on what it reads, then whoever wrote that text has a channel to it. This is prompt injection, and it is not exotic — it is the ordinary consequence of a system that cannot fully separate instructions from data.",
@@ -103,16 +103,16 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Bevor du Zugriff gibst",
+  title: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
   description:
     "Was du am ersten Tag umstellst, was du vor dem Ordnerzugriff prüfst, und warum installierte Skills am ehesten schaden.",
-  lead: "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Werkzeuge in normaler Sprache bedient werden — die Entscheidung, etwas breit zugreifen zu lassen, treffen jetzt Leute, die nie danach gefragt wurden.",
+  lead: "Für KI-Agenten gelten dieselben Sicherheitsprinzipien wie für andere Software: möglichst wenige Rechte, klar begrenzte Zugriffe, nachvollziehbare Aktionen. Neu ist vor allem, wie einfach sich weitreichende Berechtigungen heute vergeben lassen — und von wem.",
   sections: [
     {
-      heading: "Die Schalter, die am ersten Tag gehören",
+      heading: "Diese Einstellungen solltest du zuerst prüfen",
       level: "advice",
       paragraphs: [
-        "Drei Einstellungen, einmal je Werkzeug, und der größte Teil der vermeidbaren Angriffsfläche ist weg.",
+        "Drei Einstellungen, einmal je Tool, und der größte Teil der vermeidbaren Angriffsfläche ist weg.",
       ],
       list: [
         "Training. Finden, bewusst entscheiden — und wissen, dass die Voreinstellung in Verbrauchertarifen meist nicht die ist, die du für Arbeit wählen würdest.",
@@ -121,7 +121,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Bevor du einem Agenten einen Ordner gibst",
+      heading: "Bevor du einem Agenten einen Ordner freigibst",
       level: "advice",
       paragraphs: [
         "Schau vorher hinein. Das klingt zu offensichtlich, um es aufzuschreiben, und genau dieser Schritt wird übersprungen. In einem Arbeitsverzeichnis sammelt sich, was niemand dort lassen wollte: ein Dump mit echten Daten, eine alte Schlüsseldatei, ein Kundenexport aus einem Projekt, das vor zwei Jahren endete.",
@@ -129,20 +129,20 @@ const de: Article = {
       ],
     },
     {
-      heading: "Die alten Prinzipien gelten weiter",
+      heading: "Die etablierten Sicherheitsprinzipien gelten weiterhin",
       level: "assessment",
       paragraphs: [
         "Least Privilege, Need-to-know, Funktionstrennung, Protokollierung. Nichts davon wurde außer Kraft gesetzt, weil die Oberfläche jetzt ein Gespräch ist. Ein Agent ist Software, die mit deinen Berechtigungen handelt, und er sollte weniger Rechte haben als du, nicht dieselben.",
-        "Das Versagensmuster ist konkret: Man gibt einem Agenten breiten Zugriff, weil das Einschränken mühsam ist und das Werkzeug mit mehr Rechten besser läuft. Dieser Handel wird stillschweigend geschlossen und nie überprüft — genau so entstehen in jedem System dauerhaft zu weite Berechtigungen.",
+        "Das Versagensmuster ist konkret: Man gibt einem Agenten breiten Zugriff, weil das Einschränken mühsam ist und das Tool mit mehr Rechten besser läuft. Dieser Handel wird stillschweigend geschlossen und nie überprüft — genau so entstehen in jedem System dauerhaft zu weite Berechtigungen.",
       ],
     },
     {
-      heading: "Bei Skills und Connectors vervielfacht es sich",
+      heading: "Skills und Connectors vergrößern die Angriffsfläche",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
         "Einen Skill oder Connector zu installieren ist eine Lieferkettenentscheidung — behandelt wird sie wie das Installieren einer Browser-Erweiterung. OWASP pflegt für genau diese Schicht eine Top-Ten-Liste, und ihre Kategorien lesen sich wie eine Aufzählung dessen, was Leute für unmöglich halten: überprivilegierte Skills, kompromittierte Lieferkette, schwache Isolation, nicht vertrauenswürdige externe Anweisungen, und die Wiederverwendung desselben Skills über Plattformen hinweg.",
-        "Entscheidend ist die Verstärkung. Jeder zusätzliche Skill erweitert, was ein Agent erreichen kann, und alle teilen sich dieselbe Sitzung. Ein kompromittierter Skill gefährdet nicht nur seine eigene Funktion — er sitzt in einem Kontext, in dem deine Schlüssel, deine Dateien und deine übrigen Werkzeuge liegen können.",
+        "Entscheidend ist die Verstärkung. Jeder zusätzliche Skill erweitert, was ein Agent erreichen kann, und alle teilen sich dieselbe Sitzung. Ein kompromittierter Skill gefährdet nicht nur seine eigene Funktion — er sitzt in einem Kontext, in dem deine Schlüssel, deine Dateien und deine übrigen Tools liegen können.",
       ],
       links: [
         { label: "OWASP Agentic Skills Top 10", href: OWASP_SKILLS },
@@ -158,7 +158,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Anweisungen können im Inhalt ankommen",
+      heading: "Prompt Injection: wenn Inhalte selbst Anweisungen enthalten",
       level: "assessment",
       paragraphs: [
         "Ein Agent, der ein Dokument, eine Webseite oder ein Ticket liest, liest Text, den möglicherweise jemand anderes geschrieben hat. Handelt er danach, hat dieser Jemand einen Kanal zu ihm. Das ist Prompt Injection, und daran ist nichts Exotisches — es ist die gewöhnliche Folge eines Systems, das Anweisung und Daten nicht vollständig trennen kann.",
@@ -177,7 +177,7 @@ const de: Article = {
       heading: "Was zu tun ist",
       level: "advice",
       paragraphs: [
-        "Geh die drei Schalter für jedes Werkzeug einmal durch. Das ist der größte Ertrag für den geringsten Aufwand auf dieser Seite.",
+        "Geh die drei Schalter für jedes Tool einmal durch. Das ist der größte Ertrag für den geringsten Aufwand auf dieser Seite.",
         "Schau in ein Verzeichnis hinein, bevor du Zugriff darauf gibst — und gib Zugriff auf das engste, das funktioniert.",
         "Sieh deine installierten Skills und Connectors durch und entferne, was du nicht mehr nutzt. Jeder davon ist dauerhafter Zugriff, den du erteilt und vergessen hast.",
         "Tausch die Zugangsdaten aus, die in einem Chat gelandet sind: Passwörter, API-Schlüssel, Zugriffstoken, Sitzungs-Cookies, private Schlüssel, Wiederherstellungscodes, Verbindungszeichenfolgen. Rate nicht, ob du eines hineinkopiert hast — Chatverlauf, Shell-History und ein Secret-Scanner über das Repository beantworten das in wenigen Minuten, und das schlägt jede Gedächtnisprobe.",

@@ -43,6 +43,19 @@ jobs:
       - name: Run profile check
         run: bash .github/scripts/check-profiles.sh
 
+  language-check:
+    name: German language check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      # Vocabulary and form of address only. A review found the German text had
+      # been built from English sentence logic; these two are the parts a script
+      # can catch. See docs/language-style.md.
+      - name: Check German content vocabulary and address
+        run: node site/scripts/check-language.mjs
+
   markdown-lint:
     name: Markdown lint
     runs-on: ubuntu-latest

@@ -63,8 +63,8 @@ const en: Article = {
         "Buying it is the cheapest control available to you, and it removes the reason people were using something else.",
       ],
       links: [
-        { label: "Does the tool train on what you type?", href: "/data-flows/training-and-retention" },
-        { label: "What may go into an AI tool?", href: "/law/what-may-go-in" },
+        { label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" },
+        { label: "Can I enter this data into an AI tool?", href: "/law/what-may-go-in" },
       ],
     },
     {
@@ -84,7 +84,7 @@ const en: Article = {
         "When a client or an employee asks for their data to be erased, that request lands on you as controller, not on the vendor. Answering it requires knowing which tool held what — which is a record you either keep or do not have.",
         "Same for the processing agreement: relying on a vendor's good practice is not the same as having the contract Art. 28 requires. That one is yours to hold.",
       ],
-      links: [{ label: "Getting it back out", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Deleting chats and data from an AI service", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Ask yourself, or ask the person you are about to hire",
@@ -105,90 +105,99 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Ich entscheide für andere — wo fange ich an?",
+  title: "Ich bin für den KI-Einsatz verantwortlich — wo fange ich an?",
   description:
-    "Sie haben bereits eine AI-Act-Pflicht, die kaum jemand kennt. Was zuerst zu entscheiden ist und warum Verbote Schatten-IT erzeugen.",
-  lead: "Die Frage wird meist so gestellt, ob man KI erlauben soll. Diese Entscheidung ist längst gefallen — getroffen von Leuten in Ihrer Organisation, die etwas erledigen mussten.",
+    "Aus dem AI Act gilt seit Februar 2025 eine Schulungspflicht, die kaum jemand kennt. Was du zuerst entscheiden solltest und warum ein Verbot die Nutzung nicht beendet.",
+  lead: "Meist wird gefragt, ob man KI erlauben soll. Diese Entscheidung ist längst gefallen — getroffen von Leuten in deiner Organisation, die ihre Arbeit erledigen mussten.",
   sections: [
     {
-      heading: "Sie haben bereits eine Pflicht, und sie ist älter als gedacht",
+      heading: "Die Schulungspflicht aus Artikel 4 gilt bereits",
       level: "law",
       checked: CHECKED,
       paragraphs: [
         "Artikel 4 des AI Act verpflichtet Anbieter und Betreiber von KI-Systemen, nach besten Kräften für ein ausreichendes Maß an KI-Kompetenz ihres Personals und anderer Personen zu sorgen, die in ihrem Auftrag mit diesen Systemen umgehen. Betreiber heißt: verwenden. Man muss nichts bauen, um erfasst zu sein.",
         "Er gilt seit 2. Februar 2025. Das ist keine künftige Pflicht zum Einplanen, sondern eine, gegen die die meisten Organisationen seit über einem Jahr still verstoßen — meist ohne zu wissen, dass es den Artikel gibt.",
-        "Der Maßstab ist „nach besten Kräften“, beurteilt an technischen Kenntnissen, Erfahrung, Ausbildung und Schulung, am Einsatzkontext und an den betroffenen Personen. Das ist ein Angemessenheitsmaßstab, keine Zertifizierungspflicht — also erreichbar, und zugleich heißt es, dass nichts zu tun sichtbar nicht genügt.",
+        "Der Maßstab ist „nach besten Kräften“, beurteilt an technischen Kenntnissen, Erfahrung, Ausbildung und Schulung, am Einsatzkontext und an den betroffenen Personen. Es geht also um Angemessenheit, nicht um eine Zertifizierung. Das ist erreichbar — bedeutet aber auch, dass gar nichts zu tun die Anforderung erkennbar nicht erfüllt.",
       ],
       links: [{ label: "AI Act, Artikel 4 — KI-Kompetenz", href: AI_ACT_ART_4 }],
     },
     {
-      heading: "Schatten-IT ist ein Beschaffungsergebnis, kein Disziplinproblem",
+      heading: "Schatten-IT entsteht durch fehlende Alternativen, nicht durch Nachlässigkeit",
       level: "assessment",
       paragraphs: [
-        "Leute verwenden ihr privates Konto für Arbeit nicht aus Nachlässigkeit. Sie tun es, weil das Werkzeug hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
-        "Das dreht die Antwort um. Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung nicht; es beendet Ihre Sicht darauf, und das ist eindeutig schlechter — dasselbe Material geht weiterhin hinaus, nur sagt es Ihnen jetzt niemand mehr.",
-        "Die brauchbare Fassung ist die umgekehrte Reihenfolge: etwas Gutes bereitstellen, klar sagen, wofür es verwendet werden darf, und erst dann den Rest einschränken. Eine Regel, die einem noch einen Weg lässt, die Arbeit zu erledigen, wird befolgt.",
+        "Leute verwenden ihr privates Konto für Arbeit nicht aus Nachlässigkeit. Sie tun es, weil das Tool hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
+        "Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung deshalb nicht. Es beendet nur deinen Einblick in sie: Dieselben Inhalte gehen weiterhin an dieselben Dienste, nur erfährst du es nicht mehr.",
+        "Die umgekehrte Reihenfolge funktioniert besser: erst ein brauchbares Produkt bereitstellen, dann klar festlegen, wofür es verwendet werden darf, und erst danach den Rest einschränken. Eine Regel, die einen gangbaren Weg offen lässt, wird eher befolgt als eine, die keinen lässt.",
       ],
     },
     {
-      heading: "Entscheiden Sie die Daten vor dem Werkzeug",
+      heading: "Erst die Daten klären, dann das Produkt auswählen",
       level: "advice",
       paragraphs: [
-        "Die Werkzeugfrage wirkt dringend und ist die zweite. Ohne ein Bild davon, was Sie überhaupt haben, ist jede Antwort darauf geraten.",
+        "Die Produktfrage wirkt dringender, ist aber die zweite. Solange unklar ist, welche Daten in deiner Organisation überhaupt anfallen und wie schutzbedürftig sie sind, lässt sie sich nur raten.",
       ],
       list: [
         "Was darf unter keinen Umständen hinaus — und steht das irgendwo, wo ein Mensch es findet?",
-        "Was darf zu einem Anbieter unter Vertrag, und auf welchen Vertrag stützen wir uns dabei?",
-        "Was ist unstrittig, damit nicht jede Nutzung als Entscheidung behandelt wird?",
+        "Was darf an einen Anbieter gehen, mit dem ein Vertrag besteht — und auf welchen Vertrag stützt sich das?",
+        "Was ist unstrittig unbedenklich, damit nicht jede einzelne Nutzung zur Einzelfallentscheidung wird?",
         "Wer beantwortet die Frage, wenn ein Fall in keine der drei Kategorien passt?",
       ],
     },
     {
-      heading: "Dann das Werkzeug — und die Tarifstufe ist der Punkt",
+      heading: "Der Kontotyp entscheidet über die Voreinstellungen",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Ein Geschäfts- oder Teamtarif geht nicht in erster Linie um Plätze und Abrechnung. Er ändert die Voreinstellung: Geschäftstarife der großen Anbieter trainieren nicht mit Ihren Eingaben, Verbrauchertarife in der Regel schon, solange niemand widerspricht. Dort liegt auch der Auftragsverarbeitungsvertrag, den Art. 28 DSGVO verlangt, wenn ein Anbieter personenbezogene Daten für Sie verarbeitet.",
-        "Ihn zu kaufen ist die billigste Maßnahme, die Ihnen zur Verfügung steht — und sie nimmt den Grund weg, aus dem Leute etwas anderes verwendet haben.",
+        "Bei einem Business-Tarif geht es nicht in erster Linie um Plätze und Abrechnung, sondern um die Voreinstellungen. Die Business-Tarife der großen Anbieter verwenden Eingaben laut deren Angaben standardmäßig nicht für das Modelltraining; bei Privatkundentarifen ist es umgekehrt, solange niemand widerspricht. Dort liegt auch der Auftragsverarbeitungsvertrag, den Art. 28 DSGVO verlangt, wenn ein Anbieter personenbezogene Daten für dich verarbeitet.",
       ],
       links: [
         {
-          label: "Trainiert das Werkzeug mit dem, was du eingibst?",
+          label: "Werden deine Eingaben für das Modelltraining verwendet?",
           href: "/de/data-flows/training-and-retention",
         },
-        { label: "Was darf in ein KI-Werkzeug hinein?", href: "/de/law/what-may-go-in" },
+        { label: "Welche Daten darf ich in ein KI-Tool eingeben?", href: "/de/law/what-may-go-in" },
       ],
     },
     {
-      heading: "Schulung ist die Pflicht — und das, was die Regel wirken lässt",
+      heading: "Warum ein Business-Tarif meist die günstigste Maßnahme ist",
+      level: "assessment",
+      paragraphs: [
+        "Gemessen an dem, was er kostet, verändert er mehr als die meisten anderen Maßnahmen: Er stellt die Voreinstellungen um, macht einen Auftragsverarbeitungsvertrag verfügbar und nimmt den Grund weg, aus dem Beschäftigte auf ihr Privatkonto ausweichen.",
+        "Er ist damit eine Voraussetzung, keine Erlaubnis. Ob bestimmte Daten überhaupt an einen externen Dienst gehen dürfen, hängt weiterhin von Zweck, Datenart, Rechtsgrundlage und internen Regeln ab.",
+      ],
+    },
+    {
+      heading: "Schulung ist Pflicht und macht die Regel erst wirksam",
       level: "advice",
       paragraphs: [
-        "Art. 4 verlangt sie. Unabhängig davon gilt: Eine Richtlinie, die niemand versteht, ist keine Maßnahme — Menschen können keiner Regel folgen, deren Begründung ihnen verschlossen bleibt, und sie improvisieren daran vorbei.",
-        "Halten Sie es klein genug, dass es tatsächlich stattfindet. Was freigegeben ist und warum, was keinesfalls hinein darf, was der Unterschied beim Konto bedeutet, wen man bei unklaren Fällen fragt, und was nach einem Fehler zu tun ist. Eine Stunde, wiederholt bei Änderungen, schlägt ein Jahresmodul, das niemand zu Ende klickt.",
-        "Machen Sie das Melden eines Fehlers überlebbar. Wer Ihnen sagt, dass er etwas eingefügt hat, gibt Ihnen die Möglichkeit zu handeln. Kostet ihn das etwas, schweigt der Nächste.",
+        "Artikel 4 verlangt sie ohnehin. Unabhängig davon gilt: Eine Richtlinie, die niemand versteht, wirkt nicht. Wer die Begründung einer Regel nicht kennt, kann sie im Zweifelsfall nicht anwenden und improvisiert daran vorbei.",
+        "Halte sie klein genug, dass sie tatsächlich stattfindet: Was ist freigegeben und warum, was darf keinesfalls hinein, was ändert der Kontotyp, wen fragt man in unklaren Fällen, und was ist nach einem Fehler zu tun. Eine Stunde, bei Änderungen wiederholt, bringt mehr als ein Jahresmodul, das niemand zu Ende klickt.",
+        "Sorge dafür, dass man Fehler melden kann, ohne Nachteile zu befürchten. Wer dir sagt, dass er etwas Falsches eingefügt hat, verschafft dir die Möglichkeit zu reagieren. Hat die Meldung Konsequenzen, schweigt die nächste Person.",
       ],
     },
     {
-      heading: "Was sich nicht delegieren lässt",
+      heading: "Was sich nicht an den Anbieter delegieren lässt",
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Verlangt ein Kunde oder eine Mitarbeiterin Löschung, landet dieses Verlangen bei Ihnen als Verantwortlichem, nicht beim Anbieter. Es zu beantworten setzt voraus, dass Sie wissen, welches Werkzeug was enthielt — eine Aufzeichnung, die Sie entweder führen oder nicht haben.",
-        "Ebenso beim Auftragsverarbeitungsvertrag: sich auf die gute Praxis eines Anbieters zu verlassen ist nicht dasselbe wie den Vertrag zu haben, den Art. 28 verlangt. Der gehört Ihnen.",
+        "Ein Löschbegehren richtet sich an den Verantwortlichen, nicht an den Anbieter. Beantworten kannst du es nur, wenn du weißt, welche Daten in welchem Dienst verarbeitet wurden — das setzt eine Aufzeichnung voraus, die entweder geführt wird oder fehlt.",
+        "Ebenso beim Auftragsverarbeitungsvertrag: Sich auf die gute Praxis eines Anbieters zu verlassen ersetzt nicht den Vertrag, den Art. 28 DSGVO verlangt. Ihn abzuschließen ist deine Aufgabe.",
       ],
-      links: [{ label: "Wieder herausbekommen", href: "/de/data-flows/getting-it-back-out" }],
+      links: [
+        { label: "Chats und Daten löschen: Was wirklich entfernt wird", href: "/de/data-flows/getting-it-back-out" },
+      ],
     },
     {
-      heading: "Fragen Sie sich das — oder die Person, die Sie holen wollen",
+      heading: "Diese Fragen solltest du beantworten können",
       level: "advice",
       paragraphs: [
-        "Was Sie hier nicht beantworten können, ist Ihr Auftrag — für das nächste Quartal oder für den, den Sie dazuholen.",
+        "Was hier offen bleibt, ist die Arbeitsliste für das nächste Quartal — oder das Briefing für die Person, die du dafür holst.",
       ],
       list: [
-        "Weiß ich, welche KI-Werkzeuge hier tatsächlich im Einsatz sind, auch die ohne Beleg?",
+        "Weiß ich, welche KI-Tools hier tatsächlich im Einsatz sind, auch die ohne Beleg?",
         "Haben wir etwas bereitgestellt, das gut genug ist, dass ein privates Konto nicht mehr reizt?",
         "Gibt es eine schriftliche Antwort darauf, was keinesfalls hinein darf?",
-        "Haben wir für jedes Werkzeug mit Personenbezug einen Auftragsverarbeitungsvertrag?",
+        "Haben wir für jedes Tool mit Personenbezug einen Auftragsverarbeitungsvertrag?",
         "Könnten wir ein Löschverlangen beantworten, ohne zu raten?",
         "Hat in dieser Organisation im letzten Jahr jemand eine KI-Schulung gehabt — und können wir das belegen?",
       ],

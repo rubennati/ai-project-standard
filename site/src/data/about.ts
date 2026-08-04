@@ -104,7 +104,7 @@ const de: AboutSection[] = [
     list: [
       "Fakt — eng begrenzte, prüfbare Aussage aus einer verlinkten Primärquelle, mit Prüfdatum. Wo die Quelle ein Anbieter über sich selbst ist, steht das dabei.",
       "Gemessen — hier getestet, mit Aufbau, Version und Datum, damit du es wiederholen kannst; gültig für diesen Aufbau, nicht allgemein.",
-      "Recht — Wiedergabe einer benannten Norm oder offiziellen Leitlinie, mit Rechtsraum und Prüfdatum. Nie Rechtsberatung.",
+      "Rechtslage — Wiedergabe einer benannten Norm oder offiziellen Leitlinie, mit Rechtsraum und Prüfdatum. Nie Rechtsberatung.",
       "Einschätzung — fachliche Beurteilung, Prognose oder Praxisbeobachtung, deren Begründung und Grenzen offenliegen, damit du widersprechen kannst.",
       "Empfehlung — bewusst konservativ: was ich hier tun würde und auf welcher Ebene es steht. Keine Aussage, dass anderes unzulässig wäre.",
     ],
@@ -130,7 +130,7 @@ const de: AboutSection[] = [
   {
     heading: "Das Repository darunter",
     paragraphs: [
-      "Diese Seite wird aus einem öffentlichen Repository gebaut, und dieses Repository enthält noch etwas Zweites: Konventionen für die Arbeit mit KI an einer Codebasis — wie mehrere Werkzeuge dasselbe Projekt lesen, was ein Agent darf und was nicht, wie die Arbeit danach überprüfbar bleibt.",
+      "Diese Seite wird aus einem öffentlichen Repository gebaut, und dieses Repository enthält noch etwas Zweites: Konventionen für die Arbeit mit KI an einer Codebasis — wie mehrere Tools dasselbe Projekt lesen, was ein Agent darf und was nicht, wie die Arbeit danach überprüfbar bleibt.",
       "Beides hängt zusammen, ist aber nicht dasselbe. Das Repository ist der engere, technische Gegenstand; die Seite der breitere. Wo sie sich überschneiden, ist das Repository die Quelle: Die Seite widerspricht ihm nie, und die Dokumentationsseiten hier werden direkt daraus erzeugt statt abgetippt.",
       "Wer keine Software schreibt, muss davon nichts lesen. Nichts auf dieser Seite setzt es voraus.",
     ],

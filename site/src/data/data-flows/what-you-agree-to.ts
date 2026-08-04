@@ -22,13 +22,13 @@ const CLAUDE_TRAINING =
   "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training";
 
 const en: Article = {
-  title: "What you agree to when you allow training",
+  title: "What changes when you allow model training",
   description:
-    "The visible question is training. The operative one is storage — and both are the same switch. What that consent actually covers.",
-  lead: "Almost everyone asks whether a tool trains on their input. Far fewer ask what has to be true before it could.",
+    "At some providers the same setting governs both model training and how long conversations are kept. What that setting actually covers, and what it does not.",
+  lead: "Allowing model training can also change how long your conversations are stored. It is worth knowing what the setting actually governs before you decide either way.",
   sections: [
     {
-      heading: "Before it can train, it has to keep",
+      heading: "Training requires storage first",
       level: "assessment",
       paragraphs: [
         "Nothing can be used for a training run that was not stored first. So the question “may I train on your data” carries a prior question that is rarely stated: may I keep it, copy it somewhere else, and put it through a pipeline.",
@@ -36,7 +36,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "The vendors couple the two, which confirms it",
+      heading: "At Anthropic, the same setting also governs retention",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -46,7 +46,7 @@ const en: Article = {
       links: [{ label: "Anthropic — is my data used for model training", href: CLAUDE_TRAINING }],
     },
     {
-      heading: "What the path looks like",
+      heading: "The route the material takes",
       level: "assessment",
       paragraphs: [
         "Your text does not travel from your keyboard into a model. It travels over a network to a service, through whatever sits in front of that service, into memory on a machine that produces a response, and back. Along the way it may pass caches, queues and load balancers, and if something fails it may be written to an error log — which has its own retention and its own access rules.",
@@ -55,7 +55,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "It is not a data breach. It is a loss of control",
+      heading: "Not a data breach, but a loss of control over the copy",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -95,13 +95,13 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Wozu du zustimmst, wenn du Training erlaubst",
+  title: "Was sich ändert, wenn du Modelltraining erlaubst",
   description:
-    "Die sichtbare Frage ist Training, die eigentliche ist Speicherung — und beides ist derselbe Schalter. Was die Zustimmung wirklich umfasst.",
-  lead: "Fast alle fragen, ob ein Werkzeug mit ihrer Eingabe trainiert. Deutlich weniger fragen, was zutreffen muss, damit es das überhaupt könnte.",
+    "Bei manchen Anbietern regelt dieselbe Einstellung Modelltraining und Aufbewahrungsdauer. Was die Einstellung tatsächlich umfasst — und was nicht.",
+  lead: "Modelltraining zu erlauben kann zugleich verändern, wie lange deine Unterhaltungen gespeichert bleiben. Bevor du dich in die eine oder andere Richtung entscheidest, lohnt es sich zu wissen, was die Einstellung tatsächlich regelt.",
   sections: [
     {
-      heading: "Bevor trainiert werden kann, muss gespeichert werden",
+      heading: "Modelltraining setzt Speicherung voraus",
       level: "assessment",
       paragraphs: [
         "Nichts kann in einen Trainingslauf gehen, das nicht vorher gespeichert wurde. Die Frage „darf ich mit deinen Daten trainieren“ trägt also eine vorgelagerte Frage in sich, die selten ausgesprochen wird: darf ich sie behalten, anderswohin kopieren und durch eine Verarbeitungskette schicken.",
@@ -109,7 +109,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Die Anbieter koppeln beides, was es bestätigt",
+      heading: "Bei Anthropic beeinflusst dieselbe Einstellung auch die Aufbewahrungsdauer",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -121,7 +121,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Wie der Weg aussieht",
+      heading: "Welchen Weg das Material nimmt",
       level: "assessment",
       paragraphs: [
         "Dein Text wandert nicht von der Tastatur in ein Modell. Er wandert über ein Netz zu einem Dienst, durch alles, was diesem Dienst vorgelagert ist, in den Arbeitsspeicher einer Maschine, die eine Antwort erzeugt, und wieder zurück. Unterwegs kann er Caches, Warteschlangen und Lastverteiler passieren, und wenn etwas fehlschlägt, kann er in einem Fehlerprotokoll landen — mit eigener Aufbewahrungsfrist und eigenen Zugriffsregeln.",
@@ -130,7 +130,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Es ist kein Datenleck. Es ist ein Kontrollverlust",
+      heading: "Kein Datenleck, aber ein Verlust der Kontrolle über die Kopie",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -159,7 +159,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Was daraus folgt",
+      heading: "Was du daraus ableiten kannst",
       level: "advice",
       paragraphs: [
         "Lies die Trainingseinstellung als Aufbewahrungseinstellung — mindestens ein Anbieter macht sie ausdrücklich dazu.",

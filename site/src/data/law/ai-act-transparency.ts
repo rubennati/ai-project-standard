@@ -45,7 +45,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Who is obliged, and to do what",
+      heading: "Which duty falls on providers and which on deployers",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -73,7 +73,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Does it hit you if you publish AI-assisted text?",
+      heading: "When deployers have to disclose AI-generated text",
       level: "assessment",
       paragraphs: [
         "The deployer duty for text is narrower than it first reads. It attaches to text published to inform the public on matters of public interest, and only where the text was not reviewed by a human who takes editorial responsibility for it. A post you drafted with a model and then went through yourself is unlikely to be caught by that wording.",
@@ -111,7 +111,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Wen es trifft, und wozu",
+      heading: "Welche Pflicht Anbieter trifft und welche Betreiber",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -139,7 +139,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Trifft es dich, wenn du KI-unterstützte Texte veröffentlichst?",
+      heading: "Wann Betreiber KI-generierte Texte kennzeichnen müssen",
       level: "assessment",
       paragraphs: [
         "Die Betreiberpflicht für Texte ist enger, als sie zunächst klingt. Sie knüpft an Texte an, die zur Information der Öffentlichkeit über Angelegenheiten von öffentlichem Interesse veröffentlicht werden, und greift nur, wenn kein Mensch den Text geprüft und die redaktionelle Verantwortung übernommen hat. Ein Beitrag, den du mit einem Modell entworfen und danach selbst durchgegangen bist, dürfte von diesem Wortlaut nicht erfasst sein.",
@@ -147,11 +147,11 @@ const de: Article = {
       ],
     },
     {
-      heading: "Was ich dazu tun würde",
+      heading: "Was ich in der Praxis tun würde",
       level: "advice",
       paragraphs: [
         "Kläre für jedes eingesetzte System, in welcher Rolle du bist — Anbieter oder Betreiber. Fast alle, die das hier lesen, sind Betreiber, und in dieser Rolle sind die Pflichten deutlich kleiner.",
-        "Wo du generierte Medien statt Text veröffentlichst: Prüfe, ob dein Werkzeug überhaupt maschinenlesbare Herkunftskennzeichen schreibt. Viele tun es nicht, und die Pflicht liegt beim Anbieter — unmarkiert ist aber deine Ausgabe.",
+        "Wo du generierte Medien statt Text veröffentlichst: Prüfe, ob dein Tool überhaupt maschinenlesbare Herkunftskennzeichen schreibt. Viele tun es nicht, und die Pflicht liegt beim Anbieter — unmarkiert ist aber deine Ausgabe.",
         "Halte fest, wann du zuletzt geprüft hast. Das Feld bewegt sich schnell — der Omnibus ging von einer vorläufigen Einigung im Mai zu geltendem Recht im Juli — und eine Notiz kostet nichts gegen den Zustand, selbstbewusst veraltet zu sein.",
       ],
     },
