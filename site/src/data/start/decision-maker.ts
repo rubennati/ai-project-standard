@@ -84,7 +84,7 @@ const en: Article = {
         "When a client or an employee asks for their data to be erased, that request lands on you as controller, not on the vendor. Answering it requires knowing which tool held what — which is a record you either keep or do not have.",
         "Same for the processing agreement: relying on a vendor's good practice is not the same as having the contract Art. 28 requires. That one is yours to hold.",
       ],
-      links: [{ label: "Deleting chats and data from an AI service", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Ask yourself, or ask the person you are about to hire",
@@ -184,7 +184,7 @@ const de: Article = {
         "Ebenso beim Auftragsverarbeitungsvertrag: Sich auf die gute Praxis eines Anbieters zu verlassen ersetzt nicht den Vertrag, den Art. 28 DSGVO verlangt. Ihn abzuschließen ist deine Aufgabe.",
       ],
       links: [
-        { label: "Chats und Daten löschen: Was wirklich entfernt wird", href: "/de/data-flows/getting-it-back-out" },
+        { label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" },
       ],
     },
     {

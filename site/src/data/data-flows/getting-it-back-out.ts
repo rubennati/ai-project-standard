@@ -18,7 +18,7 @@ const EDPB_CLOUD_ACT =
   "https://www.edpb.europa.eu/our-work-tools/our-documents/letters/edpb-edps-joint-response-libe-committee-impact-us-cloud-act_en";
 
 const en: Article = {
-  title: "Deleting chats and data from an AI service",
+  title: "Deleting chats and data: what goes and what stays",
   description:
     "What deleting a chat actually removes, which deletion duties exist, why EU hosting is not EU jurisdiction, and where local models fit.",
   lead: "Deleting a conversation removes what you can see. What remains in backups, logs or a model that was already trained is a different question — and one you should be able to answer before someone asks you to delete something.",
@@ -62,7 +62,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Where a local model genuinely fits",
+      heading: "What a local model is well suited to",
       level: "assessment",
       paragraphs: [
         "At open-ended work, the large hosted models are ahead today, and pretending otherwise helps nobody. Whether that gap closes is a forecast, and this page does not make one. But the comparison assumes you need what a chat interface trained you to expect: an answer within seconds.",
@@ -86,7 +86,7 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Chats und Daten löschen: Was wirklich entfernt wird",
+  title: "Chats und Daten löschen: Was entfernt wird und was bleibt",
   description:
     "Was beim Löschen eines Chats tatsächlich entfernt wird, welche Löschpflichten bestehen, warum EU-Hosting nicht EU-Zuständigkeit bedeutet und wo lokale Modelle passen.",
   lead: "Wer eine Unterhaltung löscht, entfernt zunächst das, was sichtbar ist. Was in Sicherungen, Protokollen oder einem bereits trainierten Modell verbleibt, ist eine andere Frage — und du solltest sie beantworten können, bevor jemand eine Löschung von dir verlangt.",
@@ -132,7 +132,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Wo ein lokales Modell wirklich passt",
+      heading: "Wofür sich ein lokales Modell eignet",
       level: "assessment",
       paragraphs: [
         "Bei offenen Aufgaben sind die großen gehosteten Modelle heute voraus, und etwas anderes zu behaupten hilft niemandem. Ob sich dieser Abstand schließt, ist eine Prognose — diese Seite stellt keine. Nur unterstellt der Vergleich, dass du brauchst, woran dich die Chat-Oberfläche gewöhnt hat: eine Antwort in Sekunden.",

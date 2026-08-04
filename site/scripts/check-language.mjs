@@ -29,6 +29,19 @@ const WERKZEUG_ALLOWED = /Entwicklerwerkzeuge?|Diagnosewerkzeug/;
 const FORMAL = /\b(Sie haben|Sie können|Sie müssen|Sie sollten|Ihnen|Ihre[nmrs]?\b)/;
 const FORMAL_ALLOWED = new Set([path.join("src", "data", "privacy.ts"), path.join("src", "data", "legal.ts")]);
 
+/**
+ * Reveal framing — "what really happens", "was wirklich passiert".
+ *
+ * Flagged only in titles, headings and descriptions, where it is a promise to
+ * the reader. It contradicts the method: the evidence labels exist to say
+ * "here is the source, check it and disagree", and a headline claiming
+ * privileged access to a hidden truth asks to be believed instead. In body
+ * prose the same words can carry real weight ("a backup you have actually
+ * restored once"), so those are left alone.
+ */
+const REVEAL_FIELDS = /^\s*(title|subtitle|heading|description|label|homeHeading|homeDescription):/;
+const REVEAL = /\b(wirklich|tatsächlich|actually|really|genuinely)\b/i;
+
 const walk = (dir) =>
   readdirSync(dir).flatMap((entry) => {
     const full = path.join(dir, entry);
@@ -56,6 +69,13 @@ for (const file of files) {
     if (!FORMAL_ALLOWED.has(rel) && FORMAL.test(line) && !/^\s*\*/.test(line)) {
       const hit = line.match(FORMAL)[0];
       problems.push(`${at}  "${hit}" — the site addresses the reader as "du".`);
+    }
+
+    if (REVEAL_FIELDS.test(line) && REVEAL.test(line)) {
+      const hit = line.match(REVEAL)[0];
+      problems.push(
+        `${at}  "${hit}" in a heading promises a reveal. Name the subject instead.`,
+      );
     }
   });
 }

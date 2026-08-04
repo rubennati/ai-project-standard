@@ -97,7 +97,7 @@ export const ui = {
     homeTitle: "AI Standard",
     homeDescription:
       "What actually happens when you use AI at work: where your data goes, what you are allowed to put in, and what the law already requires.",
-    homeHeading: "What actually happens when you use AI at work.",
+    homeHeading: "What happens to your data when you use AI at work.",
     homeLead:
       "Written from a security desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
     homeStance:
@@ -146,7 +146,7 @@ export const ui = {
 
     blogTitle: "Blog",
     blogDescription:
-      "Posts about what actually happens when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
+      "Posts on where your input goes when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
     blogIntro:
       "Longer pieces that follow one question all the way through. Same rules as the rest of the site: primary sources, stated check dates, and a label on every claim.",
     blogFeed: "RSS feed",
@@ -273,8 +273,8 @@ export const ui = {
       "Dies ist ein Arbeitsindex für KI- und LLM-nahe Begriffe. Tiefere Erklärungen liegen auf den einzelnen Begriffseiten. Breitere Guides und Projektdokumentation werden später getrennt ausgebaut.",
     homeTitle: "AI Standard",
     homeDescription:
-      "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert: wohin die Daten gehen, was hinein darf, und was das Gesetz längst verlangt.",
-    homeHeading: "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert.",
+      "Wohin deine Daten beim Einsatz von KI im Arbeitsalltag gehen, was hinein darf, und was das Gesetz längst verlangt.",
+    homeHeading: "Was beim Einsatz von KI im Arbeitsalltag mit deinen Daten passiert.",
     homeLead:
       "Geschrieben aus der Security-Praxis. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
     homeStance:
@@ -301,7 +301,7 @@ export const ui = {
     whatThisSiteIsFor: "Wofür diese Seite da ist",
     doorPaste: "Bevor du etwas hineinkopierst",
     doorPasteCopy:
-      "Wohin die Daten gehen, je Tool-Kategorie \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und ob \u201egelöscht\u201c wirklich gelöscht heißt.",
+      "Wohin die Daten gehen, je Tool-Kategorie \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und was beim Löschen entfernt wird.",
     doorAllowed: "Was du darfst",
     doorAllowedCopy:
       "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, manche generierten Inhalte müssen gekennzeichnet werden, und die Pflicht ist enger, als sie zunächst klingt.",
@@ -323,7 +323,7 @@ export const ui = {
 
     blogTitle: "Blog",
     blogDescription:
-      "Beitr\u00e4ge dar\u00fcber, was tats\u00e4chlich passiert, wenn man ein KI-Tool benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
+      "Beitr\u00e4ge dar\u00fcber, wohin deine Eingaben gehen, wenn du ein KI-Tool benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
     blogIntro:
       "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Es gelten dieselben Regeln wie \u00fcberall hier: Prim\u00e4rquellen, angegebene Pr\u00fcfdaten und eine Kennzeichnung an jeder Aussage.",
     blogFeed: "RSS-Feed",
