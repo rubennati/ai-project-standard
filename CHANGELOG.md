@@ -6,6 +6,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — The blog, with an author, dates and a feed
+
+- First post at `/blog/before-you-press-enter` (English and German). It opens with a measurement made for it rather than a claim taken from documentation: eleven characters typed into a search field, Enter never pressed, and the network log showing `GET /ac/?q=wetter+wien` → 200. Setup, request and date are stated so anyone can repeat it in about a minute.
+- Blog index per locale with a visible byline, the publication date and the review date; RSS 2.0 at `/blog/rss.xml` and `/de/blog/rss.xml` with autodiscovery in the head.
+- `datePublished` is now editorial and set by hand; `dateModified` keeps coming from the git lookup that feeds the sitemap, so the two can never disagree.
+- Figures are described as data (`ArticleFigure`) and rendered as markup rather than images, so they stay real text for search and assistive technology, reflow at any width, and never carry state by colour alone.
+- `docs/language-style.md` — the writing rules for both languages, with the terminology table.
+- `site/scripts/check-language.mjs` — CI gate on "Werkzeug" used for software, formal address outside the legal pages, and reveal framing in headings.
+
+### Fixed — Vendor claims re-read at the source
+
+- The 30-day OpenAI retention figure covers abuse-monitoring logs, not everything the API touches. Application state — stored responses, files, vector stores, conversation objects — is kept until deleted, and objects never deleted are retained indefinitely.
+- Anthropic retention has carve-outs the training switch does not reach: flagged inputs and outputs up to two years, classification scores up to seven, plus legal and dispute retention.
+- ChatGPT Team was renamed ChatGPT Business in August 2025.
+- Art. 20 GDPR was listed flatly among the rights in this site's own privacy policy while the processing described rests on Art. 6(1)(f). Portability requires consent or contract, so it does not apply.
+- An NDA does not have a model as its recipient; the disclosure runs to the company operating the service.
+- An account does not decide whether use is private or commercial — it decides which contract applies.
+
+### Changed — Claims bounded, method tightened
+
+- "A pseudonymised extract is usually enough", "a local model will not match the hosted ones", "the material never leaves your control" and the specialist-tool market claim were all stated more absolutely than the evidence carries.
+- Evidence levels: `fact` now separates a vendor describing its own terms from an independent verification; `law` covers restating a norm only, and applying it to a case is `assessment`. The source ranking is written down rather than implied.
+- Self-diminishing and reveal framing removed from headings and positioning copy.
+
+### Changed — German rewritten in German
+
+- "Werkzeug" replaced by "Tool" for software throughout (Duden lists it as the established computing term); the genuine compounds stay.
+- One article moved off "Sie"; the site now addresses the reader as "du" everywhere except the legal pages.
+- Pages renamed after the question they answer — "Wieder herausbekommen" became "Chats und Daten löschen: Was entfernt wird und was bleibt", "Trainiert das Tool mit dem, was du eingibst?" became "Werden deine Eingaben für das Modelltraining verwendet?", and so on, with every link label updated.
+- All 74 glossary terms now carry German, and the localisation helper reports the language it actually returned instead of declaring `de` over English prose.
+
 ### Changed — Positioning refinements (stacked on the refresh)
 
 Self-critical follow-up to the positioning refresh — four honest corrections.
