@@ -12,6 +12,8 @@ interface Props {
   description?: string;
   ogType?: "website" | "article";
   schemaType?: "WebSite" | "WebPage" | "AboutPage" | "CollectionPage" | "Article";
+  /** Editorial publication date, for articles that have one. */
+  datePublished?: string;
   extraSchemas?: Record<string, unknown>[];
   locale?: SiteLocale;
   routeKey?: LocalizedRouteKey;
@@ -25,6 +27,7 @@ const {
   description = "A repository standard for long-term human and AI collaboration.",
   ogType = "website",
   schemaType = "WebPage",
+  datePublished,
   extraSchemas = [],
   locale = "en",
   routeKey,
@@ -131,7 +134,13 @@ const footerSections = [
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
     <SEO title={title} description={description} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
-    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title={`${ui.blogTitle} — AI Standard`}
+      href={toAbsolute(locale === "de" ? "/de/blog/rss.xml" : "/blog/rss.xml")}
+    />
+    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} datePublished={datePublished} />
   </head>
   <body class="flex min-h-screen flex-col">
     <a href="#main-content" class="skip-link">{ui.skipToMain}</a>

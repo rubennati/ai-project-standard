@@ -99,7 +99,7 @@ export const ui = {
       "What actually happens when you use AI at work: where your data goes, what you are allowed to put in, and what the law already requires.",
     homeHeading: "What actually happens when you use AI at work.",
     homeLead:
-      "Written from a security practitioner's desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
+      "Written from a security desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
     homeStance:
       "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
     homePrimaryLink: "Does it train on what I type?",
@@ -149,6 +149,7 @@ export const ui = {
       "Posts about what actually happens when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
     blogIntro:
       "Longer pieces that follow one question all the way through. Same rules as the rest of the site: primary sources, stated check dates, and a label on every claim.",
+    blogFeed: "RSS feed",
     blogPlanned: "Planned",
     blogPlannedIntro: "Written next, in this order:",
     blogPublished: "Published",
@@ -274,7 +275,7 @@ export const ui = {
       "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert: wohin die Daten gehen, was hinein darf, und was das Gesetz längst verlangt.",
     homeHeading: "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert.",
     homeLead:
-      "Geschrieben aus der Sicht eines Security-Praktikers. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
+      "Geschrieben aus der Security-Praxis. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
     homeStance:
       "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
     homePrimaryLink: "Trainiert es mit dem, was ich eingebe?",
@@ -324,6 +325,7 @@ export const ui = {
       "Beitr\u00e4ge dar\u00fcber, was tats\u00e4chlich passiert, wenn man ein KI-Werkzeug benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
     blogIntro:
       "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Es gelten dieselben Regeln wie \u00fcberall hier: Prim\u00e4rquellen, angegebene Pr\u00fcfdaten und eine Kennzeichnung an jeder Aussage.",
+    blogFeed: "RSS-Feed",
     blogPlanned: "Geplant",
     blogPlannedIntro: "Als N\u00e4chstes geschrieben, in dieser Reihenfolge:",
     blogPublished: "Ver\u00f6ffentlicht",

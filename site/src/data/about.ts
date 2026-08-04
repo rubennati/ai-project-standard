@@ -74,7 +74,7 @@ const en: AboutSection[] = [
   {
     heading: "Who writes it",
     paragraphs: [
-      "Ruben Nati, working in cybersecurity in Vienna. The subjects here are the ones that come up in that work, which is also the limit of what the site covers: this is a practitioner's view, not an institution's.",
+      "Ruben Nati, working in cybersecurity in Vienna. The subjects here are the ones that come up in that work — which is why they are the questions people actually hit, rather than the ones that are comfortable to write about.",
     ],
   },
 ];
@@ -138,7 +138,7 @@ const de: AboutSection[] = [
   {
     heading: "Wer schreibt",
     paragraphs: [
-      "Ruben Nati, tätig in der Cybersicherheit in Wien. Die Themen hier sind die, die in dieser Arbeit auftauchen — und das ist zugleich die Grenze dessen, was die Seite abdeckt: die Sicht eines Praktikers, nicht die einer Institution.",
+      "Ruben Nati, tätig in der Cybersicherheit in Wien. Die Themen hier sind die, die in dieser Arbeit auftauchen — deshalb sind es die Fragen, auf die man tatsächlich stößt, und nicht die, über die sich bequem schreiben lässt.",
     ],
   },
 ];
