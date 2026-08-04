@@ -3,6 +3,8 @@ import { defaultLocale, type SiteLocale } from "./ui";
 export type LocalizedRouteKey =
   | "home"
   | "about"
+  | "blogIndex"
+  | "blogBeforeYouPressEnter"
   | "glossaryIndex"
   | "glossaryTerm"
   | "legalNotice"
@@ -37,6 +39,10 @@ export const getLocalizedPath = (
       return prefix || "/";
     case "about":
       return `${prefix}/about`;
+    case "blogIndex":
+      return `${prefix}/blog`;
+    case "blogBeforeYouPressEnter":
+      return `${prefix}/blog/before-you-press-enter`;
     case "glossaryIndex":
       return `${prefix}/glossary`;
     case "glossaryTerm":

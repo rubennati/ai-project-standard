@@ -10,6 +10,12 @@
   form, and a fork that clones, builds and deploys publishes placeholders
   rather than someone else's imprint.
 
+- Write the next two blog posts, in this order: why removing names rarely
+  produces anonymous data in the legal sense, and why "EU-hosted" answers a
+  different question from the one people mean when they ask it. Both are
+  corrections of a claim that is widely repeated, so both need a primary
+  source and a check date rather than a confident tone.
+
 ## Mid term
 
 - Restructure the repository so the standard is distinguishable from this
