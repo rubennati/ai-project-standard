@@ -1,42 +1,61 @@
 ---
 import Base from "../layouts/Base.astro";
 import { getUi } from "../i18n/ui";
-const ui = getUi("en");
+import { getAbout } from "../data/about";
+import { repoUrl } from "../data/site";
+
+const locale = "en" as const;
+const ui = getUi(locale);
+const sections = getAbout(locale);
 ---
 
 <Base
   title={`${ui.aboutTitle} — AI Standard`}
   description={ui.aboutDescription}
   schemaType="AboutPage"
-  locale="en"
+  locale={locale}
   routeKey="about"
 >
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.aboutTitle}</h1>
 
-  <section class="mt-8 flex flex-col gap-4">
-    <p class="max-w-3xl">{ui.aboutIntro}</p>
-    <p class="max-w-3xl">{ui.aboutLayerCopy}</p>
-  </section>
+  <div class="max-w-2xl">
+    {
+      sections.map((section) => (
+        <section class="mt-10">
+          <h2 class="text-xl font-semibold">{section.heading}</h2>
+          {section.paragraphs.map((paragraph) => (
+            <p class="mt-3 leading-7">{paragraph}</p>
+          ))}
+          {section.list && (
+            <ul class="mt-3 flex list-disc flex-col gap-1 pl-5 leading-7">
+              {section.list.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          )}
+        </section>
+      ))
+    }
 
-  <section class="mt-12 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">{ui.maintainer}</h2>
-    <p>
-      Created and maintained by <a href="https://github.com/rubennati">Ruben Nati</a>. Contributions
-      welcome — see the{" "}
-      <a href="https://github.com/rubennati/ai-project-standard/blob/main/CONTRIBUTING.md">contribution guide</a>.
-    </p>
-  </section>
+    <section class="mt-10 border-t border-black/10 pt-6 dark:border-white/10">
+      <h2 class="text-xl font-semibold">{ui.license}</h2>
+      <p class="mt-3 leading-7">
+        {ui.licensingCode}{" "}
+        <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>
+      </p>
+      <p class="mt-3 leading-7">
+        {ui.licensingContent}{" "}
+        <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>
+      </p>
+      <p class="mt-3 leading-7">
+        {ui.contribute}:{" "}
+        <a href={`${repoUrl}/blob/main/CONTRIBUTING.md`}>CONTRIBUTING.md</a>
+      </p>
+    </section>
 
-  <section class="mt-10 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">{ui.license}</h2>
-    <p>
-      Released under the MIT License. See the{" "}
-      <a href="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE">LICENSE</a> file.
-    </p>
-  </section>
-
-  <section class="mt-10 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">{ui.acknowledgements}</h2>
-    <p>{ui.acknowledgementsCopy}</p>
-  </section>
+    <section class="mt-10">
+      <h2 class="text-xl font-semibold">{ui.acknowledgements}</h2>
+      <p class="mt-3 leading-7">{ui.acknowledgementsCopy}</p>
+    </section>
+  </div>
 </Base>

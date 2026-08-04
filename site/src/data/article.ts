@@ -8,12 +8,32 @@
  */
 import type { EvidenceLevel } from "./evidence";
 
+/**
+ * Diagrams are described as data, not drawn as images, so they stay real text
+ * for search and assistive technology and reflow at any width.
+ */
+export type ArticleFigure =
+  | {
+      kind: "journey";
+      caption: string;
+      stops: { label: string; detail: string }[];
+      markIndex?: number;
+      markLabel?: string;
+    }
+  | {
+      kind: "reach";
+      caption: string;
+      rows: { target: string; state: string; reached: "yes" | "partial" | "no"; note: string }[];
+    };
+
 export interface ArticleSection {
   heading: string;
-  level: EvidenceLevel;
+  /** Omitted for narrative sections that make no checkable claim of their own. */
+  level?: EvidenceLevel;
   checked?: string;
   paragraphs: string[];
   list?: string[];
+  figure?: ArticleFigure;
   links?: { label: string; href: string }[];
 }
 

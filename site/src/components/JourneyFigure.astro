@@ -1,0 +1,61 @@
+---
+/**
+ * The stations a sent message passes through, as a vertical list.
+ *
+ * Built from markup rather than an SVG on purpose: it reflows at any width,
+ * the text is real text for search and screen readers, and it inherits the
+ * page's colours instead of carrying its own. The visual line is decorative
+ * and is hidden from assistive technology, which reads the ordered list.
+ */
+interface Stop {
+  label: string;
+  detail: string;
+}
+
+interface Props {
+  caption: string;
+  stops: Stop[];
+  /** Index of the stop to mark as the point where encryption is terminated. */
+  markIndex?: number;
+  markLabel?: string;
+}
+
+const { caption, stops, markIndex, markLabel } = Astro.props;
+---
+
+<figure class="mt-6 rounded-lg border border-black/10 p-5 dark:border-white/10">
+  <ol class="flex flex-col">
+    {
+      stops.map((stop, index) => (
+        <li class="relative flex gap-x-4 pb-5 last:pb-0">
+          <div class="flex flex-col items-center" aria-hidden="true">
+            <span
+              class={`mt-1.5 size-2.5 shrink-0 rounded-full ${
+                index === markIndex
+                  ? "bg-[var(--color-accent)]"
+                  : "border border-black/40 dark:border-white/40"
+              }`}
+            />
+            {index < stops.length - 1 && (
+              <span class="w-px grow bg-black/15 dark:bg-white/15" />
+            )}
+          </div>
+          <div class="-mt-0.5 min-w-0">
+            <p class="font-semibold">
+              {stop.label}
+              {index === markIndex && markLabel && (
+                <span class="ml-2 rounded-full border border-[var(--color-accent)]/50 px-2 py-0.5 align-middle text-xs font-normal uppercase tracking-[0.06em]">
+                  {markLabel}
+                </span>
+              )}
+            </p>
+            <p class="mt-0.5 text-sm leading-6 text-zinc-700 dark:text-zinc-300">{stop.detail}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+  <figcaption class="mt-4 border-t border-black/10 pt-3 text-sm text-zinc-700 dark:border-white/10 dark:text-zinc-300">
+    {caption}
+  </figcaption>
+</figure>

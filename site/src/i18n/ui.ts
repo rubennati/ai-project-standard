@@ -144,6 +144,15 @@ export const ui = {
     stillWriting:
       "Still being written: the tool-by-tool data-flow guides, the legal section, and the blog. This site is growing. What is here is maintained; what is missing is named rather than faked.",
 
+    blogTitle: "Blog",
+    blogDescription:
+      "Posts about what actually happens when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
+    blogIntro:
+      "Longer pieces that follow one question all the way through. Same rules as the rest of the site: primary sources, stated check dates, and a label on every claim.",
+    blogPlanned: "Planned",
+    blogPlannedIntro: "Written next, in this order:",
+    blogPublished: "Published",
+    blogBackToIndex: "All posts",
     aboutTitle: "About",
     aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
     aboutIntro:
@@ -310,6 +319,15 @@ export const ui = {
     stillWriting:
       "Noch in Arbeit: die Datenfluss-Leitfäden je Werkzeug, der Rechtsteil und der Blog. Diese Seite wächst. Was da ist, wird gepflegt; was fehlt, wird benannt statt vorgetäuscht.",
 
+    blogTitle: "Blog",
+    blogDescription:
+      "Beitr\u00e4ge dar\u00fcber, was tats\u00e4chlich passiert, wenn man ein KI-Werkzeug benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
+    blogIntro:
+      "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Es gelten dieselben Regeln wie \u00fcberall hier: Prim\u00e4rquellen, angegebene Pr\u00fcfdaten und eine Kennzeichnung an jeder Aussage.",
+    blogPlanned: "Geplant",
+    blogPlannedIntro: "Als N\u00e4chstes geschrieben, in dieser Reihenfolge:",
+    blogPublished: "Ver\u00f6ffentlicht",
+    blogBackToIndex: "Alle Beitr\u00e4ge",
     aboutTitle: "Über",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:

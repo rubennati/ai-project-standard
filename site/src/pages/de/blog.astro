@@ -1,9 +1,9 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getUi } from "../i18n/ui";
-import { getBlogPosts, getPlannedPosts } from "../data/blog";
+import Base from "../../layouts/Base.astro";
+import { getUi } from "../../i18n/ui";
+import { getBlogPosts, getPlannedPosts } from "../../data/blog";
 
-const locale = "en" as const;
+const locale = "de" as const;
 const ui = getUi(locale);
 const posts = getBlogPosts(locale);
 const planned = getPlannedPosts(locale);

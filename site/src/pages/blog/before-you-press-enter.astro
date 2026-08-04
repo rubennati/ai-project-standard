@@ -1,10 +1,15 @@
 ---
 import Base from "../../layouts/Base.astro";
 import EvidenceLabel from "../../components/EvidenceLabel.astro";
-import { getEmployeeStart } from "../../data/start/employee";
+import JourneyFigure from "../../components/JourneyFigure.astro";
+import ReachFigure from "../../components/ReachFigure.astro";
+import { getUi } from "../../i18n/ui";
+import { getLocalizedPath } from "../../i18n/routes";
+import { getBeforeYouPressEnter, PUBLISHED } from "../../data/blog/before-you-press-enter";
 
 const locale = "en" as const;
-const article = getEmployeeStart(locale);
+const ui = getUi(locale);
+const article = getBeforeYouPressEnter(locale);
 ---
 
 <Base
@@ -13,10 +18,16 @@ const article = getEmployeeStart(locale);
   ogType="article"
   schemaType="Article"
   locale={locale}
-  routeKey="startEmployee"
+  routeKey="blogBeforeYouPressEnter"
 >
   <article class="max-w-2xl">
-    <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{article.title}</h1>
+    <p class="text-sm text-zinc-700 dark:text-zinc-300">
+      <a href={getLocalizedPath(locale, "blogIndex")}>{ui.blogBackToIndex}</a>
+      <span aria-hidden="true"> · </span>
+      <time datetime={PUBLISHED}>{PUBLISHED}</time>
+    </p>
+
+    <h1 class="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">{article.title}</h1>
     <p class="mt-4 text-lg leading-8">{article.lead}</p>
 
     {
@@ -37,6 +48,17 @@ const article = getEmployeeStart(locale);
                 <li>{item}</li>
               ))}
             </ul>
+          )}
+          {section.figure?.kind === "journey" && (
+            <JourneyFigure
+              caption={section.figure.caption}
+              stops={section.figure.stops}
+              markIndex={section.figure.markIndex}
+              markLabel={section.figure.markLabel}
+            />
+          )}
+          {section.figure?.kind === "reach" && (
+            <ReachFigure caption={section.figure.caption} rows={section.figure.rows} />
           )}
           {section.links && (
             <ul class="mt-3 flex flex-col gap-1 text-sm">
