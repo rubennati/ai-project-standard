@@ -1,0 +1,48 @@
+---
+/**
+ * The five evidence levels, shown together.
+ *
+ * This is the site's method made visible. Every article labels its sections,
+ * but a reader only discovers that after opening one — so the homepage shows
+ * the whole scale at once, in the same badges the articles use.
+ *
+ * Built from the same source as the labels themselves, so the legend cannot
+ * describe a system the pages no longer follow.
+ */
+import { getEvidenceCopy, type EvidenceLevel } from "../data/evidence";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+
+const levels: EvidenceLevel[] = ["fact", "measured", "law", "assessment", "advice"];
+
+const tone: Record<EvidenceLevel, string> = {
+  fact: "border-black/20 dark:border-white/25",
+  measured: "border-black/20 dark:border-white/25",
+  law: "border-[var(--color-accent)]/50",
+  assessment: "border-dashed border-black/30 dark:border-white/35",
+  advice: "border-dashed border-black/30 dark:border-white/35",
+};
+---
+
+<ul class="flex flex-col gap-4">
+  {
+    levels.map((level) => {
+      const { label, meaning } = getEvidenceCopy(locale, level);
+      return (
+        <li class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:gap-4">
+          <span
+            class={`inline-flex shrink-0 rounded-full border px-3 py-1 text-xs font-semibold uppercase tracking-[0.06em] sm:w-32 sm:justify-center ${tone[level]}`}
+          >
+            {label}
+          </span>
+          <span class="leading-7 text-zinc-700 dark:text-zinc-300">{meaning}</span>
+        </li>
+      );
+    })
+  }
+</ul>

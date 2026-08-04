@@ -24,13 +24,14 @@ const en: Article = {
   lead: "The hard question is not what you may send. It is what happens when someone asks you to take it back — and whether you can show that you did.",
   sections: [
     {
-      heading: "Consent can be withdrawn. Can you act on it?",
+      heading: "Deletion requests arrive from two different directions",
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "A client agrees that their material may go into a tool. Six months later they change their mind and ask for it to be deleted. Under Art. 17 GDPR that request is theirs to make, and answering it is your obligation, not the vendor's.",
-        "This is the moment the arrangement is tested. You have to know which conversations contained the material, whether the tool retains them, whether anything was used for training, and what you can actually demonstrate afterwards. Most people have not thought about any of it before the question arrives.",
-        "Where content has already gone into a training run, deletion of the conversation does not remove it from a model that has been trained. Vendors say as much: turning the setting off stops future runs from using your data, it does not undo training that has happened.",
+        "A client asking you to remove their material is a contractual matter. It rests on what you agreed with them, and it applies whether or not a single personal detail is involved — an architecture document with no names in it can still be theirs to withdraw.",
+        "Art. 17 GDPR is a different thing. It is the right of a data subject to have their own personal data erased, it applies only where one of the listed grounds is met, and Art. 17(3) carves out cases where it does not apply at all. The person exercising it need not be your client: it may be someone merely named in the client's material, which is the case people fail to anticipate.",
+        "Confusing the two produces bad answers in both directions — promising erasure where a retention duty applies, or refusing a contractual request because it does not meet a GDPR ground it never had to meet.",
+        "What both have in common is the practical demand. You have to know which conversations held the material, whether the tool still retains them, and whether anything went into a training run. Where it did, deleting the conversation does not remove it from a model that has already been trained — vendors say as much: turning the setting off stops future runs, it does not undo the past.",
       ],
       links: [{ label: "Art. 17 GDPR — right to erasure", href: GDPR_ART_17 }],
     },
@@ -90,13 +91,14 @@ const de: Article = {
   lead: "Die schwierige Frage ist nicht, was du hineingeben darfst. Sie lautet, was passiert, wenn jemand es zurückverlangt — und ob du zeigen kannst, dass du es getan hast.",
   sections: [
     {
-      heading: "Eine Einwilligung ist widerrufbar. Kannst du darauf reagieren?",
+      heading: "Löschverlangen kommen aus zwei verschiedenen Richtungen",
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Ein Kunde stimmt zu, dass sein Material in ein Werkzeug darf. Ein halbes Jahr später überlegt er es sich anders und verlangt Löschung. Nach Art. 17 DSGVO steht ihm dieses Verlangen zu — und es zu beantworten ist deine Pflicht, nicht die des Anbieters.",
-        "In diesem Moment zeigt sich, ob die Sache trägt. Du musst wissen, welche Unterhaltungen das Material enthielten, ob das Werkzeug sie aufbewahrt, ob etwas ins Training gegangen ist, und was du hinterher tatsächlich belegen kannst. Die meisten haben über nichts davon nachgedacht, bevor die Frage kommt.",
-        "Ist Inhalt bereits in einen Trainingslauf eingeflossen, entfernt das Löschen der Unterhaltung ihn nicht aus einem fertig trainierten Modell. Die Anbieter sagen das selbst: Die Einstellung auszuschalten verhindert die Nutzung in künftigen Läufen, es macht erfolgtes Training nicht rückgängig.",
+        "Verlangt ein Kunde, sein Material zu entfernen, ist das eine vertragliche Angelegenheit. Sie richtet sich nach dem, was ihr vereinbart habt, und gilt unabhängig davon, ob überhaupt eine personenbezogene Angabe im Spiel ist — ein Architekturdokument ohne einen einzigen Namen bleibt seines.",
+        "Art. 17 DSGVO ist etwas anderes. Es ist das Recht einer betroffenen Person auf Löschung ihrer eigenen personenbezogenen Daten, es greift nur bei einem der dort genannten Gründe, und Art. 17 Abs. 3 nimmt Fälle ausdrücklich aus. Wer es ausübt, muss nicht dein Kunde sein: Es kann jemand sein, der im Material des Kunden bloß genannt wird — der Fall, den kaum jemand einplant.",
+        "Beides zu vermischen führt in beide Richtungen zu falschen Antworten: Löschung zusagen, wo eine Aufbewahrungspflicht besteht — oder ein vertragliches Verlangen ablehnen, weil es einen DSGVO-Grund nicht erfüllt, den es nie erfüllen musste.",
+        "Gemeinsam ist beiden die praktische Anforderung. Du musst wissen, welche Unterhaltungen das Material enthielten, ob das Werkzeug sie noch aufbewahrt, und ob etwas in einen Trainingslauf gegangen ist. Wenn ja, entfernt das Löschen der Unterhaltung es nicht aus einem bereits trainierten Modell — die Anbieter sagen das selbst: Die Einstellung auszuschalten verhindert künftige Läufe, nicht die vergangenen.",
       ],
       links: [{ label: "Art. 17 DSGVO — Recht auf Löschung", href: GDPR_ART_17 }],
     },

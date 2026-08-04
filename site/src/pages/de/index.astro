@@ -1,29 +1,62 @@
 ---
 import Base from "../../layouts/Base.astro";
 import { getUi } from "../../i18n/ui";
+import { repoUrl } from "../../data/site";
+import { getTrainingAndRetention } from "../../data/data-flows/training-and-retention";
+import { getWhatYouAgreeTo } from "../../data/data-flows/what-you-agree-to";
+import { getGettingItBackOut } from "../../data/data-flows/getting-it-back-out";
+import { getWhatMayGoIn } from "../../data/law/what-may-go-in";
+import { getAiActTransparency } from "../../data/law/ai-act-transparency";
+import { getBeforeYouGrantAccess } from "../../data/secure-setup/before-you-grant-access";
+import EvidenceLegend from "../../components/EvidenceLegend.astro";
+
+const locale = "de" as const;
 const base = import.meta.env.BASE_URL;
-const ui = getUi("de");
+const ui = getUi(locale);
 
-// Themenaussagen, keine Links: zwei der drei Bereiche werden noch geschrieben.
-// Sie jetzt zu verlinken würde etwas versprechen, das es nicht gibt.
+// The three doors are the three sections. They described them exactly and
+// linked nowhere, which left the homepage with no path into the writing.
+//
+// The heading carries the link so its accessible name is the heading alone,
+// and a stretched pseudo-element makes the whole card clickable. Wrapping the
+// card in the anchor instead would announce the entire paragraph as link text.
 const doors = [
-  { heading: ui.doorPaste, copy: ui.doorPasteCopy },
-  { heading: ui.doorAllowed, copy: ui.doorAllowedCopy },
-  { heading: ui.doorSetup, copy: ui.doorSetupCopy },
+  {
+    heading: ui.doorPaste,
+    copy: ui.doorPasteCopy,
+    href: `${base}de/data-flows`,
+    articles: [
+      { title: getTrainingAndRetention(locale).title, href: `${base}de/data-flows/training-and-retention` },
+      { title: getWhatYouAgreeTo(locale).title, href: `${base}de/data-flows/what-you-agree-to` },
+      { title: getGettingItBackOut(locale).title, href: `${base}de/data-flows/getting-it-back-out` },
+    ],
+  },
+  {
+    heading: ui.doorAllowed,
+    copy: ui.doorAllowedCopy,
+    href: `${base}de/law`,
+    articles: [
+      { title: getWhatMayGoIn(locale).title, href: `${base}de/law/what-may-go-in` },
+      { title: getAiActTransparency(locale).title, href: `${base}de/law/ai-act-transparency` },
+    ],
+  },
+  {
+    heading: ui.doorSetup,
+    copy: ui.doorSetupCopy,
+    href: `${base}de/secure-setup`,
+    articles: [
+      { title: getBeforeYouGrantAccess(locale).title, href: `${base}de/secure-setup/before-you-grant-access` },
+    ],
+  },
 ];
 
-const available = [
-  { heading: ui.nowStandard, copy: ui.nowStandardCopy, href: `${base}docs` },
-  { heading: ui.nowUseCases, copy: ui.nowUseCasesCopy, href: `${base}use-cases` },
-  { heading: ui.nowGlossary, copy: ui.nowGlossaryCopy, href: `${base}de/glossary` },
-];
 ---
 
 <Base
   title={ui.homeTitle}
   description={ui.homeDescription}
   schemaType="WebSite"
-  locale="de"
+  locale={locale}
   routeKey="home"
 >
   <section class="flex flex-col gap-6">
@@ -32,13 +65,13 @@ const available = [
     <p class="max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.homeStance}</p>
     <div class="flex flex-wrap gap-4">
       <a
-        href={`${base}docs`}
+        href={`${base}de/data-flows/training-and-retention`}
         class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
       >
         {ui.homePrimaryLink}
       </a>
       <a
-        href={`${base}de/glossary`}
+        href={`${base}de/law/what-may-go-in`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
         {ui.homeSecondaryLink}
@@ -51,29 +84,42 @@ const available = [
     <div class="grid gap-6 sm:grid-cols-3">
       {
         doors.map((door) => (
-          <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-            <h3 class="text-lg font-semibold">{door.heading}</h3>
+          <article class="flex h-full flex-col gap-3 rounded-lg border border-black/10 p-6 dark:border-white/10">
+            <h3 class="text-lg font-semibold">
+              <a href={door.href}>{door.heading}</a>
+            </h3>
             <p class="leading-7">{door.copy}</p>
+            <ul class="mt-auto flex flex-col gap-2 border-t border-black/10 pt-4 text-sm dark:border-white/10">
+              {door.articles.map((article) => (
+                <li>
+                  <a href={article.href}>{article.title}</a>
+                </li>
+              ))}
+            </ul>
           </article>
         ))
       }
+    </div>
+    <p class="mt-4 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.stillWriting}</p>
+  </section>
+
+  <section class="mt-20">
+    <h2 class="text-2xl font-semibold">{ui.howToRead}</h2>
+    <p class="mt-3 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.howToReadLead}</p>
+    <div class="mt-6 max-w-3xl rounded-lg border border-black/10 p-6 dark:border-white/10">
+      <EvidenceLegend locale={locale} />
     </div>
   </section>
 
-  <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">{ui.whatIsAvailableNow}</h2>
-    <div class="grid gap-6 sm:grid-cols-3">
-      {
-        available.map((item) => (
-          <article class="rounded-lg border border-black/10 p-6 dark:border-white/10">
-            <h3 class="text-lg font-semibold">
-              <a href={item.href}>{item.heading}</a>
-            </h3>
-            <p class="mt-2 leading-7">{item.copy}</p>
-          </article>
-        ))
-      }
-    </div>
-    <p class="mt-2 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.stillWriting}</p>
+
+  <section class="mt-20 flex max-w-3xl flex-col gap-3">
+    <h2 class="text-2xl font-semibold">{ui.repoHeading}</h2>
+    <p class="leading-7">{ui.repoCopy}</p>
+    <p class="leading-7 text-zinc-700 dark:text-zinc-300">{ui.repoContains}</p>
+    <p class="flex flex-wrap gap-x-6 gap-y-2">
+      <a href={`${base}docs`}>{ui.repoLink}</a>
+      <a href={repoUrl}>{ui.repoLinkExternal} ↗</a>
+    </p>
+    <p class="mt-4 leading-7 text-zinc-700 dark:text-zinc-300">{ui.glossaryAside}</p>
   </section>
 </Base>

@@ -173,7 +173,7 @@ const de: Article = {
       paragraphs: [
         "Öffne bei jedem KI-Werkzeug, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Werkzeug und ist der wirksamste Punkt auf dieser Seite.",
         "Prüfe, unter welchem Konto dein Coding-Werkzeug läuft, nicht welches Werkzeug es ist. Ist es dein privates Konto, gelten Verbraucherbedingungen für den Code deines Kunden.",
-        "Für alles, was einem Kunden gehört: Geschäftstarif oder API. Dort steht die Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen.",
+        "Für alles, was einem Kunden gehört, sind Geschäftstarif oder API die Grundlage: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
         "Notier dir das Datum der Prüfung. Diese Seite trägt aus demselben Grund eines: Die Voreinstellungen ändern sich ohne Ankündigung, und eine Einstellung, die du letztes Jahr geprüft hast, sagt nichts über heute.",
       ],
     },

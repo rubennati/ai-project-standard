@@ -7,10 +7,12 @@
  * the part most likely to age, so each section carries its evidence level and,
  * where it is a fact rather than a reading, the date it was checked.
  *
- * One item is deliberately marked as provisional: the extended deadline for
- * systems already on the market comes from the AI Omnibus provisional
- * agreement of May 2026. Provisional means not finally adopted. It is stated
- * as such rather than presented as settled law.
+ * The extended deadline for systems already on the market was first written
+ * here as a provisional agreement, taken from the Commission's FAQ. That was
+ * wrong by the time it was published: the AI Omnibus is Regulation (EU)
+ * 2026/1744, adopted 8 July 2026 and in force since 27 July 2026. For
+ * anything moving through the legislative process, check the Official
+ * Journal rather than a summary page.
  */
 import type { SiteLocale } from "../../i18n/ui";
 import type { Article } from "../article";
@@ -22,6 +24,7 @@ const EC_FAQ =
 const EC_GUIDELINES =
   "https://digital-strategy.ec.europa.eu/en/policies/guidelines-transparency-ai-generated-content";
 const ARTICLE_50 = "https://artificialintelligenceact.eu/article/50/";
+const OMNIBUS = "https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng";
 
 const en: Article = {
   title: "AI Act: labelling AI-generated content",
@@ -57,14 +60,17 @@ const en: Article = {
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Systems that were on the market before 2 August 2026 have until 2 December 2026 to meet the machine-readable marking duty under Article 50(2). This comes from the AI Omnibus provisional agreement of May 2026 — provisional, so worth re-checking before relying on it.",
+        "Systems that were on the market before 2 August 2026 have until 2 December 2026 to meet the machine-readable marking duty under Article 50(2). That extension is settled law, not a plan: it comes from the AI Omnibus, Regulation (EU) 2026/1744, adopted on 8 July 2026 and in force since 27 July 2026.",
         "Content created before 2 August 2026 does not have to be labelled retroactively, though the Commission encourages it where that is feasible.",
       ],
       list: [
         "The extension is for the marking duty under Art. 50(2), not for the other obligations.",
         "It applies to systems already on the market, not to systems launched after the date.",
       ],
-      links: [{ label: "European Commission — FAQ on Article 50", href: EC_FAQ }],
+      links: [
+        { label: "Regulation (EU) 2026/1744 — the AI Omnibus", href: OMNIBUS },
+        { label: "European Commission — FAQ on Article 50", href: EC_FAQ },
+      ],
     },
     {
       heading: "Does it hit you if you publish AI-assisted text?",
@@ -80,7 +86,7 @@ const en: Article = {
       paragraphs: [
         "Establish which role you are in for each system you use — provider or deployer. Almost everyone reading this is a deployer, and the duties are far smaller in that role.",
         "Where you publish generated media rather than text, check whether your tool writes machine-readable provenance marks at all. Many do not, and the duty sits with the provider — but you are the one whose output is unmarked.",
-        "Write down when you last checked. This area moves, the Omnibus is still provisional, and a note in the repository costs nothing next to being confidently out of date.",
+        "Write down when you last checked. This area moves fast — the Omnibus went from a provisional agreement in May to law in force in July — and a note costs nothing next to being confidently out of date.",
       ],
     },
   ],
@@ -120,14 +126,17 @@ const de: Article = {
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Systeme, die vor dem 2. August 2026 auf dem Markt waren, haben bis 2. Dezember 2026 Zeit, die Pflicht zur maschinenlesbaren Kennzeichnung nach Art. 50 Abs. 2 zu erfüllen. Das stammt aus der vorläufigen Einigung zum AI Omnibus vom Mai 2026 — vorläufig, also vor dem Verlassen darauf noch einmal zu prüfen.",
+        "Systeme, die vor dem 2. August 2026 auf dem Markt waren, haben bis 2. Dezember 2026 Zeit, die Pflicht zur maschinenlesbaren Kennzeichnung nach Art. 50 Abs. 2 zu erfüllen. Diese Verlängerung ist geltendes Recht und kein Vorhaben: Sie stammt aus dem AI Omnibus, Verordnung (EU) 2026/1744, beschlossen am 8. Juli 2026 und in Kraft seit 27. Juli 2026.",
         "Inhalte, die vor dem 2. August 2026 erstellt wurden, müssen nicht rückwirkend gekennzeichnet werden. Die Kommission empfiehlt es aber, wo es machbar ist.",
       ],
       list: [
         "Die Verlängerung gilt der Kennzeichnungspflicht nach Art. 50 Abs. 2, nicht den übrigen Pflichten.",
         "Sie gilt für bereits auf dem Markt befindliche Systeme, nicht für nach dem Stichtag eingeführte.",
       ],
-      links: [{ label: "Europäische Kommission — FAQ zu Artikel 50", href: EC_FAQ }],
+      links: [
+        { label: "Verordnung (EU) 2026/1744 — der AI Omnibus", href: OMNIBUS },
+        { label: "Europäische Kommission — FAQ zu Artikel 50", href: EC_FAQ },
+      ],
     },
     {
       heading: "Trifft es dich, wenn du KI-unterstützte Texte veröffentlichst?",
@@ -143,7 +152,7 @@ const de: Article = {
       paragraphs: [
         "Kläre für jedes eingesetzte System, in welcher Rolle du bist — Anbieter oder Betreiber. Fast alle, die das hier lesen, sind Betreiber, und in dieser Rolle sind die Pflichten deutlich kleiner.",
         "Wo du generierte Medien statt Text veröffentlichst: Prüfe, ob dein Werkzeug überhaupt maschinenlesbare Herkunftskennzeichen schreibt. Viele tun es nicht, und die Pflicht liegt beim Anbieter — unmarkiert ist aber deine Ausgabe.",
-        "Halte fest, wann du zuletzt geprüft hast. Das Feld bewegt sich, der Omnibus ist noch vorläufig, und eine Notiz im Repository kostet nichts gegen den Zustand, selbstbewusst veraltet zu sein.",
+        "Halte fest, wann du zuletzt geprüft hast. Das Feld bewegt sich schnell — der Omnibus ging von einer vorläufigen Einigung im Mai zu geltendem Recht im Juli — und eine Notiz kostet nichts gegen den Zustand, selbstbewusst veraltet zu sein.",
       ],
     },
   ],
