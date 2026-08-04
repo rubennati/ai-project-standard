@@ -39,6 +39,9 @@ export interface ArticleSection {
 
 export interface Article {
   title: string;
+  /** Optional standfirst. Blog titles may be evocative; this says plainly what
+   *  the piece is about, for a reader scanning and for search results. */
+  subtitle?: string;
   description: string;
   lead: string;
   sections: ArticleSection[];

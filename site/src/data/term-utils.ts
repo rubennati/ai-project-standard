@@ -91,11 +91,19 @@ export const isProductLabel = (entry: TermEntry) => productKinds.has(entry.kind)
 export const getLocalizedTermContent = (entry: TermEntry, lang: SiteLocale) => {
   const translation = lang === "de" ? entry.translations?.de : undefined;
 
+  // Falling back to English is fine; doing it silently is not. A page that
+  // serves English prose while declaring `inLanguage: "de"` misdescribes
+  // itself to search engines and to anyone relying on the language attribute,
+  // so callers get told which language they actually received.
+  const definitionLanguage: SiteLocale = translation?.shortDefinition ? lang : "en";
+
   return {
     term: translation?.term ?? entry.term,
     shortDefinition: translation?.shortDefinition ?? entry.shortDefinition,
     explanation: translation?.explanation ?? entry.explanation,
     aiContext: translation?.aiContext ?? entry.aiContext,
+    definitionLanguage,
+    isTranslated: definitionLanguage === lang,
   };
 };
 

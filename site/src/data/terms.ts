@@ -69,9 +69,9 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agent",
         shortDefinition:
-          "Ein System, das Ziele verfolgt, Schritte auswählt, Werkzeuge nutzt oder Aktionen über mehrere Schritte hinweg koordiniert.",
+          "Ein System, das Ziele verfolgt, Schritte auswählt, Tools nutzt oder Aktionen über mehrere Schritte hinweg koordiniert.",
         explanation:
-          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den nächsten Schritt auswählen und manchmal Werkzeuge oder andere Systeme nutzen, um ein Ziel zu erreichen.",
+          "Ein Agent ist mehr als nur eine Chat-Antwort. Er kann Arbeit in Schritte zerlegen, den nächsten Schritt auswählen und manchmal Tools oder andere Systeme nutzen, um ein Ziel zu erreichen.",
         aiContext:
           "In KI-Produkten meint das Wort meist ein System, das mit etwas Autonomie handeln kann, statt nur auf einen einzelnen Prompt zu antworten.",
       },
@@ -92,7 +92,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Agentic AI",
         shortDefinition:
-          "KI mit Fokus auf zielgerichtetes Handeln, Werkzeugnutzung und mehrschrittige Ausführung.",
+          "KI mit Fokus auf zielgerichtetes Handeln, Tool-Nutzung und mehrschrittige Ausführung.",
       },
     },
   },
@@ -199,6 +199,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Personal Plugins", "Create Plugin", "Upload Plugin"],
     commonConfusion: ["Connectors", "Plugins"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Hinzufügen einer Marktplatz-Quelle oder eines Eintrags. Das genaue Verhalten hängt von der aktuellen Produktversion ab.",
+      },
+    },
   },
   {
     term: "Artifacts",
@@ -211,6 +217,12 @@ export const terms: TermEntry[] = [
     aliases: ["Artifact"],
     related: ["Live Artifacts", "Create with Claude", "Code"],
     commonConfusion: ["Files", "Projects"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für erzeugte Ergebnisse wie Dokumente, Code oder interaktive Arbeitsprodukte.",
+      },
+    },
   },
   {
     term: "Assistant",
@@ -223,6 +235,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Chatbot", "Custom GPT", "Agent"],
     commonConfusion: ["Agent", "Chatbot"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Ein dialogorientiertes KI-Produkt oder ein eingerichteter Helfer, der auf Eingaben antwortet und dabei Gedächtnis oder Tools nutzen kann.",
+      },
+    },
   },
   {
     term: "Automation",
@@ -235,6 +253,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Schedules", "Routines", "Agentic Workflow"],
     commonConfusion: ["Agentic AI", "Workflow"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Produktbezeichnung für das Planen oder Auslösen wiederholbarer KI-Aktionen. Der genaue Umfang hängt vom Produkt ab.",
+      },
+    },
   },
   {
     term: "Browse Plugin",
@@ -247,6 +271,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Web Search", "Connectors", "Personal Plugins"],
     commonConfusion: ["Search", "Connector"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für ein Tool, das Webinhalte oder Online-Quellen aus der KI-Umgebung heraus abruft.",
+      },
+    },
   },
   {
     term: "Chat",
@@ -259,6 +289,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["New Session", "Assistant", "Chatbot"],
     commonConfusion: ["Project", "Code"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für die Dialogansicht, in der Eingaben und Antworten ausgetauscht werden.",
+      },
+    },
   },
   {
     term: "Chatbot",
@@ -271,6 +307,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Assistant", "Prompt", "Chat"],
     commonConfusion: ["Agent", "Assistant"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Eine dialogorientierte Oberfläche, über die man Fragen stellt und erzeugte Antworten erhält.",
+      },
+    },
   },
   {
     term: "ChatGPT",
@@ -292,7 +334,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "OpenAIs chatbasiertes KI-Produkt für den Umgang mit Modellen, Werkzeugen und Produktfunktionen.",
+          "OpenAIs chatbasiertes KI-Produkt für den Umgang mit Modellen, Tools und Produktfunktionen.",
       },
     },
   },
@@ -307,6 +349,12 @@ export const terms: TermEntry[] = [
     aliases: ["Codex"],
     related: ["Coding Agent", "AI-assisted Coding", "ChatGPT"],
     commonConfusion: ["OpenAI API models", "ChatGPT"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Produktbezeichnung im Umfeld von ChatGPT für KI-gestützte Programmier- oder Coding-Agent-Abläufe. Der genaue Zuschnitt kann sich ändern.",
+      },
+    },
   },
   {
     term: "Claude Desktop",
@@ -325,6 +373,12 @@ export const terms: TermEntry[] = [
         href: "https://www.anthropic.com/claude",
       },
     ],
+    translations: {
+      de: {
+        shortDefinition:
+          "Die Desktop-Anwendung von Anthropic mit Chat-, Programmier- und Erweiterungsfunktionen.",
+      },
+    },
   },
   {
     term: "Code",
@@ -337,6 +391,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Coding Agent", "Chat", "Project"],
     commonConfusion: ["AI-assisted Coding", "ChatGPT Codex"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für programmierbezogene Abläufe, Tools oder Sitzungen innerhalb eines KI-Produkts.",
+      },
+    },
   },
   {
     term: "Coding Agent",
@@ -349,6 +409,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Agent", "AI-assisted Coding", "Tool Use"],
     commonConfusion: ["Autocomplete", "Chatbot"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Ein KI-Agent für programmbezogene Aufgaben: Dateien bearbeiten, Prüfungen ausführen oder sich in einer Codebasis bewegen.",
+      },
+    },
   },
   {
     term: "Connectors",
@@ -361,6 +427,12 @@ export const terms: TermEntry[] = [
     aliases: ["Connector"],
     related: ["MCP", "Tool Use", "Enterprise Search"],
     commonConfusion: ["Plugins", "Function Calling"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für Integrationen, die ein KI-Produkt mit externen Systemen oder Datenquellen verbinden.",
+      },
+    },
   },
   {
     term: "Context",
@@ -400,6 +472,13 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Context", "Token", "LLM"],
     commonConfusion: ["Memory"],
+    translations: {
+      de: {
+        term: "Kontextfenster",
+        shortDefinition:
+          "Die Menge an Text beziehungsweise tokenisierter Information, die ein Modell in einer einzelnen Interaktion verarbeiten kann.",
+      },
+    },
   },
   {
     term: "CoWork",
@@ -412,6 +491,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Chat", "Code", "Claude Desktop"],
     commonConfusion: ["Shared editing", "Agentic Workflow"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche, die auf gemeinsames oder eng abgestimmtes Arbeiten mit dem KI-System hindeutet. Das genaue Verhalten kann sich ändern.",
+      },
+    },
   },
   {
     term: "Create Plugin",
@@ -424,6 +509,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Plugins", "Personal Plugins", "Upload Plugin"],
     commonConfusion: ["Create Skill", "Connectors"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Anlegen eines Plugins oder Plugin-Pakets in einer KI-Umgebung.",
+      },
+    },
   },
   {
     term: "Create Skill",
@@ -436,6 +527,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Skill", "Create Plugin", "Plugins"],
     commonConfusion: ["Custom Instructions", "System Prompt"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Anlegen einer wiederverwendbaren Fähigkeit oder eines gebündelten Anweisungssatzes.",
+      },
+    },
   },
   {
     term: "Create with Claude",
@@ -448,6 +545,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Artifacts", "Live Artifacts", "Claude Desktop"],
     commonConfusion: ["Chat", "Project"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für den Einstieg in Erzeugungs- und Erstellungsabläufe in Claude Desktop.",
+      },
+    },
   },
   {
     term: "Custom GPT",
@@ -463,7 +566,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein vorkonfigurierter ChatGPT-ähnlicher Assistent mit eigenen Anweisungen, Verhalten oder Werkzeugzugriff.",
+          "Ein vorkonfigurierter ChatGPT-ähnlicher Assistent mit eigenen Anweisungen, Verhalten oder Tool-Zugriff.",
       },
     },
   },
@@ -478,6 +581,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["System Prompt", "Custom GPT", "Prompt"],
     commonConfusion: ["System Prompt"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Dauerhafte nutzerseitige Anweisungen, die das Verhalten eines Assistenten über einzelne Unterhaltungen hinweg beeinflussen.",
+      },
+    },
   },
   {
     term: "Deep Research",
@@ -509,6 +618,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Code", "Routines", "Schedules"],
     commonConfusion: ["Automation", "Agentic Workflow"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Weitergeben von Arbeit an ein anderes Tool, einen anderen Modus oder Ausführungsweg. Die genaue Bedeutung hängt vom Produkt ab.",
+      },
+    },
   },
   {
     term: "Embedding",
@@ -544,6 +659,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Connectors", "Retrieval", "Search"],
     commonConfusion: ["Web Search", "RAG"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Produktbezeichnung für die Suche in unternehmensinternen Quellen wie Dokumenten oder angebundenen Systemen.",
+      },
+    },
   },
   {
     term: "File Upload",
@@ -556,6 +677,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Context", "Retrieval", "Artifacts"],
     commonConfusion: ["Connectors", "Knowledge Base"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Funktion, mit der Dateien angehängt werden, damit das KI-System ihren Inhalt lesen oder als Eingabe verwenden kann.",
+      },
+    },
   },
   {
     term: "Foundation Model",
@@ -589,7 +716,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Ein Mechanismus, mit dem ein Modell strukturierte Werkzeugaktionen anfordern kann, statt nur freien Text zurückzugeben.",
+          "Ein Mechanismus, mit dem ein Modell strukturierte Tool-Aktionen anfordern kann, statt nur freien Text zurückzugeben.",
       },
     },
   },
@@ -676,6 +803,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Artifacts", "Create with Claude", "Project"],
     commonConfusion: ["Saved files", "Chat responses"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für Artefakte, die interaktiv bleiben oder sich im Lauf der Arbeit aktualisieren.",
+      },
+    },
   },
   {
     term: "MCP",
@@ -705,11 +838,11 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Model Context Protocol, ein Protokoll zum Verbinden von Modellen oder Agenten mit Werkzeugen und Kontextquellen.",
+          "Model Context Protocol, ein Protokoll zum Verbinden von Modellen oder Agenten mit Tools und Kontextquellen.",
         explanation:
-          "MCP ist eine Möglichkeit, eine KI-Anwendung über ein gemeinsames Protokoll mit Werkzeugen oder Datenquellen zu verbinden, statt für jede Verbindung eine eigene Sonderlösung zu bauen.",
+          "MCP ist eine Möglichkeit, eine KI-Anwendung über ein gemeinsames Protokoll mit Tools oder Datenquellen zu verbinden, statt für jede Verbindung eine eigene Sonderlösung zu bauen.",
         aiContext:
-          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit über Chat-Text hinaus mit strukturierten Werkzeugen, Dateien und Systemen arbeiten können.",
+          "In KI-Tooling-Workflows ist MCP wichtig, weil Modelle damit über Chat-Text hinaus mit strukturierten Tools, Dateien und Systemen arbeiten können.",
       },
     },
   },
@@ -743,6 +876,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Chat", "New Session", "Assistant"],
     commonConfusion: ["Resetting memory", "Deleting history"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Starten eines neuen Gesprächsstrangs.",
+      },
+    },
   },
   {
     term: "New Session",
@@ -755,6 +894,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Chat", "New Chat", "Project"],
     commonConfusion: ["Dispatch", "Resetting state"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Starten einer neuen Unterhaltung oder Arbeitssitzung.",
+      },
+    },
   },
   {
     term: "Personal Plugins",
@@ -767,6 +912,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Plugins", "Create Plugin", "Upload Plugin"],
     commonConfusion: ["Connectors", "Skills"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Herstellerbezeichnung für selbst verwaltete Plugins oder Plugin-Bündel in einem persönlichen Arbeitsbereich.",
+      },
+    },
   },
   {
     term: "Plugins",
@@ -779,6 +930,12 @@ export const terms: TermEntry[] = [
     aliases: ["Plugin"],
     related: ["Personal Plugins", "Connectors", "Skill"],
     commonConfusion: ["Function Calling", "Connectors"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Wiederverwendbare Erweiterungen, die einer KI-Umgebung Tools, Integrationen oder gebündelte Fähigkeiten hinzufügen.",
+      },
+    },
   },
   {
     term: "Project",
@@ -791,6 +948,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Memory", "Artifacts", "New Session"],
     commonConfusion: ["Chat", "Folder"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für einen gebündelten Arbeitsbereich, einen Kontextbehälter oder einen dauerhaften Arbeitsraum.",
+      },
+    },
   },
   {
     term: "Prompt",
@@ -912,6 +1075,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Schedules", "Dispatch", "Automation"],
     commonConfusion: ["Agentic Workflow", "Macros"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für wiederverwendbare mehrstufige Aktionen oder wiederholbare KI-Abläufe.",
+      },
+    },
   },
   {
     term: "Schedules",
@@ -924,6 +1093,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Automation", "Routines", "Dispatch"],
     commonConfusion: ["Reminders", "Background jobs"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Funktionsbezeichnung für das Auslösen von KI-Arbeit nach einem wiederkehrenden oder geplanten Zeitplan.",
+      },
+    },
   },
   {
     term: "Skill",
@@ -936,6 +1111,12 @@ export const terms: TermEntry[] = [
     aliases: ["Skills"],
     related: ["Create Skill", "Plugins", "Custom Instructions"],
     commonConfusion: ["Plugin", "System Prompt"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Eine wiederverwendbare, gebündelte Fähigkeit oder ein Anweisungssatz, den ein KI-Produkt bereitstellt.",
+      },
+    },
   },
   {
     term: "Skills",
@@ -948,6 +1129,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Skill", "Plugins", "Connectors"],
     commonConfusion: ["Personal Plugins", "Custom Instructions"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Durchsehen oder Verwalten wiederverwendbarer Skills in einer KI-Umgebung.",
+      },
+    },
   },
   {
     term: "System Prompt",
@@ -999,7 +1186,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Die Fähigkeit eines Modells oder Agenten, externe Werkzeuge aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
+          "Die Fähigkeit eines Modells oder Agenten, externe Tools aufzurufen, statt sich nur auf Textgenerierung zu verlassen.",
       },
     },
   },
@@ -1014,6 +1201,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Create Plugin", "Personal Plugins", "Add Marketplace"],
     commonConfusion: ["Connectors", "Skills"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Bezeichnung in der Oberfläche für das Hochladen eines Plugin-Pakets in eine KI-Umgebung.",
+      },
+    },
   },
   {
     term: "Vector Database",
@@ -1089,6 +1282,12 @@ export const terms: TermEntry[] = [
     aliases: [],
     related: ["Search", "Deep Research", "Retrieval"],
     commonConfusion: ["RAG", "Enterprise Search"],
+    translations: {
+      de: {
+        shortDefinition:
+          "Funktion, die aktuelle oder externe Web-Informationen in einen KI-Ablauf holt.",
+      },
+    },
   },
   {
     term: "Claude",
@@ -1115,7 +1314,7 @@ export const terms: TermEntry[] = [
       de: {
         term: "Claude",
         shortDefinition:
-          "Anthropics KI-Assistent und Produktfamilie für Chat, Schreiben, Analyse und werkzeuggestützte Arbeit.",
+          "Anthropics KI-Assistent und Produktfamilie für Chat, Schreiben, Analyse und toolgestützte Arbeit.",
       },
     },
   },

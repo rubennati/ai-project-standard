@@ -18,13 +18,13 @@ const GDPR_ART_28 = "https://gdpr-info.eu/art-28-gdpr/";
 const TRADE_SECRETS = "https://eur-lex.europa.eu/eli/dir/2016/943/oj";
 
 const en: Article = {
-  title: "What may go into an AI tool?",
+  title: "Can I enter this data into an AI tool?",
   description:
     "Personal data and confidentiality are two questions with two different answers. What each requires, and a short path through them.",
-  lead: "Almost every version of this question collapses two regimes into one. They have different rules, different consequences and different people who come after you when it goes wrong.",
+  lead: "Two separate sets of rules apply here, and most versions of this question treat them as one. Data protection law governs personal data; confidentiality obligations govern client material, trade secrets and anything under an NDA.",
   sections: [
     {
-      heading: "Two questions, not one",
+      heading: "Data protection and confidentiality are checked separately",
       level: "assessment",
       paragraphs: [
         "Is there personal data in it? That is a data protection question, and the GDPR answers it.",
@@ -33,7 +33,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Personal data: the question is not whether, but on what basis",
+      heading: "Personal data needs a legal basis",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -47,26 +47,26 @@ const en: Article = {
       ],
     },
     {
-      heading: "Confidentiality: a different regime, with a sharper edge",
+      heading: "Confidential information carries additional duties",
       level: "law",
       checked: CHECKED,
       paragraphs: [
         "Under the EU Trade Secrets Directive, information is only a trade secret if three things hold: it is secret, it has commercial value because it is secret, and it has been subject to reasonable steps under the circumstances to keep it secret.",
         "That third condition is the one worth sitting with. Careless handling does not only risk the leak — it can cost the information its status as a trade secret altogether, and with it the protection you would otherwise rely on. Pasting a client's material into an account whose terms permit training on it is difficult to describe as a reasonable step.",
-        "Alongside that sit your own contracts. An NDA does not care whether the recipient was a person or a model.",
+        "Alongside that sit your own contracts. An NDA can prohibit disclosure to an external provider regardless of whether any person there ever reads the content — the disclosure runs to the company operating the service, not to the model.",
       ],
       links: [{ label: "Directive (EU) 2016/943 — definition of a trade secret", href: TRADE_SECRETS }],
     },
     {
-      heading: "Private or company use is decided by the account",
+      heading: "The account type determines the provider's terms",
       level: "assessment",
       paragraphs: [
-        "People treat this as a question about intent — I am only trying something out, this is not really work. The terms do not read intent. They read which account the request came from.",
+        "The account you are signed into determines which contract you are operating under: which terms apply, whether a processing agreement is available, and what the defaults are set to. It does not determine whether the processing is permitted — purpose, type of data, legal basis and internal rules decide that separately.",
         "Work material on a personal account is the common case, and it is where both regimes fail at once: no processing agreement for the personal data, and no reasonable steps for the confidential part.",
       ],
     },
     {
-      heading: "A path through it",
+      heading: "Checks to run before you paste anything",
       level: "advice",
       paragraphs: [
         "Ask in this order, and stop at the first no.",
@@ -75,12 +75,12 @@ const en: Article = {
         "Is it mine to share? If it belongs to a client or an employer, that decision is not yours alone.",
         "Is there personal data in it? If yes, name the legal basis and check that a processing agreement exists for the tool you are about to use.",
         "Am I on the right account? Business tier for anything that is not mine, every time.",
-        "Can I reduce what I send? A pseudonymised extract is usually enough, and it is a smaller problem if something goes wrong.",
+        "Can I reduce what I send? Send the smallest extract the task needs and replace direct identifiers. Whether what remains is low-risk enough depends on the content — context, rarity and what the recipient already knows can identify someone with no name in sight.",
         "Would I be comfortable explaining this exact step to the client afterwards? That question catches more than the other four.",
       ],
     },
     {
-      heading: "What helps less than people think",
+      heading: "Common misconceptions",
       level: "assessment",
       paragraphs: [
         "“I removed the names.” If you kept a way to put them back, you pseudonymised. Useful, not exculpatory.",
@@ -89,7 +89,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "Where this stops",
+      heading: "Limits of this guidance",
       level: "assessment",
       paragraphs: [
         "This is a structure for thinking, not legal advice. Sector rules — health, legal practice, finance — add duties this page does not touch, and an employment contract can be stricter than the law.",
@@ -100,13 +100,13 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Was darf in ein KI-Werkzeug hinein?",
+  title: "Welche Daten darf ich in ein KI-Tool eingeben?",
   description:
     "Personenbezogene Daten und Vertraulichkeit sind zwei Fragen mit zwei Antworten. Was jede verlangt, und ein kurzer Weg hindurch.",
-  lead: "Fast jede Fassung dieser Frage wirft zwei Regelwerke zusammen. Sie haben unterschiedliche Regeln, unterschiedliche Folgen und unterschiedliche Leute, die sich melden, wenn es schiefgeht.",
+  lead: "Hier gelten zwei getrennte Regelwerke, die meist als eines behandelt werden. Das Datenschutzrecht betrifft personenbezogene Daten; Verschwiegenheitspflichten betreffen Kundenmaterial, Geschäftsgeheimnisse und alles, was unter eine Verschwiegenheitsvereinbarung fällt.",
   sections: [
     {
-      heading: "Zwei Fragen, nicht eine",
+      heading: "Datenschutz und Vertraulichkeit getrennt prüfen",
       level: "assessment",
       paragraphs: [
         "Stecken personenbezogene Daten drin? Das ist eine Datenschutzfrage, und die DSGVO beantwortet sie.",
@@ -115,11 +115,11 @@ const de: Article = {
       ],
     },
     {
-      heading: "Personenbezogene Daten: nicht ob, sondern auf welcher Grundlage",
+      heading: "Personenbezogene Daten brauchen eine Rechtsgrundlage",
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Es gibt kein allgemeines Verbot, personenbezogene Daten mit einem KI-Werkzeug zu verarbeiten. Es gibt die Pflicht, dafür eine Rechtsgrundlage nach Art. 6 DSGVO zu haben — und sie benennen zu können.",
+        "Es gibt kein allgemeines Verbot, personenbezogene Daten mit einem KI-Tool zu verarbeiten. Es gibt die Pflicht, dafür eine Rechtsgrundlage nach Art. 6 DSGVO zu haben — und sie benennen zu können.",
         "Verarbeitet der Anbieter die Daten weisungsgebunden für dich, ist er Auftragsverarbeiter. Art. 28 DSGVO verlangt dann einen Vertrag über diese Verarbeitung und dass du nur Auftragsverarbeiter einsetzt, die hinreichende Garantien bieten. Praktisch heißt das: ein Auftragsverarbeitungsvertrag, den die Geschäftstarife der großen Anbieter bereitstellen und die Verbrauchertarife in der Regel nicht.",
         "Namen durch Platzhalter zu ersetzen senkt das Risiko erheblich und ist sinnvoll. Aus der DSGVO führt es nicht heraus — was du wieder zuordnen kannst, ist pseudonymisiert, nicht anonymisiert, und pseudonymisierte Daten bleiben personenbezogen.",
       ],
@@ -129,40 +129,40 @@ const de: Article = {
       ],
     },
     {
-      heading: "Vertraulichkeit: ein anderes Regelwerk, mit schärferer Kante",
+      heading: "Vertrauliche Informationen unterliegen zusätzlichen Pflichten",
       level: "law",
       checked: CHECKED,
       paragraphs: [
         "Nach der EU-Geschäftsgeheimnis-Richtlinie ist eine Information nur dann ein Geschäftsgeheimnis, wenn drei Dinge zutreffen: Sie ist geheim, sie hat gerade deshalb wirtschaftlichen Wert, und sie war den Umständen nach angemessenen Geheimhaltungsmaßnahmen unterworfen.",
         "Bei dieser dritten Bedingung lohnt es sich innezuhalten. Sorgloser Umgang riskiert nicht nur den Abfluss — er kann der Information den Status als Geschäftsgeheimnis überhaupt kosten, und damit den Schutz, auf den du dich sonst berufen würdest. Kundenmaterial in ein Konto zu kopieren, dessen Bedingungen Training damit erlauben, lässt sich schwer als angemessene Maßnahme beschreiben.",
-        "Daneben stehen deine eigenen Verträge. Einer Verschwiegenheitsvereinbarung ist es gleichgültig, ob der Empfänger ein Mensch war oder ein Modell.",
+        "Daneben stehen deine eigenen Verträge. Eine Verschwiegenheitsvereinbarung kann die Übermittlung an einen externen Anbieter untersagen — unabhängig davon, ob dort jemand den Inhalt tatsächlich liest. Empfänger ist rechtlich das Unternehmen, das den Dienst betreibt, nicht das Modell.",
       ],
       links: [
         { label: "Richtlinie (EU) 2016/943 — Definition des Geschäftsgeheimnisses", href: TRADE_SECRETS },
       ],
     },
     {
-      heading: "Privat oder betrieblich entscheidet das Konto",
+      heading: "Der Kontotyp bestimmt die Bedingungen des Anbieters",
       level: "assessment",
       paragraphs: [
-        "Viele behandeln das als Frage der Absicht — ich probiere nur etwas aus, das ist nicht wirklich Arbeit. Die Nutzungsbedingungen lesen keine Absicht. Sie lesen, aus welchem Konto die Anfrage kam.",
+        "Das Konto, in dem du angemeldet bist, bestimmt, unter welchem Vertrag du arbeitest: welche Bedingungen gelten, ob ein Auftragsverarbeitungsvertrag verfügbar ist und wie die Voreinstellungen gesetzt sind. Ob die Verarbeitung zulässig ist, entscheidet es nicht — das hängt zusätzlich von Zweck, Datenart, Rechtsgrundlage und internen Regeln ab.",
         "Arbeitsmaterial im privaten Konto ist der häufige Fall, und dort scheitern beide Regelwerke gleichzeitig: kein Auftragsverarbeitungsvertrag für den personenbezogenen Teil, keine angemessene Maßnahme für den vertraulichen.",
       ],
     },
     {
-      heading: "Ein Weg hindurch",
+      heading: "Prüfschritte vor der Eingabe",
       level: "advice",
       paragraphs: ["Frag in dieser Reihenfolge und hör beim ersten Nein auf."],
       list: [
         "Gehört es mir zum Weitergeben? Gehört es einem Kunden oder Arbeitgeber, ist das nicht allein deine Entscheidung.",
-        "Stecken personenbezogene Daten drin? Wenn ja: Rechtsgrundlage benennen und prüfen, ob für das Werkzeug ein Auftragsverarbeitungsvertrag besteht.",
-        "Bin ich im richtigen Konto? Für alles, was nicht mir gehört, der Geschäftstarif — jedes Mal.",
-        "Kann ich weniger schicken? Ein pseudonymisierter Auszug reicht meist, und er ist ein kleineres Problem, wenn etwas schiefgeht.",
+        "Stecken personenbezogene Daten drin? Wenn ja: Rechtsgrundlage benennen und prüfen, ob für das Tool ein Auftragsverarbeitungsvertrag besteht.",
+        "Bin ich im richtigen Konto? Für fremdes Material ein freigegebener Geschäftstarif — jedes Mal. Das ist die Untergrenze, keine Verarbeitungserlaubnis: Ob du die Daten überhaupt offenlegen darfst, ist die Frage davor.",
+        "Kann ich weniger schicken? Schick den kleinsten Auszug, den die Aufgabe braucht, und ersetz direkte Identifikatoren. Ob das Verbleibende risikoarm genug ist, hängt vom Inhalt ab — Kontext, Seltenheit und was der Empfänger ohnehin weiß, können eine Person auch ohne Namen erkennbar machen.",
         "Würde ich dem Kunden diesen Schritt hinterher in Ruhe erklären? Diese Frage fängt mehr ab als die anderen vier.",
       ],
     },
     {
-      heading: "Was weniger hilft, als man denkt",
+      heading: "Häufige Fehlannahmen",
       level: "assessment",
       paragraphs: [
         "„Ich habe die Namen entfernt.“ Wenn du einen Weg behalten hast, sie wieder einzusetzen, hast du pseudonymisiert. Nützlich, aber nicht entlastend.",
@@ -171,7 +171,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Wo das endet",
+      heading: "Grenzen dieser Einordnung",
       level: "assessment",
       paragraphs: [
         "Das ist ein Denkgerüst, keine Rechtsberatung. Branchenregeln — Gesundheit, Anwaltschaft, Finanzwesen — bringen Pflichten mit, die diese Seite nicht berührt, und ein Arbeitsvertrag kann strenger sein als das Gesetz.",

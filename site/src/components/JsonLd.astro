@@ -15,6 +15,9 @@ interface Props {
   /** Licence of this page's text. Pages rendered from `docs/` inherit the
    *  repository's MIT licence; everything written for the site is CC BY 4.0. */
   license?: string;
+  /** Editorial publication date. Only articles have one, and it is not the
+   *  commit date: fixing a typo later must not make a post look new. */
+  datePublished?: string;
 }
 
 const {
@@ -24,10 +27,11 @@ const {
   extra = [],
   lang = "en",
   license = "https://creativecommons.org/licenses/by/4.0/",
+  datePublished,
 } = Astro.props;
 
 import { lastmodForUrl } from "../../scripts/git-lastmod.mjs";
-import { operator } from "../data/site";
+import { author as authorName } from "../data/site";
 
 const site = Astro.site?.toString() ?? "https://ai-standard.rubennati.at/";
 const repoUrl = "https://github.com/rubennati/ai-project-standard";
@@ -37,7 +41,7 @@ const pageUrl = Astro.url.toString();
 // two can never disagree. Undefined when a page has no commit history yet, in
 // which case the field is simply omitted rather than guessed.
 const modified = lastmodForUrl(new URL(Astro.url.pathname, site).toString());
-const author = { "@type": "Person", name: operator.name };
+const author = { "@type": "Person", name: authorName };
 const publisher = {
   "@type": "Organization",
   name: "AI Standard",
@@ -80,7 +84,8 @@ const page = {
         headline: title,
         author,
         publisher,
-        ...(modified ? { dateModified: modified, datePublished: modified } : {}),
+        ...(datePublished ? { datePublished } : modified ? { datePublished: modified } : {}),
+        ...(modified ? { dateModified: modified } : {}),
       }
     : modified
       ? { dateModified: modified }

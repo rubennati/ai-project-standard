@@ -99,7 +99,7 @@ export const ui = {
       "What actually happens when you use AI at work: where your data goes, what you are allowed to put in, and what the law already requires.",
     homeHeading: "What actually happens when you use AI at work.",
     homeLead:
-      "Written from a security practitioner's desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
+      "Written from a security desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
     homeStance:
       "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
     homePrimaryLink: "Does it train on what I type?",
@@ -149,6 +149,8 @@ export const ui = {
       "Posts about what actually happens when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
     blogIntro:
       "Longer pieces that follow one question all the way through. Same rules as the rest of the site: primary sources, stated check dates, and a label on every claim.",
+    blogFeed: "RSS feed",
+    blogReviewed: "last reviewed",
     blogPlanned: "Planned",
     blogPlannedIntro: "Written next, in this order:",
     blogPublished: "Published",
@@ -190,7 +192,7 @@ export const ui = {
     dataFlowsDescription:
       "Wohin deine Eingabe tatsächlich geht: welche Tarife damit trainieren, wie lange sie aufbewahrt wird, und was du prüfen solltest, bevor du etwas hineinkopierst.",
     dataFlowsIntro:
-      "Was deinen Rechner verlässt, wenn du ein KI-Werkzeug nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
+      "Was deinen Rechner verlässt, wenn du ein KI-Tool nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
     dataFlowsMore:
       "Weiteres entsteht: was ein Coding-Agent aus deinem Repository liest, was ein MCP-Server tatsächlich zu sehen bekommt, und wo die Server stehen.",
     start: "Einstieg",
@@ -206,7 +208,7 @@ export const ui = {
     secureSetupDescription:
       "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent Zugriff bekommt, und wo eine technische Grenze hingehört statt eines Satzes im Prompt.",
     secureSetupIntro:
-      "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Werkzeuge in normaler Sprache bedient werden — die Entscheidungen treffen jetzt Leute, die nie danach gefragt wurden.",
+      "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Tools in normaler Sprache bedient werden — die Entscheidungen treffen jetzt Leute, die nie danach gefragt wurden.",
     secureSetupMore:
       "Weiteres entsteht: was ein Coding-Agent tatsächlich liest, und einen MCP-Server als Kontrollpunkt zu bauen statt als Bequemlichkeit.",
     law: "Recht",
@@ -217,7 +219,7 @@ export const ui = {
     lawIntro:
       "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Abschnitt trägt eine Kennzeichnung, welche Art von Aussage er ist \u2014 gesetzliche Pflicht, deren Auslegung, oder was ich dazu tun würde \u2014 samt Datum der letzten Prüfung an der Quelle.",
     lawMore:
-      "Weiteres entsteht: was in ein Werkzeug hineindarf, wenn es Kundenmaterial ist, und wo die Grenze zwischen privater und betrieblicher Nutzung verläuft.",
+      "Weiteres entsteht: was in ein Tool hineindarf, wenn es Kundenmaterial ist, und wo die Grenze zwischen privater und betrieblicher Nutzung verläuft.",
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
     glossary: "Glossar",
@@ -264,7 +266,7 @@ export const ui = {
     aliases: "Alternative Bezeichnungen",
     observedIn: "Beobachtet in",
     backToGlossary: "Zurück zum Glossarindex",
-    glossaryTitle: "KI-Termindex",
+    glossaryTitle: "KI-Glossar",
     glossaryDescription:
       "Ein gepflegter Index für KI-, LLM-, Tooling- und Produktbegriffe. Er hilft dabei, einen Begriff zu finden und die passende Erklärungsseite zu öffnen.",
     glossaryIntro:
@@ -274,7 +276,7 @@ export const ui = {
       "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert: wohin die Daten gehen, was hinein darf, und was das Gesetz längst verlangt.",
     homeHeading: "Was beim Einsatz von KI im Arbeitsalltag wirklich passiert.",
     homeLead:
-      "Geschrieben aus der Sicht eines Security-Praktikers. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
+      "Geschrieben aus der Security-Praxis. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
     homeStance:
       "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
     homePrimaryLink: "Trainiert es mit dem, was ich eingebe?",
@@ -290,7 +292,7 @@ export const ui = {
     repoCopy:
       "Die Konventionen, die diese Seite beschreibt, liegen in einem öffentlichen Repository, und die Seite wird direkt daraus gebaut. Das ist wichtig, wenn du Software schreibst \u2014 du kannst den Quelltext lesen, kopieren oder übernehmen. Sagt dir das nichts, ignorier es: Nichts auf dieser Seite setzt es voraus.",
     repoContains:
-      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Werkzeugen an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, Adoptionsprofile und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben.",
+      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Tools an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, Adoptionsprofile und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben.",
     repoLink: "Dokumentation hier lesen",
     repoLinkExternal: "Das Repository auf GitHub",
     glossaryAside:
@@ -299,7 +301,7 @@ export const ui = {
     whatThisSiteIsFor: "Wofür diese Seite da ist",
     doorPaste: "Bevor du etwas hineinkopierst",
     doorPasteCopy:
-      "Wohin die Daten gehen, je Werkzeugklasse \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und ob \u201egelöscht\u201c wirklich gelöscht heißt.",
+      "Wohin die Daten gehen, je Tool-Kategorie \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und ob \u201egelöscht\u201c wirklich gelöscht heißt.",
     doorAllowed: "Was du darfst",
     doorAllowedCopy:
       "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, manche generierten Inhalte müssen gekennzeichnet werden, und die Pflicht ist enger, als sie zunächst klingt.",
@@ -317,18 +319,20 @@ export const ui = {
     nowGlossary: "Glossar",
     nowGlossaryCopy: "Begriffe, wenn du wissen musst, was jemand tatsächlich meint.",
     stillWriting:
-      "Noch in Arbeit: die Datenfluss-Leitfäden je Werkzeug, der Rechtsteil und der Blog. Diese Seite wächst. Was da ist, wird gepflegt; was fehlt, wird benannt statt vorgetäuscht.",
+      "Noch in Arbeit: die Datenfluss-Leitfäden je Tool, der Rechtsteil und der Blog. Diese Seite wächst. Was da ist, wird gepflegt; was fehlt, wird benannt statt vorgetäuscht.",
 
     blogTitle: "Blog",
     blogDescription:
-      "Beitr\u00e4ge dar\u00fcber, was tats\u00e4chlich passiert, wenn man ein KI-Werkzeug benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
+      "Beitr\u00e4ge dar\u00fcber, was tats\u00e4chlich passiert, wenn man ein KI-Tool benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
     blogIntro:
       "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Es gelten dieselben Regeln wie \u00fcberall hier: Prim\u00e4rquellen, angegebene Pr\u00fcfdaten und eine Kennzeichnung an jeder Aussage.",
+    blogFeed: "RSS-Feed",
+    blogReviewed: "zuletzt fachlich geprüft",
     blogPlanned: "Geplant",
     blogPlannedIntro: "Als N\u00e4chstes geschrieben, in dieser Reihenfolge:",
     blogPublished: "Ver\u00f6ffentlicht",
     blogBackToIndex: "Alle Beitr\u00e4ge",
-    aboutTitle: "Über",
+    aboutTitle: "Über das Projekt",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
       "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Vier Säulen: Mensch-KI-Zusammenarbeit, Open-Source-Betrieb, Engineering Operations sowie Wissen und Dokumentation.",
@@ -338,7 +342,7 @@ export const ui = {
     license: "Lizenz",
     acknowledgements: "Danksagung",
     acknowledgementsCopy:
-      "Der Standard baut auf der AGENTS.md-Konvention, Werkzeug-Anweisungsformaten und breiteren Open-Source-Governance-Praktiken auf.",
+      "Der Standard baut auf der AGENTS.md-Konvention, Tool-Anweisungsformaten und breiteren Open-Source-Governance-Praktiken auf.",
     legalNoticeDescription: "Impressum und Kontaktadresse der AI-Project-Standard-Website.",
     legalNoticeHeading: "Wer diese Website betreibt",
     operatorLabel: "Betreiber",

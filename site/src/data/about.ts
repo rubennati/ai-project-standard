@@ -37,18 +37,21 @@ const en: AboutSection[] = [
       "Every section of every article carries a label saying what kind of claim it is making. The labels are the method, and they are what you should hold the pages against:",
     ],
     list: [
-      "Fact — checkable against a primary source, linked, with the date it was last checked.",
-      "Measured — tested here, with the setup, version and date stated so you can repeat it.",
-      "Law — resting on a named norm whose current text was checked. Never legal advice.",
-      "Assessment — a professional judgement, with the reasoning left visible so you can disagree.",
-      "Recommendation — what I would do, and which of the levels above it stands on.",
+      "Fact — a narrow, checkable statement from a linked primary source, with its check date. Where the source is a vendor describing itself, the text says so.",
+      "Measured — tested here, with the setup, version and date stated so you can repeat it, and holding for that setup rather than in general.",
+      "Law — restating a named norm or official guidance, with jurisdiction and check date. Never legal advice.",
+      "Assessment — a professional judgement, forecast or observation from practice, with the reasoning and its limits left visible so you can disagree.",
+      "Recommendation — deliberately conservative: what I would do here, and which level it stands on. Not a claim that other choices are impermissible.",
     ],
+
   },
   {
     heading: "Sources, dates and being wrong",
     paragraphs: [
-      "Sources are primary or they are not used: the regulation rather than a summary of it, the vendor's own documentation rather than an article about it, the RFC rather than a blog post explaining the RFC. That rule has already caught an error here — an EU regulation was described as a provisional agreement because a Commission FAQ still said so, when the act had been in force for a week.",
-      "Dates matter as much as sources. Vendor behaviour changes without announcement, so a factual claim without a check date is not wrong yet — it is unfalsifiable, which is worse. Every page that makes one carries one.",
+      "Sources are primary or they are not used, and they are ranked: the consolidated legal text or Official Journal first, then official guidance from the Commission or a supervisory authority, then a vendor's own published terms and documentation, then technical primary documentation, and only after all of those anything written about them. That rule has already caught an error here — an EU regulation was described as a provisional agreement because a Commission FAQ still said so, when the act had been in force for a week.",
+      "Being the source is not the same as being right. A vendor is authoritative for what it has published about itself and for nothing beyond that: its documentation states its terms, it does not audit its systems. So a page here says the vendor states something, rather than asserting the behaviour outright, and the difference is not pedantry — it is the difference between a commitment you could hold someone to and a fact you have verified.",
+      "The same line runs through the legal pages. Restating a norm and applying it to your situation are different acts needing different competence: the first is labelled Law, and the moment a sentence reaches a conclusion about a real case it is labelled Assessment, whoever wrote it.",
+      "Dates do a narrower job than a check date is often credited with. They do not make a claim true or lasting; they fix which state of a changing world it was checked against. Vendor defaults move without announcement, which is why every factual and measured claim here carries one.",
       "Corrections are welcome and they are not a favour. Every page has a link that opens an issue with the page and its URL already filled in. If something here is wrong, that link is the fastest way to make it right, and the correction gets recorded rather than quietly patched.",
     ],
   },
@@ -71,7 +74,7 @@ const en: AboutSection[] = [
   {
     heading: "Who writes it",
     paragraphs: [
-      "Ruben Nati, working in cybersecurity in Vienna. The subjects here are the ones that come up in that work, which is also the limit of what the site covers: this is a practitioner's view, not an institution's.",
+      "Ruben Nati, working in cybersecurity in Vienna. The subjects here are the ones that come up in that work — which is why they are the questions people actually hit, rather than the ones that are comfortable to write about.",
     ],
   },
 ];
@@ -99,18 +102,20 @@ const de: AboutSection[] = [
       "Jeder Abschnitt jedes Beitrags trägt eine Kennzeichnung, welche Art von Aussage er macht. Diese Kennzeichnungen sind die Methode — und das, woran du die Seiten messen solltest:",
     ],
     list: [
-      "Fakt — gegen eine Primärquelle prüfbar, verlinkt, mit dem Datum der letzten Prüfung.",
-      "Gemessen — hier getestet, mit Aufbau, Version und Datum, damit du es wiederholen kannst.",
-      "Recht — gestützt auf eine benannte Norm, deren aktueller Wortlaut geprüft wurde. Nie Rechtsberatung.",
-      "Einschätzung — eine fachliche Beurteilung, deren Begründung offenliegt, damit du widersprechen kannst.",
-      "Empfehlung — was ich tun würde, und auf welcher der Ebenen darüber es steht.",
+      "Fakt — eng begrenzte, prüfbare Aussage aus einer verlinkten Primärquelle, mit Prüfdatum. Wo die Quelle ein Anbieter über sich selbst ist, steht das dabei.",
+      "Gemessen — hier getestet, mit Aufbau, Version und Datum, damit du es wiederholen kannst; gültig für diesen Aufbau, nicht allgemein.",
+      "Rechtslage — Wiedergabe einer benannten Norm oder offiziellen Leitlinie, mit Rechtsraum und Prüfdatum. Nie Rechtsberatung.",
+      "Einschätzung — fachliche Beurteilung, Prognose oder Praxisbeobachtung, deren Begründung und Grenzen offenliegen, damit du widersprechen kannst.",
+      "Empfehlung — bewusst konservativ: was ich hier tun würde und auf welcher Ebene es steht. Keine Aussage, dass anderes unzulässig wäre.",
     ],
   },
   {
     heading: "Quellen, Daten und Irrtümer",
     paragraphs: [
-      "Quellen sind primär oder werden nicht verwendet: die Verordnung statt einer Zusammenfassung, die Herstellerdokumentation statt eines Artikels darüber, der RFC statt eines Blogbeitrags über den RFC. Diese Regel hat hier bereits einen Fehler gefangen — eine EU-Verordnung wurde als vorläufige Einigung beschrieben, weil eine Kommissions-FAQ das noch so sagte, während der Rechtsakt seit einer Woche in Kraft war.",
-      "Daten wiegen so schwer wie Quellen. Anbieter ändern ihr Verhalten ohne Ankündigung. Eine Tatsachenaussage ohne Prüfdatum ist deshalb nicht falsch — sie ist unüberprüfbar, und das ist schlechter. Jede Seite, die eine macht, trägt eines.",
+      "Quellen sind primär oder werden nicht verwendet — und sie haben eine Rangfolge: zuerst der konsolidierte Rechtstext beziehungsweise das Amtsblatt, dann offizielle Leitlinien der Kommission oder einer Aufsichtsbehörde, dann die veröffentlichten Bedingungen und Unterlagen eines Anbieters, dann technische Primärdokumentation — und erst danach alles, was darüber geschrieben wurde. Diese Regel hat hier bereits einen Fehler gefangen: Eine EU-Verordnung wurde als vorläufige Einigung beschrieben, weil eine Kommissions-FAQ das noch so sagte, während der Rechtsakt seit einer Woche in Kraft war.",
+      "Quelle zu sein heißt nicht, recht zu haben. Ein Anbieter ist maßgeblich für das, was er über sich selbst veröffentlicht hat, und für nichts darüber hinaus: Seine Dokumentation gibt seine Bedingungen wieder, sie prüft nicht seine Systeme. Deshalb steht hier, dass der Anbieter etwas angibt, statt das Verhalten schlicht zu behaupten — und das ist keine Wortklauberei, sondern der Unterschied zwischen einer Zusage, an der man jemanden festhalten kann, und einer Tatsache, die man überprüft hat.",
+      "Dieselbe Linie läuft durch die Rechtsseiten. Eine Norm wiederzugeben und sie auf deine Lage anzuwenden sind zwei verschiedene Handlungen, die verschiedene Fachkunde verlangen: Das Erste trägt die Kennzeichnung Recht, und sobald ein Satz zu einem Schluss über einen konkreten Fall kommt, trägt er Einschätzung — gleich, wer ihn geschrieben hat.",
+      "Prüfdaten leisten weniger, als ihnen oft zugeschrieben wird. Sie machen eine Aussage nicht wahr und nicht dauerhaft; sie halten fest, gegen welchen Stand einer veränderlichen Welt sie geprüft wurde. Voreinstellungen der Anbieter ändern sich ohne Ankündigung — deshalb trägt hier jede Tatsachen- und jede Messaussage eines.",
       "Korrekturen sind willkommen und kein Gefallen. Auf jeder Seite gibt es einen Link, der ein Issue mit Seite und URL bereits ausgefüllt öffnet. Wenn hier etwas falsch ist, ist das der schnellste Weg, es richtigzustellen — und die Korrektur wird festgehalten statt still nachgebessert.",
     ],
   },
@@ -125,7 +130,7 @@ const de: AboutSection[] = [
   {
     heading: "Das Repository darunter",
     paragraphs: [
-      "Diese Seite wird aus einem öffentlichen Repository gebaut, und dieses Repository enthält noch etwas Zweites: Konventionen für die Arbeit mit KI an einer Codebasis — wie mehrere Werkzeuge dasselbe Projekt lesen, was ein Agent darf und was nicht, wie die Arbeit danach überprüfbar bleibt.",
+      "Diese Seite wird aus einem öffentlichen Repository gebaut, und dieses Repository enthält noch etwas Zweites: Konventionen für die Arbeit mit KI an einer Codebasis — wie mehrere Tools dasselbe Projekt lesen, was ein Agent darf und was nicht, wie die Arbeit danach überprüfbar bleibt.",
       "Beides hängt zusammen, ist aber nicht dasselbe. Das Repository ist der engere, technische Gegenstand; die Seite der breitere. Wo sie sich überschneiden, ist das Repository die Quelle: Die Seite widerspricht ihm nie, und die Dokumentationsseiten hier werden direkt daraus erzeugt statt abgetippt.",
       "Wer keine Software schreibt, muss davon nichts lesen. Nichts auf dieser Seite setzt es voraus.",
     ],
@@ -133,7 +138,7 @@ const de: AboutSection[] = [
   {
     heading: "Wer schreibt",
     paragraphs: [
-      "Ruben Nati, tätig in der Cybersicherheit in Wien. Die Themen hier sind die, die in dieser Arbeit auftauchen — und das ist zugleich die Grenze dessen, was die Seite abdeckt: die Sicht eines Praktikers, nicht die einer Institution.",
+      "Ruben Nati, tätig in der Cybersicherheit in Wien. Die Themen hier sind die, die in dieser Arbeit auftauchen — deshalb sind es die Fragen, auf die man tatsächlich stößt, und nicht die, über die sich bequem schreiben lässt.",
     ],
   },
 ];

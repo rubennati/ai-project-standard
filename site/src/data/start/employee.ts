@@ -13,10 +13,10 @@ import type { SiteLocale } from "../../i18n/ui";
 export const CHECKED = "2026-08-03";
 
 const en: Article = {
-  title: "I am employed — may I use AI at work?",
+  title: "Can I use AI at work?",
   description:
     "What to find out before pasting work material into an AI tool, whom to ask, and what to do when nobody has decided yet.",
-  lead: "You are not the one who gets to decide this, and that is the useful starting point rather than a limitation.",
+  lead: "Which services you may use and what you may put into them is set by your employer. Knowing where that line runs is what lets you use these tools without having to guess.",
   sections: [
     {
       heading: "The first question is not a technical one",
@@ -43,13 +43,13 @@ const en: Article = {
       heading: "What is yours to decide, and what is not",
       level: "assessment",
       paragraphs: [
-        "You decide how you work: whether a model helps you draft, structure, review or explain something. That is your craft and nobody needs to approve it.",
+        "Within the ways of working your employer has approved, you decide how you work: whether a model helps you draft, structure, review or explain something. Which services you may use for that, and what may go into them, is set by your employer.",
         "You do not decide whether material belonging to your employer or their clients may leave the company. That decision belongs to whoever carries the liability, and it stays theirs even when they have not made it yet.",
         "The distinction is worth holding on to, because it means using AI is not the risky part. Choosing what goes into it is.",
       ],
     },
     {
-      heading: "The account is the thing, not the tool",
+      heading: "The applicable terms depend on the account, not the product",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -58,7 +58,7 @@ const en: Article = {
       ],
       links: [
         {
-          label: "Does the tool train on what you type?",
+          label: "Are your chats used for model training?",
           href: "/data-flows/training-and-retention",
         },
       ],
@@ -83,7 +83,7 @@ const en: Article = {
         "Very likely you have, because most people did before anyone thought about it. What matters is what you do now, not the retrospective.",
         "Delete the conversations that contained it. Rotate anything that resembled a key or a password. And say something — to IT, to your manager — because a company that learns about it now can decide, whereas one that learns in six months from somewhere else cannot.",
       ],
-      links: [{ label: "Getting it back out", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Deleting chats and data from an AI service", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Ask yourself before the next prompt",
@@ -101,27 +101,27 @@ const en: Article = {
 };
 
 const de: Article = {
-  title: "Ich bin angestellt — darf ich KI bei der Arbeit verwenden?",
+  title: "Darf ich KI im Job verwenden?",
   description:
     "Was du vor dem Einfügen von Arbeitsmaterial klärst, wen du fragst, und was du tust, wenn niemand entschieden hat.",
-  lead: "Du bist nicht derjenige, der das entscheidet — und genau das ist der nützliche Ausgangspunkt, keine Einschränkung.",
+  lead: "Welche Dienste du verwenden darfst und was du dort eingeben darfst, legt dein Arbeitgeber fest. Zu wissen, wo diese Grenze verläuft, ist der Unterschied zwischen sicherer Nutzung und Raten.",
   sections: [
     {
-      heading: "Die erste Frage ist keine technische",
+      heading: "Die erste Frage ist keine technische, sondern eine organisatorische",
       level: "assessment",
       paragraphs: [
-        "Sie lautet: Hat mein Arbeitgeber ein Werkzeug freigegeben, und wofür. Die meisten fragen nie — entweder weil sie annehmen, die Antwort sei nein, oder weil sie annehmen, es störe niemanden. Beides sind Vermutungen über etwas, das eine echte Antwort hat.",
+        "Sie lautet: Hat mein Arbeitgeber ein Tool freigegeben, und wofür. Die meisten fragen nie — entweder weil sie annehmen, die Antwort sei nein, oder weil sie annehmen, es störe niemanden. Beides sind Vermutungen über etwas, das eine echte Antwort hat.",
         "Die Chance ist gut, dass die Antwort längst existiert und dir niemand Bescheid gesagt hat. Firmen kaufen einen Geschäftstarif und kündigen ihn dann nicht an, also arbeiten die Leute weiter mit ihrem privaten Konto neben einem bezahlten, das in Ordnung gewesen wäre.",
       ],
     },
     {
-      heading: "Wen du fragst, und was",
+      heading: "Wen du fragst — und was genau",
       level: "advice",
       paragraphs: [
         "IT, deine Datenschutz-Ansprechperson oder deine Führungskraft — je nachdem, was es gibt. Eine kurze Nachricht genügt, und schriftlich zu fragen ist Absicht: Es schiebt die Entscheidung zu der Person, der sie gehört.",
       ],
       list: [
-        "Gibt es ein freigegebenes KI-Werkzeug, und haben wir dafür einen Geschäfts- oder Teamtarif?",
+        "Gibt es ein freigegebenes KI-Tool, und haben wir dafür einen Geschäfts- oder Teamtarif?",
         "Darf ich es für Arbeitsmaterial nutzen, und gibt es etwas, das ich keinesfalls hineingeben darf?",
         "Gibt es eine Richtlinie oder eine Schulung, die ich hätte sehen sollen?",
         "Falls es noch nichts gibt — wen frage ich in einem Monat noch einmal?",
@@ -137,7 +137,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Es geht ums Konto, nicht ums Werkzeug",
+      heading: "Welche Bedingungen gelten, hängt vom Konto ab, nicht vom Produkt",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -146,7 +146,7 @@ const de: Article = {
       ],
       links: [
         {
-          label: "Trainiert das Werkzeug mit dem, was du eingibst?",
+          label: "Werden deine Eingaben für das Modelltraining verwendet?",
           href: "/de/data-flows/training-and-retention",
         },
       ],
@@ -171,14 +171,14 @@ const de: Article = {
         "Sehr wahrscheinlich hast du, denn die meisten haben, bevor irgendwer darüber nachgedacht hat. Es zählt, was du jetzt tust, nicht der Rückblick.",
         "Lösch die Unterhaltungen, die es enthielten. Tausch alles aus, was einem Schlüssel oder Passwort ähnelte. Und sag Bescheid — der IT, deiner Führungskraft. Ein Unternehmen, das es jetzt erfährt, kann entscheiden; eines, das es in einem halben Jahr von anderer Seite erfährt, nicht mehr.",
       ],
-      links: [{ label: "Wieder herausbekommen", href: "/de/data-flows/getting-it-back-out" }],
+      links: [{ label: "Chats und Daten löschen: Was wirklich entfernt wird", href: "/de/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Frag dich das vor dem nächsten Prompt",
       level: "advice",
       paragraphs: ["Ist eine Antwort nein oder unklar, ist das der Punkt, den du zuerst klärst."],
       list: [
-        "Weiß ich, ob mein Arbeitgeber ein Werkzeug freigegeben hat?",
+        "Weiß ich, ob mein Arbeitgeber ein Tool freigegeben hat?",
         "Bin ich gerade in einem Arbeitskonto angemeldet oder in einem privaten?",
         "Gehört mir, was ich gleich absende?",
         "Wäre es mir recht, wenn meine Führungskraft diese Unterhaltung liest?",

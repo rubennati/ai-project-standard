@@ -84,7 +84,8 @@ const en: PrivacySection[] = [
   {
     heading: "Your rights",
     paragraphs: [
-      `You have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18) and data portability (Art. 20). Write to ${contactEmail}.`,
+      `Where the statutory conditions are met, you have the right of access (Art. 15), rectification (Art. 16), erasure (Art. 17) and restriction of processing (Art. 18). Write to ${contactEmail}.`,
+      "The right to data portability under Art. 20 GDPR applies to processing carried out by automated means and based on consent or on a contract. The processing described above rests on legitimate interests, so that right does not apply to it.",
       "Because the processing described above rests on Art. 6(1)(f), you also have the right under Art. 21(1) GDPR to object to it at any time on grounds relating to your particular situation.",
     ],
   },
@@ -151,7 +152,8 @@ const de: PrivacySection[] = [
   {
     heading: "Ihre Rechte",
     paragraphs: [
-      `Ihnen stehen das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20) zu. Wenden Sie sich an ${contactEmail}.`,
+      `Soweit die gesetzlichen Voraussetzungen vorliegen, stehen Ihnen das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17) und Einschränkung der Verarbeitung (Art. 18) zu. Wenden Sie sich an ${contactEmail}.`,
+      "Das Recht auf Datenübertragbarkeit nach Art. 20 DSGVO gilt für automatisiert durchgeführte Verarbeitungen, die auf einer Einwilligung oder auf einem Vertrag beruhen. Die oben beschriebene Verarbeitung stützt sich auf berechtigte Interessen — für sie gilt dieses Recht daher nicht.",
       "Da sich die beschriebene Verarbeitung auf Art. 6 Abs. 1 lit. f DSGVO stützt, steht Ihnen nach Art. 21 Abs. 1 DSGVO außerdem das Recht zu, ihr jederzeit aus Gründen zu widersprechen, die sich aus Ihrer besonderen Situation ergeben.",
     ],
   },

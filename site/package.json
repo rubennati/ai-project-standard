@@ -10,7 +10,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "check:language": "node scripts/check-language.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.5",
