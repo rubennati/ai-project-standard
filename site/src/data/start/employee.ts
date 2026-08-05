@@ -83,7 +83,7 @@ const en: Article = {
         "Very likely you have, because most people did before anyone thought about it. What matters is what you do now, not the retrospective.",
         "Delete the conversations that contained it. Rotate anything that resembled a key or a password. And say something — to IT, to your manager — because a company that learns about it now can decide, whereas one that learns in six months from somewhere else cannot.",
       ],
-      links: [{ label: "Deleting chats and data from an AI service", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Ask yourself before the next prompt",
@@ -171,7 +171,7 @@ const de: Article = {
         "Sehr wahrscheinlich hast du, denn die meisten haben, bevor irgendwer darüber nachgedacht hat. Es zählt, was du jetzt tust, nicht der Rückblick.",
         "Lösch die Unterhaltungen, die es enthielten. Tausch alles aus, was einem Schlüssel oder Passwort ähnelte. Und sag Bescheid — der IT, deiner Führungskraft. Ein Unternehmen, das es jetzt erfährt, kann entscheiden; eines, das es in einem halben Jahr von anderer Seite erfährt, nicht mehr.",
       ],
-      links: [{ label: "Chats und Daten löschen: Was wirklich entfernt wird", href: "/de/data-flows/getting-it-back-out" }],
+      links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Frag dich das vor dem nächsten Prompt",

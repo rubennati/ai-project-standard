@@ -16,9 +16,29 @@ The cause was structural, not careless. Both languages sit next to each other in
 the same module, which invites line-by-line mirroring. The rules below exist so
 that the shared thing is the content, not the sentence.
 
+## No reveal framing
+
+Headings do not promise a reveal. "Was wirklich passiert", "what really
+happens", "what actually goes on" — none of these belong here, in either
+language.
+
+The reason is not taste. The evidence labels exist to say *here is the primary
+source, here is the check date, disagree with me*. A heading claiming to reveal
+what "really" happens asserts privileged access to a hidden truth, and asks to
+be believed rather than checked. It argues against the method on the same page.
+
+There is a reliable test: delete the word and the sentence gets more concrete,
+because the word was doing the work of not naming the object. "Was beim Einsatz
+von KI wirklich passiert" became "Was beim Einsatz von KI im Arbeitsalltag mit
+deinen Daten passiert".
+
+In running prose the same words can carry real weight — "eine Sicherung, die du
+einmal wirklich zurückgespielt hast" draws a genuine distinction. The rule
+applies to titles, headings, labels and descriptions.
+
 ## Both languages
 
-1. Every article opens with a question a reader actually has.
+1. Every article opens with a question a reader has.
 2. The lead already contains the core answer.
 3. One term per concept. Provider, product, account, plan, model and tool are
    not interchangeable.

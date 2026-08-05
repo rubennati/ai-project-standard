@@ -107,7 +107,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "What to actually do",
+      heading: "What to check, and in which order",
       level: "advice",
       paragraphs: [
         "Open the settings of every AI tool you use and find the training switch. It takes two minutes per tool and it is the single highest-value thing on this page.",
@@ -196,7 +196,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Was konkret zu tun ist",
+      heading: "Was du prüfen solltest, und in welcher Reihenfolge",
       level: "advice",
       paragraphs: [
         "Öffne bei jedem KI-Tool, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Tool und ist der wirksamste Punkt auf dieser Seite.",

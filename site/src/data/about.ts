@@ -20,7 +20,7 @@ const en: AboutSection[] = [
     paragraphs: [
       "AI arrived in ordinary work through a text box. That is the whole problem in one sentence. Software that reaches your files, your clients' material and your credentials is now operated in plain language, by people who were never handed the questions that used to come with that kind of access.",
       "The result is two camps, and neither of them is thinking. One refuses to touch any of it. The other pastes whatever is on the clipboard and finds out later. Both positions are the same avoidance, arrived at from opposite directions.",
-      "This site is the middle: work out what actually happens, then decide. Not whether AI is dangerous — that question has no useful answer — but the ones you hit on a Tuesday afternoon with a deadline. Where does this go. Whose is it. What does the law want from me. What do I set before I let an agent near a folder.",
+      "This site is the middle: establish where the data goes and what the rules are, then decide. Not whether AI is dangerous — that question has no useful answer — but the ones you hit on a Tuesday afternoon with a deadline. Where does this go. Whose is it. What does the law want from me. What do I set before I let an agent near a folder.",
     ],
   },
   {

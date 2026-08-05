@@ -49,7 +49,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "What Enter actually starts",
+      heading: "What pressing Enter sets in motion",
       paragraphs: [
         "Now the interesting part. You press Enter, and your sentence stops being text on your screen and becomes a package with an address.",
         "First it does not go anywhere at all: it goes to your operating system, which hands it to the network stack, which wraps it in layers like a parcel in a parcel in a parcel. Your machine asks a name server where this service lives, and gets back a number. Then it opens an encrypted connection — the padlock in the address bar — and that encryption is genuinely good: nobody between you and the other end reads along.",
@@ -91,13 +91,13 @@ const en: Article = {
       ],
     },
     {
-      heading: "Where the room actually is",
+      heading: "Location, operator and jurisdiction",
       level: "assessment",
       paragraphs: [
         "The machine at the end stands somewhere physical, in some country, run by a company registered in some jurisdiction. Those are three different questions and people collapse them into one.",
         "A service can run on servers in Frankfurt and belong to a company in Delaware. The location answers who has physical custody. The company's home answers who can compel disclosure. The European supervisory authorities have been explicit that those come apart — which is the single most useful thing to know when someone tells you their service is EU-hosted.",
       ],
-      links: [{ label: "Deleting chats and data from an AI service", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "The way back, and what stays",
@@ -127,7 +127,7 @@ const en: Article = {
       },
     },
     {
-      heading: "So what do you actually do",
+      heading: "What to take from this in practice",
       level: "advice",
       paragraphs: [
         "Nothing in here is an argument for not using these tools. It is an argument for knowing which of the steps is yours.",
@@ -178,7 +178,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Was Enter tatsächlich auslöst",
+      heading: "Was das Absenden in Gang setzt",
       paragraphs: [
         "Jetzt der interessante Teil. Du drückst Enter, und dein Satz hört auf, Text auf deinem Bildschirm zu sein, und wird ein Paket mit einer Adresse.",
         "Zuerst geht er nirgendwohin: Er geht an dein Betriebssystem, das ihn den Netzwerkprotokollen übergibt, die ihn in mehrere Schichten verpacken. Dein Rechner fragt einen Namensserver, wo dieser Dienst wohnt, und bekommt eine Nummer zurück. Dann öffnet er eine verschlüsselte Verbindung — das Schloss in der Adresszeile — und diese Verschlüsselung ist wirklich gut: Niemand zwischen dir und dem anderen Ende liest mit.",
@@ -226,7 +226,7 @@ const de: Article = {
         "Die Maschine am Ende steht irgendwo physisch, in irgendeinem Land, betrieben von einem Unternehmen mit Sitz in irgendeiner Rechtsordnung. Das sind drei verschiedene Fragen, und sie werden regelmäßig zu einer zusammengezogen.",
         "Ein Dienst kann auf Servern in Frankfurt laufen und einem Unternehmen in Delaware gehören. Der Standort beantwortet, wer die physische Obhut hat. Der Unternehmenssitz beantwortet, wer Herausgabe erzwingen kann. Die europäischen Aufsichtsbehörden haben ausdrücklich festgehalten, dass beides auseinanderfällt — und das ist das Nützlichste, was man wissen kann, wenn jemand sagt, sein Dienst sei EU-gehostet.",
       ],
-      links: [{ label: "Chats und Daten löschen: Was wirklich entfernt wird", href: "/de/data-flows/getting-it-back-out" }],
+      links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Der Rückweg — und was bleibt",

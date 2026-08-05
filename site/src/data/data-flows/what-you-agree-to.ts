@@ -32,7 +32,7 @@ const en: Article = {
       level: "assessment",
       paragraphs: [
         "Nothing can be used for a training run that was not stored first. So the question “may I train on your data” carries a prior question that is rarely stated: may I keep it, copy it somewhere else, and put it through a pipeline.",
-        "That is the operative permission. Training is what it is for; storage is what actually happens to your material, and it happens immediately rather than eventually.",
+        "That is the operative permission. Training is the stated purpose; storage is the immediate consequence, and it takes effect at once rather than eventually.",
       ],
     },
     {

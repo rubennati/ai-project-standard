@@ -56,3 +56,83 @@ depends on being adopted, companies included.
 Decision: The website is branded "AI Standard" everywhere, metadata included.
 The repository keeps the name `ai-project-standard`. A visible brand that
 disagrees with `og:site_name` would hand search engines the other name.
+
+## 2026-08-04 - Vendor documentation is a source, not a verification
+
+Decision: The `fact` evidence level covers "the vendor states X" and never "X is
+technically the case". Where a source is a vendor describing itself, the text
+says so.
+
+Rationale: A vendor is authoritative for what it has published about itself and
+silent on everything beyond that — its documentation states terms, it does not
+audit its systems. Without the distinction, a FACT badge over "not used for
+training by default" claims independent verification the site never performed.
+
+## 2026-08-04 - Restating a norm and applying it are different acts
+
+Decision: The `law` level covers restating a named norm or official guidance,
+with jurisdiction and check date. The moment a sentence reaches a conclusion
+about someone's circumstances it is `assessment`, whoever wrote it.
+
+Rationale: This boundary is where the site's worst error came from — a client
+withdrawing consent was presented as an Art. 17 GDPR erasure right, which
+silently assumed the material was personal data, the client was the data
+subject, a listed ground applied and no Art. 17(3) exception did. Restating a
+norm needs care; applying it needs competence the site does not claim.
+
+## 2026-08-04 - Source ranking
+
+Decision: Sources are ranked, not merely required to be primary: consolidated
+legal text or Official Journal, then official guidance from the Commission or a
+supervisory authority, then a vendor's published terms and documentation, then
+technical primary documentation, then anything written about them.
+
+Rationale: "Use primary sources" was already the rule and still let an EU
+regulation be described as a provisional agreement, because a Commission FAQ
+was treated as primary. It is primary for what the Commission says and outranked
+by the Official Journal for what the law is.
+
+## 2026-08-04 - German is written, not translated
+
+Decision: German pages carry the same claims, sources and check dates as the
+English ones and are written in German. Software is a "Tool" (Duden: the
+established computing term), never a "Werkzeug". The reader is addressed as
+"du" everywhere except the privacy policy and legal notice.
+
+Rationale: A review found the German built out of English sentence logic —
+grammatically possible, but not what a German-speaking author would have
+written. The cause is structural: both languages sit in the same module, which
+invites line-by-line mirroring. `docs/language-style.md` holds the rules and
+`site/scripts/check-language.mjs` enforces the mechanical part in CI. Splitting
+the modules per locale is the outstanding structural fix.
+
+## 2026-08-04 - No reveal framing in headings
+
+Decision: "wirklich", "tatsächlich", "actually", "really" and "genuinely" do not
+appear in titles, headings, labels or descriptions. In running prose they are
+allowed where they draw a real distinction.
+
+Rationale: A heading promising what "really" happens claims privileged access to
+a hidden truth and asks to be believed rather than checked — which argues
+against the evidence labels printed next to it. There is a reliable test:
+deleting the word makes the sentence more concrete, because the word was doing
+the work of not naming the object.
+
+## 2026-08-04 - Diagrams are markup, not images
+
+Decision: Figures are described as data (`ArticleFigure`) and rendered as
+markup. No diagram is shipped as an image, and no state is carried by colour
+alone.
+
+Rationale: Markup stays real text for search and assistive technology, reflows
+at any width, inherits the page's colours in both themes, and needs no asset
+pipeline. WCAG 1.4.1 rules out colour-only encoding regardless.
+
+## 2026-08-04 - Editorial publication dates
+
+Decision: A blog post's `datePublished` is set by hand in its module.
+`dateModified` continues to come from the git lookup that feeds the sitemap.
+
+Rationale: Publication is an editorial fact and a commit date is not — fixing a
+typo two weeks later must not make a post look new. Keeping `dateModified` on
+git means the sitemap and the structured data can never disagree.
