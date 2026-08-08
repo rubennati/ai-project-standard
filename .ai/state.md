@@ -2,7 +2,7 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- Current phase: Post-`v0.2.0`; `v0.1.0` and `v0.2.0` are both tagged and released.
+- Current phase: `v0.3.0` is prepared in `CHANGELOG.md` and `CITATION.cff` but not yet tagged; `v0.1.0` and `v0.2.0` are tagged and released.
 - Current objective: Finish `feature/site-content-architecture` — the site is repositioned and the content audits are cleared; what remains is a legal review and the structural split between the two identities.
 
 ## Snapshot
@@ -36,6 +36,8 @@
 - The source ranking is explicit: consolidated legal text or Official Journal, then official guidance, then a vendor'"'"'s published terms, then technical primary documentation, then anything written about them.
 - German is written in German, not translated from the English sentence. `docs/language-style.md` holds the rules and the terminology table; `site/scripts/check-language.mjs` enforces the mechanical part in CI ("Werkzeug" for software, formal address outside the legal pages, reveal framing in headings).
 - The glossary is complete in both languages: all 74 terms carry German, and `getLocalizedTermContent` reports the language it actually returned so a future gap cannot declare `de` over English prose.
+- Release and branch model are written down: `docs/release-process.md` (two streams, one branch — the standard is tagged, the site ships on merge), `docs/git-workflow.md` (stacked topic branches, and what a merge to `main` publishes), `.github/workflows/release.yml` (tag → GitHub Release from the changelog section, with a `CITATION.cff` version guard).
+- CI builds the site on every pull request (`site-build` in `ci.yml`) and still never deploys it; `pages.yml` keeps the deploy on `main`. `astro check` is now a gate and passes.
 
 ## Immediate next steps
 
@@ -49,7 +51,6 @@
 ## Open questions
 
 - Should markdown linting be required in CI?
-- What release cadence should be used for standard updates?
 - Does "AI Standard" need a subtitle, and if so which one? The wordmark stands alone today.
 - Should the glossary show each entry'"'"'s `status` (draft / review / stable)? The field exists in `site/src/data/terms.ts` and is not rendered; 30 entries are draft and 8 are stable, so showing it would explain the unevenness rather than leaving a reader to notice it.
 

@@ -1,0 +1,62 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+
+# The tag is the trigger and the decision. Nothing here decides *whether* to
+# release; a human pushing an annotated tag has already decided that.
+permissions: {}
+
+jobs:
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Derive version from tag
+        id: version
+        run: echo "number=${GITHUB_REF_NAME#v}" >> "$GITHUB_OUTPUT"
+
+      # v0.2.0 was tagged and released with no CHANGELOG section; the section
+      # had to be reconstructed from commits months later. Fail the release
+      # instead of publishing empty notes.
+      - name: Extract the changelog section for this version
+        env:
+          VERSION: ${{ steps.version.outputs.number }}
+        run: |
+          awk -v version="$VERSION" '
+            $0 == "## [" version "]" || index($0, "## [" version "] ") == 1 { found = 1; next }
+            found && /^## / { exit }
+            found { print }
+          ' CHANGELOG.md > release-notes.md
+
+          if [ ! -s release-notes.md ]; then
+            echo "::error file=CHANGELOG.md::No content under '## [$VERSION]'. Add the section, move the tag, and push again."
+            exit 1
+          fi
+
+      - name: Check CITATION.cff matches the tag
+        env:
+          VERSION: ${{ steps.version.outputs.number }}
+        run: |
+          # The repository is meant to be cited. A release whose CITATION.cff
+          # still names the previous version hands every citation a wrong
+          # number, and nothing downstream would ever catch it.
+          grep -q "^version: $VERSION\$" CITATION.cff || {
+            echo "::error file=CITATION.cff::version does not match tag $VERSION"
+            exit 1
+          }
+
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: gh release create "$TAG" --title "$TAG" --notes-file release-notes.md --verify-tag

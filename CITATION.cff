@@ -2,6 +2,8 @@ cff-version: 1.2.0
 title: AI Project Standard
 message: "If you use this standard, please cite it as below."
 type: software
+version: 0.3.0
+date-released: '2026-08-09'
 authors:
   - given-names: Ruben
     family-names: Nati
