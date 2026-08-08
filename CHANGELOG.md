@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-09
+
+### Added — Release process and branch model written down
+
+- `docs/release-process.md` — a versioned standard and a continuously deployed website ship from one branch. What a tag covers, the release checklist, what stays manual.
+- `docs/git-workflow.md` — stacked topic branches (slice PRs target the topic branch, which reaches `main` once), and what a merge to `main` publishes.
+- `.github/workflows/release.yml` — a `vX.Y.Z` tag publishes the GitHub Release from the matching changelog section; fails if that section is missing or `CITATION.cff` disagrees. `v0.2.0` shipped without one.
+- `CITATION.cff` carries `version` and `date-released`. A citable repository was publishing citations with no version in them.
+
+### Fixed — CI never built the site
+
+- `ci.yml` gained `site-build`: `npm ci`, `astro check`, `astro build` on every pull request, no deploy. A broken build used to be green on the PR and fail only in the deploy after the merge — how the Astro 7 breakage reached `main` (undone in PR #75).
+- `rel="author"` on a `<span>` in both blog posts. `rel` is only valid on `link`, `a`, `area` and `form`, and it was the one thing failing `astro check`, now a gate. The author is already in the Article JSON-LD.
+
 ### Added — The blog, with an author, dates and a feed
 
 - First post at `/blog/before-you-press-enter` (English and German). It opens with a measurement made for it rather than a claim taken from documentation: eleven characters typed into a search field, Enter never pressed, and the network log showing `GET /ac/?q=wetter+wien` → 200. Setup, request and date are stated so anyone can repeat it in about a minute.

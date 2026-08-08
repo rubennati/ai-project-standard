@@ -136,3 +136,42 @@ Decision: A blog post's `datePublished` is set by hand in its module.
 Rationale: Publication is an editorial fact and a commit date is not — fixing a
 typo two weeks later must not make a post look new. Keeping `dateModified` on
 git means the sitemap and the structured data can never disagree.
+
+## 2026-08-09 - Two release streams from one branch
+
+Decision: A SemVer tag versions the standard only; the website has no version
+and goes live on merge to `main`. Site content is recorded in `CHANGELOG.md`
+but does not justify a release. Process in `docs/release-process.md`.
+
+Rationale: `docs/**/*.md` is both part of the standard and rendered as web
+pages, so the surfaces cannot be split across branches without duplicating the
+file. Separate the clocks, not the files.
+
+## 2026-08-09 - No long-lived website branch
+
+Decision: No `site` or `gh-pages` branch. The Pages deploy source stays the
+Actions build artifact.
+
+Rationale: `docs/` is website content, so a site branch would separate the
+`/docs/` pages from the files they render. The deploy is already gated on `main`
+plus a path filter, so a branch adds no gating — and one that is never merged is
+a second repository.
+
+## 2026-08-09 - Stacked topic branches for work that publishes unfinished
+
+Decision: Work too large for one pull request but incoherent until finished uses
+one topic branch; slice pull requests target that branch, which merges to `main`
+once.
+
+Rationale: `feature/site-content-architecture` was merged into `main` five times
+mid-repositioning, publishing every intermediate state. Changing the base branch
+keeps the review granularity and drops to one publication.
+
+## 2026-08-09 - CI builds the site, CI never deploys it
+
+Decision: `ci.yml` runs `astro check` and `astro build` on every pull request and
+discards the output; deployment stays in `pages.yml`, gated on `main`.
+
+Rationale: Nothing verified the build before the merge, so a broken build was
+green on the pull request and failed afterwards in the deploy — how the Astro 7
+breakage reached `main`. Build and deploy are separate questions.
