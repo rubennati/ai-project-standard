@@ -6,6 +6,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — A queue for unverified material
+
+- `research/` — where material waits while it is being verified. Not published, not normative, and it empties: a file whose content has shipped is deleted. The first area holds two documents on open-source practice, translated from German, with a `STATUS.md` recording six known problems and where each block of content is meant to go.
+- The repository is English-only, stated in `docs/language-style.md` and `AGENTS.md`. The website's translated pages are the single exception: English is its primary language and the source of every claim.
+
 ## [0.3.0] - 2026-08-09
 
 ### Added — Release process and branch model written down

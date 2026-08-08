@@ -8,6 +8,7 @@ Before starting work, always read:
 
 ## Core rules
 
+- Write everything in English — see `docs/language-style.md`. The site's translated pages are the only exception
 - Do not perform unrelated refactors
 - Request human approval before major architectural or dependency changes
 - Update `.ai/state.md` after meaningful changes

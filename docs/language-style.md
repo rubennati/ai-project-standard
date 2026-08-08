@@ -1,5 +1,24 @@
 # Language style
 
+## The repository is English
+
+Everything in this repository is written in English: documentation, code
+comments, commit messages, `.ai/` files, research notes, issue and PR text. No
+other language appears anywhere in the tree.
+
+Write it as a native speaker would, for maintainers and developers. Technical
+vocabulary is welcome and does not need explaining; convoluted sentences are
+not. If a reader has to go back over a sentence, rewrite it.
+
+Source material in another language is translated on the way in, and the
+translation says so, so a later fact-check knows whose wording it is reading.
+
+**The one exception is the website.** English is its primary language and the
+source of every claim; other languages are translations of it. German exists
+today and more may follow. The rules below cover how those are written.
+
+## Two languages on the site
+
 Two languages, one set of facts. The German pages are not translations of the
 English ones — they carry the same claims, sources and check dates, and they
 are written in German.

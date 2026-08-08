@@ -5,6 +5,9 @@
 ## Active
 
 - Legal review of the legal notice and privacy policy — both are live
+- Decide one spine: four pillars vs three layers plus AI as a cross-cutting band (`research/open-source/STATUS.md`)
+- Verify the open-source research and publish it as a new site area — six known problems listed in its `STATUS.md`
+- Add "branch is not environment" to `docs/git-workflow.md` — the most useful single item from the research
 - Decide one canonical set of profile names (`docs/standard.md` and `README.md` vs `docs/profiles.md` and the site)
 - Separate the two identities: the site as the general knowledge layer, the project standard as a marked developer area beneath it
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English

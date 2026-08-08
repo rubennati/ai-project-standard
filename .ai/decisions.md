@@ -175,3 +175,16 @@ discards the output; deployment stays in `pages.yml`, gated on `main`.
 Rationale: Nothing verified the build before the merge, so a broken build was
 green on the pull request and failed afterwards in the deploy — how the Astro 7
 breakage reached `main`. Build and deploy are separate questions.
+
+## 2026-08-09 - English everywhere, translations only on the site
+
+Decision: The repository is English-only — documentation, comments, commits,
+`.ai/`, research notes. The website is the single exception: English is its
+primary language and the source of every claim, and other languages are
+translations of it. Material arriving in another language is translated on the
+way in and marked as a translation. Refines the 2026-05-09 language policy,
+which predated the site and said nothing about translations.
+
+Rationale: One language in the tree keeps every file reviewable by every
+contributor and every tool. The site has a different audience and a reach
+argument for translation; the repository has neither.
