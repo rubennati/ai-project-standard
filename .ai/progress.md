@@ -51,3 +51,13 @@ primary source first; where a review was wrong, nothing moved.
 - **Reveal framing removed** (PR #81). "Was wirklich passiert" argues against the method printed next to it.
 - **Guard added**: `site/scripts/check-language.mjs` fails CI on "Werkzeug" for software, formal address outside the legal pages, and reveal framing in headings. Verified to fail on a planted violation. Rules in `docs/language-style.md`.
 - Glossary completed: all 74 terms carry German, and the fallback reports the language it actually returned instead of declaring `de` over English prose.
+
+## 2026-08-09
+
+Release and branch model, after five merges of an unfinished branch had each
+published an intermediate state.
+
+- **Two clocks, one branch** (PR #82): the standard is tagged, the site ships on merge. `docs/release-process.md` states what a tag covers; `docs/git-workflow.md` gains stacked topic branches and what a merge to `main` publishes. No long-lived site branch — `docs/` *is* website content, so splitting it would separate the `/docs/` pages from the files they render.
+- **CI built the site nowhere** (PR #82). A broken build was green on the PR and failed afterwards in the deploy, which is how the Astro 7 breakage reached `main`. `site-build` now runs `astro check` and `astro build` on every pull request without deploying. Its two pre-existing `astro check` errors were fixed: `rel` is not valid on a `<span>`.
+- **`v0.3.0` released.** `[Unreleased]` had been accumulating since 12 May. `release.yml` builds the GitHub Release from the changelog section and refuses if the section or the matching `CITATION.cff` version is missing — `v0.2.0` shipped without either.
+- Merged branches deleted, and `state.md` cut back to current facts; the running commentary it had accumulated belongs here.

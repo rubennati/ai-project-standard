@@ -2,57 +2,53 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- Current phase: `v0.3.0` is prepared in `CHANGELOG.md` and `CITATION.cff` but not yet tagged; `v0.1.0` and `v0.2.0` are tagged and released.
-- Current objective: Finish `feature/site-content-architecture` — the site is repositioned and the content audits are cleared; what remains is a legal review and the structural split between the two identities.
+- Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
+- Current objective: Resolve the two identities — the site is a broad knowledge layer, the repository standard a narrower technical subject, and `/docs`, `/use-cases` and `/profiles` still speak only to the second.
 
 ## Snapshot
 
-- Bootstrap structure is stable.
-- Pre-release governance refinements landed in PR #3 (approval definition, SECURITY contact, `.gitignore`, branch-protection split, staleness contract).
-- Practical AI collaboration guide landed in PR #4 (`docs/practical-ai-collaboration.md`).
-- Branch protection on `main` is in place via a Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked).
-- `v0.1.0` and `v0.2.0` are tagged; both now have CHANGELOG sections.
-- On `feature/site-content-architecture`, the `site/` glossary work is being reshaped into an English-first AI vocabulary and definitions layer with vendor-specific UI labels called out explicitly.
-- The glossary UI now defaults to core AI vocabulary, with product/UI labels opt-in and a compact row-based layout.
-- The glossary is now being converted into a supporting index with individual term detail pages under `/glossary/`.
-- The glossary term pages now separate short definition, explanation, and AI-specific context more clearly.
-- The glossary now has parallel English and German routes (`/glossary/`, `/glossary/[slug]/`, `/de/glossary/`, `/de/glossary/[slug]/`) with language switching, linked related terms, and expanded AI/product vocabulary.
-- The glossary now has a stronger German translation foundation for the highest-visibility terms, and the `Search` entry is framed as an AI tool/product feature rather than a generic search concept.
-- The site now has a cleaner localization foundation with Astro i18n config, centralized UI strings, localized page-shell routes for `en` and `de`, layout-level language switching, and multilingual SEO alternates.
-- The header and language switch received a small polish pass so the shell reads more intentionally, while language switching remains route-based and privacy-friendly.
-- The live site shell and homepage received a public-readiness polish pass, including stronger header balance, cleaner homepage positioning, and broader cleanup of visible German spelling.
-- Sitemap entries carry a real `<lastmod>`, taken from the commit date of each page's source file rather than the build clock; `site/scripts/git-lastmod.mjs` owns the route-to-source mapping and omits the date when git history is unavailable.
-- The site build moved to Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
-- The footer is grouped into labelled Project / Trust / Legal sections with a pre-filled "report a problem with this page" issue link, the wordmark reads "AI Standard" with an accent on "AI", and the legal notice carries a contact address.
-- The site is branded "AI Standard" everywhere including metadata; the repository keeps its own name.
-- Licensing is settled: the repository including `docs/` stays MIT, texts written for the site are CC BY 4.0. Both are stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT rather than CC BY.
-- The site has moved from documenting the repository to being a knowledge layer on secure and lawful AI use. Four sections carry it: Start (entry points by decision authority), Data flows, Law, and Setting up safely.
-- Every substantive claim carries an evidence level — fact, measured, law, assessment, advice — with a check date on factual claims. `site/src/data/evidence.ts` owns the definitions and the condition each level has to meet before it may be published.
-- Article content lives in typed modules under `site/src/data/`, one per article, bilingual, so pages stay presentational.
+History lives in `progress.md`; this section is current facts only.
+
+### Repository
+
+- Bootstrap structure is stable. Branch protection on `main` runs as a Repository Ruleset (PR required, conversation resolution required, force pushes and deletion blocked).
+- Two release streams from one branch: the standard is tagged, the site ships on merge. `docs/release-process.md` holds the process, `.github/workflows/release.yml` turns a tag into a GitHub Release from the changelog section.
+- Work that publishes unfinished uses a stacked topic branch — slice PRs target the topic branch, which reaches `main` once (`docs/git-workflow.md`).
+- CI builds the site on every pull request (`site-build`) and never deploys it; `pages.yml` keeps the deploy on `main`. `astro check` is a gate and passes.
+- Licensing is settled: the repository including `docs/` is MIT, texts written for the site are CC BY 4.0. Stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT.
+
+### Website
+
+- The site is a knowledge layer on secure and lawful AI use, not repository documentation. Four sections carry it: Start (entry points by decision authority), Data flows, Law, Setting up safely. Branded "AI Standard" everywhere including metadata; the repository keeps its own name.
+- Article content lives in typed modules under `site/src/data/`, one per article, bilingual, so pages stay presentational. Blog prose sits in `site/src/data/blog/`, the register in its `index.ts`.
+- Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
+- English is canonical with parallel `/de/` routes, centralized UI strings and multilingual SEO alternates. The glossary is complete in both languages across all 74 terms, and `getLocalizedTermContent` reports the language it actually returned.
+- Sitemap `<lastmod>` comes from the commit date of each page's source file, not the build clock; `site/scripts/git-lastmod.mjs` owns the mapping and omits the date when git history is unavailable.
+- One blog post at `/blog/before-you-press-enter`, with a byline, an editorial `datePublished` separate from the git-derived `dateModified`, and an RSS feed per locale.
 - Lighthouse measures 100 across performance, accessibility, best practices, SEO and agentic browsing on six page types in both locales.
-- The blog is real: one post at `/blog/before-you-press-enter`, a visible byline, an editorial `datePublished` separate from the git-derived `dateModified`, and an RSS feed per locale. Post prose lives in `site/src/data/blog/`, the register in `site/src/data/blog/index.ts`.
-- Diagrams are described as data (`ArticleFigure` in `site/src/data/article.ts`) and rendered as markup, never images, so they stay real text for search and assistive technology and reflow at any width. State is carried by a word, never by colour alone.
-- Evidence levels carry two boundaries in their own definitions: `fact` distinguishes a vendor describing its own terms from an independent verification, and `law` covers restating a norm only — applying it to a case is `assessment`, whoever wrote it.
-- The source ranking is explicit: consolidated legal text or Official Journal, then official guidance, then a vendor'"'"'s published terms, then technical primary documentation, then anything written about them.
-- German is written in German, not translated from the English sentence. `docs/language-style.md` holds the rules and the terminology table; `site/scripts/check-language.mjs` enforces the mechanical part in CI ("Werkzeug" for software, formal address outside the legal pages, reveal framing in headings).
-- The glossary is complete in both languages: all 74 terms carry German, and `getLocalizedTermContent` reports the language it actually returned so a future gap cannot declare `de` over English prose.
-- Release and branch model are written down: `docs/release-process.md` (two streams, one branch — the standard is tagged, the site ships on merge), `docs/git-workflow.md` (stacked topic branches, and what a merge to `main` publishes), `.github/workflows/release.yml` (tag → GitHub Release from the changelog section, with a `CITATION.cff` version guard).
-- CI builds the site on every pull request (`site-build` in `ci.yml`) and still never deploys it; `pages.yml` keeps the deploy on `main`. `astro check` is now a gate and passes.
+
+### Method
+
+- Every substantive claim carries an evidence level — fact, measured, law, assessment, advice — with a check date on factual claims. `site/src/data/evidence.ts` owns the definitions and the condition each level must meet before publication.
+- Two boundaries sit inside those definitions: `fact` separates a vendor describing its own terms from an independent verification, and `law` covers restating a norm only — applying it to a case is `assessment`, whoever wrote it.
+- The source ranking is explicit: consolidated legal text or Official Journal, then official guidance, then a vendor's published terms, then technical primary documentation, then anything written about them.
+- German is written in German, not translated from the English sentence. `docs/language-style.md` holds the rules and the terminology table; `site/scripts/check-language.mjs` enforces the mechanical part in CI.
+- Diagrams are described as data (`ArticleFigure`) and rendered as markup, never images, so they stay real text and reflow at any width. State is carried by a word, never by colour alone.
 
 ## Immediate next steps
 
-1. Legal review of the legal notice and privacy policy before `feature/site-content-architecture` is merged. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
+1. Legal review of the legal notice and privacy policy. Both are live. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
 2. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
-3. Resolve the two identities. The site is a broad knowledge layer; the repository standard is a narrower technical subject. `/docs`, `/use-cases` and `/profiles` still speak only to the second, and a reader following "Zum Standard" lands in repository documentation. The intended shape is the site as the general layer with the project standard as a clearly marked developer area beneath it (roadmapped in `ROADMAP.md`).
-4. Split the bilingual content modules into one file per locale. Both languages sitting in the same module is the structural cause of the German reading like translated English; the language guard catches the mechanical symptoms, not the cause.
+3. Resolve the two identities (see current objective). The intended shape is the site as the general layer with the project standard as a clearly marked developer area beneath it, roadmapped in `ROADMAP.md`.
+4. Split the bilingual content modules into one file per locale. Both languages in one module is the structural cause of German that reads like translated English; the language guard catches the symptoms, not the cause.
 5. Write the two planned blog posts, in order: why removing names rarely produces anonymous data in the legal sense, and why "EU-hosted" answers a different question from the one people mean.
 6. Two remaining entry points under Start: private use, and the one-person business.
 
 ## Open questions
 
-- Should markdown linting be required in CI?
+- Which CI checks should be *required* in the ruleset? All six now run on every pull request and `site-build` catches real breakage, so the condition `docs/branch-protection.md` sets ("only once CI runs meaningful checks") is met.
 - Does "AI Standard" need a subtitle, and if so which one? The wordmark stands alone today.
-- Should the glossary show each entry'"'"'s `status` (draft / review / stable)? The field exists in `site/src/data/terms.ts` and is not rendered; 30 entries are draft and 8 are stable, so showing it would explain the unevenness rather than leaving a reader to notice it.
+- Should the glossary show each entry's `status` (draft / review / stable)? The field exists in `site/src/data/terms.ts` and is not rendered; 30 entries are draft, 36 review and 8 stable, so showing it would explain the unevenness rather than leaving a reader to notice it.
 
 ## Active constraints
 
