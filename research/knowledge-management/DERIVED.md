@@ -48,9 +48,9 @@ several are controls that belong *inside* one.
 |---|---|---|
 | You are starting a public repository | Governance, contribution and CI files | `open-source` — **exists** |
 | An agent is going to work in your repository | The frame it operates inside | `ai-assisted-development` — **exists** |
-| A second person has to be able to trust the knowledge | Structure, review, provenance, lifecycle | A new blueprint |
-| There is more to read than anyone will read, and answers must cite | Retrieval, chosen per question type | A new blueprint |
-| Several AI clients need the same tools | One integration surface | A new blueprint |
+| A second person has to be able to trust the knowledge | Structure, review, provenance, lifecycle | `agent-maintained-knowledge-base` — **planned** |
+| There is more to read than anyone will read, and answers must cite | Retrieval, chosen per question type | Held back — no trigger here yet |
+| Several AI clients need the same tools | One integration surface | `agent-tool-access` — **planned** |
 | Write access, external actions, autonomy | Approval, rollback, audit, least privilege | **Inside** each of the above, per drop 7 |
 | Sensitive or personal data | Classification, data path, retention | **Inside** each of the above |
 | More than one user | Identity, permissions, ownership | **Inside** each of the above |
