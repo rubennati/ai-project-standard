@@ -24,13 +24,25 @@ below. It stays `draft` until it has been used on a real project.
 
 ## Take it
 
+This lands on a repository you already have, so take it **beside** your tree and
+merge deliberately. Copying it straight over the top overwrites `AGENTS.md`,
+`.ai/state.md` and `.ai/decisions.md` without asking, and `.ai/decisions.md` is
+append-only by design — losing it loses the reasoning behind every past choice.
+
 ```bash
-npx degit rubennati/ai-project-standard/blueprints/ai-assisted-development/files .
+npx degit rubennati/ai-project-standard/blueprints/ai-assisted-development/files .agents-blueprint
 ```
 
-Into an existing repository, so check `git status` before committing: it adds
-`AGENTS.md`, `INIT.md`, three pointer files and `.ai/`. If you already have an
-`AGENTS.md`, merge rather than overwrite.
+Then move in only what you do not already have, and merge the rest by hand:
+
+```bash
+# what would collide
+comm -12 <(cd .agents-blueprint && find . -type f | sort) <(find . -path ./.agents-blueprint -prune -o -type f -print | sort)
+```
+
+If nothing collides, `cp -R .agents-blueprint/. . && rm -rf .agents-blueprint`
+is safe. If something does, that file is yours and this one is a proposal —
+read both and decide.
 
 ## Then
 
@@ -79,18 +91,25 @@ Empty is not unfinished. `project-brief.md` and `rules.md` carry structure plus
 
 ## Verified
 
-Copied into a repository that already had files, on **2026-08-09**.
+Run twice against a host repository, on **2026-08-09** — once where nothing
+collided, and once where the host already had `AGENTS.md` and `.ai/`.
 
 | Check | Result |
 |---|---|
-| Overlays without clobbering an existing tree | pass — adds only its own paths |
-| Markdown lints under default rules | pass, 20 files |
+| Adds only its own paths, when nothing collides | pass — 23 files added, none modified |
+| **Does not overwrite an existing `AGENTS.md` or `.ai/`** | **failed** — a straight copy silently replaced `AGENTS.md`, `.ai/state.md` and `.ai/decisions.md`. Fixed: *Take it* now copies beside the tree and shows what would collide |
+| Markdown lints under the host's default rules | pass, 25 files |
 | Every internal reference resolves | pass |
 | Pointer files restate no rule from `AGENTS.md` | pass |
 | `INIT.md` writes into files that exist | pass — every target present |
 
-Not covered: whether an agent actually *follows* the frame. That needs a real
-project, which is why the status is `draft`.
+The second row is why this was worth running. The earlier verification tested
+the overlay against a host that did not have those files, so the check could not
+fail — a true statement about the wrong test.
+
+Not covered, and the reason this stays `draft`: whether an agent actually
+*follows* the frame over weeks rather than for the first few edits. That needs a
+real project and cannot be established here.
 
 ## Licence
 

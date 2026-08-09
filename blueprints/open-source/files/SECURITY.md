@@ -7,7 +7,7 @@
 everyone at once — including people who will use it before there is a fix.
 
 Use [private vulnerability reporting](https://github.com/{{OWNER}}/{{REPO}}/security/advisories/new),
-or write to {{CONTACT_EMAIL}}.
+or write to <{{CONTACT_EMAIL}}>.
 
 What to expect:
 

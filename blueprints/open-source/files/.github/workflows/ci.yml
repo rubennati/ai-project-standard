@@ -44,12 +44,16 @@ jobs:
 
       # A public repository with no licence grants nothing beyond what the
       # hosting platform's terms allow. This fails until you choose one.
+      # `ls A B C` exits non-zero unless every operand exists, so testing each
+       # candidate separately is the difference between a gate that passes when
+       # you add a licence and one that never passes at all.
       - name: A licence is present
         run: |
-          ls LICENSE LICENSE.md LICENSE.txt >/dev/null 2>&1 || {
-            echo "::error::No LICENSE file. Choose one: https://opensource.org/licenses"
-            exit 1
-          }
+          if [ -f LICENSE ] || [ -f LICENSE.md ] || [ -f LICENSE.txt ]; then
+            exit 0
+          fi
+          echo "::error::No LICENSE file. Choose one: https://opensource.org/licenses"
+          exit 1
 
       # Scorecard's Binary-Artifacts check, in miniature. A committed binary is
       # code nobody reviewed, in a repository whose point is that code is

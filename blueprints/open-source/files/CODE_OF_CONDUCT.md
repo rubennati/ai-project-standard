@@ -7,7 +7,7 @@ version 2.1.
 
 ## Reporting
 
-Report unacceptable behaviour to {{CONTACT_EMAIL}}. Reports are handled
+Report unacceptable behaviour to <{{CONTACT_EMAIL}}>. Reports are handled
 confidentially, and the person handling them will tell you what happens next.
 
 A code of conduct without a named channel is decoration. Fill in the address

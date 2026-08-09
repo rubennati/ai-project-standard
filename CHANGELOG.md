@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — Both draft blueprints verified as an adopter would run them, and five defects found
+
+- `open-source`: **the licence gate could never pass.** It used `ls LICENSE LICENSE.md LICENSE.txt`, and `ls` exits non-zero unless every operand exists — so an adopter who added a `LICENSE` still got a red build telling them to add a licence. Each candidate is now tested separately.
+- `open-source`: **markdown lint failed on a correctly filled payload.** The contact placeholder became a bare email address, which `MD034` rejects. Two of six gates were therefore red on day one for anyone following the README.
+- `open-source`: "delete the first line of each file" was wrong for the two issue templates, where the banner sits below the YAML front matter — following it removed the front matter and left the banner. The instruction is now a search rather than a line number, and it warns that a blanket replace on `{{` breaks the workflow's Actions expressions.
+- `ai-assisted-development`: **the take command silently overwrote an existing `AGENTS.md`, `.ai/state.md` and `.ai/decisions.md`.** `decisions.md` is append-only by design, so this destroyed the reasoning behind every past choice with only `git status` between the adopter and the loss. It now copies beside the tree and shows what would collide first.
+- `ai-assisted-development`: the previous verification claimed the overlay "adds only its own paths". It had been run against a host that did not have those files, so the check could not fail — a true statement about the wrong test. Both cases are now run, and the failing one is recorded as failing.
+- Every gate is now tested in both directions: that it passes on a clean tree, and that it fails on one broken on purpose.
+
+### Changed — Both blueprints stay `draft`
+
+`stable` means the payload started or converted a real project and worked. That has not happened for either, and local testing does not substitute for it. Said plainly rather than promoted.
+
 ### Added — Every research section routed, and the four missing concepts
 
 - `research/ROUTING.md` — **166 sections across ten research documents**, each with a destination and a form, or explicitly dropped with a reason. It exists because routing happened informally before and lost the technical half of the material. A summary cannot be checked for completeness; a row per section can, and CI now checks it: section counts per file, and a research document nobody routed at all.
