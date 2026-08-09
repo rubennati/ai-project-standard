@@ -148,5 +148,6 @@ finishing it.
 is pointed at, every blueprint answers its four questions, external claims carry
 a check date, blueprint paths resolve, and vocabulary matches the glossary.
 
-Failures of the first kind are recorded in `.ai/errors.md`. There are three, and
-they share one cause: writing a rule is not keeping it.
+Failures of the first kind are recorded in `.ai/errors.md`. They share one
+cause: writing a rule is not keeping it — which is why the answer is discipline,
+not another mechanism.

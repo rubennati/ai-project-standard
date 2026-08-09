@@ -5,7 +5,7 @@
 - `docs/purpose.md` is the single statement of what the repository, the website and a blueprint are each for. Where another file disagrees, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- Blueprints are the current objective and nothing has been built yet: `blueprints/open-source/` from the research, then the extraction of this repository's own AI conventions into a second blueprint. Site work is paused.
+- **Objective, re-aligned 2026-08-09:** the two built `draft` blueprints — `blueprints/open-source/` and `blueprints/ai-assisted-development/` — are the deliverable. The open work on them is verification: run each against a real project and promote it to `stable`, or say honestly it was not. The two `planned` blueprints stay scoped-only until then. `concepts/`, the glossary sweep and the site are a parked side-strand — real work, done, not the active push. See `.ai/errors.md` for why the day's work drifted onto that side-strand.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
 - Deferred objective: Resolve the two identities — the site is a broad knowledge layer, the repository standard a narrower technical subject, and `/docs`, `/use-cases` and `/profiles` still speak only to the second.
 
@@ -23,8 +23,7 @@ History lives in `progress.md`; this section is current facts only.
 - The repository is English-only; the site's translated pages are the sole exception. `docs/language-style.md` holds the rule, `AGENTS.md` points at it.
 - `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md` and a per-claim `SOURCES.md`.
 - The site has a fifth section, `/open-source`, with three articles in both languages and no AI in it. It is the first area built from `research/` and the first evidence that the site carries subjects beyond AI use.
-- `blueprints/` holds material to copy; the contract is in `docs/blueprints.md` and the catalogue is still empty. Payloads next: `open-source` from the files this repository already runs on, then `ai-assisted-development` extracted from its own root. Neither needs the research.
-- `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md`.
+- `blueprints/` holds material to copy; the contract is in `docs/blueprints.md`. Four exist: `open-source` and `ai-assisted-development` are `draft` (built, not yet verified), `agent-maintained-knowledge-base` and `agent-tool-access` are `planned` (scoped, no payload).
 
 ### Website
 
@@ -45,6 +44,14 @@ History lives in `progress.md`; this section is current facts only.
 - Diagrams are described as data (`ArticleFigure`) and rendered as markup, never images, so they stay real text and reflow at any width. State is carried by a word, never by colour alone.
 
 ## Immediate next steps
+
+**Objective — the blueprints.** Verify the two `draft` blueprints: run
+`open-source` and `ai-assisted-development` against a real project, record what
+against and when, and promote each to `stable` or keep it `draft` with the
+reason stated. This is the deliverable.
+
+The numbered items below are the parked side-strand — site and legal work,
+resumed after the blueprints, not alongside.
 
 1. Legal review of the legal notice and privacy policy. Both are live. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
 2. Bring the website into line with the repository: three pages still speak the retired profile vocabulary (`site/src/pages/profiles.astro`, `use-cases.astro`, `site/src/i18n/ui.ts`).
