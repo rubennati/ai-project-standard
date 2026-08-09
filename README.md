@@ -11,7 +11,7 @@
 
 AI Project Standard is a starting baseline for open-source projects that use AI.
 
-**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable as the full template, in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
+**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
 
 The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
 
@@ -30,7 +30,7 @@ Four common adoption paths — a 2×2 grid of *new vs. existing* × *with vs. wi
 3. New open-source project, no AI.
 4. Professionalising an existing open-source project.
 
-See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps. Available as a GitHub template from v0.2.0.
+See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps.
 
 ## Website
 

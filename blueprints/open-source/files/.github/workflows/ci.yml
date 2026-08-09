@@ -47,7 +47,7 @@ jobs:
       - name: A licence is present
         run: |
           ls LICENSE LICENSE.md LICENSE.txt >/dev/null 2>&1 || {
-            echo "::error::No LICENSE file. https://ai-standard.rubennati.at/open-source/what-makes-it-open-source"
+            echo "::error::No LICENSE file. Choose one: https://opensource.org/licenses"
             exit 1
           }
 
