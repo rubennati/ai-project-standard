@@ -1,0 +1,15 @@
+---
+description: Project rules — defer to AGENTS.md
+alwaysApply: true
+---
+
+<!-- blueprint payload: ai-assisted-development — edit upstream, then delete -->
+# Project rules pointer
+
+The source of truth for this repository is `AGENTS.md` at the root.
+
+Before suggesting changes, read `AGENTS.md` and `.ai/index.md`,
+`.ai/state.md`, `.ai/routing.md`.
+
+The "Stop and ask" and "Never" sections of `AGENTS.md` are binding. This file
+stays minimal on purpose.

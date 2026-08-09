@@ -7,9 +7,9 @@ it has, and how to add one.
 | Blueprint | What you get | Status |
 |---|---|---|
 | [open-source](./open-source/) | Governance, contribution and CI files for a public repository. No AI, no licence chosen for you. | draft |
-| [ai-collaboration](./ai-collaboration/) | The frame an agent operates inside — when it stops and asks, what it may never do, what must be verified — plus an initialisation interview. Drops onto a repository you already have. | draft |
+| [ai-assisted-development](./ai-assisted-development/) | The frame an agent operates inside — when it stops and asks, what it may never do, what must be verified — plus an initialisation interview. Drops onto a repository you already have. | draft |
 
-The two compose: `open-source` starts a public repository, `ai-collaboration`
+The two compose: `open-source` starts a public repository, `ai-assisted-development`
 overlays the agent frame on top. Neither depends on the other.
 
 ## Licence
