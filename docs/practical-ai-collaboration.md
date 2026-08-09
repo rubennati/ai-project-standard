@@ -11,9 +11,11 @@ You do not need a separate coordination system for most small-team AI work. GitH
 - Commits record decisions at the point they are made.
 - PR comments carry feedback and between-session context.
 
-Instead of treating `.ai/state.md` as the single source of truth, keep durable coordination in GitHub. This works because GitHub is visible to humans and AI systems, versioned, reviewable, and tied directly to the code or documentation being changed.
+Keep the record of *what happened* in GitHub. It is visible to humans and AI systems, versioned, reviewable, and tied directly to the change itself.
 
-Use `.ai/` files when they add useful operational context. Do not maintain them as a second, parallel project tracker when branch names and PRs already tell the truth.
+`.ai/` carries what git cannot: why the project exists, what holds across sessions, what an agent may and may not do. The division is set out in [AI Workspace Layer](./ai-workspace-layer.md), and the rule that follows from it is short — if git already says it, do not repeat it in `.ai/`.
+
+The scenarios below are that rule applied to real situations.
 
 ## Scenarios and Workflows
 

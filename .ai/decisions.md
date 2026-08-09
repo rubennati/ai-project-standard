@@ -188,3 +188,20 @@ which predated the site and said nothing about translations.
 Rationale: One language in the tree keeps every file reviewable by every
 contributor and every tool. The site has a different audience and a reach
 argument for translation; the repository has neither.
+
+## 2026-08-09 - Git records what happened, `.ai/` records what holds
+
+Decision: Git — branches, commits, pull requests, `CHANGELOG.md` — owns the
+record of what was done. `.ai/` owns why the project exists, what holds across
+sessions, and what an agent may and may not do. On any conflict about a fact,
+git wins. `docs/ai-workspace-layer.md` is the authority; `AGENTS.md` and
+`docs/practical-ai-collaboration.md` point at it.
+
+Reading `.ai/` before work stays mandatory and is cheap. Writing to it is
+narrow: `state.md` changes when the objective, a constraint or a decision
+changes, never to mirror a branch or a pull request.
+
+Rationale: the two documents contradicted each other in production. One told
+agents to read and update `.ai/state.md` on every meaningful change; the other
+told them not to maintain those files as a parallel tracker. Both were shipped,
+and the model this project sells was inconsistent with itself.

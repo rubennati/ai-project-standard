@@ -2,17 +2,22 @@
 
 Before starting work, always read:
 
-- `.ai/index.md`
-- `.ai/state.md`
-- `.ai/routing.md`
+- `.ai/project-brief.md` — what the project is for, and the test for whether the
+  work in front of you still serves it
+- `.ai/state.md` — the current objective and constraints
+- `.ai/routing.md` — which further files this kind of task needs
+
+Reading is cheap and lands the session in the right frame. Writing is not: see
+`docs/ai-workspace-layer.md` for what `.ai/` records and what git already
+records.
 
 ## Core rules
 
 - Write everything in English — see `docs/language-style.md`. The site's translated pages are the only exception
 - Do not perform unrelated refactors
 - Request human approval before major architectural or dependency changes
-- Update `.ai/state.md` after meaningful changes
-- Update `.ai/decisions.md` after architectural decisions
+- Update `.ai/state.md` when the objective, a constraint or a decision changes — not to mirror what a branch or pull request already records
+- Update `.ai/decisions.md` after architectural decisions, with the reasoning and the date
 
 ## Workflow
 
