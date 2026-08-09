@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — nanoid, and the glossary's draft backlog
+
+- `nanoid` to 3.3.18, closing GHSA-2v37-7h3g-55p8 (high). A lockfile change only — `postcss` already declared `^3.3.16`, so the resolved version was simply stale. The real exposure was low: nanoid reaches this project as `@tailwindcss/vite → vite → postcss`, entirely build-time, and the site is statically generated. Free fix, taken without ceremony. No open Dependabot alerts remain.
+- **99 glossary entries were `draft`, and the field meant nothing** — `status` was never defined and is not rendered. It now has a documented bar, and the bar differs by kind: for a product or interface label one accurate line is a finished entry, because a long explanation of a menu item rots faster than it helps; for an architecture or data-protection term an entry is not finished until it says what the thing is and why it matters when working with AI.
+- **63 entries were filled to meet it**, bilingual. Seventeen architecture one-liners that had nothing but a definition (`API`, `Vector`, `Chunk`, `OCR`, `RBAC`, `DLP`, `Entity`, `Workspace` and others); twenty-six missing one half; and the twenty most central terms in the whole glossary, which were the thinnest of all — `AI`, `LLM`, `Token`, `Context Window`, `Retrieval`, `Hallucination`, `Embedding`, `Knowledge Graph`, `Tool Use`.
+- Three of those twenty were marked `stable` while missing an explanation entirely. They are `review` now, which is what a freshly written text honestly is.
+- **No entry is below the bar.** 143 terms: 138 `review`, 5 `stable`, none `draft`.
+
 ### Added — The research queue is empty
 
 The last fifteen website-bound rows, as three articles plus one addition. `research/ROUTING.md` now has no queued rows: all 166 sections are closed.
