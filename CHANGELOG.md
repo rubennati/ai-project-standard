@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - *When is a project open source?* — the OSI definition (version 1.9, 22 March 2007), why a non-commercial clause fails criterion 6, and the caveat most write-ups miss: GitHub's Terms of Service permit viewing and forking a public repository with no licence at all.
 - *Which licence, and what does it commit you to?* — permissive, file-level copyleft, strong copyleft. The "GPL is the most used licence" claim is replaced by the two available measurements and the limits their own authors state.
 - *Who owns code written at work?* — § 40b Austrian and § 69b German Copyright Act give the employer rights of use, not authorship; US work-for-hire makes the employer the author. The distinction decides who may relicense.
+
 ### Added — The first blueprint
 
 - `blueprints/open-source/` — governance, contribution and CI files for a public repository. The decisions are made and the reasons are stated: DCO over CLA, one merge strategy, no foundation-shaped governance until contributor volume forces it. No AI files, no application code, and no licence chosen for the adopter — the payload ships without a `LICENSE` and its CI fails until one exists, because that choice decides whether the project is open source at all.
