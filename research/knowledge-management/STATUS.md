@@ -1,6 +1,8 @@
 # Status — knowledge management
 
-Received 2026-08-09: five documents plus four diagrams, translated from German.
+Received 2026-08-09: six documents plus four diagrams, translated from German.
+**The material declares itself complete in the sixth** — "I would not add more
+buzzwords at this point".
 The first is unsourced; the second and third carry citations and were partly
 verified. Each drop corrects the one before it.
 
@@ -9,6 +11,13 @@ verified. Each drop corrects the one before it.
 - [figures.md](./figures.md) — four diagrams recorded as data, because the site
   renders diagrams as markup and never as images. Carries material that appears
   nowhere in the prose.
+- [cross-cutting.md](./cross-cutting.md) — sixth drop, 2026-08-09. The layers
+  that decide whether an architecture survives contact with reality: evaluation,
+  a failure model, time, structured against unstructured retrieval,
+  multimodality, event-driven operation, ownership, economics, lock-in, disaster
+  recovery, a threat model, model routing, context engineering, scope
+  transparency, provenance chains and knowledge typing. **No external sources —
+  it reasons over the previous five.**
 - [dimensions.md](./dimensions.md) — fifth drop, 2026-08-09. Three independent
   axes instead of one ladder, six kinds of state, two status axes, and an
   analysis card for any system. **It reads this repository and this website and
@@ -176,6 +185,38 @@ knowledge, shared rules are not personal overrides, collaboration needs its own
 layer, governance grows proportionally — are all already decided here. That is
 useful as confirmation, not as evidence.
 
+## The sixth drop stops, on purpose
+
+It ends with "I would not add more buzzwords at this point. There are enough
+base components." That is the right call and it matches the shape of the series:
+the fifth drop stopped adding and started ordering; the sixth adds only the
+cross-cutting layers and then closes.
+
+**It supplies a failure flow, not just a data flow.** Every stage — source,
+ingestion, retrieval, context, LLM, action — has its own failure kinds, and a
+system can answer wrongly while the model worked perfectly, because retrieval
+delivered the wrong chunks. Nothing earlier covered that.
+
+**And one classification that belongs in `docs/` almost verbatim:**
+
+```text
+IRREPLACEABLE     sources · curated knowledge · human decisions
+RECONSTRUCTABLE   embeddings · search index · cache
+```
+
+With the rule that follows: keep canonical knowledge in an exportable format,
+and let AI indexes be disposable. That is the general form of the source-of-truth
+model, and it is directly actionable.
+
+### Where it confirms the site rather than adding to it
+
+Its section 15 — privacy and confidentiality are not the same thing; a source
+repository can hold no personal data and still be highly confidential — is
+**already the argument of the site's "Can I enter this data into an AI tool?"
+article**, which separates the GDPR question from the contract and trade-secret
+question. The material arrived at it independently. Recorded as agreement, not
+as new material.
+
 ## Where it goes
 
 The split falls almost exactly where the blueprint contract predicts: the
@@ -276,6 +317,26 @@ coinage is not established.
 | "No problem → no additional component" | **`docs/` — an architecture rule** | The anti-overengineering rule, stated once |
 | Competence ≠ system maturity | Website | Corrects a conflation the earlier drops carried |
 
+## What the sixth drop adds to the routing
+
+| Block | Destination | Note |
+|---|---|---|
+| **Irreplaceable against reconstructable data** | **`docs/` — architecture rule** | Nearly verbatim. Canonical knowledge exportable, indexes disposable |
+| **Evaluation as its own layer** — retrieval quality, groundedness, answer correctness, citation accuracy | **Blueprint, and `docs/`** | Answers "is it any good", which no earlier drop did |
+| **The failure flow** — each stage's own failure kinds | **`docs/security-baseline.md`, and website** | A system can be wrong while the model was right |
+| Security threat model — six named attack paths | **`docs/security-baseline.md`** | Extends the existing AI-specific controls with poisoned knowledge and malicious MCP servers |
+| Time: `valid_from`, `valid_until`, `supersedes` | **Blueprint front matter** | Joins the two status axes from the fifth drop |
+| Knowledge typing — declarative, procedural, episodic, normative, relational, personal | **Glossary, and blueprint** | Determines *where* a piece of knowledge should live |
+| Structured against unstructured retrieval | Website + glossary | "Which customers owe over €10,000" should never go through embeddings |
+| Human-in-the-loop, four variants | **Blueprint** | Before, after, sampled, by confidence — control design rather than one review step |
+| Ownership: author, owner, reviewer, approver, consumer | **Blueprint front matter** | Matters sooner than the vector DB does |
+| Economics — smallest architecture that solves it | **`docs/` — principle** | Same shape as the repository's existing anti-overengineering stance |
+| Lock-in and portability | Website + `docs/` | Knowledge in vendor memory is a different risk from Markdown in Git |
+| Scope transparency — show what was and was not searched | **Website — a UX principle** | Underrated; without it users assume everything was searched |
+| Provenance chain — answer → claim → page → document → system → owner → version | **Blueprint** | Deeper than a citation |
+| Context engineering as the umbrella term | Glossary | RAG, memory and tool results are all instances of it |
+| Multimodality, model routing, event-driven operation | Website | Three gaps in the earlier text-centred, question-driven model |
+
 ## Glossary
 
 Present already: RAG, Knowledge Graph, Embedding, Vector Database, Vector
@@ -317,7 +378,22 @@ the material was expected to do.
 
 ## What the author proposes next
 
-Sharpened in the third drop to **six named variants**: simple chat with upload ·
+**Sharpened again in the sixth drop into three separate artifacts**, which map
+cleanly onto this project's three surfaces:
+
+| Proposed artifact | Belongs to |
+|---|---|
+| **Part 1 — foundation and teaching model**, from *what is an LLM* to how retrieval and agents arise, with glossary and worked examples | **Website**, plus the glossary |
+| **Part 2 — reference model**, the full taxonomy for analysing any system | **Website**, as the spine of the area |
+| **Part 3 — maturity and decision model**, with triggers rather than a ladder | **Website** for the reasoning, **blueprints** for the artifacts each trigger calls for |
+
+And the principle it insists on: **triggers instead of maturity compulsion.**
+Nobody progresses from chat to RAG to graph to agent by default; an architecture
+grows when a concrete problem demands a control or capability. That is the same
+rule this repository already applies to governance, and it should govern the
+blueprint set: one blueprint per trigger, not one per technology.
+
+Earlier, in the third drop, this was **six named variants**: simple chat with upload ·
 personal folder LLM wiki · team LLM wiki · enterprise RAG · Notion/mail agent
 with MCP · fully on-prem private AI. For each, side by side: user view, operator
 and build view, the real network and API data path, authentication, ACL, storage
