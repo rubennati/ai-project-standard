@@ -212,11 +212,35 @@ and something to join them. Evaluation has to measure the stages separately —
 retrieval, reranking, interpretation, answer, citation — because a system can
 answer wrongly while the model worked perfectly.
 
+## Positions bound for a concept
+
+**This section is a correction.** An earlier version of this file routed the
+technical construction knowledge to the website, on the grounds that
+`docs/purpose.md` says the repository is "not the place for reasoning at
+length". That confused *depth* with *length*. The same file also says the
+repository answers *how do I build this* — and a reference architecture is an
+artifact, not an essay.
+
+`concepts/` exists because of this mistake. See
+[docs/concepts.md](../../docs/concepts.md).
+
+| Position | Drops | Where |
+|---|---|---|
+| The two pipelines, build time against query time | 3 | [retrieval-architecture](../../concepts/retrieval-architecture.md) — **written** |
+| Retrieval chosen per question type; "I have a RAG" is as vague as "I have a database" | 3, 6 | Same — **written** |
+| Chunking, and what a bad cut does to a rule | 4, 6 | Same — **written** |
+| ACL-aware retrieval, and why an admin-built index leaks | 3 | Same — **written** |
+| The failure model by stage, and integrity over confidentiality | 6, 7 | Same — **written** |
+| Evaluating the stages separately | 6 | Same — **written** |
+| Connector against MCP, precisely; upload as its own case | 3, 4 | Planned concept — tool access and integration |
+| The knowledge lifecycle, and the six kinds of state | 4, 5 | Planned concept — knowledge lifecycle |
+| Action classification and graded control | 6, 7 | Planned concept — agent action control |
+
 ## Positions bound for the website
 
-Depth belongs there, per `docs/purpose.md`. These are the ones where the
-repository should carry a rule of one or two lines and the site carries the
-argument.
+Reasoning for a general audience, and anything that needs an evidence label and
+a check date. These are the ones where the repository carries a rule of one or
+two lines and the site carries the argument.
 
 | Position | Drops | Why the site and not `docs/` |
 |---|---|---|

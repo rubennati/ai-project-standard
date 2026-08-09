@@ -42,6 +42,21 @@ open questions written down. Scoping is the harder half.
 npx degit rubennati/ai-project-standard/blueprints/<id>/files <target>
 ```
 
+## Concepts
+
+Technical reference for building something — not a rule, and not a file you
+copy. `docs/` holds the rule stated once; `concepts/` holds the architecture and
+the decision points, at whatever length the architecture needs.
+
+| Concept | The decision it helps you make |
+|---|---|
+| [`retrieval-architecture`](concepts/retrieval-architecture.md) | More material than anyone will read, and questions whose answers are already written down. What to build — and what to build instead |
+
+See [concepts/README.md](concepts/README.md) for the rest, including the ones
+named but not written.
+
+## Taking a blueprint
+
 Take a blueprint — do not fork. A fork hands over this project's changelog,
 `.ai/` state, website and research. See [docs/adoption.md](docs/adoption.md).
 

@@ -54,7 +54,7 @@ does not explain the law, data flows or vendor terms — the website does.
 
 | | Audience | Job |
 |---|---|---|
-| **Repository** | developers and maintainers | The artifacts. Files you copy, rules you run, checks that block a merge |
+| **Repository** | developers and maintainers | The artifacts. Files you copy, rules you run, checks that block a merge, and the technical reference for building the thing |
 | **Website** | anyone affected by AI at work | The reasoning. Why a rule exists, the trade-offs, what the law requires — every claim with an evidence level and a check date |
 | **Blueprints** | someone starting or converting a project | The opinion, as files. Decisions already made, with the reasons stated |
 
@@ -94,7 +94,7 @@ When two things conflict, the higher one wins:
    and nothing beyond them; restating a norm and applying it are different acts.
 3. **Decisions** — `.ai/decisions.md`, dated, with the reasoning, append-only.
    A decision that turns out wrong gets a new entry, not an edit.
-4. **Artifacts** — blueprints and `docs/`.
+4. **Artifacts** — blueprints, concepts and `docs/`.
 5. **Instance** — how this repository happens to be configured.
 
 Nothing at a lower level may contradict a higher one. What is mechanically
@@ -128,6 +128,11 @@ and the rules for adding one: [blueprints.md](./blueprints.md).
   state, its website and its research. None of that belongs in your project;
   take a blueprint instead.
 - **Not the place for reasoning at length.** That is the website's job.
+
+  Depth is not length. A reference architecture is technical work and belongs
+  here however many pages it takes — see [concepts.md](./concepts.md). What
+  goes to the website is the argument for a general audience, and anything
+  needing an evidence label and a check date.
 - **Not finished.** Sections still being worked on say so rather than shipping
   filler.
 

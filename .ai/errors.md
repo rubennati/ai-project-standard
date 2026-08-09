@@ -85,3 +85,28 @@ merge fast, so a branch is dead the moment its pull request is merged.
 **The rule:** one branch per unit of work, and never push to a branch whose pull
 request may already be merged. If there is more to do, branch again from `main`.
 
+## Technical material routed out of the repository — 2026-08-09
+
+Seven rounds of research on knowledge architecture were routed, and almost all
+of the technical half went to "the website": how retrieval is actually built,
+what the ingestion pipeline does, chunking, ACL-aware retrieval, where the
+failure modes are.
+
+The justification was a line in `docs/purpose.md` — the repository is "not the
+place for reasoning at length". But the same file says the repository answers
+*how do I build this*. **I confused depth with length.** A reference
+architecture is an artifact, not an essay, and it is exactly what a developer
+comes here for.
+
+Ruben caught it by noticing what was missing, not by reading what was there:
+"irgendwie fehlt mir das alles."
+
+The structural cause was real and not only carelessness — `docs/` is short by
+design and `blueprints/` holds files you copy, so a reference architecture had
+nowhere to live. Something with no home gets routed to whatever surface will
+take it.
+
+**Fixed with a place, not with a resolution:** `concepts/`, governed by
+`docs/concepts.md`, checked in CI for its five questions, an owner and a review
+date.
+

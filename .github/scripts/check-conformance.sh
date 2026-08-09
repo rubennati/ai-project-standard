@@ -94,6 +94,38 @@ for bp in blueprints/*/; do
 done
 shopt -u nullglob
 
+echo "== Every concept answers its five questions and says when it was checked =="
+
+# A concept is technical reference, and technical reference rots silently. The
+# owner and the date are what make that visible, so they are not optional.
+shopt -s nullglob
+for c in concepts/*.md; do
+  [[ "$(basename "$c")" == "README.md" ]] && continue
+
+  grep -qE '^owner: .+'  "$c" || note "$c" "no owner — a technical document nobody owns is a document nobody re-reads"
+  grep -qE '^reviewed: [0-9]{4}-[0-9]{2}-[0-9]{2}' "$c" \
+    || note "$c" "no 'reviewed: YYYY-MM-DD' — out of date and dated is honest, out of date and undated is not"
+  grep -qE '^derives-from: .+' "$c" || note "$c" "no derives-from — say what this was built out of"
+  status="$(grep -E '^status:' "$c" | head -1 | awk '{print $2}')"
+  case "$status" in
+    draft|reviewed) ;;
+    *) note "$c" "status must be draft or reviewed, found '${status:-none}'" ;;
+  esac
+
+  # docs/concepts.md fixes the five questions. Headings are numbered, so match
+  # on the substance rather than on the exact wording.
+  grep -qiE '^## 1\. What you are deciding'      "$c" || note "$c" "missing '## 1. What you are deciding'"
+  grep -qiE '^## 2\. The smallest thing'         "$c" || note "$c" "missing '## 2. The smallest thing that works' — it comes before the architecture on purpose"
+  grep -qiE '^## 3\. The architecture'           "$c" || note "$c" "missing '## 3. The architecture'"
+  grep -qiE '^## 4\. The decision points'        "$c" || note "$c" "missing '## 4. The decision points' — the part that cannot be looked up elsewhere"
+  grep -qiE '^## 5\. How it fails'               "$c" || note "$c" "missing '## 5. How it fails' — a concept with only a happy path is a brochure"
+
+  id="$(basename "$c" .md)"
+  grep -q "($id.md)\|(\./$id\.md)" concepts/README.md \
+    || note "concepts/README.md" "concepts/$id.md exists but is not listed here"
+done
+shopt -u nullglob
+
 echo "== This repository lives the workspace it ships =="
 
 # The ai-assisted-development blueprint hands adopters an .ai/ workspace. If
