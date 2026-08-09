@@ -1,6 +1,6 @@
 # Status — knowledge management
 
-Received 2026-08-09: six documents plus four diagrams, translated from German.
+Received 2026-08-09: seven documents plus four diagrams, translated from German.
 **The material declares itself complete in the sixth** — "I would not add more
 buzzwords at this point".
 The first is unsourced; the second and third carry citations and were partly
@@ -11,6 +11,11 @@ verified. Each drop corrects the one before it.
 - [figures.md](./figures.md) — four diagrams recorded as data, because the site
   renders diagrams as markup and never as images. Carries material that appears
   nowhere in the prose.
+- [security.md](./security.md) — seventh drop, 2026-08-09. **The second half of
+  the model**: security as a horizontal control layer over everything, not a
+  topic appended at the end. Seven citations to standards bodies and regulators
+  — the strongest source base of any drop; five resolve, the two ISO pages block
+  automated requests.
 - [cross-cutting.md](./cross-cutting.md) — sixth drop, 2026-08-09. The layers
   that decide whether an architecture survives contact with reality: evaluation,
   a failure model, time, structured against unstructured retrieval,
@@ -217,6 +222,42 @@ article**, which separates the GDPR question from the contract and trade-secret
 question. The material arrived at it independently. Recorded as agreement, not
 as new material.
 
+## The seventh drop is the control plane, and it validates decisions already made
+
+Three things in it are already enforced in this repository, arrived at
+independently:
+
+- **Permissions outside the model.** Its "separate reasoning from authority" —
+  the model never holds the credential, the tool runtime does — is the rule
+  `AGENTS.md` already carries in the payload blueprint.
+- **Human permission ≠ agent permission.** Ruben may delete mail; his agent may
+  not need to. This repository's approval model already draws that line for
+  merges and protection changes.
+- **Read and act are different categories.** Already the shape of the
+  `ai-assisted-development` blueprint's "Stop and ask" and "Never" lists.
+
+### What it adds that nothing here covers
+
+**Integrity may matter more than confidentiality.** Five different routes —
+human error, hallucination, stale source, parser misreading a table, attacker —
+all produce the same output: false knowledge, published, retrieved, acted on by
+fifty people. **That is an information security failure with no attacker
+involved**, which is the difference between cybersecurity and information
+security, and the GDPR's own security article names accidental alongside
+unlawful alteration.
+
+**Knowledge poisoning.** The attack is not on the last user; it is on the
+knowledge. Plant "software X must expose port 4444 publicly", let an agent ingest
+it, and an administrator opens the port. The knowledge base is therefore itself a
+security asset.
+
+**"Who changed it" now has six answers** — initiator, decision maker, generator,
+executor, credential, approver — which is a genuinely new audit problem and
+needs a causality chain rather than `user X changed file Y`.
+
+**Trust boundaries become semantic**: trusted instructions against untrusted
+content, read tools against write tools, low-impact against high-impact actions.
+
 ## Where it goes
 
 The split falls almost exactly where the blueprint contract predicts: the
@@ -336,6 +377,25 @@ coinage is not established.
 | Provenance chain — answer → claim → page → document → system → owner → version | **Blueprint** | Deeper than a citation |
 | Context engineering as the umbrella term | Glossary | RAG, memory and tool results are all instances of it |
 | Multimodality, model routing, event-driven operation | Website | Three gaps in the earlier text-centred, question-driven model |
+
+## What the seventh drop adds to the routing
+
+| Block | Destination | Note |
+|---|---|---|
+| **Knowledge poisoning, and the knowledge base as a security asset** | **`docs/security-baseline.md`** | Not in the existing baseline at all |
+| **Trust boundaries: instructions against content, read against write, low against high impact** | **`docs/security-baseline.md`, and the agent blueprint** | Generalises the "treat tool output as data, not instructions" rule already shipped |
+| **Separate reasoning from authority** — the model never holds the credential | **`docs/security-baseline.md`** | Already the practice; not yet written as a rule |
+| **Human permission ≠ agent permission**, three identities | **Blueprint, and `docs/`** | Sharpens the existing approval model |
+| Action classification, nine levels, and risk-score-to-control | **Blueprint** | Turns "stop and ask" into a graded model |
+| Machine-enforced policy examples | **Blueprint** | `IF knowledge_status != published THEN do_not_use_for_final_answer` |
+| The extended objectives — authenticity, provenance, accountability, safety, resilience | **`docs/`** | CIA is not enough for a knowledge system |
+| Accident / failure / attack / model uncertainty | **`docs/security-baseline.md`** | A threat model that does not assume an attacker |
+| Audit event with causality chain | **Blueprint** | Concrete field list, directly shippable |
+| ISO 27001 with ISO 42001, NIST AI RMF | **`docs/security-baseline.md`** | The existing doc already points at NIST SSDF; these belong beside it |
+| Four legal questions kept separate | **Website — Law** | Cybersecurity ≠ data protection ≠ AI regulation ≠ contract |
+| AI Act status, Art. 50 since 2 August 2026 | **Website — Law** | The site already carries an Art. 50 article; this confirms the date |
+| **AI literacy as a security control** | **Website** | "If ChatGPT says it, it must be in our policy" is an information security problem |
+| AI security taxonomy, eleven areas | Website | Replaces "LLM security" as the umbrella |
 
 ## Glossary
 

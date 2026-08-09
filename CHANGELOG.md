@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added — Knowledge-management research in the queue
 
+- `security.md` — the seventh drop, and the second half of the model: security as a horizontal control layer over the whole architecture rather than a topic appended at the end. Seven citations to standards bodies and regulators, the strongest source base of the series.
+- Three of its rules are already enforced here, arrived at independently: permissions outside the model, human permission ≠ agent permission, and read and act as different categories.
+- What it adds: **integrity may matter more than confidentiality.** Human error, hallucination, a stale source, a parser misreading a table and an attacker all produce the same output — false knowledge, published, retrieved, acted on. That is an information security failure with no attacker involved, and the GDPR's own security article names accidental alongside unlawful alteration.
+- **Knowledge poisoning**: the attack lands on the knowledge, not the user. And "who changed it" now has six answers — initiator, decision maker, generator, executor, credential, approver — which needs a causality chain rather than "user X changed file Y".
+
 - `cross-cutting.md` — the sixth and final drop, covering what decides whether an architecture survives contact with reality: evaluation, time, ownership, economics, lock-in, disaster recovery, a threat model, model routing, context engineering, scope transparency and knowledge typing. It closes with "I would not add more buzzwords at this point", which is the right call.
 - Its strongest contribution is a **failure flow rather than a data flow**: source, ingestion, retrieval, context, LLM and action each have their own failure kinds, so a system can answer wrongly while the model worked perfectly because retrieval delivered the wrong chunks.
 - And one rule that belongs in `docs/` almost verbatim — **irreplaceable data** (sources, curated knowledge, human decisions) against **reconstructable data** (embeddings, index, cache), with the corollary that canonical knowledge stays exportable and AI indexes may be disposable.
