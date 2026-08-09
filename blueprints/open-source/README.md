@@ -38,9 +38,19 @@ cd ai-project-standard && git sparse-checkout set blueprints/open-source/files
 2. **Replace the placeholders:** `{{PROJECT_NAME}}`, `{{OWNER}}`, `{{REPO}}`,
    `{{CONTACT_EMAIL}}`. They appear in `README.md`, `CONTRIBUTING.md`,
    `CODE_OF_CONDUCT.md`, `SECURITY.md`, `SUPPORT.md` and `.github/CODEOWNERS`.
-3. **Delete the first line of each file** — the comment marking it as blueprint
-   payload. A bootstrap script will do this once the blueprint has been used a
-   few times.
+3. **Delete the payload banner** — the `<!-- blueprint payload: ... -->`
+   comment. It is the first line in every file except the two issue templates,
+   where it sits below the YAML front matter, so deleting line 1 there would
+   remove the front matter and leave the banner. Search for the comment rather
+   than counting lines:
+
+   ```bash
+   grep -rl 'blueprint payload' . | xargs sed -i '' '/blueprint payload/d'
+   ```
+
+   Replace the placeholders by name, not by pattern: `{{ }}` also appears in
+   `.github/workflows/ci.yml` as GitHub Actions expressions, and a blanket
+   substitution on `{{` breaks the workflow.
 4. **Work through [`docs/repository-settings.md`](files/docs/repository-settings.md).**
    The CI assumes those switches are on, and no file in a repository can turn
    them on for you.
@@ -68,26 +78,40 @@ cd ai-project-standard && git sparse-checkout set blueprints/open-source/files
 
 ## Verified
 
-Copied into an empty directory on **2026-08-09**, git initialised, and every
-gate from its own `ci.yml` that can run locally executed.
+On **2026-08-09** the payload was made into a project by following this README
+literally — banners stripped, placeholders filled, a licence added, git
+initialised — and every gate from its own `ci.yml` was run verbatim. Each was
+tested twice: that it passes on a clean tree, and that it *fails* on a tree
+broken on purpose.
 
-| Gate | Result |
-|---|---|
-| Required files exist | pass |
-| A licence is present | **fails, by design** — you have to choose one |
-| No committed binaries | pass |
-| Actions pinned to a full SHA | pass, 7 references |
-| Markdown lints | pass |
-| Commits signed off | rejects an unsigned commit, accepts a signed one |
+| Gate | Passes when clean | Fails when it should |
+|---|---|---|
+| Required files exist | yes | yes — a removed `README.md` |
+| A licence is present | yes, once you add one | yes — and it is red until you do, by design |
+| No committed binaries | yes | yes — a committed `.so` |
+| Actions pinned to a full SHA | yes, 7 references | yes — a `@v4` tag reference |
+| Commits signed off | yes | yes — an unsigned commit |
+| Markdown lints | yes, 11 files | — |
 
-One defect found and fixed in the process: the payload shipped no markdownlint
-configuration, so its own CI would have failed it on the default 80-column rule.
-It now ships `.markdownlint-cli2.jsonc`, with a reason next to every relaxed
-rule.
+**Three defects were found, and two of them made the pipeline red on day one
+for every adopter who followed the instructions.**
+
+1. **The licence gate could never pass.** It used `ls LICENSE LICENSE.md
+   LICENSE.txt`, and `ls` exits non-zero unless *every* operand exists. Adding
+   a `LICENSE` still produced a red build telling you to add a licence. It now
+   tests each candidate separately.
+2. **Markdown lint failed on a correctly filled payload.** The contact
+   placeholder became a bare email address, which `MD034` rejects. The two
+   files now wrap it in angle brackets.
+3. **The banner instruction was wrong for two files.** "Delete the first line"
+   works everywhere except the issue templates, where the banner sits below the
+   YAML front matter — so following it removed the front matter and left the
+   banner. The instruction is now a search, not a line number.
 
 Not covered: the link check, because the payload carries placeholder URLs by
-design; and the GitHub settings in `docs/repository-settings.md`, which no local
-run can exercise.
+design; the GitHub settings in `docs/repository-settings.md`, which no local run
+can exercise; and whether this works as the start of a **real** public project,
+which is the one thing that would make it `stable`.
 
 ## When not to use it
 
