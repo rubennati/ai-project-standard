@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Knowledge-management research in the queue
+
+- `research/knowledge-management/` — RAG, knowledge graphs, source access, the LLM-wiki idea, agents against chat, and the practical decisions around them. Translated from German; nothing verified.
+- `figures.md` records four diagrams that arrived as images, because the site describes diagrams as data and renders them as markup. They carry the material's strongest content — a six-way decision matrix, five clarifications and four named misconceptions — none of which appears in the prose.
+- `STATUS.md` routes every block. The split lands where the blueprint contract predicts: the buildable parts (RAG pipeline, LLM-wiki layers, ACL-aware retrieval) are repository candidates; the deciding and understanding parts are website. It also lists thirteen glossary terms the material uses that the glossary does not yet define.
+- Six known problems recorded, the first being the same defect as last time: no individual citations, and a closing note that names no source that can be checked.
+
 ### Changed — The rule layer stops repeating the blueprint
 
 - `README.md` brought fully in line, not only its opening. It carried two Website sections after the earlier edit, a repository structure that predated `blueprints/`, and a Quick start aimed at contributors rather than adopters. It now separates the two audiences explicitly: adopting is `docs/getting-started.md`, contributing is the section that says so.
