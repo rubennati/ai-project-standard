@@ -16,6 +16,8 @@ History lives in `progress.md`; this section is current facts only.
 - Work that publishes unfinished uses a stacked topic branch — slice PRs target the topic branch, which reaches `main` once (`docs/git-workflow.md`).
 - CI builds the site on every pull request (`site-build`) and never deploys it; `pages.yml` keeps the deploy on `main`. `astro check` is a gate and passes.
 - Licensing is settled: the repository including `docs/` is MIT, texts written for the site are CC BY 4.0. Stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT.
+- The repository is English-only; the site's translated pages are the sole exception. `docs/language-style.md` holds the rule, `AGENTS.md` points at it.
+- `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md`.
 
 ### Website
 

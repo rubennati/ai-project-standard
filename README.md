@@ -43,7 +43,11 @@ The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It ca
 - `.github/` — platform templates, workflows, automation
 - `docs/` — strict reader documentation
 - `.ai/` — AI operational workspace (state, routing, decisions)
+- `research/` — material being verified, on its way to the site or to `docs/`. Nothing in it is published or normative; see [`research/README.md`](research/README.md)
 - Root files — governance, contribution policy, security, support
+
+Everything in this repository is written in English. The website's translated
+pages are the only exception — see [`docs/language-style.md`](docs/language-style.md).
 
 The `.ai/` directory is **operational state**, not documentation. It holds the AI's execution context, task tracking, and continuity layer. See [`docs/ai-workspace-layer.md`](docs/ai-workspace-layer.md) for the model.
 
