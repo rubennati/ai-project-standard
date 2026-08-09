@@ -80,6 +80,35 @@ for bp in blueprints/*/; do
 done
 shopt -u nullglob
 
+echo "== This repository lives the workspace it ships =="
+
+# The ai-assisted-development blueprint hands adopters an .ai/ workspace. If
+# this repository does not keep the same shape, it is shipping a practice it
+# does not follow — which is the failure the whole project argues against.
+BP=".ai"
+PAYLOAD="blueprints/ai-assisted-development/files/.ai"
+if [[ -d "$PAYLOAD" ]]; then
+  while IFS= read -r f; do
+    rel="${f#$PAYLOAD/}"
+    [[ -e "$BP/$rel" ]] || note "$BP/$rel" "the ai-assisted-development blueprint ships this file; this repository does not have it"
+  done < <(find "$PAYLOAD" -type f -name '*.md')
+
+  # A file that exists but is thinner than the skeleton we hand out is worse
+  # than a missing one: it looks maintained.
+  while IFS= read -r f; do
+    rel="${f#$PAYLOAD/}"
+    ours="$BP/$rel"
+    [[ -f "$ours" ]] || continue
+    theirs_lines=$(grep -cvE '^\s*(<!--|$)' "$f" || echo 0)
+    ours_lines=$(grep -cvE '^\s*(<!--|$)' "$ours" || echo 0)
+    if (( ours_lines * 2 < theirs_lines )); then
+      note "$ours" "thinner than the skeleton the blueprint ships ($ours_lines vs $theirs_lines lines) — we would not accept this from an adopter"
+    fi
+  done < <(find "$PAYLOAD" -type f -name '*.md')
+else
+  echo "  skip  $PAYLOAD not present"
+fi
+
 echo "== Claims about the outside world carry a check date =="
 
 # The website requires a source and a check date for every factual claim. The

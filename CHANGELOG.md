@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — The rule layer stops repeating the blueprint
+
+- `README.md` brought fully in line, not only its opening. It carried two Website sections after the earlier edit, a repository structure that predated `blueprints/`, and a Quick start aimed at contributors rather than adopters. It now separates the two audiences explicitly: adopting is `docs/getting-started.md`, contributing is the section that says so.
+
+- `docs/getting-started.md` rewritten. It addressed contributors to *this* repository; it now addresses someone taking the standard into their own, and ends with the step that decides whether any of it worked: open a pull request that deliberately breaks a rule and confirm CI refuses it. A blueprint whose gates do not fire is decoration.
+- `docs/open-source-project-standard.md` no longer lists the files the `open-source` blueprint ships — two answers to one question. It keeps what a set of files cannot carry: governance sized by scale, health metrics worth tracking, trust signals in order of effort against reward, and what deliberately stays unmandated.
+- Its `Sources checked` line was removed with the last external link. A marker claiming sources were verified, in a file that cites none, is the kind of unearned confidence this project exists to remove.
+
+### Changed — The repository lives the workspace it ships
+
+- `.ai/domains/*.md` rewritten from three-to-five-line stubs to the level the `ai-assisted-development` blueprint hands to adopters. `coding.md` had been claiming this repository contains no application code while 90 TypeScript and Astro files sat under `site/`.
+- `.ai/quality-gates.md` is a table of seven gates with the command for each, and every command was run to confirm it works. The three known holes — no unit tests, payload workflows never executed, Dependabot blind to payload pins — are stated rather than hidden, because a missing gate is a finding.
+- `.ai/setup-interview.md` no longer duplicates the blueprint's questions. Those live once, in `INIT.md`; this file now holds *this project's answers*, so the repository shows a filled-in workspace instead of describing one.
+- Conformance gained a check that this repository keeps the shape it ships: every `.ai/` file the blueprint hands out must exist here, and none may be less than half the length of the skeleton. Proven against a planted violation of each kind before being wired in.
+
 ### Changed — The destination is the spine
 
 - `docs/purpose.md` now leads with one outcome and the hierarchy that derives from it: *a developer brings an AI agent into their project and can still answer, months later, what changed, why, on whose decision, and what was checked*. It also states what the website is for, that it is deliberately broader than the repository, and that information flows repository → website with one loop back for verified sources — evidence, never authority.

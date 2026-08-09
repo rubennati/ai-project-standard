@@ -18,11 +18,11 @@ This documentation set defines the project baseline and collaboration model.
 
 ## Getting started
 
-- [Getting Started](./getting-started.md)
+- [Getting Started](./getting-started.md) — the shortest path to using this in your own project
 
 ## Open-source operations
 
-- [Open Source Project Standard](./open-source-project-standard.md)
+- [Open Source Project Standard](./open-source-project-standard.md) — the rules behind the `open-source` blueprint: governance by scale, health metrics, what not to adopt
 - [Git Workflow](./git-workflow.md)
 - [Branch Protection](./branch-protection.md)
 - [Release Process](./release-process.md) — how the versioned standard and the continuously deployed website ship from one branch
