@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Changed — The rule layer stops repeating the blueprint
 
+- `README.md` brought fully in line, not only its opening. It carried two Website sections after the earlier edit, a repository structure that predated `blueprints/`, and a Quick start aimed at contributors rather than adopters. It now separates the two audiences explicitly: adopting is `docs/getting-started.md`, contributing is the section that says so.
+
 - `docs/getting-started.md` rewritten. It addressed contributors to *this* repository; it now addresses someone taking the standard into their own, and ends with the step that decides whether any of it worked: open a pull request that deliberately breaks a rule and confirm CI refuses it. A blueprint whose gates do not fire is decoration.
 - `docs/open-source-project-standard.md` no longer lists the files the `open-source` blueprint ships — two answers to one question. It keeps what a set of files cannot carry: governance sized by scale, health metrics worth tracking, trust signals in order of effort against reward, and what deliberately stays unmandated.
 - Its `Sources checked` line was removed with the last external link. A marker claiming sources were verified, in a file that cites none, is the kind of unearned confidence this project exists to remove.

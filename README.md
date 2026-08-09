@@ -41,51 +41,59 @@ Take a blueprint — do not fork. A fork hands over this project's changelog,
 
 <https://ai-standard.rubennati.at> is **broader** than this repository and sits
 logically above it: it explains data flows, law and secure setup for anyone
-affected by AI at work, not only developers. Information flows repository →
-website; verified sources may come back down as input, never as authority.
+affected by AI at work, not only developers. Every claim there carries an
+evidence level and the date it was last checked.
 
-## Website
+Information flows **repository → website**. Verified sources may come back down
+as input to a blueprint or a document — evidence, never authority.
 
-The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It carries use-case walk-throughs, deep guides, and the blog. The site source is in [site/](site/) and is built and deployed by [`.github/workflows/pages.yml`](.github/workflows/pages.yml).
+The source is in [site/](site/), built and deployed by
+[`pages.yml`](.github/workflows/pages.yml). Maintainer setup, once: Settings →
+Pages → Source "GitHub Actions"; the custom domain is pinned by
+[`site/public/CNAME`](site/public/CNAME) so each deploy preserves it.
 
-**Maintainer setup (one-time):** Settings → Pages → Source: "GitHub Actions". The custom domain is pinned via [`site/public/CNAME`](site/public/CNAME) so each deploy preserves it.
+## What is in here
 
-## Repository structure
+| Path | What it is |
+|---|---|
+| `blueprints/` | The artifacts. Files you copy, MIT-0 |
+| `docs/` | The rules, stated once. Start at [purpose.md](docs/purpose.md) |
+| `.ai/` | This project's operational workspace — the working model a blueprint ships a copy of |
+| `research/` | Material being verified. Not published, not normative |
+| `site/` | The website source |
+| `.github/` | Workflows and the checks that gate a merge |
+| Root files | This project's own governance — its instance, not the template |
 
-- `.github/` — platform templates, workflows, automation
-- `docs/` — strict reader documentation
-- `.ai/` — AI operational workspace (state, routing, decisions)
-- `blueprints/` — material to copy into your own project; see [`docs/blueprints.md`](docs/blueprints.md)
-- `research/` — material being verified, on its way to the site or to `docs/`. Nothing in it is published or normative; see [`research/README.md`](research/README.md)
-- Root files — governance, contribution policy, security, support
+Everything here is written in English; the website's translated pages are the
+only exception ([language-style.md](docs/language-style.md)).
 
-Everything in this repository is written in English. The website's translated
-pages are the only exception — see [`docs/language-style.md`](docs/language-style.md).
+## Working in this repository
 
-The `.ai/` directory is **operational state**, not documentation. It holds the AI's execution context, task tracking, and continuity layer. See [`docs/ai-workspace-layer.md`](docs/ai-workspace-layer.md) for the model.
+For contributing *to this project* — not for adopting it, which is
+[getting-started.md](docs/getting-started.md).
 
-## Quick start
+1. Read [`AGENTS.md`](AGENTS.md) and [`.ai/project-brief.md`](.ai/project-brief.md).
+2. Branch from `main`, one concern per branch.
+3. Run the gates in [`.ai/quality-gates.md`](.ai/quality-gates.md) before opening
+   a pull request. They are what CI runs.
+4. Open a pull request explaining *why*; the diff shows *what*.
 
-1. Create a short-lived branch from `main`.
-2. Read `CONTRIBUTING.md`, `AGENTS.md`, and `.ai/index.md`.
-3. For AI-assisted work, load `.ai/state.md` and `.ai/routing.md`.
-4. Make focused changes and open a pull request.
+Navigation, public URLs, the project's vocabulary and anything on every page
+need a human decision first — `AGENTS.md` → Change scope.
 
-See [`docs/git-workflow.md`](docs/git-workflow.md), [`docs/branch-protection.md`](docs/branch-protection.md), and [`docs/practical-ai-collaboration.md`](docs/practical-ai-collaboration.md) for the workflow detail.
+CI runs six checks, including **self-conformance**: it fails when this
+repository breaks a rule it states, which has happened often enough to be worth
+automating.
 
 ## Roadmap
 
-Current priorities are documented in `ROADMAP.md`.
+Current priorities are in [`ROADMAP.md`](ROADMAP.md).
 
 ## Contributing
 
-Contributions are welcome. See `CONTRIBUTING.md`.
-
-For questions or open-ended discussion, use [GitHub Discussions](https://github.com/rubennati/ai-project-standard/discussions). For bug reports and concrete feature requests, open an Issue. See [SUPPORT.md](SUPPORT.md) for the split.
-
-## Collaboration philosophy
-
-AI-native collaboration requires explicit boundaries, decision records, and routine human review. The structure should keep work understandable and auditable over time.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md). Questions belong in
+[Discussions](https://github.com/rubennati/ai-project-standard/discussions); bugs
+and concrete requests in Issues — [SUPPORT.md](SUPPORT.md) has the split.
 
 ## Licensing
 
