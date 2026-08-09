@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — The GDPR correction, as an article
+
+- `/law/us-cloud-and-the-gdpr` and `/de/law/us-cloud-and-the-gdpr`. The first item off the parked side-strand, and the one carrying real risk: the confident claim "our mail is connected to a US AI service, so we have a GDPR problem" is repeated constantly and is not what the regulation says.
+- The correction rests on Chapter V. Art. 44 states the principle, Art. 45 the adequacy route, Art. 46 appropriate safeguards, Art. 49 the narrow derogations. A regulation that devotes a chapter to how such transfers are made is an odd thing to write if the answer were always no.
+- **Adequacy is granted to organisations here, not to a country.** The Commission's current list covers the United States only for commercial organisations participating in the EU-US Data Privacy Framework — checked against the Commission's own page on 2026-08-09. Most summaries lose that, and it changes the answer.
+- The mirror-image error gets equal weight: a signed processing agreement is not compliance, and "EU-hosted" answers one line of a longer question — sub-processors, support access, backups, logs, training, retention, key management.
+- Every cited source was fetched and resolved on the day of writing. The language gate caught two headings promising a reveal and one German term; all three corrected before merge.
+
 ### Fixed — Both draft blueprints verified as an adopter would run them, and five defects found
 
 - `open-source`: **the licence gate could never pass.** It used `ls LICENSE LICENSE.md LICENSE.txt`, and `ls` exits non-zero unless every operand exists — so an adopter who added a `LICENSE` still got a red build telling them to add a licence. Each candidate is now tested separately.

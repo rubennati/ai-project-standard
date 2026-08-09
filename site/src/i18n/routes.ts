@@ -12,6 +12,7 @@ export type LocalizedRouteKey =
   | "law"
   | "lawAiActTransparency"
   | "lawWhatMayGoIn"
+  | "lawUsCloudAndTheGdpr"
   | "dataFlows"
   | "dataFlowsTraining"
   | "dataFlowsDeletion"
@@ -61,6 +62,8 @@ export const getLocalizedPath = (
       return `${prefix}/law/ai-act-transparency`;
     case "lawWhatMayGoIn":
       return `${prefix}/law/what-may-go-in`;
+    case "lawUsCloudAndTheGdpr":
+      return `${prefix}/law/us-cloud-and-the-gdpr`;
     case "dataFlows":
       return `${prefix}/data-flows`;
     case "dataFlowsTraining":
