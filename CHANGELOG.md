@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Every research section routed, and the four missing concepts
+
+- `research/ROUTING.md` — **166 sections across ten research documents**, each with a destination and a form, or explicitly dropped with a reason. It exists because routing happened informally before and lost the technical half of the material. A summary cannot be checked for completeness; a row per section can, and CI now checks it: section counts per file, and a research document nobody routed at all.
+- Four concepts written: `tool-access`, `knowledge-lifecycle`, `agent-action-control`, and `delivery-pipeline` — the last from the open-source research, which had never been routed.
+- `docs/security-baseline.md` carried none of the security model from the last research round. It now does: integrity outranking confidentiality, a threat model with four classes rather than one, knowledge as an asset, the semantic trust boundary, reasoning separated from authority, human permission not being agent permission, backup by replaceability, and revocation not being deletion.
+- `docs/sizing.md` — how much system a problem actually needs. The rule (**no problem, no component**), the line that changes everything (only me, against others are affected), the trigger table, the twelve questions in the order that produces an architecture, the six knowledge types and where each belongs, and the five tags for placing anything new.
+- Seven supply-chain terms in the glossary: `SAST`, `DAST`, `SCA`, `Secret Scanning`, `SBOM`, `Attestation`, `Software Supply Chain`.
+- Of the 166 sections, every repository-bound row now points at a file that exists. Twenty-two remain queued for the website, and two were dropped by decision with the reasons stated.
+
 ### Added — A concepts layer, because the technical half had nowhere to live
 
 - `concepts/` holds technical reference for building something: the architecture and the decision points, at whatever length the architecture needs. `docs/` is the rule stated once and is short by design; `blueprints/` is files you copy. A reference architecture is neither, so it had no home — and technical material from the research was being routed to the website instead.

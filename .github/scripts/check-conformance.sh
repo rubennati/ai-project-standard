@@ -126,6 +126,46 @@ for c in concepts/*.md; do
 done
 shopt -u nullglob
 
+echo "== Every research section is routed =="
+
+# research/ROUTING.md claims to account for every section of every research
+# document. A claim of completeness that nothing verifies is the failure this
+# repository exists to prevent, so the section counts are checked.
+ROUTING="research/ROUTING.md"
+if [[ -f "$ROUTING" ]]; then
+  routed_files=0
+  while IFS= read -r line; do
+    # "## <path> — N sections"
+    rel="${line#\#\# }"; rel="${rel%% *}"
+    declared="$(echo "$line" | sed -E 's/.*— ([0-9]+) sections?.*/\1/')"
+    [[ "$declared" =~ ^[0-9]+$ ]] || continue
+    src="research/$rel"
+    if [[ ! -f "$src" ]]; then
+      note "$ROUTING" "routes $rel, which does not exist"
+      continue
+    fi
+    routed_files=$((routed_files + 1))
+    actual="$(grep -c '^## ' "$src")"
+    if [[ "$actual" != "$declared" ]]; then
+      note "$ROUTING" "$rel has $actual sections, the register accounts for $declared — route the difference or correct the count"
+    fi
+  done < <(grep -E '^## [a-z-]+/[a-z-]+\.md — [0-9]+ sections?' "$ROUTING")
+
+  # And the other direction: a research document nobody routed.
+  for src in research/*/*.md; do
+    base="$(basename "$src")"
+    case "$base" in
+      STATUS.md|SOURCES.md|README.md|REVISIONS.md|DERIVED.md|ROUTING.md) continue ;;
+    esac
+    rel="${src#research/}"
+    grep -q "^## $rel — " "$ROUTING" \
+      || note "$ROUTING" "$rel is not routed at all — every research document gets a section here"
+  done
+  ok "$routed_files research documents accounted for"
+else
+  echo "  skip  $ROUTING not present"
+fi
+
 echo "== This repository lives the workspace it ships =="
 
 # The ai-assisted-development blueprint hands adopters an .ai/ workspace. If

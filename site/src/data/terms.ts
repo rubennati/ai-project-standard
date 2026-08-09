@@ -3203,4 +3203,185 @@ export const terms: TermEntry[] = [
       },
     },
   },
+  {
+    term: "SAST",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Static application security testing: analysing source code for security defects without running it.",
+    analogy:
+      "Proofreading a recipe before anyone cooks. You can catch \"add salt twice\" and \"the oven step is missing\" from the page alone — but not that the result tastes wrong.",
+    aiContext:
+      "Cheap enough to run on every pull request, which is where it belongs. It reads code, so it needs nothing deployed.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Static Analysis", "Static Application Security Testing"],
+    related: ["DAST", "SCA", "Secret Scanning"],
+    commonConfusion: ["DAST", "Linting"],
+    translations: {
+      de: {
+        term: "SAST",
+        shortDefinition:
+          "Statische Sicherheitsanalyse: Quellcode auf Sicherheitsmängel prüfen, ohne ihn auszuführen.",
+        analogy:
+          "Ein Rezept Korrektur lesen, bevor jemand kocht. „Salz zweimal“ und „der Backschritt fehlt“ erkennst du auf dem Papier — dass es am Ende falsch schmeckt, nicht.",
+        aiContext:
+          "Günstig genug für jeden Pull Request, und dorthin gehört es. Es liest Code und braucht nichts Laufendes.",
+      },
+    },
+  },
+  {
+    term: "DAST",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Dynamic application security testing: probing a running application from the outside.",
+    analogy:
+      "Actually cooking the dish and tasting it. Some problems only appear once everything is hot.",
+    aiContext:
+      "It needs something deployed, so it does not belong beside linting in a pipeline diagram. Either a temporary environment is created and destroyed around it, or it runs against a permanent staging environment.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Dynamic Analysis", "Dynamic Application Security Testing"],
+    related: ["SAST", "SCA"],
+    commonConfusion: ["SAST"],
+    translations: {
+      de: {
+        term: "DAST",
+        shortDefinition:
+          "Dynamische Sicherheitsanalyse: eine laufende Anwendung von außen prüfen.",
+        analogy:
+          "Das Gericht tatsächlich kochen und probieren. Manche Probleme zeigen sich erst, wenn alles heiß ist.",
+        aiContext:
+          "Es braucht etwas Laufendes und gehört deshalb nicht neben das Linting ins Pipeline-Bild. Entweder wird darum herum eine temporäre Umgebung erzeugt und wieder abgebaut, oder es läuft gegen eine dauerhafte Staging-Umgebung.",
+      },
+    },
+  },
+  {
+    term: "SCA",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Software composition analysis: checking your dependencies for known vulnerabilities and for their licences.",
+    explanation:
+      "Most of the code shipping in a modern project was written by somebody else. SCA is what tells you which of it has a known problem, and under which licence you are distributing it.",
+    aiContext:
+      "The licence half is quietly as important as the security half: a copyleft dependency pulled in transitively can change what you are allowed to do with your own release.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Software Composition Analysis", "Dependency Scanning"],
+    related: ["SBOM", "SAST", "Software Supply Chain"],
+    commonConfusion: ["SAST"],
+    translations: {
+      de: {
+        term: "SCA",
+        shortDefinition:
+          "Software Composition Analysis: Abhängigkeiten auf bekannte Schwachstellen und auf ihre Lizenzen prüfen.",
+        explanation:
+          "Der größte Teil des Codes in einem modernen Projekt stammt von anderen. SCA sagt dir, welcher davon ein bekanntes Problem hat und unter welcher Lizenz du ihn auslieferst.",
+        aiContext:
+          "Die Lizenzhälfte ist still genauso wichtig wie die Sicherheitshälfte: Eine transitiv hereingezogene Copyleft-Abhängigkeit kann ändern, was du mit deiner eigenen Auslieferung tun darfst.",
+      },
+    },
+  },
+  {
+    term: "Secret Scanning",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Looking for credentials, tokens and keys in code, history or a push, ideally before the push succeeds.",
+    aiContext:
+      "Blocking at push time is the version that matters. Once a secret is in the history, scanning tells you to rotate it — it cannot take it back, and rotation is the part people skip.",
+    observedIn: ["Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Push Protection"],
+    related: ["Secrets Management", "Access Token", "SAST"],
+    commonConfusion: ["SAST"],
+    translations: {
+      de: {
+        term: "Secret Scanning",
+        shortDefinition:
+          "Nach Zugangsdaten, Tokens und Schlüsseln in Code, Historie oder einem Push suchen — idealerweise, bevor der Push durchgeht.",
+        aiContext:
+          "Entscheidend ist die blockierende Variante beim Push. Steht ein Geheimnis erst in der Historie, sagt dir die Prüfung nur, dass du rotieren musst — zurücknehmen kann sie es nicht, und das Rotieren ist der Teil, den man überspringt.",
+      },
+    },
+  },
+  {
+    term: "SBOM",
+    kind: "ai-work-term",
+    shortDefinition:
+      "A software bill of materials: the list of what is actually inside a release, and at which versions.",
+    analogy:
+      "The ingredients list on a packet. Not there so you read it every time — there so that when one ingredient turns out to be a problem, everyone can find out in an afternoon who is affected.",
+    aiContext:
+      "Its value shows up on the worst day. When a widely used component turns out to be vulnerable, the projects that can answer \"do we ship it\" in minutes are the ones that published one.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Software Bill of Materials"],
+    related: ["SCA", "Software Supply Chain", "Attestation"],
+    commonConfusion: ["Dependency File"],
+    translations: {
+      de: {
+        term: "SBOM",
+        shortDefinition:
+          "Software Bill of Materials: die Liste dessen, was tatsächlich in einer Auslieferung steckt, mit Versionen.",
+        analogy:
+          "Die Zutatenliste auf der Packung. Nicht da, damit du sie jedes Mal liest — sondern damit sich an dem Tag, an dem eine Zutat zum Problem wird, binnen eines Nachmittags klären lässt, wer betroffen ist.",
+        aiContext:
+          "Ihr Wert zeigt sich am schlechtesten Tag. Wenn sich eine weit verbreitete Komponente als verwundbar erweist, können die Projekte in Minuten antworten, die eine veröffentlicht haben.",
+      },
+    },
+  },
+  {
+    term: "Attestation",
+    kind: "ai-work-term",
+    shortDefinition:
+      "A signed statement about how an artifact was built, so a consumer can verify it rather than trust it.",
+    aiContext:
+      "It answers a question a version number cannot: was this built from the source it claims, by the pipeline it claims, without anyone in the middle. Provenance is the claim; the signature is what makes it checkable.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "medium",
+    aliases: ["Build Provenance", "Signing"],
+    related: ["SBOM", "Software Supply Chain", "Provenance"],
+    commonConfusion: ["Checksum"],
+    translations: {
+      de: {
+        term: "Attestation",
+        shortDefinition:
+          "Eine signierte Aussage darüber, wie ein Artefakt gebaut wurde, damit Abnehmer es prüfen können statt zu vertrauen.",
+        aiContext:
+          "Sie beantwortet, was eine Versionsnummer nicht kann: Wurde das aus der behaupteten Quelle gebaut, von der behaupteten Pipeline, ohne jemanden dazwischen. Die Provenienz ist die Behauptung, die Signatur macht sie prüfbar.",
+      },
+    },
+  },
+  {
+    term: "Software Supply Chain",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Everything that goes into a release that you did not write: dependencies, build tools, base images, and the pipeline itself.",
+    explanation:
+      "The attack surface is not only your code. It includes what you depend on, what builds it, and what publishes it — and each of those has its own dependencies.",
+    aiContext:
+      "An AI system extends the chain: model weights, embedding models, and third-party tool servers all become things you depend on and did not write. A tool server with write access is a dependency holding standing access to your systems.",
+    observedIn: ["Developer communities", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["SCA", "SBOM", "Attestation", "MCP Server"],
+    commonConfusion: ["Dependencies"],
+    translations: {
+      de: {
+        term: "Software-Lieferkette",
+        shortDefinition:
+          "Alles, was in eine Auslieferung eingeht und nicht von dir stammt: Abhängigkeiten, Build-Tools, Basis-Images und die Pipeline selbst.",
+        explanation:
+          "Die Angriffsfläche ist nicht nur dein Code. Sie umfasst, wovon du abhängst, was es baut und was es veröffentlicht — und jedes davon hat eigene Abhängigkeiten.",
+        aiContext:
+          "Ein KI-System verlängert die Kette: Modellgewichte, Embedding-Modelle und fremde Tool-Server werden zu Dingen, von denen du abhängst und die du nicht geschrieben hast. Ein Tool-Server mit Schreibrechten ist eine Abhängigkeit mit dauerhaftem Zugriff auf deine Systeme.",
+      },
+    },
+  },
 ];

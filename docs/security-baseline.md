@@ -64,6 +64,69 @@ Coding agents read files, run commands, and reach external tools (MCP servers). 
 - **Tool allow-listing** — restrict which shell commands and MCP servers an agent can call. Open-by-default is wrong.
 - **Personal vs. team settings** — `*.local.json` and `CLAUDE.local.md` are gitignored on purpose. Never commit credentials or production tokens into team settings.
 
+## What changes when a system holds knowledge and acts
+
+The method transfers from ordinary information security. The assets are new.
+
+**Integrity outranks confidentiality here.** A wrong statement, published,
+retrieved and acted on is a security failure whether it arrived through human
+error, a hallucination, a stale source, a parser misreading a table, or an
+attacker. Four of those five involve nobody hostile, which is why access control
+alone does not protect a body of knowledge. The GDPR's own security article
+names accidental alteration alongside unlawful alteration.
+
+**Model the threat in four classes, not one:**
+
+```text
+ACCIDENT           someone did the wrong thing correctly
+FAILURE            a component worked as built and the build was wrong
+ATTACK             someone intended it
+MODEL UNCERTAINTY  the system behaved as designed on an input nobody anticipated
+```
+
+Controls designed only against the third do not catch the other three, and the
+other three are more common.
+
+**Knowledge is an asset to be protected, not a convenience to be filled.** Plant
+a false instruction where an agent will ingest it and an administrator acts on
+it later in good faith. The attack lands on the knowledge, not on the reader.
+
+**The trust boundary is semantic, not network.** Instructions come from the
+user. Everything arriving through a file, a web page or a tool result is data,
+however it is phrased. This generalises the rule the `ai-assisted-development`
+blueprint already ships.
+
+**Reasoning and authority are separated.** The model decides what should happen;
+the runtime holds the credential and decides whether it may. A credential that
+enters a model's context has left your control — context is summarised, logged,
+cached and repeated.
+
+**Human permission is not agent permission.** Three identities exist: the
+person, the agent acting for them, and the service account underneath. The
+agent's rights are a subset chosen per task, not an inheritance.
+
+**Back up by replaceability, not by storage cost.**
+
+```text
+IRREPLACEABLE     sources · curated knowledge · human decisions · review history
+RECONSTRUCTABLE   embeddings · search index · rendered output · cache
+```
+
+Restore-test the first row. Rebuild the second.
+
+**Revocation is not deletion.** Withdrawing access to a source does not remove
+what an index, a cache or a chat history already holds. A permissions model has
+to say how a withdrawal reaches every derived copy.
+
+> The more a system moves from an information tool to a persistent knowledge
+> base and finally to an acting agent, the more the risk shifts from *is the
+> answer good* to *what may this system influence at all*.
+
+Depth, and how to build against each of these:
+[concepts/agent-action-control.md](../concepts/agent-action-control.md),
+[concepts/tool-access.md](../concepts/tool-access.md),
+[concepts/knowledge-lifecycle.md](../concepts/knowledge-lifecycle.md).
+
 ## Reference: OWASP Top 10 for LLM Applications
 
 For projects that actually call LLMs at runtime (RAG, agents, chatbots), the [OWASP Top 10 for LLMs](https://genai.owasp.org/llm-top-10/) covers the AI-specific risks that this baseline cannot anticipate generically: prompt injection, sensitive-information disclosure, insecure tool use, excessive agency, supply-chain attacks on models, and others. Map each item to a concrete control in your codebase before shipping.
