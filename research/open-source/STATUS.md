@@ -3,32 +3,38 @@
 Two documents, received 2026-08-09, translated from German. Neither is verified.
 
 - [foundations.md](./foundations.md) — definition, licences, structure,
-  governance, project phases, checklist. **No citations at all.**
+  governance, project phases, checklist. Arrived with no citations at all.
+  **Sourced on 2026-08-09 — see [SOURCES.md](./SOURCES.md).**
 - [engineering-and-supply-chain.md](./engineering-and-supply-chain.md) —
   engineering, testing, DevSecOps, Git models, supply chain, the layer model.
   17 sources, none yet checked at the primary source.
 
 ## Known problems
 
-Found while reading. Recorded here rather than corrected in the files.
+Found while reading, then checked. Recorded here rather than corrected in the
+files. Full evidence in [SOURCES.md](./SOURCES.md).
 
-1. **"GPL … roughly 60% adoption"** — not defensible. Permissive licences have
-   dominated for years and MIT is the most common licence on GitHub. Needs a
-   source and a check date, or it goes.
-2. **Copyright in employment** — the original cited Swiss employee-invention
-   law. Employee inventions are patent law, not copyright, and Switzerland is
-   the wrong jurisdiction for this project. For software written in employment:
-   § 40b Austrian Copyright Act, § 69b German Copyright Act. Removed from the
-   translation only in the sense that no jurisdiction is now named; the claim
-   itself is unchanged and still unverified.
-3. **"Closing a project down permanently is practically impossible"** — true for
-   already-published versions, not going forward. Relicensing future versions
-   happens (Terraform, Redis). Needs the qualifier or it is wrong.
-4. **Two version numbers to verify** — OpenSSF Baseline `v2026.02.19` and SLSA
-   `v1.2`. Both are load-bearing if either is cited.
-5. **"Open Source Project Template on GitHub"** — no link, not identifiable.
-   Either identify it or drop the reference.
-6. **Every source in the second document was collected through an assistant**
+1. **"GPL … roughly 60% adoption"** — *refuted.* Permissive licences have been
+   the majority since somewhere between 2014 and 2017; RedMonk puts them at 73%
+   for 2025. Both available measurements come with limits the authors state
+   themselves, so the direction holds and a precise figure does not.
+2. **Copyright in employment** — *refuted for Austria and Germany.* The employer
+   acquires a right of use (§ 40b UrhG) or the economic rights (§ 69b UrhG), not
+   the copyright, which cannot be transferred between living persons. The claim
+   is true in the United States under 17 U.S.C. § 201(b). The original also
+   cited Swiss employee-invention law, which is patent law.
+3. **"Closing a project down permanently is practically impossible"** — *half
+   right.* Published versions stay under their licence; future versions can be
+   relicensed. Terraform up to 1.5.x stayed MPL, 1.6 onwards is BUSL.
+4. **"Open Source Project Template on GitHub"** — *identified* as
+   `diggsweden/open-source-project-template`, which ships exactly the listed
+   files. At least one other repository shares the name.
+5. **"No licence means nobody may use it"** — *needs a caveat.* True for
+   copyright, incomplete on GitHub: the Terms of Service grant every user the
+   right to view and fork a public repository regardless of licence.
+6. **Two version numbers still to verify** — OpenSSF Baseline `v2026.02.19` and
+   SLSA `v1.2`, both in the second document. Load-bearing if either is cited.
+7. **Every source in the second document was collected through an assistant**
    (the URLs carried `utm_source=chatgpt.com`, stripped here). Not a defect, but
    none of them has been opened at the primary source yet.
 
