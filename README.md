@@ -25,10 +25,18 @@ disagrees with it, that file is out of date.
 
 ## Blueprints
 
-| Blueprint | For |
-|---|---|
-| [`open-source`](blueprints/open-source/) | Starting a public repository: governance, contribution rules, CI that blocks a merge. No AI in it |
-| [`ai-assisted-development`](blueprints/ai-assisted-development/) | Bringing an agent into a repository you already have: the frame it operates inside, plus an initialisation interview |
+One per **trigger** — something that has already happened to you — not one per
+technology and not one per team size.
+
+| Blueprint | For | Status |
+|---|---|---|
+| [`open-source`](blueprints/open-source/) | Starting a public repository: governance, contribution rules, CI that blocks a merge. No AI in it | draft |
+| [`ai-assisted-development`](blueprints/ai-assisted-development/) | Bringing an agent into a repository you already have: the frame it operates inside, plus an initialisation interview | draft |
+| [`agent-maintained-knowledge-base`](blueprints/agent-maintained-knowledge-base/) | A second person has to be able to trust what is written down, and an agent is writing some of it | planned |
+| [`agent-tool-access`](blueprints/agent-tool-access/) | More than one AI client needs the same tools, and the permissions are scattered across the integrations | planned |
+
+`planned` means the scope is decided and nothing is built: no payload, and the
+open questions written down. Scoping is the harder half.
 
 ```bash
 npx degit rubennati/ai-project-standard/blueprints/<id>/files <target>
