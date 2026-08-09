@@ -1,6 +1,6 @@
 # Status — knowledge management
 
-Received 2026-08-09: four documents plus four diagrams, translated from German.
+Received 2026-08-09: five documents plus four diagrams, translated from German.
 The first is unsourced; the second and third carry citations and were partly
 verified. Each drop corrects the one before it.
 
@@ -9,6 +9,11 @@ verified. Each drop corrects the one before it.
 - [figures.md](./figures.md) — four diagrams recorded as data, because the site
   renders diagrams as markup and never as images. Carries material that appears
   nowhere in the prose.
+- [dimensions.md](./dimensions.md) — fifth drop, 2026-08-09. Three independent
+  axes instead of one ladder, six kinds of state, two status axes, and an
+  analysis card for any system. **It reads this repository and this website and
+  derives principles from them** — the feedback loop working, and the only drop
+  whose sources are us.
 - [primitives.md](./primitives.md) — fourth drop, 2026-08-09. **Level zero.**
   What an LLM is and cannot do, five rules almost everything follows from, the
   nine fundamental operations, the knowledge lifecycle, and a **lexicon of about
@@ -131,6 +136,46 @@ Sources checked 2026-08-09: the three new checkable ones resolve, including
 arXiv 2606.14275 (WikiKV). The OpenAI pages return 403 to automated requests, as
 in every drop.
 
+## The fifth drop closes the loop — and that needs saying carefully
+
+This is the first drop whose sources are **this project's own website**. That is
+the loop working as designed: repository → website → back down as input. But it
+also means something the other drops did not:
+
+> **A source that is us cannot verify us.** Where this drop cites the site, it is
+> reflecting our own claims back, not confirming them. Its value is the
+> *synthesis* — what it derives by combining our organisational model with the
+> technical one — not the citations.
+
+Treated correctly, nothing here counts as external evidence. Treated carelessly,
+it would look like independent corroboration of our own positions, which is the
+failure mode the evidence model exists to prevent.
+
+### What it corrects
+
+**The ladder was wrong.** The earlier drops implied everyone climbs chat → files
+→ RAG → agent → enterprise. They do not. A private expert may run a local LLM,
+RAG, graph and agents with no SSO, DLP or central audit. A company may be at
+step one and immediately need contract review, classification, MFA and
+offboarding. Three independent axes replace one.
+
+**The dividing line is not private against company.** It is *only me* against
+*others affected*. The moment a second person exists, the problem class changes
+to multi-user, identity and governance — **none of which are LLM problems**.
+
+### What it derives from this repository
+
+Six kinds of state, taken directly from the `.ai/` separation this repository
+already runs: source data · shared knowledge · **operational AI state** ·
+personal context · governance · machine index. The insight is that they have
+different lifecycles and must not share a directory — which is the general form
+of a rule this repository already follows for itself.
+
+And the four principles it names back at us — operational state is not
+knowledge, shared rules are not personal overrides, collaboration needs its own
+layer, governance grows proportionally — are all already decided here. That is
+useful as confirmation, not as evidence.
+
 ## Where it goes
 
 The split falls almost exactly where the blueprint contract predicts: the
@@ -216,6 +261,20 @@ from this material it should not be called `llm-wiki`. The candidates it offers:
 Same rule as `ai-assisted-development`: name it after the established practice,
 not after one paper's coinage — and here the material says explicitly that the
 coinage is not established.
+
+## What the fifth drop adds to the routing
+
+| Block | Destination | Note |
+|---|---|---|
+| **Two status axes: workflow *and* epistemic** | **Blueprint, and `docs/`** | The strongest idea in the drop. A recommendation can be fully reviewed and published and still be a recommendation. Without the second axis opinion silently becomes fact — and it is our own evidence model, generalised to knowledge objects |
+| **Six kinds of state**, and that they must not share a directory | **Blueprint layout, and `docs/`** | The general form of what `.ai/` already does here |
+| Shared/personal split, personal never writes canonical | **Blueprint** | Concrete two-tree layout with the one rule that makes it safe |
+| **A pull request for knowledge** — Git as knowledge governance | **Blueprint** | Git already solves versioning, diff, authorship, review, rollback, conflicts. A knowledge blueprint should use it rather than rebuild it |
+| Seven control triggers, need-driven | **Blueprint "when not to use it"**, and website | Replaces "big company needs more security" with something checkable |
+| K0–K6, explicitly not a ladder to climb | Website | With the warning that most should stop early |
+| Six analysis dimensions, and the architecture card | **Website — a reusable tool** | Fill one card per system; the marketing falls away |
+| "No problem → no additional component" | **`docs/` — an architecture rule** | The anti-overengineering rule, stated once |
+| Competence ≠ system maturity | Website | Corrects a conflation the earlier drops carried |
 
 ## Glossary
 
