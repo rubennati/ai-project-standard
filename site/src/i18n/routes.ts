@@ -18,6 +18,9 @@ export type LocalizedRouteKey =
   | "dataFlowsDeletion"
   | "dataFlowsConsent"
   | "dataFlowsSovereignty"
+  | "dataFlowsKnowledgeSources"
+  | "startWhatItIsDoing"
+  | "lawFourQuestions"
   | "secureSetup"
   | "secureSetupAccess"
   | "start"
@@ -73,6 +76,12 @@ export const getLocalizedPath = (
       return `${prefix}/data-flows/what-you-agree-to`;
     case "dataFlowsSovereignty":
       return `${prefix}/data-flows/data-sovereignty`;
+    case "dataFlowsKnowledgeSources":
+      return `${prefix}/data-flows/where-knowledge-lives`;
+    case "startWhatItIsDoing":
+      return `${prefix}/start/what-it-is-doing`;
+    case "lawFourQuestions":
+      return `${prefix}/law/four-separate-questions`;
     case "dataFlowsDeletion":
       return `${prefix}/data-flows/getting-it-back-out`;
     case "secureSetup":

@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — The research queue is empty
+
+The last fifteen website-bound rows, as three articles plus one addition. `research/ROUTING.md` now has no queued rows: all 166 sections are closed.
+
+- `/start/what-it-is-doing` — what an AI tool is doing while you use it, for people who are not building one. There is no wire out of the model; the product is not the model; why it forgets; why more documents do not mean better answers; the three ways a tool can learn about your material as a labelled figure; why tools built for programmers handle documents well; and why knowing the tool and running a good system are different axes. Seven routed rows.
+- `/data-flows/where-knowledge-lives` — which of your systems can be a knowledge source. Mail is an event stream, so the knowledge in a thread is "we went with option B" three replies down, next to two rejected proposals; a retrieval system that finds the wrong one answers with a decision nobody took. Plus reading against acting in a mailbox, four shapes a setup can take, and what each of four roles sees in the same system. Four routed rows.
+- `/law/four-separate-questions` — secure, lawful, permitted and regulated are four tests, and passing one says nothing about the others. Includes Art. 4 of the AI Act quoted from the consolidated text, in force since 2 February 2025, and the three distinctions that make AI literacy a control rather than a training topic.
+- `/open-source/choosing-a-licence` gains a closing section: the grant does not come back. Rights already given cannot be withdrawn, so a licence is closer to a publication than to a setting.
+- "Privacy and confidentiality are not the same" was routed as queued and was already carried by `/law/what-may-go-in`. Cross-referenced rather than written twice.
+- The language gate caught 19 violations across the three new files — eighteen `Werkzeug` for `Tool`, and one sentence the checker read as formal address. All corrected before merge.
+
 ### Fixed — The GDPR article, re-checked against the primary texts
 
 A critical re-read of yesterday's article against the sources, not the summaries. Four corrections, one of them material.

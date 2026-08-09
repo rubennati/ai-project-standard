@@ -43,10 +43,10 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 1 | Retrieval-Augmented Generation | `concepts/` | [retrieval-architecture](../concepts/retrieval-architecture.md) §3 | **done** |
 | 1a | Variants — hybrid, multi-hop, agentic | glossary + concept | `Hybrid Search`, `Agentic RAG`; concept §4.1–4.2 | **done** |
 | 1b | Building a pipeline, and the named tools | `concepts/` | retrieval-architecture §3 build-time. **Tool names dropped** — a product claim with no check date | **done** |
-| 1c | Against a plain model, and against fine-tuning | website | The comparison is a teaching point, not a build decision | queued |
+| 1c | Against a plain model, and against fine-tuning | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) — three ways a tool learns about your material | **done** |
 | 2 | Knowledge graph — entities, relations, ontology, RDF against property graph | glossary + concept | `Entity`, `Relationship`, `Ontology`, `Taxonomy`, `Graph Traversal` done. Graph retrieval concept **not planned** — no trigger here | partly done |
 | 3 | Access to documents, Notion, email, folders | `concepts/` | [tool-access](../concepts/tool-access.md) §3, the four ways | **done** |
-| 3a | Why email is a poor knowledge store | website | A data-protection argument, needs an evidence label | queued |
+| 3a | Why email is a poor knowledge store | website | [/data-flows/where-knowledge-lives](https://ai-standard.rubennati.at/data-flows/where-knowledge-lives) | **done** |
 | 3b | A folder as a workspace | glossary | `Workspace`, `Folder Workspace` | **done** |
 | 4 | LLM wiki as a persistent knowledge base | `concepts/` + glossary | [knowledge-lifecycle](../concepts/knowledge-lifecycle.md); `LLM Wiki` entry records the retired name | **done** |
 | 4a | The compile-once idea, and the three layers | `concepts/` | knowledge-lifecycle §3 | **done** |
@@ -61,7 +61,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | § | Section | Destination | Form | Status |
 |---|---|---|---|---|
 | 1 | Figure 1 — terms, layers, data flow | `concepts/` | retrieval-architecture §3, redrawn. The original put the model at the centre; corrected by drop 3 | **done** |
-| 2 | Figure 2 — example architectures | website | Three worked examples, better as a page than as a table | queued |
+| 2 | Figure 2 — example architectures | website | [/data-flows/where-knowledge-lives](https://ai-standard.rubennati.at/data-flows/where-knowledge-lives) — four shapes a setup can take | **done** |
 | 3 | Figure 3 — how do I decide | `concepts/` | Each concept's §1 and §2 | **done** |
 | 4 | Figure 4 — operating models and connection types | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) | **done** |
 | 4a | "MCP is an access layer, not a knowledge base" | glossary + concept | `MCP Server`, `Resource`; tool-access §3 | **done** |
@@ -75,7 +75,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 0 | The sentence the subject turns on — these are layers, not alternatives | `concepts/` | The premise of the whole concepts layer | **done** |
 | 1 | The architecture as layers | `concepts/` | retrieval-architecture §3 | **done** |
 | 2 | "Access to my documents" means six things | `concepts/` | tool-access §3, the four ways | **done** |
-| 3 | Why coding agents work well for this | website | An observation, not a build decision | queued |
+| 3 | Why coding agents work well for this | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) | **done** |
 | 4 | A local folder does not mean local data | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) | **done** |
 | 5 | Chat, workspace, agent | glossary | All three present | **done** |
 | 6 | MCP as an integration protocol | glossary + concept | `MCP`, `MCP Client`, `MCP Server`; tool-access | **done** |
@@ -83,14 +83,14 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 8 | Knowledge graph and GraphRAG | glossary | `Knowledge Graph` present; GraphRAG filed as a combination, not a category | **done** |
 | 9 | The LLM wiki | glossary | `LLM Wiki`, with the retirement recorded | **done** |
 | 10 | Source of truth and what is derived | glossary + concept | `Source of Truth`, `Index`; retrieval-architecture §4.5 | **done** |
-| 11 | Why email is not Notion | website | Source-type comparison | queued |
+| 11 | Why email is not Notion | website | [/data-flows/where-knowledge-lives](https://ai-standard.rubennati.at/data-flows/where-knowledge-lives) | **done** |
 | 12 | Neighbouring terms that are not the same | glossary | The confusables, entry by entry | **done** |
 | 13 | The architecture rule worth keeping | `docs/` | [sizing.md](../docs/sizing.md) — the rule | **done** |
 | 14 | Deciding by the problem, not the vocabulary | `docs/` | sizing.md — the rule, and the five tags | **done** |
 | 15 | Correction: "public AI" is dangerous | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) — overturns drop 1, see [REVISIONS.md](./knowledge-management/REVISIONS.md) R3 | **done** |
 | 16 | Data sovereignty as a matrix | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) — ten axes as a labelled figure | **done** |
 | 17 | The whole solution space in one picture | `concepts/` | Absorbed into the concept set | **done** |
-| 18 | The definition, and the field | website | Framing | queued |
+| 18 | The definition, and the field | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) — closing section | **done** |
 | 19 | The practical conclusion | `concepts/` | Each concept's §2 | **done** |
 | 20 | What the author proposes next | research only | A plan for a book; deliberately not adopted | n/a |
 | 21 | Sources | research only | — | n/a |
@@ -108,7 +108,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 4 | "I have a RAG" is as vague as "I have a database" | `concepts/` | retrieval-architecture §1 | **done** |
 | 5 | What "backend" actually means | glossary | `Backend`, `Frontend`, `API`, `Endpoint`, `Orchestrator` | **done** |
 | 6 | The ingestion factory | `concepts/` | retrieval-architecture §3 build-time | **done** |
-| 7 | Four roles see four different systems | website | An organisational observation | queued |
+| 7 | Four roles see four different systems | website | [/data-flows/where-knowledge-lives](https://ai-standard.rubennati.at/data-flows/where-knowledge-lives) — as a labelled figure | **done** |
 | 8 | ACL-aware RAG | `concepts/` | retrieval-architecture §4.4 | **done** |
 | 9 | Connector against MCP, precisely | `concepts/` | tool-access §3 | **done** |
 | 10 | "Upload = connector" separated | `concepts/` + glossary | tool-access §3; `Connectors` | **done** |
@@ -137,7 +137,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 |---|---|---|---|---|
 | 0 | What was missing until now | research only | Framing | n/a |
 | 1 | What an LLM actually is | glossary | `LLM`, `Model Weights`, `Inference`, `Token` | **done** |
-| 2 | The most important law of all | website | The model has no memory between calls — a teaching point for everyone | queued |
+| 2 | The most important law of all | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) — no wire out of the model, and why it forgets | **done** |
 | 3 | Five rules almost everything follows from | `docs/` | sizing.md, as the rule and the line that changes everything | **done** |
 | 4 | Classic RAG: the application searches | `concepts/` | retrieval-architecture §4.1 | **done** |
 | 5 | The pieces, defined | glossary | ~20 entries; all now present | **done** |
@@ -163,7 +163,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 |---|---|---|---|---|
 | 1 | The earlier model was one-dimensional | research only | Superseded framing; recorded as R5 | n/a |
 | 2 | The real dividing line: only me against others affected | `docs/` | sizing.md — the line that changes everything | **done** |
-| 3 | Competence and system maturity differ | website | Teaching point | queued |
+| 3 | Competence and system maturity differ | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) | **done** |
 | 4 | Six kinds of state | `concepts/` + `docs/` | knowledge-lifecycle §3; sizing.md carries the knowledge-type table | **done** |
 | 5 | Shared and personal, and the rule | `concepts/` | knowledge-lifecycle §3 | **done** |
 | 6 | A pull request for knowledge | `concepts/` | knowledge-lifecycle §2 and §4.1 | **done** |
@@ -171,7 +171,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 8 | Control triggers, need-driven | `docs/` + blueprints | The blueprint cut. `blueprints/README.md`, `docs/blueprints.md` | **done** |
 | 9 | Two status axes | `concepts/` | knowledge-lifecycle §3 | **done** |
 | 10 | Six dimensions for analysing any AI system | `docs/` | sizing.md — the order of questions supersedes it, twelve rather than six | **done** |
-| 11 | Tool maturity against user maturity | website | Teaching point | queued |
+| 11 | Tool maturity against user maturity | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) | **done** |
 | 12 | Six principles taken from this project | `docs/` | sizing.md and `docs/ai-workspace-layer.md`; the two from the site are its evidence model | **done** |
 | 13 | The fuller model | research only | Absorbed | n/a |
 | 14 | The rule against overengineering | `docs/` | sizing.md | **done** |
@@ -197,9 +197,9 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 12 | Lock-in and portability | glossary + concept | `Folder Workspace`; knowledge-lifecycle §4.1 | **done** |
 | 13 | Disaster recovery: irreplaceable against reconstructable | `concepts/` + `docs/` | Both concepts; security-baseline, back up by replaceability | **done** |
 | 14 | A security threat model | `concepts/` | Superseded by drop 7; the fuller version is in the concepts | **done** |
-| 15 | Privacy and confidentiality are not the same | website | A legal distinction, needs an evidence label | queued |
+| 15 | Privacy and confidentiality are not the same | website | Already carried by [/law/what-may-go-in](https://ai-standard.rubennati.at/law/what-may-go-in); the third axis, business criticality, is in [/law/four-separate-questions](https://ai-standard.rubennati.at/law/four-separate-questions) | **done** |
 | 16 | A system uses several models, not one | `concepts/` | retrieval-architecture §3 | **done** |
-| 17 | Context is a scarce resource | website | Context engineering as a teaching point | queued |
+| 17 | Context is a scarce resource | website | [/start/what-it-is-doing](https://ai-standard.rubennati.at/start/what-it-is-doing) — more documents do not mean better answers | **done** |
 | 18 | The user is part of the architecture | `concepts/` | retrieval-architecture §5, trust UX | **done** |
 | 19 | Retrieval scope should be visible | `concepts/` | retrieval-architecture §5 | **done** |
 | 20 | Sources are more than citations | glossary + concept | `Provenance` | **done** |
@@ -229,8 +229,8 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 13 | Least privilege restated for agents | `docs/` + concept | agent-action-control; security-baseline — human permission is not agent permission | **done** |
 | 14 | Human-in-the-loop is a security control | `concepts/` | agent-action-control §4.2 | **done** |
 | 15 | Machine-enforced policy | `concepts/` | agent-action-control §3 | **done** |
-| 16 | The legal layer, kept separate | website | Four legal questions that must not be merged | queued |
-| 17 | AI literacy is a security control | website | "If ChatGPT says it, it must be policy" is an information-security problem | queued |
+| 16 | The legal layer, kept separate | website | [/law/four-separate-questions](https://ai-standard.rubennati.at/law/four-separate-questions) | **done** |
+| 17 | AI literacy is a security control | website | [/law/four-separate-questions](https://ai-standard.rubennati.at/law/four-separate-questions) — with Art. 4 AI Act quoted | **done** |
 | 18 | "LLM" is not the same as "AI" | glossary | Both entries present | **done** |
 | 19 | The method transfers; the assets are new | `docs/` | security-baseline, section heading and opening line | **done** |
 | 20 | The meta-model, completed | research only | Absorbed | n/a |
@@ -250,7 +250,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 3b | Code written at work | website | The site already carries an article on it | **done** |
 | 4 | Project phases and maturity | `docs/` | Governance sized to the project — already the standard's position | **done** |
 | 5 | Examples, templates, checklist | `blueprints/` | The `open-source` payload is this checklist, executed | **done** |
-| 6 | Summary — licence rights cannot be withdrawn | website | A legal point worth its own treatment | queued |
+| 6 | Summary — licence rights cannot be withdrawn | website | [/open-source/choosing-a-licence](https://ai-standard.rubennati.at/open-source/choosing-a-licence) — added as a closing section rather than a page of its own | **done** |
 | 7 | Sources | research only | — | n/a |
 
 ---
@@ -285,15 +285,17 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 |---|---|
 | Sections routed | 166 |
 | **Done** — exists in the repository now | 118 |
-| **Queued** — website-bound, not yet written | 22 |
+| **Queued** — website-bound, not yet written | 0 |
 | **Partly done** | 4 |
 | **Research only** — meta, sources, superseded | 20 |
 | **Dropped by decision** | 2 |
 
-Every repository-bound row points at a file that exists. What remains is
-website work and two rows that are deliberately shallow: graph retrieval, which
-has no trigger here, and multimodality, which stops at parsing and OCR for the
-same reason.
+**Every row is now closed.** Repository-bound rows point at files that exist;
+website-bound rows point at published pages. Four rows are deliberately shallow
+and say so: graph retrieval, which has no trigger here; multimodality, which
+stops at parsing and OCR for the same reason; the knowledge-graph vocabulary,
+which is in the glossary without a concept behind it; and code quality, which
+delivery-pipeline treats in one section rather than a chapter.
 
 ### The two dropped, with reasons
 

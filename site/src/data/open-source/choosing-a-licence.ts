@@ -93,6 +93,15 @@ const en: Article = {
       ],
       links: [{ label: "OSI-approved licences", href: OSI_LICENSES }],
     },
+    {
+      heading: "The grant does not come back",
+      level: "assessment",
+      paragraphs: [
+        "One property of this choice is easy to miss until it matters: rights already granted cannot simply be withdrawn. Everyone who received a copy under a licence keeps what that licence gave them.",
+        "You can stop maintaining a project, licence future versions differently, or take the repository down. None of that reaches the copies already out there, and anyone holding one may keep using and redistributing it on the original terms.",
+        "So a licence is not a setting you revise later. It is closer to a publication: reversible for what comes next, permanent for what has already gone out.",
+      ],
+    },
   ],
 };
 
@@ -170,6 +179,15 @@ const de: Article = {
         "Das stützt sich auf die Kategorien oben, die überprüfbar sind. Welche davon zu deinem Projekt passt, ist eine Abwägung deiner Ziele — die kann dir niemand abnehmen.",
       ],
       links: [{ label: "Von der OSI anerkannte Lizenzen", href: OSI_LICENSES }],
+    },
+    {
+      heading: "Die Einräumung kommt nicht zurück",
+      level: "assessment",
+      paragraphs: [
+        "Eine Eigenschaft dieser Entscheidung wird leicht übersehen, bis sie zählt: Einmal eingeräumte Rechte lassen sich nicht einfach zurücknehmen. Wer eine Kopie unter einer Lizenz erhalten hat, behält, was diese Lizenz ihm gab.",
+        "Du kannst die Pflege einstellen, künftige Versionen anders lizenzieren oder das Repository offline nehmen. Nichts davon erreicht die Kopien, die bereits draußen sind — wer eine hält, darf sie zu den ursprünglichen Bedingungen weiter nutzen und weitergeben.",
+        "Eine Lizenz ist deshalb keine Einstellung, die man später revidiert. Sie ist eher eine Veröffentlichung: umkehrbar für das Kommende, endgültig für das, was schon hinausgegangen ist.",
+      ],
     },
   ],
 };
