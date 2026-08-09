@@ -4,7 +4,7 @@ about: Something behaves differently from what it should
 labels: bug
 ---
 
-<!-- Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying. -->
+<!-- blueprint payload: open-source — edit upstream, then delete -->
 
 ## What happened
 

@@ -1,4 +1,4 @@
-<!-- Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying. -->
+<!-- blueprint payload: open-source — edit upstream, then delete -->
 # {{PROJECT_NAME}}
 
 *One sentence: what this does, and for whom. Not what it is built with.*

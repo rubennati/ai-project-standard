@@ -4,7 +4,7 @@ about: A concrete change with a definition of done
 labels: enhancement
 ---
 
-<!-- Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying. -->
+<!-- blueprint payload: open-source — edit upstream, then delete -->
 
 ## The problem
 

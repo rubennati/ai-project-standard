@@ -1,4 +1,4 @@
-# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+# blueprint payload: open-source — edit upstream, then delete
 #
 # Review routing. Worth having even with a single maintainer: it records who
 # owns what, and GitHub requests the review automatically.
