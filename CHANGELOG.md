@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — The GDPR article, re-checked against the primary texts
+
+A critical re-read of yesterday's article against the sources, not the summaries. Four corrections, one of them material.
+
+- **The pending annulment appeal was missing entirely.** The adequacy decision was challenged directly; the General Court dismissed the action on 3 September 2025 in Case T-553/23, and an appeal was brought on 31 October 2025, pending as Case C-703/25 P, seeking to annul Implementing Decision (EU) 2023/1795. A reader deciding whether to rely on the framework needs that, and the article said only that adequacy decisions are periodically reviewed.
+- **"Annulled" was the wrong word for the predecessors.** Schrems I and Schrems II were preliminary references, so the Court declared Safe Harbour and the Privacy Shield **invalid** rather than annulling them. Both judgments are now cited, with the operative wording of C-311/18 quoted.
+- **A heading claimed more than Art. 45 says.** "Adequacy is granted to organisations, not to a country" was labelled `law`; Art. 45(1) speaks of a country, a territory, or specified sectors. The section now restates what the decision covers and puts the practical consequence in its own sentence.
+- **A gloss was sitting under a `law` label.** "Art. 49 derogations are narrow and not a general-purpose fallback" was a characterisation; it now restates the enumerated conditions the article actually lists.
+
+### Added — Data sovereignty as a matrix
+
+- `/data-flows/data-sovereignty` and `/de/data-flows/data-sovereignty`. Five routed research rows in one article: the five operating models, the correction that "public AI" describes nothing, a local folder not meaning local data, the four simultaneous data paths, and the matrix itself.
+- The matrix is a `reach` figure — ten axes, each marked answered, partly answered or not answered by the phrase "hosted in the EU", with state carried by a word rather than by colour.
+- Anchored to Art. 28, Art. 32 and Chapter V, restated rather than applied. No vendor is assessed; the page says so.
+
 ### Added — The GDPR correction, as an article
 
 - `/law/us-cloud-and-the-gdpr` and `/de/law/us-cloud-and-the-gdpr`. The first item off the parked side-strand, and the one carrying real risk: the confident claim "our mail is connected to a US AI service, so we have a GDPR problem" is repeated constantly and is not what the regulation says.

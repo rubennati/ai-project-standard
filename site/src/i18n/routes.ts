@@ -17,6 +17,7 @@ export type LocalizedRouteKey =
   | "dataFlowsTraining"
   | "dataFlowsDeletion"
   | "dataFlowsConsent"
+  | "dataFlowsSovereignty"
   | "secureSetup"
   | "secureSetupAccess"
   | "start"
@@ -70,6 +71,8 @@ export const getLocalizedPath = (
       return `${prefix}/data-flows/training-and-retention`;
     case "dataFlowsConsent":
       return `${prefix}/data-flows/what-you-agree-to`;
+    case "dataFlowsSovereignty":
+      return `${prefix}/data-flows/data-sovereignty`;
     case "dataFlowsDeletion":
       return `${prefix}/data-flows/getting-it-back-out`;
     case "secureSetup":
