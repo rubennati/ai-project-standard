@@ -95,3 +95,6 @@ These are common recommendations elsewhere, deliberately **not** required here, 
 - Merge queues for projects with <5 PRs/day (overkill).
 
 Adopt them when they earn their place, not before.
+
+*Sources checked: 2026-08-09 — both cited sources resolved. They are pointers
+to external conventions rather than claims about them.*

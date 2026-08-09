@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — One statement of purpose, and a check that the repository keeps its own rules
+
+- `docs/purpose.md` — what the repository, the website and a blueprint are each for, and the direction information flows. Where another file disagrees with it, that file is out of date. `README.md` and `docs/index.md` point at it.
+- Every blueprint must now answer four questions in its README: what it solves, what you get, when *not* to use it, and what it has been run against. Both blueprints gained the missing sections.
+- `.github/scripts/check-conformance.sh`, wired into CI: the purpose file is pointed at, every blueprint answers the four questions and declares a valid status, external claims carry a `Sources checked:` date, blueprint paths named in prose exist, and vocabulary matches the glossary.
+- `docs/security-baseline.md`, `docs/open-source-project-standard.md` and `docs/ai-tools.md` carry dated source lines. All nine cited sources were resolved and the `GITHUB_TOKEN` default claim re-read at the changelog it cites.
+- `AGENTS.md` now says to check `terms.ts` before inventing a name — the glossary holds 80 researched terms.
+
+The check found two defects in itself on the first run: it flagged the correct spelling of *vibe coding*, and it reported `practical-ai-collaboration.md` as a renamed blueprint. Both fixed before it was wired in.
+
 ### Added — AI-assisted development, as a blueprint
 
 - `blueprints/ai-assisted-development/` — the second blueprint, and the one carrying this project's actual subject. Named after the practice the glossary already defines — "using AI across software delivery work such as coding, debugging, analysis, documentation, or planning" — which is also the established counterpart to vibe coding: the same work, with the structure that is missing there. It overlays a repository you already have; it chooses nothing about your language, licence or structure.

@@ -2,6 +2,10 @@
 
 This documentation set defines the project baseline and collaboration model.
 
+## Start here
+
+- [Purpose](./purpose.md) — what the repository, the website and a blueprint are each for. The one file the others defer to
+
 ## The standard
 
 - [The Standard](./standard.md) — what the standard is, mandatory vs optional, philosophy

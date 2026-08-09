@@ -15,6 +15,8 @@ AI Project Standard is a starting baseline for open-source projects that use AI.
 
 The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
 
+**[docs/purpose.md](docs/purpose.md) states what each of the three surfaces is for.** Where any other file disagrees with it, that file is out of date.
+
 ## Profiles and paths
 
 | Profile | When to pick it |
