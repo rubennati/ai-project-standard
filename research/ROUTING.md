@@ -116,7 +116,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 12 | The LLM wiki defined precisely | `concepts/` | knowledge-lifecycle §3 | **done** |
 | 13 | RAG against LLM wiki, cleanly | `concepts/` | Both concepts cross-link on exactly this | **done** |
 | 14 | Source of truth and the data path | `concepts/` | retrieval-architecture §4.5 | **done** |
-| 15 | **Correction on GDPR** | website | The sharpest reversal in the series. **Must not ship in its drop-1 form** | queued, priority |
+| 15 | **Correction on GDPR** | website | [/law/us-cloud-and-the-gdpr](https://ai-standard.rubennati.at/law/us-cloud-and-the-gdpr), both locales, sources checked 2026-08-09 | **done** |
 | 16 | Credentials never go to the model | `docs/` + concept | tool-access §3; security-baseline, reasoning and authority | **done** |
 | 17 | Control plane against data plane | `concepts/` | tool-access §3 | **done** |
 | 18 | Synchronisation, freshness, revocation | glossary + concept | `Sync`, `Freshness`, `Revocation`; retrieval-architecture §4.6 | **done** |
