@@ -45,6 +45,15 @@ export const ui = {
       "Rules that are already in force, not ones that are coming. Every section carries a label saying what kind of claim it is \u2014 a legal requirement, a reading of one, or what I would do about it \u2014 with the date it was last checked against the source.",
     lawMore:
       "More is being written: what you may put into a tool when it belongs to a client, and where the line runs between private and company use.",
+    openSource: "Open source",
+    openSourceTitle: "Open source",
+    openSourceDescription:
+      "What makes a project open source, which licence commits you to what, and who owns code written at work. No AI in this section.",
+    openSourceIntro:
+      "This section is about open source on its own terms — licences, rights, obligations — with no AI in it. It is the ground the rest of this site stands on: the questions here are settled before any tool is chosen.",
+    openSourceMore:
+      "More is being written: what belongs in a repository beyond the licence, how governance is sized to a project, and where engineering practice sits alongside openness rather than inside it.",
+    menu: "Menu",
     primaryNavigation: "Primary navigation",
     glossaryIndex: "Glossary Index",
     glossary: "Glossary",
@@ -220,6 +229,15 @@ export const ui = {
       "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Abschnitt trägt eine Kennzeichnung, welche Art von Aussage er ist \u2014 gesetzliche Pflicht, deren Auslegung, oder was ich dazu tun würde \u2014 samt Datum der letzten Prüfung an der Quelle.",
     lawMore:
       "Weiteres entsteht: was in ein Tool hineindarf, wenn es Kundenmaterial ist, und wo die Grenze zwischen privater und betrieblicher Nutzung verläuft.",
+    openSource: "Open Source",
+    openSourceTitle: "Open Source",
+    openSourceDescription:
+      "Woran ein Projekt zu Open Source wird, worauf dich welche Lizenz festlegt, und wem Code gehört, der im Job entsteht. Ohne KI in diesem Bereich.",
+    openSourceIntro:
+      "Dieser Bereich behandelt Open Source für sich — Lizenzen, Rechte, Pflichten — ohne KI darin. Er ist der Boden, auf dem der Rest dieser Seite steht: die Fragen hier sind entschieden, bevor überhaupt ein Tool ausgewählt wird.",
+    openSourceMore:
+      "Weiteres entsteht: was über die Lizenz hinaus in ein Repository gehört, wie Governance zur Projektgröße passt, und wo Engineering-Praxis neben der Offenheit steht statt in ihr.",
+    menu: "Menü",
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
     glossary: "Glossar",

@@ -44,8 +44,10 @@ Depth goes to the website; the repository keeps the short version.
 
 | Block | Destination | State |
 |---|---|---|
-| Open-source definition, OSI criteria, licence types, no-licence consequence | Website — a new open-source area | Missing everywhere. Needs sources first. |
-| Copyright, contributor rights, CLA/DCO | Website; the rule already exists | `docs/open-source-project-standard.md` covers DCO vs CLA more fully than the material. |
+| Open-source definition, OSI criteria, no-licence consequence | `/open-source/what-makes-it-open-source` | **Published 2026-08-09**, with the GitHub Terms of Service caveat the material lacked. |
+| Licence types, adoption figures | `/open-source/choosing-a-licence` | **Published 2026-08-09.** The 60% claim is replaced by the measurements and their stated limits. |
+| Copyright in employment | `/open-source/code-written-at-work` | **Published 2026-08-09** as AT / DE / US, which is not what the material said. |
+| Contributor rights, CLA/DCO | Website; the rule already exists | `docs/open-source-project-standard.md` covers DCO vs CLA more fully than the material. A short version is in the employment article's closing section. |
 | Repository structure, standard files, checklist | Blueprint payload | `docs/profiles.md` has file lists; `src`/`tests` structure and the ADR directory are new. |
 | `DEVELOPMENT.md` / `TESTING.md` / `ARCHITECTURE.md` split | Blueprint payload | New. Clear purpose per file. |
 | Governance models, project phases | Website | Sizing table already in `docs/open-source-project-standard.md`; the phases and the terms are new. |

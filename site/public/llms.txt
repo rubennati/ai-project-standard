@@ -23,6 +23,14 @@ Available in English at the paths below and in German under `/de/`.
 - [What may go into an AI tool?](https://ai-standard.rubennati.at/law/what-may-go-in): Personal data and confidentiality are two regimes with two different answers.
 - [AI Act Article 50](https://ai-standard.rubennati.at/law/ai-act-transparency): Transparency and labelling duties, applicable since 2 August 2026.
 
+## Open source
+
+This section is about open source on its own terms, with no AI in it.
+
+- [When is a project open source?](https://ai-standard.rubennati.at/open-source/what-makes-it-open-source): The licence decides, not visibility. Includes what GitHub's own terms permit without one.
+- [Which licence, and what does it commit you to?](https://ai-standard.rubennati.at/open-source/choosing-a-licence): Permissive, file-level copyleft, strong copyleft — and what the adoption numbers do and do not support.
+- [Who owns code written at work?](https://ai-standard.rubennati.at/open-source/code-written-at-work): § 40b Austrian and § 69b German Copyright Act give rights of use, not authorship. US work-for-hire is a different construction.
+
 ## Setting up safely
 
 - [Before you grant access](https://ai-standard.rubennati.at/secure-setup/before-you-grant-access): Day-one settings, checking a directory before an agent gets it, and why a technical boundary beats an instruction in a prompt.
