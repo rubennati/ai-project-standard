@@ -1,5 +1,11 @@
 # Routing — every section of every research document
 
+> **Snapshot, not a fixture.** This is a dated working document from one sweep on
+> 2026-08-09, not a live index. It is no longer enforced in CI, and it will drift
+> as the research changes — that is fine. It did its job: forcing the sweep to be
+> complete once. Do not spend upkeep keeping all 166 rows in lockstep with the
+> files. If a later sweep is needed, do it again rather than maintaining this.
+
 The completeness register. **166 sections** across ten documents, each routed to
 a destination and a form, or explicitly dropped with a reason.
 

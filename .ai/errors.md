@@ -4,6 +4,16 @@ Record only substantive process errors and corrective actions.
 
 If there are no active errors, keep this file unchanged.
 
+> **The five entries below are frozen.** They are all from 2026-08-09 and they
+> are one error, not five: generating from memory instead of reading what the
+> repository already settled, and losing the objective while doing it. The
+> correction is not a sixth mechanism — every entry below "fixed" it with a new
+> register, check or category, and that accretion was itself the problem. The
+> correction is behavioural and already stated: read the source before writing,
+> and check the work against the objective at the start of each step, not only
+> against the last instruction. Do not add another entry for this cause. A
+> genuinely new *kind* of error still belongs here.
+
 ## 2026-08-09 — Navigation changed without asking
 
 **What happened.** A new site section was added to the primary navigation as
