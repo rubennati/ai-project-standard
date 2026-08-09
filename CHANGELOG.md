@@ -8,6 +8,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added — Knowledge-management research in the queue
 
+- `primitives.md` — the fourth drop, and the foundation the other three derive from. What an LLM is and cannot do, five rules almost everything follows from, the nine fundamental operations, the knowledge lifecycle, and a lexicon of about seventy terms.
+- The law it rests on: **a bare LLM cannot reach a disk, Notion, Gmail, the internet or a vector database.** There is no wire out; another piece of software must fetch and hand over. Two of the five rules that follow are ones this repository already enforces — persistence lives outside the model, and permissions must be enforced outside it.
+- **It retires a word the earlier drops used casually.** "LLM wiki" is not a standardised category but a term from one 2026 paper; the generic name is an LLM-maintained knowledge base. A blueprint built from this material should not be called `llm-wiki` — the same rule that produced `ai-assisted-development`.
+- It supplies the layer none of the earlier drops had: the knowledge lifecycle, `candidate → pending → review → published → superseded → archived`, with states in front matter — and the rule that personal context must never write directly into canonical knowledge.
+- The lexicon alone is larger than the site's current 80-term glossary and covers precisely the vocabulary it lacks.
+
 - `architecture.md` — the third drop, and the reference architecture the first two were building towards: ten technical layers, four data paths that run on different schedules, ACL-aware retrieval, control plane against data plane, freshness and revocation, provenance, lifecycle, and the fifteen unglamorous components that decide whether any of it survives contact with an enterprise.
 - Its central architecture rule: **permissions do not belong in the LLM.** Authorise before retrieval; a model asked in a prompt not to mention HR data has not been access-controlled. Alongside it, the case almost nobody discusses — an index still holding an ACL the source system has already revoked.
 - **It corrects a GDPR statement the author had made himself.** "Company mail connected to a US LLM is definitely a GDPR problem" does not hold automatically: there is definitely a processing operation to assess, and whether it is permissible depends on roles, legal basis, transfer mechanism and technical measures. This one matters beyond the research — the site's Law section covers GDPR, and a claim of that shape would have been wrong there.

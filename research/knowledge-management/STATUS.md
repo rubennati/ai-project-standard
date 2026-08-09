@@ -1,6 +1,6 @@
 # Status — knowledge management
 
-Received 2026-08-09: three documents plus four diagrams, translated from German.
+Received 2026-08-09: four documents plus four diagrams, translated from German.
 The first is unsourced; the second and third carry citations and were partly
 verified. Each drop corrects the one before it.
 
@@ -9,6 +9,10 @@ verified. Each drop corrects the one before it.
 - [figures.md](./figures.md) — four diagrams recorded as data, because the site
   renders diagrams as markup and never as images. Carries material that appears
   nowhere in the prose.
+- [primitives.md](./primitives.md) — fourth drop, 2026-08-09. **Level zero.**
+  What an LLM is and cannot do, five rules almost everything follows from, the
+  nine fundamental operations, the knowledge lifecycle, and a **lexicon of about
+  seventy terms**. It also corrects the earlier drops' casual use of "LLM wiki".
 - [architecture.md](./architecture.md) — third drop, 2026-08-09. The reference
   architecture: ten technical layers, four simultaneous data paths, ACL-aware
   RAG, control plane against data plane, freshness and revocation, provenance,
@@ -97,6 +101,36 @@ core, `server/discover`, header-based routing, cache hints, RFC 9207 issuer
 validation, and a **formal deprecation policy with a twelve-month minimum
 window**. Two OpenAI pages returned 403 to automated requests, as before.
 
+## The fourth drop is the foundation, and it changes what the rest is for
+
+The first three added information. This one supplies the level the terms derive
+from — and its own framing is the giveaway: not learning twenty examples of
+integrals, but understanding what integration does.
+
+**The law everything rests on.** A bare LLM cannot reach a disk, Notion, Gmail,
+the internet or a vector database. There is no wire out. Another piece of
+software must fetch and hand over. From that follow the five rules, including
+the two this repository already enforces elsewhere: persistence lives outside
+the model, and **permissions must be enforced outside it**.
+
+**The correction to itself.** "LLM wiki" is called out as not standardised — a
+term from one 2026 paper, not a category. The generic name is *LLM-maintained
+knowledge base* or *agent-native knowledge system*; "wiki" describes one possible
+organisation. This retires a word the second and third drops used casually.
+
+**The missing layer: knowledge lifecycle.** `candidate → pending → review →
+approved → published → superseded → archived`, with states in front matter.
+Nothing in the earlier drops covered how knowledge is proposed, checked and
+retired — only how it is found.
+
+**And a rule for shared knowledge**: personal state must never write directly
+into canonical knowledge. It goes through proposal and review, or every agent
+writes its user's private view into the shared truth.
+
+Sources checked 2026-08-09: the three new checkable ones resolve, including
+arXiv 2606.14275 (WikiKV). The OpenAI pages return 403 to automated requests, as
+in every drop.
+
 ## Where it goes
 
 The split falls almost exactly where the blueprint contract predicts: the
@@ -156,6 +190,33 @@ website.
 | Three initialisation states: empty, seeded, schema-based | **Blueprint `INIT.md`** | Direct input for the initialisation interview |
 | Files → wiki → structured → semantic → graph is a continuum | Website | Removes the false either/or |
 
+## What the fourth drop adds to the routing
+
+| Block | Destination | Note |
+|---|---|---|
+| **The lexicon, ~70 terms** | **Glossary** | Directly answers the gap: the glossary has 80 terms and none of this vocabulary. This is the largest single contribution across all four drops |
+| **Five rules** | **`docs/` — architecture rules** | Two are already enforced here; writing all five down makes the set complete rather than incidental |
+| **Nine fundamental operations** | **Website — the method** | `store · read · search · transform · select · reason · generate · write · execute`. Reduces sixty terms to combinations. The strongest teaching device in the whole body of material |
+| **Knowledge lifecycle** with states | **Blueprint `llm-wiki`** | `candidate → pending → published → superseded → archived` becomes the blueprint's directory layout and front matter |
+| **Operating contract** (`INSTRUCTIONS.md` rules) | **Blueprint payload** | Six rules, directly shippable |
+| Shared against personal knowledge, and the no-direct-write rule | **Blueprint** | Concrete two-tree layout |
+| The twelve-question order that produces an architecture | **Website**, and a blueprint `INIT.md` | Replaces "is this RAG or MCP" with a usable sequence |
+| Pipeline RAG against agentic RAG | Website + glossary | Two fundamentally different shapes under one word |
+| Deep Research is a workflow, not a database | Website + glossary | Corrects a widespread error |
+| "LLM wiki is not standardised" | **Naming decision** | Affects what a blueprint would be called — see below |
+| Where the folder model stops working (3–4 people against 30) | **Blueprint "when not to use it"** | Exactly what the contract requires |
+
+## A naming decision this forces
+
+The fourth drop retires "LLM wiki" as a category name. If a blueprint is built
+from this material it should not be called `llm-wiki`. The candidates it offers:
+`llm-maintained-knowledge-base`, `agent-maintained-knowledge-base`,
+`agent-native-knowledge-system`.
+
+Same rule as `ai-assisted-development`: name it after the established practice,
+not after one paper's coinage — and here the material says explicitly that the
+coinage is not established.
+
 ## Glossary
 
 Present already: RAG, Knowledge Graph, Embedding, Vector Database, Vector
@@ -168,8 +229,13 @@ context assembly** — and from the third drop: **source of truth, provenance,
 control plane / data plane, freshness, revocation, model gateway, policy engine,
 prompt injection, ingress channel**.
 
-Twenty-two terms. The third drop also supplies a **method** for filing them: the
-five tags — function, state, access, location, scope.
+Twenty-two terms from the first three drops. **The fourth supplies about
+seventy, already defined**, which is more than the site's entire current
+glossary of 80 and covers exactly the gap.
+
+Two methods for filing them come with it: the third drop's five tags —
+function, state, access, location, scope — and the fourth drop's nine
+fundamental operations, which classify by what a thing actually *does*.
 
 This is the first drop that would grow the glossary substantially, which is what
 the material was expected to do.
