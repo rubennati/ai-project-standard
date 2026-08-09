@@ -55,9 +55,15 @@ for bp in blueprints/*/; do
   id="$(basename "$bp")"
   [[ "$id" == "README.md" ]] && continue
 
-  for required in README.md blueprint.yml files; do
+  for required in README.md blueprint.yml; do
     [[ -e "$bp$required" ]] || note "$bp" "missing $required"
   done
+
+  status="$(grep -E '^status:' "$bp/blueprint.yml" 2>/dev/null | head -1 | awk '{print $2}')"
+  case "$status" in
+    planned|draft|stable) ;;
+    *) note "$bp/blueprint.yml" "status must be planned, draft or stable, found '${status:-none}'" ;;
+  esac
 
   readme="${bp}README.md"
   [[ -f "$readme" ]] || continue
@@ -65,17 +71,25 @@ for bp in blueprints/*/; do
   grep -qi "^## What it solves" "$readme"  || note "$readme" "no '## What it solves' section"
   grep -qi "^## What you get" "$readme"    || note "$readme" "no '## What you get' section"
   grep -qi "^## When not to use" "$readme" || note "$readme" "no '## When not to use it' section"
-  grep -qi "^## Verified" "$readme"        || note "$readme" "no '## Verified' section — say what it was run against, or that it was not"
 
-  # The manifest must declare a status, and a stable blueprint must carry a
-  # verification date. Draft is allowed to be unproven; stable is not.
-  status="$(grep -E '^status:' "$bp/blueprint.yml" 2>/dev/null | head -1 | awk '{print $2}')"
-  case "$status" in
-    draft|stable) ;;
-    *) note "$bp/blueprint.yml" "status must be draft or stable, found '${status:-none}'" ;;
-  esac
-  if [[ "$status" == "stable" ]] && ! grep -qE '^\s+date: [0-9]{4}-[0-9]{2}-[0-9]{2}' "$bp/blueprint.yml"; then
-    note "$bp/blueprint.yml" "status is stable but no verified.date is recorded"
+  if [[ "$status" == "planned" ]]; then
+    # A planned blueprint has decided its scope and built nothing. Both halves
+    # have to be visible: no payload directory to look maintained, and the gap
+    # named in the README rather than left for the reader to discover.
+    [[ -e "${bp}files" ]] && note "$bp" "status is planned but a files/ directory exists — an empty payload folder looks maintained"
+    grep -qi "^## Not built yet" "$readme" \
+      || note "$readme" "status is planned, so the fourth question is '## Not built yet' — say what does not exist"
+    grep -qi "^## Verified" "$readme" \
+      && note "$readme" "status is planned but claims a '## Verified' section — there is nothing to have verified"
+    grep -qE '^blocked-by:' "$bp/blueprint.yml" \
+      || note "$bp/blueprint.yml" "status is planned but declares no blocked-by — list the open questions, or [] to claim none are open"
+  else
+    [[ -e "${bp}files" ]] || note "$bp" "missing files/ — a $status blueprint has a payload"
+    grep -qi "^## Verified" "$readme" \
+      || note "$readme" "no '## Verified' section — say what it was run against, or that it was not"
+    if [[ "$status" == "stable" ]] && ! grep -qE '^\s+date: [0-9]{4}-[0-9]{2}-[0-9]{2}' "$bp/blueprint.yml"; then
+      note "$bp/blueprint.yml" "status is stable but no verified.date is recorded"
+    fi
   fi
 done
 shopt -u nullglob
@@ -137,12 +151,18 @@ echo "== Vocabulary matches the glossary =="
 # are listed; the correct one is on the right.
 TERMS="site/src/data/terms.ts"
 if [[ -f "$TERMS" ]]; then
+  # Exempt, for the same reason docs/profiles.md is exempt from the retired
+  # taxonomy check above: a redirect has to name the term it redirects from, or
+  # the person searching for the old word never lands on the new one.
+  VOCAB_TOMBSTONES='blueprints/agent-maintained-knowledge-base/README\.md'
+
   check_variant() {
     local wrong="$1" right="$2"
     local hits
     hits="$(grep -rniE "$wrong" --include='*.md' \
       docs .ai blueprints README.md AGENTS.md CONTRIBUTING.md ROADMAP.md 2>/dev/null \
-      | grep -v 'check-conformance' || true)"
+      | grep -v 'check-conformance' \
+      | grep -vE "^($VOCAB_TOMBSTONES):" || true)"
     if [[ -n "$hits" ]]; then
       while IFS= read -r line; do
         note "${line%%:*}" "use '$right' as defined in the glossary — found: $(echo "$line" | cut -d: -f3- | cut -c1-60)"

@@ -24,6 +24,39 @@ blueprints/<id>/
   files/           the payload — copied verbatim
 ```
 
+## The three statuses
+
+A blueprint carries a status, and the status says what has been done, not how
+good it is.
+
+| Status | Decisions | Payload | Run against a real project |
+|---|---|---|---|
+| `planned` | made and written down | none yet | no |
+| `draft` | made | complete | no |
+| `stable` | made | complete | yes |
+
+**`planned` exists because the scope is the harder half.** What problem this
+solves, what it deliberately does not cover, and when you should not use it are
+answerable before a single file is written — and answering them in the open is
+what stops the payload from drifting into whatever was easy to build.
+
+It is not a placeholder. A `planned` blueprint that cannot say what it refuses
+to do has not been thought about, and should not have a directory.
+
+Three rules keep it honest:
+
+1. **No `files/` directory.** An empty payload folder looks maintained. A
+   missing one cannot be mistaken for anything.
+2. **The fourth question changes.** `draft` and `stable` answer *Verified*;
+   `planned` answers ***Not built yet*** — plainly, in the README, saying what
+   does not exist and what would have to be true to build it.
+3. **`blocked-by` is mandatory in the manifest.** Every open question that
+   stands between the scope and the payload, listed. `blocked-by: []` is a
+   claim that nothing is open, and then the only thing missing is the work.
+
+A `planned` blueprint that sits unchanged for a long time is evidence the
+trigger was imagined. Remove it rather than let it decorate the list.
+
 `README.md` is short: what the blueprint is for, the command, and what the
 adopter has to change afterwards. Links to the website for anything longer.
 
@@ -32,7 +65,7 @@ adopter has to change afterwards. Links to the website for anything longer.
 ```yaml
 id: open-source
 title: Open source baseline
-status: draft          # draft | stable
+status: draft          # planned | draft | stable
 applies-to: new-repo   # new-repo | existing-repo
 placeholders:
   - OWNER
@@ -53,12 +86,38 @@ The blueprint's README states which placeholders to replace. A bootstrap script
 that does the replacing is worth adding once a blueprint has been used a few
 times, not before.
 
+## Cut by trigger
+
+The set is cut by **what happened to the adopter**, not by what the answer is
+built from.
+
+> One blueprint per trigger. Not one per technology, not one per company size.
+
+Three cuts look natural and are wrong. **By technology** — `rag/`, `mcp/` —
+because someone who does not already know which they need cannot choose, which
+defeats the point. **By size** — `solo/`, `team/`, `enterprise/` — because a
+single expert may need more technique than a company, and a company may need
+governance while its AI capability is near zero. **By maturity** —
+`starter/`, `advanced/` — same objection, plus it implies everyone is heading
+for the top.
+
+The reasoning is in
+[research/knowledge-management/DERIVED.md](../research/knowledge-management/DERIVED.md),
+which derives it from the material rather than from taste.
+
 ## Adding one
 
-1. Create `blueprints/<id>/` with the three parts above.
-2. Add a row to `blueprints/README.md`.
-3. Start at `status: draft`. Promote to `stable` only once the payload has been
+1. Name the trigger. If you cannot state the situation the adopter is in
+   without naming a technology, there is no blueprint here yet.
+2. Create `blueprints/<id>/` — `README.md` and `blueprint.yml`, plus `files/`
+   once there is a payload.
+3. Add a row to `blueprints/README.md`.
+4. Start at `planned` if the scope is settled and nothing is built, `draft` once
+   the payload is complete. Promote to `stable` only after the payload has been
    copied into a real project and worked.
+
+The name follows the trigger too. `open-source` and `ai-assisted-development`
+name situations; neither names a tool.
 
 ## What this repository demonstrates
 

@@ -1,0 +1,33 @@
+id: agent-tool-access
+title: Agent tool access
+status: planned
+applies-to: existing-repo
+trigger: >-
+  More than one AI client needs the same tools, and the permissions are
+  scattered across the integrations.
+summary: >-
+  One tool surface every client can reach, with the credential held by the
+  runtime rather than the model, read and write separated, controls graded by
+  what an action can break, and an audit event that names all six actors.
+licence: MIT-0
+placeholders: []
+
+# Deliberately not called mcp-server. The adopter does not have "no MCP
+# server" — they have four integrations and no view of who can do what. MCP is
+# the likely implementation, not the problem. See docs/blueprints.md.
+
+# Open questions between the decided scope and a payload. The first one is
+# unanswered in the source material itself, not merely unanswered here.
+blocked-by:
+  - The threshold at which one surface beats direct integration. Drop 2 treats
+    it as the answer once there are many tools; drop 6 warns against exactly
+    that reflex. Nobody attaches a number to "many".
+  - Whether the payload can stay language-agnostic. Every blueprint here is so
+    far, and a tool surface is running code in a repository that has none.
+  - How this composes with ai-assisted-development, which already ships "stop
+    and ask" triggers. Graded action control is the same idea with a risk
+    score; two overlapping models in two payloads is worse than either.
+
+ready-when: >-
+  The threshold question has a defensible answer, and the overlap with
+  ai-assisted-development is resolved in favour of one model rather than two.

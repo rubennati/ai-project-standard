@@ -1,0 +1,38 @@
+id: agent-maintained-knowledge-base
+title: Agent-maintained knowledge base
+status: planned
+applies-to: existing-repo
+trigger: >-
+  A second person now has to be able to trust what is written down, and an
+  agent is writing some of it.
+summary: >-
+  An operating contract an agent reads, two status axes on every knowledge
+  object, a change chain that names six actors, and review as a pull request.
+  For a directory of files you already have — not a new application.
+licence: MIT-0
+placeholders: []
+
+# The name is taken from the research, not invented. "LLM wiki" is retired —
+# see research/knowledge-management/REVISIONS.md R1 — and drop 4 lists six
+# candidate generic terms, of which this is the one that says what the thing
+# does rather than which model maintains it.
+
+# Open questions between the decided scope and a payload. Not a wish list:
+# each one changes what the files would contain, which is why nothing is
+# written yet.
+blocked-by:
+  - Where the base sits relative to the sources. A hybrid — sources where
+    people already keep them, curated knowledge in Git — is the honest
+    recommendation and also two systems to keep in step.
+  - What the agent may do without asking. Writing to pending/ is safe, editing
+    a published page is not, and everything between is undecided.
+  - Whether seven metadata fields per object survive a real week, or get
+    copied blindly after the first month.
+  - Whether this repository counts as a first run. It is close enough to be
+    misleading: maintained with an agent under written rules, but not built
+    from this contract.
+
+# What would make this buildable.
+ready-when: >-
+  The first two blocking questions are answered, and there is one real
+  knowledge base outside this repository to run the contract against.

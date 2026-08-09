@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — A third blueprint status, and the first two planned blueprints
+
+- `planned` joins `draft` and `stable`. It means the scope is decided and nothing is built — because scoping is the harder half, and doing it in the open is what stops a payload from drifting into whatever was easy to write. Three rules keep it honest: no `files/` directory, because an empty payload folder looks maintained; the fourth README question becomes **Not built yet** instead of *Verified*; and `blocked-by` is mandatory in the manifest.
+- `blueprints/agent-maintained-knowledge-base/` — trigger: a second person has to be able to trust what is written down, and an agent is writing some of it. Scope: an operating contract the agent reads, two status axes per knowledge object, a change chain naming six actors, review as a pull request. Four blocking questions recorded.
+- `blueprints/agent-tool-access/` — trigger: more than one AI client needs the same tools and the permissions are scattered. Deliberately not called `mcp-server`: the adopter does not have "no MCP server", they have four integrations and no view of who can do what. Blocked on a question the research itself does not answer — at what point one surface beats direct integration, where drop 2 and drop 6 argue opposite sides.
+- `blueprints/README.md` is now a trigger table, and names the three triggers that deliberately get no blueprint of their own: write access, sensitive data, more than one user. Those are controls inside each blueprint. A separate security blueprint would model security as optional.
+- The conformance check enforces all of it, and was tested against violations rather than only against the passing case.
+
 ### Added — Two registers over the research, and a recovery
 
 - `research/knowledge-management/REVISIONS.md` — the seven drops revise themselves as they go, and the drop files stay as they arrived. This is where the resolution lives: ten conflicts, four of them outright reversals, each with what the earlier drop said, what the later one said, and which reading this project takes. Plus a terminology check across all seven rounds.

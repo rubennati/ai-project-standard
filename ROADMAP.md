@@ -19,15 +19,17 @@ and by team size. That cut asked the adopter to already know the answer.
 
 ## Near term
 
-- **Two blueprints beyond the current pair**, in this order:
-  - **A knowledge base an agent may maintain.** Trigger: a second person has to
-    be able to trust what is written. The payload is an operating contract, a
-    two-axis status model on every knowledge object, and the review path. Not
-    to be named after a wiki — see
-    [REVISIONS.md](./research/knowledge-management/REVISIONS.md) R1.
-  - **A tool surface several AI clients can share.** Trigger: more than one
-    client needs the same tools. Open question first: at what point this beats
-    a direct integration, which no source in the material answers.
+- **Build the two planned blueprints**, in this order. Both have their scope,
+  their boundaries and their open questions written down; neither has a payload.
+  - [`agent-maintained-knowledge-base`](./blueprints/agent-maintained-knowledge-base/)
+    — buildable once it is settled where the base sits relative to the sources
+    and what the agent may do without asking, and once there is one real base
+    outside this repository to run it against.
+  - [`agent-tool-access`](./blueprints/agent-tool-access/) — blocked on a
+    question the material itself does not answer: at what point one tool surface
+    beats direct integration. Drop 2 and drop 6 argue opposite sides and nobody
+    attaches a number to "many tools". Building before that is answered would be
+    this project adding a component because it is possible.
 - **Fold the security positions into what already ships.** P1 to P5 in
   [DERIVED.md](./research/knowledge-management/DERIVED.md) — the model never
   holds the credential, human permission is not agent permission, a threat model
