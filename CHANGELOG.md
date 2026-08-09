@@ -13,6 +13,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - *Which licence, and what does it commit you to?* — permissive, file-level copyleft, strong copyleft. The "GPL is the most used licence" claim is replaced by the two available measurements and the limits their own authors state.
 - *Who owns code written at work?* — § 40b Austrian and § 69b German Copyright Act give the employer rights of use, not authorship; US work-for-hire makes the employer the author. The distinction decides who may relicense.
 
+### Added — The first blueprint
+
+- `blueprints/open-source/` — governance, contribution and CI files for a public repository. The decisions are made and the reasons are stated: DCO over CLA, one merge strategy, no foundation-shaped governance until contributor volume forces it. No AI files, no application code, and no licence chosen for the adopter — the payload ships without a `LICENSE` and its CI fails until one exists, because that choice decides whether the project is open source at all.
+- The payload's CI is six gates that block a merge, all language-agnostic: required files, a licence, signed-off commits, actions pinned to a full SHA, no committed binaries, Markdown lint. Plus `docs/repository-settings.md`, the switches CI assumes and no file can turn on, and `docs/git-workflow.md`, which states why not Git Flow and why an environment is not a branch.
+- Run against a fresh copy on 2026-08-09 and the result recorded in the manifest. It found one defect: the payload shipped no markdownlint configuration, so its own CI would have failed it on the default 80-column rule.
+- Everything under `blueprints/` is MIT-0, declared by `blueprints/LICENSE`. A template file that obliges an adopter to carry someone else's copyright notice into their own `CONTRIBUTING.md` is friction with no upside. The repository stays MIT, site texts stay CC BY 4.0.
+- Each payload file opens with a line naming it as payload. In a code search or a blob view the path is invisible, which is where a template and a live file get confused.
+
+### Added — The blueprint contract, before the first blueprint
+
+- `docs/blueprints.md` — a blueprint is material you copy, not material you read. The shape (`README.md`, `blueprint.yml`, `files/`), how one is taken, how one is added, and the rule that a blueprint this repository does not itself run is a proposal and says so.
+- `blueprints/README.md` — the catalogue, deliberately empty. The contract is written first so the first blueprint conforms to a rule instead of becoming it.
+
 ### Added — A queue for unverified material
 
 - `research/` — where material waits while it is being verified. Not published, not normative, and it empties: a file whose content has shipped is deleted. The first area holds two documents on open-source practice, translated from German, with a `STATUS.md` recording six known problems and where each block of content is meant to go.

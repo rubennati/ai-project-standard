@@ -1,0 +1,21 @@
+# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+#
+# Whitespace is a review distraction, and every editor gets it wrong in a
+# different way. This settles it once, for every contributor, without a
+# formatter or a language toolchain.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+# Two trailing spaces are a hard line break in Markdown.
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab

@@ -11,7 +11,7 @@
 
 AI Project Standard is a starting baseline for open-source projects that use AI.
 
-**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable as the full template, in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
+**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
 
 The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
 
@@ -30,7 +30,7 @@ Four common adoption paths — a 2×2 grid of *new vs. existing* × *with vs. wi
 3. New open-source project, no AI.
 4. Professionalising an existing open-source project.
 
-See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps. Available as a GitHub template from v0.2.0.
+See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps.
 
 ## Website
 
@@ -43,6 +43,7 @@ The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It ca
 - `.github/` — platform templates, workflows, automation
 - `docs/` — strict reader documentation
 - `.ai/` — AI operational workspace (state, routing, decisions)
+- `blueprints/` — material to copy into your own project; see [`docs/blueprints.md`](docs/blueprints.md)
 - `research/` — material being verified, on its way to the site or to `docs/`. Nothing in it is published or normative; see [`research/README.md`](research/README.md)
 - Root files — governance, contribution policy, security, support
 
@@ -77,5 +78,7 @@ AI-native collaboration requires explicit boundaries, decision records, and rout
 ## Licensing
 
 This repository — the code and the documentation in it, including everything under `docs/` — is under the [MIT licence](LICENSE).
+
+Everything under `blueprints/` is [MIT-0](blueprints/LICENSE) — MIT without the attribution requirement, so a copied template file carries no notice about this repository into yours.
 
 The texts written for the website at <https://ai-standard.rubennati.at>, which live in `site/`, are under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them, commercially included, as long as you credit the source. Pages the site renders from `docs/` stay MIT, since that is where the text lives.

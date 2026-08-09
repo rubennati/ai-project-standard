@@ -10,3 +10,6 @@
 
 # Placeholder in docs/website-audit.md — the reader substitutes their own domain.
 ^https://<DOMAIN
+
+# Blueprint payloads carry placeholders, not real URLs.
+^https://github\.com/\{\{OWNER\}\}

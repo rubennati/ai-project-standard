@@ -1,0 +1,19 @@
+# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Local environment
+.env
+.env.local
+
+# Dependencies and build output — adjust to your ecosystem
+node_modules/
+dist/
+build/

@@ -41,7 +41,7 @@ The standard is split across two layers by design:
 - **Operational layer (this repository)** — short, dense files used during day-to-day work. `.ai/` is operational state, not documentation. `docs/` is the strict reader. Root files are governance. No marketing, no long-form essays.
 - **Knowledge layer (the GitHub Pages site)** — the public face. Use-case walk-throughs, deep guides, blog, comparisons, research, SEO. Pulls content from `docs/` where appropriate; adds long-form content of its own.
 
-The repository itself serves as the working reference — every file, workflow, and convention runs in this repository, not just on paper.
+The repository itself serves as the working reference — the parts of the standard it has adopted run here, not just on paper. Where it has not yet adopted a blueprint, that blueprint is a proposal, not a demonstration (see [blueprints.md](./blueprints.md)).
 
 ## Mandatory files
 

@@ -1,0 +1,153 @@
+# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+#
+# Gates, not decoration. Every job here blocks a merge, and every one of them is
+# language-agnostic — add your build, tests and type checks as jobs beside them.
+#
+# What is checked and why:
+#   structure     the files a public repository is expected to have
+#   licence       a repository without one is not open source
+#   sign-off      inbound rights are certified per commit (DCO)
+#   pinned        a mutable action tag is a supply-chain hole
+#   no-binaries   a committed binary cannot be reviewed
+#   markdown      lint
+#   links         resolve, strictly once a week
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '0 6 * * 1'
+
+# An unlisted scope resolves to `none`. Declare the minimum; widen per job.
+permissions:
+  contents: read
+
+jobs:
+  baseline:
+    name: Repository baseline
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Required files exist
+        run: |
+          missing=0
+          for f in README.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md CHANGELOG.md; do
+            [ -f "$f" ] || { echo "::error::$f is missing"; missing=1; }
+          done
+          exit $missing
+
+      # A public repository with no licence grants nothing beyond what the
+      # hosting platform's terms allow. This fails until you choose one.
+      - name: A licence is present
+        run: |
+          ls LICENSE LICENSE.md LICENSE.txt >/dev/null 2>&1 || {
+            echo "::error::No LICENSE file. Choose one: https://opensource.org/licenses"
+            exit 1
+          }
+
+      # Scorecard's Binary-Artifacts check, in miniature. A committed binary is
+      # code nobody reviewed, in a repository whose point is that code is
+      # readable.
+      - name: No committed binaries
+        run: |
+          found=$(git ls-files | grep -E '\.(jar|war|exe|dll|so|dylib|class|pyc|o|a)$' || true)
+          if [ -n "$found" ]; then
+            echo "::error::Binary artifacts are committed:"; echo "$found"; exit 1
+          fi
+
+  sign-off:
+    name: Commits are signed off
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      # The Developer Certificate of Origin is the inbound-rights mechanism this
+      # blueprint picks. Enforcing it in CI is what makes it a policy rather
+      # than a sentence in CONTRIBUTING.md.
+      - name: Every commit carries Signed-off-by
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          HEAD: ${{ github.event.pull_request.head.sha }}
+        run: |
+          fail=0
+          for sha in $(git rev-list "$BASE..$HEAD"); do
+            if ! git log -1 --format=%B "$sha" | grep -q '^Signed-off-by: '; then
+              echo "::error::$(git log -1 --format='%h %s' "$sha") — not signed off. Use: git commit -s"
+              fail=1
+            fi
+          done
+          exit $fail
+
+  pinned-actions:
+    name: Actions pinned to a SHA
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      # A tag is mutable. Compromised releases of popular actions have happened,
+      # and a tag moves under you without a commit in your repository. Dependabot
+      # bumps pinned SHAs, so pinning does not mean going stale.
+      - name: No mutable action references
+        run: |
+          refs=$(grep -rhoE '^[[:space:]]*-?[[:space:]]*uses:[[:space:]]*\S+' .github/workflows \
+                 | sed -E 's/.*uses:[[:space:]]*//' \
+                 | grep -vE '^(\./|docker://)' || true)
+          fail=0
+          for ref in $refs; do
+            case "$ref" in
+              *@????????????????????????????????????????) : ;;
+              *) echo "::error::$ref is not pinned to a full commit SHA"; fail=1 ;;
+            esac
+          done
+          exit $fail
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@8de2aa07cae85fd17c0b35642db70cf5495f1d25 # v24.0.0
+        with:
+          globs: |
+            **/*.md
+            !node_modules
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      # Advisory on pull requests, strict on the weekly run: external 4xx and
+      # 5xx flakes are common and should not block a review.
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          fail: ${{ github.event_name == 'schedule' }}
+          args: >-
+            --no-progress
+            --exclude-mail
+            --exclude-loopback
+            './**/*.md'

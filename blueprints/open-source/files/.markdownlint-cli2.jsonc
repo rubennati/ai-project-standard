@@ -1,0 +1,35 @@
+// Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+//
+// Markdown lint, relaxed where the default rule costs more than it returns.
+// Every disabled rule below has a reason; do not switch one off without one.
+{
+  "config": {
+    "default": true,
+
+    // Hard-wrapping prose at 80 columns makes every edit a reflow, and the
+    // diff then shows a paragraph where one word changed. Reviewers wrap.
+    "MD013": false,
+
+    // Inline HTML is needed for accessibility hints and the occasional layout
+    // case a Markdown construct cannot express.
+    "MD033": false,
+
+    // Some files legitimately open with something other than a top-level
+    // heading — front matter, a licence banner, an admonition.
+    "MD041": false,
+
+    // "### Added" repeats under every version block in a Keep a Changelog
+    // file. Duplicate headings are only a problem under the same parent.
+    "MD024": { "siblings_only": true },
+
+    // A heading that asks a question ends in a question mark.
+    "MD026": false,
+
+    // Pipe alignment in tables is invisible once rendered, and enforcing it
+    // produces churn in files nobody reads as source.
+    "MD060": false
+  },
+  "ignores": [
+    "node_modules/**"
+  ]
+}
