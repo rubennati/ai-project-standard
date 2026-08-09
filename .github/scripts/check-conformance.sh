@@ -188,6 +188,21 @@ if [[ -f "$TERMS" ]]; then
     esac
     [[ -e "$ref" ]] || note "documentation" "references $ref, which does not exist"
   done
+
+  # And the other direction, which is the one that actually went wrong: a
+  # blueprint was added and the two lists that advertise it were not updated.
+  # Checking only that named paths exist catches a rename and misses an
+  # addition entirely.
+  for bp in blueprints/*/; do
+    id="$(basename "$bp")"
+    [[ -d "$bp" ]] || continue
+    # The root README links blueprints/<id>; blueprints/README.md links ./<id>/
+    # from inside the directory. Accept either form in either file.
+    for list in README.md blueprints/README.md; do
+      grep -qE "(blueprints/|\./)$id/" "$list" 2>/dev/null \
+        || note "$list" "blueprints/$id exists but is not listed here — a blueprint nobody can find is a blueprint that does not exist"
+    done
+  done
 else
   echo "  skip  $TERMS not present"
 fi

@@ -1,69 +1,125 @@
 ---
 import Base from "../layouts/Base.astro";
 const base = import.meta.env.BASE_URL;
+
+// One row per trigger — the situation you are already in — not per technology
+// and not per company size. Kept in step with blueprints/README.md in the
+// repository; if the two disagree, the repository is right.
+const triggers = [
+  {
+    trigger: "You are starting a public repository",
+    blueprint: "open-source",
+    status: "draft",
+    what:
+      "Governance, contribution and CI files, with the decisions already made and the reasons stated. No AI files, no application code, and no licence chosen for you — that one is yours, and it is the choice that decides whether this is open source at all.",
+  },
+  {
+    trigger: "An agent is going to work in your repository",
+    blueprint: "ai-assisted-development",
+    status: "draft",
+    what:
+      "The frame the agent operates inside: when it stops and asks, what it may never do, and what has to be verified before anything reaches the default branch. Drops on top of a repository you already have.",
+  },
+  {
+    trigger: "A second person has to be able to trust what is written down",
+    blueprint: "agent-maintained-knowledge-base",
+    status: "planned",
+    what:
+      "An operating contract the agent reads, two status axes on every knowledge object, and review as a pull request. Because a recommendation can be reviewed, published, and still be a recommendation — and without the second axis, opinion quietly becomes fact.",
+  },
+  {
+    trigger: "More than one AI client needs the same tools",
+    blueprint: "agent-tool-access",
+    status: "planned",
+    what:
+      "One tool surface every client can reach, with the credential held by the runtime rather than the model. Blocked on a question nobody has answered: at what point one surface beats four direct integrations.",
+  },
+];
+
+const repoUrl = "https://github.com/rubennati/ai-project-standard";
 ---
 
 <Base
   title="Use cases — AI Standard"
-  description="Four concrete use cases the standard is designed for."
+  description="What has to have happened to you before a blueprint is worth taking. One per trigger, not one per technology."
   schemaType="CollectionPage"
 >
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Use cases</h1>
   <p class="mt-4 max-w-2xl opacity-80">
-    The standard targets four concrete situations. Each maps to a profile in <a href={`${base}profiles`}>Profiles</a>.
+    Each of these is a <strong>trigger</strong> — something that has already happened to you. You do not adopt
+    the next stage because it exists; you add a control when a concrete problem needs one.
+  </p>
+  <p class="mt-4 max-w-2xl opacity-80">
+    That is why the list is not cut by technology or by team size. Cut by technology, you would have to know the
+    answer before you could find it. Cut by size, it would be wrong in both directions: one expert can need more
+    technique than a company, and a company can need governance while its AI use is close to zero.
   </p>
 
-  <section class="mt-12 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">1. New project, AI from day one</h2>
+  <section class="mt-12 flex flex-col gap-6">
+    {
+      triggers.map((row, i) => (
+        <article class="flex flex-col gap-3 rounded-lg border border-black/10 p-6 dark:border-white/10">
+          <div class="flex flex-wrap items-baseline gap-3">
+            <h2 class="text-xl font-semibold">
+              {i + 1}. {row.trigger}
+            </h2>
+            <span class="rounded-full border border-black/15 px-2.5 py-0.5 text-xs uppercase tracking-wide opacity-70 dark:border-white/15">
+              {row.status}
+            </span>
+          </div>
+          <p class="opacity-80">{row.what}</p>
+          <p class="text-sm opacity-70">
+            Blueprint:{" "}
+            <a href={`${repoUrl}/tree/main/blueprints/${row.blueprint}`} rel="noopener">
+              <code>{row.blueprint}</code>
+            </a>
+          </p>
+        </article>
+      ))
+    }
+  </section>
+
+  <section class="mt-16 flex flex-col gap-3">
+    <h2 class="text-2xl font-semibold">What the statuses mean</h2>
     <p class="opacity-80">
-      You are starting a new project and want both the open-source scaffolding and structured human-AI
-      collaboration from the first commit. Use the <strong>Combined</strong> profile via "Use this template" on GitHub.
+      <strong>Draft</strong> means the payload is complete and has been run against a fresh copy, but has not yet
+      started a real project. <strong>Planned</strong> means the scope is decided and nothing is built — no files,
+      and the open questions written down where you can read them.
+    </p>
+    <p class="opacity-80">
+      Planned is not a placeholder. Scoping is the harder half: what a blueprint refuses to do is the part that
+      stops it drifting into whatever was easy to write. A planned blueprint that cannot say what it leaves out
+      has not been thought about.
     </p>
   </section>
 
-  <section class="mt-10 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">2. Existing project, adopting AI</h2>
+  <section class="mt-12 flex flex-col gap-3">
+    <h2 class="text-2xl font-semibold">Three triggers with no blueprint of their own</h2>
     <p class="opacity-80">
-      You already have a repository with its own conventions and want to introduce structured AI collaboration
-      without redoing the OSS scaffolding. Use the <strong>AI-only</strong> profile and drop the AI files into
-      your existing repository.
-    </p>
-  </section>
-
-  <section class="mt-10 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">3. New open-source project, no AI yet</h2>
-    <p class="opacity-80">
-      You want a credible open-source baseline (governance, CI, contribution rules, security policy) without
-      AI tooling. Use the <strong>OSS-only</strong> profile and skip the AI files.
-    </p>
-  </section>
-
-  <section class="mt-10 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">4. Professionalising an existing open-source project</h2>
-    <p class="opacity-80">
-      You already have an open-source repository and want to close the gaps — governance, security policy,
-      contribution rules, CI — without adopting everything at once. Pull in the <strong>OSS-only</strong> profile
-      pieces that are missing and leave the rest.
+      Write access, sensitive data, and more than one user. Each one changes what you need — but they are
+      controls that belong <em>inside</em> the blueprints above, not beside them. A separate security blueprint
+      would model security as an optional extra, which is the exact failure it would exist to prevent.
     </p>
   </section>
 
   <section class="mt-16 flex flex-col gap-3">
     <h2 class="text-2xl font-semibold">Next step</h2>
     <p class="opacity-80">
-      Pick a profile and follow the matching section in the adoption guide.
+      A blueprint is material you copy, not something you read. The contract — what one contains, the four
+      questions each has to answer, and how the set is cut — is in the repository documentation.
     </p>
     <div class="flex flex-wrap gap-4">
       <a
-        href={`${base}profiles`}
+        href={`${base}docs/blueprints`}
         class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:opacity-90"
       >
-        Compare profiles
+        What a blueprint is
       </a>
       <a
-        href={`${base}docs/adoption`}
+        href={`${base}docs/getting-started`}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
-        Adoption guide
+        Getting started
       </a>
     </div>
   </section>

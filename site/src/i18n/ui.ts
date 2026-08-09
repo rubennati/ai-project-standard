@@ -124,7 +124,7 @@ export const ui = {
     repoCopy:
       "The conventions this site describes are kept in a public repository, and the site is built directly from it. That matters if you write software \u2014 you can read the source, copy it, or adopt it. If it means nothing to you, ignore it: nothing on this site requires it.",
     repoContains:
-      "Inside it: the AGENTS.md convention for working with several AI tools on one codebase, a security baseline with CI hardening, branch protection rules, adoption profiles, and the operational `.ai/` workspace. The repository runs on its own conventions rather than only describing them.",
+      "Inside it: the AGENTS.md convention for working with several AI tools on one codebase, a security baseline with CI hardening, branch protection rules, the blueprints themselves, and the operational `.ai/` workspace. The repository runs on its own conventions rather than only describing them, and a self-conformance check fails the build when it stops.",
     repoLink: "Read the documentation here",
     repoLinkExternal: "The repository on GitHub",
     glossaryAside:
@@ -147,7 +147,7 @@ export const ui = {
       "Repository conventions for working with AI, kept in the repository underneath and rendered here.",
     nowUseCases: "Use cases",
     nowUseCasesCopy:
-      "Four starting points, from a new project to professionalising an existing one.",
+      "Four triggers, and the material each one calls for. Something has already happened to you; that is what decides, not the size of your team.",
     nowGlossary: "Glossary",
     nowGlossaryCopy: "Terms, for when you need to know what someone actually means.",
     stillWriting:
@@ -167,7 +167,7 @@ export const ui = {
     aboutTitle: "About",
     aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
     aboutIntro:
-      "A starting baseline for open-source projects that use AI. Four pillars: human-AI collaboration, open-source operations, engineering operations, knowledge and documentation.",
+      "A starting baseline for open-source projects that use AI. Blueprints you copy into your own project, cut by what has already happened to you — starting a public repository, letting an agent work in it, or needing a second person to trust what is written down.",
     aboutLayerCopy:
       "The repository is the operational layer: workflows, AI state, governance, templates. This site is the knowledge layer: explanations, comparisons, tutorials, research, and blog.",
     maintainer: "Maintainer",
@@ -310,7 +310,7 @@ export const ui = {
     repoCopy:
       "Die Konventionen, die diese Seite beschreibt, liegen in einem öffentlichen Repository, und die Seite wird direkt daraus gebaut. Das ist wichtig, wenn du Software schreibst \u2014 du kannst den Quelltext lesen, kopieren oder übernehmen. Sagt dir das nichts, ignorier es: Nichts auf dieser Seite setzt es voraus.",
     repoContains:
-      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Tools an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, Adoptionsprofile und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben.",
+      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Tools an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, die Blueprints selbst und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben — und eine Selbstprüfung lässt den Build scheitern, sobald das nicht mehr stimmt.",
     repoLink: "Dokumentation hier lesen",
     repoLinkExternal: "Das Repository auf GitHub",
     glossaryAside:
@@ -333,7 +333,7 @@ export const ui = {
       "Repository-Konventionen für die Arbeit mit KI, gepflegt im Repository darunter und hier dargestellt.",
     nowUseCases: "Anwendungsfälle",
     nowUseCasesCopy:
-      "Vier Ausgangspunkte, vom neuen Projekt bis zur Professionalisierung eines bestehenden.",
+      "Vier Auslöser und das Material, das jeder davon verlangt. Entscheidend ist, was dir bereits passiert ist — nicht die Größe deines Teams.",
     nowGlossary: "Glossar",
     nowGlossaryCopy: "Begriffe, wenn du wissen musst, was jemand tatsächlich meint.",
     stillWriting:
@@ -353,7 +353,7 @@ export const ui = {
     aboutTitle: "Über das Projekt",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
     aboutIntro:
-      "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Vier Säulen: Mensch-KI-Zusammenarbeit, Open-Source-Betrieb, Engineering Operations sowie Wissen und Dokumentation.",
+      "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Blueprints zum Kopieren, geschnitten nach dem, was dir bereits passiert ist — ein öffentliches Repository beginnen, einen Agenten darin arbeiten lassen, oder eine zweite Person muss dem vertrauen können, was aufgeschrieben ist.",
     aboutLayerCopy:
       "Das Repository ist die operative Ebene: Workflows, AI-Status, Governance und Templates. Diese Website ist die Wissensebene: Erklärungen, Vergleiche, Tutorials, Recherche und Blog.",
     maintainer: "Maintainer",

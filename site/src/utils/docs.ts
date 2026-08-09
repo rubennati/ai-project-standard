@@ -32,8 +32,9 @@ function humanizeSlug(slug: string): string {
 // Logical ordering for the docs index page; entries not listed fall through
 // in alphabetical order at the end.
 const ORDER = [
+  "purpose",
+  "blueprints",
   "standard",
-  "profiles",
   "adoption",
   "getting-started",
   "ai-workspace-layer",
@@ -42,6 +43,7 @@ const ORDER = [
   "open-source-project-standard",
   "git-workflow",
   "branch-protection",
+  "profiles",
 ];
 
 export function sortDocs(entries: DocEntry[]): DocEntry[] {

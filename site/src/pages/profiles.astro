@@ -1,63 +1,79 @@
 ---
 import Base from "../layouts/Base.astro";
 const base = import.meta.env.BASE_URL;
+
+// Tombstone. Profiles were retired in favour of blueprints; the URL stays alive
+// because it was published and people link to published URLs. The matching
+// tombstone in the repository is docs/profiles.md.
 ---
 
 <Base
-  title="Profiles — AI Standard"
-  description="Three adoption profiles: OSS-only, AI-only, and Combined."
-  schemaType="CollectionPage"
+  title="Profiles — replaced by blueprints — AI Standard"
+  description="The three adoption profiles were replaced by blueprints. This page explains what changed and where the material went."
+  schemaType="WebPage"
 >
-  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Profiles</h1>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">Profiles were replaced by blueprints</h1>
+
   <p class="mt-4 max-w-2xl opacity-80">
-    Three profiles share one repository and one version stream. Pick the profile that matches your context.
-    Detailed file lists live in <a href={`${base}docs/profiles`}>the profiles doc</a>.
+    This page used to describe three adoption profiles — OSS-only, AI-only, and Combined — sharing one
+    repository and one version stream. That model is retired. The URL stays because it was published, and
+    removing published URLs is how documentation becomes untrustworthy.
   </p>
 
-  <section class="mt-12 grid gap-8 sm:grid-cols-3">
-    <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-      <h2 class="text-xl font-semibold">OSS-only</h2>
-      <p class="opacity-80">
-        README, LICENSE, CONTRIBUTING, SECURITY, code of conduct, issue and PR templates, CI workflow,
-        Git workflow docs.
-      </p>
-      <p class="opacity-80">No AI files.</p>
-    </article>
-
-    <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-      <h2 class="text-xl font-semibold">AI-only</h2>
-      <p class="opacity-80">
-        <code>AGENTS.md</code>, tool-specific pointer files (Claude Code, Copilot, Cursor), the
-        <code>.ai/</code> operational workspace, and AI-collaboration docs.
-      </p>
-      <p class="opacity-80">Drops into an existing repository.</p>
-    </article>
-
-    <article class="flex flex-col gap-2 rounded-lg border border-black/10 p-6 dark:border-white/10">
-      <h2 class="text-xl font-semibold">Combined</h2>
-      <p class="opacity-80">
-        The union of both baselines. The working reference in this repository.
-      </p>
-      <p class="opacity-80">Available as a GitHub template from v0.2.0.</p>
-    </article>
+  <section class="mt-12 flex flex-col gap-4">
+    <h2 class="text-2xl font-semibold">What was wrong with profiles</h2>
+    <p class="opacity-80">
+      A profile answered <em>which bundle of files applies to a project like mine</em>. It turned out to be the
+      wrong question in three ways.
+    </p>
+    <ul class="flex list-disc flex-col gap-2 pl-6 opacity-80">
+      <li>
+        <strong>It asked you to classify yourself first.</strong> Before you could take anything you had to
+        decide which of three kinds of project you were — and people who are unsure pick wrong, or pick the
+        largest.
+      </li>
+      <li>
+        <strong>The combined profile was the union of the other two</strong>, which meant the real answer to
+        most questions was "take everything", and taking everything is how a repository ends up describing a
+        structure that does not exist.
+      </li>
+      <li>
+        <strong>Nothing said what a bundle was for.</strong> A file list is not a reason. It cannot tell you
+        when <em>not</em> to take it, which is the part that saves you work.
+      </li>
+    </ul>
   </section>
 
-  <section class="mt-16 flex flex-col gap-3">
-    <h2 class="text-2xl font-semibold">How to adopt</h2>
+  <section class="mt-12 flex flex-col gap-4">
+    <h2 class="text-2xl font-semibold">What replaced them</h2>
     <p class="opacity-80">
-      The adoption guide walks through each profile and a recommended workflow for keeping in sync with new
-      releases of the standard.
+      A blueprint is material you copy into your own project, cut by <strong>trigger</strong> — something that
+      has already happened to you — rather than by the kind of project you think you have. Each one has to
+      answer four questions before it may exist: what it solves, what you get, <em>when not to use it</em>, and
+      what it has actually been run against.
     </p>
-    <a
-      href={`${base}docs/adoption`}
-      class="w-fit rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:opacity-90"
-    >
-      Adoption guide
-    </a>
+    <p class="opacity-80">
+      The last two are the ones profiles never had. A blueprint nobody has run is a suggestion, and it has to
+      say so.
+    </p>
+    <div class="mt-2 flex flex-wrap gap-4">
+      <a
+        href={`${base}use-cases`}
+        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:opacity-90"
+      >
+        The triggers, and what each one takes
+      </a>
+      <a
+        href={`${base}docs/blueprints`}
+        class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
+      >
+        What a blueprint is
+      </a>
+    </div>
   </section>
 
   <p class="mt-12 text-sm opacity-60">
-    The rich profiles page (interactive comparison, in-page file lists) lands in a later release. This v0.2.0
-    page is intentionally minimal.
+    The repository keeps a matching tombstone at <a href={`${base}docs/profiles`}>docs/profiles</a>, and its
+    self-conformance check fails the build if the retired vocabulary reappears as current usage anywhere else.
   </p>
 </Base>
