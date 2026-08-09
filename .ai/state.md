@@ -2,6 +2,8 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
+- `docs/purpose.md` is the single statement of what the repository, the website and a blueprint are each for. Where another file disagrees, that file is out of date.
+- Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
 - Blueprints are the current objective and nothing has been built yet: `blueprints/open-source/` from the research, then the extraction of this repository's own AI conventions into a second blueprint. Site work is paused.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).

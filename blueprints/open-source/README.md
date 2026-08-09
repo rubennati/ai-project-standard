@@ -1,5 +1,16 @@
 # Open source baseline
 
+## What it solves
+
+You are starting a public repository and every decision is open at once —
+licence, contribution rules, what blocks a merge, which settings to switch on.
+Most of those decisions have a defensible default that nobody writes down, so
+each project rediscovers them, badly, under time pressure.
+
+This makes the defaults, states why, and enforces the ones a machine can check.
+
+## What you get
+
 The governance, contribution and CI files a public repository needs. No AI
 files, no application code, and no licence chosen for you.
 
@@ -35,7 +46,7 @@ cd ai-project-standard && git sparse-checkout set blueprints/open-source/files
    them on for you.
 5. **Write the README.** The skeleton is a shape, not content.
 
-## What you get
+## What is in it
 
 | File | Why it is here |
 |---|---|
@@ -77,6 +88,17 @@ rule.
 Not covered: the link check, because the payload carries placeholder URLs by
 design; and the GitHub settings in `docs/repository-settings.md`, which no local
 run can exercise.
+
+## When not to use it
+
+- **Your repository already exists and already has these files.** This is a
+  starter, not a migration; take the individual files you are missing instead.
+- **The project is private and will stay private.** Half of this — the code of
+  conduct, the support split, the security reporting path — exists because
+  strangers show up. They will not.
+- **You want the agent rules.** Those are a separate blueprint,
+  [ai-assisted-development](../ai-assisted-development/); this one has no AI in
+  it on purpose.
 
 ## Why it stops here
 

@@ -1,5 +1,16 @@
 # AI-assisted development
 
+## What it solves
+
+An agent pointed at your repository will do whatever the prompt suggests. It
+does not know when to stop and ask, what it must never touch, or what counts as
+verified — and neither does the next session, because nothing wrote it down.
+The result is work nobody can review afterwards.
+
+This sets the boundary once, in files every tool reads.
+
+## What you get
+
 The frame an agent operates inside, dropped on top of a repository you already
 have. It chooses nothing about your language, your licence or your structure.
 
@@ -55,6 +66,16 @@ them with examples produces entries nobody ever deletes.
 
 Empty is not unfinished. `project-brief.md` and `rules.md` carry structure plus
 `<!-- fill -->` markers that `INIT.md` resolves by asking you.
+
+## When not to use it
+
+- **Nobody uses an AI tool on this repository.** Then it is overhead with no
+  return; the rules govern something that is not happening.
+- **You are starting from nothing.** Take
+  [open-source](../open-source/) first — this overlays a repository, it does not
+  create one.
+- **You want the agent to be unconstrained.** That is a legitimate choice for a
+  scratch project, and this blueprint is the opposite of it.
 
 ## Verified
 

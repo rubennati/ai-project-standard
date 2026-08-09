@@ -76,3 +76,6 @@ These are not minimum standards — they are next steps once the basics are in p
 - **OpenSSF Best Practices Badge** — application-based; aim for "Passing" early.
 - **SLSA** — supply-chain provenance levels for serious release pipelines.
 - **NIST SSDF** — secure software development framework; useful as a checklist for compliance-driven projects.
+
+*Sources checked: 2026-08-09 — every cited source resolved, and the default
+`GITHUB_TOKEN` permission claim re-read at the GitHub changelog it cites.*

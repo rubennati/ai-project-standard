@@ -135,3 +135,6 @@ This standard does not ship skills. Adopters add them as recurring workflows eme
 3. Add the tool to the table at the top of this file.
 4. Add the path to the AI-only and Combined profile lists in `docs/profiles.md`.
 5. Open a PR; the change is MINOR per the Versioning policy in `CONTRIBUTING.md`.
+
+*Sources checked: 2026-08-09 — all three vendor documentation links resolved.
+What each tool supports is stated by its vendor and not independently tested.*
