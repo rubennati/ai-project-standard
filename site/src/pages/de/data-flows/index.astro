@@ -4,12 +4,14 @@ import { getUi } from "../../../i18n/ui";
 import { getGettingItBackOut, CHECKED as CHECKED_OUT } from "../../../data/data-flows/getting-it-back-out";
 import { getWhatYouAgreeTo, CHECKED as CHECKED_AGREE } from "../../../data/data-flows/what-you-agree-to";
 import { getTrainingAndRetention, CHECKED } from "../../../data/data-flows/training-and-retention";
+import { getDataSovereignty, CHECKED as CHECKED_SOV } from "../../../data/data-flows/data-sovereignty";
 
 const locale = "de" as const;
 const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
 
 const articles = [
+  { ...getDataSovereignty(locale), href: `${base}de/data-flows/data-sovereignty`, checked: CHECKED_SOV },
   { ...getTrainingAndRetention(locale), href: `${base}de/data-flows/training-and-retention`, checked: CHECKED },
   { ...getWhatYouAgreeTo(locale), href: `${base}de/data-flows/what-you-agree-to`, checked: CHECKED_AGREE },
   { ...getGettingItBackOut(locale), href: `${base}de/data-flows/getting-it-back-out`, checked: CHECKED_OUT },

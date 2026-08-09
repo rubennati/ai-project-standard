@@ -63,7 +63,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 1 | Figure 1 — terms, layers, data flow | `concepts/` | retrieval-architecture §3, redrawn. The original put the model at the centre; corrected by drop 3 | **done** |
 | 2 | Figure 2 — example architectures | website | Three worked examples, better as a page than as a table | queued |
 | 3 | Figure 3 — how do I decide | `concepts/` | Each concept's §1 and §2 | **done** |
-| 4 | Figure 4 — operating models and connection types | website | Five operating models and the sovereignty matrix. Legal-adjacent, needs check dates | queued |
+| 4 | Figure 4 — operating models and connection types | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) | **done** |
 | 4a | "MCP is an access layer, not a knowledge base" | glossary + concept | `MCP Server`, `Resource`; tool-access §3 | **done** |
 
 ---
@@ -76,7 +76,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 1 | The architecture as layers | `concepts/` | retrieval-architecture §3 | **done** |
 | 2 | "Access to my documents" means six things | `concepts/` | tool-access §3, the four ways | **done** |
 | 3 | Why coding agents work well for this | website | An observation, not a build decision | queued |
-| 4 | A local folder does not mean local data | website | Data-path claim, needs an evidence label | queued |
+| 4 | A local folder does not mean local data | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) | **done** |
 | 5 | Chat, workspace, agent | glossary | All three present | **done** |
 | 6 | MCP as an integration protocol | glossary + concept | `MCP`, `MCP Client`, `MCP Server`; tool-access | **done** |
 | 7 | RAG | `concepts/` | retrieval-architecture | **done** |
@@ -87,8 +87,8 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 12 | Neighbouring terms that are not the same | glossary | The confusables, entry by entry | **done** |
 | 13 | The architecture rule worth keeping | `docs/` | [sizing.md](../docs/sizing.md) — the rule | **done** |
 | 14 | Deciding by the problem, not the vocabulary | `docs/` | sizing.md — the rule, and the five tags | **done** |
-| 15 | Correction: "public AI" is dangerous | website | Overturns drop 1; see [REVISIONS.md](./knowledge-management/REVISIONS.md) R3 | queued |
-| 16 | Data sovereignty as a matrix | website | Fourteen questions, not one. The site already argues half of it | queued |
+| 15 | Correction: "public AI" is dangerous | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) — overturns drop 1, see [REVISIONS.md](./knowledge-management/REVISIONS.md) R3 | **done** |
+| 16 | Data sovereignty as a matrix | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) — ten axes as a labelled figure | **done** |
 | 17 | The whole solution space in one picture | `concepts/` | Absorbed into the concept set | **done** |
 | 18 | The definition, and the field | website | Framing | queued |
 | 19 | The practical conclusion | `concepts/` | Each concept's §2 | **done** |
@@ -104,7 +104,7 @@ Where a row says **queued**, it is website-bound and not yet written. Nothing is
 | 0 | Correction: the model is not the centre | `concepts/` | retrieval-architecture §3, stated explicitly | **done** |
 | 1 | Ten technical layers | `concepts/` | retrieval-architecture §3 | **done** |
 | 2 | Which terms are even comparable | glossary | The whole point of the confusables field | **done** |
-| 3 | Four data paths exist simultaneously | website | Data-path reasoning, the site's existing subject | queued |
+| 3 | Four data paths exist simultaneously | website | [/data-flows/data-sovereignty](https://ai-standard.rubennati.at/data-flows/data-sovereignty) | **done** |
 | 4 | "I have a RAG" is as vague as "I have a database" | `concepts/` | retrieval-architecture §1 | **done** |
 | 5 | What "backend" actually means | glossary | `Backend`, `Frontend`, `API`, `Endpoint`, `Orchestrator` | **done** |
 | 6 | The ingestion factory | `concepts/` | retrieval-architecture §3 build-time | **done** |
