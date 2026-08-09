@@ -33,6 +33,7 @@ function humanizeSlug(slug: string): string {
 // in alphabetical order at the end.
 const ORDER = [
   "purpose",
+  "sizing",
   "blueprints",
   "standard",
   "adoption",

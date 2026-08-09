@@ -10,30 +10,45 @@ vocabulary lives.
 
 | Concept | The decision it helps you make | Reviewed |
 |---|---|---|
-| [retrieval-architecture](./retrieval-architecture.md) | You have more material than anyone will read and questions whose answers are already written down. What to build, and what to build instead. | 2026-08-09 |
+| [retrieval-architecture](./retrieval-architecture.md) | You have more material than anyone will read, and questions whose answers are already written down. What to build, and what to build instead | 2026-08-09 |
+| [tool-access](./tool-access.md) | Several assistants need the same systems, and nobody can say what any of them may actually do | 2026-08-09 |
+| [knowledge-lifecycle](./knowledge-lifecycle.md) | Something has to be written down so that other people can *rely* on it, not merely find it | 2026-08-09 |
+| [agent-action-control](./agent-action-control.md) | An agent can act. Which actions run on their own, which wait for a person, and which have no path at all | 2026-08-09 |
+| [delivery-pipeline](./delivery-pipeline.md) | Which checks run, where each one runs, and which of them may block a merge | 2026-08-09 |
 
-## Planned
+## How they fit together
 
-Named because the gap is real, not because the file is nearly written. Each one
-needs the same five answers before it ships.
+```text
+                 delivery-pipeline
+                 how anything ships at all
+                          │
+        ┌─────────────────┼─────────────────┐
+        │                 │                 │
+  retrieval-        knowledge-         tool-access
+  architecture      lifecycle          how it reaches systems
+  finding it        keeping it true          │
+        └─────────────────┴─────────────────┘
+                          │
+                 agent-action-control
+                 what it may do with any of it
+```
 
-- **Tool access and integration** — connectors, protocols and gateways: what
-  each layer is actually for, when one shared surface beats four direct
-  integrations, and where the credential lives. Blocked on the same question as
-  the [`agent-tool-access`](../blueprints/agent-tool-access/) blueprint, which
-  the research argues both ways and settles neither.
-- **Knowledge lifecycle** — how a statement moves from candidate to published to
-  superseded, who owns it, and what a review actually checks. The half of
-  [`agent-maintained-knowledge-base`](../blueprints/agent-maintained-knowledge-base/)
-  that is architecture rather than payload.
-- **Agent action control** — classifying what an agent may do by what it can
-  break, and enforcing that outside the model. Currently spread across the
-  `ai-assisted-development` payload and `docs/security-baseline.md` without a
-  single place that states the model.
+Read `retrieval-architecture` if the problem is *finding*, `knowledge-lifecycle`
+if the problem is *trusting*, and both if people are acting on the answers.
 
 ## Not planned
 
 - **A concept per technology.** Same rule as blueprints: cut by the decision
   someone arrived with, not by the thing that answers it.
+- **Graph retrieval as its own concept.** The trigger — questions about
+  relationships rather than about documents — is real, but no round of the
+  research settles when a graph earns its maintenance cost.
 - **Product comparisons.** Naming tools is fine. Ranking vendors is a claim with
   a shelf life, and it belongs on the website where claims carry check dates.
+
+## What is still missing
+
+[research/ROUTING.md](../research/ROUTING.md) accounts for every section of
+every research document. Twenty rows are repository-bound and not yet written,
+and they are mostly rules rather than concepts — `docs/security-baseline.md`
+carries none of the security model from the last research round.
