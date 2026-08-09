@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Open source as its own area on the site
+
+- `/open-source` and `/de/open-source`, three articles in both languages, built from the verified research. No AI in the section: it covers open source on its own terms.
+- *When is a project open source?* — the OSI definition (version 1.9, 22 March 2007), why a non-commercial clause fails criterion 6, and the caveat most write-ups miss: GitHub's Terms of Service permit viewing and forking a public repository with no licence at all.
+- *Which licence, and what does it commit you to?* — permissive, file-level copyleft, strong copyleft. The "GPL is the most used licence" claim is replaced by the two available measurements and the limits their own authors state.
+- *Who owns code written at work?* — § 40b Austrian and § 69b German Copyright Act give the employer rights of use, not authorship; US work-for-hire makes the employer the author. The distinction decides who may relicense.
+
 ### Added — A queue for unverified material
 
 - `research/` — where material waits while it is being verified. Not published, not normative, and it empties: a file whose content has shipped is deleted. The first area holds two documents on open-source practice, translated from German, with a `STATUS.md` recording six known problems and where each block of content is meant to go.

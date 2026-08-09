@@ -20,7 +20,11 @@ export type LocalizedRouteKey =
   | "secureSetupAccess"
   | "start"
   | "startEmployee"
-  | "startDecisionMaker";
+  | "startDecisionMaker"
+  | "openSource"
+  | "openSourceWhatMakesIt"
+  | "openSourceLicence"
+  | "openSourceCodeAtWork";
 
 export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
 
@@ -75,6 +79,14 @@ export const getLocalizedPath = (
       return `${prefix}/start/employee`;
     case "startDecisionMaker":
       return `${prefix}/start/decision-maker`;
+    case "openSource":
+      return `${prefix}/open-source`;
+    case "openSourceWhatMakesIt":
+      return `${prefix}/open-source/what-makes-it-open-source`;
+    case "openSourceLicence":
+      return `${prefix}/open-source/choosing-a-licence`;
+    case "openSourceCodeAtWork":
+      return `${prefix}/open-source/code-written-at-work`;
   }
 };
 
