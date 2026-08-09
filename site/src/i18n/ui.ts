@@ -53,6 +53,7 @@ export const ui = {
       "This section is about open source on its own terms — licences, rights, obligations — with no AI in it. It is the ground the rest of this site stands on: the questions here are settled before any tool is chosen.",
     openSourceMore:
       "More is being written: what belongs in a repository beyond the licence, how governance is sized to a project, and where engineering practice sits alongside openness rather than inside it.",
+    menu: "Menu",
     primaryNavigation: "Primary navigation",
     glossaryIndex: "Glossary Index",
     glossary: "Glossary",
@@ -236,6 +237,7 @@ export const ui = {
       "Dieser Bereich behandelt Open Source für sich — Lizenzen, Rechte, Pflichten — ohne KI darin. Er ist der Boden, auf dem der Rest dieser Seite steht: die Fragen hier sind entschieden, bevor überhaupt ein Tool ausgewählt wird.",
     openSourceMore:
       "Weiteres entsteht: was über die Lizenz hinaus in ein Repository gehört, wie Governance zur Projektgröße passt, und wo Engineering-Praxis neben der Offenheit steht statt in ihr.",
+    menu: "Menü",
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
     glossary: "Glossar",

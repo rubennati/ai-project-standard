@@ -89,6 +89,98 @@
     transform: translateY(0);
   }
 
+  /*
+   * Header navigation.
+   *
+   * Phone: a disclosure. Desktop: an ordinary inline row. One copy of the
+   * links in the DOM either way — duplicating them for two breakpoints would
+   * hand every crawler and screen reader the navigation twice.
+   */
+  .site-nav {
+    position: relative;
+  }
+
+  .site-nav__toggle {
+    list-style: none;
+    cursor: pointer;
+    border: 1px solid color-mix(in oklab, currentColor 25%, transparent);
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    user-select: none;
+  }
+
+  /* Safari still draws the disclosure triangle without this. */
+  .site-nav__toggle::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-nav__panel {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.75rem);
+    z-index: 40;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 14rem;
+    border: 1px solid color-mix(in oklab, currentColor 15%, transparent);
+    border-radius: 0.5rem;
+    background: white;
+    padding: 1rem;
+    font-size: 0.875rem;
+    box-shadow: 0 10px 30px oklch(0% 0 0 / 0.12);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .site-nav__panel {
+      background: oklch(18% 0.02 250);
+    }
+  }
+
+  .site-nav__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  @media (min-width: 640px) {
+    @supports selector(::details-content) {
+      /* The panel is always open above the breakpoint, so the box the details
+         would otherwise draw is taken out of the layout entirely. */
+      .site-nav {
+        display: contents;
+      }
+
+      .site-nav::details-content {
+        content-visibility: visible;
+        block-size: auto;
+      }
+
+      .site-nav__toggle {
+        display: none;
+      }
+
+      .site-nav__panel {
+        position: static;
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+        min-width: 0;
+        border: 0;
+        background: none;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .site-nav__links {
+        flex-direction: row;
+        align-items: center;
+        gap: 1.5rem;
+      }
+    }
+  }
+
   :where(a, button, input, select, textarea, summary):focus-visible {
     outline: 3px solid var(--color-accent);
     outline-offset: 3px;
