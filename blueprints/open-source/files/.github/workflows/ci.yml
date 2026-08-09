@@ -1,4 +1,4 @@
-# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+# blueprint payload: open-source — edit upstream, then delete
 #
 # Gates, not decoration. Every job here blocks a merge, and every one of them is
 # language-agnostic — add your build, tests and type checks as jobs beside them.

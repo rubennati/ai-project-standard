@@ -1,4 +1,4 @@
-# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+# blueprint payload: open-source — edit upstream, then delete
 version: 2
 updates:
   # Workflow actions are pinned to commit SHAs, so this is what keeps them

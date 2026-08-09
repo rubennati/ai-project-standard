@@ -1,4 +1,4 @@
-<!-- Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying. -->
+<!-- blueprint payload: open-source — edit upstream, then delete -->
 # Repository settings
 
 The CI in this repository assumes these are on. They are settings, not files, so

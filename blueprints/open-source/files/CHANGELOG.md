@@ -1,4 +1,4 @@
-<!-- Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying. -->
+<!-- blueprint payload: open-source — edit upstream, then delete -->
 # Changelog
 
 All notable changes to this project are documented in this file.
