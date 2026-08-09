@@ -50,10 +50,33 @@ const ui = getUi(lang);
     </div>
   </header>
 
+  {localized.analogy && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.termAnalogy}</h2>
+      <p class="max-w-3xl border-l-2 border-[var(--color-accent)] pl-4 leading-7">{localized.analogy}</p>
+    </section>
+  )}
+
   {localized.explanation && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.explanation}</h2>
       <p class="max-w-3xl leading-7">{localized.explanation}</p>
+    </section>
+  )}
+
+  {localized.figure && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.termFigure}</h2>
+      <div class="max-w-3xl overflow-x-auto rounded-lg border border-black/10 p-4 dark:border-white/10">
+        <pre class="text-sm leading-6"><code>{localized.figure}</code></pre>
+      </div>
+    </section>
+  )}
+
+  {localized.example && (
+    <section class="flex flex-col gap-3">
+      <h2 class="text-xl font-semibold">{ui.termExample}</h2>
+      <p class="max-w-3xl leading-7">{localized.example}</p>
     </section>
   )}
 
