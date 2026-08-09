@@ -710,7 +710,7 @@ export const terms: TermEntry[] = [
     observedIn: ["Model documentation", "Developer tools"],
     status: "review",
     stability: "medium",
-    aliases: [],
+    aliases: ["Tool Calling", "Tool Use"],
     related: ["Tool Use", "MCP", "Connectors"],
     commonConfusion: ["Plugins", "APIs"],
     translations: {
@@ -1581,6 +1581,1470 @@ export const terms: TermEntry[] = [
           "Ein Basismodell wird einmal und sehr teuer auf breitem Material trainiert. Fine-Tuning nimmt dieses fertige Modell und trainiert es mit einer engeren Beispielmenge weiter \u2014 heraus kommt ein verändertes Modell, kein veränderter Prompt. Es ist der einzige der gängigen Ansätze, bei dem das neue Wissen tatsächlich im Modell landet.",
         aiContext:
           "Dieses Wort macht „wir haben es mit unseren Daten trainiert“ mehrdeutig, und die Mehrdeutigkeit ist meist eine geschäftliche. Ein Produkt, das als spezialisiert auf Recht oder Medizin verkauft wird, ist weit häufiger ein System-Prompt plus Abruf über eine Dokumentensammlung als ein feinabgestimmtes Modell. Beides kann gut sein. Sie unterscheiden sich in den Kosten, darin wo deine Daten landen, und darin was passiert, wenn das zugrunde liegende Modell ausgetauscht wird \u2014 also lohnt die Frage, was genau man kauft.",
+      },
+    },
+  },
+  {
+    term: "Retriever",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The component that searches a body of content and returns the passages most likely to answer a question.",
+    explanation:
+      "The retriever is the part that does the looking. It is separate from the model: it takes a question, searches an index, and hands back a handful of passages. If it returns the wrong ones, the answer will be wrong even when the model works perfectly.",
+    aiContext:
+      "Worth knowing because it changes where you look when something goes wrong. A bad answer is often a retrieval failure rather than a model failure, and the two are fixed in completely different places.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Retrieval", "RAG", "Index", "Reranker"],
+    commonConfusion: ["Search", "LLM"],
+    translations: {
+      de: {
+        term: "Retriever",
+        shortDefinition:
+          "Die Komponente, die einen Bestand durchsucht und die Passagen zurückgibt, die eine Frage am ehesten beantworten.",
+        explanation:
+          "Der Retriever ist der Teil, der sucht. Er ist vom Modell getrennt: Er nimmt eine Frage, durchsucht einen Index und liefert einige Passagen zurück. Gibt er die falschen zurück, wird die Antwort falsch — auch wenn das Modell einwandfrei arbeitet.",
+        aiContext:
+          "Wichtig, weil es ändert, wo man bei einem Fehler sucht. Eine schlechte Antwort ist oft ein Retrieval-Fehler und kein Modellfehler, und beides wird an völlig verschiedenen Stellen behoben.",
+      },
+    },
+  },
+  {
+    term: "Index",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A data structure built from your content so that searching it is fast.",
+    explanation:
+      "An index is not the content. It is a derived structure built from it, the way a book index is built from the pages. That has a practical consequence: if you lose an index you rebuild it from the source, but if you lose the source the index cannot give it back.",
+    aiContext:
+      "The distinction decides your backup policy. Sources, curated knowledge and human decisions are irreplaceable; indexes, embeddings and caches are reconstructable. Backing them up at the same level costs money and protects nothing.",
+    observedIn: ["Knowledge systems", "Developer tools", "Vector systems"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Retrieval", "Full-text Index", "Vector Database", "Source of Truth"],
+    commonConfusion: ["Source of Truth", "Knowledge Base"],
+    translations: {
+      de: {
+        term: "Index",
+        shortDefinition:
+          "Eine aus deinen Inhalten aufgebaute Datenstruktur, die das Suchen schnell macht.",
+        explanation:
+          "Ein Index ist nicht der Inhalt. Er ist eine daraus abgeleitete Struktur, so wie ein Buchindex aus den Seiten entsteht. Das hat eine praktische Folge: Einen verlorenen Index baut man neu auf, eine verlorene Quelle kann der Index nicht zurückgeben.",
+        aiContext:
+          "Diese Unterscheidung entscheidet über die Sicherungsstrategie. Quellen, kuratiertes Wissen und menschliche Entscheidungen sind unersetzlich; Indizes, Embeddings und Caches sind rekonstruierbar. Beides gleich zu sichern kostet Geld und schützt nichts.",
+      },
+    },
+  },
+  {
+    term: "Full-text Index",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "An index over the actual words in your documents, used for search by word rather than by meaning.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Inverted Index"],
+    related: ["Index", "Keyword Search", "BM25", "Hybrid Search"],
+    commonConfusion: ["Vector Database"],
+    translations: {
+      de: {
+        term: "Volltextindex",
+        shortDefinition:
+          "Ein Index über die tatsächlichen Wörter in deinen Dokumenten, für die Suche nach Wort statt nach Bedeutung.",
+      },
+    },
+  },
+  {
+    term: "BM25",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A long-established ranking method for text search that scores how well a document matches the words in a query.",
+    explanation:
+      "BM25 predates the current wave of AI by decades and is still one of the strongest baselines in search. It rewards documents that contain the query words often, and discounts words that appear everywhere and therefore say little.",
+    aiContext:
+      "Relevant because it is frequently better than vector search for exact terms — product codes, error numbers, names, anything where the precise string matters. Which is why serious systems usually run both and combine the results.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Keyword Search", "Full-text Index", "Hybrid Search"],
+    commonConfusion: ["Semantic Search"],
+    translations: {
+      de: {
+        term: "BM25",
+        shortDefinition:
+          "Ein seit Langem etabliertes Ranking-Verfahren für die Textsuche, das bewertet, wie gut ein Dokument zu den Wörtern einer Anfrage passt.",
+        explanation:
+          "BM25 ist Jahrzehnte älter als die aktuelle KI-Welle und noch immer eine der stärksten Vergleichsgrundlagen in der Suche. Es belohnt Dokumente, die die Suchwörter häufig enthalten, und gewichtet Wörter ab, die überall vorkommen und deshalb wenig aussagen.",
+        aiContext:
+          "Relevant, weil es bei exakten Begriffen oft besser ist als die Vektorsuche — Produktnummern, Fehlercodes, Namen, überall dort, wo die genaue Zeichenfolge zählt. Deshalb betreiben ernsthafte Systeme meist beides und kombinieren die Ergebnisse.",
+      },
+    },
+  },
+  {
+    term: "Embedding Model",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The model that turns text or images into vectors so they can be compared mathematically.",
+    explanation:
+      "It is a different model from the one that writes your answers, and it is chosen separately. A system typically runs several models at once: one for embeddings, one for reranking, one or more for generating text.",
+    aiContext:
+      "Changing it is expensive. Vectors produced by one embedding model cannot be compared with those from another, so switching means re-embedding everything you have indexed.",
+    observedIn: ["Vector systems", "Developer tools", "Model documentation"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Embedding", "Vector", "Vector Database", "Semantic Search"],
+    commonConfusion: ["LLM"],
+    translations: {
+      de: {
+        term: "Embedding-Modell",
+        shortDefinition:
+          "Das Modell, das Text oder Bilder in Vektoren umwandelt, damit sie mathematisch vergleichbar werden.",
+        explanation:
+          "Es ist ein anderes Modell als das, welches deine Antworten schreibt, und wird getrennt ausgewählt. Ein System betreibt meist mehrere Modelle gleichzeitig: eines für Embeddings, eines fürs Reranking, eines oder mehrere für die Texterzeugung.",
+        aiContext:
+          "Ein Wechsel ist teuer. Vektoren aus einem Embedding-Modell lassen sich nicht mit denen eines anderen vergleichen — ein Wechsel bedeutet, alles Indizierte neu zu berechnen.",
+      },
+    },
+  },
+  {
+    term: "Vector",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A sequence of numbers representing content, so that similar content ends up numerically close together.",
+    observedIn: ["Vector systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Embedding", "Embedding Model", "Vector Search", "Vector Database"],
+    commonConfusion: ["Token"],
+    translations: {
+      de: {
+        term: "Vektor",
+        shortDefinition:
+          "Eine Zahlenfolge, die Inhalt repräsentiert, sodass ähnlicher Inhalt zahlenmäßig nah beieinander liegt.",
+      },
+    },
+  },
+  {
+    term: "Semantic Search",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Search by meaning rather than by the exact words used.",
+    explanation:
+      "A search for \"how do I get my money back\" can find a page titled \"Refund policy\", even though the two share almost no words. That is the strength — and the weakness, because it will also happily return something that is merely about the same topic.",
+    aiContext:
+      "It fails in a specific way worth knowing: exact identifiers. Ask for error code 0x80070005 and semantic search may return pages about errors in general. Keyword search would find the exact one.",
+    observedIn: ["Knowledge systems", "Developer tools", "Vector systems"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Vector-based Search"],
+    related: ["Vector Search", "Keyword Search", "Hybrid Search", "Embedding"],
+    commonConfusion: ["Keyword Search", "Web Search"],
+    translations: {
+      de: {
+        term: "Semantische Suche",
+        shortDefinition:
+          "Suche nach Bedeutung statt nach den exakt verwendeten Wörtern.",
+        explanation:
+          "Eine Suche nach „wie bekomme ich mein Geld zurück“ kann eine Seite mit dem Titel „Rückerstattungsrichtlinie“ finden, obwohl beide kaum ein Wort teilen. Das ist die Stärke — und die Schwäche, denn sie liefert ebenso bereitwillig etwas, das nur zum selben Thema gehört.",
+        aiContext:
+          "Sie versagt auf eine bestimmte Weise: bei exakten Bezeichnern. Frag nach Fehlercode 0x80070005, und die semantische Suche liefert womöglich Seiten über Fehler im Allgemeinen. Die Stichwortsuche fände den genauen Treffer.",
+      },
+    },
+  },
+  {
+    term: "Keyword Search",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Search for the concrete words themselves, rather than for what they mean.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Lexical Search"],
+    related: ["BM25", "Full-text Index", "Semantic Search", "Hybrid Search"],
+    commonConfusion: ["Semantic Search"],
+    translations: {
+      de: {
+        term: "Stichwortsuche",
+        shortDefinition:
+          "Die Suche nach den konkreten Wörtern selbst statt nach ihrer Bedeutung.",
+      },
+    },
+  },
+  {
+    term: "Hybrid Search",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Running keyword and semantic search together and combining the results.",
+    explanation:
+      "Because the two fail in opposite directions. Keyword search misses paraphrases; semantic search misses exact identifiers. Running both and merging their rankings covers more than either alone.",
+    aiContext:
+      "This is the usual production answer, not an advanced option. A system that only does vector search is missing half the cases people actually type.",
+    observedIn: ["Knowledge systems", "Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Keyword Search", "Semantic Search", "Reranker", "BM25"],
+    commonConfusion: ["RAG"],
+    translations: {
+      de: {
+        term: "Hybride Suche",
+        shortDefinition:
+          "Stichwortsuche und semantische Suche gemeinsam ausführen und die Ergebnisse kombinieren.",
+        explanation:
+          "Weil beide in entgegengesetzte Richtungen versagen. Die Stichwortsuche übersieht Umschreibungen, die semantische Suche exakte Bezeichner. Beides auszuführen und die Ranglisten zusammenzuführen deckt mehr ab als jede für sich.",
+        aiContext:
+          "Das ist die übliche Produktionsantwort, keine Kür. Ein System, das nur Vektorsuche betreibt, verfehlt die Hälfte dessen, was Menschen tatsächlich eintippen.",
+      },
+    },
+  },
+  {
+    term: "Reranker",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A second scoring stage that reorders search results before they reach the model.",
+    explanation:
+      "The first search is fast and approximate; it casts a wide net. The reranker is slower and more careful, and it only has to look at the twenty or fifty candidates the first stage returned. Two stages beat one because each is doing what it is good at.",
+    aiContext:
+      "It is its own failure point. Retrieval can find the right document and the reranker can still push it below the cut-off, so evaluating a retrieval system means measuring the stages separately.",
+    observedIn: ["Knowledge systems", "Developer tools", "Vector systems"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Re-ranking Model", "Cross-encoder"],
+    related: ["Retrieval", "Hybrid Search", "Retriever", "Evaluation"],
+    commonConfusion: ["Embedding Model"],
+    translations: {
+      de: {
+        term: "Reranker",
+        shortDefinition:
+          "Eine zweite Bewertungsstufe, die Suchergebnisse neu sortiert, bevor sie das Modell erreichen.",
+        explanation:
+          "Die erste Suche ist schnell und ungefähr, sie wirft ein weites Netz aus. Der Reranker ist langsamer und genauer und muss nur die zwanzig oder fünfzig Kandidaten der ersten Stufe ansehen. Zwei Stufen schlagen eine, weil jede das tut, worin sie gut ist.",
+        aiContext:
+          "Er ist eine eigene Fehlerquelle. Das Retrieval kann das richtige Dokument finden und der Reranker es trotzdem unter die Abschneidegrenze drücken — deshalb misst man die Stufen getrennt.",
+      },
+    },
+  },
+  {
+    term: "Chunk",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A smaller section of a larger document, indexed and retrieved on its own.",
+    observedIn: ["Knowledge systems", "Developer tools", "Vector systems"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Passage", "Segment"],
+    related: ["Chunking", "Index", "Retrieval", "Context Window"],
+    commonConfusion: ["Token"],
+    translations: {
+      de: {
+        term: "Chunk",
+        shortDefinition:
+          "Ein kleinerer Abschnitt eines größeren Dokuments, der eigenständig indiziert und abgerufen wird.",
+      },
+    },
+  },
+  {
+    term: "Chunking",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Splitting documents into sections small enough to retrieve usefully.",
+    explanation:
+      "Splitting badly is one of the most common causes of a system that looks right and answers wrong. Cut in the wrong place and a condition ends up separated from the rule it belongs to, so the retrieved passage says the opposite of what the document says.",
+    aiContext:
+      "It is a design decision, not a technicality. Section boundaries, tables, headings and how much overlap to keep all change what the system can answer, and none of it is visible once the answer is written.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Text Splitting"],
+    related: ["Chunk", "Parsing", "Ingestion", "RAG"],
+    commonConfusion: ["Tokenisation"],
+    translations: {
+      de: {
+        term: "Chunking",
+        shortDefinition:
+          "Dokumente in Abschnitte teilen, die klein genug sind, um sinnvoll abgerufen zu werden.",
+        explanation:
+          "Schlecht zu teilen ist eine der häufigsten Ursachen für ein System, das richtig aussieht und falsch antwortet. An der falschen Stelle geschnitten, landet eine Bedingung getrennt von der Regel, zu der sie gehört — die gefundene Passage sagt dann das Gegenteil des Dokuments.",
+        aiContext:
+          "Das ist eine Entwurfsentscheidung, keine Formalie. Abschnittsgrenzen, Tabellen, Überschriften und die Überlappung entscheiden darüber, was das System beantworten kann — und nichts davon ist in der fertigen Antwort noch sichtbar.",
+      },
+    },
+  },
+  {
+    term: "Parsing",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Extracting and interpreting the actual content of a file, as a step before anything can be searched.",
+    explanation:
+      "A PDF is not automatically text. It may be a scan, a set of positioned glyphs, or a layout in which a table reads correctly to a human eye and as scrambled lines to a parser.",
+    aiContext:
+      "A parser that misreads a table produces a false statement that then travels through the whole system as though it were sourced. It is an integrity failure with nobody at fault, which is why parsing quality belongs in the threat model and not only in the build pipeline.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Document Parsing", "Extraction"],
+    related: ["OCR", "Ingestion", "Chunking", "Metadata"],
+    commonConfusion: ["OCR"],
+    translations: {
+      de: {
+        term: "Parsing",
+        shortDefinition:
+          "Den tatsächlichen Inhalt einer Datei herauslösen und interpretieren — der Schritt, bevor überhaupt etwas durchsucht werden kann.",
+        explanation:
+          "Ein PDF ist nicht automatisch Text. Es kann ein Scan sein, eine Menge platzierter Zeichen oder ein Layout, in dem eine Tabelle für das menschliche Auge stimmt und für den Parser als verwürfelte Zeilen ankommt.",
+        aiContext:
+          "Ein Parser, der eine Tabelle falsch liest, erzeugt eine falsche Aussage, die anschließend als belegt durchs ganze System wandert. Ein Integritätsfehler ohne Schuldigen — deshalb gehört Parsing-Qualität ins Bedrohungsmodell und nicht nur in die Build-Pipeline.",
+      },
+    },
+  },
+  {
+    term: "OCR",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Optical character recognition: turning the text in an image or scan into text a machine can read.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Optical Character Recognition", "Texterkennung"],
+    related: ["Parsing", "Ingestion"],
+    commonConfusion: ["Parsing"],
+    translations: {
+      de: {
+        term: "OCR",
+        shortDefinition:
+          "Optische Zeichenerkennung: den Text in einem Bild oder Scan in maschinenlesbaren Text überführen.",
+      },
+    },
+  },
+  {
+    term: "Ingestion",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The process of taking content into a search or knowledge system: reading it, splitting it, tagging it and indexing it.",
+    explanation:
+      "Everything that happens between a document existing somewhere and it being findable. Parsing, OCR where needed, chunking, metadata, permissions, embedding, indexing.",
+    aiContext:
+      "It is where most quiet failures start, because each step can go wrong without raising an error. A stale index, an ACL not carried across, a parser silently dropping a column — all of them produce a system that answers confidently from content that is wrong or that the asker should not have seen.",
+    observedIn: ["Knowledge systems", "Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Indexing Pipeline"],
+    related: ["Parsing", "Chunking", "Metadata", "Index", "Freshness"],
+    commonConfusion: ["Retrieval"],
+    translations: {
+      de: {
+        term: "Ingestion",
+        shortDefinition:
+          "Der Vorgang, Inhalte in ein Such- oder Wissenssystem aufzunehmen: lesen, teilen, auszeichnen, indizieren.",
+        explanation:
+          "Alles, was zwischen „das Dokument existiert irgendwo“ und „es ist auffindbar“ passiert. Parsing, bei Bedarf OCR, Chunking, Metadaten, Berechtigungen, Embedding, Indizierung.",
+        aiContext:
+          "Hier beginnen die meisten stillen Fehler, weil jeder Schritt schiefgehen kann, ohne eine Fehlermeldung zu erzeugen. Ein veralteter Index, eine nicht mitgeführte Berechtigung, ein Parser, der eine Spalte verschluckt — alle erzeugen ein System, das selbstbewusst aus Inhalten antwortet, die falsch sind oder die der Fragende nicht sehen dürfte.",
+      },
+    },
+  },
+  {
+    term: "Metadata",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Information about a piece of content rather than in it: source, date, author, owner, classification, validity.",
+    explanation:
+      "For a knowledge system this is not bookkeeping. Metadata is what lets a search filter by permission, prefer the current version over last year's, and tell you where an answer came from.",
+    aiContext:
+      "It is also what separates a system that can say \"this is a recommendation, checked in August, owned by security\" from one that can only say \"here is some text\".",
+    observedIn: ["Knowledge systems", "Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Provenance", "Source of Truth", "Freshness", "Ingestion"],
+    commonConfusion: ["Content"],
+    translations: {
+      de: {
+        term: "Metadaten",
+        shortDefinition:
+          "Informationen über einen Inhalt statt in ihm: Quelle, Datum, Autor, Verantwortlicher, Einstufung, Gültigkeit.",
+        explanation:
+          "Für ein Wissenssystem ist das keine Buchhaltung. Metadaten ermöglichen es, nach Berechtigung zu filtern, die aktuelle Fassung der vorjährigen vorzuziehen und zu sagen, woher eine Antwort stammt.",
+        aiContext:
+          "Sie unterscheiden auch ein System, das sagen kann „das ist eine Empfehlung, im August geprüft, verantwortet von der Sicherheit“, von einem, das nur „hier ist Text“ sagen kann.",
+      },
+    },
+  },
+  {
+    term: "Agentic RAG",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Retrieval where the model itself decides whether, when and what to search, rather than the application searching first.",
+    explanation:
+      "In classic RAG the application searches, then hands the results to the model. In agentic RAG the model is given search as a tool and chooses to use it — possibly several times, refining the query as it goes.",
+    aiContext:
+      "The two are different architectures with different failure modes, and conflating them causes real confusion. Classic RAG always retrieves, even when it should not. Agentic RAG may decide not to retrieve at all, and then answer from memory without saying so.",
+    observedIn: ["Developer tools", "Agent products", "Knowledge systems"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["RAG", "Agent", "Tool Use", "Retrieval"],
+    commonConfusion: ["RAG"],
+    translations: {
+      de: {
+        term: "Agentic RAG",
+        shortDefinition:
+          "Retrieval, bei dem das Modell selbst entscheidet, ob, wann und wonach gesucht wird, statt dass die Anwendung vorab sucht.",
+        explanation:
+          "Beim klassischen RAG sucht die Anwendung und reicht die Ergebnisse ans Modell. Beim Agentic RAG bekommt das Modell die Suche als Werkzeug und entscheidet sich, sie zu nutzen — womöglich mehrfach, mit nachgeschärfter Anfrage.",
+        aiContext:
+          "Zwei verschiedene Architekturen mit verschiedenen Fehlerbildern, und sie zu vermengen stiftet echte Verwirrung. Klassisches RAG sucht immer, auch wenn es nicht sollte. Agentic RAG kann sich gegen die Suche entscheiden und dann aus dem Gedächtnis antworten, ohne das zu sagen.",
+      },
+    },
+  },
+  {
+    term: "Knowledge Base",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A persistent, organised body of knowledge, as opposed to a pile of source documents or a chat history.",
+    explanation:
+      "The distinction that matters is against the two things it is not. Source documents are the raw material; a knowledge base is what someone has decided is true and worth keeping. A chat history is what was said; a knowledge base is what was concluded.",
+    aiContext:
+      "For an AI system this is the difference between finding information and having knowledge. Retrieval optimises response time; a knowledge base optimises knowledge accumulation. They combine well, and they are not the same thing.",
+    observedIn: ["Knowledge systems", "Enterprise AI products", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["AI Knowledge Base"],
+    related: ["RAG", "Source of Truth", "Provenance", "LLM-maintained Knowledge Base"],
+    commonConfusion: ["RAG", "Vector Database"],
+    translations: {
+      de: {
+        term: "Wissensbasis",
+        shortDefinition:
+          "Ein dauerhafter, geordneter Wissensbestand — im Unterschied zu einem Haufen Quelldokumente oder einem Chatverlauf.",
+        explanation:
+          "Entscheidend ist die Abgrenzung gegen zwei Dinge, die sie nicht ist. Quelldokumente sind das Rohmaterial; eine Wissensbasis ist das, was jemand als wahr und aufbewahrenswert entschieden hat. Ein Chatverlauf ist, was gesagt wurde; eine Wissensbasis ist, was geschlossen wurde.",
+        aiContext:
+          "Für ein KI-System ist das der Unterschied zwischen Informationen finden und Wissen haben. Retrieval optimiert die Antwortzeit, eine Wissensbasis die Wissensakkumulation. Beides ergänzt sich und ist nicht dasselbe.",
+      },
+    },
+  },
+  {
+    term: "LLM-maintained Knowledge Base",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A knowledge base an AI model reads, structures and updates under human control, rather than only searching.",
+    explanation:
+      "The minimum is unglamorous: persistent storage, addressable units of knowledge, a defined structure, something that can search and read it, and a model allowed to write. No vector database is required. No knowledge graph is required. No web interface is required.",
+    aiContext:
+      "What actually makes it work is an operating contract the agent reads — never change original sources, new findings go to a pending area first, update rather than duplicate, every statement carries a source, published files change only after review. Without that, write access to a knowledge base is a way to produce confident nonsense at scale.",
+    observedIn: ["Knowledge systems", "Agent products", "Developer communities"],
+    status: "draft",
+    stability: "medium",
+    aliases: [
+      "Agent-maintained Knowledge Base",
+      "LLM-curated Knowledge Base",
+      "Self-evolving Knowledge Base",
+      "Agent-native Knowledge System",
+    ],
+    related: ["Knowledge Base", "Agent", "Provenance", "Source of Truth"],
+    commonConfusion: ["RAG", "Memory"],
+    translations: {
+      de: {
+        term: "LLM-gepflegte Wissensbasis",
+        shortDefinition:
+          "Eine Wissensbasis, die ein KI-Modell unter menschlicher Kontrolle liest, strukturiert und fortschreibt — nicht nur durchsucht.",
+        explanation:
+          "Das Minimum ist unspektakulär: dauerhafter Speicher, adressierbare Wissenseinheiten, eine definierte Struktur, etwas, das darin suchen und lesen kann, und ein Modell, das schreiben darf. Keine Vektordatenbank nötig. Kein Wissensgraph nötig. Keine Weboberfläche nötig.",
+        aiContext:
+          "Was es tatsächlich funktionieren lässt, ist ein Arbeitsvertrag, den der Agent liest — Originalquellen nie ändern, neue Erkenntnisse zuerst in einen Wartebereich, aktualisieren statt duplizieren, jede Aussage mit Quelle, veröffentlichte Dateien nur nach Prüfung ändern. Ohne das ist Schreibzugriff auf eine Wissensbasis ein Weg, selbstbewussten Unsinn in großem Maßstab zu erzeugen.",
+      },
+    },
+  },
+  {
+    term: "LLM Wiki",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A current but not standardised name for an AI-maintained knowledge base. The thing is real; the term is not settled.",
+    explanation:
+      "A 2026 research project uses LLM-Wiki as the name of its architecture, and other work speaks of LLM-curated hierarchical knowledge bases. But \"wiki\" only describes one possible way of organising the material — the same principle works as documentation, a handbook, or a plain folder of files.",
+    aiContext:
+      "Worth listing precisely because you will encounter it. If someone says LLM wiki, ask what they mean: persistent storage with structure and an agent that may write, or a web application that happens to have AI in it. Those are different projects.",
+    observedIn: ["Developer communities", "AI vendor marketing"],
+    status: "draft",
+    stability: "volatile",
+    aliases: ["LLM-Wiki"],
+    related: ["LLM-maintained Knowledge Base", "Knowledge Base"],
+    commonConfusion: ["Knowledge Base", "RAG"],
+    translations: {
+      de: {
+        term: "LLM-Wiki",
+        shortDefinition:
+          "Ein aktueller, aber nicht standardisierter Name für eine KI-gepflegte Wissensbasis. Die Sache existiert, der Begriff ist nicht gesetzt.",
+        explanation:
+          "Ein Forschungsprojekt von 2026 nennt seine Architektur LLM-Wiki, andere Arbeiten sprechen von LLM-kuratierten hierarchischen Wissensbasen. „Wiki“ beschreibt aber nur eine mögliche Organisationsform — dasselbe Prinzip funktioniert als Dokumentation, Handbuch oder schlichter Dateiordner.",
+        aiContext:
+          "Gerade deshalb aufgeführt, weil dir der Begriff begegnen wird. Sagt jemand LLM-Wiki, frag nach: dauerhafter Speicher mit Struktur und schreibberechtigtem Agenten — oder eine Webanwendung, in der zufällig KI steckt? Das sind verschiedene Projekte.",
+      },
+    },
+  },
+  {
+    term: "Source of Truth",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The one place a piece of information is authoritative. Everything else holding the same information is a copy.",
+    explanation:
+      "Once you name it, a great deal follows. If a document management system is the source of truth, then the search index, the embeddings, the chat history and any AI summary are all derived — and derived data can be wrong, stale, or visible to the wrong people without the original changing at all.",
+    aiContext:
+      "This is the question behind \"where is my data\", which is really at least fourteen questions. An AI system creates several representations of the same confidential content, and each one needs its own answer about storage, access and deletion.",
+    observedIn: ["Knowledge systems", "Enterprise AI products", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Single Source of Truth", "SSOT"],
+    related: ["Index", "Provenance", "Freshness", "Metadata"],
+    commonConfusion: ["Index", "Knowledge Base"],
+    translations: {
+      de: {
+        term: "Source of Truth",
+        shortDefinition:
+          "Der eine Ort, an dem eine Information maßgeblich ist. Alles andere, was dieselbe Information hält, ist eine Kopie.",
+        explanation:
+          "Ist er benannt, folgt vieles daraus. Ist ein Dokumentenmanagement der Source of Truth, dann sind Suchindex, Embeddings, Chatverlauf und jede KI-Zusammenfassung abgeleitet — und Abgeleitetes kann falsch, veraltet oder für die falschen Personen sichtbar sein, ohne dass sich am Original etwas ändert.",
+        aiContext:
+          "Das ist die Frage hinter „wo sind meine Daten“, und die zerfällt in mindestens vierzehn Fragen. Ein KI-System erzeugt mehrere Repräsentationen desselben vertraulichen Inhalts, und jede braucht ihre eigene Antwort zu Speicherung, Zugriff und Löschung.",
+      },
+    },
+  },
+  {
+    term: "Provenance",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The origin and history of a piece of information: where it came from, through what, changed by whom.",
+    explanation:
+      "A citation says an answer rests on document X. Provenance goes further: answer to claim to knowledge page to source document to originating system to owner to version.",
+    aiContext:
+      "With an agent in the chain, \"who changed this\" has as many as six answers — who asked, who decided, which model generated it, what executed it, under whose credential, and who approved. \"User X changed file Y\" stops describing what happened.",
+    observedIn: ["Knowledge systems", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Source of Truth", "Metadata", "Knowledge Base"],
+    commonConfusion: ["Citation"],
+    translations: {
+      de: {
+        term: "Provenienz",
+        shortDefinition:
+          "Herkunft und Geschichte einer Information: woher sie stammt, worüber sie kam, von wem sie geändert wurde.",
+        explanation:
+          "Eine Quellenangabe sagt, dass eine Antwort auf Dokument X beruht. Provenienz geht weiter: Antwort zu Aussage zu Wissensseite zu Quelldokument zu Ursprungssystem zu Verantwortlichem zu Version.",
+        aiContext:
+          "Mit einem Agenten in der Kette hat „wer hat das geändert“ bis zu sechs Antworten — wer gefragt hat, wer entschieden hat, welches Modell es erzeugt hat, was es ausgeführt hat, unter wessen Zugangsdaten und wer zugestimmt hat. „Nutzer X hat Datei Y geändert“ beschreibt den Vorgang nicht mehr.",
+      },
+    },
+  },
+  {
+    term: "Freshness",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "How current a derived copy is compared to its source.",
+    explanation:
+      "An index built last week answers from last week. If a policy was replaced on Monday and the index was last built on Friday, the system will quote the old one with complete confidence and a correct-looking citation.",
+    aiContext:
+      "Freshness is also a permissions problem, not only an accuracy one. If someone's access was revoked but the index still carries their old permissions, the system enforces a rule that no longer exists.",
+    observedIn: ["Knowledge systems", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Staleness"],
+    related: ["Index", "Ingestion", "Source of Truth", "Revocation"],
+    commonConfusion: ["Cache"],
+    translations: {
+      de: {
+        term: "Aktualität",
+        shortDefinition:
+          "Wie aktuell eine abgeleitete Kopie gegenüber ihrer Quelle ist.",
+        explanation:
+          "Ein Index von letzter Woche antwortet aus letzter Woche. Wurde eine Richtlinie am Montag ersetzt und der Index zuletzt am Freitag gebaut, zitiert das System die alte — mit voller Überzeugung und einer korrekt aussehenden Quellenangabe.",
+        aiContext:
+          "Aktualität ist auch ein Berechtigungsproblem, nicht nur eines der Richtigkeit. Wurde jemandem der Zugriff entzogen, der Index trägt aber noch die alten Berechtigungen, setzt das System eine Regel durch, die es nicht mehr gibt.",
+      },
+    },
+  },
+  {
+    term: "Authentication",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Establishing who someone is.",
+    explanation:
+      "Distinct from authorization, which is what they may then do. Authentication answers \"are you really Ruben\"; authorization answers \"may Ruben delete this\". Systems that blur the two tend to grant too much.",
+    aiContext:
+      "With agents there are three identities, not one: the human, the agent acting on their behalf, and the service account underneath. Which of them a log records changes whether the log can answer anything useful.",
+    observedIn: ["Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["AuthN"],
+    related: ["Authorization", "OAuth", "OIDC", "Identity Provider"],
+    commonConfusion: ["Authorization"],
+    translations: {
+      de: {
+        term: "Authentifizierung",
+        shortDefinition: "Feststellen, wer jemand ist.",
+        explanation:
+          "Zu unterscheiden von der Autorisierung, also davon, was jemand dann darf. Authentifizierung beantwortet „bist du wirklich Ruben“, Autorisierung „darf Ruben das löschen“. Systeme, die beides vermengen, gewähren tendenziell zu viel.",
+        aiContext:
+          "Bei Agenten gibt es drei Identitäten statt einer: den Menschen, den in seinem Auftrag handelnden Agenten und das Dienstkonto darunter. Welche davon ein Protokoll festhält, entscheidet, ob es überhaupt etwas beantworten kann.",
+      },
+    },
+  },
+  {
+    term: "Authorization",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Deciding what an established identity is allowed to do.",
+    explanation:
+      "The rule that matters for AI is short: human permission is not agent permission. You may be allowed to delete mail; that does not mean the agent working for you needs the same right. Its permissions are a subset chosen per task, not an inheritance.",
+    aiContext:
+      "Read and write belong in different categories, and so do low-impact and high-impact actions. A tool list that mixes reading a ticket with closing it cannot be reviewed by anyone.",
+    observedIn: ["Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["AuthZ"],
+    related: ["Authentication", "Scope", "ACL", "RBAC"],
+    commonConfusion: ["Authentication"],
+    translations: {
+      de: {
+        term: "Autorisierung",
+        shortDefinition: "Entscheiden, was eine festgestellte Identität tun darf.",
+        explanation:
+          "Die für KI entscheidende Regel ist kurz: Die Berechtigung des Menschen ist nicht die des Agenten. Du darfst vielleicht Mails löschen; das heißt nicht, dass der Agent, der für dich arbeitet, dasselbe Recht braucht. Seine Rechte sind eine je Aufgabe gewählte Teilmenge, keine Vererbung.",
+        aiContext:
+          "Lesen und Schreiben gehören in verschiedene Kategorien, ebenso Aktionen mit geringer und mit großer Wirkung. Eine Werkzeugliste, die das Lesen eines Tickets mit dessen Schließen vermengt, kann niemand prüfen.",
+      },
+    },
+  },
+  {
+    term: "OAuth",
+    kind: "data-protection-term",
+    shortDefinition:
+      "A standard for letting one application act on your behalf in another, without handing it your password.",
+    aiContext:
+      "This is what is happening when an AI tool asks to connect to your mail or your drive. What you grant is a scope, and the scope is usually broader than the task in front of you.",
+    observedIn: ["Enterprise AI products", "Developer tools", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["OAuth 2.0"],
+    related: ["Access Token", "Scope", "OIDC", "Revocation"],
+    commonConfusion: ["OIDC", "Authentication"],
+    translations: {
+      de: {
+        term: "OAuth",
+        shortDefinition:
+          "Ein Standard, mit dem eine Anwendung in deinem Namen in einer anderen handeln darf, ohne dein Passwort zu erhalten.",
+        aiContext:
+          "Genau das passiert, wenn ein KI-Werkzeug um Verbindung zu deiner Mail oder deinem Speicher bittet. Was du erteilst, ist ein Scope — und der ist meist weiter gefasst als die Aufgabe vor dir.",
+      },
+    },
+  },
+  {
+    term: "Access Token",
+    kind: "data-protection-term",
+    shortDefinition:
+      "The credential a system presents to exercise an access that was granted to it.",
+    aiContext:
+      "The rule worth keeping: the token never goes to the model. The model decides what should happen; the runtime holds the credential and decides whether it may. Anything a model can read, it can be talked into repeating.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Bearer Token"],
+    related: ["OAuth", "Scope", "Revocation", "Secrets Management"],
+    commonConfusion: ["API Key"],
+    translations: {
+      de: {
+        term: "Access Token",
+        shortDefinition:
+          "Der Nachweis, den ein System vorlegt, um einen gewährten Zugriff auszuüben.",
+        aiContext:
+          "Die Regel, die zählt: Das Token geht nie an das Modell. Das Modell entscheidet, was geschehen soll; die Laufzeitumgebung hält den Nachweis und entscheidet, ob es darf. Alles, was ein Modell lesen kann, kann man ihm auch entlocken.",
+      },
+    },
+  },
+  {
+    term: "Scope",
+    kind: "data-protection-term",
+    shortDefinition:
+      "The bounded set of permissions attached to a token: what it may reach, and what it may do there.",
+    aiContext:
+      "The place where least privilege is actually decided, and usually the place where it is quietly abandoned. Read-only access to one folder and full access to a mailbox are the same consent dialog to most people.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["OAuth", "Access Token", "Authorization", "ACL"],
+    commonConfusion: ["Context Window"],
+    translations: {
+      de: {
+        term: "Scope",
+        shortDefinition:
+          "Der begrenzte Satz an Rechten, der an einem Token hängt: was es erreichen und was es dort tun darf.",
+        aiContext:
+          "Hier wird die minimale Rechtevergabe tatsächlich entschieden — und meist stillschweigend aufgegeben. Lesezugriff auf einen Ordner und Vollzugriff auf ein Postfach sind für die meisten derselbe Zustimmungsdialog.",
+      },
+    },
+  },
+  {
+    term: "OIDC",
+    kind: "data-protection-term",
+    shortDefinition:
+      "OpenID Connect: an identity layer built on top of OAuth, so an application can learn who you are and not only what it may do.",
+    observedIn: ["Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["OpenID Connect"],
+    related: ["OAuth", "Authentication", "Identity Provider"],
+    commonConfusion: ["OAuth"],
+    translations: {
+      de: {
+        term: "OIDC",
+        shortDefinition:
+          "OpenID Connect: eine Identitätsschicht auf OAuth, damit eine Anwendung erfährt, wer du bist — und nicht nur, was sie darf.",
+      },
+    },
+  },
+  {
+    term: "ACL",
+    kind: "data-protection-term",
+    shortDefinition:
+      "An access control list: per-object permissions saying who may see or change that particular thing.",
+    explanation:
+      "Where roles say \"editors may edit\", an ACL says \"this document is visible to these five people\". Most real document systems use both.",
+    aiContext:
+      "ACL-aware retrieval is one of the hardest parts of enterprise AI search, and one of the easiest to get subtly wrong. The index has to filter by the asker's permissions at query time — otherwise the system cheerfully summarises a document the person was never allowed to open.",
+    observedIn: ["Enterprise AI products", "Knowledge systems"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Access Control List"],
+    related: ["RBAC", "Authorization", "Retrieval", "Freshness"],
+    commonConfusion: ["RBAC"],
+    translations: {
+      de: {
+        term: "ACL",
+        shortDefinition:
+          "Eine Zugriffskontrollliste: objektbezogene Rechte, die sagen, wer genau dieses Objekt sehen oder ändern darf.",
+        explanation:
+          "Wo Rollen sagen „Redakteure dürfen bearbeiten“, sagt eine ACL „dieses Dokument sehen diese fünf Personen“. Reale Dokumentensysteme nutzen meist beides.",
+        aiContext:
+          "ACL-bewusstes Retrieval ist einer der schwierigsten Teile unternehmensweiter KI-Suche und einer der am leichtesten unbemerkt falsch gemachten. Der Index muss zur Abfragezeit nach den Rechten des Fragenden filtern — sonst fasst das System bereitwillig ein Dokument zusammen, das die Person nie öffnen durfte.",
+      },
+    },
+  },
+  {
+    term: "RBAC",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Role-based access control: permissions attached to roles, and people attached to roles.",
+    observedIn: ["Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Role-based Access Control"],
+    related: ["ACL", "Authorization", "Identity Provider"],
+    commonConfusion: ["ACL"],
+    translations: {
+      de: {
+        term: "RBAC",
+        shortDefinition:
+          "Rollenbasierte Zugriffskontrolle: Rechte hängen an Rollen, Personen hängen an Rollen.",
+      },
+    },
+  },
+  {
+    term: "Identity Provider",
+    kind: "data-protection-term",
+    shortDefinition:
+      "The system that holds identities and performs sign-in for everything else.",
+    aiContext:
+      "It is also where offboarding actually takes effect. If an AI tool holds its own copy of who works here, removing someone centrally does not remove them there — which is one of the quieter ways access outlives employment.",
+    observedIn: ["Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["IdP"],
+    related: ["OIDC", "Authentication", "RBAC", "Revocation"],
+    commonConfusion: ["Authentication"],
+    translations: {
+      de: {
+        term: "Identity Provider",
+        shortDefinition:
+          "Das System, das Identitäten hält und die Anmeldung für alles Übrige übernimmt.",
+        aiContext:
+          "Hier greift auch das Offboarding tatsächlich. Hält ein KI-Werkzeug eine eigene Kopie davon, wer hier arbeitet, entfernt eine zentrale Löschung die Person dort nicht — eine der leiseren Arten, wie Zugriff die Beschäftigung überdauert.",
+      },
+    },
+  },
+  {
+    term: "Revocation",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Withdrawing an access that was previously granted.",
+    explanation:
+      "Easy to state and reliably harder than expected, because access has usually been copied. Revoking a token does not un-index the content it already pulled, and does not empty the caches it filled.",
+    aiContext:
+      "This is where the derived copies come back. If a search index was built with someone's permissions and those permissions are withdrawn, the index still holds what it saw. Revocation has to reach every representation, not only the original.",
+    observedIn: ["Enterprise AI products", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Access Token", "Freshness", "ACL", "Identity Provider"],
+    commonConfusion: ["Deletion"],
+    translations: {
+      de: {
+        term: "Entzug",
+        shortDefinition: "Einen zuvor gewährten Zugriff zurücknehmen.",
+        explanation:
+          "Leicht gesagt und verlässlich schwerer als gedacht, weil Zugriff meist schon kopiert wurde. Ein zurückgezogenes Token entfernt nicht die bereits indizierten Inhalte und leert nicht die gefüllten Zwischenspeicher.",
+        aiContext:
+          "Hier kehren die abgeleiteten Kopien zurück. Wurde ein Suchindex mit den Rechten einer Person aufgebaut und werden diese Rechte entzogen, hält der Index weiterhin, was er gesehen hat. Ein Entzug muss jede Repräsentation erreichen, nicht nur das Original.",
+      },
+    },
+  },
+  {
+    term: "Prompt Injection",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Content that tries to act as an instruction to the AI system reading it.",
+    explanation:
+      "A model reads everything it is given as one stream. Text hidden in a document, a web page or a tool result can therefore try to give it orders — and it does not have to be aimed at you to reach you.",
+    aiContext:
+      "The defence is a boundary, not a filter: instructions come from the user, everything encountered through a tool is data. That is why a serious agent frame states outright that file contents, web pages and tool output are never treated as instructions.",
+    observedIn: ["General AI usage", "Developer communities", "Model documentation"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["System Prompt", "Context", "Authorization", "Agent"],
+    commonConfusion: ["Jailbreak", "Hallucination"],
+    translations: {
+      de: {
+        term: "Prompt Injection",
+        shortDefinition:
+          "Inhalt, der versucht, für das lesende KI-System als Anweisung zu wirken.",
+        explanation:
+          "Ein Modell liest alles, was es bekommt, als einen Strom. In einem Dokument, einer Webseite oder einem Werkzeugergebnis versteckter Text kann ihm deshalb Befehle geben — und er muss nicht auf dich gezielt sein, um dich zu erreichen.",
+        aiContext:
+          "Die Abwehr ist eine Grenze, kein Filter: Anweisungen kommen von der nutzenden Person, alles über ein Werkzeug Begegnete sind Daten. Deshalb hält ein ernsthafter Agentenrahmen ausdrücklich fest, dass Dateiinhalte, Webseiten und Werkzeugausgaben nie als Anweisung gelten.",
+      },
+    },
+  },
+  {
+    term: "DLP",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Data loss prevention: controls that try to stop sensitive information leaving where it belongs.",
+    observedIn: ["Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Data Loss Prevention"],
+    related: ["Scope", "Authorization", "Observability"],
+    commonConfusion: ["Anonymisation"],
+    translations: {
+      de: {
+        term: "DLP",
+        shortDefinition:
+          "Data Loss Prevention: Kontrollen, die verhindern sollen, dass sensible Informationen ihren Bereich verlassen.",
+      },
+    },
+  },
+  {
+    term: "Secrets Management",
+    kind: "data-protection-term",
+    shortDefinition:
+      "Handling tokens, API keys, passwords and certificates so that they are neither committed, logged, nor pasted into a chat.",
+    aiContext:
+      "AI adds a specific route: a secret that enters a model's context has left your control, because context can be summarised, logged, cached and repeated. Keeping credentials with the runtime rather than the model is not an optimisation.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Access Token", "Scope", "Context"],
+    commonConfusion: ["Encryption"],
+    translations: {
+      de: {
+        term: "Secrets Management",
+        shortDefinition:
+          "Der Umgang mit Tokens, API-Schlüsseln, Passwörtern und Zertifikaten, sodass sie weder eingecheckt noch protokolliert noch in einen Chat kopiert werden.",
+        aiContext:
+          "KI fügt einen eigenen Weg hinzu: Ein Geheimnis, das in den Kontext eines Modells gelangt, hat deinen Einflussbereich verlassen — Kontext kann zusammengefasst, protokolliert, zwischengespeichert und wiederholt werden. Zugangsdaten bei der Laufzeitumgebung statt beim Modell zu halten ist keine Optimierung.",
+      },
+    },
+  },
+  {
+    term: "Entity",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A distinctly modelled thing in a knowledge graph: a person, a server, a company, a contract.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Node"],
+    related: ["Knowledge Graph", "Relationship", "Ontology"],
+    commonConfusion: ["Chunk"],
+    translations: {
+      de: {
+        term: "Entität",
+        shortDefinition:
+          "Ein eigenständig modelliertes Ding in einem Wissensgraphen: eine Person, ein Server, ein Unternehmen, ein Vertrag.",
+      },
+    },
+  },
+  {
+    term: "Relationship",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A modelled connection between two entities: depends on, reports to, replaces, is part of.",
+    aiContext:
+      "The reason to consider a graph at all. If your questions are about how things connect — what breaks if this server goes down, who signed off on which version — then relationships are the thing you are searching, and a document index cannot represent them.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Edge"],
+    related: ["Knowledge Graph", "Entity", "Graph Traversal"],
+    commonConfusion: ["Related Terms"],
+    translations: {
+      de: {
+        term: "Beziehung",
+        shortDefinition:
+          "Eine modellierte Verbindung zwischen zwei Entitäten: hängt ab von, berichtet an, ersetzt, ist Teil von.",
+        aiContext:
+          "Der Grund, überhaupt über einen Graphen nachzudenken. Drehen sich deine Fragen darum, wie Dinge zusammenhängen — was fällt aus, wenn dieser Server ausfällt, wer hat welche Version freigegeben —, dann sind Beziehungen das Gesuchte, und ein Dokumentindex kann sie nicht abbilden.",
+      },
+    },
+  },
+  {
+    term: "Graph Traversal",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Following relationships through a graph to answer a question that spans several steps.",
+    observedIn: ["Knowledge systems", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Knowledge Graph", "Relationship", "Entity"],
+    commonConfusion: ["Semantic Search"],
+    translations: {
+      de: {
+        term: "Graphtraversierung",
+        shortDefinition:
+          "Beziehungen durch einen Graphen verfolgen, um eine Frage zu beantworten, die über mehrere Schritte reicht.",
+      },
+    },
+  },
+  {
+    term: "Ontology",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A formal model of which kinds of things exist and which kinds of relationships are possible between them.",
+    explanation:
+      "The schema behind a knowledge graph. It decides in advance that a Server can host an Application but cannot report to one.",
+    observedIn: ["Knowledge systems", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Knowledge Graph", "Taxonomy", "Entity", "Relationship"],
+    commonConfusion: ["Taxonomy"],
+    translations: {
+      de: {
+        term: "Ontologie",
+        shortDefinition:
+          "Ein formales Modell davon, welche Arten von Dingen existieren und welche Arten von Beziehungen zwischen ihnen möglich sind.",
+        explanation:
+          "Das Schema hinter einem Wissensgraphen. Es legt vorab fest, dass ein Server eine Anwendung beherbergen, aber nicht an sie berichten kann.",
+      },
+    },
+  },
+  {
+    term: "Taxonomy",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A hierarchical classification: categories inside categories.",
+    observedIn: ["Knowledge systems", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Ontology", "Metadata"],
+    commonConfusion: ["Ontology"],
+    translations: {
+      de: {
+        term: "Taxonomie",
+        shortDefinition: "Eine hierarchische Klassifikation: Kategorien in Kategorien.",
+      },
+    },
+  },
+  {
+    term: "Inference",
+    kind: "general-ai-term",
+    shortDefinition:
+      "Running a trained model on an input to produce an output. The everyday act of using a model.",
+    explanation:
+      "Training is what produced the model, once and expensively. Inference is what happens every time you send it something, and it is what you pay for per use.",
+    observedIn: ["Model documentation", "Developer tools"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["LLM", "Model Weights", "Token"],
+    commonConfusion: ["Training", "Fine-tuning"],
+    translations: {
+      de: {
+        term: "Inferenz",
+        shortDefinition:
+          "Ein trainiertes Modell auf eine Eingabe anwenden, um eine Ausgabe zu erzeugen. Der alltägliche Vorgang der Modellnutzung.",
+        explanation:
+          "Das Training hat das Modell erzeugt, einmal und teuer. Inferenz passiert bei jeder Anfrage und ist das, was pro Nutzung bezahlt wird.",
+      },
+    },
+  },
+  {
+    term: "Model Weights",
+    kind: "general-ai-term",
+    shortDefinition:
+      "The parameters a model learned during training. The model itself, as a file.",
+    aiContext:
+      "Whether you can obtain them decides whether a model can run on your own infrastructure at all. It is the practical line between using a service and operating a system.",
+    observedIn: ["Model documentation", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Weights", "Parameters"],
+    related: ["LLM", "Inference", "Fine-tuning"],
+    commonConfusion: ["Training Data"],
+    translations: {
+      de: {
+        term: "Modellgewichte",
+        shortDefinition:
+          "Die im Training gelernten Parameter eines Modells. Das Modell selbst, als Datei.",
+        aiContext:
+          "Ob man sie bekommt, entscheidet überhaupt darüber, ob ein Modell auf eigener Infrastruktur laufen kann. Das ist die praktische Grenze zwischen einen Dienst nutzen und ein System betreiben.",
+      },
+    },
+  },
+  {
+    term: "Frontend",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The part of a system a person sees and interacts with.",
+    aiContext:
+      "Worth naming because in a good AI system almost nothing important happens here. Search, permission checks, storage and most actions live behind it, and the model is one component among several rather than the thing the interface talks to directly.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Backend", "API", "Orchestrator"],
+    commonConfusion: ["Chat"],
+    translations: {
+      de: {
+        term: "Frontend",
+        shortDefinition: "Der Teil eines Systems, den eine Person sieht und bedient.",
+        aiContext:
+          "Erwähnenswert, weil in einem guten KI-System hier fast nichts Wichtiges geschieht. Suche, Rechteprüfung, Speicherung und die meisten Aktionen liegen dahinter, und das Modell ist eine Komponente unter mehreren statt das, womit die Oberfläche direkt spricht.",
+      },
+    },
+  },
+  {
+    term: "Backend",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The server-side logic behind an interface: where retrieval, permissions, storage and orchestration actually happen.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Frontend", "API", "Orchestrator", "Retriever"],
+    commonConfusion: ["LLM"],
+    translations: {
+      de: {
+        term: "Backend",
+        shortDefinition:
+          "Die serverseitige Logik hinter einer Oberfläche: wo Retrieval, Rechte, Speicherung und Orchestrierung tatsächlich stattfinden.",
+      },
+    },
+  },
+  {
+    term: "API",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A defined interface through which one piece of software calls another.",
+    observedIn: ["Developer tools", "Developer communities", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Application Programming Interface"],
+    related: ["Endpoint", "Connectors", "MCP", "Backend"],
+    commonConfusion: ["MCP", "Connectors"],
+    translations: {
+      de: {
+        term: "API",
+        shortDefinition:
+          "Eine definierte Schnittstelle, über die eine Software eine andere aufruft.",
+      },
+    },
+  },
+  {
+    term: "Endpoint",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "One concrete callable address within an API.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["API", "Backend"],
+    commonConfusion: ["API"],
+    translations: {
+      de: {
+        term: "Endpoint",
+        shortDefinition: "Eine konkrete aufrufbare Adresse innerhalb einer API.",
+      },
+    },
+  },
+  {
+    term: "Tool",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "An external capability an AI model can call: search something, read a file, send a message, change a record.",
+    explanation:
+      "The model does not perform the action. It emits a structured request, and something outside it decides whether to carry that out and with whose permissions.",
+    aiContext:
+      "Which is where the separation that matters lives: reasoning in the model, authority in the runtime. It is also why read tools and write tools belong in different categories — the risk is not in the thinking, it is in what the tool can do.",
+    observedIn: ["Developer tools", "Agent products", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Function"],
+    related: ["Tool Use", "Function Calling", "Agent", "MCP Server"],
+    commonConfusion: ["Plugins", "Connectors"],
+    translations: {
+      de: {
+        term: "Werkzeug",
+        shortDefinition:
+          "Eine externe Fähigkeit, die ein KI-Modell aufrufen kann: etwas suchen, eine Datei lesen, eine Nachricht senden, einen Datensatz ändern.",
+        explanation:
+          "Das Modell führt die Aktion nicht aus. Es gibt eine strukturierte Anfrage aus, und etwas außerhalb entscheidet, ob und mit wessen Rechten sie ausgeführt wird.",
+        aiContext:
+          "Genau hier liegt die entscheidende Trennung: das Denken im Modell, die Befugnis in der Laufzeitumgebung. Deshalb gehören lesende und schreibende Werkzeuge in verschiedene Kategorien — das Risiko steckt nicht im Denken, sondern darin, was das Werkzeug kann.",
+      },
+    },
+  },
+  {
+    term: "Orchestrator",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The software that coordinates model, tools, retrieval and workflow — deciding what happens in which order.",
+    aiContext:
+      "The component most people never picture, and the one holding the controls. Approval gates, retry logic, which model handles which step, what the model is allowed to see: all of that lives here rather than in the model.",
+    observedIn: ["Developer tools", "Agent products", "Enterprise AI products"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["Agent", "Workflow", "Tool", "Backend"],
+    commonConfusion: ["Agent"],
+    translations: {
+      de: {
+        term: "Orchestrator",
+        shortDefinition:
+          "Die Software, die Modell, Werkzeuge, Retrieval und Ablauf koordiniert — sie entscheidet, was in welcher Reihenfolge geschieht.",
+        aiContext:
+          "Die Komponente, die sich kaum jemand vorstellt, und die, die die Steuerung hält. Freigabepunkte, Wiederholungslogik, welches Modell welchen Schritt übernimmt, was das Modell sehen darf: All das liegt hier und nicht im Modell.",
+      },
+    },
+  },
+  {
+    term: "Workflow",
+    kind: "ai-work-term",
+    shortDefinition:
+      "A predefined sequence of processing steps.",
+    explanation:
+      "The contrast with an agent is the useful part. A workflow is decided in advance; an agent decides as it goes. Predictable against adaptable, and auditable against flexible.",
+    aiContext:
+      "Many problems people reach for an agent to solve are workflows, and are better as workflows — cheaper, testable, and they fail in ways you can predict.",
+    observedIn: ["Developer tools", "General AI usage", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Agentic Workflow", "Orchestrator", "Agent", "Automation"],
+    commonConfusion: ["Agentic Workflow", "Automation"],
+    translations: {
+      de: {
+        term: "Workflow",
+        shortDefinition: "Eine vorab festgelegte Folge von Verarbeitungsschritten.",
+        explanation:
+          "Nützlich ist der Kontrast zum Agenten. Ein Workflow ist vorab entschieden, ein Agent entscheidet unterwegs. Vorhersagbar gegen anpassungsfähig, prüfbar gegen flexibel.",
+        aiContext:
+          "Viele Probleme, für die zum Agenten gegriffen wird, sind Workflows — und als Workflow besser: günstiger, testbar, und sie scheitern auf vorhersehbare Weise.",
+      },
+    },
+  },
+  {
+    term: "MCP Server",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A service that offers tools, data or context to AI clients over the Model Context Protocol.",
+    aiContext:
+      "The point is that one server can serve several clients. Whether that is worth it depends on how many clients and tools you actually have — a gateway in front of one door is still a gateway.",
+    observedIn: ["Developer tools", "Agent products", "Developer communities"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["MCP", "MCP Client", "Tool", "Resource"],
+    commonConfusion: ["Connectors", "API"],
+    translations: {
+      de: {
+        term: "MCP-Server",
+        shortDefinition:
+          "Ein Dienst, der KI-Clients über das Model Context Protocol Werkzeuge, Daten oder Kontext anbietet.",
+        aiContext:
+          "Der Sinn liegt darin, dass ein Server mehrere Clients bedienen kann. Ob sich das lohnt, hängt davon ab, wie viele Clients und Werkzeuge tatsächlich vorhanden sind — ein Gateway vor einer einzigen Tür bleibt ein Gateway.",
+      },
+    },
+  },
+  {
+    term: "MCP Client",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "The application side that connects to MCP servers and makes their capabilities available to a model.",
+    observedIn: ["Developer tools", "Agent products"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["MCP", "MCP Server", "Tool"],
+    commonConfusion: ["MCP Server"],
+    translations: {
+      de: {
+        term: "MCP-Client",
+        shortDefinition:
+          "Die Anwendungsseite, die sich mit MCP-Servern verbindet und deren Fähigkeiten einem Modell zur Verfügung stellt.",
+      },
+    },
+  },
+  {
+    term: "Resource",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Context or data content offered to a model over MCP, as opposed to an action it can invoke.",
+    aiContext:
+      "The resource-and-tool split is the read-and-write split in another form, and it is the one worth preserving: what a system may look at and what it may change are different questions with different consequences.",
+    observedIn: ["Developer tools", "Developer communities"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["MCP", "MCP Server", "Tool", "Context"],
+    commonConfusion: ["Tool"],
+    translations: {
+      de: {
+        term: "Resource",
+        shortDefinition:
+          "Kontext- oder Dateninhalt, der einem Modell über MCP angeboten wird — im Unterschied zu einer Aktion, die es auslösen kann.",
+        aiContext:
+          "Die Trennung von Resource und Werkzeug ist die Trennung von Lesen und Schreiben in anderer Form, und sie lohnt die Mühe: Was ein System ansehen und was es ändern darf, sind verschiedene Fragen mit verschiedenen Folgen.",
+      },
+    },
+  },
+  {
+    term: "Sync",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Keeping a derived copy in step with the source it came from.",
+    aiContext:
+      "Rarely instant, and the gap is where wrong answers live. Between a document changing and the index knowing, the system answers from the previous version — with a citation that looks entirely correct.",
+    observedIn: ["Knowledge systems", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Synchronisation"],
+    related: ["Freshness", "Index", "Source of Truth", "Ingestion"],
+    commonConfusion: ["Backup"],
+    translations: {
+      de: {
+        term: "Synchronisation",
+        shortDefinition:
+          "Eine abgeleitete Kopie mit ihrer Quelle im Gleichstand halten.",
+        aiContext:
+          "Selten sofort — und in der Lücke wohnen die falschen Antworten. Zwischen der Änderung eines Dokuments und dem Wissen des Index antwortet das System aus der Vorversion, mit einer völlig korrekt aussehenden Quellenangabe.",
+      },
+    },
+  },
+  {
+    term: "Cache",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Temporary intermediate storage that avoids repeating expensive work.",
+    aiContext:
+      "It is also another copy of your content, in another place, under its own retention rules. When people ask where their data is, caches are one of the answers they were not expecting.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Index", "Freshness", "Source of Truth"],
+    commonConfusion: ["Memory"],
+    translations: {
+      de: {
+        term: "Cache",
+        shortDefinition:
+          "Temporärer Zwischenspeicher, der teure Arbeit nicht wiederholen lässt.",
+        aiContext:
+          "Er ist zugleich eine weitere Kopie deiner Inhalte, an einem weiteren Ort, mit eigenen Aufbewahrungsregeln. Fragt jemand, wo seine Daten sind, gehören Caches zu den unerwarteten Antworten.",
+      },
+    },
+  },
+  {
+    term: "Workspace",
+    kind: "ai-work-term",
+    shortDefinition:
+      "A working environment holding context, files, state and often tools, that persists between sessions.",
+    observedIn: ["Agent products", "Developer tools", "General AI usage"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["Project", "Folder Workspace", "Memory", "Context"],
+    commonConfusion: ["Project", "Memory"],
+    translations: {
+      de: {
+        term: "Workspace",
+        shortDefinition:
+          "Eine Arbeitsumgebung mit Kontext, Dateien, Zustand und oft Werkzeugen, die zwischen Sitzungen bestehen bleibt.",
+      },
+    },
+  },
+  {
+    term: "Folder Workspace",
+    kind: "ai-work-term",
+    shortDefinition:
+      "A workspace whose persistent state is simply files in a directory.",
+    explanation:
+      "Unfashionable and remarkably durable. The state is readable without the tool that wrote it, diffable, versionable with Git, and portable to whatever comes next.",
+    aiContext:
+      "Which is the argument against keeping knowledge only as vendor-specific AI memory: knowledge in Markdown and Git carries a different risk from knowledge that exists only inside a product.",
+    observedIn: ["Developer tools", "Agent products"],
+    status: "draft",
+    stability: "medium",
+    aliases: [],
+    related: ["Workspace", "Memory", "Source of Truth"],
+    commonConfusion: ["Memory"],
+    translations: {
+      de: {
+        term: "Ordner-Workspace",
+        shortDefinition:
+          "Ein Workspace, dessen dauerhafter Zustand schlicht aus Dateien in einem Verzeichnis besteht.",
+        explanation:
+          "Unmodern und bemerkenswert haltbar. Der Zustand ist ohne das schreibende Werkzeug lesbar, vergleichbar, mit Git versionierbar und auf das Nächste übertragbar.",
+        aiContext:
+          "Das ist das Argument dagegen, Wissen nur als herstellerspezifisches KI-Gedächtnis zu halten: Wissen in Markdown und Git trägt ein anderes Risiko als Wissen, das nur in einem Produkt existiert.",
+      },
+    },
+  },
+  {
+    term: "SaaS",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Software operated as a service by its vendor, reached over the network.",
+    aiContext:
+      "Not the same as \"public\". A business SaaS with strong governance can protect data better than a badly configured self-hosted system. Hosting location alone is not data sovereignty.",
+    observedIn: ["Enterprise AI products", "General AI usage"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Software as a Service"],
+    related: ["On-prem", "Local AI", "Source of Truth"],
+    commonConfusion: ["Public Cloud"],
+    translations: {
+      de: {
+        term: "SaaS",
+        shortDefinition:
+          "Software, die der Anbieter als Dienst betreibt und die übers Netz erreicht wird.",
+        aiContext:
+          "Nicht dasselbe wie „öffentlich“. Ein Business-SaaS mit guter Governance kann Daten besser schützen als ein schlecht konfiguriertes selbst betriebenes System. Der Hosting-Standort allein ist keine Datensouveränität.",
+      },
+    },
+  },
+  {
+    term: "On-prem",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "Operated on infrastructure you control, rather than as a vendor's service.",
+    observedIn: ["Enterprise AI products", "Developer communities"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["On-premises", "Self-hosted"],
+    related: ["SaaS", "Local AI", "Model Weights"],
+    commonConfusion: ["Local AI"],
+    translations: {
+      de: {
+        term: "On-Premises",
+        shortDefinition:
+          "Auf selbst kontrollierter Infrastruktur betrieben statt als Dienst eines Anbieters.",
+      },
+    },
+  },
+  {
+    term: "Local AI",
+    kind: "ai-architecture-term",
+    shortDefinition:
+      "A model that runs and stores directly on the end device, with nothing leaving it.",
+    aiContext:
+      "The strongest answer to the data-path question, and the one with the clearest cost: smaller models, slower answers, and a machine that has to be capable enough. Which is why real systems route by task — simple classification locally, hard analysis to a larger model.",
+    observedIn: ["Developer communities", "General AI usage"],
+    status: "draft",
+    stability: "medium",
+    aliases: ["On-device AI", "Offline AI"],
+    related: ["On-prem", "SaaS", "Model Weights", "Inference"],
+    commonConfusion: ["On-prem"],
+    translations: {
+      de: {
+        term: "Lokale KI",
+        shortDefinition:
+          "Ein Modell, das direkt auf dem Endgerät läuft und speichert, ohne dass etwas es verlässt.",
+        aiContext:
+          "Die stärkste Antwort auf die Frage nach dem Datenweg — mit den klarsten Kosten: kleinere Modelle, langsamere Antworten, ein ausreichend leistungsfähiges Gerät. Deshalb leiten reale Systeme nach Aufgabe: einfache Einordnung lokal, schwierige Analyse an ein größeres Modell.",
+      },
+    },
+  },
+  {
+    term: "Observability",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Being able to see what a system actually did, through logs, metrics and traces.",
+    aiContext:
+      "Harder for AI systems than for ordinary software, because the interesting question is not whether it ran but whether the answer was any good — and that is not visible in a success code.",
+    observedIn: ["Developer tools", "Enterprise AI products"],
+    status: "draft",
+    stability: "stable",
+    aliases: [],
+    related: ["Evaluation", "Provenance", "DLP"],
+    commonConfusion: ["Monitoring"],
+    translations: {
+      de: {
+        term: "Observability",
+        shortDefinition:
+          "Sehen können, was ein System tatsächlich getan hat — über Logs, Metriken und Traces.",
+        aiContext:
+          "Bei KI-Systemen schwieriger als bei gewöhnlicher Software, weil die interessante Frage nicht ist, ob etwas lief, sondern ob die Antwort taugte — und das steht in keinem Statuscode.",
+      },
+    },
+  },
+  {
+    term: "Evaluation",
+    kind: "ai-work-term",
+    shortDefinition:
+      "Systematically testing whether an AI system's output is actually good, rather than assuming it.",
+    explanation:
+      "For a retrieval system the stages have to be measured separately, because they fail separately: did retrieval find the right source, did the reranker keep it, did the model read it correctly, is the answer right, is the citation right.",
+    aiContext:
+      "The reason to separate them is that a system can answer wrongly while the model performed perfectly — it was simply handed the wrong passages. Measuring only the final answer tells you something is broken, not what.",
+    observedIn: ["Developer tools", "Enterprise AI products", "Model documentation"],
+    status: "draft",
+    stability: "stable",
+    aliases: ["Evals"],
+    related: ["Retrieval", "Reranker", "Observability", "Hallucination"],
+    commonConfusion: ["Benchmark"],
+    translations: {
+      de: {
+        term: "Evaluation",
+        shortDefinition:
+          "Systematisch prüfen, ob die Ausgabe eines KI-Systems tatsächlich gut ist, statt es anzunehmen.",
+        explanation:
+          "Bei einem Retrieval-System müssen die Stufen getrennt gemessen werden, weil sie getrennt versagen: Hat das Retrieval die richtige Quelle gefunden, hat der Reranker sie behalten, hat das Modell sie richtig gelesen, stimmt die Antwort, stimmt die Quellenangabe.",
+        aiContext:
+          "Der Grund für die Trennung: Ein System kann falsch antworten, während das Modell einwandfrei gearbeitet hat — es bekam schlicht die falschen Passagen. Nur die Endantwort zu messen sagt dir, dass etwas kaputt ist, nicht was.",
       },
     },
   },
