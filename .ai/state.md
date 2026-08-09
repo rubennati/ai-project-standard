@@ -47,7 +47,7 @@ History lives in `progress.md`; this section is current facts only.
 ## Immediate next steps
 
 1. Legal review of the legal notice and privacy policy. Both are live. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
-2. Decide one canonical set of profile names — `docs/standard.md` and `README.md` say Open Source / Human-AI Collaboration / Combined, `docs/profiles.md` and the site say OSS-only / AI-only / Combined.
+2. Bring the website into line with the repository: three pages still speak the retired profile vocabulary (`site/src/pages/profiles.astro`, `use-cases.astro`, `site/src/i18n/ui.ts`).
 3. Resolve the two identities (see current objective). The intended shape is the site as the general layer with the project standard as a clearly marked developer area beneath it, roadmapped in `ROADMAP.md`.
 4. Split the bilingual content modules into one file per locale. Both languages in one module is the structural cause of German that reads like translated English; the language guard catches the symptoms, not the cause.
 5. Write the two planned blog posts, in order: why removing names rarely produces anonymous data in the legal sense, and why "EU-hosted" answers a different question from the one people mean.

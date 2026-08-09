@@ -13,7 +13,8 @@ records.
 
 ## Core rules
 
-- `docs/purpose.md` states what the repository, the website and a blueprint are each for. Read it before proposing anything structural; where another file disagrees with it, that file is out of date
+- `docs/purpose.md` is the top of the hierarchy: the destination, the three surfaces, how information flows. Read it before proposing anything structural; where another file disagrees with it, that file is out of date
+- Judge work against the destination, not against the task alone. If it does not move a developer closer to being able to answer *what changed, why, on whose decision, and what was checked* — say so rather than finishing it
 - Use the vocabulary the project has already defined. `site/src/data/terms.ts` holds 80 researched terms — check it before inventing a name. CI enforces the ones that have drifted before
 - Write everything in English — see `docs/language-style.md`. The site's translated pages are the only exception
 - Do not perform unrelated refactors
@@ -40,7 +41,7 @@ Projects adopting this standard SHOULD expose these commands at the project root
 - `build` — produces deployable artifacts
 - `typecheck` — type checking where applicable
 
-This repository itself is documentation-first; its CI exercises `lint`-equivalents (markdownlint, link-check, profile-completeness) and `build` for the Astro site under `site/`. Use those as the reference shape; add the missing commands when application code lands.
+This repository is documentation-first; its CI exercises `lint`-equivalents (markdownlint, link check, self-conformance, language check) and `build` for the Astro site under `site/`. Use those as the reference shape; add the missing commands when application code lands.
 
 ## Approval
 

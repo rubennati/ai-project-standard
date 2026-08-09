@@ -205,3 +205,33 @@ Rationale: the two documents contradicted each other in production. One told
 agents to read and update `.ai/state.md` on every meaningful change; the other
 told them not to maintain those files as a parallel tracker. Both were shipped,
 and the model this project sells was inconsistent with itself.
+
+## 2026-08-09 - The destination is the spine, not a taxonomy
+
+Decision: `docs/purpose.md` states one outcome — a developer brings an AI agent
+into their project and can still answer, months later, what changed, why, on
+whose decision, and what was checked, without having had to invent the practice.
+Everything in the repository derives from it. The hierarchy is purpose →
+evidence → decisions → artifacts → instance, and nothing lower may contradict
+anything higher.
+
+Three consequences follow rather than being chosen separately:
+
+- **Four pillars are retired.** Pillars and layers are both inventories of what
+  is in the box. The organising question is what someone needs to reach the
+  outcome, and that is answered by blueprints cut by goal.
+- **Profiles are superseded by blueprints.** They were the same idea at a lower
+  stage of maturity — file lists per audience versus shipped packages per goal.
+  `docs/profiles.md` becomes a tombstone so existing links resolve, and the
+  OSS-only / AI-only / Combined versus Open Source / Human-AI / Combined naming
+  disagreement, open since May, disappears with them.
+- **Distribution is degit, not forking.** Reaching the outcome needs one
+  blueprint; a fork hands over this project's history instead.
+
+Rationale: the same three questions had been open for months and were repeatedly
+put to the maintainer as a choice between structures. They are not a matter of
+preference — once the destination is fixed, each has one answer that follows
+from it. Asking for a route before naming a destination was the error.
+
+`check-profiles.sh` and its CI job are removed; the conformance check covers
+blueprints, and CI now rejects the retired vocabulary if it returns.

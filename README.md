@@ -9,30 +9,40 @@
 
 > Early draft: this repository is a work in progress and will be refined through maintainer review.
 
-AI Project Standard is a starting baseline for open-source projects that use AI.
+AI Project Standard is for developers bringing an AI agent into their work.
 
-**Four pillars, one repository:** human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Adoptable in three profiles (Open Source, Human-AI Collaboration, Combined), or in pieces — covering four common starting points, from a new project that uses AI from day one to AI adoption in an existing repository.
+> **Where this is going:** a developer brings an AI agent into their project and
+> can still answer, months later — what changed, why, on whose decision, and what
+> was checked — without having had to invent the practice themselves.
 
-The repository is the operational layer — workflows, AI state, governance, templates, automation. The reasoning, comparisons, use-case walk-throughs, and research live on the knowledge layer at <https://ai-standard.rubennati.at>.
+Many repositories bolt on ad hoc prompts and leave the structure, governance and
+continuity rules missing. This one hands over the missing part as **blueprints**:
+files you copy, with the decisions already made and the reasons stated.
 
-**[docs/purpose.md](docs/purpose.md) states what each of the three surfaces is for.** Where any other file disagrees with it, that file is out of date.
+**[docs/purpose.md](docs/purpose.md) is the top of the hierarchy** — the
+destination, the three surfaces, and how information flows. Where any other file
+disagrees with it, that file is out of date.
 
-## Profiles and paths
+## Blueprints
 
-| Profile | When to pick it |
+| Blueprint | For |
 |---|---|
-| **Open Source** | A clean open-source baseline without AI files. |
-| **Human-AI Collaboration** | Drop AI conventions into an existing repository. |
-| **Combined** | Both, as in this repository. |
+| [`open-source`](blueprints/open-source/) | Starting a public repository: governance, contribution rules, CI that blocks a merge. No AI in it |
+| [`ai-assisted-development`](blueprints/ai-assisted-development/) | Bringing an agent into a repository you already have: the frame it operates inside, plus an initialisation interview |
 
-Four common adoption paths — a 2×2 grid of *new vs. existing* × *with vs. without AI*:
+```bash
+npx degit rubennati/ai-project-standard/blueprints/<id>/files <target>
+```
 
-1. New project, with AI from day one.
-2. AI into an existing repository (brownfield).
-3. New open-source project, no AI.
-4. Professionalising an existing open-source project.
+Take a blueprint — do not fork. A fork hands over this project's changelog,
+`.ai/` state, website and research. See [docs/adoption.md](docs/adoption.md).
 
-See [docs/standard.md](docs/standard.md) for the full inventory, [docs/profiles.md](docs/profiles.md) for exact file lists, and [docs/adoption.md](docs/adoption.md) for adoption steps.
+## The website
+
+<https://ai-standard.rubennati.at> is **broader** than this repository and sits
+logically above it: it explains data flows, law and secure setup for anyone
+affected by AI at work, not only developers. Information flows repository →
+website; verified sources may come back down as input, never as authority.
 
 ## Website
 

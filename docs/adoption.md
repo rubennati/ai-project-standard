@@ -1,54 +1,68 @@
 # Adoption
 
-How to adopt this standard in a new or existing repository. Three paths, one per profile.
+How to take this into your project.
 
-See [profiles.md](./profiles.md) for the exact file lists and [standard.md](./standard.md) for the conceptual definition.
+## Take a blueprint, do not fork
 
-## Adopt OSS-only profile
+```bash
+npx degit rubennati/ai-project-standard/blueprints/<id>/files <target>
+```
 
-Use this when you want a credible open-source baseline without AI-specific files.
+Without `npx`:
 
-1. **Start from the template.** Click "Use this template" on the repository's GitHub page (available from v0.2.0).
-2. **Remove AI-specific paths.** Delete `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/`, `.ai/`, `docs/ai-workspace-layer.md`, `docs/practical-ai-collaboration.md`, `docs/ai-tools.md`.
-3. **Adjust the README.** Remove the AI-workspace and AI-collaboration sections.
-4. **Replace project metadata.** Update name, description, license holder, security contact, roadmap, and changelog.
-5. **Configure CI.** Keep `.github/workflows/ci.yml`; the structural checks still apply.
-6. **Apply branch protection.** Follow `docs/branch-protection.md`.
+```bash
+git clone --depth 1 --filter=blob:none --sparse \
+  https://github.com/rubennati/ai-project-standard
+cd ai-project-standard
+git sparse-checkout set blueprints/<id>/files
+```
 
-## Adopt AI-only profile
+Forking is the wrong shape. It hands over this project's changelog, its `.ai/`
+state full of decisions about *this* repository, its whole website and its
+research directory — and buries the dozen files you actually wanted somewhere
+inside. A blueprint is the subset that belongs in your project and nothing else.
 
-Use this when you already have an open-source or internal repository and want to introduce structured Human-AI Collaboration without re-doing the OSS scaffolding.
+## Which one
 
-1. **Copy the AI files into your existing repository.** Copy `AGENTS.md`, `CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules/00-project.mdc`, the full `.ai/` directory, and the AI docs (`docs/ai-workspace-layer.md`, `docs/practical-ai-collaboration.md`, `docs/ai-tools.md`).
-2. **Localize `AGENTS.md`.** Adjust the approval rules, branch-naming conventions, and any references to match your existing workflow.
-3. **Seed `.ai/`.** Replace placeholder content in `.ai/project-brief.md`, `.ai/state.md`, and `.ai/decisions.md` with your project's actual context.
-4. **Add a short pointer in your existing `README.md`.** Mention `AGENTS.md` and `.ai/` so contributors and AI tools discover them.
-5. **Optional: pull in `docs/standard.md`, `docs/profiles.md`, and `docs/adoption.md`** if you want to expose the standard's structure to your team.
+| You are | Take |
+|---|---|
+| Starting a public repository | [`open-source`](../blueprints/open-source/) |
+| Bringing an agent into a repository you already have | [`ai-assisted-development`](../blueprints/ai-assisted-development/) |
+| Doing both | `open-source` first, then overlay `ai-assisted-development` |
 
-## Adopt combined profile
+They compose and neither depends on the other. Each README states what it
+solves, what you get, when *not* to use it, and what it was run against.
 
-Use this when you are starting a new project and want both baselines from day one.
+## After copying
 
-1. **Use the GitHub template.** Click "Use this template" to create your repository from this one.
-2. **Replace project metadata.** Name, description, license holder, security contact, roadmap.
-3. **Seed `.ai/`.** Update `project-brief.md`, `state.md`, and `decisions.md` with your project's reality.
-4. **Apply branch protection** per `docs/branch-protection.md`.
-5. **Decide on AI tools.** Keep the pointer files for the tools you use; delete the others (or keep them as future-ready stubs — they are small).
-6. **Iterate.** Open issues and PRs as normal; the standard is a starting point, not a constraint.
+Each blueprint's README lists its own steps. Two apply to both:
 
-## Updating from a previous version
+1. **Delete the first line of every copied file** — the comment marking it as
+   blueprint payload.
+2. **Replace the placeholders** the blueprint names.
 
-The standard follows Semantic Versioning (see `CONTRIBUTING.md` → Versioning).
+For `ai-assisted-development`, point your agent at `INIT.md` and say
+"initialise". It runs the interview and writes the answers into `.ai/` itself.
 
-| From | To | Action |
-|---|---|---|
-| `v0.1.0` | `v0.2.0` | Pull in new files: `docs/standard.md`, `docs/profiles.md`, `docs/adoption.md`, `docs/ai-tools.md`, `.cursor/rules/00-project.mdc`. Update `README.md` and `AGENTS.md` per upstream diff. No path renames. |
+## Staying current
 
-Recommended workflow for adopters tracking the standard:
+Blueprints change. To see what moved since you copied:
 
-1. Add this repository as a remote: `git remote add upstream https://github.com/rubennati/ai-project-standard.git`.
-2. Fetch a release tag: `git fetch upstream --tags`.
-3. Diff the desired version against your current adoption: `git diff <your-base>..upstream/v0.2.0 -- AGENTS.md docs/ .ai/`.
-4. Cherry-pick or copy the changes that apply to your project. Skip the rest.
+```bash
+git remote add upstream https://github.com/rubennati/ai-project-standard.git
+git fetch upstream --tags
+git diff <the-tag-you-took>..upstream/main -- blueprints/<id>/files
+```
 
-Breaking changes for adopters are always called out in the corresponding `CHANGELOG.md` entry under `### Breaking changes for adopters`.
+Take what applies and skip the rest. There is no update command, and there
+should not be: your copy is yours, and the moment it diverges deliberately, an
+automatic merge would be wrong.
+
+Breaking changes for adopters are called out under
+`### Breaking changes for adopters` in [`CHANGELOG.md`](../CHANGELOG.md).
+
+## Licence
+
+Everything under `blueprints/` is MIT-0 — copy it without carrying an
+attribution notice into your repository. The rest of the repository is MIT, and
+the texts written for the website are CC BY 4.0.

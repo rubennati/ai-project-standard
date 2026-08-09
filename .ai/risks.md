@@ -18,9 +18,9 @@ Reviewed 2026-08-09.
 - **Stale pins in payload workflows.** Dependabot reads only the root
   `.github/workflows`. SHA-pinned actions inside `blueprints/*/files/` go out of
   date silently, and the pinning advice is ours.
-- **Competing taxonomies.** Four pillars, three profiles, four adoption paths,
-  three layers, four questions. A reader meets a different cut of the same
-  territory depending on which file they open.
+- ~~Competing taxonomies.~~ **Closed 2026-08-09.** The destination in
+  `docs/purpose.md` is the single organising idea; blueprints superseded the
+  profile taxonomy, and CI rejects the retired vocabulary if it returns.
 - **Drift from the founding idea.** Recorded twice in `errors.md`. The check is
   in `project-brief.md`; it only works if it is actually run before work starts.
 

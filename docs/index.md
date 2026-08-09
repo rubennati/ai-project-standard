@@ -8,9 +8,9 @@ This documentation set defines the project baseline and collaboration model.
 
 ## The standard
 
-- [The Standard](./standard.md) — what the standard is, mandatory vs optional, philosophy
-- [Profiles](./profiles.md) — exact file lists for OSS-only, AI-only, and combined adoption
-- [Adoption](./adoption.md) — how to adopt each profile and update across versions
+- [The Standard](./standard.md) — what the repository holds and how the standard is delivered
+- [Blueprints](./blueprints.md) — what a blueprint is, its shape, and how to add one
+- [Adoption](./adoption.md) — taking a blueprint into your project, and staying current
 - [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
 - [Website Audit Prompt](./website-audit.md) — reusable prompt for checking a published site for legal, privacy, security and discoverability defects
 - [Forkable Repository](./forkable-repository.md) — keeping operator-specific personal data out of a public repository, so a fork publishes placeholders
@@ -20,7 +20,7 @@ This documentation set defines the project baseline and collaboration model.
 
 - [Getting Started](./getting-started.md)
 
-## Open Source baseline
+## Open-source operations
 
 - [Open Source Project Standard](./open-source-project-standard.md)
 - [Git Workflow](./git-workflow.md)
@@ -29,7 +29,7 @@ This documentation set defines the project baseline and collaboration model.
 - [Blueprints](./blueprints.md) — what a blueprint is, the shape it has, and how to add one
 - [SUPPORT.md](../SUPPORT.md) (repo root) — issues vs Discussions guidance
 
-## Human-AI Collaboration baseline
+## Working with an agent
 
 - [AI Workspace Layer](./ai-workspace-layer.md)
 - [AI Tools](./ai-tools.md)
