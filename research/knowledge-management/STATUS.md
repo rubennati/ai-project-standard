@@ -42,6 +42,23 @@ verified. Each drop corrects the one before it.
   twelve of them, and the load-bearing one was read at the source. It also
   corrects the first drop.
 
+## Three registers, not one
+
+The drop files stay exactly as they arrived. Everything that reads *across* them
+lives in one of three places:
+
+| File | Answers |
+|---|---|
+| **STATUS.md** — this file | What arrived, do the sources hold, where does each block route |
+| **[REVISIONS.md](./REVISIONS.md)** | Where a later drop overturned an earlier one, and which reading holds |
+| **[DERIVED.md](./DERIVED.md)** | The positions this project adopts, and where each lands |
+
+The separation matters because the drops revise themselves as they go. Ten
+conflicts are recorded in REVISIONS.md; four are outright reversals. The sharpest
+is the GDPR one — drop 1 said connecting company mail to a US LLM is definitely a
+problem, drop 3 corrected it to an assessment. **Publishing the earlier version
+would be this project failing its own method in public.**
+
 ## Known problems — first drop (`foundations.md`, `figures.md`)
 
 Found on first reading. Recorded here, not corrected in the files. Several are

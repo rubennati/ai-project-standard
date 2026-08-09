@@ -141,7 +141,7 @@ if [[ -f "$TERMS" ]]; then
     local wrong="$1" right="$2"
     local hits
     hits="$(grep -rniE "$wrong" --include='*.md' \
-      docs .ai blueprints README.md AGENTS.md CONTRIBUTING.md 2>/dev/null \
+      docs .ai blueprints README.md AGENTS.md CONTRIBUTING.md ROADMAP.md 2>/dev/null \
       | grep -v 'check-conformance' || true)"
     if [[ -n "$hits" ]]; then
       while IFS= read -r line; do
@@ -153,6 +153,11 @@ if [[ -f "$TERMS" ]]; then
   # flags the very usage it is meant to protect — which it did on first run.
   check_variant '\bvibe-coding\b|\bvibecoding\b' 'vibe coding'
   check_variant '\bAI assisted (development|coding|engineering)\b' 'AI-assisted development'
+  # Retired by research/knowledge-management/REVISIONS.md R1: the artefact is
+  # real, the name is not standardised. research/ is exempt — the drops are kept
+  # exactly as they arrived, and the register that retires the term has to name
+  # it to do so.
+  check_variant '\bllm[ -]wikis?\b' 'AI knowledge base'
   # Every blueprints/<id> named in prose must be a directory that exists. A
   # renamed blueprint otherwise leaves dead paths in the documentation.
   for ref in $(grep -rhoE 'blueprints/[a-z0-9-]+' --include='*.md' \

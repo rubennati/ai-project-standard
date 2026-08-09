@@ -22,8 +22,9 @@ keywords:
   - copilot
   - cursor
 abstract: >-
-  AI Project Standard is a reusable repository template and reference
-  implementation for adopting Open Source and/or Human-AI Collaboration
-  standards. Three profiles (OSS-only, AI-only, Combined) share one
-  repository and one version stream, with multi-tool pointer files for
-  Claude Code, OpenAI Codex, GitHub Copilot, and Cursor.
+  AI Project Standard is a set of blueprints — material to copy into your own
+  project — for running an open source repository and for working in one with
+  an AI agent. Each blueprint answers one trigger, states the decisions it
+  makes and why, and records what it was run against. The repository is also
+  an instance of some of its own blueprints, so drift between the payload and
+  the live file is a defect rather than a detail.
