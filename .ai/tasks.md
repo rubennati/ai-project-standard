@@ -12,6 +12,22 @@
 - Separate the two identities: the site as the general knowledge layer, the project standard as a marked developer area beneath it
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
 
+## Site structure — noted, not started
+
+Observations from 2026-08-09. Recorded so they are not lost. None of these is
+to be acted on before the structure is decided as a whole.
+
+- The site has no stated principle for its top level, so every new area is an
+  ad-hoc decision. Needs one considered pass and a roadmap, not a rebuild.
+- `/docs` reads as a second website inside the website — AI Project Standard,
+  Profiles, Getting Started sit there with their own logic and no bridge from
+  the rest of the site.
+- `Profiles` has its own footer entry *and* exists under `/docs`. The footer
+  groups need the same pass: what belongs in Project, and why.
+- The glossary is thin. Each term needs more than a short definition — more
+  explanation, examples, visual presentation — and "common confusion" belongs
+  further down the page, not near the top.
+
 ## Backlog
 
 - Write the next two blog posts: why removing names rarely produces anonymous data, and what "EU-hosted" actually answers

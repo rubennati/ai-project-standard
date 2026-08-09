@@ -3,7 +3,9 @@
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- Current objective: Resolve the two identities — the site is a broad knowledge layer, the repository standard a narrower technical subject, and `/docs`, `/use-cases` and `/profiles` still speak only to the second.
+- Blueprints are the current objective and nothing has been built yet: `blueprints/open-source/` from the research, then the extraction of this repository's own AI conventions into a second blueprint. Site work is paused.
+- Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
+- Deferred objective: Resolve the two identities — the site is a broad knowledge layer, the repository standard a narrower technical subject, and `/docs`, `/use-cases` and `/profiles` still speak only to the second.
 
 ## Snapshot
 

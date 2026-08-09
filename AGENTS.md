@@ -45,6 +45,34 @@ This repository itself is documentation-first; its CI exercises `lint`-equivalen
 
 If a change is larger than the current task's scope (architecture, dependencies, governance), pause and ask before committing.
 
+## Change scope
+
+Some changes are visible on every page, or change something a reader has already
+learned. Those need a human decision first, even when the task seems to imply
+them.
+
+**Ask before changing:**
+
+- Site navigation — the header, the footer groups, or what belongs in either
+- Information architecture — adding, removing or renaming a top-level section
+- Public URLs, redirects included
+- The taxonomy (pillars, profiles, layers, adoption paths) anywhere it is stated
+- Anything on every page: the layout shell, the wordmark, the language switch
+- Moving files that something else reads — `docs/**` is rendered by the site
+
+**Proceed without asking:**
+
+- Content inside an existing pattern: a new article in an existing section, using
+  the existing data model and route conventions
+- The smallest fix to something already reported as broken
+- What the repository's own documentation already prescribes
+
+A reported defect authorises the diagnosis and a proposal, not a redesign. If the
+smallest fix is a redesign, say so and wait.
+
+The website has a working state. Treat changes to it as additive by default;
+anything that reshapes what already exists gets proposed before it is built.
+
 ## Operating principles
 
 - Keep changes focused and reviewable
