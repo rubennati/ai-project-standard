@@ -24,6 +24,27 @@ else
     || note "docs/index.md" "does not list docs/purpose.md"
 fi
 
+echo "== The destination is stated, and nothing contradicts it =="
+
+# purpose.md is the top of the hierarchy. If the destination sentence is gone,
+# every derivation below it is unanchored.
+if ! grep -q "what changed, why, on whose decision, and what was checked" docs/purpose.md 2>/dev/null; then
+  note "docs/purpose.md" "the destination sentence is missing — everything else derives from it"
+fi
+
+# Profiles and the four-pillar framing were superseded by blueprints. The rule
+# is that they must not be used as current vocabulary. Records of the past are
+# not current usage, so the append-only logs are exempt along with the tombstone
+# that keeps old links alive: decisions.md must be able to say what it retired.
+retired="$(grep -rn -E "Four pillars|four pillars|OSS-only|AI-only profile|Combined profile" \
+  --include='*.md' docs .ai README.md AGENTS.md CONTRIBUTING.md blueprints 2>/dev/null \
+  | grep -vE '^(docs/profiles\.md|\.ai/(tasks|errors|decisions|progress)\.md):' || true)"
+if [[ -n "$retired" ]]; then
+  while IFS= read -r line; do
+    note "${line%%:*}" "uses the retired profile/pillar taxonomy — blueprints replaced it: $(echo "$line" | cut -d: -f3- | cut -c1-60)"
+  done <<< "$retired"
+fi
+
 echo "== Every blueprint answers the four questions =="
 
 # docs/purpose.md requires a blueprint README to say what it solves, what you

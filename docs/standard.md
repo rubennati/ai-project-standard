@@ -1,84 +1,106 @@
 # The AI Project Standard
 
-A starting baseline for open-source projects that use AI. Four pillars — human-AI collaboration, open-source operations, engineering operations, knowledge and documentation. Three adoption profiles — Open Source, Human-AI Collaboration, Combined.
+The inventory: what this repository holds, what each part is for, and how to
+take it.
 
-This document is the inventory: pillars, profiles, adoption paths, mandatory files, optional add-ons, and the versioning policy. Deeper reasoning, architecture rationale, comparisons, and use-case walk-throughs live on the [knowledge layer](https://ai-standard.rubennati.at).
+The destination it serves is stated once, in [purpose.md](./purpose.md):
 
-## Four pillars
+> A developer brings an AI agent into their project and can still answer, months
+> later: what changed, why, on whose decision, and what was checked — without
+> having had to invent the practice themselves.
 
-Each pillar is delivered as files, conventions, and workflows in the repository, with long-form explanations on the knowledge layer.
+Everything below exists because it moves someone closer to that.
 
-1. **Human-AI collaboration** — `AGENTS.md` as the source of truth, multi-tool pointer files (Claude Code, OpenAI Codex, GitHub Copilot, Cursor), the `.ai/` operational workspace, the practical-collaboration guide.
-2. **Open-source operations** — `README`, `LICENSE`, `CONTRIBUTING`, `CODE_OF_CONDUCT`, `SECURITY`, `SUPPORT`, issue and PR templates, `CODEOWNERS`, `FUNDING`, `CITATION`.
-3. **Engineering operations** — CI workflows (lint, link check, profile completeness), versioning policy, Git workflow, branch protection, dependency automation, security baseline, OpenSSF Scorecard.
-4. **Knowledge and documentation** — the in-repo `docs/` strict reader and the Astro-powered public knowledge layer (long-form, SEO, blog, research).
+## How the standard is delivered
 
-## Three adoption profiles
+**As blueprints.** Rather than describing what a good repository contains, the
+standard hands over one that already is. Each blueprint is cut by **goal**, not
+by file list, and states what it solves, what you get, when *not* to use it, and
+what it was run against.
 
-The four pillars are exposed in three adoption profiles that share one repository and one version stream:
+| Blueprint | For |
+|---|---|
+| [`open-source`](../blueprints/open-source/) | Starting a public repository: governance, contribution rules, and CI that blocks a merge. No AI in it |
+| [`ai-assisted-development`](../blueprints/ai-assisted-development/) | Bringing an agent into a repository you already have: the frame it operates inside, plus an initialisation interview |
 
-- **Open Source profile** — pillars 2, 3, 4 without AI files.
-- **Human-AI Collaboration profile** — pillar 1 plus operational state; drops into an existing repository without redoing OSS scaffolding.
-- **Combined profile** — all four pillars; the working reference in this repository.
+They compose, and neither depends on the other. The catalogue is
+[`blueprints/README.md`](../blueprints/README.md); the contract every blueprint
+meets is [blueprints.md](./blueprints.md).
 
-See [profiles.md](./profiles.md) for the exact file lists and [adoption.md](./adoption.md) for adoption steps.
+## How to take one
 
-## Four adoption paths
+```bash
+npx degit rubennati/ai-project-standard/blueprints/<id>/files <target>
+```
 
-The common starting points the standard is designed for — a 2×2 grid of *new vs. existing project* × *with vs. without AI*:
+Not by forking. A fork hands over this project's changelog, its `.ai/` state,
+its website and its research — none of which belongs in your project. See
+[adoption.md](./adoption.md).
 
-1. **New project, with AI from day one** — Combined profile, full template.
-2. **AI into an existing repository (brownfield)** — Human-AI Collaboration profile alongside whatever the repository already has. The most common case in practice.
-3. **New open-source project, no AI** — Open Source profile only.
-4. **Professionalising an existing open-source project** — pull in Open Source profile pieces (governance, security, CI) where they are missing.
+## What the repository holds
 
-Walk-throughs for each path live on the [knowledge layer](https://ai-standard.rubennati.at/use-cases).
+| Path | What it is |
+|---|---|
+| `blueprints/` | The artifacts. Files you copy, MIT-0 |
+| `docs/` | The rules, stated once. This reader |
+| `.ai/` | This project's own operational workspace — the working model a blueprint ships a copy of |
+| `research/` | Material being verified. Not published, not normative |
+| `site/` | The website source. Broader than the repository, see [purpose.md](./purpose.md) |
+| Root files | This project's own governance. Its instance, not the template |
 
-## Two-layer architecture
+## What the standard covers
 
-The standard is split across two layers by design:
+Four areas, each delivered as files in a blueprint rather than as prose here:
 
-- **Operational layer (this repository)** — short, dense files used during day-to-day work. `.ai/` is operational state, not documentation. `docs/` is the strict reader. Root files are governance. No marketing, no long-form essays.
-- **Knowledge layer (the GitHub Pages site)** — the public face. Use-case walk-throughs, deep guides, blog, comparisons, research, SEO. Pulls content from `docs/` where appropriate; adds long-form content of its own.
+- **Working with an agent** — `AGENTS.md` as the single source for every tool,
+  the pointer files each tool actually reads, the `.ai/` workspace, and the
+  boundary: when the agent stops and asks, what it may never do, what must be
+  verified before anything reaches the default branch.
+- **Open-source operations** — the governance files a public repository needs,
+  the inbound-rights decision, the issue and discussion split, governance sized
+  to the project.
+- **Engineering operations** — CI that gates rather than reports, branch
+  protection, dependency automation, the security baseline, release and
+  versioning policy.
+- **Continuity** — decisions recorded with their reasoning and dates, state that
+  survives a session, and the division between what git records and what `.ai/`
+  records.
 
-The repository itself serves as the working reference — the parts of the standard it has adopted run here, not just on paper. Where it has not yet adopted a blueprint, that blueprint is a proposal, not a demonstration (see [blueprints.md](./blueprints.md)).
-
-## Mandatory files
-
-### Open Source profile
-
-`README.md`, `LICENSE`, `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `CHANGELOG.md`, a pull-request template, at least one issue template, a CI workflow, a documented Git workflow.
-
-### Human-AI Collaboration profile
-
-`AGENTS.md` as the source of truth, at least one tool-specific pointer file (e.g. `CLAUDE.md`), and a minimum `.ai/` workspace with `index.md`, `state.md`, `routing.md`, and `rules.md`.
-
-### Combined profile
-
-Everything from both profiles above, in one repository.
-
-## Optional add-ons
-
-Roadmap, decision log, risk and error logs, domain notes, additional tool pointer files, branch-protection documentation, extended CI checks, GitHub Pages knowledge layer, `SUPPORT.md`, `CITATION.cff`, `FUNDING.yml`, `CODEOWNERS`, security baseline doc.
+The last one is the oldest requirement in this project and the easiest to lose.
+The point is collaboration that stays answerable *over time*, not automation
+that worked once.
 
 ## Boundaries
 
-Outside the standard's scope — adopt these separately if needed:
+Outside scope — adopt these separately if you need them:
 
-- Application code, language- or framework-specific conventions.
+- Application code, and language- or framework-specific conventions.
 - Secrets management beyond pointing at platform features.
 - Organisational governance beyond what a single repository needs.
+- What the website covers: data flows, law, vendor terms, secure setup.
+
+## What this repository demonstrates
+
+The parts of the standard it has adopted run here, not just on paper: the git
+workflow, the release process, the security baseline, the `.ai/` workspace, and
+CI that fails when this repository breaks its own rules.
+
+Where it has **not** adopted a blueprint, that blueprint is a proposal rather
+than a demonstration, and its README says so. Both are currently `draft` — run
+against a fresh copy, not yet used to carry a real project.
 
 ## Versioning
 
-The standard follows Semantic Versioning. See the `Versioning` section in [CONTRIBUTING.md](../CONTRIBUTING.md) for what counts as MAJOR, MINOR, and PATCH for a standards repository.
+Semantic versioning. What counts as MAJOR, MINOR and PATCH for a standard made
+of documents is defined in the Versioning section of
+[`CONTRIBUTING.md`](../CONTRIBUTING.md). The release process is in
+[release-process.md](./release-process.md).
 
-## How to read the rest of the documentation
+## Where to read next
 
-- [profiles.md](./profiles.md) — exact file lists per profile.
-- [adoption.md](./adoption.md) — adoption steps for each path.
-- [ai-workspace-layer.md](./ai-workspace-layer.md) — the role and shape of `.ai/`.
-- [practical-ai-collaboration.md](./practical-ai-collaboration.md) — real-world AI workflows.
-- [ai-tools.md](./ai-tools.md) — multi-tool conventions and supported AI tools.
-- [open-source-project-standard.md](./open-source-project-standard.md) — the open-source baseline view.
-- [git-workflow.md](./git-workflow.md), [branch-protection.md](./branch-protection.md) — Git conventions and protection rules.
+- [purpose.md](./purpose.md) — the destination, the hierarchy, the three surfaces
+- [blueprints.md](./blueprints.md) — what a blueprint is and how to add one
+- [adoption.md](./adoption.md) — taking one into your project
+- [ai-workspace-layer.md](./ai-workspace-layer.md) — what `.ai/` records, what git records
+- [security-baseline.md](./security-baseline.md) — the minimum security posture
+- [git-workflow.md](./git-workflow.md), [branch-protection.md](./branch-protection.md)

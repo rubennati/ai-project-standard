@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — The destination is the spine
+
+- `docs/purpose.md` now leads with one outcome and the hierarchy that derives from it: *a developer brings an AI agent into their project and can still answer, months later, what changed, why, on whose decision, and what was checked*. It also states what the website is for, that it is deliberately broader than the repository, and that information flows repository → website with one loop back for verified sources — evidence, never authority.
+- `docs/standard.md` rewritten. The four pillars are gone; the standard is delivered as blueprints cut by goal, and the document says what the repository holds rather than reciting a taxonomy. It also restores the oldest requirement in the project, from the first README: collaboration that stays answerable *over time*.
+- **Profiles are superseded by blueprints.** They were the same idea at a lower stage of maturity. `docs/profiles.md` is now a tombstone so existing links resolve, and the OSS-only / AI-only / Combined versus Open Source / Human-AI / Combined naming disagreement — open since May — disappears with them.
+- `docs/adoption.md` rewritten around `degit`. Forking hands over this project's changelog, `.ai/` state, website and research; a blueprint is the subset that belongs in someone else's project.
+- `README.md` leads with who it is for and where it is going, then the two blueprints and the command.
+- `.github/scripts/check-profiles.sh` and its CI job removed — the conformance check covers blueprints. Conformance now also asserts the destination sentence is present and rejects the retired profile and pillar vocabulary if it returns.
+
 ### Added — One statement of purpose, and a check that the repository keeps its own rules
 
 - `docs/purpose.md` — what the repository, the website and a blueprint are each for, and the direction information flows. Where another file disagrees with it, that file is out of date. `README.md` and `docs/index.md` point at it.

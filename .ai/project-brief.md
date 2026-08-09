@@ -40,10 +40,18 @@ prescriptions.
 Information flows from the repository up to the website, not the other way
 round.
 
+## Where this is going
+
+> A developer brings an AI agent into their project and can still answer, months
+> later: what changed, why, on whose decision, and what was checked — without
+> having had to invent the practice themselves.
+
+Stated once in `docs/purpose.md`, which is the authority. It is an outcome, not
+a structure: structures follow from it and can be replaced.
+
 ## The drift test
 
-Before starting a piece of work, hold it against the two paragraphs under "The
-problem". If the work does not make it more likely that someone building
+Before starting a piece of work, hold it against the destination above. If the work does not make it more likely that someone building
 software with AI ends up with something reviewable, secure and honest about what
 it claims — it is off course, and that is worth saying out loud rather than
 continuing.

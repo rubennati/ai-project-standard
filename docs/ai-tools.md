@@ -133,7 +133,7 @@ This standard does not ship skills. Adopters add them as recurring workflows eme
 1. Read what file the tool expects and where.
 2. Add a thin pointer file at that path. Defer to `AGENTS.md`.
 3. Add the tool to the table at the top of this file.
-4. Add the path to the AI-only and Combined profile lists in `docs/profiles.md`.
+4. Add the file to the `ai-assisted-development` blueprint payload, so adopters get it too.
 5. Open a PR; the change is MINOR per the Versioning policy in `CONTRIBUTING.md`.
 
 *Sources checked: 2026-08-09 — all three vendor documentation links resolved.
