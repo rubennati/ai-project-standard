@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — A concepts layer, because the technical half had nowhere to live
+
+- `concepts/` holds technical reference for building something: the architecture and the decision points, at whatever length the architecture needs. `docs/` is the rule stated once and is short by design; `blueprints/` is files you copy. A reference architecture is neither, so it had no home — and technical material from the research was being routed to the website instead.
+- That routing was a misreading of `docs/purpose.md`. It says the repository is not the place for reasoning at length, and it also says the repository answers *how do I build this*. **Depth is not length.** Recorded in `.ai/errors.md`.
+- `concepts/retrieval-architecture.md` — the first one. The two pipelines and why most descriptions show only the second; retrieval chosen per question type; chunking and what a bad cut does to a rule; permissions filtered at query time rather than hoping the prompt keeps the model discreet; and a failure table where six of seven rows have no attacker in them. It opens with the smallest thing that works, which for most people is "upload the files".
+- Every concept answers five fixed questions, carries an owner and a `reviewed` date, and CI enforces all of it — tested against an undated concept, one with no failure section, and one missing from the index.
+- Three further concepts are named in `concepts/README.md` rather than written: tool access and integration, the knowledge lifecycle, and agent action control.
+
 ### Added — A third blueprint status, and the first two planned blueprints
 
 - `planned` joins `draft` and `stable`. It means the scope is decided and nothing is built — because scoping is the harder half, and doing it in the open is what stops a payload from drifting into whatever was easy to write. Three rules keep it honest: no `files/` directory, because an empty payload folder looks maintained; the fourth README question becomes **Not built yet** instead of *Verified*; and `blocked-by` is mandatory in the manifest.

@@ -36,6 +36,10 @@ and by team size. That cut asked the adopter to already know the answer.
   that does not assume an attacker, semantic trust boundaries, knowledge
   poisoning. They belong in `docs/security-baseline.md` and in the
   `ai-assisted-development` payload, not in a blueprint of their own.
+- **Write the three named concepts.** Tool access and integration, the knowledge
+  lifecycle, and agent action control — see
+  [concepts/README.md](./concepts/README.md). The technical half of the research
+  has a home now; most of it is still in the queue.
 - **Empty the research queue onto the website.** Roughly seventy glossary terms
   and the positions listed under *bound for the website* in
   [DERIVED.md](./research/knowledge-management/DERIVED.md).

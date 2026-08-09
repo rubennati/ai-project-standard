@@ -235,3 +235,18 @@ from it. Asking for a route before naming a destination was the error.
 
 `check-profiles.sh` and its CI job are removed; the conformance check covers
 blueprints, and CI now rejects the retired vocabulary if it returns.
+
+## 2026-08-09 - A concepts layer, between the rule and the payload
+
+Decision: technical reference for building something lives in `concepts/`,
+governed by `docs/concepts.md`.
+
+Reasoning: `docs/` is the rule stated once and is short by design; `blueprints/`
+is files you copy. A reference architecture is neither, so it had nowhere to go
+— and technical material from research was being routed to the website instead.
+That was a misreading of `purpose.md`, which says the repository is not the
+place for reasoning at length: depth is not length, and the same file says the
+repository answers *how do I build this*.
+
+Each concept answers five questions, carries an owner and a review date, and is
+checked in CI.

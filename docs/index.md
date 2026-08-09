@@ -10,6 +10,7 @@ This documentation set defines the project baseline and collaboration model.
 
 - [The Standard](./standard.md) — what the repository holds and how the standard is delivered
 - [Blueprints](./blueprints.md) — what a blueprint is, its shape, and how to add one
+- [Concepts](./concepts.md) — technical reference for building something: what a concept is, the five questions it answers, and why it is not a rule or a payload
 - [Adoption](./adoption.md) — taking a blueprint into your project, and staying current
 - [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
 - [Website Audit Prompt](./website-audit.md) — reusable prompt for checking a published site for legal, privacy, security and discoverability defects
