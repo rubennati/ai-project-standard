@@ -45,6 +45,18 @@ badly they mislead. Nothing here is fixed yet.
 11. `.ai/risks.md` lists three generic risks and has never been updated.
 12. ~~Third naming of the taxonomy in `docs/index.md`.~~ **Resolved 2026-08-09** — sections renamed to what they hold. Originally partly addressed — `docs/index.md` now opens with Purpose. The grouping still names the profile taxonomy: it groups documents under "Open Source baseline" and "Human-AI Collaboration baseline" — the profile taxonomy again, a third naming of the same split.
 
+## Rule layer — resolved 2026-08-09
+
+- `docs/getting-started.md` addressed contributors to *this* repository instead
+  of someone taking the standard. Rewritten around the destination, the two
+  blueprints, and a fourth step that matters more than the first three: open a
+  pull request that deliberately breaks a rule and confirm CI refuses it.
+  A blueprint whose gates do not fire is decoration.
+- `docs/open-source-project-standard.md` listed the same files the blueprint now
+  ships. It keeps only what a set of files cannot carry — governance by scale,
+  health metrics, trust signals in order of effort, and what not to adopt — and
+  points at the blueprint for the artifacts.
+
 ## Backlog
 
 - Payload workflow SHAs drift: Dependabot only reads the root `.github/workflows`, so the pinned actions inside `blueprints/*/files/.github/workflows/` go stale silently. Add a check that they equal the root's pins.

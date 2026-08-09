@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — The rule layer stops repeating the blueprint
+
+- `docs/getting-started.md` rewritten. It addressed contributors to *this* repository; it now addresses someone taking the standard into their own, and ends with the step that decides whether any of it worked: open a pull request that deliberately breaks a rule and confirm CI refuses it. A blueprint whose gates do not fire is decoration.
+- `docs/open-source-project-standard.md` no longer lists the files the `open-source` blueprint ships — two answers to one question. It keeps what a set of files cannot carry: governance sized by scale, health metrics worth tracking, trust signals in order of effort against reward, and what deliberately stays unmandated.
+- Its `Sources checked` line was removed with the last external link. A marker claiming sources were verified, in a file that cites none, is the kind of unearned confidence this project exists to remove.
+
 ### Changed — The repository lives the workspace it ships
 
 - `.ai/domains/*.md` rewritten from three-to-five-line stubs to the level the `ai-assisted-development` blueprint hands to adopters. `coding.md` had been claiming this repository contains no application code while 90 TypeScript and Astro files sat under `site/`.
