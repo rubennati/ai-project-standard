@@ -6,3 +6,4 @@
 - Record meaningful state changes in `state.md`
 - Record architecture decisions in `decisions.md`
 - Escalate major design or dependency changes for human approval
+- Navigation, information architecture, public URLs and the taxonomy are asked about before they are changed — see "Change scope" in `AGENTS.md`
