@@ -54,3 +54,34 @@ keeping it. Every rule this repository states about itself now needs a check tha
 fails, or it will be broken again — which is precisely the argument the
 blueprints make to adopters.
 
+## A merged pull request kept accepting pushes — 2026-08-09
+
+PR #96 was merged when the branch stood at drop 2. Drops 4 to 7 were then
+committed and pushed to the same branch. Every push succeeded. None of them
+reached `main`, and I reported the work as landed each time.
+
+Found only because a later cross-check listed the directory and counted four
+files where there should have been nine. Recovered in PR #97; nothing was lost.
+
+This is the second time work has been stranded on a branch this way. The lesson
+recorded after #93 and #94 — merge stacked branches bottom-up — did not cover
+it, because this branch had no stack.
+
+**The rule that does cover both:** a successful push says nothing about whether
+the work landed. After pushing, check the commit is an ancestor of
+`origin/main`, or that an open pull request contains it.
+
+```bash
+git merge-base --is-ancestor HEAD origin/main && echo landed || gh pr list --head "$(git branch --show-current)"
+```
+
+**And it happened again within minutes**, on the branch that was recovering the
+first occurrence. PR #97 merged at `d7dd616`; the next commit went to the same
+branch and stranded exactly like the four before it.
+
+Which shows the check above is necessary and not sufficient. Pull requests here
+merge fast, so a branch is dead the moment its pull request is merged.
+
+**The rule:** one branch per unit of work, and never push to a branch whose pull
+request may already be merged. If there is more to do, branch again from `main`.
+

@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Two registers over the research, and a recovery
+
+- `research/knowledge-management/REVISIONS.md` — the seven drops revise themselves as they go, and the drop files stay as they arrived. This is where the resolution lives: ten conflicts, four of them outright reversals, each with what the earlier drop said, what the later one said, and which reading this project takes. Plus a terminology check across all seven rounds.
+- The sharpest reversal is the GDPR one. Drop 1 said connecting company mail to a US LLM is definitely a problem; drop 3 corrected it to a processing operation that must be assessed. Publishing the earlier version would be this project failing its own method in public.
+- `LLM wiki` is retired as a name. The artefact keeps its definition and loses its label — no blueprint, document or page may use it.
+- `research/knowledge-management/DERIVED.md` — the positions the project adopts, independent of which drop carried them, each with a destination. It also settles how the blueprint set is cut: **one blueprint per trigger, not one per technology and not one per company size**, which contradicts what `ROADMAP.md` currently names.
+- Recovered drops 4 to 7. PR #96 was merged at the state of drop 2 and kept accepting pushes afterwards, so four documents never reached `main`. Recorded in `.ai/errors.md` with the check that catches it: a successful push says nothing about whether the work landed.
+
 ### Added — Knowledge-management research in the queue
 
 - `security.md` — the seventh drop, and the second half of the model: security as a horizontal control layer over the whole architecture rather than a topic appended at the end. Seven citations to standards bodies and regulators, the strongest source base of the series.
