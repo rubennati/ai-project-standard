@@ -100,7 +100,12 @@ export const getLocalizedTermContent = (entry: TermEntry, lang: SiteLocale) => {
   return {
     term: translation?.term ?? entry.term,
     shortDefinition: translation?.shortDefinition ?? entry.shortDefinition,
+    analogy: translation?.analogy ?? entry.analogy,
     explanation: translation?.explanation ?? entry.explanation,
+    // The figure is language-neutral often enough to fall back, but a
+    // translated one wins when there is one.
+    figure: translation?.figure ?? entry.figure,
+    example: translation?.example ?? entry.example,
     aiContext: translation?.aiContext ?? entry.aiContext,
     definitionLanguage,
     isTranslated: definitionLanguage === lang,
