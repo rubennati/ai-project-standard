@@ -21,6 +21,8 @@ History lives in `progress.md`; this section is current facts only.
 - The repository is English-only; the site's translated pages are the sole exception. `docs/language-style.md` holds the rule, `AGENTS.md` points at it.
 - `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md` and a per-claim `SOURCES.md`.
 - The site has a fifth section, `/open-source`, with three articles in both languages and no AI in it. It is the first area built from `research/` and the first evidence that the site carries subjects beyond AI use.
+- `blueprints/` holds material to copy; the contract is in `docs/blueprints.md` and the catalogue is still empty. Payloads next: `open-source` from the files this repository already runs on, then `ai-collaboration` extracted from its own root. Neither needs the research.
+- `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md`.
 
 ### Website
 

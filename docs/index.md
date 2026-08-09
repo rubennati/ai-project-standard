@@ -22,6 +22,7 @@ This documentation set defines the project baseline and collaboration model.
 - [Git Workflow](./git-workflow.md)
 - [Branch Protection](./branch-protection.md)
 - [Release Process](./release-process.md) — how the versioned standard and the continuously deployed website ship from one branch
+- [Blueprints](./blueprints.md) — what a blueprint is, the shape it has, and how to add one
 - [SUPPORT.md](../SUPPORT.md) (repo root) — issues vs Discussions guidance
 
 ## Human-AI Collaboration baseline

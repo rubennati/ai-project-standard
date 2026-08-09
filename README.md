@@ -43,6 +43,7 @@ The public site lives at <https://ai-standard.rubennati.at> (from v0.2.0). It ca
 - `.github/` — platform templates, workflows, automation
 - `docs/` — strict reader documentation
 - `.ai/` — AI operational workspace (state, routing, decisions)
+- `blueprints/` — material to copy into your own project; see [`docs/blueprints.md`](docs/blueprints.md)
 - `research/` — material being verified, on its way to the site or to `docs/`. Nothing in it is published or normative; see [`research/README.md`](research/README.md)
 - Root files — governance, contribution policy, security, support
 
