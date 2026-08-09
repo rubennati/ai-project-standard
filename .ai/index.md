@@ -1,17 +1,30 @@
 # AI Workspace Index
 
-Use this directory for AI operational context only.
+Operational context only. Git records what happened; these files record what
+holds. On any conflict about a fact, git wins. See
+[`docs/ai-workspace-layer.md`](../docs/ai-workspace-layer.md).
 
 ## Start sequence
 
-1. `project-brief.md`
-2. `state.md`
-3. `routing.md`
-4. `rules.md`
+1. `project-brief.md` — the problem, and the test for whether this work serves it
+2. `state.md` — current objective and constraints
+3. `routing.md` — what else to read for this kind of task
 
-## Core files
+## Durable
 
-- Execution status: `state.md`, `tasks.md`, `progress.md`
-- Governance memory: `decisions.md`, `quality-gates.md`, `secure-development.md`
-- Risk and failure tracking: `risks.md`, `errors.md`
-- Working patterns: `loops.md`, `domains/`
+- `rules.md`, `quality-gates.md`, `secure-development.md` — what must hold
+- `decisions.md` — decisions with reasoning, dated, append-only
+- `routing.md`, `domains/` — where to look, per kind of work
+- `setup-interview.md` — the questions to answer when adopting this workspace
+- `loops.md` — the working pattern
+
+## Current
+
+- `state.md` — now, and only now
+- `tasks.md` — queued, not yet started
+
+## Logs
+
+- `progress.md` — milestones, not a changelog
+- `errors.md` — process failures and what changed in response
+- `risks.md` — what is actually at risk
