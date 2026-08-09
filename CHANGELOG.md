@@ -8,6 +8,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added — Knowledge-management research in the queue
 
+- `layers.md` — a second drop, and a different class of material. It carries twelve citations, and the load-bearing one was read at the source: arXiv 2605.25480, *Retrieval as Reasoning: Self-Evolving Agent-Native Retrieval via LLM-Wiki* (Ming, Li, Wu, Que, 25 May 2026). Title, authors, date and the specific claims match what the material says.
+- Its central thesis is the strongest idea in either drop: RAG, knowledge graph, LLM wiki, MCP, connector, agent, workspace, Notion, email and a folder are **not alternatives in one category** — they are different layers. Comparing them directly is the error underneath most of the confusion in the field.
+- **It corrects the first drop.** "Public AI" is called out as a dangerous framing: cloud does not mean public, a SaaS system can have strong governance and a self-hosted one can be badly secured. Hosting location alone is not data sovereignty. Figure 4 of the first drop is marked as not publishable as it stands.
+- Five OpenAI sources returned 403 to automated requests — bot blocking rather than dead links, recorded as unconfirmed rather than counted as checked.
+
 - `research/knowledge-management/` — RAG, knowledge graphs, source access, the LLM-wiki idea, agents against chat, and the practical decisions around them. Translated from German; nothing verified.
 - `figures.md` records four diagrams that arrived as images, because the site describes diagrams as data and renders them as markup. They carry the material's strongest content — a six-way decision matrix, five clarifications and four named misconceptions — none of which appears in the prose.
 - `STATUS.md` routes every block. The split lands where the blueprint contract predicts: the buildable parts (RAG pipeline, LLM-wiki layers, ACL-aware retrieval) are repository candidates; the deciding and understanding parts are website. It also lists thirteen glossary terms the material uses that the glossary does not yet define.
