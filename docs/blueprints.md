@@ -70,6 +70,16 @@ so in its README.
 
 Do not let the claim generalise. A blueprint nobody has run is a suggestion.
 
+## Licence
+
+Everything under `blueprints/` is MIT-0 — MIT without the attribution
+requirement — declared by `blueprints/LICENSE`. A file obliging an adopter to
+carry someone else's copyright notice into their own `CONTRIBUTING.md` is
+friction with no upside.
+
+The rest of the repository stays MIT, and the texts written for the website are
+CC BY 4.0.
+
 ## Removal
 
 A blueprint is removed when it no longer matches what the project would

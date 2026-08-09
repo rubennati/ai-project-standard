@@ -6,12 +6,17 @@ it has, and how to add one.
 
 | Blueprint | What you get | Status |
 |---|---|---|
-| — | — | — |
+| [open-source](./open-source/) | Governance, contribution and CI files for a public repository. No AI, no licence chosen for you. | draft |
 
-Empty on purpose: the contract is written before the first blueprint, so the
-first one conforms to a rule instead of becoming it.
+Next: `ai-collaboration` — `AGENTS.md`, the tool pointer files and an `.ai/`
+skeleton, extracted from this repository's own root so a reader can tell the
+template from the instance.
 
-Next: `open-source` — the governance, contribution and CI files this repository
-already runs on. Then `ai-collaboration` — `AGENTS.md`, the tool pointer files
-and an `.ai/` skeleton, extracted from this repository's own root so that a
-reader can tell the template from the instance.
+## Licence
+
+Everything under `blueprints/` is [MIT-0](./LICENSE) — MIT without the
+attribution requirement. Copy a payload file into your project and you carry no
+notice about this one with it.
+
+The rest of the repository stays MIT, and the texts written for the website are
+CC BY 4.0.

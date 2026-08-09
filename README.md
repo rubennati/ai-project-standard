@@ -79,4 +79,6 @@ AI-native collaboration requires explicit boundaries, decision records, and rout
 
 This repository — the code and the documentation in it, including everything under `docs/` — is under the [MIT licence](LICENSE).
 
+Everything under `blueprints/` is [MIT-0](blueprints/LICENSE) — MIT without the attribution requirement, so a copied template file carries no notice about this repository into yours.
+
 The texts written for the website at <https://ai-standard.rubennati.at>, which live in `site/`, are under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/): reuse them, commercially included, as long as you credit the source. Pages the site renders from `docs/` stay MIT, since that is where the text lives.

@@ -1,0 +1,13 @@
+id: open-source
+title: Open source baseline
+status: draft
+applies-to: new-repo
+summary: >-
+  Governance, contribution and CI files for a public repository. No AI files,
+  no application code, no licence choice made for you.
+licence: MIT-0
+placeholders:
+  - PROJECT_NAME
+  - OWNER
+  - REPO
+  - CONTACT_EMAIL

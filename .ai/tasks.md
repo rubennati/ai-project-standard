@@ -47,6 +47,8 @@ badly they mislead. Nothing here is fixed yet.
 
 ## Backlog
 
+- Payload workflow SHAs drift: Dependabot only reads the root `.github/workflows`, so the pinned actions inside `blueprints/*/files/.github/workflows/` go stale silently. Add a check that they equal the root's pins.
+
 - Write the next two blog posts: why removing names rarely produces anonymous data, and what "EU-hosted" actually answers
 - Two remaining Start entry points: private use, and the one-person business
 - Decide whether to render each glossary entry's `status` (30 draft, 36 review, 8 stable — the field exists in `site/src/data/terms.ts` but is not shown)

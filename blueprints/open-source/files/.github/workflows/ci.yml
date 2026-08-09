@@ -1,0 +1,80 @@
+# Blueprint payload: open-source. Edit here, not in your copy. Delete this line after copying.
+#
+# A starting CI workflow for a public repository. It checks the things every
+# project has — that the governance files exist, that the markdown lints, that
+# the links resolve — and nothing language-specific. Add your build, tests and
+# type checks as jobs beside these.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  schedule:
+    # Weekly strict link check. External 4xx/5xx flakes are common, so links
+    # only fail the build here, not on every pull request.
+    - cron: '0 6 * * 1'
+
+# An unlisted scope resolves to `none`. Declare the minimum and widen per job.
+permissions:
+  contents: read
+
+jobs:
+  structure:
+    name: Repository structure
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Required files exist
+        run: |
+          for f in README.md CONTRIBUTING.md CODE_OF_CONDUCT.md SECURITY.md CHANGELOG.md; do
+            test -f "$f" || { echo "::error::$f is missing"; exit 1; }
+          done
+
+      # A public repository without a licence is not open source. This fails
+      # until you add one, which is the point.
+      - name: A licence is present
+        run: |
+          ls LICENSE LICENSE.md LICENSE.txt >/dev/null 2>&1 || {
+            echo "::error::No LICENSE file. See https://ai-standard.rubennati.at/open-source/what-makes-it-open-source"
+            exit 1
+          }
+
+  markdown-lint:
+    name: Markdown lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Lint Markdown
+        uses: DavidAnson/markdownlint-cli2-action@8de2aa07cae85fd17c0b35642db70cf5495f1d25 # v24.0.0
+        with:
+          globs: |
+            **/*.md
+            !node_modules
+
+  link-check:
+    name: Link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          persist-credentials: false
+
+      - name: Run lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
+        with:
+          fail: ${{ github.event_name == 'schedule' }}
+          args: >-
+            --no-progress
+            --exclude-mail
+            --exclude-loopback
+            './**/*.md'
