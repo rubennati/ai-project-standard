@@ -3,8 +3,8 @@
 The governance, contribution and CI files a public repository needs. No AI
 files, no application code, and no licence chosen for you.
 
-**Status: draft.** The files are the ones this repository runs on, adapted; the
-blueprint itself has not yet been copied into a fresh project and worked.
+**Status: draft.** Run against a fresh copy on 2026-08-09 — see *Verified*
+below. It stays `draft` until it has been used to start a real project.
 
 ## Take it
 
@@ -30,9 +30,9 @@ cd ai-project-standard && git sparse-checkout set blueprints/open-source/files
 3. **Delete the first line of each file** — the comment marking it as blueprint
    payload. A bootstrap script will do this once the blueprint has been used a
    few times.
-4. **Turn on the repository settings** the files assume: private vulnerability
-   reporting, Dependabot alerts, secret scanning with push protection, and
-   branch protection on `main`.
+4. **Work through [`docs/repository-settings.md`](files/docs/repository-settings.md).**
+   The CI assumes those switches are on, and no file in a repository can turn
+   them on for you.
 5. **Write the README.** The skeleton is a shape, not content.
 
 ## What you get
@@ -48,8 +48,35 @@ cd ai-project-standard && git sparse-checkout set blueprints/open-source/files
 | `.github/ISSUE_TEMPLATE/`, `pull_request_template.md` | Structured intake |
 | `.github/CODEOWNERS` | Review routing, worth having with one maintainer |
 | `.github/dependabot.yml` | Keeps the SHA-pinned actions current |
-| `.github/workflows/ci.yml` | Structure, markdown lint, link check — nothing language-specific |
+| `.github/workflows/ci.yml` | Six gates that block a merge, all language-agnostic |
+| `.markdownlint-cli2.jsonc` | Lint rules, with a reason beside every relaxed one |
+| `.editorconfig` | Settles whitespace before it reaches review |
 | `.gitignore` | OS, editor and environment noise |
+| `docs/repository-settings.md` | The settings CI assumes, in the order that costs least |
+| `docs/git-workflow.md` | The branch model, and why not Git Flow or environment branches |
+
+## Verified
+
+Copied into an empty directory on **2026-08-09**, git initialised, and every
+gate from its own `ci.yml` that can run locally executed.
+
+| Gate | Result |
+|---|---|
+| Required files exist | pass |
+| A licence is present | **fails, by design** — you have to choose one |
+| No committed binaries | pass |
+| Actions pinned to a full SHA | pass, 7 references |
+| Markdown lints | pass |
+| Commits signed off | rejects an unsigned commit, accepts a signed one |
+
+One defect found and fixed in the process: the payload shipped no markdownlint
+configuration, so its own CI would have failed it on the default 80-column rule.
+It now ships `.markdownlint-cli2.jsonc`, with a reason next to every relaxed
+rule.
+
+Not covered: the link check, because the payload carries placeholder URLs by
+design; and the GitHub settings in `docs/repository-settings.md`, which no local
+run can exercise.
 
 ## Why it stops here
 

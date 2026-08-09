@@ -3,11 +3,28 @@ title: Open source baseline
 status: draft
 applies-to: new-repo
 summary: >-
-  Governance, contribution and CI files for a public repository. No AI files,
-  no application code, no licence choice made for you.
+  Governance, contribution and CI files for a public repository. The decisions
+  are already made and the reasons are stated. No AI files, no application code,
+  and no licence chosen for you.
 licence: MIT-0
 placeholders:
   - PROJECT_NAME
   - OWNER
   - REPO
   - CONTACT_EMAIL
+# What was run against a fresh copy, and when. A blueprint claiming "this is how
+# you work" that has never been run is an assessment presenting itself as fact.
+verified:
+  date: 2026-08-09
+  method: >-
+    Payload copied into an empty directory, git initialised, and every
+    locally runnable gate from its own ci.yml executed.
+  result: >-
+    Six gates behave as designed. The licence gate fails, which is intended —
+    the adopter has to choose one. One defect found and fixed: the payload
+    shipped no markdownlint configuration, so its own CI would have failed it
+    on the default 80-column rule.
+  not-covered:
+    - Link check, because the payload carries placeholder URLs by design.
+    - The GitHub settings in docs/repository-settings.md, which no local run
+      can exercise.
