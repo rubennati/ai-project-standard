@@ -4,7 +4,35 @@
 
 ## Active
 
-- Define the page-primitives system, then prototype and verify the complete MCP path
+### Website product implementation
+
+The destination and admission test live in `docs/purpose.md` and
+`docs/website-product-brief.md`; the approved structure and visual direction
+live in `site/INFORMATION_ARCHITECTURE.md` and `site/THEME_DIRECTION.md`. This
+list records execution order rather than restating those decisions.
+
+1. [x] Establish the unified website product, content audit, stable-route-first
+   information architecture and native theme shell.
+2. [ ] Define the page-primitives system and the five page jobs: decision path,
+   explanation, implementation guide, reference and editorial perspective.
+   Shared primitives cover answer, fit, operation, benefits and risks, action,
+   verification, technical depth, evidence and the next step.
+3. [ ] Build “Connect AI to tools and data” as the complete prototype path,
+   using MCP as the technical example rather than the reader's goal.
+4. [ ] Use Vibe Coding as the second template test across Explore, Prototype,
+   Deliver and Operate.
+5. [ ] Make Blog visibly editorial and Law visibly reference-led; replace their
+   weak landing-page copy and remove public roadmap filler such as “Planned” or
+   “More is coming”.
+6. [ ] Verify the complete system on desktop and mobile, in English and German,
+   including accessibility, evidence treatment and zero horizontal overflow.
+7. [ ] Map the remaining page families onto the proven primitives and migrate
+   them in reviewable groups. Obtain the recorded human approvals before final
+   navigation labels, `/use-cases` replacement, `/docs/**` compatibility work
+   or Open Source reframing changes.
+8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
+   dependency as a separate approval and licence decision.
+
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
