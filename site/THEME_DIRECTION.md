@@ -1,8 +1,9 @@
 # Website Theme Direction
 
-This document defines the visual direction to test before changing the shared
-site shell. It follows the approved product architecture but does not implement
-the header, footer, navigation or page layouts.
+This document defines the visual direction for the shared site shell. It
+follows the approved product architecture; the dependency-free foundation was
+implemented on 2026-08-10. Page primitives, the final font decision and the
+content migration remain separate slices.
 
 Review date: 2026-08-10.
 
@@ -344,6 +345,10 @@ system rather than replaced by decorative cards.
 
 ## Implementation sequence after approval
 
+Status: the theme tokens and shell in step 2 are implemented. The current
+system font stack remains in place until the local font proof in step 1 makes a
+choice; no font asset or dependency has been added.
+
 1. **Theme proof, not a migration.** Render the approved homepage opening, one
    editorial article, one wide matrix and the footer with both font candidates
    in a local-only comparison. Choose the type and final rail sizes.
@@ -360,9 +365,9 @@ No external theme dependency is needed. A font package or self-hosted font
 files are a separate dependency and licence decision made after the local type
 comparison.
 
-## Approval requested
+## Approval recorded
 
-Approval of this direction means:
+Approval of this direction recorded on 2026-08-10 means:
 
 1. no complete Astro theme is installed;
 2. the visual character is an editorial field guide, not a docs portal or SaaS

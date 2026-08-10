@@ -1,0 +1,58 @@
+---
+import { getUi, type SiteLocale } from "../i18n/ui";
+
+interface Props {
+  currentLocale: SiteLocale;
+  enHref?: string;
+  deHref?: string;
+}
+
+const { currentLocale, enHref, deHref } = Astro.props;
+const ui = getUi(currentLocale);
+
+const languages = [
+  {
+    locale: "en" as const,
+    shortLabel: ui.englishShort,
+    label: ui.english,
+    unavailableLabel: ui.englishUnavailable,
+    href: enHref,
+  },
+  {
+    locale: "de" as const,
+    shortLabel: ui.germanShort,
+    label: ui.german,
+    unavailableLabel: ui.germanUnavailable,
+    href: deHref,
+  },
+];
+---
+
+<nav aria-label={ui.language} class="language-switch">
+  {
+    languages.map((language) =>
+      language.href ? (
+        <a
+          href={language.href}
+          hreflang={language.locale}
+          lang={language.locale}
+          aria-label={language.label}
+          aria-current={currentLocale === language.locale ? "page" : undefined}
+          class="language-switch__item"
+        >
+          {language.shortLabel}
+        </a>
+      ) : (
+        <span
+          lang={language.locale}
+          aria-label={language.unavailableLabel}
+          aria-disabled="true"
+          title={language.unavailableLabel}
+          class="language-switch__item language-switch__item--disabled"
+        >
+          {language.shortLabel}
+        </span>
+      ),
+    )
+  }
+</nav>

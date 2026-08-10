@@ -4,8 +4,7 @@
 
 ## Active
 
-- Implement and verify the approved dependency-free theme foundation before changing content routes
-- Define the page-primitives system, then prototype the MCP path
+- Define the page-primitives system, then prototype and verify the complete MCP path
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English

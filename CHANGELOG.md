@@ -50,6 +50,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The language switch becomes an explicit header action at every viewport. It
   uses a compact segmented control instead of passive `EN / DE` text and is no
   longer hidden inside the mobile menu.
+- The native foundation now implements Shell, Wide and Reading rails, shared
+  neutral surfaces and rhythm, a contained responsive header and centred
+  editorial reading widths. Rendered repository documents no longer use the
+  full wide rail for prose.
+- `LanguageSwitch` replaces the glossary-specific control. It stays visible
+  beside Menu on mobile, marks the active locale by shape and text state, and
+  shows unavailable translations as disabled instead of redirecting readers.
+- The footer now has one brand statement and distinct Reference, Project &
+  trust, and Legal groups. Primary navigation and licence links are not
+  duplicated; the language control remains available after long pages.
 
 ### Changed — One public website product, not two identities
 

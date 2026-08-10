@@ -50,22 +50,24 @@ const breadcrumbSchema = {
   extraSchemas={[breadcrumbSchema]}
   license="https://github.com/rubennati/ai-project-standard/blob/main/LICENSE"
 >
-  <nav aria-label="Breadcrumb" class="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
-    <a href={`${base}docs`}>Documentation</a>
-    <span class="mx-2">/</span>
-    <span>{title}</span>
-  </nav>
+  <div class="layout-reading">
+    <nav aria-label="Breadcrumb" class="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
+      <a href={`${base}docs`}>Documentation</a>
+      <span class="mx-2">/</span>
+      <span>{title}</span>
+    </nav>
 
-  <article class="prose-content">
-    <Content />
-  </article>
+    <article class="prose-content">
+      <Content />
+    </article>
 
-  <hr class="my-12 border-black/10 dark:border-white/10" />
-  <p class="text-sm text-zinc-600 dark:text-zinc-400">
-    Source: <a
-      href={`https://github.com/rubennati/ai-project-standard/blob/main/docs/${entry.id}.md`}>docs/{entry.id}.md</a
-    > — edits land here on the next deploy.
-  </p>
+    <hr class="my-12 border-black/10 dark:border-white/10" />
+    <p class="text-sm text-zinc-600 dark:text-zinc-400">
+      Source: <a
+        href={`https://github.com/rubennati/ai-project-standard/blob/main/docs/${entry.id}.md`}>docs/{entry.id}.md</a
+      > — edits land here on the next deploy.
+    </p>
+  </div>
 </Base>
 
 <style is:global>
