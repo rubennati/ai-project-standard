@@ -70,4 +70,6 @@ blueprints.
 
 - No application code during standard-definition phase.
 - Keep `.ai/` files concise and low-overhead.
+- Use the project branch prefixes (`feature/*`, `fix/*`, `docs/*`,
+  `refactor/*`, `experiment/*`); do not use `codex/` branch names.
 - For commit, push, and merge rules see the "Approval" section in `AGENTS.md`.
