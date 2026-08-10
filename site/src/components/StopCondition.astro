@@ -1,0 +1,26 @@
+---
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+  description: string;
+  alternative?: string;
+}
+
+const { locale, description, alternative } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+---
+
+<aside class="stop-condition">
+  <div class="stop-condition__mark" aria-hidden="true">×</div>
+  <div>
+    <h2>{copy.doNotUseWhen}</h2>
+    <p>{description}</p>
+    {alternative && (
+      <p class="stop-condition__alternative">
+        <strong>{copy.saferAlternative}:</strong> {alternative}
+      </p>
+    )}
+  </div>
+</aside>

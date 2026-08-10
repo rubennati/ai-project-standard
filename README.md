@@ -9,19 +9,25 @@
 
 > Early draft: this repository is a work in progress and will be refined through maintainer review.
 
-AI Project Standard is for developers bringing an AI agent into their work.
+AI Project Standard is the production, source and artifact repository behind
+[AI Standard](https://ai-standard.rubennati.at), an independent practical
+website for using AI in real work.
 
-> **Where this is going:** a developer brings an AI agent into their project and
-> can still answer, months later — what changed, why, on whose decision, and what
-> was checked — without having had to invent the practice themselves.
+> **Where this is going:** a person uses AI in real work and can understand what
+> it makes possible, choose an appropriate form of collaboration, set boundaries
+> that hold, and later explain what the system could reach, what it did, why, on
+> whose decision and what was checked.
 
-Many repositories bolt on ad hoc prompts and leave the structure, governance and
-continuity rules missing. This one hands over the missing part as **blueprints**:
-files you copy, with the decisions already made and the reasons stated.
+AI now answers in chats, works inside files, calls tools and acts across systems.
+The website explains the possibilities, collaboration models, reach and
+controls as one reader journey. This repository holds the evidence, technical
+sources, copyable **blueprints** and checks behind that product.
 
 **[docs/purpose.md](docs/purpose.md) is the top of the hierarchy** — the
-destination, the three surfaces, and how information flows. Where any other file
-disagrees with it, that file is out of date.
+destination and the relationship between the public product and the system
+behind it. The [Website Product Brief](docs/website-product-brief.md) states the
+mission, reader outcomes and content admission test. Where any other file
+disagrees with `purpose.md`, that file is out of date.
 
 ## Blueprints
 
@@ -62,13 +68,17 @@ Take a blueprint — do not fork. A fork hands over this project's changelog,
 
 ## The website
 
-<https://ai-standard.rubennati.at> is **broader** than this repository and sits
-logically above it: it explains data flows, law and secure setup for anyone
-affected by AI at work, not only developers. Every claim there carries an
-evidence level and the date it was last checked.
+<https://ai-standard.rubennati.at> is the public product. It stands on its own
+and is not split into a knowledge base and a project-standard area. It shows
+what people can achieve with AI, what useful collaboration looks like, what the
+system can reach, which decisions follow and how the result stays reviewable —
+from the first prompt to an acting agent.
 
-Information flows **repository → website**. Verified sources may come back down
-as input to a blueprint or a document — evidence, never authority.
+Repository folders do not become website sections. Rules, concepts, research
+and blueprints can all contribute to one public reader path, with the canonical
+source linked when someone needs to inspect, copy or contribute. Every
+substantive claim keeps its evidence level and the date it was checked where the
+level requires one.
 
 The source is in [site/](site/), built and deployed by
 [`pages.yml`](.github/workflows/pages.yml). Maintainer setup, once: Settings →

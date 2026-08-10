@@ -1,0 +1,35 @@
+---
+import EvidenceLabel from "./EvidenceLabel.astro";
+import type { EvidenceLevel } from "../data/evidence";
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+  level: EvidenceLevel;
+  checked?: string;
+  summary: string;
+  sourceLabel?: string;
+  sourceHref?: string;
+}
+
+const { locale, level, checked, summary, sourceLabel, sourceHref } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+
+if ((level === "fact" || level === "measured") && (!checked || !sourceHref || !sourceLabel)) {
+  throw new Error(`${level} evidence requires checked, sourceHref and sourceLabel`);
+}
+---
+
+<aside class="evidence-band" aria-label={copy.evidence}>
+  <div class="evidence-band__label">
+    <EvidenceLabel level={level} locale={locale} checked={checked} />
+  </div>
+  <p class="evidence-band__summary">{summary}</p>
+  {sourceHref && sourceLabel && (
+    <p class="evidence-band__source">
+      <span>{copy.source}</span>
+      <a href={sourceHref}>{sourceLabel}</a>
+    </p>
+  )}
+</aside>

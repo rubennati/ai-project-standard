@@ -6,6 +6,97 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Page primitives
+
+- `site/PAGE_PRIMITIVES.md` defines five page jobs without forcing them into one
+  article template: decision path, explanation, implementation guide,
+  reference and editorial perspective.
+- Six bilingual Astro components establish the shared product grammar:
+  answer-first introduction, evidence band, stop condition, implementation
+  step, copyable artifact and accountable next step.
+- Fact and measured evidence bands fail at build time without a source and
+  check date. Implementation steps keep an action, its expected result and its
+  verification together.
+- The primitives were visually proved without adding a public route: desktop
+  and 390px mobile, English and German, with no horizontal overflow.
+
+### Added — A route-by-route content audit
+
+- `site/CONTENT_AUDIT.md` measures all 365 sitemap URLs against the ten reader
+  questions and the Possibility → Collaboration → Reach → Control product
+  spine. Editorial routes and rendered repository documents are listed
+  individually; the 288 generated glossary URLs are assessed as one
+  data-driven family.
+- The current strength is Reach. Control exists but is fragmented,
+  Collaboration is thin, and Possibility is the main gap: the site explains
+  exposure before it consistently shows what useful work AI can enable.
+- Every route receives a proposed disposition — keep, reframe, merge, promote,
+  repository-only or compatibility — without changing navigation, public URLs
+  or templates.
+- The audit identifies five page jobs for the later design system: decision
+  path, explanation, implementation guide, reference and editorial
+  perspective. They share one visual system, not one identical article
+  template.
+- `site/INFORMATION_ARCHITECTURE.md` proposes a stable-route-first structure:
+  `/use-cases` for Possibility, `/start` for Collaboration, `/data-flows` for
+  Reach, `/secure-setup` for Control and `/glossary` for Reference. It defines
+  the homepage job, reader journeys, route placement, repository boundary,
+  footer groups and the first complete MCP path.
+- The proposal explicitly requires human approval before any header, footer,
+  URL or taxonomy implementation. It is not yet an architectural decision.
+
+### Changed — Native website theme direction
+
+- The stable-route-first information architecture is approved at product
+  level. The first footer proposal is rejected because it repeated primary
+  navigation; Reference, Project & trust, and Legal become its distinct jobs.
+- `site/THEME_DIRECTION.md` records the rendered design audit. Header, main and
+  footer share a 1024px outer container today, but articles use 672px,
+  homepage text 768px, wide content 976px and rendered `/docs` prose the full
+  976px without a named system.
+- The site will keep its Astro 7 and Tailwind CSS 4 foundation and develop its
+  own theme. Starlight, Compass, AstroWind and blog themes are references, not
+  dependencies or replacement architectures.
+- The approved foundation uses three intentional layout rails — Shell, Wide
+  and Reading — plus a contained header and a footer that does not duplicate
+  the primary reader journeys. No font or theme dependency is added in this
+  decision slice.
+- The language switch becomes an explicit header action at every viewport. It
+  uses a compact segmented control instead of passive `EN / DE` text and is no
+  longer hidden inside the mobile menu.
+- The native foundation now implements Shell, Wide and Reading rails, shared
+  neutral surfaces and rhythm, a contained responsive header and centred
+  editorial reading widths. Rendered repository documents no longer use the
+  full wide rail for prose.
+- `LanguageSwitch` replaces the glossary-specific control. It stays visible
+  before the rightmost menu control on mobile, marks the active locale with a
+  restrained tint, weight and rule, and shows unavailable translations as
+  disabled instead of redirecting readers. The mobile text button becomes an
+  accessible 44px menu icon that changes to a close symbol when open.
+- The footer now has one brand statement and distinct Reference, Project &
+  trust, and Legal groups. Primary navigation and licence links are not
+  duplicated; the language control remains available after long pages.
+
+### Changed — One public website product, not two identities
+
+- **AI Standard is now defined as one public product** for people who use,
+  introduce, govern or build with AI in real work — from the first prompt to an
+  acting agent. The earlier split between a broad knowledge site and a narrower
+  developer or project-standard area is retired.
+- `docs/website-product-brief.md` states the mission, audience, reader outcome,
+  product spine, collaboration continuum, ten questions and content admission
+  test before any information architecture or design is changed.
+- The repository is the production, source and artifact system behind the
+  website rather than a second public identity. Rules, concepts, research and
+  blueprints may all contribute to one reader path; their folder of origin does
+  not become website navigation.
+- The destination now covers possibility as well as control: what AI can help
+  someone achieve, which form of collaboration fits, what the system can reach,
+  which boundaries are needed and how the result remains reviewable.
+- No navigation, public URL or site-shell change is included. The next sequence
+  is content audit, information architecture, page-template system and one
+  complete MCP or Vibe Coding prototype path.
+
 ### Fixed — nanoid, and the glossary's draft backlog
 
 - `nanoid` to 3.3.18, closing GHSA-2v37-7h3g-55p8 (high). A lockfile change only — `postcss` already declared `^3.3.16`, so the resolved version was simply stale. The real exposure was low: nanoid reaches this project as `@tailwindcss/vite → vite → postcss`, entirely build-time, and the site is statically generated. Free fix, taken without ceremony. No open Dependabot alerts remain.

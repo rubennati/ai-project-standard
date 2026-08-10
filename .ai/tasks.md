@@ -4,29 +4,39 @@
 
 ## Active
 
+### Website product implementation
+
+The destination and admission test live in `docs/purpose.md` and
+`docs/website-product-brief.md`; the approved structure and visual direction
+live in `site/INFORMATION_ARCHITECTURE.md` and `site/THEME_DIRECTION.md`. This
+list records execution order rather than restating those decisions.
+
+1. [x] Establish the unified website product, content audit, stable-route-first
+   information architecture and native theme shell.
+2. [x] Define the page-primitives system and the five page jobs: decision path,
+   explanation, implementation guide, reference and editorial perspective.
+   Shared primitives cover answer, fit, operation, benefits and risks, action,
+   verification, technical depth, evidence and the next step.
+3. [ ] Build “Connect AI to tools and data” as the complete prototype path,
+   using MCP as the technical example rather than the reader's goal.
+4. [ ] Use Vibe Coding as the second template test across Explore, Prototype,
+   Deliver and Operate.
+5. [ ] Make Blog visibly editorial and Law visibly reference-led; replace their
+   weak landing-page copy and remove public roadmap filler such as “Planned” or
+   “More is coming”.
+6. [ ] Verify the complete system on desktop and mobile, in English and German,
+   including accessibility, evidence treatment and zero horizontal overflow.
+7. [ ] Map the remaining page families onto the proven primitives and migrate
+   them in reviewable groups. Obtain the recorded human approvals before final
+   navigation labels, `/use-cases` replacement, `/docs/**` compatibility work
+   or Open Source reframing changes.
+8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
+   dependency as a separate approval and licence decision.
+
 - Legal review of the legal notice and privacy policy — both are live
-- Decide one spine: four pillars vs three layers plus AI as a cross-cutting band (`research/open-source/STATUS.md`)
-- Verify the open-source research and publish it as a new site area — six known problems listed in its `STATUS.md`
-- Add "branch is not environment" to `docs/git-workflow.md` — the most useful single item from the research
-- Decide one canonical set of profile names (`docs/standard.md` and `README.md` vs `docs/profiles.md` and the site)
-- Separate the two identities: the site as the general knowledge layer, the project standard as a marked developer area beneath it
+- Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
 
-## Site structure — noted, not started
-
-Observations from 2026-08-09. Recorded so they are not lost. None of these is
-to be acted on before the structure is decided as a whole.
-
-- The site has no stated principle for its top level, so every new area is an
-  ad-hoc decision. Needs one considered pass and a roadmap, not a rebuild.
-- `/docs` reads as a second website inside the website — AI Project Standard,
-  Profiles, Getting Started sit there with their own logic and no bridge from
-  the rest of the site.
-- `Profiles` has its own footer entry *and* exists under `/docs`. The footer
-  groups need the same pass: what belongs in Project, and why.
-- The glossary is thin. Each term needs more than a short definition — more
-  explanation, examples, visual presentation — and "common confusion" belongs
-  further down the page, not near the top.
 ## Coherence audit — 2026-08-09
 
 Read the whole repository against its own rules. Twelve findings, ordered by how
@@ -63,7 +73,7 @@ badly they mislead. Nothing here is fixed yet.
 
 - Write the next two blog posts: why removing names rarely produces anonymous data, and what "EU-hosted" actually answers
 - Two remaining Start entry points: private use, and the one-person business
-- Decide whether to render each glossary entry's `status` (30 draft, 36 review, 8 stable — the field exists in `site/src/data/terms.ts` but is not shown)
+- Decide whether to render each glossary entry's `status` (138 review, 5 stable — the field exists in `site/src/data/terms.ts` but is not shown)
 - Decide whether "AI Standard" needs a subtitle
 - Implement the forkable-repository model described in `docs/forkable-repository.md`
 - Iterate on the practical AI collaboration guide based on pilot usage

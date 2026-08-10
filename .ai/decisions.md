@@ -250,3 +250,89 @@ repository answers *how do I build this*.
 
 Each concept answers five questions, carries an owner and a review date, and is
 checked in CI.
+
+## 2026-08-10 - One public website product, supported by the repository
+
+Decision: AI Standard is one public product for people who use, introduce,
+govern or build with AI in real work. It is not split into a broad knowledge
+base and a narrower project-standard or developer area. The website is
+organised by reader outcome; repository origin never creates a public section.
+
+The repository is the production, source and artifact system behind that
+product. It holds canonical rules, technical sources, research, blueprints,
+review history and checks. A reader does not need the repository to understand
+or act on a website answer, but can follow it to inspect, copy or contribute.
+Blueprints remain copyable artifacts rather than a third public surface.
+
+The public product covers both value and control: what AI can make possible,
+which form of human-AI collaboration fits, what the system can reach, which
+benefits and failure modes follow, what boundaries are needed, and how results
+stay reviewable. It spans the first prompt through tool use and acting agents.
+
+Rationale: the earlier three-surface model made the implementation structure
+visible to readers. `/docs`, use cases and the repository standard formed one
+identity while data flows, law and secure setup formed another. Readers arrive
+with a question, not with knowledge of which folder produced the answer. The
+split also weighted the site towards risk and explanation while leaving the
+possibilities and working models of useful AI collaboration without a clear
+home.
+
+Rejected: a separate developer area beneath the knowledge site. Technical depth
+is progressive depth in the same product, not a second identity. Also rejected:
+turning the website into a repository mirror. Maintainer setup, release
+mechanics and internal project documentation stay in the repository unless they
+answer a public AI-use question.
+
+Consequences: `docs/website-product-brief.md` owns the product statement, ten
+reader questions and content admission test. Information architecture, page
+templates and navigation follow from that brief and are decided in later
+reviewed slices. Existing public URLs and navigation do not change in this
+decision-only slice.
+
+## 2026-08-10 - Stable-route-first website structure
+
+Decision: the website uses the four product decisions as its public structure
+while preserving existing hub URLs where they fit. `/use-cases` owns
+Possibility, `/start` Collaboration, `/data-flows` Reach, `/secure-setup`
+Control, and `/glossary` is the Reference entry. Law, editorial content and the
+repository remain available as contextual depth rather than separate primary
+products. MCP is the first complete prototype path; Vibe Coding is the second
+test of the system.
+
+The header reader jobs and stable hub ownership are approved. The exact labels
+are verified in both languages before implementation. The first footer proposal
+is rejected because its Explore group repeated the primary navigation. The
+footer instead owns reference, trust, project inspection and legal disclosure.
+
+Rationale: the existing URLs can carry the new product logic without a broad
+redirect migration. Reader goals are more stable than role, technology or
+content format, and the content audit shows the four decisions match both the
+strong current material and the missing paths.
+
+Rejected: a clean-slate route tree, navigation by audience, and navigation by
+content format. Each would ask readers to classify themselves or the answer
+before finding it, and the route rebuild would add migration risk without
+improving the product model.
+
+## 2026-08-10 - A native theme, not a third-party site architecture
+
+Decision: AI Standard develops a small native theme on its existing Astro 7 and
+Tailwind CSS 4 foundation. Complete documentation, landing-page and blog themes
+may be used as visual references, but none is installed as the application
+architecture. The theme defines one Shell rail, one Wide rail and one Reading
+rail, a shared visual language, a contained header and a footer that does not
+repeat primary navigation. Language is a permanent header action on desktop and
+mobile rather than a destination hidden inside the responsive menu.
+
+Rationale: the current site already has bilingual routing, evidence, glossary,
+structured data, diagrams, privacy and accessibility behaviour that a starter
+theme would replace. Documentation themes would restore the retired `/docs`
+identity; landing themes would impose marketing components; blog themes cannot
+carry decision tools and implementation depth. The inconsistency to fix is a
+missing visual system, not a missing framework.
+
+Rejected: installing Starlight or Compass for the whole site, replacing the
+site with AstroWind, and forcing every surface into one blog theme. Also
+rejected: making every page the same width. Prose, indexes and matrices need
+different measures, but they use three explicit rails rather than arbitrary
+page-local maximums.

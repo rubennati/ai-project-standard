@@ -19,6 +19,12 @@ and by team size. That cut asked the adopter to already know the answer.
 
 ## Near term
 
+- **Turn the website product brief into one reader experience.** Inventory every
+  public page against its ten questions, derive the information architecture
+  from reader journeys, define the page-template system, then prototype one
+  complete topic path before changing navigation or public URLs. MCP and Vibe
+  Coding are the two candidates because both cross possibility, collaboration,
+  reach, control and repository artifacts.
 - **Build the two planned blueprints**, in this order. Both have their scope,
   their boundaries and their open questions written down; neither has a payload.
   - [`agent-maintained-knowledge-base`](./blueprints/agent-maintained-knowledge-base/)

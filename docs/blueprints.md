@@ -8,8 +8,8 @@ That is the whole distinction the repository is organised around:
 | | |
 |---|---|
 | `blueprints/` | files you copy out |
-| `docs/` | the rule, stated once |
-| the website | the explanation, the background, the reasoning |
+| `docs/` and `concepts/` | canonical rules and technical sources |
+| the website | the public explanation, decision and implementation path |
 
 A blueprint stays lean on purpose. Everything that explains *why* belongs on the
 website, linked from the blueprint's README, so the copied files carry no essay

@@ -1,0 +1,34 @@
+---
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+  step: number;
+  title: string;
+  action: string;
+  expected: string;
+  verification: string;
+}
+
+const { locale, step, title, action, expected, verification } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+---
+
+<li class="implementation-step">
+  <p class="implementation-step__number" aria-hidden="true">{step}</p>
+  <div class="implementation-step__body">
+    <h3>{title}</h3>
+    <p class="implementation-step__action">{action}</p>
+    <dl>
+      <div>
+        <dt>{copy.expectedResult}</dt>
+        <dd>{expected}</dd>
+      </div>
+      <div>
+        <dt>{copy.verification}</dt>
+        <dd>{verification}</dd>
+      </div>
+    </dl>
+  </div>
+</li>

@@ -1,8 +1,20 @@
 # Site
 
-Astro source for the AI Project Standard GitHub Pages site. This folder is published to GitHub Pages by `.github/workflows/pages.yml` (added in a later PR).
+Astro source for AI Standard, the public product of this repository. The site
+shows what people can achieve with AI, which form of collaboration fits, what
+the system can reach, and how the result stays responsible and reviewable.
 
-The repository's strict reader documentation lives in `/docs`. This site is the public-facing knowledge layer — see the layered-architecture rationale in [docs/standard.md](../docs/standard.md).
+The product direction lives in the
+[Website Product Brief](../docs/website-product-brief.md). The
+[Website Content Audit](./CONTENT_AUDIT.md) measures the current public routes
+against it. The [Information Architecture Proposal](./INFORMATION_ARCHITECTURE.md)
+turns the findings into a concrete structure for human approval before
+navigation and URLs change. The [Website Theme Direction](./THEME_DIRECTION.md)
+defines the approved native visual system before the shared shell changes.
+
+Repository documentation, concepts and blueprints support the public product
+with sources, technical depth and copyable artifacts. Their folder structure
+does not define the website's information architecture.
 
 ## Local development
 

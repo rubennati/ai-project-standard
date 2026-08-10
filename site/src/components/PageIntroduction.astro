@@ -1,0 +1,58 @@
+---
+import type { PageJob } from "../data/page-primitives";
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface MetadataItem {
+  label: string;
+  value: string;
+  datetime?: string;
+}
+
+interface Props {
+  locale: SiteLocale;
+  job: PageJob;
+  title: string;
+  /** The answer a reader should get without crossing the rest of the page. */
+  answer: string;
+  /** Context that earns the reader's attention after the answer is visible. */
+  lead?: string;
+  fit?: string;
+  metadata?: MetadataItem[];
+}
+
+const { locale, job, title, answer, lead, fit, metadata = [] } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+---
+
+<header class="page-introduction" data-page-job={job}>
+  <p class="page-introduction__job">{copy.pageJobs[job]}</p>
+  <h1>{title}</h1>
+
+  <div class="page-introduction__answer">
+    <p class="page-introduction__label">{copy.shortAnswer}</p>
+    <p>{answer}</p>
+  </div>
+
+  {lead && <p class="page-introduction__lead">{lead}</p>}
+
+  {fit && (
+    <div class="page-introduction__fit">
+      <p class="page-introduction__label">{copy.fitsWhen}</p>
+      <p>{fit}</p>
+    </div>
+  )}
+
+  {metadata.length > 0 && (
+    <dl class="page-introduction__metadata">
+      {metadata.map((item) => (
+        <div>
+          <dt>{item.label}</dt>
+          <dd>
+            {item.datetime ? <time datetime={item.datetime}>{item.value}</time> : item.value}
+          </dd>
+        </div>
+      ))}
+    </dl>
+  )}
+</header>
