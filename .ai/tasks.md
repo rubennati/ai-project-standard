@@ -4,8 +4,8 @@
 
 ## Active
 
-- Draft the unified website information architecture from reader journeys; do not change navigation or URLs yet
-- Define the page-template system, then prototype one complete MCP or Vibe Coding path
+- Review and approve or revise `site/INFORMATION_ARCHITECTURE.md`; do not change navigation or URLs before that decision
+- After information-architecture approval, define the page-template system and prototype the MCP path
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English

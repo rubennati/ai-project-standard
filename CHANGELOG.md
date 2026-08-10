@@ -23,6 +23,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   path, explanation, implementation guide, reference and editorial
   perspective. They share one visual system, not one identical article
   template.
+- `site/INFORMATION_ARCHITECTURE.md` proposes a stable-route-first structure:
+  `/use-cases` for Possibility, `/start` for Collaboration, `/data-flows` for
+  Reach, `/secure-setup` for Control and `/glossary` for Reference. It defines
+  the homepage job, reader journeys, route placement, repository boundary,
+  footer groups and the first complete MCP path.
+- The proposal explicitly requires human approval before any header, footer,
+  URL or taxonomy implementation. It is not yet an architectural decision.
 
 ### Changed — One public website product, not two identities
 

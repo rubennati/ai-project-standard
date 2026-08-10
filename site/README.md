@@ -7,7 +7,9 @@ the system can reach, and how the result stays responsible and reviewable.
 The product direction lives in the
 [Website Product Brief](../docs/website-product-brief.md). The
 [Website Content Audit](./CONTENT_AUDIT.md) measures the current public routes
-against it before navigation, URLs or templates change.
+against it. The [Information Architecture Proposal](./INFORMATION_ARCHITECTURE.md)
+turns the findings into a concrete structure for human approval before
+navigation, URLs or templates change.
 
 Repository documentation, concepts and blueprints support the public product
 with sources, technical depth and copyable artifacts. Their folder structure
