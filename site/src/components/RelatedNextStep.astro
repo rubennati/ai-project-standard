@@ -1,0 +1,31 @@
+---
+import type { ProductStage } from "../data/page-primitives";
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+  stage: ProductStage;
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { locale, stage, title, description, href } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+---
+
+<nav class="related-next-step" aria-label={copy.nextStep}>
+  <p class="related-next-step__label">
+    <span>{copy.nextStep}</span>
+    <span aria-hidden="true">/</span>
+    <span>{copy.productStages[stage]}</span>
+  </p>
+  <a href={href} class="related-next-step__link">
+    <span>
+      <strong>{title}</strong>
+      <span>{description}</span>
+    </span>
+    <span class="related-next-step__arrow" aria-hidden="true">→</span>
+  </a>
+</nav>

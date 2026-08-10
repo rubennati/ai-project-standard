@@ -13,7 +13,7 @@ list records execution order rather than restating those decisions.
 
 1. [x] Establish the unified website product, content audit, stable-route-first
    information architecture and native theme shell.
-2. [ ] Define the page-primitives system and the five page jobs: decision path,
+2. [x] Define the page-primitives system and the five page jobs: decision path,
    explanation, implementation guide, reference and editorial perspective.
    Shared primitives cover answer, fit, operation, benefits and risks, action,
    verification, technical depth, evidence and the next step.

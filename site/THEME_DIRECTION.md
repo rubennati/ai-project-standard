@@ -350,9 +350,9 @@ system rather than replaced by decorative cards.
 
 ## Implementation sequence after approval
 
-Status: the theme tokens and shell in step 2 are implemented. The current
-system font stack remains in place until the local font proof in step 1 makes a
-choice; no font asset or dependency has been added.
+Status: the theme tokens and shell in step 2 and the page primitives in step 3
+are implemented. The current system font stack remains in place until the local
+font proof in step 1 makes a choice; no font asset or dependency has been added.
 
 1. **Theme proof, not a migration.** Render the approved homepage opening, one
    editorial article, one wide matrix and the footer with both font candidates

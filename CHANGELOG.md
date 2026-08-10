@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Page primitives
+
+- `site/PAGE_PRIMITIVES.md` defines five page jobs without forcing them into one
+  article template: decision path, explanation, implementation guide,
+  reference and editorial perspective.
+- Six bilingual Astro components establish the shared product grammar:
+  answer-first introduction, evidence band, stop condition, implementation
+  step, copyable artifact and accountable next step.
+- Fact and measured evidence bands fail at build time without a source and
+  check date. Implementation steps keep an action, its expected result and its
+  verification together.
+- The primitives were visually proved without adding a public route: desktop
+  and 390px mobile, English and German, with no horizontal overflow.
+
 ### Added — A route-by-route content audit
 
 - `site/CONTENT_AUDIT.md` measures all 365 sitemap URLs against the ten reader

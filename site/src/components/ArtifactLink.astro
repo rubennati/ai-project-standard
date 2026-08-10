@@ -1,0 +1,30 @@
+---
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+  title: string;
+  description: string;
+  href: string;
+  status?: string;
+  external?: boolean;
+}
+
+const { locale, title, description, href, status, external = false } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+---
+
+<aside class="artifact-link">
+  <div class="artifact-link__header">
+    <p>{copy.copyableArtifact}</p>
+    {status && <span>{status}</span>}
+  </div>
+  <h2>
+    <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
+      {title}<span aria-hidden="true"> {external ? "↗" : "→"}</span>
+      {external && <span class="sr-only"> ({copy.opensInNewWindow})</span>}
+    </a>
+  </h2>
+  <p>{description}</p>
+</aside>
