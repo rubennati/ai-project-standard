@@ -184,6 +184,13 @@
     text-decoration: none;
   }
 
+  .site-wordmark__ai {
+    display: inline-block;
+    font-size: 1.125em;
+    line-height: 1;
+    letter-spacing: -0.045em;
+  }
+
   .site-header__actions {
     display: flex;
     align-items: center;
