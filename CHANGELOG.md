@@ -55,8 +55,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
   editorial reading widths. Rendered repository documents no longer use the
   full wide rail for prose.
 - `LanguageSwitch` replaces the glossary-specific control. It stays visible
-  beside Menu on mobile, marks the active locale by shape and text state, and
-  shows unavailable translations as disabled instead of redirecting readers.
+  before the rightmost menu control on mobile, marks the active locale with a
+  restrained tint, weight and rule, and shows unavailable translations as
+  disabled instead of redirecting readers. The mobile text button becomes an
+  accessible 44px menu icon that changes to a close symbol when open.
 - The footer now has one brand statement and distinct Reference, Project &
   trust, and Legal groups. Primary navigation and licence links are not
   duplicated; the language control remains available after long pages.

@@ -247,11 +247,13 @@ disclosure: it remains visible beside the Menu control at every viewport.
 The current `EN / DE` presentation looks like passive text and disappears with
 the closed mobile menu. Replace it with one shared, compact segmented control:
 
-- render it in the header on desktop and mobile, next to Menu on mobile;
+- render it in the header on desktop and mobile, before the menu control on
+  mobile so the menu remains the rightmost header action;
 - use two equal `EN` and `DE` segments without a slash separator;
 - expose the region as `nav` with an accessible `Language` label;
-- mark the current locale with `aria-current="page"`, weight and a filled or
-  tinted shape so the state does not depend on colour alone;
+- mark the current locale with `aria-current="page"`, weight, a lightly tinted
+  shape and a short rule so the state does not depend on colour alone or
+  compete with primary actions;
 - give the abbreviated segments the full accessible names `English` and
   `Deutsch`;
 - link directly to the exact alternate route when that translation exists;
@@ -340,6 +342,9 @@ system rather than replaced by decorative cards.
   page ending is unmanageably long.
 - The language control stays in the first mobile header row; opening the menu
   must never be required to discover or change the locale.
+- The mobile menu uses a 44px icon control at the right edge. Its three-line
+  symbol becomes a close symbol while the disclosure is open; the accessible
+  name remains present as text for assistive technology.
 - Reduced motion, focus visibility and zero horizontal page overflow remain
   non-negotiable.
 

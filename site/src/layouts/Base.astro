@@ -168,8 +168,39 @@ const footerSections = [
             language control stays outside this disclosure, so it remains
             discoverable before the menu is opened.
           */}
+          <div class="site-header__language site-header__language--mobile">
+            <LanguageSwitch
+              currentLocale={locale}
+              enHref={enLanguageHref}
+              deHref={deLanguageHref}
+            />
+          </div>
           <details class="site-nav">
-            <summary class="site-nav__toggle">{ui.menu}</summary>
+            <summary class="site-nav__toggle">
+              <span class="sr-only">{ui.menu}</span>
+              <svg
+                aria-hidden="true"
+                class="site-nav__icon site-nav__icon--menu"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+              >
+                <path d="M4 7h16M4 12h16M4 17h16"></path>
+              </svg>
+              <svg
+                aria-hidden="true"
+                class="site-nav__icon site-nav__icon--close"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+              >
+                <path d="m6 6 12 12M18 6 6 18"></path>
+              </svg>
+            </summary>
             <div class="site-nav__panel">
               <nav aria-label={ui.primaryNavigation} class="site-nav__links">
                 {
@@ -186,11 +217,13 @@ const footerSections = [
               </nav>
             </div>
           </details>
-          <LanguageSwitch
-            currentLocale={locale}
-            enHref={enLanguageHref}
-            deHref={deLanguageHref}
-          />
+          <div class="site-header__language site-header__language--desktop">
+            <LanguageSwitch
+              currentLocale={locale}
+              enHref={enLanguageHref}
+              deHref={deLanguageHref}
+            />
+          </div>
         </div>
       </div>
     </header>
