@@ -127,5 +127,6 @@ component.
 - A blueprint or concept that no longer describes what this project would
   recommend today is removed rather than kept.
 
-Depth, per problem: [concepts/](../concepts/README.md). The reasoning for a
-general audience: the website.
+Canonical technical depth, per problem: [concepts/](../concepts/README.md).
+Public explanation and implementation paths belong on the website when they
+answer one of its reader questions.

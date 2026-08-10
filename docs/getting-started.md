@@ -8,12 +8,13 @@ shortest path; it is not about contributing to this repository — that is
 
 Read [purpose.md](./purpose.md), or at least its first paragraph:
 
-> A developer brings an AI agent into their project and can still answer, months
-> later: what changed, why, on whose decision, and what was checked — without
-> having had to invent the practice themselves.
+> A person uses AI in real work and can understand what it makes possible,
+> choose an appropriate form of collaboration, set boundaries that hold, and
+> later explain what the system could reach, what it did, why, on whose decision
+> and what was checked.
 
-If that is not the problem you have, nothing below will help, and the website is
-probably the better place to start.
+This page is the repository-adoption path within that larger outcome. If you do
+not need files and checks for a software project, start with the website instead.
 
 ## 2. Take the blueprint that matches your situation
 

@@ -2,12 +2,12 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- `docs/purpose.md` is the single statement of what the repository, the website and a blueprint are each for. Where another file disagrees, that file is out of date.
+- `docs/purpose.md` is the single statement of the destination and the relationship between the public website product and the repository behind it. `docs/website-product-brief.md` owns the product statement, reader outcomes and content admission test. Where another file disagrees with `purpose.md`, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- **Objective, re-aligned 2026-08-09:** the two built `draft` blueprints — `blueprints/open-source/` and `blueprints/ai-assisted-development/` — are the deliverable. **Verified 2026-08-09 and both stay `draft`, stated honestly rather than promoted.** Each was run as an adopter would run it, with every gate tested for failing as well as passing, and five defects were found and fixed — two that made `open-source` red on day one, and one that let `ai-assisted-development` silently overwrite an existing `AGENTS.md` and append-only `.ai/decisions.md`. `stable` means the payload started or converted a real project and worked; that has not happened, and no amount of local testing substitutes for it. The two `planned` blueprints stay scoped-only until then. `concepts/`, the glossary sweep and the site are a parked side-strand — real work, done, not the active push. See `.ai/errors.md` for why the day's work drifted onto that side-strand.
+- **Objective, set 2026-08-10:** establish AI Standard as one public website product before changing its navigation or design. The agreed outcome spans possibility, human-AI collaboration, system reach and control — from the first prompt to an acting agent. The first implementation sequence is content audit, information architecture, page-template system, then one complete prototype path. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
-- Deferred objective: Resolve the two identities — the site is a broad knowledge layer, the repository standard a narrower technical subject, and `/docs`, `/use-cases` and `/profiles` still speak only to the second.
+- The earlier plan for a broad knowledge site with a marked developer area underneath is retired. The website stands alone; the repository supports it with sources, artifacts and checks rather than becoming a second public identity.
 
 ## Snapshot
 
@@ -21,16 +21,16 @@ History lives in `progress.md`; this section is current facts only.
 - CI builds the site on every pull request (`site-build`) and never deploys it; `pages.yml` keeps the deploy on `main`. `astro check` is a gate and passes.
 - Licensing is settled: the repository including `docs/` is MIT, texts written for the site are CC BY 4.0. Stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT.
 - The repository is English-only; the site's translated pages are the sole exception. `docs/language-style.md` holds the rule, `AGENTS.md` points at it.
-- `research/` is a queue for unverified material, not a library. Depth is published on the site, the rule stays short in `docs/`, copyable files become a blueprint. First area: open source, two documents with a `STATUS.md` and a per-claim `SOURCES.md`.
-- The site has a fifth section, `/open-source`, with three articles in both languages and no AI in it. It is the first area built from `research/` and the first evidence that the site carries subjects beyond AI use.
+- `research/` is an intake queue for unverified material, not a library. Its last routing sweep covered 166 sections and the queue is currently empty. What survives can support a public explanation, a canonical rule or concept, or a copyable blueprint; the content admission test and artifact type decide.
+- The site has an `/open-source` area with three articles in both languages and no AI in it. The content audit must decide how each article serves the new AI-use admission test; existing URLs remain unchanged until the information architecture is approved.
 - `blueprints/` holds material to copy; the contract is in `docs/blueprints.md`. Four exist: `open-source` and `ai-assisted-development` are `draft` (built, not yet verified), `agent-maintained-knowledge-base` and `agent-tool-access` are `planned` (scoped, no payload).
 
 ### Website
 
-- The site is a knowledge layer on secure and lawful AI use, not repository documentation. Four sections carry it: Start (entry points by decision authority), Data flows, Law, Setting up safely. Branded "AI Standard" everywhere including metadata; the repository keeps its own name.
+- The site is the public product: an independent practical website that covers what AI makes possible, useful forms of human-AI collaboration, technical and legal reach, implementation and review. It is one product at progressive depths, not a knowledge layer beside a project standard. Branded "AI Standard" everywhere including metadata; the repository keeps its own name.
 - Article content lives in typed modules under `site/src/data/`, one per article, bilingual, so pages stay presentational. Blog prose sits in `site/src/data/blog/`, the register in its `index.ts`.
 - Astro 7 with Tailwind through its Vite plugin; the `@tailwindcss/postcss` route breaks under Vite 8.
-- English is canonical with parallel `/de/` routes, centralized UI strings and multilingual SEO alternates. The glossary is complete in both languages across all 74 terms, and `getLocalizedTermContent` reports the language it actually returned.
+- English is canonical with parallel `/de/` routes, centralized UI strings and multilingual SEO alternates. The glossary has 143 bilingual entries; 101 non-product entries appear by default. Five entries are `stable` and 138 are `review`, and `getLocalizedTermContent` reports the language it actually returned.
 - Sitemap `<lastmod>` comes from the commit date of each page's source file, not the build clock; `site/scripts/git-lastmod.mjs` owns the mapping and omits the date when git history is unavailable.
 - One blog post at `/blog/before-you-press-enter`, with a byline, an editorial `datePublished` separate from the git-derived `dateModified`, and an RSS feed per locale.
 - Lighthouse measures 100 across performance, accessibility, best practices, SEO and agentic browsing on six page types in both locales.
@@ -45,26 +45,23 @@ History lives in `progress.md`; this section is current facts only.
 
 ## Immediate next steps
 
-**Objective — the blueprints.** Verify the two `draft` blueprints: run
-`open-source` and `ai-assisted-development` against a real project, record what
-against and when, and promote each to `stable` or keep it `draft` with the
-reason stated. This is the deliverable.
+1. Inventory every public page against the ten questions in `docs/website-product-brief.md`: what already serves the product, what needs reframing, what belongs only in the repository, what is duplicated and what is missing.
+2. Draft one information architecture from reader journeys and the product spine — possibility, collaboration, reach and control. Include the homepage, footer, reference material, technical depth and the fate of `/docs`, `/use-cases`, `/profiles` and `/open-source`. Do not change navigation or URLs in this step.
+3. Define the page-template system for the unified product: answer first, fit, operation, benefits and risks, action, verification, technical depth, evidence and next steps.
+4. Prototype one complete topic path before migrating the site. MCP and Vibe Coding are the two candidates because each crosses definition, possibility, decision, risk, implementation and repository artifacts.
+5. Review the prototype as a reader on desktop and mobile, then seek human approval for the concrete sitemap, navigation, public URL and shell changes before implementing the migration.
 
-The numbered items below are the parked side-strand — site and legal work,
-resumed after the blueprints, not alongside.
-
-1. Legal review of the legal notice and privacy policy. Both are live. The legal notice deliberately carries the minimum disclosure plus a pointer to the repository; whether § 5 ECG applies in full to a site that sells nothing is the open question.
-2. Bring the website into line with the repository: three pages still speak the retired profile vocabulary (`site/src/pages/profiles.astro`, `use-cases.astro`, `site/src/i18n/ui.ts`).
-3. Resolve the two identities (see current objective). The intended shape is the site as the general layer with the project standard as a clearly marked developer area beneath it, roadmapped in `ROADMAP.md`.
-4. Split the bilingual content modules into one file per locale. Both languages in one module is the structural cause of German that reads like translated English; the language guard catches the symptoms, not the cause.
-5. Write the two planned blog posts, in order: why removing names rarely produces anonymous data in the legal sense, and why "EU-hosted" answers a different question from the one people mean.
-6. Two remaining entry points under Start: private use, and the one-person business.
+Existing work stays queued rather than being folded into the redesign: legal
+review, the two planned blog posts, the two missing Start entry points, splitting
+bilingual content modules, and real-project verification of the two draft
+blueprints.
 
 ## Open questions
 
 - Which CI checks should be *required* in the ruleset? All six now run on every pull request and `site-build` catches real breakage, so the condition `docs/branch-protection.md` sets ("only once CI runs meaningful checks") is met.
-- Does "AI Standard" need a subtitle, and if so which one? The wordmark stands alone today.
-- Should the glossary show each entry's `status` (draft / review / stable)? The field exists in `site/src/data/terms.ts` and is not rendered; 30 entries are draft, 36 review and 8 stable, so showing it would explain the unevenness rather than leaving a reader to notice it.
+- Does "AI Standard" need a subtitle derived from the product statement? The wordmark stands alone today.
+- Should the glossary show each entry's editorial `status`? The field is not rendered; five entries are `stable` and 138 await a second reading as `review`.
+- Which reader journeys become top-level navigation is deliberately undecided until the content inventory is complete.
 
 ## Active constraints
 

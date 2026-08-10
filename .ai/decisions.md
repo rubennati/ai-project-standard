@@ -250,3 +250,41 @@ repository answers *how do I build this*.
 
 Each concept answers five questions, carries an owner and a review date, and is
 checked in CI.
+
+## 2026-08-10 - One public website product, supported by the repository
+
+Decision: AI Standard is one public product for people who use, introduce,
+govern or build with AI in real work. It is not split into a broad knowledge
+base and a narrower project-standard or developer area. The website is
+organised by reader outcome; repository origin never creates a public section.
+
+The repository is the production, source and artifact system behind that
+product. It holds canonical rules, technical sources, research, blueprints,
+review history and checks. A reader does not need the repository to understand
+or act on a website answer, but can follow it to inspect, copy or contribute.
+Blueprints remain copyable artifacts rather than a third public surface.
+
+The public product covers both value and control: what AI can make possible,
+which form of human-AI collaboration fits, what the system can reach, which
+benefits and failure modes follow, what boundaries are needed, and how results
+stay reviewable. It spans the first prompt through tool use and acting agents.
+
+Rationale: the earlier three-surface model made the implementation structure
+visible to readers. `/docs`, use cases and the repository standard formed one
+identity while data flows, law and secure setup formed another. Readers arrive
+with a question, not with knowledge of which folder produced the answer. The
+split also weighted the site towards risk and explanation while leaving the
+possibilities and working models of useful AI collaboration without a clear
+home.
+
+Rejected: a separate developer area beneath the knowledge site. Technical depth
+is progressive depth in the same product, not a second identity. Also rejected:
+turning the website into a repository mirror. Maintainer setup, release
+mechanics and internal project documentation stay in the repository unless they
+answer a public AI-use question.
+
+Consequences: `docs/website-product-brief.md` owns the product statement, ten
+reader questions and content admission test. Information architecture, page
+templates and navigation follow from that brief and are decided in later
+reviewed slices. Existing public URLs and navigation do not change in this
+decision-only slice.

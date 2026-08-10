@@ -5,12 +5,14 @@ file; where another file disagrees with it, that file is out of date.
 
 ## Where this is going
 
-> **A developer brings an AI agent into their project and can still answer,
-> months later: what changed, why, on whose decision, and what was checked —
-> without having had to invent the practice themselves.**
+> **A person uses AI in real work and can understand what it makes possible,
+> choose an appropriate form of collaboration, set boundaries that hold, and
+> later explain what the system could reach, what it did, why, on whose decision
+> and what was checked.**
 
-That is the destination. Every rule, blueprint and check here exists because it
-moves someone closer to it, and anything that does not is off course.
+That is the destination. Every public explanation, rule, blueprint and check
+here exists because it moves someone closer to it, and anything that does not
+is off course.
 
 It is deliberately an outcome and not a structure. Structures follow from it and
 can be replaced; the outcome is the thing being aimed at.
@@ -25,10 +27,12 @@ This was the founding observation, and it has not changed:
 >
 > — `README.md`, 10 May 2026
 
-On a codebase it looks like this: an empty directory, an agent pointed at it,
-and whatever comes out. No tests, no review, no licence, no security controls,
-no record of why anything was decided. Not because anyone chose that — because
-there is no established practice yet to choose instead.
+The same missing practice appears at every level. In a chat, someone pastes
+client material without knowing where it goes. In a connected system, an agent
+receives files, tools and credentials without a clear action boundary. On a
+codebase, an agent produces something with no tests, review or record of why a
+decision was made. None of those people necessarily chose a reckless approach;
+they were never given a usable way to choose a better one.
 
 The glossary names both ends. **Vibe coding** is "coding by heavily leaning on
 AI generation and iteration, often with lighter upfront structure".
@@ -41,44 +45,53 @@ out later what it touched. Others refuse to use any of it. Both are avoidance,
 reached from opposite directions, and both come from nobody having written down
 how to do it properly.
 
-## Who this repository is for
+## Who this project is for
 
-**Developers and maintainers.** People who write software and are putting an AI
-agent into that work.
+The public product is for people who **use, introduce, govern or build with AI
+in real work**. Someone using a chat service and someone giving an agent tools
+enter at different depths, but both need to understand what the system can do,
+what it can reach, where responsibility stays and how the result is checked.
 
-That is narrower than the website on purpose. The repository ships artifacts a
-developer uses: files to copy, rules that run, checks that block a merge. It
-does not explain the law, data flows or vendor terms — the website does.
+The repository has a narrower operational audience: developers, maintainers and
+contributors who need the sources, artifacts and checks behind the public
+product.
 
-## The three surfaces
+## One public product, one supporting system
 
-| | Audience | Job |
-|---|---|---|
-| **Repository** | developers and maintainers | The artifacts. Files you copy, rules you run, checks that block a merge, and the technical reference for building the thing |
-| **Website** | anyone affected by AI at work | The reasoning. Why a rule exists, the trade-offs, what the law requires — every claim with an evidence level and a check date |
-| **Blueprints** | someone starting or converting a project | The opinion, as files. Decisions already made, with the reasons stated |
+| | Job |
+| --- | --- |
+| **Website** | The public product. Possibilities, collaboration, technical explanation, decisions, implementation paths and evidence — organised around reader questions |
+| **Repository** | The production, source and artifact system. Website source, canonical rules, technical material, review history and checks |
+| **Blueprints** | Copyable artifacts within that system. Decisions already made for a stated trigger, with their limits and verification visible |
 
-The website is **broader** than the repository and sits logically above it. It
-covers data flows, law and secure setup, none of which any blueprint ships. That
-is correct, not a contradiction: the repository answers *how do I build this*,
-the website answers *what is happening and what am I allowed to do*.
+The website stands on its own. A reader does not need to understand the
+repository to use it. It is not split into a knowledge base and a developer
+area, and repository folders do not become its information architecture.
+
+Information from the repository may and should reach the website when it helps
+a reader understand, decide, implement or verify AI use. The repository remains
+the place to copy an artifact, inspect the original, contribute or maintain this
+project.
+
+The full product statement, audience, reader questions and content admission
+test are in the [Website Product Brief](./website-product-brief.md).
 
 ## How information flows
 
-**Upward, one way.** A rule is settled in the repository and explained on the
-website. The website never contradicts the repository, and where it renders
-repository files it renders them rather than restating them.
+The website is organised by reader need, not source location. A technical
+concept, legal source, working practice or blueprint may all contribute to one
+reader path. Their origin stays visible where it helps verification, but does
+not create separate public products.
 
-**One loop back, and only for source material.** Research published on the
-website carries primary sources and check dates. That verified material may come
-back down as *input* to a blueprint or a document. What travels back is
-evidence, never authority — the repository decides, the website explains.
+Research carries primary sources and check dates before it becomes a public
+claim. A settled rule or copyable artifact remains canonical in the repository;
+the website explains it in the context of the reader's decision and links to the
+original where someone needs to inspect or take it.
 
 ```text
-repository ──────────────► website
-   ▲                          │
-   └──── verified sources ────┘
-         (input, not authority)
+research and evidence ──► public explanation
+repository artifacts ───► implementation path
+reader questions ────────► website structure
 ```
 
 **One place per fact.** If something is true in two files, one of them is a copy
@@ -94,7 +107,7 @@ When two things conflict, the higher one wins:
    and nothing beyond them; restating a norm and applying it are different acts.
 3. **Decisions** — `.ai/decisions.md`, dated, with the reasoning, append-only.
    A decision that turns out wrong gets a new entry, not an edit.
-4. **Artifacts** — blueprints, concepts and `docs/`.
+4. **Artifacts** — public content, blueprints, concepts and `docs/`.
 5. **Instance** — how this repository happens to be configured.
 
 Nothing at a lower level may contradict a higher one. What is mechanically
@@ -104,8 +117,8 @@ checkable is checked by `.github/scripts/check-conformance.sh` in CI.
 
 Material you **copy**, not material you read. Cut by **goal**, not by file list.
 
-Blueprints are how the destination is reached: rather than describing what a
-good repository contains, they hand over one that already is.
+Blueprints make the operational part of the destination real: rather than
+describing what a good repository contains, they hand over one that already is.
 
 Every blueprint README answers four questions, and is incomplete without them:
 
@@ -127,12 +140,13 @@ and the rules for adding one: [blueprints.md](./blueprints.md).
 - **Not a fork target.** Forking hands over this project's history, its `.ai/`
   state, its website and its research. None of that belongs in your project;
   take a blueprint instead.
-- **Not the place for reasoning at length.** That is the website's job.
-
-  Depth is not length. A reference architecture is technical work and belongs
-  here however many pages it takes — see [concepts.md](./concepts.md). What
-  goes to the website is the argument for a general audience, and anything
-  needing an evidence label and a check date.
+- **Not a second public product.** Maintainer documentation, project state and
+  release mechanics stay here. Public explanations and implementation paths
+  belong to the website when they answer a reader's AI-use question, however
+  technical they are.
+- **Not a dumping ground for depth.** A reference architecture may be canonical
+  here, but its presence in the repository does not decide whether a public
+  explanation or guide belongs on the website. Reader outcome decides that.
 - **Not finished.** Sections still being worked on say so rather than shipping
   filler.
 

@@ -98,7 +98,7 @@ of documents is defined in the Versioning section of
 
 ## Where to read next
 
-- [purpose.md](./purpose.md) — the destination, the hierarchy, the three surfaces
+- [purpose.md](./purpose.md) — the destination, the hierarchy, and the relationship between the public product and the repository behind it
 - [blueprints.md](./blueprints.md) — what a blueprint is and how to add one
 - [adoption.md](./adoption.md) — taking one into your project
 - [ai-workspace-layer.md](./ai-workspace-layer.md) — what `.ai/` records, what git records

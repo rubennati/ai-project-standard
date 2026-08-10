@@ -4,7 +4,8 @@ This documentation set defines the project baseline and collaboration model.
 
 ## Start here
 
-- [Purpose](./purpose.md) — what the repository, the website and a blueprint are each for. The one file the others defer to
+- [Purpose](./purpose.md) — the destination and the relationship between the public product and the system behind it. The one file the others defer to
+- [Website Product Brief](./website-product-brief.md) — the website's mission, audience, reader outcomes, ten questions and content admission test
 
 ## The standard
 

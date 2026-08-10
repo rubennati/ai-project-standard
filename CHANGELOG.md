@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — One public website product, not two identities
+
+- **AI Standard is now defined as one public product** for people who use,
+  introduce, govern or build with AI in real work — from the first prompt to an
+  acting agent. The earlier split between a broad knowledge site and a narrower
+  developer or project-standard area is retired.
+- `docs/website-product-brief.md` states the mission, audience, reader outcome,
+  product spine, collaboration continuum, ten questions and content admission
+  test before any information architecture or design is changed.
+- The repository is the production, source and artifact system behind the
+  website rather than a second public identity. Rules, concepts, research and
+  blueprints may all contribute to one reader path; their folder of origin does
+  not become website navigation.
+- The destination now covers possibility as well as control: what AI can help
+  someone achieve, which form of collaboration fits, what the system can reach,
+  which boundaries are needed and how the result remains reviewable.
+- No navigation, public URL or site-shell change is included. The next sequence
+  is content audit, information architecture, page-template system and one
+  complete MCP or Vibe Coding prototype path.
+
 ### Fixed — nanoid, and the glossary's draft backlog
 
 - `nanoid` to 3.3.18, closing GHSA-2v37-7h3g-55p8 (high). A lockfile change only — `postcss` already declared `^3.3.16`, so the resolved version was simply stale. The real exposure was low: nanoid reaches this project as `@tailwindcss/vite → vite → postcss`, entirely build-time, and the site is statically generated. Free fix, taken without ceremony. No open Dependabot alerts remain.

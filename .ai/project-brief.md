@@ -16,50 +16,57 @@ there is no established practice yet to choose instead.
 
 ## What this project is
 
-A starting point that has already made the decisions.
+An independent, practical product for using AI in real work — from the first
+prompt to an acting agent — supported by a repository that ships the artifacts
+and checks behind it.
 
-Blueprints are opinionated. They do not hand over a folder structure to fill in;
-they prescribe how the work is done and give an agent a frame it has to operate
-inside — when it stops and asks, what it may not do, what has to be verified
-before anything reaches `main`, which controls are on from the first commit.
+The website shows what AI makes possible, what useful collaboration looks like,
+what the system can reach, which boundaries are needed, and how the result stays
+reviewable. It is one product at different depths, not a knowledge base beside a
+developer standard.
 
-Each blueprint is cut by **goal**, not by file list. "An open-source project",
-"an open-source project with AI", "one for someone starting with no prior
-knowledge, with the tightest guardrails". Different outcomes, different
-prescriptions.
+Blueprints remain opinionated, copyable artifacts. They prescribe how work is
+done for a stated trigger and give an agent a frame it has to operate inside —
+when it stops and asks, what it may not do and what must be verified.
 
 ## The division
 
 | | |
 |---|---|
+| the website | the public product, organised by what a reader needs to understand, decide, implement or verify |
 | `blueprints/` | the opinion, as files you copy |
-| `docs/` | the rule, stated once |
-| the website | the reasoning — why the frame exists, what the trade-offs are, with evidence labels |
-| root, `.ai/`, `.github/` | this project, living by it |
+| `docs/`, `concepts/`, `research/` | canonical rules, technical sources and verified input |
+| root, `.ai/`, `.github/`, `site/` | the production and control system behind the product |
 
-Information flows from the repository up to the website, not the other way
-round.
+Repository origin never determines the website's structure. Information and
+artifacts flow into one reader journey; the original remains linked where it is
+useful to inspect, copy or contribute.
 
 ## Where this is going
 
-> A developer brings an AI agent into their project and can still answer, months
-> later: what changed, why, on whose decision, and what was checked — without
-> having had to invent the practice themselves.
+> A person uses AI in real work and can understand what it makes possible,
+> choose an appropriate form of collaboration, set boundaries that hold, and
+> later explain what the system could reach, what it did, why, on whose decision
+> and what was checked.
 
 Stated once in `docs/purpose.md`, which is the authority. It is an outcome, not
 a structure: structures follow from it and can be replaced.
 
 ## The drift test
 
-Before starting a piece of work, hold it against the destination above. If the work does not make it more likely that someone building
-software with AI ends up with something reviewable, secure and honest about what
-it claims — it is off course, and that is worth saying out loud rather than
-continuing.
+Before starting a piece of work, hold it against the destination above. If it
+does not help a reader recognise a useful possibility, choose an appropriate
+collaboration, understand the system's reach, set a boundary or verify the
+result — or strengthen the artifacts that make those outcomes real — it is off
+course.
 
 Two failures worth remembering, both recorded in `errors.md`: a blueprint was
 built with no AI frame in it at all, in a project whose entire subject is
 working with AI; and four consecutive steps produced website work while the
 objective was blueprints in the repository.
+
+The second failure was objective drift, not website work. The active objective
+is now the website product, and the same test applies in the other direction.
 
 ## What holds it to a standard
 

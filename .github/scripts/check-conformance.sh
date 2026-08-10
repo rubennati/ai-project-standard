@@ -15,7 +15,7 @@ ok() { echo "  ok  $1"; }
 echo "== Purpose is stated once and pointed at =="
 
 if [[ ! -f docs/purpose.md ]]; then
-  note "docs/purpose.md" "missing: the single statement of what the repository, the website and a blueprint are for"
+  note "docs/purpose.md" "missing: the single statement of the destination and the product system"
 else
   ok "docs/purpose.md exists"
   grep -q "docs/purpose.md" README.md \
@@ -24,12 +24,26 @@ else
     || note "docs/index.md" "does not list docs/purpose.md"
 fi
 
+if [[ ! -f docs/website-product-brief.md ]]; then
+  note "docs/website-product-brief.md" "missing: the website mission, reader outcomes and content admission test"
+else
+  ok "docs/website-product-brief.md exists"
+  grep -q "website-product-brief.md" README.md \
+    || note "README.md" "does not point at docs/website-product-brief.md"
+  grep -q "website-product-brief.md" docs/index.md \
+    || note "docs/index.md" "does not list docs/website-product-brief.md"
+fi
+
 echo "== The destination is stated, and nothing contradicts it =="
 
 # purpose.md is the top of the hierarchy. If the destination sentence is gone,
 # every derivation below it is unanchored.
-if ! grep -q "what changed, why, on whose decision, and what was checked" docs/purpose.md 2>/dev/null; then
+if ! grep -q "A person uses AI in real work" docs/purpose.md 2>/dev/null; then
   note "docs/purpose.md" "the destination sentence is missing — everything else derives from it"
+fi
+
+if ! grep -q "from the first prompt to an acting agent" docs/website-product-brief.md 2>/dev/null; then
+  note "docs/website-product-brief.md" "the product scope is missing — the site must span the first prompt to an acting agent"
 fi
 
 # Profiles and the four-pillar framing were superseded by blueprints. The rule

@@ -13,25 +13,21 @@ them:
 | `blueprints/` | files you copy, with the decisions made | payload plus a short README |
 
 A reference architecture is none of the first or third. It is too long for a
-rule and there is nothing to copy, so before `concepts/` existed it had nowhere
-to go — and technical material from research was being routed to the website
-instead, where it does not belong.
+rule and there is nothing to copy, so `concepts/` gives the repository a
+canonical technical source that can be reviewed and maintained.
 
-[`purpose.md`](./purpose.md) settles which side of the line it sits on:
-
-> the repository answers *how do I build this*, the website answers *what is
-> happening and what am I allowed to do*
-
-**Depth is not the same as length.** The website's job is reasoning at length —
-law, data flows, trade-offs, anything with an evidence label and a check date.
-Technical depth is repository work, however many pages it takes.
+[`purpose.md`](./purpose.md) no longer assigns technical depth and public
+explanation to separate products. The concept remains canonical in the
+repository; the website may render it, explain it or build an implementation
+path around it when doing so answers a reader's question. Repository location
+does not decide public information architecture.
 
 ## Who it is for
 
 Developers building the thing. A concept may assume you know what an index is
-and can read a command. It does not have to explain the field to a newcomer —
-that is what the website and the glossary are for, and a concept links to them
-rather than repeating them.
+and can read a command. A public guide can provide the earlier layers — plain
+answer, fit, benefits and risks — and then lead into this technical source
+without duplicating it.
 
 ## Shape
 
@@ -88,15 +84,15 @@ nobody re-reads.
 - **Not a blueprint.** Nothing here is copied into your project. When a concept
   produces something copyable, that becomes a blueprint and the concept links to
   it.
-- **Not the reasoning for a general audience.** That is the website's job, and
-  the two are allowed to cover the same subject at different depths — the
-  repository for someone building it, the site for someone affected by it.
+- **Not public information architecture.** A concept records one technical
+  decision. The website decides how that decision relates to possibilities,
+  collaboration, reach and control for a reader.
 
 ## How a concept relates to research
 
 `research/` is a queue and it empties. A research round arrives unverified,
-gets routed, and what survives becomes one of four things: a rule in `docs/`,
-files in `blueprints/`, an explanation on the website — or a concept.
+gets routed, and what survives becomes a rule in `docs/`, files in
+`blueprints/`, a concept, or public content assembled from those sources.
 
 The concept is where the technical half lands. Several rounds of research
 usually collapse into one concept, because the rounds revise each other and only

@@ -4,18 +4,17 @@
 
 ## Active
 
+- Inventory every public page against `docs/website-product-brief.md`
+- Draft the unified website information architecture from reader journeys; do not change navigation or URLs yet
+- Define the page-template system, then prototype one complete MCP or Vibe Coding path
 - Legal review of the legal notice and privacy policy — both are live
-- Decide one spine: four pillars vs three layers plus AI as a cross-cutting band (`research/open-source/STATUS.md`)
-- Verify the open-source research and publish it as a new site area — six known problems listed in its `STATUS.md`
-- Add "branch is not environment" to `docs/git-workflow.md` — the most useful single item from the research
-- Decide one canonical set of profile names (`docs/standard.md` and `README.md` vs `docs/profiles.md` and the site)
-- Separate the two identities: the site as the general knowledge layer, the project standard as a marked developer area beneath it
+- Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
 
-## Site structure — noted, not started
+## Site structure — inputs to the product audit
 
-Observations from 2026-08-09. Recorded so they are not lost. None of these is
-to be acted on before the structure is decided as a whole.
+Observations from 2026-08-09. Recorded so they become inputs to the unified
+information-architecture pass rather than isolated fixes.
 
 - The site has no stated principle for its top level, so every new area is an
   ad-hoc decision. Needs one considered pass and a roadmap, not a rebuild.
