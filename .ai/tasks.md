@@ -17,7 +17,7 @@ list records execution order rather than restating those decisions.
    explanation, implementation guide, reference and editorial perspective.
    Shared primitives cover answer, fit, operation, benefits and risks, action,
    verification, technical depth, evidence and the next step.
-3. [ ] Build “Connect AI to tools and data” as the complete prototype path,
+3. [x] Build “Connect AI to tools and data” as the complete prototype path,
    using MCP as the technical example rather than the reader's goal.
 4. [ ] Use Vibe Coding as the second template test across Explore, Prototype,
    Deliver and Operate.

@@ -5,7 +5,7 @@
 - `docs/purpose.md` is the single statement of the destination and the relationship between the public website product and the repository behind it. `docs/website-product-brief.md` owns the product statement, reader outcomes and content admission test. Where another file disagrees with `purpose.md`, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- **Objective, set 2026-08-10:** establish AI Standard as one public website product. The stable-route-first information architecture, native Astro/Tailwind theme foundation and page-primitives system are implemented without a third-party theme or new dependency. The active step is the complete MCP prototype path. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
+- **Objective, set 2026-08-10:** establish AI Standard as one public website product. The stable-route-first information architecture, native Astro/Tailwind theme foundation, page-primitives system and complete MCP prototype path are implemented without a third-party theme or new dependency. The active step is Vibe Coding as the second template test. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
 - The earlier plan for a broad knowledge site with a marked developer area underneath is retired. The website stands alone; the repository supports it with sources, artifacts and checks rather than becoming a second public identity.
 
@@ -28,6 +28,7 @@ History lives in `progress.md`; this section is current facts only.
 - `site/THEME_DIRECTION.md` owns the approved visual direction: keep the existing Astro/Tailwind system, learn from external themes without installing one, use three intentional layout rails and redesign the footer around Reference, Project & trust, and Legal rather than repeated primary links.
 - The shared shell now implements the Shell, Wide and Reading rails, a contained responsive header, an always-visible segmented language control and the non-duplicating footer. Editorial articles and rendered `/docs` prose use the centred Reading rail; no font or theme dependency was added.
 - `site/PAGE_PRIMITIVES.md` owns the reusable page contract. Six bilingual components cover answer-first introductions, evidence, stop conditions, implementation with verification, copyable artifacts and one accountable next step; the five page jobs remain distinct compositions rather than one article template.
+- `/data-flows/connect-ai-to-tools-and-data` and its German counterpart are the first complete decision path built from those primitives. The path moves from useful outcomes through collaboration, reach and control, uses the 2026-07-28 MCP specification as its technical example, and ends in negative checks rather than an unverified artifact.
 - `blueprints/` holds material to copy; the contract is in `docs/blueprints.md`. Four exist: `open-source` and `ai-assisted-development` are `draft` (built, not yet verified), `agent-maintained-knowledge-base` and `agent-tool-access` are `planned` (scoped, no payload).
 
 ### Website
@@ -50,9 +51,8 @@ History lives in `progress.md`; this section is current facts only.
 
 ## Immediate next steps
 
-1. Prototype “Connect AI to tools and data” with MCP as the technical example before migrating the site.
-2. Use Vibe Coding as the second template test.
-3. Review both complete paths on desktop and mobile, in English and German, before mapping the remaining page families.
+1. Use Vibe Coding as the second template test.
+2. Review both complete paths on desktop and mobile, in English and German, before mapping the remaining page families.
 
 Existing work stays queued rather than being folded into the redesign: legal
 review, the two planned blog posts, the two missing Start entry points, splitting
