@@ -1,0 +1,226 @@
+---
+import ConnectionBoundaryFigure from "./ConnectionBoundaryFigure.astro";
+import EvidenceBand from "./EvidenceBand.astro";
+import ImplementationStep from "./ImplementationStep.astro";
+import PageIntroduction from "./PageIntroduction.astro";
+import RelatedNextStep from "./RelatedNextStep.astro";
+import StopCondition from "./StopCondition.astro";
+import {
+  CHECKED,
+  getConnectAiToolsData,
+  sources,
+} from "../data/data-flows/connect-ai-to-tools-and-data";
+import { getLocalizedPath } from "../i18n/routes";
+import type { SiteLocale } from "../i18n/ui";
+import Base from "../layouts/Base.astro";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getConnectAiToolsData(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
+---
+
+<Base
+  title={content.title}
+  description={content.description}
+  ogType="article"
+  schemaType="Article"
+  locale={locale}
+  routeKey="dataFlowsConnectAiTools"
+>
+  <article class="layout-reading prototype-path">
+    <PageIntroduction
+      locale={locale}
+      job="decision"
+      title={content.title}
+      answer={content.answer}
+      lead={content.lead}
+      fit={content.fit}
+      metadata={[{ label: content.checkedLabel, value: CHECKED, datetime: CHECKED }]}
+    />
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.possibilityLabel}</p>
+      <h2>{content.possibilityHeading}</h2>
+      <p class="prototype-section__lead">{content.possibilityLead}</p>
+
+      <div class="outcome-grid">
+        {
+          content.opportunities.map((opportunity) => (
+            <article class="outcome-card">
+              <h3>{opportunity.title}</h3>
+              <dl>
+                <div>
+                  <dt>{content.outcomeLabel}</dt>
+                  <dd>{opportunity.outcome}</dd>
+                </div>
+                <div>
+                  <dt>{content.simplerLabel}</dt>
+                  <dd>{opportunity.simplerWhen}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <StopCondition
+      locale={locale}
+      description={content.noConnectionDescription}
+      alternative={content.noConnectionAlternative}
+    />
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.collaborationLabel}</p>
+      <h2>{content.collaborationHeading}</h2>
+      <p class="prototype-section__lead">{content.collaborationLead}</p>
+
+      <div class="collaboration-grid">
+        {
+          content.collaborationForms.map((form) => (
+            <article class="collaboration-card">
+              <h3>{form.title}</h3>
+              <dl>
+                <div>
+                  <dt>{content.systemLabel}</dt>
+                  <dd>{form.system}</dd>
+                </div>
+                <div>
+                  <dt>{content.humanLabel}</dt>
+                  <dd>{form.human}</dd>
+                </div>
+                <div>
+                  <dt>{content.fitLabel}</dt>
+                  <dd>{form.fit}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.reachLabel}</p>
+      <h2>{content.reachHeading}</h2>
+      <p class="prototype-section__lead">{content.reachLead}</p>
+      <ConnectionBoundaryFigure
+        nodes={content.connectionNodes}
+        caption={content.connectionCaption}
+      />
+      <EvidenceBand
+        locale={locale}
+        level="fact"
+        checked={CHECKED}
+        summary={content.architectureEvidence}
+        sourceLabel={content.architectureSource}
+        sourceHref={sources.architecture}
+      />
+    </section>
+
+    <section class="prototype-section">
+      <h2>{content.boundaryHeading}</h2>
+      <p class="prototype-section__lead">{content.boundaryLead}</p>
+      <ol class="boundary-questions">
+        {
+          content.boundaryQuestions.map((item, index) => (
+            <li>
+              <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p class="boundary-questions__question">{item.question}</p>
+                <p class="boundary-questions__reason">{item.reason}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <EvidenceBand
+        locale={locale}
+        level="fact"
+        checked={CHECKED}
+        summary={content.authorizationEvidence}
+        sourceLabel={content.authorizationSource}
+        sourceHref={sources.authorization}
+      />
+    </section>
+
+    <StopCondition
+      locale={locale}
+      description={content.unsafeDescription}
+      alternative={content.unsafeAlternative}
+    />
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.controlLabel}</p>
+      <h2>{content.controlHeading}</h2>
+      <p class="prototype-section__lead">{content.controlLead}</p>
+      <ol class="implementation-steps">
+        {
+          content.controlSteps.map((step, index) => (
+            <ImplementationStep
+              locale={locale}
+              step={index + 1}
+              title={step.title}
+              action={step.action}
+              expected={step.expected}
+              verification={step.verification}
+            />
+          ))
+        }
+      </ol>
+      <EvidenceBand
+        locale={locale}
+        level="fact"
+        checked={CHECKED}
+        summary={content.securityEvidence}
+        sourceLabel={content.securitySource}
+        sourceHref={sources.mcpSecurity}
+      />
+    </section>
+
+    <section class="prototype-section verification-panel">
+      <h2>{content.verificationHeading}</h2>
+      <p class="prototype-section__lead">{content.verificationLead}</p>
+      <ul class="verification-list">
+        {content.verificationChecks.map((check) => <li>{check}</li>)}
+      </ul>
+    </section>
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.referenceLabel}</p>
+      <h2>{content.referenceHeading}</h2>
+      <p class="prototype-section__lead">{content.referenceLead}</p>
+      <ul class="term-link-grid">
+        {
+          content.glossaryLinks.map((term) => (
+            <li>
+              <a
+                href={toHref(
+                  getLocalizedPath(locale, "glossaryTerm", { slug: term.slug }),
+                )}
+              >
+                <strong>{term.label}</strong>
+                <span>{term.description}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <RelatedNextStep
+      locale={locale}
+      stage="control"
+      title={content.nextTitle}
+      description={content.nextDescription}
+      href={toHref(getLocalizedPath(locale, "secureSetupAccess"))}
+    />
+  </article>
+</Base>

@@ -1,0 +1,29 @@
+---
+interface Node {
+  label: string;
+  role: string;
+  boundary: string;
+}
+
+interface Props {
+  nodes: Node[];
+  caption: string;
+}
+
+const { nodes, caption } = Astro.props;
+---
+
+<figure class="connection-boundary">
+  <ol class="connection-boundary__path">
+    {
+      nodes.map((node) => (
+        <li class="connection-boundary__node">
+          <p class="connection-boundary__label">{node.label}</p>
+          <p class="connection-boundary__role">{node.role}</p>
+          <p class="connection-boundary__edge">{node.boundary}</p>
+        </li>
+      ))
+    }
+  </ol>
+  <figcaption>{caption}</figcaption>
+</figure>

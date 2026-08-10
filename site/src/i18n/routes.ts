@@ -19,6 +19,7 @@ export type LocalizedRouteKey =
   | "dataFlowsConsent"
   | "dataFlowsSovereignty"
   | "dataFlowsKnowledgeSources"
+  | "dataFlowsConnectAiTools"
   | "startWhatItIsDoing"
   | "lawFourQuestions"
   | "secureSetup"
@@ -31,7 +32,8 @@ export type LocalizedRouteKey =
   | "openSourceLicence"
   | "openSourceCodeAtWork";
 
-export const isLocale = (value: string): value is SiteLocale => value === "en" || value === "de";
+export const isLocale = (value: string): value is SiteLocale =>
+  value === "en" || value === "de";
 
 export const getLocaleFromPathname = (pathname: string): SiteLocale =>
   pathname === "/de" || pathname.startsWith("/de/") ? "de" : defaultLocale;
@@ -78,6 +80,8 @@ export const getLocalizedPath = (
       return `${prefix}/data-flows/data-sovereignty`;
     case "dataFlowsKnowledgeSources":
       return `${prefix}/data-flows/where-knowledge-lives`;
+    case "dataFlowsConnectAiTools":
+      return `${prefix}/data-flows/connect-ai-to-tools-and-data`;
     case "startWhatItIsDoing":
       return `${prefix}/start/what-it-is-doing`;
     case "lawFourQuestions":

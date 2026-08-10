@@ -336,3 +336,25 @@ site with AstroWind, and forcing every surface into one blog theme. Also
 rejected: making every page the same width. Prose, indexes and matrices need
 different measures, but they use three explicit rails rather than arbitrary
 page-local maximums.
+
+## 2026-08-10 - The first complete path is a connection decision, not an MCP page
+
+Decision: `/data-flows/connect-ai-to-tools-and-data` and its paired German URL
+are the first complete website path built from the page-primitives system. The
+page starts with outcomes, distinguishes a tool-using system from an agent,
+shows the human → host/client → server/connector → target-system boundary, and
+ends with implementation and negative checks. MCP is the technical example;
+the reader's goal is a useful, bounded connection.
+
+The existing Data & systems hub links the path. Header and footer navigation do
+not change. No repository artifact is linked until the planned tool-access
+blueprint has a real boundary and verification record.
+
+Rationale: a page titled only “What is MCP?” would test a glossary article, not
+the product. The complete path has to connect possibility, collaboration,
+reach, control and reference without making infrastructure the destination.
+Starting read-only, separating resources from tools, narrowing identity,
+approving consequences and testing revocation make the decision observable.
+
+Rejected: a technology landing page, a new top-level MCP section, an immediate
+header entry and an illustrative artifact that has not been run.
