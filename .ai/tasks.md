@@ -4,28 +4,12 @@
 
 ## Active
 
-- Inventory every public page against `docs/website-product-brief.md`
 - Draft the unified website information architecture from reader journeys; do not change navigation or URLs yet
 - Define the page-template system, then prototype one complete MCP or Vibe Coding path
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
 
-## Site structure — inputs to the product audit
-
-Observations from 2026-08-09. Recorded so they become inputs to the unified
-information-architecture pass rather than isolated fixes.
-
-- The site has no stated principle for its top level, so every new area is an
-  ad-hoc decision. Needs one considered pass and a roadmap, not a rebuild.
-- `/docs` reads as a second website inside the website — AI Project Standard,
-  Profiles, Getting Started sit there with their own logic and no bridge from
-  the rest of the site.
-- `Profiles` has its own footer entry *and* exists under `/docs`. The footer
-  groups need the same pass: what belongs in Project, and why.
-- The glossary is thin. Each term needs more than a short definition — more
-  explanation, examples, visual presentation — and "common confusion" belongs
-  further down the page, not near the top.
 ## Coherence audit — 2026-08-09
 
 Read the whole repository against its own rules. Twelve findings, ordered by how
@@ -62,7 +46,7 @@ badly they mislead. Nothing here is fixed yet.
 
 - Write the next two blog posts: why removing names rarely produces anonymous data, and what "EU-hosted" actually answers
 - Two remaining Start entry points: private use, and the one-person business
-- Decide whether to render each glossary entry's `status` (30 draft, 36 review, 8 stable — the field exists in `site/src/data/terms.ts` but is not shown)
+- Decide whether to render each glossary entry's `status` (138 review, 5 stable — the field exists in `site/src/data/terms.ts` but is not shown)
 - Decide whether "AI Standard" needs a subtitle
 - Implement the forkable-repository model described in `docs/forkable-repository.md`
 - Iterate on the practical AI collaboration guide based on pilot usage

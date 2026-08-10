@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — A route-by-route content audit
+
+- `site/CONTENT_AUDIT.md` measures all 365 sitemap URLs against the ten reader
+  questions and the Possibility → Collaboration → Reach → Control product
+  spine. Editorial routes and rendered repository documents are listed
+  individually; the 288 generated glossary URLs are assessed as one
+  data-driven family.
+- The current strength is Reach. Control exists but is fragmented,
+  Collaboration is thin, and Possibility is the main gap: the site explains
+  exposure before it consistently shows what useful work AI can enable.
+- Every route receives a proposed disposition — keep, reframe, merge, promote,
+  repository-only or compatibility — without changing navigation, public URLs
+  or templates.
+- The audit identifies five page jobs for the later design system: decision
+  path, explanation, implementation guide, reference and editorial
+  perspective. They share one visual system, not one identical article
+  template.
+
 ### Changed — One public website product, not two identities
 
 - **AI Standard is now defined as one public product** for people who use,

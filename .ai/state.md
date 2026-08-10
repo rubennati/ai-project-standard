@@ -5,7 +5,7 @@
 - `docs/purpose.md` is the single statement of the destination and the relationship between the public website product and the repository behind it. `docs/website-product-brief.md` owns the product statement, reader outcomes and content admission test. Where another file disagrees with `purpose.md`, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- **Objective, set 2026-08-10:** establish AI Standard as one public website product before changing its navigation or design. The agreed outcome spans possibility, human-AI collaboration, system reach and control — from the first prompt to an acting agent. The first implementation sequence is content audit, information architecture, page-template system, then one complete prototype path. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
+- **Objective, set 2026-08-10:** establish AI Standard as one public website product before changing its navigation or design. The content audit is complete; the active step is one information architecture derived from reader journeys and the product spine. The page-template system and one complete prototype path follow. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
 - The earlier plan for a broad knowledge site with a marked developer area underneath is retired. The website stands alone; the repository supports it with sources, artifacts and checks rather than becoming a second public identity.
 
@@ -22,7 +22,8 @@ History lives in `progress.md`; this section is current facts only.
 - Licensing is settled: the repository including `docs/` is MIT, texts written for the site are CC BY 4.0. Stated in the footer, the legal notice, `README.md` and the JSON-LD `license` field, with `/docs/` pages declaring MIT.
 - The repository is English-only; the site's translated pages are the sole exception. `docs/language-style.md` holds the rule, `AGENTS.md` points at it.
 - `research/` is an intake queue for unverified material, not a library. Its last routing sweep covered 166 sections and the queue is currently empty. What survives can support a public explanation, a canonical rule or concept, or a copyable blueprint; the content admission test and artifact type decide.
-- The site has an `/open-source` area with three articles in both languages and no AI in it. The content audit must decide how each article serves the new AI-use admission test; existing URLs remain unchanged until the information architecture is approved.
+- The site has an `/open-source` area with three articles in both languages and no AI in it. The content audit proposes reframing the articles around publishing AI-assisted work and merging the unrelated top-level area into a reader journey; existing URLs remain unchanged until the information architecture is approved.
+- `site/CONTENT_AUDIT.md` inventories all 365 sitemap URLs by editorial route, generated family or rendered repository document. Its central finding is that Reach is strong, Control is fragmented, Collaboration is thin and Possibility is the main gap. It proposes dispositions only; it changes no public route.
 - `blueprints/` holds material to copy; the contract is in `docs/blueprints.md`. Four exist: `open-source` and `ai-assisted-development` are `draft` (built, not yet verified), `agent-maintained-knowledge-base` and `agent-tool-access` are `planned` (scoped, no payload).
 
 ### Website
@@ -45,11 +46,10 @@ History lives in `progress.md`; this section is current facts only.
 
 ## Immediate next steps
 
-1. Inventory every public page against the ten questions in `docs/website-product-brief.md`: what already serves the product, what needs reframing, what belongs only in the repository, what is duplicated and what is missing.
-2. Draft one information architecture from reader journeys and the product spine — possibility, collaboration, reach and control. Include the homepage, footer, reference material, technical depth and the fate of `/docs`, `/use-cases`, `/profiles` and `/open-source`. Do not change navigation or URLs in this step.
-3. Define the page-template system for the unified product: answer first, fit, operation, benefits and risks, action, verification, technical depth, evidence and next steps.
-4. Prototype one complete topic path before migrating the site. MCP and Vibe Coding are the two candidates because each crosses definition, possibility, decision, risk, implementation and repository artifacts.
-5. Review the prototype as a reader on desktop and mobile, then seek human approval for the concrete sitemap, navigation, public URL and shell changes before implementing the migration.
+1. Draft one information architecture from reader journeys and the product spine — possibility, collaboration, reach and control. Include the homepage, footer, reference material, technical depth and the fate of `/docs`, `/use-cases`, `/profiles` and `/open-source`. Do not change navigation or URLs in this step.
+2. Define the page-template system for the unified product: answer first, fit, operation, benefits and risks, action, verification, technical depth, evidence and next steps.
+3. Prototype one complete topic path before migrating the site. MCP and Vibe Coding are the two candidates because each crosses definition, possibility, decision, risk, implementation and repository artifacts.
+4. Review the prototype as a reader on desktop and mobile, then seek human approval for the concrete sitemap, navigation, public URL and shell changes before implementing the migration.
 
 Existing work stays queued rather than being folded into the redesign: legal
 review, the two planned blog posts, the two missing Start entry points, splitting
