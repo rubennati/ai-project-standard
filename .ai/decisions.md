@@ -288,3 +288,51 @@ reader questions and content admission test. Information architecture, page
 templates and navigation follow from that brief and are decided in later
 reviewed slices. Existing public URLs and navigation do not change in this
 decision-only slice.
+
+## 2026-08-10 - Stable-route-first website structure
+
+Decision: the website uses the four product decisions as its public structure
+while preserving existing hub URLs where they fit. `/use-cases` owns
+Possibility, `/start` Collaboration, `/data-flows` Reach, `/secure-setup`
+Control, and `/glossary` is the Reference entry. Law, editorial content and the
+repository remain available as contextual depth rather than separate primary
+products. MCP is the first complete prototype path; Vibe Coding is the second
+test of the system.
+
+The header reader jobs and stable hub ownership are approved. The exact labels
+are verified in both languages before implementation. The first footer proposal
+is rejected because its Explore group repeated the primary navigation. The
+footer instead owns reference, trust, project inspection and legal disclosure.
+
+Rationale: the existing URLs can carry the new product logic without a broad
+redirect migration. Reader goals are more stable than role, technology or
+content format, and the content audit shows the four decisions match both the
+strong current material and the missing paths.
+
+Rejected: a clean-slate route tree, navigation by audience, and navigation by
+content format. Each would ask readers to classify themselves or the answer
+before finding it, and the route rebuild would add migration risk without
+improving the product model.
+
+## 2026-08-10 - A native theme, not a third-party site architecture
+
+Decision: AI Standard develops a small native theme on its existing Astro 7 and
+Tailwind CSS 4 foundation. Complete documentation, landing-page and blog themes
+may be used as visual references, but none is installed as the application
+architecture. The theme defines one Shell rail, one Wide rail and one Reading
+rail, a shared visual language, a contained header and a footer that does not
+repeat primary navigation. Language is a permanent header action on desktop and
+mobile rather than a destination hidden inside the responsive menu.
+
+Rationale: the current site already has bilingual routing, evidence, glossary,
+structured data, diagrams, privacy and accessibility behaviour that a starter
+theme would replace. Documentation themes would restore the retired `/docs`
+identity; landing themes would impose marketing components; blog themes cannot
+carry decision tools and implementation depth. The inconsistency to fix is a
+missing visual system, not a missing framework.
+
+Rejected: installing Starlight or Compass for the whole site, replacing the
+site with AstroWind, and forcing every surface into one blog theme. Also
+rejected: making every page the same width. Prose, indexes and matrices need
+different measures, but they use three explicit rails rather than arbitrary
+page-local maximums.

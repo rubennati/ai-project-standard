@@ -7,6 +7,11 @@ concrete changes listed at the end.
 
 Proposal date: 2026-08-10.
 
+Status: the stable-route-first product structure and primary reader jobs were
+approved on 2026-08-10. The original footer proposal was rejected because it
+repeated primary navigation. The revised footer below follows
+[`THEME_DIRECTION.md`](./THEME_DIRECTION.md).
+
 ## Recommendation in one sentence
 
 Organise AI Standard around the four decisions a reader has to make — what to
@@ -66,6 +71,8 @@ content model. They do not need to become navigation jargon.
   already orient a first-time reader.
 
 This reduces the header from six subject and format labels to five reader jobs.
+The language control is a permanent header action on desktop and mobile; it is
+not hidden inside the mobile navigation disclosure.
 
 ## Reader journeys
 
@@ -324,17 +331,19 @@ progression so it remains linkable, printable and accessible.
 
 ## Footer proposal
 
-The footer supports discovery, trust and project inspection without repeating
-the retired taxonomy.
+The footer supports reference, trust and project inspection without repeating
+the primary navigation or the retired taxonomy. The header owns the four main
+reader journeys.
 
 | Group | Links |
 | --- | --- |
-| **Explore** | Use AI, Choose how, Data & systems, Control & verify, Articles |
-| **Reference & trust** | Glossary, Law, About, Evidence method, Report a problem, Report a vulnerability |
-| **Project & legal** | Technical repository, Contribute, Legal notice, Privacy policy, code licence, content licence |
+| **Reference** | Glossary, Law, Articles, Evidence method |
+| **Project & trust** | About, Technical repository, Contribute, Report a problem, Report a vulnerability |
+| **Legal** | Legal notice, Privacy policy, Security contact |
 
-Remove Docs and Profiles. Do not add Blueprints as a public section; a relevant
-guide links the relevant artifact.
+Remove Docs, Profiles and the duplicated primary destinations. Do not add
+Blueprints as a public section; a relevant guide links the relevant artifact.
+Show the code and content licences once in the footer's fine-print row.
 
 ## The first complete prototype path
 
@@ -379,17 +388,12 @@ sequence.
 
 Implementation must not begin until a human approves:
 
-1. the five primary navigation destinations and both-language labels;
-2. repurposing `/use-cases`, including the new `/de/use-cases` route;
-3. broadening the public promises of `/start`, `/data-flows` and
-   `/secure-setup`;
-4. removing Law, Blog and About from the header;
-5. removing Docs and Profiles from the footer;
-6. the three proposed footer groups;
-7. treating `/docs/**` as compatibility routes rather than a public section;
-8. merging Open Source into the AI-assisted publishing journey while
-   preserving its existing URLs; and
-9. MCP as the first complete prototype, followed by Vibe Coding.
+1. the final both-language labels after they are rendered at the desktop
+   breakpoint;
+2. the content replacement for `/use-cases`, including the new
+   `/de/use-cases` route;
+3. the migration map for `/docs/**` compatibility routes; and
+4. the concrete Open Source reframing before any existing page changes.
 
 Approval of this proposal authorises the page-template specification and one
 prototype path. It does not authorise a full content migration or deletion of

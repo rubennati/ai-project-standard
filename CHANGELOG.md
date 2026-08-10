@@ -31,6 +31,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - The proposal explicitly requires human approval before any header, footer,
   URL or taxonomy implementation. It is not yet an architectural decision.
 
+### Changed — Native website theme direction
+
+- The stable-route-first information architecture is approved at product
+  level. The first footer proposal is rejected because it repeated primary
+  navigation; Reference, Project & trust, and Legal become its distinct jobs.
+- `site/THEME_DIRECTION.md` records the rendered design audit. Header, main and
+  footer share a 1024px outer container today, but articles use 672px,
+  homepage text 768px, wide content 976px and rendered `/docs` prose the full
+  976px without a named system.
+- The site will keep its Astro 7 and Tailwind CSS 4 foundation and develop its
+  own theme. Starlight, Compass, AstroWind and blog themes are references, not
+  dependencies or replacement architectures.
+- The approved foundation uses three intentional layout rails — Shell, Wide
+  and Reading — plus a contained header and a footer that does not duplicate
+  the primary reader journeys. No font or theme dependency is added in this
+  decision slice.
+- The language switch becomes an explicit header action at every viewport. It
+  uses a compact segmented control instead of passive `EN / DE` text and is no
+  longer hidden inside the mobile menu.
+
 ### Changed — One public website product, not two identities
 
 - **AI Standard is now defined as one public product** for people who use,

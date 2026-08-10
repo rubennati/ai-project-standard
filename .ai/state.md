@@ -5,7 +5,7 @@
 - `docs/purpose.md` is the single statement of the destination and the relationship between the public website product and the repository behind it. `docs/website-product-brief.md` owns the product statement, reader outcomes and content admission test. Where another file disagrees with `purpose.md`, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- **Objective, set 2026-08-10:** establish AI Standard as one public website product before changing its navigation or design. The content audit and information-architecture proposal are complete; the active step is human review of the proposed header, footer, hub jobs and compatibility treatment. No navigation, URL or taxonomy changes begin before that approval. The page-template system and one complete prototype path follow. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
+- **Objective, set 2026-08-10:** establish AI Standard as one public website product. The stable-route-first information architecture and a native Astro/Tailwind theme direction are approved. The active step is the theme foundation: explicit Shell, Wide and Reading rails, a contained header, an always-visible language control and a non-duplicating footer, implemented without a third-party theme or new dependency. Page primitives and the complete MCP prototype path follow. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
 - The earlier plan for a broad knowledge site with a marked developer area underneath is retired. The website stands alone; the repository supports it with sources, artifacts and checks rather than becoming a second public identity.
 
@@ -24,7 +24,8 @@ History lives in `progress.md`; this section is current facts only.
 - `research/` is an intake queue for unverified material, not a library. Its last routing sweep covered 166 sections and the queue is currently empty. What survives can support a public explanation, a canonical rule or concept, or a copyable blueprint; the content admission test and artifact type decide.
 - The site has an `/open-source` area with three articles in both languages and no AI in it. The content audit proposes reframing the articles around publishing AI-assisted work and merging the unrelated top-level area into a reader journey; existing URLs remain unchanged until the information architecture is approved.
 - `site/CONTENT_AUDIT.md` inventories all 365 sitemap URLs by editorial route, generated family or rendered repository document. Its central finding is that Reach is strong, Control is fragmented, Collaboration is thin and Possibility is the main gap. It proposes dispositions only; it changes no public route.
-- `site/INFORMATION_ARCHITECTURE.md` proposes a stable-route-first structure: `/use-cases` owns Possibility, `/start` Collaboration, `/data-flows` Reach, `/secure-setup` Control and `/glossary` Reference. It also proposes header and footer labels, route compatibility and MCP as the first prototype. These are not decisions until a human approves them.
+- The stable hub ownership and product-level reader jobs in `site/INFORMATION_ARCHITECTURE.md` are approved: `/use-cases` owns Possibility, `/start` Collaboration, `/data-flows` Reach, `/secure-setup` Control and `/glossary` Reference. Exact bilingual labels, `/docs` compatibility mapping and Open Source page changes still require their concrete reviewed slices. The original duplicating footer proposal is replaced.
+- `site/THEME_DIRECTION.md` owns the approved visual direction: keep the existing Astro/Tailwind system, learn from external themes without installing one, use three intentional layout rails and redesign the footer around Reference, Project & trust, and Legal rather than repeated primary links.
 - `blueprints/` holds material to copy; the contract is in `docs/blueprints.md`. Four exist: `open-source` and `ai-assisted-development` are `draft` (built, not yet verified), `agent-maintained-knowledge-base` and `agent-tool-access` are `planned` (scoped, no payload).
 
 ### Website
@@ -47,10 +48,10 @@ History lives in `progress.md`; this section is current facts only.
 
 ## Immediate next steps
 
-1. Review and approve or revise `site/INFORMATION_ARCHITECTURE.md`, especially the five header destinations, three footer groups, stable hub URLs and compatibility treatment of `/docs`, `/profiles` and `/open-source`.
-2. After approval, define the page-template system for the unified product: answer first, fit, operation, benefits and risks, action, verification, technical depth, evidence and next steps.
-3. Prototype “Connect AI to tools and data” with MCP as the technical example before migrating the site. Use Vibe Coding as the second template test.
-4. Review the prototype as a reader on desktop and mobile, then seek human approval for the concrete sitemap, navigation, public URL and shell changes before implementing the migration.
+1. Implement the dependency-free theme foundation: Shell, Wide and Reading rails, shared rhythm and surfaces, contained header, always-visible desktop/mobile language control and the approved non-duplicating footer.
+2. Verify the changed shell on homepage, article, index, glossary, legal and `/docs` pages in both languages and at desktop and mobile widths.
+3. Define the page-primitives system: answer first, fit, operation, benefits and risks, action, verification, technical depth, evidence and next steps.
+4. Prototype “Connect AI to tools and data” with MCP as the technical example before migrating the site. Use Vibe Coding as the second template test.
 
 Existing work stays queued rather than being folded into the redesign: legal
 review, the two planned blog posts, the two missing Start entry points, splitting
@@ -62,7 +63,7 @@ blueprints.
 - Which CI checks should be *required* in the ruleset? All six now run on every pull request and `site-build` catches real breakage, so the condition `docs/branch-protection.md` sets ("only once CI runs meaningful checks") is met.
 - Does "AI Standard" need a subtitle derived from the product statement? The wordmark stands alone today.
 - Should the glossary show each entry's editorial `status`? The field is not rendered; five entries are `stable` and 138 await a second reading as `review`.
-- Does the proposed primary navigation — Use AI, Choose how, Data & systems, Control & verify, Reference — describe the product in words readers will recognise in both languages?
+- Which of Inter Variable and IBM Plex Sans gives the bilingual theme the right editorial-technical voice? Decide from the local visual comparison, not the font name.
 
 ## Active constraints
 

@@ -9,7 +9,8 @@ The product direction lives in the
 [Website Content Audit](./CONTENT_AUDIT.md) measures the current public routes
 against it. The [Information Architecture Proposal](./INFORMATION_ARCHITECTURE.md)
 turns the findings into a concrete structure for human approval before
-navigation, URLs or templates change.
+navigation and URLs change. The [Website Theme Direction](./THEME_DIRECTION.md)
+defines the approved native visual system before the shared shell changes.
 
 Repository documentation, concepts and blueprints support the public product
 with sources, technical depth and copyable artifacts. Their folder structure
