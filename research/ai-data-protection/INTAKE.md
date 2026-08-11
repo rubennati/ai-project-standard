@@ -1,15 +1,25 @@
-# AI and personal data: source notes
+# AI and personal data: derived synthesis
 
 > Research intake only. This file is not normative project guidance and is not
 > legal advice.
 
-## Origin
+## Full translated source notes
 
-This is a structured English translation of four German conversation notes
-supplied by the maintainer on 11 August 2026. Repeated passages have been
-consolidated, but the claims and proposed model are recorded as received. They
-have not been silently corrected here. Verification, qualifications and
-contradictions belong in [SOURCES.md](SOURCES.md) and [STATUS.md](STATUS.md).
+The four German conversation notes supplied by the maintainer on 11 August 2026
+are stored separately as complete English translations. Their original order,
+headings, examples, tables, text diagrams and source references are retained:
+
+1. [Contextual anonymity and AI processors](01-contextual-anonymity-and-ai-processors.md)
+2. [Website glossary assessment](02-website-glossary-assessment.md)
+3. [GDPR and AI decision model](03-gdpr-ai-decision-model.md)
+4. [GDPR vocabulary before the AI matrix](04-gdpr-vocabulary-before-the-matrix.md)
+
+This file is a **derived synthesis**, not the original intake. It consolidates
+repeated passages to make the proposed model easier to navigate and must not be
+used to judge whether the supplied material was preserved. Claims in the full
+translations have not been silently corrected. Verification, qualifications
+and contradictions belong in [SOURCES.md](SOURCES.md) and
+[STATUS.md](STATUS.md).
 
 ## The question behind the notes
 

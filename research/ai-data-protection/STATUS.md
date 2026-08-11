@@ -2,11 +2,22 @@
 
 ## Current state — 11 August 2026
 
-Four German conversation notes have been translated and consolidated into
-[INTAKE.md](INTAKE.md). The principal legal propositions have been checked
-against the GDPR, CJEU C-413/23 P, final EDPB role guidance, two EDPB
-consultation documents and Austrian Data Protection Authority material. The
-results and qualifications are in [SOURCES.md](SOURCES.md).
+Four German conversation notes have been stored as complete English
+translations, one file per note:
+
+1. [Contextual anonymity and AI processors](01-contextual-anonymity-and-ai-processors.md)
+2. [Website glossary assessment](02-website-glossary-assessment.md)
+3. [GDPR and AI decision model](03-gdpr-ai-decision-model.md)
+4. [GDPR vocabulary before the AI matrix](04-gdpr-vocabulary-before-the-matrix.md)
+
+Their original order, headings, examples, tables, text diagrams and source
+references are retained. [INTAKE.md](INTAKE.md) is explicitly a derived
+synthesis and not a substitute for those source notes.
+
+The principal legal propositions have been checked against the GDPR, CJEU
+C-413/23 P, final EDPB role guidance, two EDPB consultation documents and
+Austrian Data Protection Authority material. The results and qualifications are
+in [SOURCES.md](SOURCES.md).
 
 Nothing in this directory is public guidance or a normative project rule. No
 website copy has been changed as part of this intake.
