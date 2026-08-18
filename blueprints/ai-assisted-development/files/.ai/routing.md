@@ -15,8 +15,8 @@ Then, by kind of task:
 - **Security** — `secure-development.md`, `risks.md`, `domains/testing.md`
 - **Architecture** — `domains/architecture.md`, `decisions.md`, `rules.md`
 - **Release** — `domains/release.md`, `quality-gates.md`
-- **Resuming after an interruption** — `state.md`, `progress.md`, and the open
-  branch with its pull request
+- **Continuing or resuming work** — `tasks.md` for what is queued,
+  `progress.md`, and the open branch with its pull request
 
 Add an entry when a new kind of task appears. Delete one when it stops
 happening.

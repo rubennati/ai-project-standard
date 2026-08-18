@@ -25,6 +25,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - No new approval step. Work that stays inside the agreed scope continues
   without further permission.
 
+### Changed — The workspace loads what the task needs
+
+- `.ai/state.md` carries the current objective and the constraints that bind
+  every task. The queue, the history and the project status it had accumulated
+  stay with the files that own them.
+- Routing entries name only what a task adds, and the continuation route reaches
+  the canonical task queue, so "continue the current work" resolves without
+  preloading the queue everywhere.
+- The `ai-assisted-development` payload carries the same ownership and loading
+  behaviour, so an adopter's workspace does not grow a second tracker.
+
 ### Added — Page primitives
 
 - `site/PAGE_PRIMITIVES.md` defines five page jobs without forcing them into one

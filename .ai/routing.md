@@ -1,31 +1,33 @@
 # Routing Guide
 
-Use minimal context for each task type.
+`project-brief.md` and `state.md` are already loaded. This is what a task adds
+on top of them.
 
 ## Project setup
 
-Read: `project-brief.md`, `state.md`, `rules.md`
+Read: `rules.md`
 
 ## Coding
 
-Read: `state.md`, `rules.md`, `domains/coding.md`, `quality-gates.md`, `secure-development.md`
+Read: `rules.md`, `domains/coding.md`, `quality-gates.md`, `secure-development.md`
 
 ## Documentation
 
-Read: `state.md`, `rules.md`, `domains/documentation.md`, `quality-gates.md`
+Read: `rules.md`, `domains/documentation.md`, `quality-gates.md`
 
 ## Review
 
-Read: `state.md`, `tasks.md`, `quality-gates.md`, `risks.md`
+Read: `tasks.md`, `quality-gates.md`, `risks.md`
 
 ## Security
 
-Read: `state.md`, `secure-development.md`, `risks.md`, `domains/testing.md`
+Read: `secure-development.md`, `risks.md`, `domains/testing.md`
 
-## Continuation after interruption
+## Continuing or resuming work
 
-Read: `state.md`, `progress.md`, `tasks.md`, `decisions.md`
+Read: `tasks.md` for what is queued, `progress.md`, `decisions.md`, and the open
+branch with its pull request
 
 ## Architecture work
 
-Read: `state.md`, `domains/architecture.md`, `decisions.md`, `rules.md`
+Read: `domains/architecture.md`, `decisions.md`, `rules.md`

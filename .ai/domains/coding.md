@@ -13,6 +13,8 @@ The payload files under `blueprints/*/files/` are code someone else will run.
 - Handle the failure case in the change that introduces the call.
 - No new dependency without it being part of the task and named in the pull
   request. `site/package.json` is deliberately small.
+- The site runs Astro 7 with Tailwind through its Vite plugin. The
+  `@tailwindcss/postcss` route breaks under Vite 8 — do not switch back to it.
 - Shell scripts run on macOS bash 3.2 as well as CI. No `mapfile`, no `readarray`,
   and `sed -i` differs between GNU and BSD — avoid in-place edits in checked-in
   scripts.
