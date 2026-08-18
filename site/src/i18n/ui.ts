@@ -127,6 +127,11 @@ export const ui = {
     homeArticlesLead:
       "Each one labelled with what kind of claim it makes, and when it was last checked against the source.",
     howToRead: "How to read this site",
+    howToReadShort:
+      "Every section says what kind of claim it is making, and claims about the outside world carry a source and the date they were last checked against it.",
+    evidenceMethodTitle: "Evidence method and source policy",
+    evidenceMethodDescription:
+      "What each claim label on this site means, what has to be true before a claim is published under it, and how sources are ranked.",
     howToReadLead:
       "Every section of every article says what kind of claim it is making, and factual claims carry the date they were last checked against the source. Vendor behaviour changes without notice — a claim without a date is not wrong yet, it is unfalsifiable.",
     repoHeading: "There is a repository underneath this",
@@ -142,13 +147,13 @@ export const ui = {
     whatThisSiteIsFor: "What this site is for",
     doorPaste: "Before you paste",
     doorPasteCopy:
-      "Where the data goes, per tool class \u2014 chat, coding agents, MCP servers, automation platforms. The route, the servers, the jurisdiction, how long it is kept, and whether \u201cdeleted\u201d means deleted.",
+      "Where a prompt travels once you send it, who holds it afterwards, and what is left after you delete it \u2014 per tool class, from chat to coding agents and MCP servers.",
     doorAllowed: "What you are allowed to do",
     doorAllowedCopy:
-      "Two questions, often confused. Personal data is a matter of data protection law; source code, client material and anything under an NDA is a matter of confidentiality \u2014 no less binding for not being personal. Private use differs from company use, some generated content already has to be labelled, and the duty is narrower than it first sounds.",
+      "What you may put in, and under which rule. Personal data is a data-protection question; client material and anything under an NDA is a confidentiality one, and private use differs from company use.",
     doorSetup: "How to set it up",
     doorSetupCopy:
-      "An agent with access to a repository or a server can do a great deal. What to restrict before you grant it, and the conventions that keep the work reviewable afterwards.",
+      "What an agent may reach, decided before you grant access \u2014 and the conventions that keep the result reviewable afterwards.",
 
     whatIsAvailableNow: "What is here today",
     nowStandard: "The standard",
@@ -322,6 +327,11 @@ export const ui = {
     homeArticlesLead:
       "Jeder gekennzeichnet, welche Art von Aussage er macht und wann er zuletzt an der Quelle geprüft wurde.",
     howToRead: "Wie diese Seite zu lesen ist",
+    howToReadShort:
+      "Jeder Abschnitt sagt, welche Art von Aussage er macht, und Aussagen über die Außenwelt tragen eine Quelle und das Datum ihrer letzten Prüfung.",
+    evidenceMethodTitle: "Nachweismethode und Quellenpolitik",
+    evidenceMethodDescription:
+      "Was die Aussagekennzeichnungen dieser Seite bedeuten, was gelten muss, bevor eine Aussage darunter erscheint, und wie Quellen gewichtet werden.",
     howToReadLead:
       "Jeder Abschnitt jedes Beitrags sagt, welche Art von Aussage er macht, und Tatsachenaussagen tragen das Datum ihrer letzten Prüfung an der Quelle. Anbieter ändern ihr Verhalten ohne Ankündigung — eine Aussage ohne Datum ist nicht falsch, sie ist unüberprüfbar.",
     repoHeading: "Darunter liegt ein Repository",
@@ -337,13 +347,13 @@ export const ui = {
     whatThisSiteIsFor: "Wofür diese Seite da ist",
     doorPaste: "Bevor du etwas hineinkopierst",
     doorPasteCopy:
-      "Wohin die Daten gehen, je Tool-Kategorie \u2014 Chat, Coding-Agenten, MCP-Server, Automatisierungsplattformen. Der Weg, die Server, der Rechtsraum, die Aufbewahrung, und was beim Löschen entfernt wird.",
+      "Wohin ein Prompt geht, sobald du ihn abschickst, wer ihn danach hat und was nach dem Löschen bleibt \u2014 je Tool-Kategorie, von Chat über Coding-Agenten bis MCP-Server.",
     doorAllowed: "Was du darfst",
     doorAllowedCopy:
-      "Zwei Fragen, die oft vermischt werden. Personenbezogene Daten sind eine Frage des Datenschutzrechts; Quellcode, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 nicht weniger bindend, nur weil es nicht personenbezogen ist. Privat ist nicht gleich betrieblich, manche generierten Inhalte müssen gekennzeichnet werden, und die Pflicht ist enger, als sie zunächst klingt.",
+      "Was hinein darf und nach welcher Regel. Personenbezogene Daten sind eine Frage des Datenschutzes, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 und privat ist nicht gleich betrieblich.",
     doorSetup: "Wie du es einrichtest",
     doorSetupCopy:
-      "Ein Agent mit Zugriff auf ein Repository oder einen Server kann viel. Was du einschränken solltest, bevor du ihn lässt \u2014 und die Konventionen, die die Arbeit danach überprüfbar halten.",
+      "Was ein Agent erreichen darf, entschieden bevor du den Zugriff gibst \u2014 und die Konventionen, die die Arbeit danach überprüfbar halten.",
 
     whatIsAvailableNow: "Was es heute gibt",
     nowStandard: "Der Standard",

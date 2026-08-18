@@ -103,7 +103,7 @@ const footerSections = [
       { href: localizedGlossary, label: ui.glossary },
       { href: localizedLaw, label: ui.law },
       { href: localizedBlog, label: ui.blog },
-      { href: `${localizedHome}#evidence-method`, label: ui.evidenceMethod },
+      { href: toHref(getLocalizedPath(locale, "evidenceMethod")), label: ui.evidenceMethod },
     ],
   },
   {

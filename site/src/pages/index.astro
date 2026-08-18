@@ -2,52 +2,21 @@
 import Base from "../layouts/Base.astro";
 import { getUi } from "../i18n/ui";
 import { repoUrl } from "../data/site";
-import { getTrainingAndRetention } from "../data/data-flows/training-and-retention";
-import { getWhatYouAgreeTo } from "../data/data-flows/what-you-agree-to";
-import { getGettingItBackOut } from "../data/data-flows/getting-it-back-out";
-import { getWhatMayGoIn } from "../data/law/what-may-go-in";
-import { getAiActTransparency } from "../data/law/ai-act-transparency";
-import { getBeforeYouGrantAccess } from "../data/secure-setup/before-you-grant-access";
-import EvidenceLegend from "../components/EvidenceLegend.astro";
 
 const locale = "en" as const;
 const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
 
-// The three doors are the three sections. They described them exactly and
-// linked nowhere, which left the homepage with no path into the writing.
+// The three doors are the three reader directions. The heading carries the
+// link so its accessible name is the heading alone.
 //
-// The heading carries the link so its accessible name is the heading alone,
-// and a stretched pseudo-element makes the whole card clickable. Wrapping the
-// card in the anchor instead would announce the entire paragraph as link text.
+// The cards used to list individual articles as well. That turned the homepage
+// into a second index of pages the hubs already list in full, and it competed
+// with the orientation the homepage is for. The hubs own that depth.
 const doors = [
-  {
-    heading: ui.doorPaste,
-    copy: ui.doorPasteCopy,
-    href: `${base}data-flows`,
-    articles: [
-      { title: getTrainingAndRetention(locale).title, href: `${base}data-flows/training-and-retention` },
-      { title: getWhatYouAgreeTo(locale).title, href: `${base}data-flows/what-you-agree-to` },
-      { title: getGettingItBackOut(locale).title, href: `${base}data-flows/getting-it-back-out` },
-    ],
-  },
-  {
-    heading: ui.doorAllowed,
-    copy: ui.doorAllowedCopy,
-    href: `${base}law`,
-    articles: [
-      { title: getWhatMayGoIn(locale).title, href: `${base}law/what-may-go-in` },
-      { title: getAiActTransparency(locale).title, href: `${base}law/ai-act-transparency` },
-    ],
-  },
-  {
-    heading: ui.doorSetup,
-    copy: ui.doorSetupCopy,
-    href: `${base}secure-setup`,
-    articles: [
-      { title: getBeforeYouGrantAccess(locale).title, href: `${base}secure-setup/before-you-grant-access` },
-    ],
-  },
+  { heading: ui.doorPaste, copy: ui.doorPasteCopy, href: `${base}data-flows` },
+  { heading: ui.doorAllowed, copy: ui.doorAllowedCopy, href: `${base}law` },
+  { heading: ui.doorSetup, copy: ui.doorSetupCopy, href: `${base}secure-setup` },
 ];
 
 ---
@@ -89,13 +58,6 @@ const doors = [
               <a href={door.href}>{door.heading}</a>
             </h3>
             <p class="leading-7">{door.copy}</p>
-            <ul class="mt-auto flex flex-col gap-2 border-t border-black/10 pt-4 text-sm dark:border-white/10">
-              {door.articles.map((article) => (
-                <li>
-                  <a href={article.href}>{article.title}</a>
-                </li>
-              ))}
-            </ul>
           </article>
         ))
       }
@@ -103,12 +65,12 @@ const doors = [
     <p class="mt-4 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.stillWriting}</p>
   </section>
 
-  <section id="evidence-method" class="mt-20 scroll-mt-6">
+  <section id="evidence-method" class="mt-20 max-w-3xl scroll-mt-6">
     <h2 class="text-2xl font-semibold">{ui.howToRead}</h2>
-    <p class="mt-3 max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.howToReadLead}</p>
-    <div class="mt-6 max-w-3xl rounded-lg border border-black/10 p-6 dark:border-white/10">
-      <EvidenceLegend locale={locale} />
-    </div>
+    <p class="mt-3 leading-7 text-zinc-700 dark:text-zinc-300">{ui.howToReadShort}</p>
+    <p class="mt-3">
+      <a href={`${base}glossary/evidence-method`}>{ui.evidenceMethod}</a>
+    </p>
   </section>
 
 

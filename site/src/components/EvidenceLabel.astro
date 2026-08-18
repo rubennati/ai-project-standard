@@ -1,6 +1,7 @@
 ---
 import { getEvidenceCopy, type EvidenceLevel } from "../data/evidence";
-import type { SiteLocale } from "../i18n/ui";
+import { getLocalizedPath } from "../i18n/routes";
+import { getUi, type SiteLocale } from "../i18n/ui";
 
 interface Props {
   level: EvidenceLevel;
@@ -11,11 +12,24 @@ interface Props {
 
 const { level, locale, checked } = Astro.props;
 const { label, meaning } = getEvidenceCopy(locale, level);
+const ui = getUi(locale);
 
-// The badge stays compact: three sections in a row on the same level would
-// otherwise repeat the same sentence three times. The meaning is carried on
-// the element itself, so it is available on hover and to assistive technology,
-// and the page states it once in full.
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
+const methodHref = toHref(getLocalizedPath(locale, "evidenceMethod"));
+
+// The badge is a link, not a decorated paragraph. What a level means has to
+// reach a keyboard user and a screen reader, and the previous markup carried
+// it only in `title` (mouse) and in `aria-label` on a <p>, whose role does not
+// reliably support a name.
+//
+// The accessible name is the level, its date and where the link goes. The full
+// definition lives on the evidence-method page rather than being read out again
+// at every labelled section — eight identical paragraphs is not disclosure.
+//
+// Muted ink rather than heading ink: the badge sits between a heading and its
+// first paragraph, so it should be inspectable without competing with them.
 const tone: Record<EvidenceLevel, string> = {
   fact: "border-black/20 dark:border-white/25",
   measured: "border-black/20 dark:border-white/25",
@@ -25,17 +39,12 @@ const tone: Record<EvidenceLevel, string> = {
 };
 ---
 
-<p
+<a
+  href={methodHref}
   title={meaning}
-  aria-label={`${label}: ${meaning}`}
-  class={`inline-flex items-baseline gap-x-2 rounded-full border px-3 py-1 text-xs ${tone[level]}`}
+  class={`inline-flex items-baseline gap-x-2 rounded-full border px-3 py-1 text-xs text-[var(--ink-muted)] no-underline ${tone[level]}`}
 >
   <span class="font-semibold uppercase tracking-[0.06em]">{label}</span>
-  {
-    checked && (
-      <time datetime={checked} class="text-zinc-600 dark:text-zinc-400">
-        {checked}
-      </time>
-    )
-  }
-</p>
+  {checked && <time datetime={checked}>{checked}</time>}
+  <span class="sr-only">{`. ${ui.evidenceMethod}`}</span>
+</a>
