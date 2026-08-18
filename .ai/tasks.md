@@ -19,7 +19,7 @@ list records execution order rather than restating those decisions.
    verification, technical depth, evidence and the next step.
 3. [x] Build “Connect AI to tools and data” as the complete prototype path,
    using MCP as the technical example rather than the reader's goal.
-4. [ ] Use Vibe Coding as the second template test across Explore, Prototype,
+4. [x] Use Vibe Coding as the second template test across Explore, Prototype,
    Deliver and Operate.
 5. [ ] Make Blog visibly editorial and Law visibly reference-led; replace their
    weak landing-page copy and remove public roadmap filler such as “Planned” or

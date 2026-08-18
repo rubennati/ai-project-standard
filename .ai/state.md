@@ -5,7 +5,7 @@
 - `docs/purpose.md` is the single statement of the destination and the relationship between the public website product and the repository behind it. `docs/website-product-brief.md` owns the product statement, reader outcomes and content admission test. Where another file disagrees with `purpose.md`, that file is out of date.
 - Self-conformance runs in CI (`check-conformance.sh`): purpose is pointed at, every blueprint answers four questions, external claims carry a check date, blueprint paths resolve, vocabulary matches the glossary.
 - Current phase: `v0.3.0` tagged and released; `v0.1.0` and `v0.2.0` before it.
-- **Objective, set 2026-08-10:** establish AI Standard as one public website product. The stable-route-first information architecture, native Astro/Tailwind theme foundation, page-primitives system and complete MCP prototype path are implemented without a third-party theme or new dependency. The active step is Vibe Coding as the second template test. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
+- **Objective, set 2026-08-10:** establish AI Standard as one public website product. The stable-route-first information architecture, native Astro/Tailwind theme foundation, page-primitives system and complete MCP prototype path are implemented without a third-party theme or new dependency. Vibe Coding is built as the second template test; the active step is reviewing both complete paths together. The two built blueprints remain honest `draft` artifacts; promoting them still requires use in a real project, but that is no longer the active objective.
 - Navigation, information architecture, public URLs and the taxonomy are asked about before they change — `AGENTS.md` → Change scope, after a header change that was made without asking (`errors.md`).
 - The earlier plan for a broad knowledge site with a marked developer area underneath is retired. The website stands alone; the repository supports it with sources, artifacts and checks rather than becoming a second public identity.
 
@@ -51,8 +51,7 @@ History lives in `progress.md`; this section is current facts only.
 
 ## Immediate next steps
 
-1. Use Vibe Coding as the second template test.
-2. Review both complete paths on desktop and mobile, in English and German, before mapping the remaining page families.
+1. Review both complete paths on desktop and mobile, in English and German, before mapping the remaining page families.
 
 Existing work stays queued rather than being folded into the redesign: legal
 review, the two planned blog posts, the two missing Start entry points, splitting
