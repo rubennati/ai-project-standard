@@ -14,7 +14,7 @@ records.
 ## Core rules
 
 - `docs/purpose.md` is the top of the hierarchy: the destination, the three surfaces, how information flows. Read it before proposing anything structural; where another file disagrees with it, that file is out of date
-- Judge work against the destination, not against the task alone. If it does not move a developer closer to being able to answer *what changed, why, on whose decision, and what was checked* — say so rather than finishing it
+- Judge work against that destination, not against the task alone. If it does not move someone closer to it, say so rather than finishing it
 - Use the vocabulary the project has already defined. `site/src/data/terms.ts` holds 80 researched terms — check it before inventing a name. CI enforces the ones that have drifted before
 - Write everything in English — see `docs/language-style.md`. The site's translated pages are the only exception
 - Do not perform unrelated refactors

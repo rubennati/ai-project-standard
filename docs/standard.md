@@ -3,13 +3,8 @@
 The inventory: what this repository holds, what each part is for, and how to
 take it.
 
-The destination it serves is stated once, in [purpose.md](./purpose.md):
-
-> A developer brings an AI agent into their project and can still answer, months
-> later: what changed, why, on whose decision, and what was checked — without
-> having had to invent the practice themselves.
-
-Everything below exists because it moves someone closer to that.
+The destination it serves is stated once, in [purpose.md](./purpose.md).
+Everything below exists because it moves someone closer to it.
 
 ## How the standard is delivered
 
