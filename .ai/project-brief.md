@@ -44,13 +44,9 @@ useful to inspect, copy or contribute.
 
 ## Where this is going
 
-> A person uses AI in real work and can understand what it makes possible,
-> choose an appropriate form of collaboration, set boundaries that hold, and
-> later explain what the system could reach, what it did, why, on whose decision
-> and what was checked.
-
-Stated once in `docs/purpose.md`, which is the authority. It is an outcome, not
-a structure: structures follow from it and can be replaced.
+The destination is stated once, in `docs/purpose.md`, which is the authority.
+It is an outcome, not a structure: structures follow from it and can be
+replaced.
 
 ## The drift test
 
