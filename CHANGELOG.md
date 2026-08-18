@@ -6,6 +6,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — A scope correction reaches work already done
+
+- `AGENTS.md` and the `ai-assisted-development` payload extend the existing
+  scope-correction rule to work already in the tree: the agent checks the diff
+  against the corrected scope before continuing, and what falls outside it
+  leaves the change. Reverting it, splitting it off or keeping it aside is the
+  agent's method choice; keeping it in the change is not.
+- No new approval step. Work that stays inside the agreed scope continues
+  without further permission.
+
 ### Added — Page primitives
 
 - `site/PAGE_PRIMITIVES.md` defines five page jobs without forcing them into one

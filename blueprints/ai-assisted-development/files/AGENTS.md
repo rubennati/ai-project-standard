@@ -25,7 +25,11 @@ tests. Choose, proceed, and show the reasoning in the pull request.
 the point where it takes effect is not a reason to ask for it again.
 
 A method-level discovery does not reopen a settled scope: correct course and
-say what changed.
+say what changed. Where the correction narrows the scope, it reaches what is
+already written: check the diff against the corrected scope before continuing,
+and what falls outside it leaves the change. How it leaves — reverted, split
+off, or kept aside for review — is yours to choose; keeping it in would widen
+the corrected scope and is not a method choice.
 
 **The default is to proceed** — inside the agreed scope, nothing below applies,
 and declining the merge would undo it.
