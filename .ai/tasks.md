@@ -26,6 +26,7 @@ list records execution order rather than restating those decisions.
    “More is coming”.
 6. [ ] Verify the complete system on desktop and mobile, in English and German,
    including accessibility, evidence treatment and zero horizontal overflow.
+   The two complete decision paths are checked; the rest of the site is not.
 7. [ ] Map the remaining page families onto the proven primitives and migrate
    them in reviewable groups. Obtain the recorded human approvals before final
    navigation labels, `/use-cases` replacement, `/docs/**` compatibility work

@@ -1,0 +1,18 @@
+---
+import EvidenceMethodContent from "../../components/EvidenceMethodContent.astro";
+import { getUi } from "../../i18n/ui";
+import Base from "../../layouts/Base.astro";
+
+const locale = "en" as const;
+const ui = getUi(locale);
+---
+
+<Base
+  title={ui.evidenceMethodTitle}
+  description={ui.evidenceMethodDescription}
+  schemaType="WebPage"
+  locale={locale}
+  routeKey="evidenceMethod"
+>
+  <EvidenceMethodContent locale={locale} />
+</Base>
