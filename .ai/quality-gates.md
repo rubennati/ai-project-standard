@@ -33,3 +33,6 @@ Stated rather than hidden, because a missing gate is a finding.
 - The pull request explains why, not only what
 - Documentation lands with the change it describes
 - Work was held against the destination in `docs/purpose.md` before it started
+- A value in a reusable or reader-facing artifact belongs to its reader, not
+  only to the run that produced it — in a log, a pull request or an audit, the
+  same value is what belongs there

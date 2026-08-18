@@ -397,3 +397,22 @@ decisions is always incomplete and reads as "ask when unlisted", which is the
 behaviour being corrected. Also rejected: reversibility as the single organising
 rule, because a public interface, a dependency and an architectural change are
 reserved decisions while still entirely undoable in a branch.
+
+## 2026-08-18 - Nothing rises merely by being true
+
+Decision: `docs/purpose.md` states the direction of its hierarchy as well as its
+order. An observation from an instance, a test, a session or working context
+stays where it was made until it establishes something reusable above it, and
+what the evidence establishes decides that rather than where it originated.
+`.ai/quality-gates.md` records the check under *Not automated*.
+
+Rationale: the hierarchy governed conflict between two things already placed and
+said nothing about how something gets placed, so truth was left doing the work —
+and truth is the weakest test an artifact has to pass. A value can be true,
+correct for the run that produced it, pass every mechanical check, and belong to
+no reader of the file it landed in. The evidence level drew this line for public
+claims only.
+
+Rejected: a promotion stage, register or checklist between the levels. Every
+correction this project has recorded was behavioural rather than another
+mechanism.
