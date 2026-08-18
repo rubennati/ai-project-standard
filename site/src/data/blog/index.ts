@@ -39,14 +39,3 @@ export const getBlogPosts = (locale: SiteLocale): BlogPostSummary[] =>
       href: getLocalizedPath(locale, routeKey),
     }));
 
-/** Posts that are planned but not written. Named rather than faked. */
-export const getPlannedPosts = (locale: SiteLocale): string[] =>
-  locale === "de"
-    ? [
-        "„Anonymisiert“ heißt selten anonym — warum Namen zu entfernen die Rechtslage meist nicht ändert.",
-        "„EU-gehostet“ beantwortet eine andere Frage als die, die du gestellt hast.",
-      ]
-    : [
-        "“Anonymised” rarely means anonymous — why removing names usually does not change the legal position.",
-        "“EU-hosted” answers a different question from the one you asked.",
-      ];

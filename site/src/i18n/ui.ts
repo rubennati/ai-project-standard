@@ -44,9 +44,8 @@ export const ui = {
     lawDescription:
       "What the law requires when you use AI at work \u2014 Austria first, then the EU. Each claim names its norm and the date it was checked.",
     lawIntro:
-      "Rules that are already in force, not ones that are coming. Every section carries a label saying what kind of claim it is \u2014 a legal requirement, a reading of one, or what I would do about it \u2014 with the date it was last checked against the source.",
-    lawMore:
-      "More is being written: what you may put into a tool when it belongs to a client, and where the line runs between private and company use.",
+      "Rules that are already in force, not ones that are coming. Each article states the question it answers and the norm it rests on.",
+    lawChecked: "Checked",
     openSource: "Open source",
     openSourceTitle: "Open source",
     openSourceDescription:
@@ -169,13 +168,11 @@ export const ui = {
 
     blogTitle: "Blog",
     blogDescription:
-      "Posts on where your input goes when you use an AI tool \u2014 measured where it can be measured, and named as an assessment where it cannot.",
+      "Authored, dated pieces that follow one question, observation or argument far enough to be worth reading.",
     blogIntro:
-      "Longer pieces that follow one question all the way through. Same rules as the rest of the site: primary sources, stated check dates, and a label on every claim.",
+      "Longer pieces that follow one question all the way through. Each carries an author and a date, and argues something rather than summarising it.",
     blogFeed: "RSS feed",
     blogReviewed: "last reviewed",
-    blogPlanned: "Planned",
-    blogPlannedIntro: "Written next, in this order:",
     blogPublished: "Published",
     blogBackToIndex: "All posts",
     aboutTitle: "About",
@@ -240,9 +237,8 @@ export const ui = {
     lawDescription:
       "Was das Gesetz beim Einsatz von KI im Arbeitsalltag verlangt \u2014 Österreich zuerst, dann die EU. Jede Aussage nennt ihre Norm und das Datum der Prüfung.",
     lawIntro:
-      "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Abschnitt trägt eine Kennzeichnung, welche Art von Aussage er ist \u2014 gesetzliche Pflicht, deren Auslegung, oder was ich dazu tun würde \u2014 samt Datum der letzten Prüfung an der Quelle.",
-    lawMore:
-      "Weiteres entsteht: was in ein Tool hineindarf, wenn es Kundenmaterial ist, und wo die Grenze zwischen privater und betrieblicher Nutzung verläuft.",
+      "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Beitrag nennt die Frage, die er beantwortet, und die Norm, auf der er beruht.",
+    lawChecked: "Geprüft",
     openSource: "Open Source",
     openSourceTitle: "Open Source",
     openSourceDescription:
@@ -369,13 +365,11 @@ export const ui = {
 
     blogTitle: "Blog",
     blogDescription:
-      "Beitr\u00e4ge dar\u00fcber, wohin deine Eingaben gehen, wenn du ein KI-Tool benutzt \u2014 gemessen, wo es messbar ist, und als Einsch\u00e4tzung benannt, wo nicht.",
+      "Beitr\u00e4ge mit Autor und Datum, die einer Frage, Beobachtung oder These so weit folgen, dass sie sich zu lesen lohnen.",
     blogIntro:
-      "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Es gelten dieselben Regeln wie \u00fcberall hier: Prim\u00e4rquellen, angegebene Pr\u00fcfdaten und eine Kennzeichnung an jeder Aussage.",
+      "L\u00e4ngere St\u00fccke, die einer Frage bis zum Ende folgen. Jedes hat einen Autor und ein Datum und vertritt etwas, statt nur zusammenzufassen.",
     blogFeed: "RSS-Feed",
     blogReviewed: "zuletzt fachlich geprüft",
-    blogPlanned: "Geplant",
-    blogPlannedIntro: "Als N\u00e4chstes geschrieben, in dieser Reihenfolge:",
     blogPublished: "Ver\u00f6ffentlicht",
     blogBackToIndex: "Alle Beitr\u00e4ge",
     aboutTitle: "Über das Projekt",
