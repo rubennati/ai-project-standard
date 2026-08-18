@@ -16,18 +16,38 @@ Read, in this order:
 Reading is cheap. If any of those three is missing or empty, say so and stop —
 working without them is how an agent produces something nobody asked for.
 
+## What you decide
+
+Inside an agreed scope, the method is yours — approach, structure, sequencing,
+tests. Choose, proceed, and show the reasoning in the pull request.
+
+**An explicit instruction or a confirmed plan is the human decision.** Reaching
+the point where it takes effect is not a reason to ask for it again.
+
+A method-level discovery does not reopen a settled scope: correct course and
+say what changed.
+
+**The default is to proceed** — inside the agreed scope, nothing below applies,
+and declining the merge would undo it.
+
 ## Stop and ask
 
 Stop, state what you found, and wait for an answer. Do not pick the most likely
-option and continue.
+option and continue. Ask **before** you build, not after.
 
-- The task can be read two ways and the readings lead to different work
-- What you found contradicts what the task assumed
+- The task can be read two ways and the readings differ in outcome, interface or
+  consequence. Where they differ only in how it is built, choose and say which
+- What you found changes the objective or the consequence. Where it only moves
+  or reshapes the work, correct course and say so
 - Doing it requires adding a dependency, a service, or a credential
-- It touches authentication, authorisation, payments, personal data, or deletion
+- It changes how authentication, authorisation, payments, personal data or
+  deletion work
 - It changes a public interface, a schema, a URL, or anything already released
-- It would take more than roughly an hour of work with no checkpoint
 - The change is larger than the branch name would suggest
+
+Approving a design does not authorise acting on something real — a live
+credential, real personal data, a production system, or anything that leaves the
+branch.
 
 Asking costs one message. Guessing costs a review cycle, and sometimes a
 production incident.
@@ -42,7 +62,8 @@ Not "ask first" — never, in this repository:
 - Delete or rewrite history, including `git commit --amend` on pushed commits
 - Add a dependency without it being part of the task and stated in the pull request
 - Disable a test, a lint rule or a type error to unblock yourself
-- Change files outside the scope you were given, however small the fix looks
+- Change files outside the scope you were given, however small the fix looks —
+  report what you found and leave it
 - Claim something is verified that you did not run
 
 ## The loop
@@ -50,7 +71,9 @@ Not "ask first" — never, in this repository:
 1. **Understand** — read the relevant files. State your assumptions in writing.
 2. **Plan** — say what you will change before changing it. For multi-file or
    structurally non-obvious work, get the plan confirmed first.
-3. **Implement** — one concern, one short-lived branch.
+3. **Implement** — one concern, one short-lived branch. Commit as you go; long
+   work needs checkpoints, not permission. Open a draft pull request for
+   handoff, interruption or early review.
 4. **Verify** — run the project's checks and show the output. "It should work"
    is not verification.
 5. **Review** — open a pull request explaining *why*. The diff shows *what*.

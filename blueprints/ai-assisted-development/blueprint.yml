@@ -3,10 +3,11 @@ title: AI-assisted development
 status: draft
 applies-to: existing-repo
 summary: >-
-  The frame an AI agent operates inside: when it stops and asks, what it may
-  never do, what must be verified before anything reaches the default branch,
-  plus an initialisation interview it runs on first contact. Drops on top of an
-  existing repository; chooses nothing about the language or the licence.
+  The frame an AI agent operates inside: what it decides itself, when it stops
+  and asks, what it may never do, what must be verified before anything reaches
+  the default branch, plus an initialisation interview it runs on first contact.
+  Drops on top of an existing repository; chooses nothing about the language or
+  the licence.
 licence: MIT-0
 placeholders: []
 # What was run against a fresh copy, and when. A blueprint claiming "this is how
@@ -36,3 +37,6 @@ verified:
     - Whether an agent actually follows the frame over weeks rather than for
       the first few edits. That needs a real project, which is why the status
       is draft.
+    - Whether the stated latitude moves behaviour in both directions —
+      proceeding where the frame says proceed, and still stopping at the
+      reserved decisions. A real run has to record both.
