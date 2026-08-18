@@ -23,7 +23,7 @@ interface PagePrimitiveCopy {
   fitsWhen: string;
   evidence: string;
   source: string;
-  doNotUseWhen: string;
+  stopCondition: string;
   saferAlternative: string;
   expectedResult: string;
   verification: string;
@@ -52,7 +52,7 @@ const copy: Record<SiteLocale, PagePrimitiveCopy> = {
     fitsWhen: "Fits when",
     evidence: "Evidence",
     source: "Source",
-    doNotUseWhen: "Do not use this when",
+    stopCondition: "Stop condition",
     saferAlternative: "Safer alternative",
     expectedResult: "Expected result",
     verification: "Verify",
@@ -79,7 +79,7 @@ const copy: Record<SiteLocale, PagePrimitiveCopy> = {
     fitsWhen: "Passt, wenn",
     evidence: "Nachweis",
     source: "Quelle",
-    doNotUseWhen: "Nicht verwenden, wenn",
+    stopCondition: "Stoppbedingung",
     saferAlternative: "Sicherere Alternative",
     expectedResult: "Erwartetes Ergebnis",
     verification: "Prüfen",

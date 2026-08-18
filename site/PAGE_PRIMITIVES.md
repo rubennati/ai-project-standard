@@ -28,7 +28,7 @@ an explanation, decision path and implementation guide at different depths.
 | --- | --- |
 | `PageIntroduction` | Names the page job and puts a plain-language answer before context, fit and metadata. |
 | `EvidenceBand` | Joins a claim level, summary, source and check date. Fact and measured instances fail at build time without all required evidence. |
-| `StopCondition` | States where the approach does not fit and, when possible, gives a safer alternative. |
+| `StopCondition` | Marks a case where proceeding would cross a consequential boundary, and gives the safer route instead. |
 | `ImplementationStep` | Keeps action, expected result and verification together so an instruction cannot end at activity. |
 | `ArtifactLink` | Marks material to copy as an artifact rather than presenting it as another article. |
 | `RelatedNextStep` | Continues through Possibility, Collaboration, Reach, Control or Reference instead of listing generic related posts. |
@@ -38,7 +38,9 @@ an explanation, decision path and implementation guide at different depths.
 - Put the answer before background or implementation depth.
 - Use only the components that serve the page's job; an empty ritual section is
   worse than omitting it.
-- Keep a stop condition close to the recommendation it limits.
+- Keep a stop condition close to the recommendation it limits. Reserve it for a
+  boundary with a material consequence; fit, trade-offs and simpler alternatives
+  belong in ordinary page content.
 - Keep each implementation action with its expected result and check.
 - Use `EvidenceBand` for a claim that controls a decision. Existing inline
   `EvidenceLabel` remains appropriate for narrower article sections.
