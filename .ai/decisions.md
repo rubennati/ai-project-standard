@@ -358,3 +358,42 @@ approving consequences and testing revocation make the decision observable.
 
 Rejected: a technology landing page, a new top-level MCP section, an immediate
 header entry and an illustrative artifact that has not been run.
+
+## 2026-08-18 - Three boundaries behind the agent frame
+
+Decision: the frame distinguishes three things it previously ran together.
+Ordinary method and implementation judgment belongs to the agent inside an
+agreed scope. Some decisions stay reserved to a human even when the
+implementation would be reversible — a dependency, a service or a credential,
+how authentication, personal data or deletion work, a public interface, and
+anything already released. Actions whose effect escapes the branch, or that
+declining the merge would not undo, stay separately controlled.
+
+The operational rules follow in `AGENTS.md` and in the blueprint payload: an
+affirmative default to proceed, the two ambiguity triggers split between method
+and consequence, the roughly-one-hour trigger replaced by checkpointing, and a
+reporting outlet for out-of-scope findings.
+
+The relationship with `concepts/agent-action-control.md` is settled as layers
+rather than maturity levels. The frame governs delegated judgment and repository
+work; the concept governs action consequence and the design of the controls that
+enforce it. Neither is a smaller version of the other, and the concept's Open
+note recording this as unsettled is removed.
+
+Rationale: the frame said when to stop and what may never happen and never said
+what the agent is trusted to decide, so latitude existed only as the gap between
+prohibitions, and an unlisted situation read as a reason to ask. The error
+history is the evidence for keeping the reservations — navigation changed
+without asking, and four steps of objective drift, both with fully reversible
+git state — which is why reversibility alone cannot decide what needs a human.
+It is also the evidence for the affirmative half: every recorded correction was
+behavioural rather than another mechanism, and this adds none. The reservations
+were already enumerated, the action boundary is already enforced by branch
+protection and by which tools an agent may call, and what was missing was the
+default.
+
+Rejected: a third permission list, because an enumerated set of allowed
+decisions is always incomplete and reads as "ask when unlisted", which is the
+behaviour being corrected. Also rejected: reversibility as the single organising
+rule, because a public interface, a dependency and an architectural change are
+reserved decisions while still entirely undoable in a branch.

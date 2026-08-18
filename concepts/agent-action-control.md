@@ -42,6 +42,14 @@ ships, and for a single repository with one maintainer it is proportionate.
 Build the graded model below when actions reach other people, when they are
 irreversible, or when several agents act under permissions nobody can enumerate.
 
+That frame and this concept are layers, not two rungs of one ladder. The frame
+governs delegated judgment in a repository: what an agent decides itself, which
+decisions are reserved to a human even when the implementation is reversible,
+and what must be verified. This concept governs the consequence of an action and
+the design of the controls that hold it — enforced around the model rather than
+read by it (§4.5). Building the graded model does not retire the frame, and
+neither is a smaller version of the other.
+
 ## 3. The architecture
 
 ### Reasoning and authority, separated
@@ -229,8 +237,8 @@ other three, and the other three are more common.
 - Where the tools and credentials live: [tool-access](./tool-access.md)
 - What the agent writes into, and under what review:
   [knowledge-lifecycle](./knowledge-lifecycle.md)
-- The shipped frame that implements a small version of this:
-  [`ai-assisted-development`](../blueprints/ai-assisted-development/)
+- The frame this pairs with, governing delegated judgment rather than action
+  consequence: [`ai-assisted-development`](../blueprints/ai-assisted-development/)
 - The repository's own minimum posture:
   [docs/security-baseline.md](../docs/security-baseline.md)
 - Research:
@@ -240,9 +248,6 @@ other three, and the other three are more common.
 
 ## Open
 
-- **The overlap with the shipped blueprint.** `ai-assisted-development` carries a
-  flat "stop and ask" list; this is the graded version of the same idea. Two
-  models in two places is worse than either, and which one wins is not settled.
 - **No numbers here.** What share to sample, which threshold to gate on, how many
   actions before escalating — all of it is project-specific and none of it is in
   the source material.

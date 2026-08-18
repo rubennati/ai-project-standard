@@ -17,7 +17,7 @@ records.
 - Judge work against that destination, not against the task alone. If it does not move someone closer to it, say so rather than finishing it
 - Use the vocabulary the project has already defined. `site/src/data/terms.ts` holds 80 researched terms — check it before inventing a name. CI enforces the ones that have drifted before
 - Write everything in English — see `docs/language-style.md`. The site's translated pages are the only exception
-- Do not perform unrelated refactors
+- Do not perform unrelated refactors. Report what you notice outside the current scope and leave it
 - Request human approval before major architectural or dependency changes
 - Update `.ai/state.md` when the objective, a constraint or a decision changes — not to mirror what a branch or pull request already records
 - Update `.ai/decisions.md` after architectural decisions, with the reasoning and the date
@@ -28,7 +28,7 @@ For any non-trivial task, follow this loop. Trivial changes (typos, one-line fix
 
 1. **Understand** — read the relevant `.ai/` files (`state.md`, `routing.md`, applicable `domains/`) and any code or docs the task touches. State assumptions explicitly.
 2. **Plan** — state the plan first (in chat, the draft PR description, or `.ai/state.md`) before editing. For multi-file or structurally non-obvious work, confirm scope with a human before implementing.
-3. **Implement** — focused changes on a short-lived branch. One concern per branch.
+3. **Implement** — focused changes on a short-lived branch. One concern per branch. Commit as you go; long work needs checkpoints, not permission. Open a draft PR for handoff, interruption or early review.
 4. **Verify** — run the project's standard quality commands locally (see below). If a command is missing for a check you'd want, raise it rather than silently skipping.
 5. **Review** — open a PR with a clear summary. CI is the first gate, AI reviews are advisory, a human merges.
 
@@ -52,6 +52,20 @@ This repository is documentation-first; its CI exercises `lint`-equivalents (mar
 - Agents must not push directly to `main` even where branch protection is not yet configured.
 
 If a change is larger than the current task's scope (architecture, dependencies, governance), pause and ask before committing.
+
+## What you decide
+
+Inside an agreed scope, the method is yours — approach, structure, sequencing,
+tests. Choose, proceed, and show the reasoning in the pull request.
+
+An explicit instruction or a confirmed plan is the human decision. Reaching the
+point where it takes effect is not a reason to ask for it again, and a
+method-level discovery does not reopen a settled scope: correct course and say
+what changed.
+
+The default is to proceed — inside the agreed scope, nothing below applies, and
+declining the merge would undo it. Approving a design does not authorise acting
+on something real: a live credential, real personal data, or a live system.
 
 ## Change scope
 
