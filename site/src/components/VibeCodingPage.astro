@@ -1,0 +1,146 @@
+---
+import ArtifactLink from "./ArtifactLink.astro";
+import EvidenceBand from "./EvidenceBand.astro";
+import PageIntroduction from "./PageIntroduction.astro";
+import RelatedNextStep from "./RelatedNextStep.astro";
+import StopCondition from "./StopCondition.astro";
+import { artifactHref, getVibeCoding, REVIEWED } from "../data/start/vibe-coding";
+import { getLocalizedPath } from "../i18n/routes";
+import type { SiteLocale } from "../i18n/ui";
+import Base from "../layouts/Base.astro";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getVibeCoding(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
+---
+
+<Base
+  title={content.title}
+  description={content.description}
+  ogType="article"
+  schemaType="Article"
+  locale={locale}
+  routeKey="startVibeCoding"
+>
+  <article class="layout-reading prototype-path">
+    <PageIntroduction
+      locale={locale}
+      job="decision"
+      title={content.title}
+      answer={content.answer}
+      lead={content.lead}
+      fit={content.fit}
+      metadata={[{ label: content.reviewedLabel, value: REVIEWED, datetime: REVIEWED }]}
+    />
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.possibilityLabel}</p>
+      <h2>{content.possibilityHeading}</h2>
+      <p class="prototype-section__lead">{content.possibilityLead}</p>
+
+      <div class="outcome-grid">
+        {
+          content.opportunities.map((opportunity) => (
+            <article class="outcome-card">
+              <h3>{opportunity.title}</h3>
+              <dl>
+                <div>
+                  <dt>{content.outcomeLabel}</dt>
+                  <dd>{opportunity.outcome}</dd>
+                </div>
+                <div>
+                  <dt>{content.stageLabel}</dt>
+                  <dd>{opportunity.stage}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="prototype-section">
+      <p class="prototype-section__eyebrow">{content.stagesLabel}</p>
+      <h2>{content.stagesHeading}</h2>
+      <p class="prototype-section__lead">{content.stagesLead}</p>
+
+      <div class="collaboration-grid">
+        {
+          content.stages.map((stage) => (
+            <article class="collaboration-card">
+              <h3>{stage.name}</h3>
+              <dl>
+                <div>
+                  <dt>{content.workLabel}</dt>
+                  <dd>{stage.work}</dd>
+                </div>
+                <div>
+                  <dt>{content.aiLabel}</dt>
+                  <dd>{stage.ai}</dd>
+                </div>
+                <div>
+                  <dt>{content.humanLabel}</dt>
+                  <dd>{stage.human}</dd>
+                </div>
+                <div>
+                  <dt>{content.checkLabel}</dt>
+                  <dd>{stage.check}</dd>
+                </div>
+              </dl>
+            </article>
+          ))
+        }
+      </div>
+
+      <EvidenceBand locale={locale} level="advice" summary={content.stagesEvidence} />
+    </section>
+
+    <section class="prototype-section">
+      <h2>{content.transitionsHeading}</h2>
+      <p class="prototype-section__lead">{content.transitionsLead}</p>
+      <ol class="boundary-questions">
+        {
+          content.transitions.map((item, index) => (
+            <li>
+              <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
+              <div>
+                <h3>{item.title}</h3>
+                <p class="boundary-questions__question">{item.question}</p>
+                <p class="boundary-questions__reason">{item.reason}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <StopCondition
+      locale={locale}
+      description={content.unsafeDescription}
+      alternative={content.unsafeAlternative}
+    />
+
+    <ArtifactLink
+      locale={locale}
+      title={content.artifactTitle}
+      description={content.artifactDescription}
+      href={artifactHref}
+      status={content.artifactStatus}
+      external
+    />
+
+    <RelatedNextStep
+      locale={locale}
+      stage="control"
+      title={content.nextTitle}
+      description={content.nextDescription}
+      href={toHref(getLocalizedPath(locale, "secureSetupAccess"))}
+    />
+  </article>
+</Base>

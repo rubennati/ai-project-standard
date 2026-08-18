@@ -21,6 +21,7 @@ export type LocalizedRouteKey =
   | "dataFlowsKnowledgeSources"
   | "dataFlowsConnectAiTools"
   | "startWhatItIsDoing"
+  | "startVibeCoding"
   | "lawFourQuestions"
   | "secureSetup"
   | "secureSetupAccess"
@@ -84,6 +85,8 @@ export const getLocalizedPath = (
       return `${prefix}/data-flows/connect-ai-to-tools-and-data`;
     case "startWhatItIsDoing":
       return `${prefix}/start/what-it-is-doing`;
+    case "startVibeCoding":
+      return `${prefix}/start/vibe-coding`;
     case "lawFourQuestions":
       return `${prefix}/law/four-separate-questions`;
     case "dataFlowsDeletion":
