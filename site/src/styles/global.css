@@ -24,7 +24,7 @@
     --layout-wide: 60rem;
     --layout-reading: 44rem;
     --layout-gutter: clamp(1.25rem, 4vw, 2rem);
-    --surface-canvas: oklch(98.5% 0.008 88);
+    --surface-canvas: oklch(98.5% 0.003 250);
     --surface-raised: oklch(100% 0 0);
     --surface-quiet: oklch(96% 0.014 250);
     --surface-stop: oklch(96% 0.025 25);
