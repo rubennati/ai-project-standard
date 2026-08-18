@@ -69,8 +69,6 @@ export interface ConnectAiToolsDataContent {
   opportunities: Opportunity[];
   outcomeLabel: string;
   simplerLabel: string;
-  noConnectionDescription: string;
-  noConnectionAlternative: string;
   collaborationLabel: string;
   collaborationHeading: string;
   collaborationLead: string;
@@ -121,7 +119,7 @@ const en: ConnectAiToolsDataContent = {
   possibilityLabel: "Possibility",
   possibilityHeading: "What a connection changes",
   possibilityLead:
-    "Live access is useful when it removes a real hand-off. It is unnecessary infrastructure when a person can supply the small amount of context the task needs.",
+    "Live access is useful when it removes a real hand-off. It is unnecessary infrastructure when a person can supply the small amount of context the task needs — a selected excerpt or a read-only export often answers the question without a connection.",
   opportunities: [
     {
       title: "Find current knowledge",
@@ -154,10 +152,6 @@ const en: ConnectAiToolsDataContent = {
   ],
   outcomeLabel: "What it enables",
   simplerLabel: "Keep it manual when",
-  noConnectionDescription:
-    "Do not add a live connection when the task needs one small piece of context, happens rarely, or has no safe way to undo a wrong action.",
-  noConnectionAlternative:
-    "Supply a selected excerpt, use a read-only export, or keep the final action in the target system's own interface.",
   collaborationLabel: "Collaboration",
   collaborationHeading: "Choose an operation, not a sophistication level",
   collaborationLead:
@@ -394,7 +388,7 @@ const de: ConnectAiToolsDataContent = {
   possibilityLabel: "Möglichkeit",
   possibilityHeading: "Was eine Verbindung verändert",
   possibilityLead:
-    "Live-Zugriff lohnt sich, wenn dadurch eine echte Übergabe entfällt. Kann ein Mensch den kleinen nötigen Kontext gezielt bereitstellen, ist die Verbindung nur zusätzliche Infrastruktur.",
+    "Live-Zugriff lohnt sich, wenn dadurch eine echte Übergabe entfällt. Kann ein Mensch den kleinen nötigen Kontext gezielt bereitstellen, ist die Verbindung nur zusätzliche Infrastruktur — oft genügt ein ausgewählter Ausschnitt oder ein Nur-Lese-Export.",
   opportunities: [
     {
       title: "Aktuelles Wissen finden",
@@ -427,10 +421,6 @@ const de: ConnectAiToolsDataContent = {
   ],
   outcomeLabel: "Was es ermöglicht",
   simplerLabel: "Manuell bleiben, wenn",
-  noConnectionDescription:
-    "Baue keine Live-Verbindung, wenn die Aufgabe nur wenig Kontext braucht, selten vorkommt oder eine falsche Aktion nicht verlässlich rückgängig gemacht werden kann.",
-  noConnectionAlternative:
-    "Gib einen ausgewählten Ausschnitt weiter, arbeite mit einem Nur-Lese-Export oder führe den letzten Schritt direkt im Zielsystem aus.",
   collaborationLabel: "Zusammenarbeit",
   collaborationHeading:
     "Wähle eine Arbeitsform, keine vermeintliche Entwicklungsstufe",
