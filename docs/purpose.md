@@ -113,6 +113,13 @@ When two things conflict, the higher one wins:
 Nothing at a lower level may contradict a higher one. What is mechanically
 checkable is checked by `.github/scripts/check-conformance.sh` in CI.
 
+**Nothing rises merely by being true.** An observation from an instance, a test,
+a session or working context stays at the level where it was made until it
+establishes something reusable above it. One run choosing a tool is a fact about
+that run; the same run showing that a directory has to be writable is a
+requirement of the thing being built. What the evidence establishes decides
+which of the two it is, not where it came from.
+
 ## What a blueprint is
 
 Material you **copy**, not material you read. Cut by **goal**, not by file list.

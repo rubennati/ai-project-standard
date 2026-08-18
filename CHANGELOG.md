@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Nothing rises merely by being true
+
+- `docs/purpose.md` states the direction of its hierarchy as well as its order:
+  a true observation from an instance, test or session rises to a decision,
+  artifact property or public claim only where it establishes something
+  reusable.
+- `.ai/quality-gates.md` records under *Not automated* that no check here
+  establishes whether a value belongs in an artifact for its reader.
+
 ### Added — Page primitives
 
 - `site/PAGE_PRIMITIVES.md` defines five page jobs without forcing them into one
