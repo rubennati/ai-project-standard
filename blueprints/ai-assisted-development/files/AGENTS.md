@@ -79,7 +79,9 @@ Not "ask first" — never, in this repository:
    work needs checkpoints, not permission. Open a draft pull request for
    handoff, interruption or early review.
 4. **Verify** — run the project's checks and show the output. "It should work"
-   is not verification.
+   is not verification. Where the property that matters is not one a check can
+   settle, judge the result against what the work was supposed to achieve —
+   `.ai/quality-gates.md`, under *Not automated*.
 5. **Review** — open a pull request explaining *why*. The diff shows *what*.
 
 Trivial changes may skip step 2. Nothing skips step 4.
