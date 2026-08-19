@@ -518,6 +518,7 @@
     border-top: 3px solid var(--color-accent);
   }
 
+  .outcome-card h2,
   .outcome-card h3,
   .collaboration-card h3,
   .boundary-questions h3 {
@@ -551,6 +552,13 @@
   .outcome-card dd,
   .collaboration-card dd {
     line-height: 1.6;
+  }
+
+  .outcome-card__path {
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.75rem;
+    font-size: 0.9375rem;
   }
 
   .collaboration-card {
