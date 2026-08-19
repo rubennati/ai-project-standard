@@ -1,9 +1,9 @@
 ---
-import UseCasesContent from "../components/UseCasesContent.astro";
-import { getUseCases } from "../data/use-cases";
-import Base from "../layouts/Base.astro";
+import UseCasesContent from "../../components/UseCasesContent.astro";
+import { getUseCases } from "../../data/use-cases";
+import Base from "../../layouts/Base.astro";
 
-const locale = "en" as const;
+const locale = "de" as const;
 const content = getUseCases(locale);
 ---
 

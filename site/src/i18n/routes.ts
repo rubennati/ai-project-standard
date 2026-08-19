@@ -8,6 +8,7 @@ export type LocalizedRouteKey =
   | "glossaryIndex"
   | "glossaryTerm"
   | "evidenceMethod"
+  | "useCases"
   | "legalNotice"
   | "privacyPolicy"
   | "law"
@@ -60,6 +61,8 @@ export const getLocalizedPath = (
       return `${prefix}/glossary`;
     case "evidenceMethod":
       return `${prefix}/glossary/evidence-method`;
+    case "useCases":
+      return `${prefix}/use-cases`;
     case "glossaryTerm":
       return `${prefix}/glossary/${options?.slug ?? ""}`.replace(/\/+$/, "");
     case "legalNotice":

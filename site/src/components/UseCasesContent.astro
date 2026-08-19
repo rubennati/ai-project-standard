@@ -1,0 +1,43 @@
+---
+import { getUseCases } from "../data/use-cases";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getUseCases(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
+---
+
+<div class="layout-wide">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
+  <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
+
+  <div class="outcome-grid mt-12">
+    {
+      content.outcomes.map((outcome) => (
+        <article class="outcome-card">
+          <h2>{outcome.label}</h2>
+          <dl>
+            <div>
+              <dt>{content.exampleLabel}</dt>
+              <dd>{outcome.example}</dd>
+            </div>
+            <div>
+              <dt>{content.limitLabel}</dt>
+              <dd>{outcome.limit}</dd>
+            </div>
+          </dl>
+          {outcome.path && (
+            <p class="outcome-card__path">
+              <a href={toHref(outcome.path.href)}>{outcome.path.label}</a>
+            </p>
+          )}
+        </article>
+      ))
+    }
+  </div>
+</div>
