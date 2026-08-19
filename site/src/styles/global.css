@@ -554,7 +554,8 @@
     line-height: 1.6;
   }
 
-  .outcome-card__path {
+  .outcome-card__path,
+  .collaboration-card__path {
     margin-top: 1rem;
     border-top: 1px solid var(--line);
     padding-top: 0.75rem;
@@ -563,6 +564,28 @@
 
   .collaboration-card {
     border-top: 3px solid var(--color-accent);
+  }
+
+  /* Carries the boundary against the neighbouring cards, so it sits with the
+     name rather than becoming another labelled field in the comparison. */
+  .collaboration-card__description {
+    margin-top: 0.5rem;
+    color: var(--ink-muted);
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  .hub-notes {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 42rem;
+    margin-top: 1.5rem;
+    padding-left: 1.15rem;
+    line-height: 1.7;
+  }
+
+  .hub-notes li {
+    list-style: disc;
   }
 
   .connection-boundary {
@@ -983,6 +1006,12 @@
   }
 
   @media (min-width: 58rem) {
+    /* Six cards read as a block rather than a line, so no position in the grid
+       is the end of a sequence. Grids of four keep two columns. */
+    .collaboration-grid--three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
     .connection-boundary__path {
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1.75rem;

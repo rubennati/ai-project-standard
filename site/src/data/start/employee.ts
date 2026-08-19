@@ -131,7 +131,7 @@ const de: Article = {
       heading: "Was deine Entscheidung ist, und was nicht",
       level: "assessment",
       paragraphs: [
-        "Du entscheidest, wie du arbeitest: ob dir ein Modell beim Entwerfen, Strukturieren, Prüfen oder Erklären hilft. Das ist dein Handwerk, dafür braucht es keine Freigabe.",
+        "Innerhalb der Arbeitsweisen, die dein Arbeitgeber freigegeben hat, entscheidest du, wie du arbeitest: ob dir ein Modell beim Entwerfen, Strukturieren, Prüfen oder Erklären hilft. Welche Dienste du dafür nutzen darfst und was dort hineingehen darf, legt dein Arbeitgeber fest.",
         "Du entscheidest nicht, ob Material deines Arbeitgebers oder seiner Kunden das Unternehmen verlassen darf. Diese Entscheidung gehört dem, der die Haftung trägt — und sie bleibt seine, auch wenn er sie noch nicht getroffen hat.",
         "Diese Unterscheidung lohnt sich, denn sie heißt: KI zu benutzen ist nicht der riskante Teil. Auszuwählen, was hineinkommt, schon.",
       ],

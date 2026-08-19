@@ -60,11 +60,17 @@ const en: Article = {
       checked: CHECKED,
       paragraphs: [
         "A business or team plan is not mainly about seats and billing. It changes the default: business tiers of the major vendors do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
-        "Buying it is the cheapest control available to you, and it removes the reason people were using something else.",
       ],
       links: [
         { label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" },
         { label: "Can I enter this data into an AI tool?", href: "/law/what-may-go-in" },
+      ],
+    },
+    {
+      heading: "Why the business tier is usually the cheapest control you have",
+      level: "assessment",
+      paragraphs: [
+        "Buying it is the cheapest control available to you, and it removes the reason people were using something else.",
       ],
     },
     {
