@@ -1,0 +1,83 @@
+---
+import { getStartHub } from "../data/start/collaboration-forms";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getStartHub(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
+---
+
+<div class="layout-wide">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
+  <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
+  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
+  <p class="mt-4 max-w-2xl leading-7">
+    {content.bridge}{" "}
+    <a href={toHref(content.bridgeLink.href)}>{content.bridgeLink.label}</a>
+  </p>
+
+  <section class="prototype-section">
+    <h2>{content.formsHeading}</h2>
+
+    <div class="collaboration-grid collaboration-grid--three">
+      {
+        content.forms.map((form) => (
+          <article class="collaboration-card">
+            <h3>{form.name}</h3>
+            <p class="collaboration-card__description">{form.description}</p>
+            <dl>
+              <div>
+                <dt>{content.ownershipLabel}</dt>
+                <dd>{form.ownership}</dd>
+              </div>
+              <div>
+                <dt>{content.accessLabel}</dt>
+                <dd>{form.access}</dd>
+              </div>
+              <div>
+                <dt>{content.verificationLabel}</dt>
+                <dd>{form.verification}</dd>
+              </div>
+            </dl>
+            {form.path && (
+              <p class="collaboration-card__path">
+                <a href={toHref(form.path.href)}>{form.path.label}</a>
+              </p>
+            )}
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="prototype-section">
+    <h2>{content.commonHeading}</h2>
+    <ul class="hub-notes">
+      {
+        content.invariants.map((item) => (
+          <li>
+            <strong>{item.title}</strong> {item.detail}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="prototype-section">
+    <h2>{content.elsewhereHeading}</h2>
+    <ul class="hub-notes">
+      {
+        content.elsewhere.map((item) => (
+          <li>
+            <a href={toHref(item.href)}>{item.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</div>

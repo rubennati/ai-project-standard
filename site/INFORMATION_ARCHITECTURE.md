@@ -115,7 +115,7 @@ Home
 │   ├── Workspace assistant
 │   ├── Tool-using system
 │   ├── Agent
-│   ├── Repeated automation
+│   ├── Automated operation
 │   ├── Employee entry
 │   └── Decision-maker entry
 ├── Data & systems                 /data-flows
@@ -189,7 +189,7 @@ banner at the end.
 
 ### 3. How much should the system do?
 
-Show the collaboration continuum from Chat to Repeated automation. The visual
+Show the collaboration continuum from Chat to Automated operation. The visual
 must not imply that more autonomy is maturity or progress. Each form states
 what the human still owns and what new reach appears.
 
@@ -239,7 +239,7 @@ for use cases.
 ### Choose how — Collaboration
 
 `/start` becomes the decision point between Chat, Assistant, Workspace
-assistant, Tool-using system, Agent and Repeated automation. Existing employee,
+assistant, Tool-using system, Agent and Automated operation. Existing employee,
 decision-maker and technical-explainer pages remain useful entry points beneath
 it.
 
@@ -252,7 +252,7 @@ The hub compares forms by consequence and reach, not by sophistication:
 | Workspace assistant | owns change and acceptance | selected files, code and commands | diff, tests and human approval |
 | Tool-using system | authorises a bounded operation | scoped external systems | permission, log and result check |
 | Agent | sets goal, checkpoints and stop conditions | several tools and steps | action review, rollback and reconstruction |
-| Repeated automation | owns policy and operation | persistent event and action surface | monitoring, sampling and incident response |
+| Automated operation | owns policy and operation | persistent event and action surface | monitoring, sampling and incident response |
 
 ### Data & systems — Reach
 

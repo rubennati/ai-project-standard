@@ -21,13 +21,6 @@ export const ui = {
     dataFlowsIntro:
       "What leaves your machine when you use an AI tool, and what happens to it there. Each section is labelled with what kind of claim it is and when it was last checked \u2014 vendor defaults change without notice.",
     start: "Start here",
-    startTitle: "Where to start",
-    startDescription:
-      "Four ways in, sorted by what you are actually allowed to decide — not by how much you already know.",
-    startIntro:
-      "What applies to you depends less on how experienced you are than on what you are in a position to decide, and whose material is at stake when you get it wrong.",
-    startMore:
-      "Two more are being written: using AI privately, and running a one-person business or small company where you decide everything and carry all of it.",
     secureSetup: "Settings & access",
     secureSetupTitle: "Setting it up safely",
     secureSetupDescription:
@@ -210,13 +203,6 @@ export const ui = {
     dataFlowsIntro:
       "Was deinen Rechner verlässt, wenn du ein KI-Tool nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
     start: "Einstieg",
-    startTitle: "Wo anfangen",
-    startDescription:
-      "Vier Einstiege, sortiert danach, was du tatsächlich entscheiden darfst — nicht danach, wie viel du schon weißt.",
-    startIntro:
-      "Was für dich gilt, hängt weniger davon ab, wie erfahren du bist, als davon, was du entscheiden darfst — und wessen Material auf dem Spiel steht, wenn es schiefgeht.",
-    startMore:
-      "Zwei weitere entstehen: KI privat nutzen, und ein Einzelunternehmen oder eine kleine Firma führen, wo du alles entscheidest und alles trägst.",
     secureSetup: "Einstellungen & Zugriff",
     secureSetupTitle: "Sicher einrichten",
     secureSetupDescription:
