@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — The header carries the four reader journeys
+
+- Primary navigation exposes the four decisions a reader makes rather than the
+  content that happened to be written first: Where AI fits, Ways of working,
+  Access & actions, Secure & verify — Wo KI sinnvoll ist, Arbeitsweisen,
+  Zugriff & Aktionen, Absichern & prüfen.
+- `/use-cases` becomes a primary destination. It had no global link before, so
+  the journey the product opens with could not be reached from any page.
+- Law, Blog and About leave the header and remain available in the footer.
+- Reference is supporting depth, not a fifth journey: a term is looked up in the
+  middle of a journey rather than chosen as one.
+- No public URL changed.
+
 ### Changed — Not automated is not unverified
 
 - `.ai/quality-gates.md` says how the properties under *Not automated* are

@@ -14,14 +14,14 @@ export const ui = {
     home: "Home",
     docs: "Docs",
     blog: "Blog",
-    dataFlows: "Your data",
+    dataFlows: "Access & actions",
     dataFlowsTitle: "Data flows",
     dataFlowsDescription:
       "Where your input actually goes: which plans train on it, how long it is kept, and what to check before you paste anything.",
     dataFlowsIntro:
       "What leaves your machine when you use an AI tool, and what happens to it there. Each section is labelled with what kind of claim it is and when it was last checked \u2014 vendor defaults change without notice.",
-    start: "Start here",
-    secureSetup: "Settings & access",
+    start: "Ways of working",
+    secureSetup: "Secure & verify",
     secureSetupTitle: "Setting it up safely",
     secureSetupDescription:
       "What to change on day one, what to check before an agent gets access, and where a technical boundary belongs instead of a sentence in a prompt.",
@@ -49,7 +49,7 @@ export const ui = {
     primaryNavigation: "Primary navigation",
     glossaryIndex: "Glossary Index",
     glossary: "Glossary",
-    useCases: "Use cases",
+    useCases: "Where AI fits",
     profiles: "Profiles",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
@@ -196,14 +196,14 @@ export const ui = {
     home: "Startseite",
     docs: "Docs",
     blog: "Blog",
-    dataFlows: "Deine Daten",
+    dataFlows: "Zugriff & Aktionen",
     dataFlowsTitle: "Datenflüsse",
     dataFlowsDescription:
       "Wohin deine Eingabe tatsächlich geht: welche Tarife damit trainieren, wie lange sie aufbewahrt wird, und was du prüfen solltest, bevor du etwas hineinkopierst.",
     dataFlowsIntro:
       "Was deinen Rechner verlässt, wenn du ein KI-Tool nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
-    start: "Einstieg",
-    secureSetup: "Einstellungen & Zugriff",
+    start: "Arbeitsweisen",
+    secureSetup: "Absichern & prüfen",
     secureSetupTitle: "Sicher einrichten",
     secureSetupDescription:
       "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent Zugriff bekommt, und wo eine technische Grenze hingehört statt eines Satzes im Prompt.",
@@ -231,7 +231,7 @@ export const ui = {
     primaryNavigation: "Hauptnavigation",
     glossaryIndex: "Glossarindex",
     glossary: "Glossar",
-    useCases: "Anwendungsfälle",
+    useCases: "Wo KI sinnvoll ist",
     profiles: "Profile",
     legalNotice: "Impressum",
     privacyPolicy: "Datenschutz",
