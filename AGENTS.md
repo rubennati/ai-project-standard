@@ -29,7 +29,7 @@ For any non-trivial task, follow this loop. Trivial changes (typos, one-line fix
 1. **Understand** — read the relevant `.ai/` files (`state.md`, `routing.md`, applicable `domains/`) and any code or docs the task touches. State assumptions explicitly.
 2. **Plan** — state the plan first (in chat, the draft PR description, or `.ai/state.md`) before editing. For multi-file or structurally non-obvious work, confirm scope with a human before implementing.
 3. **Implement** — focused changes on a short-lived branch. One concern per branch. Commit as you go; long work needs checkpoints, not permission. Open a draft PR for handoff, interruption or early review.
-4. **Verify** — run the project's standard quality commands locally (see below). If a command is missing for a check you'd want, raise it rather than silently skipping.
+4. **Verify** — run the project's standard quality commands locally (see below). If a command is missing for a check you'd want, raise it rather than silently skipping. Where the property that matters is not one a command can settle, judge the result against what the work was supposed to achieve — `.ai/quality-gates.md`, *Not automated*.
 5. **Review** — open a PR with a clear summary. CI is the first gate, AI reviews are advisory, a human merges.
 
 ## Standard quality commands

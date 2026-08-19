@@ -416,3 +416,36 @@ claims only.
 Rejected: a promotion stage, register or checklist between the levels. Every
 correction this project has recorded was behavioural rather than another
 mechanism.
+
+## 2026-08-19 - Not automated is not unverified
+
+Decision: `.ai/quality-gates.md` says how the properties under *Not automated*
+are decided. Where correctness turns on meaning, audience, scope, relevance or
+consistency, the result is read against what the work was supposed to achieve,
+established independently of the result being judged — by the instruction, the
+confirmed plan or a later human clarification, never reconstructed from what
+came out. That fixes the outcome and not the method. A change is read twice —
+as the artifact it leaves behind, and against the scope it was given, including
+what it was asked to leave alone — and a reader who did not write it carries the
+stronger
+evidence where the consequence or the ambiguity earns it. The loop in
+`AGENTS.md` and in the `ai-assisted-development` payload points there instead
+of restating it.
+
+Rationale: the section named properties no machine gates and then said nothing
+about how they are settled, so "run the checks and show the output" read as the
+whole of verification. The evidence is narrow and stays narrow: in an acceptance
+experiment on a separate project (Secure Docker, not in this repository), a
+separate outcome-oriented evaluation stage found material defects that had
+survived detailed implementation instructions. That establishes that a semantic
+stage catches what mechanical checking does not. It does not compare stating an
+outcome against instructing an implementation — that comparison was never run —
+and nothing here claims it.
+
+Rejected: acceptance as a level of the hierarchy, because evaluation is how work
+is judged and not another source of truth above or between purpose, evidence,
+decisions, artifacts and instance. Also rejected: the criteria vocabulary from
+that experiment, an acceptance section per task, a checklist of the regression
+and deferred-scope cases, and independent review as a requirement. Every
+correction this project has recorded was behavioural rather than another
+mechanism, and a second agent on every task is a ceremony, not evidence.

@@ -29,6 +29,18 @@ Stated rather than hidden, because a missing gate is a finding.
 
 ## Not automated
 
+Not automated is not unverified. Where correctness turns on meaning, audience,
+scope, relevance or consistency, no command settles it: the result is read
+against what the work was supposed to achieve, established independently of
+the result being judged — by the instruction, the confirmed plan, or a later
+clarification a human gave, and never reconstructed from what came out. That
+fixes the outcome and not the method, unless the method was the instruction. A
+change is read twice, as the artifact it leaves behind and against the scope it
+was given, including what it was asked to leave alone. A reader who did not
+write it carries the stronger evidence and reports rather than quietly corrects,
+which is worth arranging where the consequence or the ambiguity earns it and not
+on every change.
+
 - Scope is limited to one concern
 - The pull request explains why, not only what
 - Documentation lands with the change it describes

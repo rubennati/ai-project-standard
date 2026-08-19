@@ -8,6 +8,10 @@ one forbids any judgement until it has measured what actually serves the site.
 That single rule catches the errors that matter — a privacy policy written
 against an assumed hosting stack is wrong in exactly the way nobody notices.
 
+It is also a worked example of judging what no check can decide: the criteria
+come from the prompt rather than from the findings, every finding cites what was
+retrieved, and what could not be checked is reported rather than assumed.
+
 Replace `<DOMAIN>` and `<REPO-PATH>`, paste the rest verbatim. The legal step is
 written for Austria; for Germany swap § 5 ECG and § 24/25 MedienG for § 5 DDG
 and § 18 MStV.

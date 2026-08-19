@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Not automated is not unverified
+
+- `.ai/quality-gates.md` says how the properties under *Not automated* are
+  decided: the result is read against what the work was supposed to achieve,
+  established independently of the result being judged rather than reconstructed
+  from it, which fixes the outcome and not the method. A change is judged both
+  as the artifact it leaves behind and against the scope it was given.
+- The loop in `AGENTS.md` and in the `ai-assisted-development` payload no longer
+  ends verification at the mechanical checks. Where no check settles the property
+  that matters, it points at that section rather than restating it.
+- `docs/website-audit.md` is named as a worked example of it. No new file, no
+  checklist, no required review step, no hierarchy level.
+
 ### Added — Nothing rises merely by being true
 
 - `docs/purpose.md` states the direction of its hierarchy as well as its order:
