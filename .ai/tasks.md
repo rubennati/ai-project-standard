@@ -40,8 +40,6 @@ list records execution order rather than restating those decisions.
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
-- Remove `dataFlowsMore`: it advertises content that already exists on the same hub
-- Review `secureSetupMore` and shrink it to genuinely missing scope; part of its current promise is already covered by the Connect path
 - `/start/what-it-is-doing` carries eight identical undated Assessment labels in each language; review whether one page-level evidence statement can replace the repetition
 
 ## Coherence audit — 2026-08-09
