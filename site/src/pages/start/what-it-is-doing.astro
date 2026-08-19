@@ -23,9 +23,7 @@ const article = getWhatItIsDoing(locale);
     )}
     <p class="mt-4 text-lg leading-8">{article.lead}</p>
 
-    {article.evidence && (
-      <EvidenceBand locale={locale} level="assessment" summary={article.evidence} />
-    )}
+    <EvidenceBand locale={locale} level="assessment" summary={article.assessmentSummary} />
 
     {
       article.sections.map((section) => (

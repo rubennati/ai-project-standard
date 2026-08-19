@@ -17,14 +17,24 @@
 import type { Article } from "../article";
 import type { SiteLocale } from "../../i18n/ui";
 
+/**
+ * Every section of this page makes the same kind of claim, so the assessment
+ * belongs to the page rather than to any section. It stays local: a shared
+ * page-level evidence model would have to carry level, source and check date
+ * like `EvidenceBand` does, and a bare string on `Article` would not.
+ */
+interface WhatItIsDoing extends Article {
+  assessmentSummary: string;
+}
+
 export const CHECKED = "2026-08-09";
 
-const en: Article = {
+const en: WhatItIsDoing = {
   title: "What an AI tool is doing when you use it",
   subtitle: "One idea explains most of the surprises: the model only sees what something else hands it.",
   description:
     "Why a model cannot reach your files on its own, why it forgets, why more documents do not mean better answers, and why the product is not the model.",
-  evidence:
+  assessmentSummary:
     "Everything on this page is this project's explanation of how these systems are built, not a claim about any particular product's behaviour. It describes the general shape, which is why no section carries a check date.",
   lead: "Most confusion about these tools dissolves at one point. A language model computes on the text it is given, and nothing else. Everything that looks like reaching, remembering or knowing is other software deciding what to put in front of it.",
   sections: [
@@ -108,12 +118,12 @@ const en: Article = {
   ],
 };
 
-const de: Article = {
+const de: WhatItIsDoing = {
   title: "Was ein KI-Tool tut, während du es benutzt",
   subtitle: "Ein Gedanke erklärt die meisten Überraschungen: Das Modell sieht nur, was ihm etwas anderes hinlegt.",
   description:
     "Warum ein Modell allein nicht an deine Dateien kommt, warum es vergisst, warum mehr Dokumente nicht bessere Antworten bedeuten und warum das Produkt nicht das Modell ist.",
-  evidence:
+  assessmentSummary:
     "Alles auf dieser Seite ist die Erklärung dieses Projekts, wie solche Systeme gebaut sind — keine Aussage über das Verhalten eines bestimmten Produkts. Es geht um die allgemeine Form, deshalb trägt kein Abschnitt ein Prüfdatum.",
   lead: "Die meiste Verwirrung über diese Tools löst sich an einer Stelle auf. Ein Sprachmodell rechnet auf dem Text, den es bekommt, und auf sonst nichts. Alles, was nach Zugreifen, Erinnern oder Wissen aussieht, ist andere Software, die entscheidet, was ihm vorgelegt wird.",
   sections: [
@@ -197,4 +207,5 @@ const de: Article = {
   ],
 };
 
-export const getWhatItIsDoing = (locale: SiteLocale): Article => (locale === "de" ? de : en);
+export const getWhatItIsDoing = (locale: SiteLocale): WhatItIsDoing =>
+  locale === "de" ? de : en;

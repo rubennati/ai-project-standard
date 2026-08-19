@@ -101,8 +101,8 @@ const en: StartHubContent = {
     {
       name: "Workspace assistant",
       description:
-        "It works on the originals inside a folder or repository. You accept each change.",
-      ownership: "Which change is accepted. Nothing lands because it was suggested.",
+        "It works on the originals inside a folder or repository. You decide which changes are accepted.",
+      ownership: "Which changes are accepted. Nothing lands because it was suggested.",
       access: "The files in that place, and usually commands run there.",
       verification: "The change itself, and whatever proves the thing still works.",
       path: { label: "How far vibe coding takes you", href: "/start/vibe-coding" },
@@ -185,7 +185,7 @@ const de: StartHubContent = {
   bridgeLink: { label: "Was willst du erreichen?", href: "/de/use-cases" },
   formsHeading: "Sechs Arbeitsweisen",
   ownershipLabel: "Was bei dir bleibt",
-  accessLabel: "Was es erreicht und tut",
+  accessLabel: "Worauf es zugreift und was es tun kann",
   verificationLabel: "Was du prüfst",
   forms: [
     {
@@ -215,8 +215,8 @@ const de: StartHubContent = {
     {
       name: "Workspace-Assistent",
       description:
-        "Er arbeitet an den Originalen in einem Ordner oder Repository. Jede Änderung nimmst du ab.",
-      ownership: "Welche Änderung übernommen wird. Nichts landet dort, nur weil es vorgeschlagen wurde.",
+        "Er arbeitet an den Originalen in einem Ordner oder Repository. Du entscheidest, welche Änderungen übernommen werden.",
+      ownership: "Welche Änderungen übernommen werden. Nichts landet dort, nur weil es vorgeschlagen wurde.",
       access: "Die Dateien an diesem Ort – und meist Befehle, die dort laufen.",
       verification: "Die Änderung selbst, dazu das, was belegt, dass alles weiter funktioniert.",
       path: { label: "Wie weit Vibe Coding trägt", href: "/de/start/vibe-coding" },

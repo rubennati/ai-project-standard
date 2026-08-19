@@ -42,9 +42,6 @@ export interface Article {
   /** Optional standfirst. Blog titles may be evocative; this says plainly what
    *  the piece is about, for a reader scanning and for search results. */
   subtitle?: string;
-  /** One evidence statement for the whole page, where every section makes the
-   *  same kind of claim and per-section labels would only repeat each other. */
-  evidence?: string;
   description: string;
   lead: string;
   sections: ArticleSection[];
