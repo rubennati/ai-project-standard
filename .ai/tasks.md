@@ -21,12 +21,15 @@ list records execution order rather than restating those decisions.
    using MCP as the technical example rather than the reader's goal.
 4. [x] Use Vibe Coding as the second template test across Explore, Prototype,
    Deliver and Operate.
-5. [ ] Make Blog visibly editorial and Law visibly reference-led; replace their
+5. [x] Make Blog visibly editorial and Law visibly reference-led; replace their
    weak landing-page copy and remove public roadmap filler such as “Planned” or
    “More is coming”.
-6. [ ] Verify the complete system on desktop and mobile, in English and German,
+6. [x] Verify the complete system on desktop and mobile, in English and German,
    including accessibility, evidence treatment and zero horizontal overflow.
-   The two complete decision paths are checked; the rest of the site is not.
+   Structural and technical verification is complete across the built public
+   site: responsive layout, headings, links and anchors, language and hreflang,
+   accessibility basics, evidence treatment and rendering. This does not mean
+   every public sentence has received editorial review.
 7. [ ] Map the remaining page families onto the proven primitives and migrate
    them in reviewable groups. Obtain the recorded human approvals before final
    navigation labels, `/use-cases` replacement, `/docs/**` compatibility work
@@ -37,6 +40,9 @@ list records execution order rather than restating those decisions.
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
+- Remove `dataFlowsMore`: it advertises content that already exists on the same hub
+- Review `secureSetupMore` and shrink it to genuinely missing scope; part of its current promise is already covered by the Connect path
+- `/start/what-it-is-doing` carries eight identical undated Assessment labels in each language; review whether one page-level evidence statement can replace the repetition
 
 ## Coherence audit — 2026-08-09
 
