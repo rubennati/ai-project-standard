@@ -143,16 +143,16 @@ export const ui = {
     glossaryAside:
       "Terms are explained as they come up. If you need to look one up on its own, the glossary is in the footer of every page.",
 
-    whatThisSiteIsFor: "What this site is for",
-    doorPaste: "Before you paste",
+    whatThisSiteIsFor: "Three questions to settle first",
+    doorPaste: "Where does your data go?",
     doorPasteCopy:
-      "Where a prompt travels once you send it, who holds it afterwards, and what is left after you delete it \u2014 per tool class, from chat to coding agents and MCP servers.",
-    doorAllowed: "What you are allowed to do",
+      "What leaves your device, where it is processed and stored, how long it stays, and who can access it.",
+    doorAllowed: "What can you put into an AI tool?",
     doorAllowedCopy:
-      "What you may put in, and under which rule. Personal data is a data-protection question; client material and anything under an NDA is a confidentiality one, and private use differs from company use.",
-    doorSetup: "How to set it up",
+      "Personal data, client material and confidential information are subject to different rules – some legal, some contractual. Private use is not the same as company use.",
+    doorSetup: "What access are you granting?",
     doorSetupCopy:
-      "What an agent may reach, decided before you grant access \u2014 and the conventions that keep the result reviewable afterwards.",
+      "Which permissions an agent needs for the task, where access should stop, and how changes remain reviewable.",
 
     whatIsAvailableNow: "What is here today",
     nowStandard: "The standard",
@@ -163,8 +163,6 @@ export const ui = {
       "Four triggers, and the material each one calls for. Something has already happened to you; that is what decides, not the size of your team.",
     nowGlossary: "Glossary",
     nowGlossaryCopy: "Terms, for when you need to know what someone actually means.",
-    stillWriting:
-      "Still being written: the tool-by-tool data-flow guides, the legal section, and the blog. This site is growing. What is here is maintained; what is missing is named rather than faked.",
 
     blogTitle: "Blog",
     blogDescription:
@@ -340,16 +338,16 @@ export const ui = {
     glossaryAside:
       "Begriffe werden dort erklärt, wo sie vorkommen. Wenn du einen einzeln nachschlagen willst: Das Glossar steht im Footer jeder Seite.",
 
-    whatThisSiteIsFor: "Wofür diese Seite da ist",
-    doorPaste: "Bevor du etwas hineinkopierst",
+    whatThisSiteIsFor: "Drei Fragen, bevor du KI nutzt",
+    doorPaste: "Wohin gehen deine Daten?",
     doorPasteCopy:
-      "Wohin ein Prompt geht, sobald du ihn abschickst, wer ihn danach hat und was nach dem Löschen bleibt \u2014 je Tool-Kategorie, von Chat über Coding-Agenten bis MCP-Server.",
-    doorAllowed: "Was du darfst",
+      "Was dein Gerät verlässt, wo es verarbeitet und gespeichert wird, wie lange es bleibt und wer darauf zugreifen kann.",
+    doorAllowed: "Was darfst du eingeben?",
     doorAllowedCopy:
-      "Was hinein darf und nach welcher Regel. Personenbezogene Daten sind eine Frage des Datenschutzes, Kundenmaterial und alles unter NDA eine Frage der Vertraulichkeit \u2014 und privat ist nicht gleich betrieblich.",
-    doorSetup: "Wie du es einrichtest",
+      "Für personenbezogene Daten, Kundenmaterial und vertrauliche Informationen gelten unterschiedliche Regeln – gesetzlich und vertraglich. Private Nutzung ist dabei nicht dasselbe wie betriebliche Nutzung.",
+    doorSetup: "Welche Zugriffe gibst du frei?",
     doorSetupCopy:
-      "Was ein Agent erreichen darf, entschieden bevor du den Zugriff gibst \u2014 und die Konventionen, die die Arbeit danach überprüfbar halten.",
+      "Welche Rechte ein Agent für seine Aufgabe braucht, wo der Zugriff endet und wie Änderungen nachvollziehbar bleiben.",
 
     whatIsAvailableNow: "Was es heute gibt",
     nowStandard: "Der Standard",
@@ -360,8 +358,6 @@ export const ui = {
       "Vier Auslöser und das Material, das jeder davon verlangt. Entscheidend ist, was dir bereits passiert ist — nicht die Größe deines Teams.",
     nowGlossary: "Glossar",
     nowGlossaryCopy: "Begriffe, wenn du wissen musst, was jemand tatsächlich meint.",
-    stillWriting:
-      "Noch in Arbeit: die Datenfluss-Leitfäden je Tool, der Rechtsteil und der Blog. Diese Seite wächst. Was da ist, wird gepflegt; was fehlt, wird benannt statt vorgetäuscht.",
 
     blogTitle: "Blog",
     blogDescription:
