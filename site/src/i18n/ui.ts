@@ -90,58 +90,11 @@ export const ui = {
       "A maintained index of AI, LLM, tooling, and product terms. Use it to find a term and open its definition page.",
     glossaryIntro:
       "This is a working index of AI- and LLM-near vocabulary. Deeper explanations live on the term pages, while broader guides and project documentation will stay separate.",
-    homeTitle: "AI Standard",
-    homeDescription:
-      "What actually happens when you use AI at work: where your data goes, what you are allowed to put in, and what the law already requires.",
-    homeHeading: "What happens to your data when you use AI at work.",
-    homeLead:
-      "Written from a security desk. Not the question of whether AI is dangerous, but the ones you hit in practice: where does a prompt travel once you press enter, whose jurisdiction is it in by then, what may you put in when it belongs to a client, and what does the law already require of you.",
-    homeStance:
-      "The answers are not always the comfortable ones. \u201cEU-hosted\u201d is not the same as \u201csafer\u201d \u2014 a small team sharing admin rights, without an ISMS or an audit trail, can expose you more than a large provider where you are one anonymous number among millions.",
-    homePrimaryLink: "Does it train on what I type?",
-    homeSecondaryLink: "What may I put in?",
-    doorMore: "Read the section",
-    homeArticles: "Everything written so far",
-    homeArticlesLead:
-      "Each one labelled with what kind of claim it makes, and when it was last checked against the source.",
-    howToRead: "How to read this site",
-    howToReadShort:
-      "Every section says what kind of claim it is making, and claims about the outside world carry a source and the date they were last checked against it.",
     evidenceMethodTitle: "Evidence method and source policy",
     evidenceMethodDescription:
       "What each claim label on this site means, what has to be true before a claim is published under it, and how sources are ranked.",
     howToReadLead:
       "Every section of every article says what kind of claim it is making, and factual claims carry the date they were last checked against the source. Vendor behaviour changes without notice — a claim without a date is not wrong yet, it is unfalsifiable.",
-    repoHeading: "There is a repository underneath this",
-    repoCopy:
-      "The conventions this site describes are kept in a public repository, and the site is built directly from it. That matters if you write software \u2014 you can read the source, copy it, or adopt it. If it means nothing to you, ignore it: nothing on this site requires it.",
-    repoContains:
-      "Inside it: the AGENTS.md convention for working with several AI tools on one codebase, a security baseline with CI hardening, branch protection rules, the blueprints themselves, and the operational `.ai/` workspace. The repository runs on its own conventions rather than only describing them, and a self-conformance check fails the build when it stops.",
-    repoLink: "Read the documentation here",
-    repoLinkExternal: "The repository on GitHub",
-    glossaryAside:
-      "Terms are explained as they come up. If you need to look one up on its own, the glossary is in the footer of every page.",
-
-    whatThisSiteIsFor: "Three questions to settle first",
-    doorPaste: "Where does your data go?",
-    doorPasteCopy:
-      "What leaves your device, where it is processed and stored, how long it stays, and who can access it.",
-    doorAllowed: "What can you put into an AI tool?",
-    doorAllowedCopy:
-      "Personal data, client material and confidential information are subject to different rules – some legal, some contractual. Private use is not the same as company use.",
-    doorSetup: "What access are you granting?",
-    doorSetupCopy:
-      "Which permissions an agent needs for the task, where access should stop, and how changes remain reviewable.",
-
-    whatIsAvailableNow: "What is here today",
-    nowStandard: "The standard",
-    nowStandardCopy:
-      "Repository conventions for working with AI, kept in the repository underneath and rendered here.",
-    nowUseCases: "Use cases",
-    nowUseCasesCopy:
-      "Four triggers, and the material each one calls for. Something has already happened to you; that is what decides, not the size of your team.",
-    nowGlossary: "Glossary",
-    nowGlossaryCopy: "Terms, for when you need to know what someone actually means.",
 
     blogTitle: "Blog",
     blogDescription:
@@ -264,58 +217,11 @@ export const ui = {
       "Ein gepflegter Index für KI-, LLM-, Tooling- und Produktbegriffe. Er hilft dabei, einen Begriff zu finden und die passende Erklärungsseite zu öffnen.",
     glossaryIntro:
       "Dies ist ein Arbeitsindex für KI- und LLM-nahe Begriffe. Tiefere Erklärungen liegen auf den einzelnen Begriffseiten. Breitere Guides und Projektdokumentation werden später getrennt ausgebaut.",
-    homeTitle: "AI Standard",
-    homeDescription:
-      "Wohin deine Daten beim Einsatz von KI im Arbeitsalltag gehen, was hinein darf, und was das Gesetz längst verlangt.",
-    homeHeading: "Was beim Einsatz von KI im Arbeitsalltag mit deinen Daten passiert.",
-    homeLead:
-      "Geschrieben aus der Security-Praxis. Nicht die Frage, ob KI gefährlich ist, sondern die, die in der Praxis auftauchen: Wohin wandert ein Prompt, sobald du Enter drückst, in wessen Rechtsraum liegt er dann, was darfst du hineingeben, wenn es Kundendaten sind, und was verlangt das Gesetz längst von dir.",
-    homeStance:
-      "Die Antworten sind nicht immer die bequemen. \u201eIn der EU gehostet\u201c heißt nicht \u201esicherer\u201c \u2014 ein kleines Team, das sich Admin-Rechte teilt, ohne ISMS und ohne Nachvollziehbarkeit, kann dich stärker exponieren als ein großer Anbieter, bei dem du eine anonyme Nummer unter Millionen bist.",
-    homePrimaryLink: "Trainiert es mit dem, was ich eingebe?",
-    homeSecondaryLink: "Was darf ich hineingeben?",
-    doorMore: "Zum Bereich",
-    homeArticles: "Alles bisher Geschriebene",
-    homeArticlesLead:
-      "Jeder gekennzeichnet, welche Art von Aussage er macht und wann er zuletzt an der Quelle geprüft wurde.",
-    howToRead: "Wie diese Seite zu lesen ist",
-    howToReadShort:
-      "Jeder Abschnitt sagt, welche Art von Aussage er macht, und Aussagen über die Außenwelt tragen eine Quelle und das Datum ihrer letzten Prüfung.",
     evidenceMethodTitle: "Nachweismethode und Quellenpolitik",
     evidenceMethodDescription:
       "Was die Aussagekennzeichnungen dieser Seite bedeuten, was gelten muss, bevor eine Aussage darunter erscheint, und wie Quellen gewichtet werden.",
     howToReadLead:
       "Jeder Abschnitt jedes Beitrags sagt, welche Art von Aussage er macht, und Tatsachenaussagen tragen das Datum ihrer letzten Prüfung an der Quelle. Anbieter ändern ihr Verhalten ohne Ankündigung — eine Aussage ohne Datum ist nicht falsch, sie ist unüberprüfbar.",
-    repoHeading: "Darunter liegt ein Repository",
-    repoCopy:
-      "Die Konventionen, die diese Seite beschreibt, liegen in einem öffentlichen Repository, und die Seite wird direkt daraus gebaut. Das ist wichtig, wenn du Software schreibst \u2014 du kannst den Quelltext lesen, kopieren oder übernehmen. Sagt dir das nichts, ignorier es: Nichts auf dieser Seite setzt es voraus.",
-    repoContains:
-      "Darin: die AGENTS.md-Konvention für die Arbeit mit mehreren KI-Tools an einer Codebasis, eine Security-Baseline samt CI-Härtung, Branch-Protection-Regeln, die Blueprints selbst und der operative `.ai/`-Arbeitsbereich. Das Repository läuft nach seinen eigenen Konventionen, statt sie nur zu beschreiben — und eine Selbstprüfung lässt den Build scheitern, sobald das nicht mehr stimmt.",
-    repoLink: "Dokumentation hier lesen",
-    repoLinkExternal: "Das Repository auf GitHub",
-    glossaryAside:
-      "Begriffe werden dort erklärt, wo sie vorkommen. Wenn du einen einzeln nachschlagen willst: Das Glossar steht im Footer jeder Seite.",
-
-    whatThisSiteIsFor: "Drei Fragen, bevor du KI nutzt",
-    doorPaste: "Wohin gehen deine Daten?",
-    doorPasteCopy:
-      "Was dein Gerät verlässt, wo es verarbeitet und gespeichert wird, wie lange es bleibt und wer darauf zugreifen kann.",
-    doorAllowed: "Was darfst du eingeben?",
-    doorAllowedCopy:
-      "Für personenbezogene Daten, Kundenmaterial und vertrauliche Informationen gelten unterschiedliche Regeln – gesetzlich und vertraglich. Private Nutzung ist dabei nicht dasselbe wie betriebliche Nutzung.",
-    doorSetup: "Welche Zugriffe gibst du frei?",
-    doorSetupCopy:
-      "Welche Rechte ein Agent für seine Aufgabe braucht, wo der Zugriff endet und wie Änderungen nachvollziehbar bleiben.",
-
-    whatIsAvailableNow: "Was es heute gibt",
-    nowStandard: "Der Standard",
-    nowStandardCopy:
-      "Repository-Konventionen für die Arbeit mit KI, gepflegt im Repository darunter und hier dargestellt.",
-    nowUseCases: "Anwendungsfälle",
-    nowUseCasesCopy:
-      "Vier Auslöser und das Material, das jeder davon verlangt. Entscheidend ist, was dir bereits passiert ist — nicht die Größe deines Teams.",
-    nowGlossary: "Glossar",
-    nowGlossaryCopy: "Begriffe, wenn du wissen musst, was jemand tatsächlich meint.",
 
     blogTitle: "Blog",
     blogDescription:

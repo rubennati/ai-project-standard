@@ -1,0 +1,72 @@
+---
+import { getHome } from "../data/home";
+import { getUi } from "../i18n/ui";
+import type { SiteLocale } from "../i18n/ui";
+import { repoUrl } from "../data/site";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getHome(locale);
+const ui = getUi(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
+---
+
+<section class="flex flex-col gap-6">
+  <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{content.heading}</h1>
+  <p class="max-w-3xl text-lg leading-8">{content.lead}</p>
+  <div class="flex flex-wrap gap-4">
+    <a
+      href={toHref(content.primaryAction.href)}
+      class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
+    >
+      {content.primaryAction.label}
+    </a>
+    <a
+      href={toHref(content.secondaryAction.href)}
+      class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
+    >
+      {content.secondaryAction.label}
+    </a>
+  </div>
+</section>
+
+<section class="prototype-section">
+  <h2>{content.questionsHeading}</h2>
+
+  <div class="outcome-grid">
+    {
+      content.questions.map((question) => (
+        <article class="outcome-card">
+          <h3>{question.heading}</h3>
+          <p class="capability-card__body">{question.body}</p>
+          <p class="outcome-card__path">
+            <a href={toHref(question.link.href)}>{question.link.label}</a>
+          </p>
+        </article>
+      ))
+    }
+  </div>
+</section>
+
+<section id="evidence-method" class="mt-20 max-w-3xl scroll-mt-6">
+  <h2 class="text-2xl font-semibold">{content.trustHeading}</h2>
+  <p class="mt-3 leading-7">{content.stance}</p>
+  <p class="mt-3 leading-7 text-zinc-700 dark:text-zinc-300">{content.trustBody}</p>
+  <p class="mt-3">
+    <a href={toHref(content.trustLink.href)}>{ui.evidenceMethod}</a>
+  </p>
+</section>
+
+<section class="mt-20 flex max-w-3xl flex-col gap-3">
+  <h2 class="text-2xl font-semibold">{content.repoHeading}</h2>
+  <p class="leading-7">{content.repoBody}</p>
+  <p class="flex flex-wrap gap-x-6 gap-y-2">
+    <a href={`${base}docs`}>{content.repoDocsLink}</a>
+    <a href={repoUrl}>{content.repoExternalLink} ↗</a>
+  </p>
+  <p class="mt-4 leading-7 text-zinc-700 dark:text-zinc-300">{content.glossaryAside}</p>
+</section>
