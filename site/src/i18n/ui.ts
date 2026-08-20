@@ -17,13 +17,6 @@ export const ui = {
     dataFlows: "Access & actions",
     start: "Ways of working",
     secureSetup: "Secure & verify",
-    secureSetupTitle: "Setting it up safely",
-    secureSetupDescription:
-      "What to change on day one, what to check before an agent gets access, and where a technical boundary belongs instead of a sentence in a prompt.",
-    secureSetupIntro:
-      "None of this is new security thinking. What changed is that these tools are driven in plain language, so the decisions are now made by people who were never asked to think about them.",
-    secureSetupMore:
-      "This section does not yet explain what a coding agent reads from a repository or how much of it reaches the model.",
     law: "Law",
     about: "About",
     lawTitle: "Law",
@@ -194,13 +187,6 @@ export const ui = {
     dataFlows: "Zugriff & Aktionen",
     start: "Arbeitsweisen",
     secureSetup: "Absichern & prüfen",
-    secureSetupTitle: "Sicher einrichten",
-    secureSetupDescription:
-      "Was du am ersten Tag umstellst, was du prüfst, bevor ein Agent Zugriff bekommt, und wo eine technische Grenze hingehört statt eines Satzes im Prompt.",
-    secureSetupIntro:
-      "Nichts davon ist neues Sicherheitsdenken. Neu ist, dass diese Tools in normaler Sprache bedient werden — die Entscheidungen treffen jetzt Leute, die nie danach gefragt wurden.",
-    secureSetupMore:
-      "Dieser Bereich erklärt noch nicht, was ein Coding-Agent aus einem Repository liest und wie viel davon beim Modell ankommt.",
     law: "Recht",
     about: "Über",
     lawTitle: "Recht",

@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Added — Checking the result, and keeping a record
+
+- Two new pages answer what the site had been asking readers to do without ever
+  saying how: `/secure-setup/checking-the-result` on checking what came back and
+  what was done, and `/secure-setup/keeping-a-record` on what to write down so a
+  decision can still be explained months later.
+- What you check follows how far the result already travelled — an answer you
+  can still discard, a change you can still reject, or an action that already
+  happened and can only be reconstructed.
+- `/secure-setup` becomes the six-step lifecycle instead of a settings list:
+  decide, configure, verify, record, monitor, take it back. The intro says which
+  steps a task actually needs, so it does not read as six obligations for every
+  draft.
+
 ### Changed — Data flows becomes access and actions
 
 - `/data-flows` opens with what a system can get to and do, rather than listing

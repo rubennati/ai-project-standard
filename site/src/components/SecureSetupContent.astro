@@ -1,0 +1,46 @@
+---
+import { getControlLifecycle } from "../data/secure-setup/control-lifecycle";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getControlLifecycle(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
+---
+
+<div class="layout-wide">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
+  <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
+  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
+
+  <section class="prototype-section">
+    <h2>{content.stagesHeading}</h2>
+
+    <ol class="boundary-questions">
+      {
+        content.stages.map((stage, index) => (
+          <li>
+            <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
+            <div>
+              <h3>{stage.name}</h3>
+              <p class="boundary-questions__reason">{stage.meaning}</p>
+              {stage.paths && (
+                <ul class="lifecycle-stage__paths">
+                  {stage.paths.map((path) => (
+                    <li>
+                      <a href={toHref(path.href)}>{path.label}</a>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</div>

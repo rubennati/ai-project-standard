@@ -137,11 +137,11 @@ Home
 │   └── Hosting, operators and sovereignty
 └── Secure & verify                /secure-setup
     ├── Decide what is permitted
-    ├── Configure the boundary
-    ├── Verify answers and outputs
-    ├── Review actions and changes
-    ├── Preserve evidence and reconstruct decisions
-    ├── Monitor, revoke and recover
+    ├── Configure the boundary      /secure-setup/before-you-grant-access
+    ├── Verify the result           /secure-setup/checking-the-result
+    ├── Keep a record               /secure-setup/keeping-a-record
+    ├── Monitor
+    ├── Take it back
     └── Introduce AI in an organisation
 
 Footer
@@ -287,6 +287,13 @@ Law and organisational policy enter at Decide. Permissions and settings enter
 at Configure. Source review, tests and approvals enter at Verify. Logs,
 provenance and decision records enter at Record. Repeated operations add
 Monitor. Every external action needs a Revoke or recover path.
+
+Two of the six were approved as public routes on 2026-08-20 and built:
+`/secure-setup/checking-the-result` for Verify and
+`/secure-setup/keeping-a-record` for Record. They were the product's two
+largest content gaps — brief questions 8 and 9, both rated weak in the content
+audit and neither owned by any page. Monitor has no destination yet and the hub
+says so rather than inventing one.
 
 ### Reference
 

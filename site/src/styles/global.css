@@ -556,6 +556,17 @@
 
   /* The hub routes into the article family from inside each card, so the links
      are a list rather than the single closing path an outcome card carries. */
+  /* Links inside a numbered lifecycle step. No border here: the number and the
+     indent already separate the steps, so a rule would be a third divider. */
+  .lifecycle-stage__paths {
+    display: grid;
+    gap: 0.375rem;
+    margin-top: 0.625rem;
+    padding-left: 0;
+    list-style: none;
+    font-size: 0.9375rem;
+  }
+
   .capability-card__body {
     margin-top: 0.625rem;
     line-height: 1.6;
@@ -683,14 +694,14 @@
     padding: 0;
   }
 
-  .boundary-questions li {
+  .boundary-questions > li {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1rem;
     padding-block: 1.25rem;
   }
 
-  .boundary-questions li + li {
+  .boundary-questions > li + li {
     border-top: 1px solid var(--line);
   }
 
