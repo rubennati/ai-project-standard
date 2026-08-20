@@ -27,6 +27,8 @@ export type LocalizedRouteKey =
   | "lawFourQuestions"
   | "secureSetup"
   | "secureSetupAccess"
+  | "secureSetupChecking"
+  | "secureSetupRecord"
   | "start"
   | "startEmployee"
   | "startDecisionMaker"
@@ -101,6 +103,10 @@ export const getLocalizedPath = (
       return `${prefix}/secure-setup`;
     case "secureSetupAccess":
       return `${prefix}/secure-setup/before-you-grant-access`;
+    case "secureSetupChecking":
+      return `${prefix}/secure-setup/checking-the-result`;
+    case "secureSetupRecord":
+      return `${prefix}/secure-setup/keeping-a-record`;
     case "start":
       return `${prefix}/start`;
     case "startEmployee":

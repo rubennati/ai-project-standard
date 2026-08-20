@@ -473,3 +473,23 @@ Rejected: one-word labels throughout. Three of the four journeys are two-part
 questions — reach and action, securing and verification, where AI fits and where
 it does not — and a single word drops the half that a previous pass had added.
 The navigation names the journey; the hub heading asks the full question.
+
+## 2026-08-20 - Verification and record become public routes
+
+Decision: `/secure-setup/checking-the-result` and
+`/secure-setup/keeping-a-record` are added as public routes in both locales,
+and `/secure-setup` becomes the six-step control lifecycle rather than a list of
+settings articles.
+
+Rationale: the lifecycle had two steps with a destination and four without, and
+a hub whose stages point nowhere is not a product. The two gaps were the largest
+in the whole site — questions 8 and 9 of the product brief, both rated weak in
+the content audit, and neither owned by any page. Every one of the six ways of
+working on `/start` ends on a "what to check" field that had no depth behind it.
+
+Rejected: one page covering both. Checking a result and being able to explain a
+decision later are separated by months and asked by different people, and the
+merged page would have led with the urgent half. Also rejected: filling Monitor
+to make the six symmetrical. Nothing on the site continues it yet, and the hub
+states which steps a task actually needs so the list does not read as six
+obligations for every draft.
