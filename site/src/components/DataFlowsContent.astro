@@ -1,0 +1,60 @@
+---
+import ConnectionBoundaryFigure from "./ConnectionBoundaryFigure.astro";
+import { getReachModel } from "../data/data-flows/reach-model";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Props {
+  locale: SiteLocale;
+}
+
+const { locale } = Astro.props;
+const content = getReachModel(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
+---
+
+<div class="layout-wide">
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
+  <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
+  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
+
+  <section class="prototype-section">
+    <h2>{content.capabilitiesHeading}</h2>
+
+    <div class="outcome-grid">
+      {
+        content.capabilities.map((capability) => (
+          <article class="outcome-card">
+            <h3>{capability.name}</h3>
+            <p class="capability-card__body">{capability.body}</p>
+            <ul class="capability-card__paths">
+              {capability.paths.map((path) => (
+                <li>
+                  <a href={toHref(path.href)}>{path.label}</a>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="prototype-section">
+    <h2>{content.layersHeading}</h2>
+    <p class="prototype-section__lead">{content.layersLead}</p>
+
+    <ConnectionBoundaryFigure
+      nodes={content.layers.map((layer) => ({
+        label: layer.label,
+        role: layer.role,
+        boundary: layer.boundary,
+      }))}
+      caption={content.layersCaption}
+    />
+
+    <p class="mt-5">
+      <a href={toHref(content.layersPath.href)}>{content.layersPath.label}</a>
+    </p>
+  </section>
+</div>
