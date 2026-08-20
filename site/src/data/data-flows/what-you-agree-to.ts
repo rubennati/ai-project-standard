@@ -90,6 +90,7 @@ const en: Article = {
         "Do not describe an ordinary transfer as a breach. Describe it as the point where control ends, which is both accurate and harder to argue with.",
         "When a vendor says trained on our data, ask whether they mean fine-tuning or retrieval. The answer changes the assessment.",
       ],
+      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
   ],
 };
@@ -167,6 +168,7 @@ const de: Article = {
         "Nenn eine gewöhnliche Übermittlung kein Leck. Nenn sie den Punkt, an dem die Kontrolle endet — das ist zutreffend und schwerer zu bestreiten.",
         "Wenn ein Anbieter sagt, es sei mit ihren Daten trainiert: frag, ob Fine-Tuning oder Retrieval gemeint ist. Die Antwort ändert die Beurteilung.",
       ],
+      links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
     },
   ],
 };

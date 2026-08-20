@@ -81,6 +81,7 @@ const en: Article = {
         "Ask who the contracting entity is, not only where the servers are. The answer changes who can compel access.",
         "Before you promise a client that something can be deleted, check that you could actually demonstrate it. If you could not, say so before the material goes in rather than afterwards.",
       ],
+      links: [{ label: "Where your data is, and who can reach it", href: "/data-flows/data-sovereignty" }],
     },
   ],
 };
@@ -151,6 +152,7 @@ const de: Article = {
         "Frag, wer der Vertragspartner ist, nicht nur, wo die Server stehen. Die Antwort entscheidet, wer Zugriff erzwingen kann.",
         "Bevor du einem Kunden zusagst, dass etwas gelöscht werden kann: prüf, ob du es auch belegen könntest. Wenn nicht, sag es, bevor das Material hineingeht, und nicht danach.",
       ],
+      links: [{ label: "Wo deine Daten liegen und wer herankommt", href: "/de/data-flows/data-sovereignty" }],
     },
   ],
 };

@@ -1,51 +1,18 @@
 ---
+import DataFlowsContent from "../../../components/DataFlowsContent.astro";
 import Base from "../../../layouts/Base.astro";
-import { getUi } from "../../../i18n/ui";
-import { getGettingItBackOut, CHECKED as CHECKED_OUT } from "../../../data/data-flows/getting-it-back-out";
-import { getWhatYouAgreeTo, CHECKED as CHECKED_AGREE } from "../../../data/data-flows/what-you-agree-to";
-import { getTrainingAndRetention, CHECKED } from "../../../data/data-flows/training-and-retention";
-import { getDataSovereignty, CHECKED as CHECKED_SOV } from "../../../data/data-flows/data-sovereignty";
-import { getWhereKnowledgeLives, CHECKED as CHECKED_KS } from "../../../data/data-flows/where-knowledge-lives";
-import { getConnectAiToolsData, CHECKED as CHECKED_CONNECT } from "../../../data/data-flows/connect-ai-to-tools-and-data";
+import { getReachModel } from "../../../data/data-flows/reach-model";
 
 const locale = "de" as const;
-const base = import.meta.env.BASE_URL;
-const ui = getUi(locale);
-
-const articles = [
-  { ...getConnectAiToolsData(locale), href: `${base}de/data-flows/connect-ai-to-tools-and-data`, checked: CHECKED_CONNECT },
-  { ...getDataSovereignty(locale), href: `${base}de/data-flows/data-sovereignty`, checked: CHECKED_SOV },
-  { ...getWhereKnowledgeLives(locale), href: `${base}de/data-flows/where-knowledge-lives`, checked: CHECKED_KS },
-  { ...getTrainingAndRetention(locale), href: `${base}de/data-flows/training-and-retention`, checked: CHECKED },
-  { ...getWhatYouAgreeTo(locale), href: `${base}de/data-flows/what-you-agree-to`, checked: CHECKED_AGREE },
-  { ...getGettingItBackOut(locale), href: `${base}de/data-flows/getting-it-back-out`, checked: CHECKED_OUT },
-];
+const content = getReachModel(locale);
 ---
 
 <Base
-  title={ui.dataFlowsTitle}
-  description={ui.dataFlowsDescription}
+  title={content.title}
+  description={content.description}
   schemaType="CollectionPage"
   locale={locale}
   routeKey="dataFlows"
 >
-  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{ui.dataFlowsTitle}</h1>
-  <p class="mt-4 max-w-2xl text-lg leading-8">{ui.dataFlowsIntro}</p>
-
-  <ul class="mt-10 flex max-w-2xl flex-col gap-6">
-    {
-      articles.map((article) => (
-        <li class="rounded-lg border border-black/10 p-6 dark:border-white/10">
-          <h2 class="text-lg font-semibold">
-            <a href={article.href}>{article.title}</a>
-          </h2>
-          <p class="mt-2 leading-7">{article.description}</p>
-          <p class="mt-3 text-sm text-zinc-600 dark:text-zinc-400">
-            <time datetime={article.checked}>{article.checked}</time>
-          </p>
-        </li>
-      ))
-    }
-  </ul>
-
+  <DataFlowsContent locale={locale} />
 </Base>

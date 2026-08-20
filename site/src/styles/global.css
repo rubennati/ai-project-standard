@@ -554,6 +554,24 @@
     line-height: 1.6;
   }
 
+  /* The hub routes into the article family from inside each card, so the links
+     are a list rather than the single closing path an outcome card carries. */
+  .capability-card__body {
+    margin-top: 0.625rem;
+    line-height: 1.6;
+  }
+
+  .capability-card__paths {
+    display: grid;
+    gap: 0.375rem;
+    margin-top: 1rem;
+    border-top: 1px solid var(--line);
+    padding-top: 0.75rem;
+    padding-left: 0;
+    list-style: none;
+    font-size: 0.9375rem;
+  }
+
   .outcome-card__path,
   .collaboration-card__path {
     margin-top: 1rem;

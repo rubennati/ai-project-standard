@@ -115,6 +115,7 @@ const en: Article = {
         "For anything belonging to a client, a business plan or the API is the floor: the training default is on your side there, rather than something you had to remember to turn off. By itself it supplies neither the client's permission, nor a legal basis, nor a processing agreement — those are separate questions and they belong to the law section.",
         "Write down the date you checked. This page carries one for the same reason: defaults here change without an announcement, and a setting you verified last year tells you nothing about today.",
       ],
+      links: [{ label: "What changes when you allow model training", href: "/data-flows/what-you-agree-to" }],
     },
     {
       heading: "What this page does not cover",
@@ -204,6 +205,7 @@ const de: Article = {
         "Für alles, was einem Kunden gehört, sind Geschäftstarif oder API die Grundlage: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
         "Notier dir das Datum der Prüfung. Diese Seite trägt aus demselben Grund eines: Die Voreinstellungen ändern sich ohne Ankündigung, und eine Einstellung, die du letztes Jahr geprüft hast, sagt nichts über heute.",
       ],
+      links: [{ label: "Was sich ändert, wenn du Modelltraining erlaubst", href: "/de/data-flows/what-you-agree-to" }],
     },
     {
       heading: "Was diese Seite nicht abdeckt",

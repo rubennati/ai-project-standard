@@ -137,6 +137,7 @@ const en: Article = {
         "Is the provider established outside the EU, and if so under which Chapter V route",
         "What would I do if that route stopped being available",
       ],
+      links: [{ label: "Connect AI to tools and data", href: "/data-flows/connect-ai-to-tools-and-data" }],
     },
     {
       heading: "Limits of this page",
@@ -268,6 +269,7 @@ const de: Article = {
         "Ist der Anbieter außerhalb der EU niedergelassen, und wenn ja, über welchen Weg nach Kapitel V",
         "Was täte ich, wenn dieser Weg wegfiele",
       ],
+      links: [{ label: "KI mit Tools und Daten verbinden", href: "/de/data-flows/connect-ai-to-tools-and-data" }],
     },
     {
       heading: "Grenzen dieser Seite",

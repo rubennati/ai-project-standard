@@ -6,6 +6,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Data flows becomes access and actions
+
+- `/data-flows` opens with what a system can get to and do, rather than listing
+  articles by date. Four things a reader can hold apart: what it can read, what
+  stays stored, what it can change, and what it can set off. Each is granted on
+  its own, and the hub says so.
+- Below that, where the access comes from — model, product, connector, target
+  system — because "the model can read my files" names one thing and describes
+  four. Only the last of them grants anything.
+- The six existing articles keep their URLs, their sources and their check
+  dates, and are now reached from the capability they answer. Each also ends by
+  pointing at the next question instead of stopping.
+
 ### Changed — The header carries the four reader journeys
 
 - Primary navigation exposes the four decisions a reader makes rather than the

@@ -15,11 +15,6 @@ export const ui = {
     docs: "Docs",
     blog: "Blog",
     dataFlows: "Access & actions",
-    dataFlowsTitle: "Data flows",
-    dataFlowsDescription:
-      "Where your input actually goes: which plans train on it, how long it is kept, and what to check before you paste anything.",
-    dataFlowsIntro:
-      "What leaves your machine when you use an AI tool, and what happens to it there. Each section is labelled with what kind of claim it is and when it was last checked \u2014 vendor defaults change without notice.",
     start: "Ways of working",
     secureSetup: "Secure & verify",
     secureSetupTitle: "Setting it up safely",
@@ -197,11 +192,6 @@ export const ui = {
     docs: "Docs",
     blog: "Blog",
     dataFlows: "Zugriff & Aktionen",
-    dataFlowsTitle: "Datenflüsse",
-    dataFlowsDescription:
-      "Wohin deine Eingabe tatsächlich geht: welche Tarife damit trainieren, wie lange sie aufbewahrt wird, und was du prüfen solltest, bevor du etwas hineinkopierst.",
-    dataFlowsIntro:
-      "Was deinen Rechner verlässt, wenn du ein KI-Tool nutzt, und was dort damit geschieht. Jeder Abschnitt ist gekennzeichnet, welche Art von Aussage er ist und wann er zuletzt geprüft wurde \u2014 Voreinstellungen der Anbieter ändern sich ohne Ankündigung.",
     start: "Arbeitsweisen",
     secureSetup: "Absichern & prüfen",
     secureSetupTitle: "Sicher einrichten",
