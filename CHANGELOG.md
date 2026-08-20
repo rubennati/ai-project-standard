@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — The homepage opens on the work, not on the risk
+
+- The page led with where your data goes and offered three doors into data, law
+  and settings. Neither of the two journeys the product opens with — what AI is
+  for, and how much the system should do — could be reached from the front page
+  at all.
+- It now states the four questions in the order they come up, each with one
+  thing that distinguishes it and a way in. The hub models are not repeated
+  here; each hub keeps its own.
+- The three-question block is retired, which also resolves its third door
+  claiming "access" for `/secure-setup` while the header uses the same word for
+  `/data-flows`.
+- The security-desk voice and the stance are kept word for word. The stance
+  moves down to sit with the method, so the first action stays on the first
+  screen of a phone rather than below it.
+
 ### Added — Checking the result, and keeping a record
 
 - Two new pages answer what the site had been asking readers to do without ever

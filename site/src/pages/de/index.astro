@@ -1,86 +1,18 @@
 ---
+import HomeContent from "../../components/HomeContent.astro";
 import Base from "../../layouts/Base.astro";
-import { getUi } from "../../i18n/ui";
-import { repoUrl } from "../../data/site";
+import { getHome } from "../../data/home";
 
 const locale = "de" as const;
-const base = import.meta.env.BASE_URL;
-const ui = getUi(locale);
-
-// The three doors are the three reader directions. The heading carries the
-// link so its accessible name is the heading alone.
-//
-// The cards used to list individual articles as well. That turned the homepage
-// into a second index of pages the hubs already list in full, and it competed
-// with the orientation the homepage is for. The hubs own that depth.
-const doors = [
-  { heading: ui.doorPaste, copy: ui.doorPasteCopy, href: `${base}de/data-flows` },
-  { heading: ui.doorAllowed, copy: ui.doorAllowedCopy, href: `${base}de/law` },
-  { heading: ui.doorSetup, copy: ui.doorSetupCopy, href: `${base}de/secure-setup` },
-];
-
+const content = getHome(locale);
 ---
 
 <Base
-  title={ui.homeTitle}
-  description={ui.homeDescription}
+  title={content.title}
+  description={content.description}
   schemaType="WebSite"
   locale={locale}
   routeKey="home"
 >
-  <section class="flex flex-col gap-6">
-    <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{ui.homeHeading}</h1>
-    <p class="max-w-3xl text-lg leading-8">{ui.homeLead}</p>
-    <p class="max-w-3xl leading-7 text-zinc-700 dark:text-zinc-300">{ui.homeStance}</p>
-    <div class="flex flex-wrap gap-4">
-      <a
-        href={`${base}de/data-flows/training-and-retention`}
-        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
-      >
-        {ui.homePrimaryLink}
-      </a>
-      <a
-        href={`${base}de/law/what-may-go-in`}
-        class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
-      >
-        {ui.homeSecondaryLink}
-      </a>
-    </div>
-  </section>
-
-  <section class="mt-20 flex flex-col gap-4">
-    <h2 class="text-2xl font-semibold">{ui.whatThisSiteIsFor}</h2>
-    <div class="grid gap-6 sm:grid-cols-3">
-      {
-        doors.map((door) => (
-          <article class="flex h-full flex-col gap-3 rounded-lg border border-black/10 p-6 dark:border-white/10">
-            <h3 class="text-lg font-semibold">
-              <a href={door.href}>{door.heading}</a>
-            </h3>
-            <p class="leading-7">{door.copy}</p>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section id="evidence-method" class="mt-20 max-w-3xl scroll-mt-6">
-    <h2 class="text-2xl font-semibold">{ui.howToRead}</h2>
-    <p class="mt-3 leading-7 text-zinc-700 dark:text-zinc-300">{ui.howToReadShort}</p>
-    <p class="mt-3">
-      <a href={`${base}de/glossary/evidence-method`}>{ui.evidenceMethod}</a>
-    </p>
-  </section>
-
-
-  <section class="mt-20 flex max-w-3xl flex-col gap-3">
-    <h2 class="text-2xl font-semibold">{ui.repoHeading}</h2>
-    <p class="leading-7">{ui.repoCopy}</p>
-    <p class="leading-7 text-zinc-700 dark:text-zinc-300">{ui.repoContains}</p>
-    <p class="flex flex-wrap gap-x-6 gap-y-2">
-      <a href={`${base}docs`}>{ui.repoLink}</a>
-      <a href={repoUrl}>{ui.repoLinkExternal} ↗</a>
-    </p>
-    <p class="mt-4 leading-7 text-zinc-700 dark:text-zinc-300">{ui.glossaryAside}</p>
-  </section>
+  <HomeContent locale={locale} />
 </Base>
