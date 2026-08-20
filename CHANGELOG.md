@@ -6,6 +6,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — The glossary stopped promising a split that was retired
+
+- The index said broader guides and project documentation "will stay separate",
+  and the German said they would be built out separately later. That is the
+  two-layer website-and-repository identity `docs/purpose.md` retired: the site
+  is not split into a knowledge base and a developer area.
+- It now says what the index is — the vocabulary the rest of the site uses,
+  for when you need to look a term up on its own.
+
 ### Changed — The homepage opens on the work, not on the risk
 
 - The page led with where your data goes and offered three doors into data, law

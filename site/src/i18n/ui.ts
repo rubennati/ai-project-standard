@@ -89,7 +89,7 @@ export const ui = {
     glossaryDescription:
       "A maintained index of AI, LLM, tooling, and product terms. Use it to find a term and open its definition page.",
     glossaryIntro:
-      "This is a working index of AI- and LLM-near vocabulary. Deeper explanations live on the term pages, while broader guides and project documentation will stay separate.",
+      "The vocabulary the rest of the site uses, in one place. Terms are explained where they come up — this index is for when you need to look one up on its own.",
     evidenceMethodTitle: "Evidence method and source policy",
     evidenceMethodDescription:
       "What each claim label on this site means, what has to be true before a claim is published under it, and how sources are ranked.",
@@ -216,7 +216,7 @@ export const ui = {
     glossaryDescription:
       "Ein gepflegter Index für KI-, LLM-, Tooling- und Produktbegriffe. Er hilft dabei, einen Begriff zu finden und die passende Erklärungsseite zu öffnen.",
     glossaryIntro:
-      "Dies ist ein Arbeitsindex für KI- und LLM-nahe Begriffe. Tiefere Erklärungen liegen auf den einzelnen Begriffseiten. Breitere Guides und Projektdokumentation werden später getrennt ausgebaut.",
+      "Das Vokabular, mit dem der Rest der Seite arbeitet, an einem Ort. Begriffe werden dort erklärt, wo sie vorkommen — dieser Index ist für den Fall, dass du einen einzeln nachschlagen willst.",
     evidenceMethodTitle: "Nachweismethode und Quellenpolitik",
     evidenceMethodDescription:
       "Was die Aussagekennzeichnungen dieser Seite bedeuten, was gelten muss, bevor eine Aussage darunter erscheint, und wie Quellen gewichtet werden.",
