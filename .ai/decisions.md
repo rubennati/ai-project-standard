@@ -449,3 +449,27 @@ that experiment, an acceptance section per task, a checklist of the regression
 and deferred-scope cases, and independent review as a requirement. Every
 correction this project has recorded was behavioural rather than another
 mechanism, and a second agent on every task is a ceremony, not evidence.
+
+## 2026-08-20 - Four primary journeys, and Reference is not one
+
+Decision: the primary header carries exactly four destinations, one per reader
+journey — `/use-cases`, `/start`, `/data-flows`, `/secure-setup`. Labels:
+Where AI fits / Wo KI sinnvoll ist, Ways of working / Arbeitsweisen,
+Access & actions / Zugriff & Aktionen, Secure & verify / Absichern & prüfen.
+Law, Blog and About leave the header for the footer, which already holds them.
+
+This supersedes the header half of "Stable-route-first website structure"
+(2026-08-10), which named `/glossary` a fifth destination as the Reference
+entry. The route ownership decided that day is unchanged; only the count is.
+
+Rationale: the same document defined the product as four reader decisions and
+then added a fifth destination that is not one of them. Looking a term up is a
+way of reading, not a decision someone arrives with, so Reference fails the test
+that removed Law and Blog from the header. It stays reachable contextually and
+from the footer. The header also omitted `/use-cases` entirely, so the journey
+the product opens with had no global link.
+
+Rejected: one-word labels throughout. Three of the four journeys are two-part
+questions — reach and action, securing and verification, where AI fits and where
+it does not — and a single word drops the half that a previous pass had added.
+The navigation names the journey; the hub heading asks the full question.

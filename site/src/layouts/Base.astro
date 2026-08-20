@@ -72,17 +72,19 @@ const deLanguageHref = routeKey
     ? toHref(currentPath)
     : undefined;
 
-// No "Home" entry — the wordmark already has that job. This slice keeps the
-// existing destinations while the approved reader-job labels are verified in
-// both languages; changing their visual treatment does not pull that content
-// migration into the theme foundation.
+// One entry per reader journey, in the order the questions arrive: what AI is
+// for, how to work with it, what it can reach and do, how to keep that safe and
+// check it. No "Home" entry — the wordmark already has that job.
+//
+// Law, Blog and About are deliberately absent. Each is reference, format or
+// trust rather than a journey a reader arrives with, and the footer already
+// holds all three. Reference is not a fifth entry for the same reason: looking
+// a term up interrupts a journey instead of being one.
 const primaryNav = [
+  { href: toHref(getLocalizedPath(locale, "useCases")), label: ui.useCases },
   { href: toHref(getLocalizedPath(locale, "start")), label: ui.start },
   { href: toHref(getLocalizedPath(locale, "dataFlows")), label: ui.dataFlows },
   { href: toHref(getLocalizedPath(locale, "secureSetup")), label: ui.secureSetup },
-  { href: toHref(getLocalizedPath(locale, "law")), label: ui.law },
-  { href: toHref(getLocalizedPath(locale, "blogIndex")), label: ui.blog },
-  { href: localizedAbout, label: ui.about },
 ];
 
 const copyrightYear = new Date().getFullYear();

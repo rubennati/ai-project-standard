@@ -43,22 +43,31 @@ place unless a later migration has a concrete benefit.
 
 ## Primary navigation
 
-The wordmark remains the Home link. The proposed header has five destinations:
+The wordmark remains the Home link. The header has four destinations, one per
+reader journey. Approved 2026-08-20; supersedes the five-destination proposal
+this section previously carried.
 
 | Product job | English label | German label | Destination |
 | --- | --- | --- | --- |
-| Possibility | **Use AI** | **KI einsetzen** | `/use-cases` and `/de/use-cases` |
-| Collaboration | **Choose how** | **Arbeitsweise wählen** | `/start` and `/de/start` |
-| Reach | **Data & systems** | **Daten & Systeme** | `/data-flows` and `/de/data-flows` |
-| Control | **Control & verify** | **Absichern & prüfen** | `/secure-setup` and `/de/secure-setup` |
-| Reference | **Reference** | **Nachschlagen** | `/glossary` and `/de/glossary` |
+| Possibility | **Where AI fits** | **Wo KI sinnvoll ist** | `/use-cases` and `/de/use-cases` |
+| Collaboration | **Ways of working** | **Arbeitsweisen** | `/start` and `/de/start` |
+| Reach | **Access & actions** | **Zugriff & Aktionen** | `/data-flows` and `/de/data-flows` |
+| Control | **Secure & verify** | **Absichern & prüfen** | `/secure-setup` and `/de/secure-setup` |
 
-“Choose how” is preferable to “Collaborate” in the header because it states the
-reader's action and avoids sounding like a team-collaboration feature. The hub
-itself can use the more explicit heading “Choose how to work with AI”.
+**Reference is not a fifth destination.** Looking something up is a way of
+reading, not a decision a reader arrives with, so it fails the same test that
+removed Law and Blog below. It supports the four journeys contextually and
+through the footer.
+
+Each label names the journey; the hub heading asks the full question. The
+navigation may stay compact because the H1 carries the rest — “Ways of working”
+over “Wie willst du mit KI arbeiten?”. Two-part labels are kept where one word
+would drop half of a journey: reach without action, securing without
+verification, suitability without the option of not using AI at all.
 
 The abstract words Possibility, Collaboration, Reach and Control remain the
-content model. They do not need to become navigation jargon.
+content model. They do not need to become navigation jargon, and no public
+label uses them.
 
 ### What leaves the header
 
@@ -70,7 +79,7 @@ content model. They do not need to become navigation jargon.
 - **About** remains a trust destination in the footer. The wordmark and homepage
   already orient a first-time reader.
 
-This reduces the header from six subject and format labels to five reader jobs.
+This reduces the header from six subject and format labels to four reader jobs.
 The language control is a permanent header action on desktop and mobile; it is
 not hidden inside the mobile navigation disclosure.
 
@@ -82,13 +91,13 @@ the other three.
 
 | Reader arrives with | First destination | The path must answer |
 | --- | --- | --- |
-| “I have a task and want to know whether AI helps” | Use AI | useful outcome → appropriate collaboration → required reach → checks and no-AI option |
-| “I am about to paste something into a chat” | Choose how or Data & systems | account and task → data path → permission → source and output verification |
-| “I want AI to work in files or code” | Choose how | workspace boundary → diffs and tests → secrets and permissions → human ownership |
-| “I want to connect mail, knowledge or another service” | Data & systems | retrieval or action → connector/MCP reach → scopes and credentials → logging and revocation |
-| “I want an agent to act” | Control & verify | goal → action boundary → checkpoints → rollback, monitoring and reconstruction |
-| “I decide for a team or organisation” | Choose how | use policy → approved operating models → data and law → literacy, exceptions and incident ownership |
-| “I want to publish something built with AI” | Use AI | prototype or deliverable → rights and licence → review and maintenance → honest labelling |
+| “I have a task and want to know whether AI helps” | Where AI fits | useful outcome → appropriate collaboration → required reach → checks and no-AI option |
+| “I am about to paste something into a chat” | Ways of working or Access & actions | account and task → data path → permission → source and output verification |
+| “I want AI to work in files or code” | Ways of working | workspace boundary → diffs and tests → secrets and permissions → human ownership |
+| “I want to connect mail, knowledge or another service” | Access & actions | retrieval or action → connector/MCP reach → scopes and credentials → logging and revocation |
+| “I want an agent to act” | Secure & verify | goal → action boundary → checkpoints → rollback, monitoring and reconstruction |
+| “I decide for a team or organisation” | Ways of working | use policy → approved operating models → data and law → literacy, exceptions and incident ownership |
+| “I want to publish something built with AI” | Where AI fits | prototype or deliverable → rights and licence → review and maintenance → honest labelling |
 
 Role, technology and company size are filters or entry cues, not top-level
 sections. A person can be an employee, developer and decision-maker in the same
@@ -102,14 +111,14 @@ its old prefix.
 
 ```text
 Home
-├── Use AI                         /use-cases
+├── Where AI fits                  /use-cases
 │   ├── Write, transform and communicate
 │   ├── Research, analyse and decide
 │   ├── Work with organisational knowledge
 │   ├── Build, prototype and maintain software
 │   ├── Connect tools and automate work
 │   └── Decide not to use AI
-├── Choose how                     /start
+├── Ways of working                /start
 │   ├── Chat
 │   ├── Assistant
 │   ├── Workspace assistant
@@ -118,7 +127,7 @@ Home
 │   ├── Automated operation
 │   ├── Employee entry
 │   └── Decision-maker entry
-├── Data & systems                 /data-flows
+├── Access & actions               /data-flows
 │   ├── What the product and model each do
 │   ├── Training and retention
 │   ├── Deletion and exit
@@ -126,21 +135,19 @@ Home
 │   ├── Connectors and MCP
 │   ├── Permissions and credentials
 │   └── Hosting, operators and sovereignty
-├── Control & verify               /secure-setup
-│   ├── Decide what is permitted
-│   ├── Configure the boundary
-│   ├── Verify answers and outputs
-│   ├── Review actions and changes
-│   ├── Preserve evidence and reconstruct decisions
-│   ├── Monitor, revoke and recover
-│   └── Introduce AI in an organisation
-└── Reference                      /glossary
-    ├── Glossary
-    ├── Law
-    ├── Evidence method and source policy
-    └── Dated provider and platform behaviour
+└── Secure & verify                /secure-setup
+    ├── Decide what is permitted
+    ├── Configure the boundary
+    ├── Verify answers and outputs
+    ├── Review actions and changes
+    ├── Preserve evidence and reconstruct decisions
+    ├── Monitor, revoke and recover
+    └── Introduce AI in an organisation
 
 Footer
+├── Reference                      Glossary, Law, evidence method and dated
+│                                  provider behaviour — supporting depth for the
+│                                  four journeys, not a fifth one
 ├── Articles                       /blog
 ├── About                          /about
 ├── Technical repository          GitHub
@@ -283,10 +290,11 @@ Monitor. Every external action needs a Revoke or recover path.
 
 ### Reference
 
-`/glossary` remains the reference entry because it already has the largest and
-most mature index. The hub should expose links to Law, the evidence method and
-dated platform behaviour without turning them into another primary navigation
-layer.
+`/glossary` remains the reference index because it already has the largest and
+most mature vocabulary. It is reached contextually and from the footer, not from
+the primary header: a reader looks a term up in the middle of a journey rather
+than setting out to do it. The index should expose Law, the evidence method and
+dated platform behaviour without turning them into another navigation layer.
 
 Reference pages answer a question in depth. They do not own the reader journey.
 Every reference page should show at least one place where the fact changes a
@@ -344,6 +352,27 @@ reader journeys.
 Remove Docs, Profiles and the duplicated primary destinations. Do not add
 Blueprints as a public section; a relevant guide links the relevant artifact.
 Show the code and content licences once in the footer's fine-print row.
+
+### Conclusions from the global-link audit, 2026-08-20
+
+A global link may point at a hub and at one of its descendants, but only where
+the descendant has a reader job the hub does not cover. Audited against that
+test; not yet implemented, and out of scope for the navigation slice.
+
+- **Evidence method moves from Reference to Project & trust.** It answers "why
+  should I believe this site", which is that group's question, and it currently
+  sits beside its own URL parent. Its public URL does not change.
+- **The human-facing Security contact link goes.** It resolves to
+  `/.well-known/security.txt`, whose only content is the address already linked
+  one group above as Report a vulnerability. The endpoint stays served for
+  scanners; only the human link is redundant.
+- **Do not link Evidence method from the glossary index.** Its conceptual owner
+  is not the glossary, and a historical URL is not a reason to reinforce that
+  hierarchy in navigation.
+- `/glossary/evidence-method`'s URL and ownership are reserved for dedicated
+  reference work, not for a footer change.
+- `/profiles`, `/docs/**` and `/open-source/**` remain separate discovery and
+  ownership questions. None currently has a global link.
 
 ## The first complete prototype path
 
