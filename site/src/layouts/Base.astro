@@ -5,6 +5,7 @@ import JsonLd from "../components/JsonLd.astro";
 import LanguageSwitch from "../components/LanguageSwitch.astro";
 import { getLocalizedPath, type LocalizedRouteKey } from "../i18n/routes";
 import { getUi, type SiteLocale } from "../i18n/ui";
+import { getIdentity } from "../data/identity";
 import { repoUrl } from "../data/site";
 
 interface Props {
@@ -24,7 +25,7 @@ interface Props {
 
 const {
   title,
-  description = "A repository standard for long-term human and AI collaboration.",
+  description,
   ogType = "website",
   schemaType = "WebPage",
   datePublished,
@@ -36,6 +37,12 @@ const {
 } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
+const identity = getIdentity(locale);
+// The fallback has to be in this locale, so it cannot be a destructuring
+// default. Every page passes its own description and `site/AGENTS.md` says to;
+// this is what a page gets if one is ever forgotten, and it used to describe
+// the repository standard rather than the site.
+const pageDescription = description ?? identity.summary;
 const lang = locale;
 const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
@@ -141,14 +148,14 @@ const footerSections = [
     <meta name="theme-color" content="#243b66" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href={`${base}icon.svg`} type="image/svg+xml" />
     <link rel="manifest" href={`${base}manifest.webmanifest`} />
-    <SEO title={title} description={description} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
+    <SEO title={title} description={pageDescription} ogType={ogType} alternates={alternates} xDefaultHref={xDefaultHref} />
     <link
       rel="alternate"
       type="application/rss+xml"
       title={`${ui.blogTitle} — AI Standard`}
       href={toAbsolute(locale === "de" ? "/de/blog/rss.xml" : "/blog/rss.xml")}
     />
-    <JsonLd title={title} description={description} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} datePublished={datePublished} />
+    <JsonLd title={title} description={pageDescription} pageType={schemaType} extra={extraSchemas} lang={lang} license={license} datePublished={datePublished} />
   </head>
   <body class="flex min-h-screen flex-col">
     <a href="#main-content" class="skip-link">{ui.skipToMain}</a>
@@ -243,7 +250,7 @@ const footerSections = [
                 class="font-semibold">Standard</span
               >
             </a>
-            <p>{ui.footerTagline}</p>
+            <p>{identity.identity}</p>
           </div>
           {
             footerSections.map((section) => (

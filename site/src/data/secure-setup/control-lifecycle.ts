@@ -11,9 +11,16 @@
  * numbered sequence rather than a grid — the one place on the site where a
  * sequence is the honest shape.
  *
- * Monitoring has no path onward. Nothing on the site continues it yet, and the
- * intro says which steps a task actually needs so the list does not read as six
- * obligations for every draft.
+ * Monitoring and taking an access back have no path onward. Nothing on the site
+ * answers either as its own question yet, and the intro says which steps a task
+ * actually needs so the list does not read as six obligations for every draft.
+ *
+ * "Take it back" pointed at "Connect AI to tools and data" — the opposite verb,
+ * on a page whose own subject is building a connection. The revocation material
+ * on the site does live there, as one step of that page's control loop and one
+ * of its boundary questions, but it is not what that page promises and there is
+ * no heading to link into. A step with no destination is more truthful than a
+ * link to the reverse of what the reader asked for.
  */
 import type { SiteLocale } from "../../i18n/ui";
 
@@ -91,12 +98,6 @@ const en: ControlLifecycleContent = {
       name: "Take it back",
       meaning:
         "Every access you grant needs a way back: removing the access itself, and restoring what it changed. Both are worth having tried once before you need them.",
-      paths: [
-        {
-          label: "Connect AI to tools and data",
-          href: "/data-flows/connect-ai-to-tools-and-data",
-        },
-      ],
     },
   ],
 };
@@ -160,12 +161,6 @@ const de: ControlLifecycleContent = {
       name: "Zurücknehmen",
       meaning:
         "Zu jedem erteilten Zugriff gehört ein Weg zurück: den Zugriff selbst entfernen und wiederherstellen, was er verändert hat. Beides sollte man einmal ausprobiert haben, bevor man es braucht.",
-      paths: [
-        {
-          label: "KI mit Tools und Daten verbinden",
-          href: "/de/data-flows/connect-ai-to-tools-and-data",
-        },
-      ],
     },
   ],
 };

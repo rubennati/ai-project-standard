@@ -259,6 +259,51 @@ else
   echo "  skip  $TERMS not present"
 fi
 
+echo "== The machine identity surfaces agree with the canonical identity =="
+
+# manifest.webmanifest and llms.txt are served as static files and cannot
+# import site/src/data/identity.ts, so they restate its English sentence by
+# hand. This checks that restatement, and only on these two files — it is not
+# a site-wide vocabulary ban. Historical, internal or contextual prose
+# elsewhere (docs/, .ai/, the repository's own name) is untouched.
+IDENTITY_TS="site/src/data/identity.ts"
+MANIFEST="site/public/manifest.webmanifest"
+LLMS_TXT="site/public/llms.txt"
+if [[ -f "$IDENTITY_TS" ]]; then
+  # The first `identity:` in the module is the English one.
+  canonical="$(grep -m1 -oE 'identity: "[^"]+"' "$IDENTITY_TS" | sed 's/^identity: "//; s/"$//')"
+  if [[ -z "$canonical" ]]; then
+    note "$IDENTITY_TS" "no English identity sentence found — the machine surfaces have nothing to agree with"
+  else
+    ok "canonical identity: $canonical"
+
+    if [[ -f "$MANIFEST" ]]; then
+      grep -q '"name": "AI Standard"' "$MANIFEST" \
+        || note "$MANIFEST" "manifest name is not AI Standard — see .ai/decisions.md, 2026-08-24"
+      grep -qF "$canonical" "$MANIFEST" \
+        || note "$MANIFEST" "description does not match the identity sentence in $IDENTITY_TS"
+    fi
+
+    if [[ -f "$LLMS_TXT" ]]; then
+      grep -qF "$canonical" "$LLMS_TXT" \
+        || note "$LLMS_TXT" "does not restate the identity sentence from $IDENTITY_TS"
+    fi
+  fi
+
+  # Framings and claims the product retired on 2026-08-24, checked only on
+  # these two files. Each returned at least once after being removed.
+  for stale in "AI Project Standard" "repository standard" "security practitioner" "Austria first" "Österreich zuerst"; do
+    for f in "$MANIFEST" "$LLMS_TXT"; do
+      [[ -f "$f" ]] || continue
+      if grep -qF "$stale" "$f"; then
+        note "$f" "retired identity framing '$stale' — see .ai/decisions.md, 2026-08-24"
+      fi
+    done
+  done
+else
+  echo "  skip  $IDENTITY_TS not present"
+fi
+
 echo
 if [[ $fail -eq 0 ]]; then
   echo "Conformance: the repository follows its own rules."

@@ -21,7 +21,7 @@ export const ui = {
     about: "About",
     lawTitle: "Law",
     lawDescription:
-      "What the law requires when you use AI at work \u2014 Austria first, then the EU. Each claim names its norm and the date it was checked.",
+      "Legal questions under EU law that matter when you use AI at work. Each claim names its legal basis and the date it was checked.",
     lawIntro:
       "Rules that are already in force, not ones that are coming. Each article states the question it answers and the norm it rests on.",
     lawChecked: "Checked",
@@ -41,8 +41,6 @@ export const ui = {
     profiles: "Profiles",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
-    footerTagline:
-      "Practical guidance for responsible AI work, from the first prompt to an acting agent.",
     footerReference: "Reference",
     footerProjectTrust: "Project & trust",
     footerLegal: "Legal",
@@ -107,10 +105,6 @@ export const ui = {
     blogBackToIndex: "All posts",
     aboutTitle: "About",
     aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
-    aboutIntro:
-      "A starting baseline for open-source projects that use AI. Blueprints you copy into your own project, cut by what has already happened to you — starting a public repository, letting an agent work in it, or needing a second person to trust what is written down.",
-    aboutLayerCopy:
-      "The repository is the operational layer: workflows, AI state, governance, templates. This site is the knowledge layer: explanations, comparisons, tutorials, research, and blog.",
     maintainer: "Maintainer",
     license: "License",
     acknowledgements: "Acknowledgements",
@@ -128,7 +122,7 @@ export const ui = {
     purposeLabel: "Purpose of this site:",
     privacyInline: "privacy policy",
     purposeCopy:
-      "a knowledge base on AI terminology and project conventions. It sells nothing, carries no advertising, sets no cookies and runs no tracking or analytics. Delivery runs through Cloudflare and GitHub Pages, which log visitors' IP addresses for security and availability \u2014 see",
+      "independent guidance for using AI at work. It sells nothing, carries no advertising, sets no cookies and runs no tracking or analytics. Delivery runs through Cloudflare and GitHub Pages, which log visitors' IP addresses for security and availability \u2014 see",
     privacyPolicyDescription: "How the AI Standard website handles personal data: no cookies, no analytics, and what the hosting providers log.",
   },
   de: {
@@ -144,7 +138,7 @@ export const ui = {
     about: "Über",
     lawTitle: "Recht",
     lawDescription:
-      "Was das Gesetz beim Einsatz von KI im Arbeitsalltag verlangt \u2014 Österreich zuerst, dann die EU. Jede Aussage nennt ihre Norm und das Datum der Prüfung.",
+      "Rechtliche Fragen nach EU-Recht, die beim Einsatz von KI im Arbeitsalltag relevant sind. Jede Aussage nennt ihre Rechtsgrundlage und das Datum der Prüfung.",
     lawIntro:
       "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Beitrag nennt die Frage, die er beantwortet, und die Norm, auf der er beruht.",
     lawChecked: "Geprüft",
@@ -164,8 +158,6 @@ export const ui = {
     profiles: "Profile",
     legalNotice: "Impressum",
     privacyPolicy: "Datenschutz",
-    footerTagline:
-      "Praktische Orientierung für verantwortungsvollen KI-Einsatz — vom ersten Prompt bis zum handelnden Agenten.",
     footerReference: "Nachschlagen",
     footerProjectTrust: "Projekt & Vertrauen",
     footerLegal: "Rechtliches",
@@ -234,10 +226,6 @@ export const ui = {
     blogBackToIndex: "Alle Beitr\u00e4ge",
     aboutTitle: "Über das Projekt",
     aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
-    aboutIntro:
-      "Ein Ausgangsstandard für Open-Source-Projekte, die KI nutzen. Blueprints zum Kopieren, geschnitten nach dem, was dir bereits passiert ist — ein öffentliches Repository beginnen, einen Agenten darin arbeiten lassen, oder eine zweite Person muss dem vertrauen können, was aufgeschrieben ist.",
-    aboutLayerCopy:
-      "Das Repository ist die operative Ebene: Workflows, AI-Status, Governance und Templates. Diese Website ist die Wissensebene: Erklärungen, Vergleiche, Tutorials, Recherche und Blog.",
     maintainer: "Maintainer",
     license: "Lizenz",
     acknowledgements: "Danksagung",
@@ -255,7 +243,7 @@ export const ui = {
     purposeLabel: "Zweck dieser Website:",
     privacyInline: "Datenschutz",
     purposeCopy:
-      "eine Wissensbasis zu KI-Begriffen und Projektkonventionen. Sie verkauft nichts, enthält keine Werbung, setzt keine Cookies und verwendet weder Tracking noch Analyse. Die Auslieferung läuft über Cloudflare und GitHub Pages, die IP-Adressen der Besucher zu Sicherheits- und Verfügbarkeitszwecken protokollieren \u2014 siehe",
+      "unabhängige Orientierung für den Einsatz von KI bei der Arbeit. Sie verkauft nichts, enthält keine Werbung, setzt keine Cookies und verwendet weder Tracking noch Analyse. Die Auslieferung läuft über Cloudflare und GitHub Pages, die IP-Adressen der Besucher zu Sicherheits- und Verfügbarkeitszwecken protokollieren \u2014 siehe",
     privacyPolicyDescription: "Wie die AI-Standard-Website mit personenbezogenen Daten umgeht: keine Cookies, keine Analyse, und was die Hosting-Anbieter protokollieren.",
   },
 } as const;

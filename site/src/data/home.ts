@@ -17,7 +17,14 @@
  * verwenden?" word for word. That is why they carry no supporting line: the
  * link already promises exactly what the destination delivers. They are not a
  * fifth copy of the four journeys and must not grow into one.
+ *
+ * The lead opens with the sentence in `identity.ts` and the description is the
+ * summary there, rather than repeating either. Both are the same strings this
+ * page shipped with; what changed is that the footer, the manifest and
+ * `llms.txt` now answer "what is this" from the same place instead of each
+ * keeping its own answer.
  */
+import { getIdentity } from "./identity";
 import type { SiteLocale } from "../i18n/ui";
 
 interface DirectEntry {
@@ -42,10 +49,9 @@ export interface HomeContent {
 
 const en: HomeContent = {
   title: "AI Standard",
-  description:
-    "Independent guidance for using AI at work, with practical examples, clear explanations, and sources you can inspect.",
+  description: getIdentity("en").summary,
   heading: "Use AI well at work",
-  lead: "AI Standard is an independent site for using AI at work. It starts from the task at hand and shows where AI is useful, how to work with it, and what to pay attention to.",
+  lead: `${getIdentity("en").identity} It starts from the task at hand and shows where AI is useful, how to work with it, and what to pay attention to.`,
   primaryAction: { label: "See the use cases", href: "/use-cases" },
   secondaryAction: { label: "Compare the ways of working", href: "/start" },
 
@@ -70,10 +76,9 @@ const en: HomeContent = {
 
 const de: HomeContent = {
   title: "AI Standard",
-  description:
-    "Unabhängige Orientierung für den Einsatz von KI bei der Arbeit – mit konkreten Aufgaben, verständlichen Erklärungen und nachvollziehbaren Quellen.",
+  description: getIdentity("de").summary,
   heading: "KI sinnvoll im Arbeitsalltag einsetzen",
-  lead: "AI Standard ist eine unabhängige Seite für den Einsatz von KI bei der Arbeit. An konkreten Aufgaben zeigt sie, wofür sich KI eignet, wie du damit arbeitest und worauf du dabei achten solltest.",
+  lead: `${getIdentity("de").identity} An konkreten Aufgaben zeigt sie, wofür sich KI eignet, wie du damit arbeitest und worauf du dabei achten solltest.`,
   primaryAction: { label: "Einsatzmöglichkeiten ansehen", href: "/de/use-cases" },
   secondaryAction: { label: "Arbeitsweisen vergleichen", href: "/de/start" },
 

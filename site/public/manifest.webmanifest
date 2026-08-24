@@ -1,7 +1,7 @@
 {
-  "name": "AI Project Standard",
-  "short_name": "AI Std",
-  "description": "A repository standard for long-term human and AI collaboration.",
+  "name": "AI Standard",
+  "short_name": "AI Standard",
+  "description": "AI Standard is an independent site for using AI at work.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
