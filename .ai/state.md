@@ -2,50 +2,25 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- **Objective, set 2026-08-24:** review the whole public website editorially and
-  structurally so it reads as one product, with the homepage as the editorial
-  reference.
+- **Objective, set 2026-08-24:** implement the whole-site editorial and
+  structural review in seven slices, in order, without churning what already
+  works. The slices, their scope and their dependencies are in `tasks.md`.
 
-**Settled, and not reopened without a concrete contradiction between the
-implementation and the reader's job:** the four primary reader journeys, the
-four primary hubs, current header membership, the current bilingual header
-labels, and Reference not being a fifth primary journey.
+The review itself is finished. What it established durably is in
+`decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
+session evidence and is not restated here.
 
-**Not settled:** the footer. Its grouping, membership and placement are part of
-this review, and the audit may recommend moving, removing or regrouping links
-where a placement serves no distinct reader job. Open at least: whether Evidence
-Method sits in the right group, whether a human-facing security contact link
-earns its place or is redundant, and whether Law, Blog, About, Reference,
-project and trust, and legal disclosure are grouped the way a reader would
-expect. None of that is decided here.
+## Settled, and not reopened without a concrete contradiction
 
-**Public URLs** may be audited — a route or ownership problem is a finding worth
-reporting — but they are not changed here. Any navigation, information
-architecture or URL change needs the human approval its change-scope rule
-requires before it is implemented.
+The four primary reader journeys, the four primary hubs, current header
+membership and the current bilingual header labels — unchanged from 2026-08-20.
+Reference is still not a fifth journey. The review found no contradiction strong
+enough to reopen any of it.
 
-## How this review starts
+The homepage (PR #154) is the editorial reference and is not changed by this
+objective unless a slice needs a concrete integration fix.
 
-Read-only. The audit covers the site before any page is rewritten; it does not
-open by rewriting pages in bulk.
-
-**Surfaces:** header and footer; how the homepage relates to the rest of the
-site; `/use-cases`, `/start`, `/data-flows`, `/secure-setup` and their
-significant children; Law; About; Reference and the glossary; Vibe Coding;
-Connect AI; the employee and decision-maker guidance; the verification and
-record-keeping pages; and any other public page that materially affects a
-reader journey.
-
-**What it looks for:** public wording that exposes internal product models;
-headings that are not recognisable questions, tasks or situations; artificial
-copy; security and compliance language crowding out the broader product value;
-duplication across header, hub and child page; content at the wrong depth;
-pages that are disproportionately long or shallow; card and section density;
-mobile scrolling burden; weak onward paths; header and footer links that follow
-repository structure rather than reader need; and navigation labels that
-disagree with what the destination delivers.
-
-## Working constraints for this review
+## Working constraints for this objective
 
 Not decisions. They bind this objective and expire or are reconsidered with it.
 
@@ -54,6 +29,44 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
   become the language of the answer.
 - German: if a heading is not something a person could say, search for or
   understand at once, it is project language rather than public copy.
+- **A stranded reader and a crowded footer are two jobs, not one.** The end of a
+  page is solved by a contextual onward step; the footer is solved by cutting it
+  back to supporting destinations. Neither is solved with the other's content.
+- Sticky navigation and breadcrumbs are implementation options for the onward
+  path, not requirements. Neither is adopted because the review mentioned it.
+- `/start/employee` and `/start/decision-maker` keep their URLs. They are
+  prerequisite role questions inside the Start journey, not two of the six ways
+  of working, and `/start` resolves the prerequisite before asking a reader to
+  choose. A route migration needs evidence that the URL itself costs a reader
+  something.
+- `/start/what-it-is-doing` keeps its URL for now. `/data-flows` owns the
+  mechanism explanation; the route follows the ownership only on later evidence.
+- German terminology is classified by meaning before any term is enforced.
+  Account, customer type and pricing tier are three concepts and do not collapse
+  into one. No CI rule until the mapping exists and has been approved.
+- Structural parallelism between the English and German pages is evidence of a
+  quality problem. It is not evidence about how those pages were written, and is
+  not recorded as if it were.
+- Pages the review found strong are not rewritten for surface uniformity.
+  `tasks.md` names them.
+- No route retirement, redirect or taxonomy change is implemented without the
+  human approval `AGENTS.md` → Change scope requires.
+
+## Open, and blocking
+
+Three of the seven slices cannot start on repository evidence alone.
+
+- **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
+  automatic; what happens to the 21 published URLs does not follow from that.
+  Redirect each to its GitHub source, or serve them `noindex` and drop them from
+  the sitemap? The answer also decides the licence sentence in the legal notice,
+  which names `/docs/` and grants MIT over it in both locales.
+- **`practical-ai-collaboration` promotion target (blocks the same slice).** It
+  has a real public reader and is English-only at 1,985 words. Which route does
+  it become, and does promotion require the German version before it ships?
+- **Retiring `/data-flows/what-you-agree-to` (blocks part of slice 4).** Folding
+  it into `training-and-retention` removes a published URL in both locales. Fold
+  and redirect, or keep the route and cut it to its one distinct idea?
 
 ## Active constraints
 

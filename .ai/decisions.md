@@ -493,3 +493,140 @@ merged page would have led with the urgent half. Also rejected: filling Monitor
 to make the six symmetrical. Nothing on the site continues it yet, and the hub
 states which steps a task actually needs so the list does not read as six
 obligations for every draft.
+
+## 2026-08-24 - The footer does not repeat the header
+
+Decision: the footer holds supporting destinations, trust, legal and a very
+small number of project utilities. It does not carry `/use-cases`, `/start`,
+`/data-flows` or `/secure-setup` in any language. It becomes substantially
+smaller than it is today: Glossary; Law, without pretending Law is lookup;
+About, with a German label that is not a bare preposition; Blog if it earns a
+global place; the evidence method as trust content rather than a glossary
+concept; one problem-reporting path; one vulnerability-reporting path; at most
+one repository link, as a secondary utility; the legal notice and the privacy
+policy. The human `security.txt` link goes and the file keeps being served.
+
+Rationale: the whole-site review found readers stranded at the end of long
+pages and a footer that is 1.1 mobile screens tall on every page, of which five
+links leave for GitHub and two resolve to the same URL. Those are two problems.
+Answering the first by duplicating the header would put every primary
+destination on three surfaces of one screen — the failure already recorded in
+`errors.md` for the rejected homepage — and would make the second worse. The end
+of a page is answered by a contextual next step; the footer is answered by
+cutting it back.
+
+Rejected: journey links in the footer. Also rejected as requirements rather than
+options: a sticky header and a breadcrumb row. Either may turn out to be the
+right mechanism for the onward path; neither is adopted because a review named
+it.
+
+## 2026-08-24 - Publication under /docs is explicit, not automatic
+
+Decision: `/docs/**` is not a public product family. A Markdown file under
+`docs/` does not become a public page by existing; publication requires an
+explicit decision per document. Maintainer, project, release and process
+documentation belongs to the repository and is read there.
+
+`docs/practical-ai-collaboration.md` is the exception in substance rather than
+in mechanism: it has a real public reader, so it is preserved and later promoted
+deliberately as a public product page, not left as maintainer documentation that
+happens to be reachable.
+
+Rationale: `site/src/content.config.ts` globs `**/*.md` from `../docs` with no
+allowlist, so 21 pages are indexed and sitemapped — including this project's own
+purpose, product brief, house style, release process and branch protection — and
+every future maintainer document self-publishes. `docs/purpose.md` states the
+rule the glob breaks, and is itself one of the published pages:
+"Not a second public product. Maintainer documentation, project state and
+release mechanics stay here." All 60 internal links inside those page bodies
+resolve against the web path and 404.
+
+Retiring the routes is a separate act needing its own approval, and it reaches
+the legal notice, which names `/docs/` and grants MIT over it in both locales.
+
+Rejected: deleting the source material because its current public route is
+wrong.
+
+## 2026-08-24 - Open source is where building with AI continues
+
+Decision: `/open-source/**` is not a primary journey and does not become a
+header or footer section. It is reframed as the continuation of creating,
+publishing and maintaining software — including software built with AI — and is
+reached from the development content, the Vibe Coding page first. The
+`No AI in this section` / `Ohne KI in diesem Bereich` separation is removed, and
+the three articles get onward paths.
+
+Rationale: the section is eight well-written pages with no inbound link from
+anywhere outside itself, and its own copy holds two incompatible claims — that
+it excludes the site's subject, and that it is the ground the rest of the site
+stands on. Nothing stands on it because nothing reaches it. A reader who has
+just been told how far vibe coding takes them is the reader who then has to pick
+a licence and find out who owns what they wrote at work.
+
+Rejected: a fifth journey, a header entry, and a footer section of its own —
+each would answer a discovery problem by enlarging the taxonomy. Also rejected:
+rewriting the three articles for consistency with the rest of the site. They are
+among the strongest prose the site has in either language.
+
+## 2026-08-24 - Austria first is withdrawn as a scope claim
+
+Decision: `Austria first, then the EU` is removed from every public and machine
+surface where it acts as a product or legal scope claim. It is not restored
+until an Austrian layer exists to substantiate it.
+
+Rationale: the claim is made in `lawDescription` in both locales and repeated in
+`llms.txt`. No Austrian norm, authority, court or statute appears anywhere in
+the four law articles; every source is EU-level or CJEU, and one article
+addresses a reader explicitly not placed in Austria. The claim is also never
+rendered in `<main>`, so it works on search results and machine readers and not
+on the reader who is deciding whether to invest in a 1,300-word article. Under
+the hierarchy in `docs/purpose.md`, evidence outranks the artifact that states
+it.
+
+Rejected: writing Austrian legal content in order to keep the sentence. The
+sentence is not the goal, and a scope promise met by producing content to fit it
+is the same failure the evidence method exists to prevent. Noted for whoever
+builds the layer: the site's only Austrian legal substance today — § 40b
+Urheberrechtsgesetz — is in `/open-source/code-written-at-work`.
+
+## 2026-08-24 - Data flows owns the mechanism explanation
+
+Decision: `/data-flows` is the canonical public owner of what technically
+happens and what a system can reach — model, product, connector, target system.
+`/start` owns forms of human-AI collaboration and does not carry a second
+version of the mechanism.
+
+`/start/what-it-is-doing` keeps its URL. Ownership decides which page maintains
+the explanation, not immediately where it is served from; a route change waits
+for evidence that the URL itself costs a reader something.
+
+Rationale: the explanation exists twice — as the `/data-flows` hub's own
+structural centrepiece and, at length, on a `/start` child — with different
+nouns for the same four layers, so a reader who has seen both cannot tell
+whether they are one model or two. Which of the two is a way of working is not a
+close question: "there is no wire out of the model" is a fact about reach, and
+reach is what `/data-flows` is for.
+
+Rejected: moving the route in the same change. Public URLs are hard to reverse,
+and the conceptual answer does not by itself establish that the current URL is
+hurting anyone.
+
+## 2026-08-24 - A link promises a reader job, not a heading
+
+Decision: a link's text must promise the reader job its destination actually
+answers. It does not have to reproduce the destination's H1 word for word.
+Exact reuse is good where it is natural; a question turned into a declarative
+title is equally good where the expectation survives the turn — `Wie verbinde
+ich KI mit Tools und Daten?` opening `KI mit Tools und Daten verbinden` is
+correct as it stands.
+
+Rationale: the review found one destination carrying up to four public names,
+and several link labels that promise something the destination does not deliver.
+The defect in those cases is a changed promise, not changed wording, and a
+verbatim rule would fix the wording while leaving the promise wrong — and would
+break correct pairs to do it. The rule that catches the real failures is
+semantic: `What you may put in` opening `Can I enter this data into an AI tool?`
+is fine; a card about writing a customer email whose only onward step is a legal
+admissibility page is not, whatever it is labelled.
+
+Rejected: label equals H1, verbatim, site-wide.

@@ -32,10 +32,9 @@ list records execution order rather than restating those decisions.
    every public sentence has received editorial review.
 7. [ ] Map the remaining page families onto the proven primitives and migrate
    them in reviewable groups. The four hubs and the primary navigation are done
-   (#135–#140, PRs #142–#149). What is left: the Open Source reframing, the
-   `/docs/**` compatibility decision, and `/open-source/**`, which currently has
-   no inbound link from any page. Both remaining pieces need their recorded
-   human approval first.
+   (#135–#140, PRs #142–#149). What is left — the Open Source reframing and the
+   `/docs/**` publication decision — is carried by slice 6 below, which also
+   holds their approval requirement.
 8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
    dependency as a separate approval and licence decision.
 9. [x] Editorially reset the public homepage (PR #154). The page now says what
@@ -45,7 +44,88 @@ list records execution order rather than restating those decisions.
 
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
-- Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
+- Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English (slice 7 depends on this being decided, not on it being done)
+
+## Whole-site implementation — seven slices, 2026-08-24
+
+The review is done; these are what it converts into. One slice per branch, in
+order. The decisions that constrain them are in `decisions.md` (2026-08-24) and
+`state.md`; the findings behind them are session evidence and are not restated
+here. "Approval" means the change-scope rule in `AGENTS.md` applies before
+implementation, not merely before merge.
+
+| # | Slice | Depends on | Approval | Status |
+|---|---|---|---|---|
+| 1 | Product identity and acute contradictions | — | yes | not started |
+| 2 | Global shell: footer and page-level onward path | 1 | yes | not started |
+| 3 | `/start` as one reader journey | 2 | no | not started |
+| 4 | `/data-flows` and Connect AI | 2 | partly | blocked |
+| 5 | `/secure-setup` and verification | 4 | no | not started |
+| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
+| 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
+
+1. **Product identity and acute contradictions.** One product sentence, owned in
+   one place, echoed by the footer tagline, the default metadata, the manifest,
+   `llms.txt`, the homepage structured data and the legal notice's purpose
+   sentence. Withdraw `Austria first, then the EU` wherever it acts as a product
+   claim. Fix `/secure-setup` step 6 `Take it back` / `Zurücknehmen`, which
+   points at the Connect page. No footer restructure, no page bodies.
+2. **Global shell.** Cut the footer back to supporting destinations, one
+   problem-report path, one vulnerability path, at most one repository link;
+   drop the `security.txt` human duplicate while continuing to serve the file.
+   Establish one reusable way for a substantial page to offer its next useful
+   action, carrying no product-stage label. The four header journeys do not go
+   into the footer. Populating each page's actual next step belongs to slices
+   3–6.
+3. **`/start` as one reader journey.** The hub, the employee and decision-maker
+   pages and Vibe Coding; the mechanism page only far enough to hand its
+   ownership to `/data-flows`. Prerequisite role questions resolve before the choice of
+   working form; the six ways become situations a reader recognises and each
+   says what it is good for; `Three questions this page does not answer` goes;
+   `employee` resolves into onward action rather than permission alone;
+   Vibe Coding stops abandoning the Explore/Prototype reader after its lead.
+   URLs unchanged.
+4. **`/data-flows` and Connect AI.** One ownership problem. Stop teaching the
+   four-axis model as the hub's public language; make `connect-ai-to-tools-and-data`
+   answer *how*, cut its density, add a concrete end-to-end example, and move its
+   control-loop and verification material to slice 5. `/data-flows` becomes
+   canonical for the model → product → connector → target explanation. Reconcile
+   training, consent, deletion and sovereignty to single owners. Keep
+   `training-and-retention` substantially intact.
+   *Blocked:* retiring `what-you-agree-to` removes a published URL — `state.md`.
+5. **`/secure-setup` and verification.** A reader-recognisable object and
+   opening; the sequence stays, the phase nouns stop being the public spine
+   where they read as project vocabulary; `Monitor` and `Take it back` get real
+   coverage; absorb what slice 4 hands over; `before-you-grant-access` serves the
+   broader job it already holds. `checking-the-result` and `keeping-a-record`
+   keep their content.
+6. **Law, About, Evidence, Reference and discovery.** Law hub reader job;
+   `what-may-go-in` ownership; `four-separate-questions` framing and its
+   duplicated legal facts; one owner for AI Act Art. 4; About versus Evidence
+   Method ownership, with Evidence Method treated as trust content; glossary
+   naming and discovery; `/docs/**` publication becomes explicit;
+   `practical-ai-collaboration` preserved and later promoted; `/profiles`;
+   `/open-source/**` reconnected from development content with the
+   `No AI in this section` separation removed; `/impressum` and `/datenschutz`
+   redirected to their German counterparts; the legal-notice licence sentence
+   follows whatever `/docs/**` becomes.
+   *Blocked:* two open questions in `state.md`.
+7. **Site-wide voice, German and quality.** Only after ownership has stabilised.
+   Negation-heavy headings, count language, meta copy, capability/limitation
+   balance, the German defects the review named, `du`/`man` consistency, and a
+   terminology mapping by meaning before any CI rule is added. Issue #145 is
+   executed by slice 2 (the onward-path component) and slice 4 (the two proof
+   pages); its text records one string wrongly — the rendered label is
+   `Next step / Control`, not `Collaboration` — and it omits
+   `Reference` / `Nachschlagen` and `Copyable artifact` / `Zum Übernehmen`.
+
+**Not rewritten for uniformity** — the review found these strong, and a slice
+that touches them changes only what its own goal requires: the homepage;
+`/data-flows/training-and-retention`; `/secure-setup/checking-the-result` and
+the four items in `keeping-a-record`; `/law/what-may-go-in` and its H1 in both
+languages; the three `/open-source` articles; `/blog/before-you-press-enter`;
+About's body prose; the evidence-label system and its build-time enforcement;
+`/use-cases` card six and its twelve concrete examples.
 
 ## Coherence audit — 2026-08-09
 

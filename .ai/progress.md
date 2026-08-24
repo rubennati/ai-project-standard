@@ -99,3 +99,25 @@ instead of the reader benefit. Reset on 24 August, below.
 - The homepage becomes the editorial reference for the rest of the site: public
   copy starts from a task or question a reader recognises, and the internal
   product model structures the answer without becoming its language.
+
+- **The whole public site was reviewed against that reference.** Every public
+  page family in both locales, read-only, with the built site and rendered
+  measurements at 375px and 1280px as evidence. Header membership and labels
+  held under the test and were not reopened. Six decisions came out of it
+  (`decisions.md`, 2026-08-24) and the work it implies is seven slices in
+  `tasks.md`.
+
+  What the review established, beyond the individual pages: the site states its
+  own identity on six surfaces and two of them still carry framings the homepage
+  reset removed; `/docs/**` publishes maintainer documentation automatically
+  because the content collection globs the whole folder, and every internal link
+  inside those pages resolves to a 404; three public families have no inbound
+  link from any navigation; the same facts are maintained in three to five
+  places; and the internal product spine is rendered as reader-facing labels on
+  four routes. Negation carries 16% of all headings, against a house rule of one
+  per section.
+
+  The finding set stays session evidence. `site/CONTENT_AUDIT.md` is the
+  project's existing non-public home for a long-form route-by-route audit — the
+  content collection reads only `../docs`, so nothing under `site/` is
+  published — but writing there was outside this planning task's scope.
