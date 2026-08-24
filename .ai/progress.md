@@ -121,3 +121,24 @@ instead of the reader benefit. Reset on 24 August, below.
   project's existing non-public home for a long-form route-by-route audit — the
   content collection reads only `../docs`, so nothing under `site/` is
   published — but writing there was outside this planning task's scope.
+
+- **The site says the same thing about itself everywhere** (PR #158, slice 1 of
+  seven). `site/src/data/identity.ts` owns one product sentence per locale —
+  "AI Standard is an independent site for using AI at work." / "AI Standard ist
+  eine unabhängige Seite für den Einsatz von KI bei der Arbeit." The homepage,
+  the fallback page description and the footer tagline read it; the manifest and
+  `llms.txt`, which are static files and cannot import it, restate it under a
+  conformance check scoped to those two files.
+- The manifest stopped calling the site `AI Project Standard` and a repository
+  standard. `llms.txt` lost the security-practitioner framing and the stale
+  route inventory, and gained the two homepage entry questions it had been
+  missing.
+- The `Austria first, then the EU` scope claim is withdrawn: no article
+  substantiates it, and Law metadata now carries neutral EU-law scope wording in
+  both locales. Nothing Austrian that is actually sourced was removed.
+- `/secure-setup` step 6, `Take it back` / `Zurücknehmen`, had linked to the page
+  about building a connection — the opposite action. It now has no destination,
+  because no page answers the revocation reader job on its own terms and
+  inventing a link would be worse than a gap. Slice 5 owns filling it.
+- Homepage visible copy, header, footer structure, the route set and the sitemap
+  were unchanged; verified against a `main` baseline build.

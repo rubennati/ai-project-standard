@@ -56,27 +56,40 @@ implementation, not merely before merge.
 
 | # | Slice | Depends on | Approval | Status |
 |---|---|---|---|---|
-| 1 | Product identity and acute contradictions | — | yes | not started |
-| 2 | Global shell: footer and page-level onward path | 1 | yes | not started |
+| 1 | Product identity and acute contradictions | — | yes | **done** (#158) |
+| 2 | Global shell: footer and page-level onward path | 1 | yes | **next** |
 | 3 | `/start` as one reader journey | 2 | no | not started |
 | 4 | `/data-flows` and Connect AI | 2 | partly | blocked |
 | 5 | `/secure-setup` and verification | 4 | no | not started |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
-1. **Product identity and acute contradictions.** One product sentence, owned in
-   one place, echoed by the footer tagline, the default metadata, the manifest,
-   `llms.txt`, the homepage structured data and the legal notice's purpose
-   sentence. Withdraw `Austria first, then the EU` wherever it acts as a product
-   claim. Fix `/secure-setup` step 6 `Take it back` / `Zurücknehmen`, which
-   points at the Connect page. No footer restructure, no page bodies.
-2. **Global shell.** Cut the footer back to supporting destinations, one
-   problem-report path, one vulnerability path, at most one repository link;
-   drop the `security.txt` human duplicate while continuing to serve the file.
-   Establish one reusable way for a substantial page to offer its next useful
-   action, carrying no product-stage label. The four header journeys do not go
-   into the footer. Populating each page's actual next step belongs to slices
-   3–6.
+1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
+   `site/src/data/identity.ts` owns one product sentence per locale; the
+   homepage, the fallback metadata, the footer tagline, the manifest and
+   `llms.txt` all answer "what is this" from it. The `Austria first, then the
+   EU` scope claim is withdrawn and Law metadata carries neutral EU-law scope.
+   `/secure-setup` step 6 no longer points at the Connect page; it has no
+   destination, because no page answers the revocation reader job on its own
+   terms — slice 5 owns building that. A conformance check scoped to
+   `manifest.webmanifest` and `llms.txt` keeps the two static restatements
+   honest. Homepage copy, header, footer structure, routes and sitemap
+   unchanged.
+2. **Global shell.** Two separate reader jobs in one branch, because both are
+   shell-level and neither is solved with the other's content.
+   *Footer:* cut it back to the supporting destinations that earn persistent
+   access — Glossary; Law, not framed as lookup; About with a natural German
+   label; Blog only if it earns global placement; the evidence method as trust
+   content rather than a glossary concept; one problem-report path; one
+   vulnerability path; at most one repository link as a secondary utility;
+   legal notice and privacy. The human `security.txt` duplicate goes and the
+   endpoint keeps being served. **The four header journeys do not go into the
+   footer.** Exact grouping and wording are not approved yet.
+   *Onward path:* one reusable way for a substantial page to offer its next
+   useful action — contextual, visually secondary to the article, carrying no
+   product-stage label, requiring neither breadcrumbs nor a sticky header, and
+   not forcing every page to carry several related links. Slice 2 builds the
+   pattern; slices 3–6 populate each family's actual destinations.
 3. **`/start` as one reader journey.** The hub, the employee and decision-maker
    pages and Vibe Coding; the mechanism page only far enough to hand its
    ownership to `/data-flows`. Prerequisite role questions resolve before the choice of
