@@ -1,6 +1,13 @@
 import type { SiteLocale } from "../i18n/ui";
 
-/** The job a page performs for the reader, independent of its route family. */
+/**
+ * The job a page performs for the reader, independent of its route family.
+ *
+ * Structural only. It types `PageIntroduction`'s prop and the `data-page-job`
+ * attribute; it is deliberately not rendered. "Decision path" told a reader
+ * how this project files its own material, which is not something they can
+ * learn from the page or act on — see issue #145.
+ */
 export type PageJob =
   | "decision"
   | "explanation"
@@ -8,17 +15,7 @@ export type PageJob =
   | "reference"
   | "editorial";
 
-/** The product-spine stage a related next step continues into. */
-export type ProductStage =
-  | "possibility"
-  | "collaboration"
-  | "reach"
-  | "control"
-  | "reference";
-
 interface PagePrimitiveCopy {
-  pageJobs: Record<PageJob, string>;
-  productStages: Record<ProductStage, string>;
   shortAnswer: string;
   fitsWhen: string;
   evidence: string;
@@ -34,20 +31,6 @@ interface PagePrimitiveCopy {
 
 const copy: Record<SiteLocale, PagePrimitiveCopy> = {
   en: {
-    pageJobs: {
-      decision: "Decision path",
-      explanation: "Explanation",
-      implementation: "Implementation guide",
-      reference: "Reference",
-      editorial: "Editorial perspective",
-    },
-    productStages: {
-      possibility: "Possibility",
-      collaboration: "Collaboration",
-      reach: "Reach",
-      control: "Control",
-      reference: "Reference",
-    },
     shortAnswer: "Short answer",
     fitsWhen: "Fits when",
     evidence: "Evidence",
@@ -61,20 +44,6 @@ const copy: Record<SiteLocale, PagePrimitiveCopy> = {
     opensInNewWindow: "opens in a new window",
   },
   de: {
-    pageJobs: {
-      decision: "Entscheidungsweg",
-      explanation: "Erklärung",
-      implementation: "Umsetzung",
-      reference: "Referenz",
-      editorial: "Redaktionelle Perspektive",
-    },
-    productStages: {
-      possibility: "Möglichkeit",
-      collaboration: "Zusammenarbeit",
-      reach: "Reichweite",
-      control: "Kontrolle",
-      reference: "Nachschlagen",
-    },
     shortAnswer: "Kurzantwort",
     fitsWhen: "Passt, wenn",
     evidence: "Nachweis",

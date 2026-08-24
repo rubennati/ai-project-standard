@@ -3,7 +3,7 @@ import ConnectionBoundaryFigure from "./ConnectionBoundaryFigure.astro";
 import EvidenceBand from "./EvidenceBand.astro";
 import ImplementationStep from "./ImplementationStep.astro";
 import PageIntroduction from "./PageIntroduction.astro";
-import RelatedNextStep from "./RelatedNextStep.astro";
+import NextStep from "./NextStep.astro";
 import StopCondition from "./StopCondition.astro";
 import {
   CHECKED,
@@ -209,12 +209,13 @@ const toHref = (path: string) =>
       </ul>
     </section>
 
-    <RelatedNextStep
+    <NextStep
       locale={locale}
-      stage="control"
-      title={content.nextTitle}
-      description={content.nextDescription}
-      href={toHref(getLocalizedPath(locale, "secureSetupAccess"))}
+      primary={{
+        label: content.nextTitle,
+        description: content.nextDescription,
+        href: toHref(getLocalizedPath(locale, "secureSetupAccess")),
+      }}
     />
   </article>
 </Base>

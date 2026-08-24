@@ -2,7 +2,7 @@
 import ArtifactLink from "./ArtifactLink.astro";
 import EvidenceBand from "./EvidenceBand.astro";
 import PageIntroduction from "./PageIntroduction.astro";
-import RelatedNextStep from "./RelatedNextStep.astro";
+import NextStep from "./NextStep.astro";
 import StopCondition from "./StopCondition.astro";
 import { artifactHref, getVibeCoding, REVIEWED } from "../data/start/vibe-coding";
 import { getLocalizedPath } from "../i18n/routes";
@@ -135,12 +135,13 @@ const toHref = (path: string) =>
       external
     />
 
-    <RelatedNextStep
+    <NextStep
       locale={locale}
-      stage="control"
-      title={content.nextTitle}
-      description={content.nextDescription}
-      href={toHref(getLocalizedPath(locale, "secureSetupAccess"))}
+      primary={{
+        label: content.nextTitle,
+        description: content.nextDescription,
+        href: toHref(getLocalizedPath(locale, "secureSetupAccess")),
+      }}
     />
   </article>
 </Base>

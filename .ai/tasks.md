@@ -57,7 +57,7 @@ implementation, not merely before merge.
 | # | Slice | Depends on | Approval | Status |
 |---|---|---|---|---|
 | 1 | Product identity and acute contradictions | — | yes | **done** (#158) |
-| 2 | Global shell: footer and page-level onward path | 1 | yes | **next** |
+| 2 | Global shell: footer and page-level onward path | 1 | yes | **in review** |
 | 3 | `/start` as one reader journey | 2 | no | not started |
 | 4 | `/data-flows` and Connect AI | 2 | partly | blocked |
 | 5 | `/secure-setup` and verification | 4 | no | not started |
@@ -75,21 +75,16 @@ implementation, not merely before merge.
    `manifest.webmanifest` and `llms.txt` keeps the two static restatements
    honest. Homepage copy, header, footer structure, routes and sitemap
    unchanged.
-2. **Global shell.** Two separate reader jobs in one branch, because both are
-   shell-level and neither is solved with the other's content.
-   *Footer:* cut it back to the supporting destinations that earn persistent
-   access — Glossary; Law, not framed as lookup; About with a natural German
-   label; Blog only if it earns global placement; the evidence method as trust
-   content rather than a glossary concept; one problem-report path; one
-   vulnerability path; at most one repository link as a secondary utility;
-   legal notice and privacy. The human `security.txt` duplicate goes and the
-   endpoint keeps being served. **The four header journeys do not go into the
-   footer.** Exact grouping and wording are not approved yet.
-   *Onward path:* one reusable way for a substantial page to offer its next
-   useful action — contextual, visually secondary to the article, carrying no
-   product-stage label, requiring neither breadcrumbs nor a sticky header, and
-   not forcing every page to carry several related links. Slice 2 builds the
-   pattern; slices 3–6 populate each family's actual destinations.
+2. **Global shell.** *Implemented on `feature/slice-2-global-shell`, awaiting
+   review.* The footer is two groups — `Terms & law` / `Begriffe & Recht` and
+   `About AI Standard` / `Über AI Standard` — over an unheaded reporting row and
+   a legal bar; Blog, Contribute, the human `security.txt` link, the second name
+   for the repository and the identity tagline are gone, and the four header
+   journeys stayed out. `RelatedNextStep` became `NextStep` with a contextual
+   contract and no product stage; `PageIntroduction` stopped rendering the page
+   job. About gained the one `NextStep` instance, so the blog article keeps an
+   inbound path. Both decisions are in `decisions.md` (2026-08-24). Slices 3–6
+   still populate each family's actual destinations.
 3. **`/start` as one reader journey.** The hub, the employee and decision-maker
    pages and Vibe Coding; the mechanism page only far enough to hand its
    ownership to `/data-flows`. Prerequisite role questions resolve before the choice of
@@ -98,6 +93,14 @@ implementation, not merely before merge.
    `employee` resolves into onward action rather than permission alone;
    Vibe Coding stops abandoning the Explore/Prototype reader after its lead.
    URLs unchanged.
+   *Also decide what a reader needs from `ArtifactLink` on Vibe Coding.* At
+   375 px the `COPYABLE ARTIFACT` / `Zum Übernehmen` header and the `DRAFT`
+   status badge are the visually dominant part of the block, above the title the
+   reader is actually being offered. This is not a product-stage leak and is not
+   covered by #145 — it is the general problem of internal artifact and status
+   furniture outranking the content it labels, and slice 2 deliberately left
+   `ArtifactLink` untouched. Slice 3 decides what a normal reader needs to see
+   there.
 4. **`/data-flows` and Connect AI.** One ownership problem. Stop teaching the
    four-axis model as the hub's public language; make `connect-ai-to-tools-and-data`
    answer *how*, cut its density, add a concrete end-to-end example, and move its
@@ -127,10 +130,14 @@ implementation, not merely before merge.
    Negation-heavy headings, count language, meta copy, capability/limitation
    balance, the German defects the review named, `du`/`man` consistency, and a
    terminology mapping by meaning before any CI rule is added. Issue #145 is
-   executed by slice 2 (the onward-path component) and slice 4 (the two proof
-   pages); its text records one string wrongly — the rendered label is
-   `Next step / Control`, not `Collaboration` — and it omits
-   `Reference` / `Nachschlagen` and `Copyable artifact` / `Zum Übernehmen`.
+   partly done: slice 2 removed the shared-primitive half — `Next step /
+   Control`, `Decision path` / `Entscheidungsweg`, and the `ProductStage` copy
+   table behind them. What remains is page copy: the section eyebrows on Vibe
+   Coding (slice 3) and Connect AI (slice 4), including
+   `Reference` / `Nachschlagen`, which the issue text omits. Its text also
+   records one string wrongly — the rendered label was `Next step / Control`,
+   not `Collaboration`. `Copyable artifact` / `Zum Übernehmen` is not a stage
+   leak and is queued in slice 3 above.
 
 **Not rewritten for uniformity** — the review found these strong, and a slice
 that touches them changes only what its own goal requires: the homepage;

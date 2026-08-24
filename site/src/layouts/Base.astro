@@ -54,7 +54,6 @@ const localizedHome = toHref(getLocalizedPath(locale, "home"));
 const localizedAbout = toHref(getLocalizedPath(locale, "about"));
 const localizedGlossary = toHref(getLocalizedPath(locale, "glossaryIndex"));
 const localizedLaw = toHref(getLocalizedPath(locale, "law"));
-const localizedBlog = toHref(getLocalizedPath(locale, "blogIndex"));
 const localizedLegal = toHref(getLocalizedPath(locale, "legalNotice"));
 const localizedPrivacy = toHref(getLocalizedPath(locale, "privacyPolicy"));
 const isActive = (href: string) => {
@@ -84,9 +83,10 @@ const deLanguageHref = routeKey
 // check it. No "Home" entry — the wordmark already has that job.
 //
 // Law, Blog and About are deliberately absent. Each is reference, format or
-// trust rather than a journey a reader arrives with, and the footer already
-// holds all three. Reference is not a fifth entry for the same reason: looking
-// a term up interrupts a journey instead of being one.
+// trust rather than a journey a reader arrives with. Law and About are in the
+// footer; Blog is not, because one post per locale is not a destination a
+// reader returns to. Reference is not a fifth entry for the same reason as
+// Law: looking a term up interrupts a journey instead of being one.
 const primaryNav = [
   { href: toHref(getLocalizedPath(locale, "useCases")), label: ui.useCases },
   { href: toHref(getLocalizedPath(locale, "start")), label: ui.start },
@@ -97,44 +97,49 @@ const primaryNav = [
 const copyrightYear = new Date().getFullYear();
 
 // Pre-filled issue so a reader reporting a problem does not have to describe
-// which page they were on — the title and URL are already in the body.
+// which page they were on — the title and URL are already in the body. The
+// template copy follows the reader's locale; the destination does not, because
+// there is one issue tracker.
 const pageUrl = new URL(Astro.url.pathname, Astro.site).toString();
 const reportProblemUrl = `${repoUrl}/issues/new?${new URLSearchParams({
   title: `Site: ${title}`,
-  body: `**Page:** ${title}\n**URL:** ${pageUrl}\n\n**What is wrong or unclear:**\n\n`,
+  body: `**${ui.reportProblemPage}:** ${title}\n**${ui.reportProblemUrl}:** ${pageUrl}\n\n**${ui.reportProblemBody}**\n\n`,
 }).toString()}`;
 
+// Two groups, because there are two questions a reader arrives at the bottom of
+// a page with: something in the way (a word, a rule), and who is behind this.
+//
+// The four header journeys are deliberately absent — see `.ai/decisions.md`,
+// 2026-08-24. A stranded reader is answered by the page's own next step, not by
+// putting every primary destination on a third surface of the same screen.
 const footerSections = [
   {
-    id: "footer-reference",
-    heading: ui.footerReference,
+    id: "footer-terms-and-law",
+    heading: ui.footerTermsAndLaw,
     links: [
       { href: localizedGlossary, label: ui.glossary },
       { href: localizedLaw, label: ui.law },
-      { href: localizedBlog, label: ui.blog },
-      { href: toHref(getLocalizedPath(locale, "evidenceMethod")), label: ui.evidenceMethod },
     ],
   },
   {
-    id: "footer-project-trust",
-    heading: ui.footerProjectTrust,
+    id: "footer-about-site",
+    heading: ui.footerAboutSite,
     links: [
       { href: localizedAbout, label: ui.about },
-      { href: repoUrl, label: ui.technicalRepository, external: true },
-      { href: `${repoUrl}/blob/main/CONTRIBUTING.md`, label: ui.contribute, external: true },
-      { href: reportProblemUrl, label: ui.reportProblem, external: true },
-      { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability, external: true },
+      { href: toHref(getLocalizedPath(locale, "evidenceMethod")), label: ui.evidenceMethod },
+      { href: repoUrl, label: ui.projectOnGithub, external: true },
     ],
   },
-  {
-    id: "footer-legal",
-    heading: ui.footerLegal,
-    links: [
-      { href: localizedLegal, label: ui.legalNotice },
-      { href: localizedPrivacy, label: ui.privacyPolicy },
-      { href: `${base}.well-known/security.txt`, label: ui.securityTxt },
-    ],
-  },
+];
+
+// Actions rather than destinations, so they carry no heading and no landmark of
+// their own. Kept separate because they lead to different disclosure channels:
+// a public issue and a private security advisory. The human `security.txt`
+// link is gone; `public/.well-known/security.txt` is still served for scanners
+// and still names the same advisory address.
+const footerUtilities = [
+  { href: reportProblemUrl, label: ui.reportProblem },
+  { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability },
 ];
 ---
 
@@ -244,13 +249,19 @@ const footerSections = [
     <footer class="site-footer">
       <div class="layout-shell site-footer__inner">
         <div class="site-footer__grid">
+          {/* Wordmark only. The identity sentence belongs where a reader is
+              deciding what this is — the homepage lead, About, the metadata —
+              not at the end of an article they have already read. Removing the
+              restatement changes presentation only; `data/identity.ts` and the
+              machine surfaces are untouched. It is also the reader's only path
+              home from the bottom of a long page, because the header does not
+              follow them down. */}
           <div class="site-footer__brand">
             <a href={localizedHome} class="site-wordmark">
               <span class="site-wordmark__ai font-bold text-[var(--color-accent)]">AI</span>{" "}<span
                 class="font-semibold">Standard</span
               >
             </a>
-            <p>{identity.identity}</p>
           </div>
           {
             footerSections.map((section) => (
@@ -278,9 +289,30 @@ const footerSections = [
           }
         </div>
 
+        <ul class="site-footer__utilities">
+          {
+            footerUtilities.map((item) => (
+              <li>
+                <a href={item.href} class="site-footer__utility">
+                  {item.label}
+                  <span aria-hidden="true" class="ml-0.5">
+                    ↗
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
         <div class="site-footer__closing">
+          {/* The legal bar. Legal notice and privacy sit with the copyright and
+              the two licences because that is one subject and where a reader
+              looks for it, not to save a row. They keep the fine-print size the
+              licences already use, and the muted ink measures 7.3:1 here. */}
           <p class="site-footer__fine-print">
             <span>© {copyrightYear} AI Standard</span>
+            <span><a href={localizedLegal}>{ui.legalNotice}</a></span>
+            <span><a href={localizedPrivacy}>{ui.privacyPolicy}</a></span>
             <span>
               {ui.finePrintCode}{" "}
               <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>

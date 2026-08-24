@@ -1,0 +1,55 @@
+---
+import { getPagePrimitiveCopy } from "../data/page-primitives";
+import type { SiteLocale } from "../i18n/ui";
+
+interface Destination {
+  /** Promises the reader job the destination answers, not its H1 verbatim. */
+  label: string;
+  href: string;
+}
+
+interface Props {
+  locale: SiteLocale;
+  /**
+   * One sentence, only where the destination's own label would land as a
+   * change of subject. Most pages do not need it.
+   */
+  context?: string;
+  /** What the reader does next. Exactly one, always. */
+  primary: Destination & { description?: string };
+  /**
+   * A second destination only where the reader job genuinely forks. No
+   * description, so it stays subordinate and cannot grow into a related list.
+   */
+  secondary?: Destination;
+}
+
+const { locale, context, primary, secondary } = Astro.props;
+const copy = getPagePrimitiveCopy(locale);
+// The label is the region's accessible name via aria-labelledby rather than a
+// second aria-label, so a screen reader hears "Next step" once. Two instances
+// can share a page, so the id is derived from the destination.
+const labelId = `next-step-${primary.href.replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "")}`;
+---
+
+<nav class="next-step" aria-labelledby={labelId}>
+  <p class="next-step__label" id={labelId}>{copy.nextStep}</p>
+  {context && <p class="next-step__context">{context}</p>}
+  <a href={primary.href} class="next-step__link">
+    <span>
+      <strong>{primary.label}</strong>
+      {primary.description && <span>{primary.description}</span>}
+    </span>
+    <span class="next-step__arrow" aria-hidden="true">→</span>
+  </a>
+  {
+    secondary && (
+      <p class="next-step__secondary">
+        <a href={secondary.href}>
+          {secondary.label}
+          <span aria-hidden="true"> →</span>
+        </a>
+      </p>
+    )
+  }
+</nav>

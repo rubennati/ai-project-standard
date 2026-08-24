@@ -26,7 +26,10 @@ const copy = getPagePrimitiveCopy(locale);
 ---
 
 <header class="page-introduction" data-page-job={job}>
-  <p class="page-introduction__job">{copy.pageJobs[job]}</p>
+  {/* The page job stays as a data attribute and is not rendered. As visible
+      text it read "Decision path" / "Entscheidungsweg" — this project's own
+      filing vocabulary, which a reader cannot learn from the page and cannot
+      act on, and which in German names an organisational approval chain. */}
   <h1>{title}</h1>
 
   <div class="page-introduction__answer">

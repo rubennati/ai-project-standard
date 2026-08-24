@@ -630,3 +630,69 @@ is fine; a card about writing a customer email whose only onward step is a legal
 admissibility page is not, whatever it is labelled.
 
 Rejected: label equals H1, verbatim, site-wide.
+
+## 2026-08-24 - The footer is two questions, and Blog is not one of them
+
+Decision: the footer holds two groups and two rows of furniture.
+`Terms & law` / `Begriffe & Recht` (Glossary, Law) and
+`About AI Standard` / `Über AI Standard` (About, How claims are checked, The
+project on GitHub); beneath them an unheaded utility row with the two reporting
+paths; beneath that the legal bar — copyright, legal notice, privacy, both
+licences, language. The wordmark opens it and the identity sentence does not.
+Blog, Contribute, the human `security.txt` link and the second name for the
+repository are gone. The four header journeys stay out, in both languages.
+
+This implements "The footer does not repeat the header" (same date) and
+supersedes the footer proposal in `site/INFORMATION_ARCHITECTURE.md`.
+
+Rationale: a reader arrives at the bottom of a page with two questions —
+something is in the way (a word, a rule), or who is behind this. Two groups
+answer both; the previous three named a lookup promise that also held dated
+editorial, and an abstraction no reader scans for. `Nachschlagen` was
+simultaneously a footer heading and a section eyebrow inside `main` on Connect
+AI. Reporting is an action rather than a destination, so it carries no heading
+and no landmark. Legal notice and privacy join the copyright and the licences
+because that is one subject, at the size the licences already use.
+
+Blog is removed because one post per locale is not a destination a reader
+returns to and the label names a format rather than a reader job — the same
+test that removed it from the header on 2026-08-20. Its article had no inbound
+link anywhere except that footer row, so About now carries a `NextStep` to it.
+`/blog`, its URL and its feed are unchanged.
+
+Measured at 375x812: 898 px (1.11 screens) to 603 px (0.74), 17 links to 14,
+five github.com links to four, three footer navigation landmarks to two.
+Desktop 1280: 385 px to 375 px, with no empty grid column.
+
+Rejected: journey links in the footer; a `Legal` group of its own; keeping a
+link because it was already there; holding a global row open for two unwritten
+posts.
+
+## 2026-08-24 - A next step is contextual, not a stage in a model
+
+Decision: `NextStep` (formerly `RelatedNextStep`) offers the one action a reader
+is most likely to want after a specific page. Its contract is a locale, an
+optional context sentence, exactly one primary destination — label, optional
+description, href — and at most one secondary destination of label and href.
+No product stage, no page job, no ownership field, no related-content list.
+Internal destinations only, and optional per page with nothing enforcing it.
+`ProductStage` and `productStages` are deleted; `PageIntroduction` stops
+rendering the page job, which survives as `data-page-job`.
+
+Rationale: the component was sound — a navigation region, one accented
+destination, an arrow with a reduced-motion guard — and the leak was one prop,
+one import and one span. Rewriting it would have discarded working markup and,
+in the shape that retires the old component only when later slices migrate its
+users, would have left `Next step / Control` on public pages through three more
+slices. Reuse's real cost is a name that outlives its concept, so the rename
+was part of the decision rather than a separate tidy: "Related" is the word the
+job excludes.
+
+External destinations are out because an onward step promises that the site
+continues the reader's journey, and artifacts and sources already have
+components. A parent link is a kind of destination, not a second slot; giving
+it one would put two links on every page by default.
+
+Rejected: a parallel component; an `<h2>` for the label, which puts furniture in
+the document outline; a build rule requiring every page to carry one, which
+would be a check written before the content it checks.
