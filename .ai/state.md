@@ -5,6 +5,8 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
+- **Now: slice 2 — global shell.** Slice 1 shipped in #158. Slice 2 is the
+  footer and the page-level onward path, treated as two separate reader jobs.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -19,6 +21,13 @@ enough to reopen any of it.
 
 The homepage (PR #154) is the editorial reference and is not changed by this
 objective unless a slice needs a concrete integration fix.
+
+The canonical product identity shipped in slice 1 and is settled:
+`AI Standard is an independent site for using AI at work.` /
+`AI Standard ist eine unabhängige Seite für den Einsatz von KI bei der Arbeit.`
+`site/src/data/identity.ts` owns it; every surface that answers "what is this"
+reads or restates it, and a conformance check holds the two static
+restatements. No slice introduces a second product statement.
 
 ## Working constraints for this objective
 
@@ -54,7 +63,8 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
 
 ## Open, and blocking
 
-Three of the seven slices cannot start on repository evidence alone.
+Slice 2 is not blocked. These three block slices 4 and 6 only, and are not
+answerable from repository evidence.
 
 - **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
   automatic; what happens to the 21 published URLs does not follow from that.
