@@ -4,10 +4,25 @@
 
 - **Objective, set 2026-08-24:** review the whole public website editorially and
   structurally so it reads as one product, with the homepage as the editorial
-  reference. The product architecture is settled — four journeys, four hubs, the
-  header, the footer groups and the public routes — and is reopened only where
-  the audit finds a concrete contradiction between a navigation decision and the
-  reader's actual job.
+  reference.
+
+**Settled, and not reopened without a concrete contradiction between the
+implementation and the reader's job:** the four primary reader journeys, the
+four primary hubs, current header membership, the current bilingual header
+labels, and Reference not being a fifth primary journey.
+
+**Not settled:** the footer. Its grouping, membership and placement are part of
+this review, and the audit may recommend moving, removing or regrouping links
+where a placement serves no distinct reader job. Open at least: whether Evidence
+Method sits in the right group, whether a human-facing security contact link
+earns its place or is redundant, and whether Law, Blog, About, Reference,
+project and trust, and legal disclosure are grouped the way a reader would
+expect. None of that is decided here.
+
+**Public URLs** may be audited — a route or ownership problem is a finding worth
+reporting — but they are not changed here. Any navigation, information
+architecture or URL change needs the human approval its change-scope rule
+requires before it is implemented.
 
 ## How this review starts
 
