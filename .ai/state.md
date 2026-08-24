@@ -2,41 +2,43 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- **Objective, set 2026-08-21:** editorially reset the public homepage so it
-  explains AI Standard as a product rather than exposing the site's internal
-  information architecture. The four primary journeys, the four hubs and the
-  navigation are shipped and are not reopened by this work.
+- **Objective, set 2026-08-24:** review the whole public website editorially and
+  structurally so it reads as one product, with the homepage as the editorial
+  reference. The product architecture is settled — four journeys, four hubs, the
+  header, the footer groups and the public routes — and is reopened only where
+  the audit finds a concrete contradiction between a navigation decision and the
+  reader's actual job.
 
-## Homepage direction
+## How this review starts
 
-Working direction, not yet a decision. It has not been implemented or approved.
+Read-only. The audit covers the site before any page is rewritten; it does not
+open by rewriting pages in bulk.
 
-1. **Hero** — what AI Standard is, and what a reader gets from it. Primary entry
-   likely `/use-cases`; optional secondary entry `/start`.
-2. **A short practical entry** — only if it adds something the header and
-   `/use-cases` do not already give. Never a repetition of the four journeys.
-3. **Trust** — only where it fits the page. Sources, check dates and evidence may
-   carry credibility; do not add a section whose job is explaining how to read
-   the site.
-4. **Project** — if included, say plainly that AI Standard is developed openly,
-   and offer GitHub as source access. Not a second product, and no instruction to
-   ordinary readers to browse source documents.
+**Surfaces:** header and footer; how the homepage relates to the rest of the
+site; `/use-cases`, `/start`, `/data-flows`, `/secure-setup` and their
+significant children; Law; About; Reference and the glossary; Vibe Coding;
+Connect AI; the employee and decision-maker guidance; the verification and
+record-keeping pages; and any other public page that materially affects a
+reader journey.
 
-### What the next pass must not return to
+**What it looks for:** public wording that exposes internal product models;
+headings that are not recognisable questions, tasks or situations; artificial
+copy; security and compliance language crowding out the broader product value;
+duplication across header, hub and child page; content at the wrong depth;
+pages that are disproportionately long or shallow; card and section density;
+mobile scrolling burden; weak onward paths; header and footer links that follow
+repository structure rather than reader need; and navigation labels that
+disagree with what the destination delivers.
 
-- `Mit KI echte Arbeit erledigen …` / `Do real work with AI …`
-- `Geschrieben aus der Security-Praxis` / `Written from a security desk`
-- explaining that the site is organised around four questions
-- mirroring the four primary navigation journeys as four homepage cards
-- `Wie diese Seite zu lesen ist` / `How to read this site` as a homepage section
-- `Darunter liegt ein Repository` / `There is a repository underneath this`
-- security, compliance or accountability as the opening product promise
-- internal product-stage vocabulary as public framing
+## Working constraints for this review
 
-## Open questions
+Not decisions. They bind this objective and expire or are reconsidered with it.
 
-- What does the hero promise a first-time reader, in one sentence, without
-  naming the site's structure? Unresolved, and it decides the rest of the page.
+- Public copy starts from a question, task or situation a reader would actually
+  recognise. An internal product model may structure the answer; it does not
+  become the language of the answer.
+- German: if a heading is not something a person could say, search for or
+  understand at once, it is project language rather than public copy.
 
 ## Active constraints
 

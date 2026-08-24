@@ -38,10 +38,10 @@ list records execution order rather than restating those decisions.
    human approval first.
 8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
    dependency as a separate approval and licence decision.
-9. [ ] Editorially reset the public homepage. The implementation from PR #149 is
-   structurally valid and editorially rejected: it explains the site's own
-   information architecture instead of the reader benefit. Direction and the
-   list of what not to return to are in `state.md`. No replacement approved.
+9. [x] Editorially reset the public homepage (PR #154). The page now says what
+   AI Standard is and offers three direct reader questions instead of
+   reproducing the four journeys. It is the editorial reference for the
+   whole-site review.
 
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
