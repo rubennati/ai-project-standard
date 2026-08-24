@@ -137,3 +137,24 @@ section — 166 of them — and `check-conformance.sh` verifies the section coun
 against the files. A section that appears in a research document and not in the
 register now fails the build.
 
+
+## Internal product structure became the public homepage — 2026-08-21
+
+**What happened.** The homepage was rebuilt (PR #149) directly against the
+acceptance criterion "the homepage expresses the whole product spine". The
+result named the four reader journeys as four headings, described the site's own
+organisation in the lead, and repeated the four navigation destinations as card
+links. It shipped and was editorially rejected.
+
+**Why it was wrong.** An internal criterion was rendered literally as the
+reader-facing surface. The spine is how the material is organised, not what a
+reader came for — and the same rule had already been stated for the navigation
+labels, which were kept free of that vocabulary. Measured afterwards: three of
+four headings had the system as grammatical subject rather than the reader, and
+two destinations appeared on all three surfaces of one screen.
+
+**Corrective action.** None mechanical, and deliberately so. The direction and
+the list of formulations not to return to are in `state.md` under the current
+objective; they expire when the homepage is rewritten. The general form is
+already covered by the change-scope rule in `AGENTS.md`: an internal model may
+decide what a page must cover, never how it addresses a reader.

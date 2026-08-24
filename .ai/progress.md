@@ -61,3 +61,26 @@ published an intermediate state.
 - **CI built the site nowhere** (PR #82). A broken build was green on the PR and failed afterwards in the deploy, which is how the Astro 7 breakage reached `main`. `site-build` now runs `astro check` and `astro build` on every pull request without deploying. Its two pre-existing `astro check` errors were fixed: `rel` is not valid on a `<span>`.
 - **`v0.3.0` released.** `[Unreleased]` had been accumulating since 12 May. `release.yml` builds the GitHub Release from the changelog section and refuses if the section or the matching `CITATION.cff` version is missing — `v0.2.0` shipped without either.
 - Merged branches deleted, and `state.md` cut back to current facts; the running commentary it had accumulated belongs here.
+
+## 2026-08-10
+
+- Product architecture settled ahead of implementation: `docs/website-product-brief.md`, a route-by-route `site/CONTENT_AUDIT.md`, the stable-route-first `site/INFORMATION_ARCHITECTURE.md`, and `site/THEME_DIRECTION.md` rejecting a third-party theme in favour of a native shell with Shell, Wide and Reading rails.
+- Page primitives added: five page jobs and six bilingual components, with fact and measured evidence failing the build without a source and a check date.
+
+## 2026-08-19 – 2026-08-21
+
+Task 7, the migration of the public site onto the approved product structure.
+All six child issues of #134 closed; #134 itself stays open (see below).
+
+- **Possibility** (PR #142). `/use-cases` replaced its blueprint catalogue with six outcomes; `/de/use-cases` and the `useCases` route contract added.
+- **Collaboration** (PR #144). `/start` became a choice between six ways of working — chat, assistant, workspace assistant, tool-using system, agent, automated operation — as an equal-weight card block rather than a ladder. The eight identical undated assessment labels on `/start/what-it-is-doing` became one page-level statement.
+- **Navigation** (PR #146). The header carries exactly four reader journeys. Law, Blog and About moved to the footer, which already held them; Reference was rejected as a fifth destination. `/use-cases` had had no global link at all.
+- **Reach** (PR #147). `/data-flows` became what a system can read, keep, change and set off, with the four system layers as explanatory depth. The six articles kept their URLs, sources and check dates.
+- **Control** (PR #148). `/secure-setup` became the six-step lifecycle, and two new routes closed the site's largest content gaps: `/secure-setup/checking-the-result` and `/secure-setup/keeping-a-record` — questions 8 and 9 of the product brief, previously owned by no page.
+- **Homepage** (PR #149). Rebuilt around the four journeys. See the outcome below.
+- **Glossary** (PR #150). The index stopped saying that guides and project documentation "will stay separate" — the two-layer identity `docs/purpose.md` retired.
+
+**Outcome to carry forward:** the current homepage implementation is
+structurally valid but editorially rejected. It explains the site's own
+information architecture instead of the reader benefit. No replacement has been
+approved or implemented.

@@ -31,16 +31,21 @@ list records execution order rather than restating those decisions.
    accessibility basics, evidence treatment and rendering. This does not mean
    every public sentence has received editorial review.
 7. [ ] Map the remaining page families onto the proven primitives and migrate
-   them in reviewable groups. Obtain the recorded human approvals before final
-   navigation labels, `/use-cases` replacement, `/docs/**` compatibility work
-   or Open Source reframing changes.
+   them in reviewable groups. The four hubs and the primary navigation are done
+   (#135–#140, PRs #142–#149). What is left: the Open Source reframing, the
+   `/docs/**` compatibility decision, and `/open-source/**`, which currently has
+   no inbound link from any page. Both remaining pieces need their recorded
+   human approval first.
 8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
    dependency as a separate approval and licence decision.
+9. [ ] Editorially reset the public homepage. The implementation from PR #149 is
+   structurally valid and editorially rejected: it explains the site's own
+   information architecture instead of the reader benefit. Direction and the
+   list of what not to return to are in `state.md`. No replacement approved.
 
 - Legal review of the legal notice and privacy policy — both are live
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English
-- `/start/what-it-is-doing` carries eight identical undated Assessment labels in each language; review whether one page-level evidence statement can replace the repetition
 
 ## Coherence audit — 2026-08-09
 
