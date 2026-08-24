@@ -15,21 +15,19 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 - It now says what the index is — the vocabulary the rest of the site uses,
   for when you need to look a term up on its own.
 
-### Changed — The homepage opens on the work, not on the risk
+### Changed — The homepage says what AI Standard is
 
-- The page led with where your data goes and offered three doors into data, law
-  and settings. Neither of the two journeys the product opens with — what AI is
-  for, and how much the system should do — could be reached from the front page
-  at all.
-- It now states the four questions in the order they come up, each with one
-  thing that distinguishes it and a way in. The hub models are not repeated
-  here; each hub keeps its own.
-- The three-question block is retired, which also resolves its third door
-  claiming "access" for `/secure-setup` while the header uses the same word for
-  `/data-flows`.
-- The security-desk voice and the stance are kept word for word. The stance
-  moves down to sit with the method, so the first action stays on the first
-  screen of a phone rather than below it.
+- The homepage now introduces AI Standard as an independent guide to using AI
+  at work and gives readers clear entry points into use cases and ways of
+  working.
+- The duplicated four-journey card grid is removed. Three direct questions now
+  lead to practical guidance on using AI at work, vibe coding, and connecting
+  AI to tools and data.
+- Source transparency and open development now close the page in one compact
+  block, with changing claims tied to their source and last-checked date.
+- Security-desk framing, instructions for how to read the site, the repository
+  metaphor and source-document link, and glossary housekeeping are removed.
+  No public URL changed.
 
 ### Added — Checking the result, and keeping a record
 

@@ -1,6 +1,5 @@
 ---
 import { getHome } from "../data/home";
-import { getUi } from "../i18n/ui";
 import type { SiteLocale } from "../i18n/ui";
 import { repoUrl } from "../data/site";
 
@@ -10,14 +9,13 @@ interface Props {
 
 const { locale } = Astro.props;
 const content = getHome(locale);
-const ui = getUi(locale);
 const base = import.meta.env.BASE_URL;
 const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
 ---
 
 <section class="flex flex-col gap-6">
   <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{content.heading}</h1>
-  <p class="max-w-3xl text-lg leading-8">{content.lead}</p>
+  <p class="max-w-2xl text-lg leading-8">{content.lead}</p>
   <div class="flex flex-wrap gap-4">
     <a
       href={toHref(content.primaryAction.href)}
@@ -34,39 +32,41 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
   </div>
 </section>
 
+{/*
+  A list, not a card grid. Each row is the question itself, so there is no
+  supporting line and no separate path label to read past. Rows are full-width
+  targets with generous padding rather than small inline links, which is what
+  makes them usable on a phone without turning the section into cards that would
+  compete with the hero.
+*/}
 <section class="prototype-section">
-  <h2>{content.questionsHeading}</h2>
+  <h2>{content.entriesHeading}</h2>
 
-  <div class="outcome-grid">
+  <ul class="mt-6 max-w-2xl border-t border-[var(--line)]">
     {
-      content.questions.map((question) => (
-        <article class="outcome-card">
-          <h3>{question.heading}</h3>
-          <p class="capability-card__body">{question.body}</p>
-          <p class="outcome-card__path">
-            <a href={toHref(question.link.href)}>{question.link.label}</a>
-          </p>
-        </article>
+      content.entries.map((entry) => (
+        <li class="border-b border-[var(--line)]">
+          <a
+            href={toHref(entry.href)}
+            class="flex items-center justify-between gap-4 py-4 text-lg font-medium no-underline hover:text-[var(--color-accent)]"
+          >
+            {entry.question}
+            <span aria-hidden="true" class="shrink-0 text-[var(--ink-muted)]">
+              →
+            </span>
+          </a>
+        </li>
       ))
     }
-  </div>
+  </ul>
 </section>
 
-<section id="evidence-method" class="mt-20 max-w-3xl scroll-mt-6">
-  <h2 class="text-2xl font-semibold">{content.trustHeading}</h2>
-  <p class="mt-3 leading-7">{content.stance}</p>
-  <p class="mt-3 leading-7 text-zinc-700 dark:text-zinc-300">{content.trustBody}</p>
-  <p class="mt-3">
-    <a href={toHref(content.trustLink.href)}>{ui.evidenceMethod}</a>
+<section class="prototype-section">
+  <h2>{content.openHeading}</h2>
+  <p class="prototype-section__lead">{content.openBody}</p>
+  <p class="mt-4">
+    <a href={repoUrl}>
+      {content.openAction}<span aria-hidden="true" class="ml-0.5">↗</span>
+    </a>
   </p>
-</section>
-
-<section class="mt-20 flex max-w-3xl flex-col gap-3">
-  <h2 class="text-2xl font-semibold">{content.repoHeading}</h2>
-  <p class="leading-7">{content.repoBody}</p>
-  <p class="flex flex-wrap gap-x-6 gap-y-2">
-    <a href={`${base}docs`}>{content.repoDocsLink}</a>
-    <a href={repoUrl}>{content.repoExternalLink} ↗</a>
-  </p>
-  <p class="mt-4 leading-7 text-zinc-700 dark:text-zinc-300">{content.glossaryAside}</p>
 </section>
