@@ -6,6 +6,27 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — The site says the same thing about itself everywhere
+
+- Every surface that answers "what is this" now introduces AI Standard as an
+  independent site for using AI at work: the footer, the browser's install
+  prompt, the fallback page description and the file AI assistants read. Two of
+  them still described a repository standard for developers, and one led with a
+  security-desk framing the homepage had already dropped.
+- The Law section no longer promises "Austria first, then the EU". The articles
+  rest on EU law and the description now says so, instead of announcing an
+  Austrian layer the section does not carry.
+- On `/secure-setup`, the sixth step — taking an access back — pointed at the
+  page about building a connection, which is the opposite action. No page
+  answers taking an access back on its own terms yet, so the step now states
+  what it means and offers no link, as monitoring already does.
+- `llms.txt` describes the current site: the three questions the homepage opens
+  with, the four reader journeys, and what each destination actually answers.
+  Two of those three questions were missing from it entirely.
+- The identity is now written in one place and the self-conformance check fails
+  the build if the manifest or `llms.txt` stops matching it, or if the withdrawn
+  Austria claim returns.
+
 ### Fixed — The glossary stopped promising a split that was retired
 
 - The index said broader guides and project documentation "will stay separate",
