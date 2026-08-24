@@ -954,13 +954,13 @@
     line-height: 1.6;
   }
 
-  .related-next-step {
+  .next-step {
     margin-top: clamp(3rem, 7vw, 5rem);
     border-top: 1px solid var(--line);
     padding-top: 1.25rem;
   }
 
-  .related-next-step__label {
+  .next-step__label {
     display: flex;
     gap: 0.5rem;
     color: var(--ink-muted);
@@ -970,7 +970,13 @@
     text-transform: uppercase;
   }
 
-  .related-next-step__link {
+  .next-step__context {
+    margin-top: 0.75rem;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  .next-step__link {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 1rem;
@@ -980,34 +986,49 @@
     text-decoration: none;
   }
 
-  .related-next-step__link > span:first-child {
+  .next-step__link > span:first-child {
     display: grid;
     gap: 0.25rem;
   }
 
-  .related-next-step__link strong {
+  .next-step__link strong {
     color: var(--color-accent);
     font-size: 1.125rem;
   }
 
-  .related-next-step__link span span {
+  .next-step__link span span {
     color: var(--ink-muted);
     line-height: 1.6;
   }
 
-  .related-next-step__arrow {
+  .next-step__arrow {
     align-self: center;
     color: var(--color-accent);
     font-size: 1.75rem;
     transition: transform 160ms ease;
   }
 
-  .related-next-step__link:hover .related-next-step__arrow {
+  .next-step__link:hover .next-step__arrow {
     transform: translateX(0.25rem);
   }
 
+  .next-step__secondary {
+    margin-top: 0.875rem;
+    font-size: 0.9375rem;
+  }
+
+  .next-step__secondary a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+
+  .next-step__secondary a:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .related-next-step__arrow {
+    .next-step__arrow {
       transition: none;
     }
   }
@@ -1115,6 +1136,24 @@
     text-decoration: underline;
   }
 
+  .site-footer__utilities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .site-footer__utility {
+    color: var(--ink-muted);
+    font-size: 0.8125rem;
+    text-decoration: none;
+  }
+
+  .site-footer__utility:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
   .site-footer__closing {
     display: flex;
     flex-direction: column;
@@ -1152,7 +1191,9 @@
 
   @media (min-width: 64rem) {
     .site-footer__grid {
-      grid-template-columns: minmax(16rem, 1.4fr) repeat(3, minmax(9rem, 1fr));
+      grid-template-columns: minmax(12rem, auto) repeat(2, minmax(11rem, auto));
+      justify-content: start;
+      column-gap: 4.5rem;
     }
   }
 

@@ -5,8 +5,11 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 2 — global shell.** Slice 1 shipped in #158. Slice 2 is the
-  footer and the page-level onward path, treated as two separate reader jobs.
+- **Now: slice 2 — global shell.** Slice 1 shipped in #158. Slice 2 is
+  implemented on `feature/slice-2-global-shell` and awaiting human review: the
+  footer cut to two groups over a reporting row and a legal bar, and
+  `RelatedNextStep` evolved into a contextual `NextStep`. Both are in
+  `decisions.md` (2026-08-24). Slice 3 is next once slice 2 merges.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -22,12 +25,18 @@ enough to reopen any of it.
 The homepage (PR #154) is the editorial reference and is not changed by this
 objective unless a slice needs a concrete integration fix.
 
+The footer information architecture and the `NextStep` contract shipped in
+slice 2 and are in `decisions.md`. `site/INFORMATION_ARCHITECTURE.md` and
+`site/PAGE_PRIMITIVES.md` carry the implemented shape.
+
 The canonical product identity shipped in slice 1 and is settled:
 `AI Standard is an independent site for using AI at work.` /
 `AI Standard ist eine unabhängige Seite für den Einsatz von KI bei der Arbeit.`
 `site/src/data/identity.ts` owns it; every surface that answers "what is this"
 reads or restates it, and a conformance check holds the two static
-restatements. No slice introduces a second product statement.
+restatements. No slice introduces a second product statement. Slice 2 dropped
+the footer restatement — presentation only, and removing a restatement cannot
+create a second statement.
 
 ## Working constraints for this objective
 

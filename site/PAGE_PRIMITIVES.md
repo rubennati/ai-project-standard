@@ -22,6 +22,12 @@ This file owns only the reusable component contract.
 these jobs. A route family does not decide the job: a technical topic can need
 an explanation, decision path and implementation guide at different depths.
 
+The job is structural and is not rendered. It reached the page as an eyebrow
+until 2026-08-24 — "Decision path" / "Entscheidungsweg" — which told a reader how
+this project files its own material rather than anything they could act on, and
+in German named an organisational approval chain. It survives as the
+`data-page-job` attribute.
+
 ## Shared components
 
 | Component | Contract |
@@ -31,7 +37,7 @@ an explanation, decision path and implementation guide at different depths.
 | `StopCondition` | Marks a case where proceeding would cross a consequential boundary, and gives the safer route instead. |
 | `ImplementationStep` | Keeps action, expected result and verification together so an instruction cannot end at activity. |
 | `ArtifactLink` | Marks material to copy as an artifact rather than presenting it as another article. |
-| `RelatedNextStep` | Continues through Possibility, Collaboration, Reach, Control or Reference instead of listing generic related posts. |
+| `NextStep` | Offers the one action the reader is most likely to want next, chosen for that page. Not a related-content collection, not a rendering of global navigation, and it carries no product-stage label. |
 
 ## Composition rules
 
@@ -46,8 +52,36 @@ an explanation, decision path and implementation guide at different depths.
   `EvidenceLabel` remains appropriate for narrower article sections.
 - Link an artifact only when its boundary, status and verification are honest.
 - End on one accountable next step, not a wall of loosely related links.
+- `NextStep` is optional. A page that carries a reader somewhere should say
+  where it goes next; a page that closes a question may end. Nothing enforces
+  it, because the destinations are an editorial judgement per page.
 - The primitives inherit the Reading rail. Wide comparisons remain separate
   figures or matrices and must preserve labelled meaning on mobile.
+
+## The `NextStep` contract
+
+```text
+NextStep {
+  locale
+  context?    one sentence, only where the destination's label alone would read
+              as a change of subject
+  primary     { label, description?, href }   exactly one, always
+  secondary?  { label, href }                 only where the reader job forks
+}
+```
+
+- The label promises the reader job the destination answers. It does not have to
+  reproduce the destination's H1 — see `.ai/decisions.md`, 2026-08-24.
+- `Next step` / `Nächster Schritt` is visible furniture, a `<p>` rather than a
+  heading, so it stays out of the document outline. The region takes its
+  accessible name from that element, so a screen reader hears it once.
+- The secondary destination carries no description, which keeps it subordinate
+  and stops it growing into a related list.
+- Internal-only. External material is an artifact (`ArtifactLink`) or a source
+  (`EvidenceBand`), and a link that leaves the site ends the journey rather than
+  continuing it.
+- Returning to the parent hub is one kind of destination, not a second slot. A
+  persistent back affordance would be a breadcrumb, which the site does not use.
 
 ## First proof
 

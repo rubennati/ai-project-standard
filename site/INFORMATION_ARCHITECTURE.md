@@ -8,8 +8,9 @@ concrete changes listed at the end.
 Proposal date: 2026-08-10.
 
 Status: the stable-route-first product structure and primary reader jobs were
-approved on 2026-08-10. The original footer proposal was rejected because it
-repeated primary navigation. The revised footer below follows
+approved on 2026-08-10. The first footer proposal was rejected because it
+repeated primary navigation; the second was superseded on 2026-08-24. The
+**Footer** section below is implemented, not proposed, and follows
 [`THEME_DIRECTION.md`](./THEME_DIRECTION.md).
 
 ## Recommendation in one sentence
@@ -74,8 +75,10 @@ label uses them.
 - **Law** becomes authoritative reference and contextual depth inside a
   decision. A reader should not need to classify a question as legal before
   finding the relevant answer.
-- **Blog** becomes a footer destination and a source of featured editorial
-  content on the homepage. Format is not a primary reader goal.
+- **Blog** leaves the header. Format is not a primary reader goal. It was a
+  footer destination until 2026-08-24; with one post per locale it did not earn
+  persistent global placement either, and the article is now reached from
+  About. See **Footer** below.
 - **About** remains a trust destination in the footer. The wordmark and homepage
   already orient a first-time reader.
 
@@ -144,15 +147,13 @@ Home
     ├── Take it back
     └── Introduce AI in an organisation
 
-Footer
-├── Reference                      Glossary, Law, evidence method and dated
-│                                  provider behaviour — supporting depth for the
-│                                  four journeys, not a fifth one
-├── Articles                       /blog
-├── About                          /about
-├── Technical repository          GitHub
-├── Contribute and report a problem
-└── Legal, privacy, licensing and security contact
+Footer                             see "Footer" below for the implemented shape
+├── Terms & law                    Glossary, Law — supporting depth for the four
+│                                  journeys, not a fifth one
+├── About AI Standard              About, how claims are checked, the repository
+├── Report a problem, report a vulnerability
+└── Legal bar                      copyright, legal notice, privacy, licences,
+                                   language
 ```
 
 The first four hubs are not content silos. A substantial decision guide should
@@ -318,7 +319,7 @@ No route in this table moves during the proposal stage.
 | `/law/**` | Authoritative Control reference | Keep URLs; remove Law from primary navigation and link it in context |
 | `/secure-setup/**` | Configuration, verification and operation | Keep URLs; broaden the hub promise |
 | `/open-source/**` | Publishing and maintaining AI-assisted software | Keep article URLs while reframing; stop treating the collection as an unrelated top-level area |
-| `/blog/**` | Editorial perspective and investigation | Keep URLs; move the index to the footer |
+| `/blog/**` | Editorial perspective and investigation | Keep URLs and the RSS feed; reached contextually, not from global navigation |
 | `/glossary/**` | Shared reference vocabulary | Keep URLs and bilingual parity |
 | `/about` | Mission, method, independence and authorship | Keep URL; replace the retired two-layer identity |
 | `/use-cases` | Possibility and outcome-led journeys | Keep URL; replace blueprint catalogue; add German equivalent |
@@ -333,8 +334,8 @@ The repository is visible in three precise places:
    when inspection is useful.
 2. **Artifact** — an implementation guide links to a blueprint, configuration
    or check someone can copy.
-3. **Contribution** — About and the footer link to GitHub, contribution
-   guidance, issue reporting and security reporting.
+3. **Contribution** — the footer links to the repository and to the two
+   reporting paths; About carries the contribution guidance.
 
 It is not a primary content section. There is no public “Docs” identity, and a
 reader never has to leave the site merely to understand the answer.
@@ -344,42 +345,63 @@ Repository-only mechanics stay in GitHub. A collapsible section is not a
 substitute for information architecture; depth should use headings and clear
 progression so it remains linkable, printable and accessible.
 
-## Footer proposal
+## Footer
 
-The footer supports reference, trust and project inspection without repeating
-the primary navigation or the retired taxonomy. The header owns the four main
-reader journeys.
+Implemented 2026-08-24 (slice 2). The footer holds supporting destinations,
+trust and a very small number of utilities. **It does not carry `/use-cases`,
+`/start`, `/data-flows` or `/secure-setup` in any language** — see
+`.ai/decisions.md`, 2026-08-24. A stranded reader is answered by the page's own
+`NextStep`, not by putting every primary destination on a third surface of one
+screen.
 
-| Group | Links |
-| --- | --- |
-| **Reference** | Glossary, Law, Articles, Evidence method |
-| **Project & trust** | About, Technical repository, Contribute, Report a problem, Report a vulnerability |
-| **Legal** | Legal notice, Privacy policy, Security contact |
+| Group | EN | DE | Links |
+| --- | --- | --- | --- |
+| 1 | Terms & law | Begriffe & Recht | Glossary / Glossar → `/glossary`; Law / Recht → `/law` |
+| 2 | About AI Standard | Über AI Standard | About / Über das Projekt → `/about`; How claims are checked / Wie Aussagen geprüft werden → `/glossary/evidence-method`; The project on GitHub ↗ / Projekt auf GitHub ↗ → the repository |
 
-Remove Docs, Profiles and the duplicated primary destinations. Do not add
-Blueprints as a public section; a relevant guide links the relevant artifact.
-Show the code and content licences once in the footer's fine-print row.
+Beneath the groups, a visually secondary utility row with no heading and no
+landmark of its own — actions rather than destinations: Report a problem ↗ /
+Problem melden ↗, and Report a vulnerability ↗ / Sicherheitslücke melden ↗. They
+stay separate because they lead to different disclosure channels.
 
-### Conclusions from the global-link audit, 2026-08-20
+Beneath that, the legal bar: © AI Standard, Legal Notice / Impressum, Privacy
+Policy / Datenschutz, the code licence and the site-content licence, with the
+language switch. The wordmark opens the footer and is the reader's only path
+home from the bottom of a long page, because the header does not follow them
+down.
 
-A global link may point at a hub and at one of its descendants, but only where
-the descendant has a reader job the hub does not cover. Audited against that
-test; not yet implemented, and out of scope for the navigation slice.
+What the footer does not carry, and why:
 
-- **Evidence method moves from Reference to Project & trust.** It answers "why
-  should I believe this site", which is that group's question, and it currently
-  sits beside its own URL parent. Its public URL does not change.
-- **The human-facing Security contact link goes.** It resolves to
-  `/.well-known/security.txt`, whose only content is the address already linked
-  one group above as Report a vulnerability. The endpoint stays served for
-  scanners; only the human link is redundant.
-- **Do not link Evidence method from the glossary index.** Its conceptual owner
-  is not the glossary, and a historical URL is not a reason to reinforce that
-  hierarchy in navigation.
-- `/glossary/evidence-method`'s URL and ownership are reserved for dedicated
-  reference work, not for a footer change.
+- **Blog.** One post per locale is not a destination a reader returns to, and
+  the label names a format rather than a reader job. `/blog` keeps its URL and
+  its RSS feed; the article is reached from About.
+- **A second name for the repository.** `Technical repository` was a second
+  public name for the destination the homepage already labels `The project on
+  GitHub` / `Projekt auf GitHub`. One destination, one name.
+- **Contribute.** A contributor's job, not a reader's. It remains in About's
+  licensing section, and GitHub surfaces `CONTRIBUTING.md` from the repository
+  root.
+- **A human Security contact link.** It resolved to
+  `/.well-known/security.txt`, whose only content is the advisory address
+  already linked as Report a vulnerability. The endpoint is still served for
+  scanners, byte-identical.
+- **The identity sentence.** It belongs where a reader is deciding what this is
+  — the homepage lead, About, the metadata — not at the end of an article they
+  have already read. `site/src/data/identity.ts` is unchanged.
+
+Do not add Docs, Profiles or Blueprints as public footer sections; a relevant
+guide links the relevant artifact.
+
+### Standing constraints on any future footer link
+
+- A global link may point at a hub and at one of its descendants, but only where
+  the descendant has a reader job the hub does not cover.
+- **Do not link the evidence method from the glossary index.** Its conceptual
+  owner is not the glossary, and a historical URL is not a reason to reinforce
+  that hierarchy in navigation. `/glossary/evidence-method`'s URL and ownership
+  are reserved for dedicated reference work.
 - `/profiles`, `/docs/**` and `/open-source/**` remain separate discovery and
-  ownership questions. None currently has a global link.
+  ownership questions. None has a global link.
 
 ## The first complete prototype path
 

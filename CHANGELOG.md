@@ -6,6 +6,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — A smaller footer, and a real next step at the end of a page
+
+- The footer now focuses on supporting destinations — terms and law,
+  information about AI Standard, reporting, and legal links — instead of
+  repository-oriented navigation and redundant project utilities. It is about
+  a third shorter on a phone screen.
+- Blog is no longer a permanent footer destination. It did not yet earn a
+  place on every page, and the one article it held is now reached from About
+  instead.
+- Reporting a problem and reporting a security vulnerability are each one
+  clear path, not several that led to the same place.
+- Substantial pages that used to end abruptly can now offer one clear next
+  step, described in plain language rather than labelled with an internal
+  product stage.
+- Removed internal product-stage wording ("Decision path", "Next step /
+  Control") that had been rendering on public pages without meaning anything
+  to a reader.
+
 ### Fixed — The site says the same thing about itself everywhere
 
 - Every surface that answers "what is this" now introduces AI Standard as an

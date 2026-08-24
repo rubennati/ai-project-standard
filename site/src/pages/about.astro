@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+import NextStep from "../components/NextStep.astro";
+import { getLocalizedPath } from "../i18n/routes";
 import { getUi } from "../i18n/ui";
 import { getAbout } from "../data/about";
 import { repoUrl } from "../data/site";
@@ -7,6 +9,7 @@ import { repoUrl } from "../data/site";
 const locale = "en" as const;
 const ui = getUi(locale);
 const sections = getAbout(locale);
+const base = import.meta.env.BASE_URL;
 ---
 
 <Base
@@ -58,4 +61,13 @@ const sections = getAbout(locale);
       <p class="mt-3 leading-7">{ui.acknowledgementsCopy}</p>
     </section>
   </div>
+
+  <NextStep
+    locale={locale}
+    primary={{
+      label: ui.aboutNextLabel,
+      description: ui.aboutNextDescription,
+      href: `${base}${getLocalizedPath(locale, "blogBeforeYouPressEnter").replace(/^\//, "")}`,
+    }}
+  />
 </Base>
