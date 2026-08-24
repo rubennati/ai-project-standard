@@ -15,6 +15,15 @@ Read: `rules.md`, `domains/coding.md`, `quality-gates.md`, `secure-development.m
 
 Read: `rules.md`, `domains/documentation.md`, `quality-gates.md`
 
+## Website content
+
+Public pages are neither plain coding nor plain documentation: the code rules
+apply to the components and the editorial rules apply to what a reader sees.
+
+Read: `domains/coding.md`, `site/AGENTS.md`, `docs/language-style.md`,
+`docs/website-product-brief.md`, `site/INFORMATION_ARCHITECTURE.md`,
+`site/PAGE_PRIMITIVES.md`, `quality-gates.md`
+
 ## Review
 
 Read: `tasks.md`, `quality-gates.md`, `risks.md`
