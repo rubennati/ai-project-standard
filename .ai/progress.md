@@ -80,7 +80,22 @@ All six child issues of #134 closed; #134 itself stays open (see below).
 - **Homepage** (PR #149). Rebuilt around the four journeys. See the outcome below.
 - **Glossary** (PR #150). The index stopped saying that guides and project documentation "will stay separate" — the two-layer identity `docs/purpose.md` retired.
 
-**Outcome to carry forward:** the current homepage implementation is
-structurally valid but editorially rejected. It explains the site's own
-information architecture instead of the reader benefit. No replacement has been
-approved or implemented.
+**Outcome carried forward:** the homepage shipped by #149 was structurally valid
+and editorially rejected — it explained the site's own information architecture
+instead of the reader benefit. Reset on 24 August, below.
+
+## 2026-08-24
+
+- **The homepage says what AI Standard is** (PR #154). The page names AI
+  Standard as an independent site for using AI at work, says what a reader gets
+  from it, and offers the two entries into the product. The four-question card
+  grid is gone: three direct reader questions replace it and lead to an answer
+  rather than to another category — `Darf ich KI im Job verwenden?`,
+  `Wie weit trägt Vibe Coding?`, `Wie verbinde ich KI mit Tools und Daten?`
+- Security-desk framing, the stance paragraph, the section teaching how to read
+  the site, the repository framing with its `/docs` link and the glossary aside
+  are removed. Open development and source-and-check-date transparency survive
+  as one compact closing block. No public URL changed.
+- The homepage becomes the editorial reference for the rest of the site: public
+  copy starts from a task or question a reader recognises, and the internal
+  product model structures the answer without becoming its language.

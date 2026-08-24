@@ -154,7 +154,9 @@ four headings had the system as grammatical subject rather than the reader, and
 two destinations appeared on all three surfaces of one screen.
 
 **Corrective action.** None mechanical, and deliberately so. The direction and
-the list of formulations not to return to are in `state.md` under the current
-objective; they expire when the homepage is rewritten. The general form is
-already covered by the change-scope rule in `AGENTS.md`: an internal model may
-decide what a page must cover, never how it addresses a reader.
+the list of formulations not to return to sat in `state.md` until the homepage
+was rewritten (PR #154) and expired with it. The general form had no durable
+home — the change-scope rule in `AGENTS.md` governs what may be changed without
+asking, not how a page addresses a reader — so it carries as a working
+constraint of the whole-site editorial review in `state.md`: an internal model
+may decide what a page must cover, never the language it addresses a reader in.
