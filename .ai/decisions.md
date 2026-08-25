@@ -733,3 +733,80 @@ Rejected: removing the affordance entirely — the block's job is to mark
 material to copy rather than another article to read, and the title alone does
 not say that. Also rejected: keeping `DRAFT` and explaining it elsewhere, which
 adds a lookup to a badge that could simply say the thing.
+
+## 2026-08-25 - What a connected system can do is an intersection
+
+Decision: `/data-flows` explains reach as something assembled, and states the
+scope it holds for. Where a product reaches into another system, what is
+possible is the overlap of what the product supports, what the connection
+offers, and what the identity in the target system is permitted to do. The
+model computes and signs in nowhere; it stays in the figure because leaving it
+out is what lets people believe a model has a wire to their disk.
+
+The fourth position is an identity, not an account: a connection may run under a
+signed-in person's delegated access, under an application's own identity, or
+under another credential the target system accepts.
+
+One owner per concept follows from it. The hub owns the anatomy of reach;
+`connect-ai-to-tools-and-data` owns the procedure; `where-knowledge-lives` owns
+the routes by which material reaches a model; `training-and-retention` owns
+training, retention and account-tier facts; `getting-it-back-out` owns deletion;
+`data-sovereignty` owns where copies sit and who can compel access; `/start`
+owns forms of working; `/secure-setup` owns checking, recovery, revocation and
+records.
+
+Rationale: the hub said reach depends on the account and the connection "not on
+which product you chose", and captioned its own figure "'it has access to X' is
+usually a statement about the fourth box". Two absolutes, contradicting each
+other and the figure between them, which says the product decides what is handed
+over. `/start/employee` makes the true version of the first claim — applicable
+*terms* depend on the account — and terms are not capability. An intersection is
+the smallest correct statement and creates no new monopoly.
+
+Rejected: "capability is what survives all four" as the replacement. It is false
+outside the connected case, because a product has capability with no connector
+and no target system at all, and a rule that is wrong in the common case is not
+an improvement on one that is wrong in the rare case. Also rejected: publishing
+the four positions as a named model. It explains one situation; no other page
+refers back to it, and none should.
+
+## 2026-08-25 - Connect AI answers how, and the control loop is Secure Setup's
+
+Decision: `connect-ai-to-tools-and-data` answers its own title first — what
+provides a connection, how it gets an identity the target system accepts, which
+operations it offers, and what a use of one amounts to — and carries one
+complete worked example. It keeps only the boundary a reader decides while
+connecting: read against act, identity, approval for consequential calls,
+read-only first, and the stop condition. The control loop, the recovery
+question, the verification checklist and the OWASP evidence that belongs with
+them are `/secure-setup`'s and were removed here rather than left in place;
+`tasks.md` carries the keys and the commit they are recoverable from. `/start`
+owns forms of working, so the tool-using-system versus agent comparison is gone
+rather than moved.
+
+Three things are stated without an absolute, because none of them holds
+generally: a connection may authenticate with OAuth or with a key or service
+identity, it may or may not run as a person, and what a target system records
+about a call is that system's design decision. The worked example uses OAuth and
+says on the page that this is how that connection works rather than how all of
+them do.
+
+The five page-specific stage labels are gone — `Possibility`, `Collaboration`,
+`Reach`, `Control`, `Reference` and their German counterparts. `Stop condition`
+/ `Stoppbedingung` stays, and is not recorded as stage vocabulary: it names a
+reader's question — when should I not continue with this setup? — rather than a
+position in this project's product model, which is what made `Decision path` a
+defect.
+
+Rationale: the entry point is a *how* question and the page answered *should I,
+and under what boundary*, with roughly half its height on boundary, control and
+verification and no worked example. Governance was not wrong, it was in front of
+the answer. `/secure-setup/before-you-grant-access` already covers narrow
+identity, key hygiene, prompt injection and what to do, so the control material
+was redundant with a live page rather than orphaned — which is why slice 4 cut
+it, where slice 3 preserved comparable material that had nowhere to land.
+
+Rejected: keeping a second connection figure here. An anatomy and a procedure
+are different objects, but publishing both put two four-box models with
+different nouns one link apart, which is the duplication the ownership decision
+exists to remove.

@@ -38,6 +38,30 @@ const CLAUDE_CODE_DATA = "https://code.claude.com/docs/en/data-usage";
 const CLAUDE_RETENTION =
   "https://privacy.claude.com/en/articles/10023548-how-long-do-you-store-personal-data";
 
+export interface DataFlowsNextStep {
+  label: string;
+  description: string;
+}
+
+/** Deletion, not export: the destination answers what a deletion removes and
+ *  what it leaves behind, and the label promises only that. */
+const nextStep: Record<SiteLocale, DataFlowsNextStep> = {
+  en: {
+    label: "What gets deleted, and what stays",
+    description:
+      "Which deletion duties exist, what a deleted conversation leaves behind, and what you can promise before material goes in.",
+  },
+  de: {
+    label: "Was beim Löschen entfernt wird und was bleibt",
+    description:
+      "Welche Löschpflichten es gibt, was nach dem Löschen einer Unterhaltung zurückbleibt und was du zusagen kannst, bevor Material hineingeht.",
+  },
+};
+
+export const getTrainingAndRetentionNextStep = (
+  locale: SiteLocale,
+): DataFlowsNextStep => nextStep[locale];
+
 const en: Article = {
   title: "Are your chats used for model training?",
   description:

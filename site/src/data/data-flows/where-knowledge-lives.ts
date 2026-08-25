@@ -1,10 +1,24 @@
 /**
- * Which of your systems can serve as a knowledge source, and which cannot.
+ * By what route a tool comes to know about your material, and which of your
+ * systems is worth pointing it at.
  *
  * The page exists because "connect it to everything" is offered as an answer,
  * and the systems being connected have very different shapes. Mail is an event
  * stream; a workspace is a set of objects; a folder is files. Connecting all
  * three is easy and treating all three as the same is the mistake.
+ *
+ * Slice 4 made it the canonical owner of the routes as well as the sources. It
+ * received the request-size explanation and the three ways a tool can learn
+ * about your material from `/start/what-it-is-doing`, together with the figure
+ * that compares them (`.ai/decisions.md`, 2026-08-24). Those replaced this
+ * page's own `Four shapes a setup can take`, which named the same axis a second
+ * time: uploading, indexed lookup and a maintained base are the same three
+ * routes with effort added. The fourth of its shapes — a tool reading and
+ * acting inside your systems — survives as the opening of the read-versus-act
+ * section, where it belongs.
+ *
+ * The layer figure stays on the `/data-flows` hub. This page explains how
+ * material travels; it does not draw a second anatomy of a connection.
  *
  * No vendor is assessed. The comparison is about the shape of the data, which
  * does not change when a product name does.
@@ -13,6 +27,28 @@ import type { Article } from "../article";
 import type { SiteLocale } from "../../i18n/ui";
 
 export const CHECKED = "2026-08-09";
+
+export interface DataFlowsNextStep {
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, DataFlowsNextStep> = {
+  en: {
+    label: "Connect AI to tools and data",
+    description:
+      "How a connection to another system is made, what it can then see and do, and where the boundary sits.",
+  },
+  de: {
+    label: "KI mit Tools und Daten verbinden",
+    description:
+      "Wie eine Anbindung an ein anderes System zustande kommt, was sie dann sehen und tun kann und wo die Grenze liegt.",
+  },
+};
+
+export const getWhereKnowledgeLivesNextStep = (
+  locale: SiteLocale,
+): DataFlowsNextStep => nextStep[locale];
 
 const en: Article = {
   title: "Which of your systems can be a knowledge source",
@@ -50,25 +86,47 @@ const en: Article = {
       },
     },
     {
-      heading: "Reading a mailbox and acting in one are different risks",
+      heading: "How much fits in one request, and what that decides",
       level: "assessment",
       paragraphs: [
-        "Worth separating before granting access, because the consent screen usually does not.",
-        "Reading mail to answer a question is comparatively contained: the risk is that something is read which should not have been. Replying, forwarding, sending or deleting reaches people outside your organisation and cannot be taken back.",
-        "If a tool offers both under one permission, that is a finding about the tool. Where it can be split, split it — and keep sending behind an explicit confirmation rather than a general grant.",
+        "Each request is computed from scratch. What feels like memory is the application resending earlier parts of the conversation, or storing notes and reinserting them later.",
+        "There is a limit to how much can be sent, which is why a long conversation starts to drift: something has to be dropped, summarised or reordered. Nothing is broken when this happens. It is the mechanism working at its edge.",
+        "The same limit is smaller than any real document collection. A system with a million documents does not put a million documents in front of the model. It selects a handful.",
+        "So the interesting engineering is selection: what goes in, what stays out, in what order, how much conversation history, which tool results. Retrieval is one way of doing that selection. So is memory. So is deciding which parts of a file to include.",
+        "The practical consequence for you: a precise question usually beats a large upload, because it makes the selection easier for the system rather than harder.",
       ],
     },
     {
-      heading: "Four shapes a setup can take",
+      heading: "Three ways a tool can know about your material",
       level: "assessment",
       paragraphs: [
-        "Most real arrangements are one of these, and the differences that matter are effort and how much of the data path you control — not capability.",
+        "They are often discussed as though they were rivals. They are answers to different problems.",
       ],
       list: [
-        "Quick document chat — upload something, ask about it, move on. Low effort; what happens to the file depends entirely on the tier you are on",
-        "Search across a collection — material is indexed once and looked up per question, with citations. Medium to high effort; sovereignty depends on where the index and the model sit",
-        "A maintained knowledge base — pages someone owns and keeps current, which a tool reads and proposes changes to. Medium effort, and the cost is ongoing rather than upfront",
-        "An assistant working in your systems — reading and acting across a workspace, mail or a folder. Highest usefulness and the only one where a mistake reaches other people",
+        "Put it in the request — upload a file or paste text. Immediate, exact, limited by how much fits, and gone when the conversation ends unless the product keeps it",
+        "Look it up when needed — the system searches your material and includes the relevant parts. Handles collections far larger than one request, and can cite where an answer came from. This is what \"RAG\" names",
+        "Train it in — adjust a model on your material. Changes how the model writes and behaves rather than what it can cite, is expensive to repeat, and a new document means doing it again",
+      ],
+      figure: {
+        kind: "reach",
+        caption: "Which approach answers which problem",
+        rows: [
+          { target: "One document, right now", state: "put it in the request", reached: "yes", note: "Nothing to build; the limit is how much fits" },
+          { target: "A collection that keeps growing", state: "look it up when needed", reached: "yes", note: "New material is added to an index rather than to a model" },
+          { target: "Answers that cite a source", state: "look it up when needed", reached: "yes", note: "Only this route knows which passage an answer rested on" },
+          { target: "A particular tone or format", state: "train it in", reached: "partial", note: "Changes behaviour, not knowledge. Often a well-written instruction does the same job" },
+          { target: "Facts that change weekly", state: "train it in", reached: "no", note: "Retraining for each change is the expensive way to do lookup" },
+        ],
+      },
+    },
+    {
+      heading: "Reading a mailbox and acting in one are different risks",
+      level: "assessment",
+      paragraphs: [
+        "A fourth arrangement sits on top of the three: a tool that reads and acts inside your systems rather than answering about them. It is the most useful of them, and the only one where a mistake reaches other people.",
+        "Worth separating before granting access, because the consent screen usually does not.",
+        "Reading mail to answer a question is comparatively contained: the risk is that something is read which should not have been. Replying, forwarding, sending or deleting reaches people outside your organisation and cannot be taken back.",
+        "If a tool offers both under one permission, that is a finding about the tool. Where it can be split, split it — and keep sending behind an explicit confirmation rather than a general grant.",
       ],
     },
     {
@@ -139,25 +197,47 @@ const de: Article = {
       },
     },
     {
-      heading: "Ein Postfach lesen und darin handeln sind verschiedene Risiken",
+      heading: "Wie viel in eine Anfrage passt — und was daraus folgt",
       level: "assessment",
       paragraphs: [
-        "Vor der Freigabe zu trennen, denn der Zustimmungsdialog tut es meist nicht.",
-        "Mail zu lesen, um eine Frage zu beantworten, ist vergleichsweise eingegrenzt: Das Risiko ist, dass etwas gelesen wird, was nicht hätte gelesen werden dürfen. Antworten, weiterleiten, senden oder löschen erreicht Menschen außerhalb der Organisation und lässt sich nicht zurücknehmen.",
-        "Bietet ein Tool beides unter einer Berechtigung an, ist das ein Befund über das Tool. Wo es sich trennen lässt, trenne es — und halte das Senden hinter einer ausdrücklichen Bestätigung statt hinter einer allgemeinen Freigabe.",
+        "Jede Anfrage wird von vorn gerechnet. Was sich wie Erinnerung anfühlt, ist die Anwendung, die frühere Teile des Gesprächs erneut mitschickt oder Notizen speichert und später wieder einfügt.",
+        "Es passt nur eine begrenzte Menge hinein, und deshalb driftet ein langes Gespräch irgendwann: Etwas muss wegfallen, zusammengefasst oder umsortiert werden. Dabei ist nichts kaputt. Der Mechanismus arbeitet an seiner Grenze.",
+        "Dieselbe Grenze ist kleiner als jede reale Dokumentensammlung. Ein System mit einer Million Dokumente legt dem Modell nicht eine Million Dokumente vor. Es wählt eine Handvoll aus.",
+        "Die interessante Ingenieursarbeit ist deshalb die Auswahl: Was kommt hinein, was bleibt draußen, in welcher Reihenfolge, wie viel Gesprächsverlauf, welche Tool-Ergebnisse. Retrieval ist eine Art, diese Auswahl zu treffen. Memory auch. Und die Entscheidung, welche Teile einer Datei mitgehen, ebenso.",
+        "Die praktische Folge für dich: Eine präzise Frage schlägt meist einen großen Upload, weil sie die Auswahl erleichtert statt sie zu erschweren.",
       ],
     },
     {
-      heading: "Vier Formen, die ein Aufbau annehmen kann",
+      heading: "Drei Wege, wie ein Tool von deinem Material erfährt",
       level: "assessment",
       paragraphs: [
-        "Die meisten realen Anordnungen sind eine davon, und die entscheidenden Unterschiede sind Aufwand und wie viel vom Datenweg du kontrollierst — nicht die Leistungsfähigkeit.",
+        "Sie werden oft als Rivalen behandelt. Sie sind Antworten auf verschiedene Probleme.",
       ],
       list: [
-        "Schneller Dokumenten-Chat — etwas hochladen, danach fragen, weitermachen. Wenig Aufwand; was mit der Datei geschieht, hängt allein von deiner Stufe ab",
-        "Suche über eine Sammlung — Material wird einmal indiziert und je Frage nachgeschlagen, mit Quellenangabe. Mittlerer bis hoher Aufwand; die Souveränität hängt davon ab, wo Index und Modell sitzen",
-        "Eine gepflegte Wissensbasis — Seiten mit Verantwortlichen, aktuell gehalten, die ein Tool liest und für die es Änderungen vorschlägt. Mittlerer Aufwand, und die Kosten laufen mit statt vorab",
-        "Eine Assistenz, die in deinen Systemen arbeitet — liest und handelt über Workspace, Mail oder Ordner hinweg. Am nützlichsten, und die einzige Form, bei der ein Fehler andere Menschen erreicht",
+        "In die Anfrage legen — eine Datei hochladen oder Text einfügen. Sofort, exakt, begrenzt durch das, was hineinpasst, und mit dem Gespräch vorbei, sofern das Produkt es nicht aufbewahrt",
+        "Bei Bedarf nachschlagen — das System durchsucht dein Material und nimmt die passenden Teile auf. Trägt Sammlungen weit über eine Anfrage hinaus und kann belegen, woher eine Antwort stammt. Das meint „RAG“",
+        "Eintrainieren — ein Modell auf deinem Material anpassen. Ändert, wie das Modell schreibt und sich verhält, nicht was es belegen kann; ist teuer zu wiederholen, und ein neues Dokument heißt: noch einmal",
+      ],
+      figure: {
+        kind: "reach",
+        caption: "Welcher Weg welches Problem löst",
+        rows: [
+          { target: "Ein Dokument, jetzt sofort", state: "in die Anfrage legen", reached: "yes", note: "Nichts zu bauen; die Grenze ist, was hineinpasst" },
+          { target: "Eine wachsende Sammlung", state: "bei Bedarf nachschlagen", reached: "yes", note: "Neues Material kommt in einen Index, nicht in ein Modell" },
+          { target: "Antworten mit Quellenangabe", state: "bei Bedarf nachschlagen", reached: "yes", note: "Nur dieser Weg weiß, auf welcher Passage eine Antwort ruhte" },
+          { target: "Ein bestimmter Ton oder ein Format", state: "eintrainieren", reached: "partial", note: "Ändert Verhalten, nicht Wissen. Oft leistet eine gute Anweisung dasselbe" },
+          { target: "Fakten, die sich wöchentlich ändern", state: "eintrainieren", reached: "no", note: "Für jede Änderung neu trainieren ist die teure Art nachzuschlagen" },
+        ],
+      },
+    },
+    {
+      heading: "Ein Postfach lesen und darin handeln sind verschiedene Risiken",
+      level: "assessment",
+      paragraphs: [
+        "Über den dreien liegt eine vierte Anordnung: ein Tool, das in deinen Systemen liest und handelt, statt nur über sie zu antworten. Sie ist die nützlichste — und die einzige, bei der ein Fehler andere Menschen erreicht.",
+        "Vor der Freigabe zu trennen, denn der Zustimmungsdialog tut es meist nicht.",
+        "Mail zu lesen, um eine Frage zu beantworten, ist vergleichsweise eingegrenzt: Das Risiko ist, dass etwas gelesen wird, was nicht hätte gelesen werden dürfen. Antworten, weiterleiten, senden oder löschen erreicht Menschen außerhalb der Organisation und lässt sich nicht zurücknehmen.",
+        "Bietet ein Tool beides unter einer Berechtigung an, ist das ein Befund über das Tool. Wo es sich trennen lässt, trenne es — und halte das Senden hinter einer ausdrücklichen Bestätigung statt hinter einer allgemeinen Freigabe.",
       ],
     },
     {

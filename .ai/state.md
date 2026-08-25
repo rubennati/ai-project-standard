@@ -5,15 +5,12 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 4 — `/data-flows` and Connect AI.** Slice 3 shipped in #163. The
-  reader job is *what can AI actually reach, how does that connection work, and
-  what changes when I give it access to tools, accounts or data?* This slice
-  finishes the mechanism-ownership correction slice 3 started: `/data-flows`
-  becomes the canonical explanation of model → product → connector → target
-  system, Connect AI stops answering boundary/governance better than *how do I
-  connect this?*, and the mechanism prose slice 3 preserved on
-  `/start/what-it-is-doing` (sections 0–4) reconciles into `/data-flows` by
-  concept, not by copy. Scope and the page-by-page job are in `tasks.md`.
+- **Now: slice 4 — `/data-flows` and Connect AI — implemented, awaiting review.**
+  `/data-flows` explains reach as an intersection and owns the mechanism;
+  Connect AI answers *how do I connect this?* with a worked example and hands
+  its control loop to slice 5; `/start/what-it-is-doing` keeps only the
+  Start-owned question under a new H1 and its old URL. The two decisions are in
+  `decisions.md` (2026-08-25). Slice 5 is next and has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -34,6 +31,16 @@ slice 2 (#161) and are settled, same standing as the header and the four
 journeys above — see `decisions.md`, 2026-08-24.
 `site/INFORMATION_ARCHITECTURE.md` and `site/PAGE_PRIMITIVES.md` carry the
 implemented shape.
+
+`/data-flows` as the mechanism owner shipped in slice 4 and is settled to the
+same standard: reach is an intersection rather than a single cause; the fourth
+position is an identity, not necessarily a person's account; the four positions
+are an explanation and not a published model. `Stop condition` / `Stoppbedingung`
+is **not** stage vocabulary and is not carried as debt — it names a reader's
+question, not a position in the product model. Slice 4 did not change the
+`/start/what-it-is-doing` route and settles only that: the page now owns the
+Start-specific tool-vs-setup reader job. Whether the URL itself should change is
+not settled by this — see *Queued, not blocking* below.
 
 The canonical product identity shipped in slice 1 and is settled:
 `AI Standard is an independent site for using AI at work.` /
@@ -90,10 +97,9 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
 
 ## Open, and blocking
 
-Three questions, none answerable from repository evidence. Each blocks the
-specific decision it names — not the slice that decision sits in. Slice 4's
-mechanism and Connect AI work may proceed after slice 3; only the route
-retirement waits.
+Three, none answerable from repository evidence. Each blocks the specific
+decision it names, not the slice that decision sits in — none of them blocks
+slice 5, slice 6's other scope, or the homepage correction pass.
 
 - **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
   automatic; what happens to the 21 published URLs does not follow from that.
@@ -103,11 +109,30 @@ retirement waits.
 - **`practical-ai-collaboration` promotion target (blocks the same slice).** It
   has a real public reader and is English-only at 1,985 words. Which route does
   it become, and does promotion require the German version before it ships?
-- **Retiring `/data-flows/what-you-agree-to`.** Folding it into
-  `training-and-retention` removes a published URL in both locales. Fold and
-  redirect, or keep the route and cut it to its one distinct idea? This blocks
-  that retirement and nothing else: the mechanism ownership, the Connect AI
-  rewrite and the single-owner reconciliation in slice 4 do not depend on it.
+- **Retiring `/data-flows/what-you-agree-to` — deferred, not settled.** Slice 4
+  kept the route and cut the page to its four unique ideas: storage before
+  training, training as a batched job, what "trained on our data" usually
+  means, and the Art. 4(12) GDPR distinction between a transfer and a breach.
+  Re-test after slice 6, which may move the Art. 4(12) material to `/law`; if it
+  does, what is left may no longer earn a URL. No route change until then.
+
+## Queued, not blocking
+
+Two things slice 4 found while reconciling ownership. Neither answerable from
+repository evidence, and neither blocks slice 5, slice 6 or anything else —
+both wait for the slice 7 whole-site pass named in `tasks.md`.
+
+- **Export and portability have no owner.** `getting-it-back-out` answers
+  deletion; nothing on the site answers *how do I get my data out*. Slice 4
+  deliberately did not build it or stretch the deletion page to cover it. Slice
+  7 must assign an existing owner, add coverage, or record it as deliberately
+  out of scope — it is a queued content gap, not a reason later work should
+  stop.
+- **`/start/what-it-is-doing`'s H1 no longer matches its slug.** The page now
+  reads `Do you need a different tool — or a better setup?` at
+  `/start/what-it-is-doing`. That mismatch is evidence for a later
+  route-quality decision, not a decision itself; slice 4 kept the URL and did
+  not act on it.
 
 ## Active constraints
 

@@ -59,8 +59,8 @@ implementation, not merely before merge.
 | 1 | Product identity and acute contradictions | — | yes | **done** (#158) |
 | 2 | Global shell: footer and page-level onward path | 1 | yes | **done** (#161) |
 | 3 | `/start` as one reader journey | 2 | no | **done** (#163) |
-| 4 | `/data-flows` and Connect AI | 3 | partly | **next** |
-| 5 | `/secure-setup` and verification | 4 | no | not started |
+| 4 | `/data-flows` and Connect AI | 3 | partly | **done, in review** |
+| 5 | `/secure-setup` and verification | 4 | no | **next** |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
@@ -108,54 +108,52 @@ implementation, not merely before merge.
    being promoted from `/start`, and points at `/data-flows` with a bridge and
    a `NextStep`. The five sections are named in that module's comment as the
    slice 4 payload.
-4. **`/data-flows` and Connect AI.** One ownership problem, finished in two
-   parts: the hub's own teaching, and what slice 3 handed over.
-   *Data Flows hub.* Stop teaching the four-layer model as the page's public
-   language — it should explain the mechanism, not become a second taxonomy a
-   reader has to learn. The useful distinction (model → product → connector →
-   target system) stays; it becomes canonical here for
-   `what-it-is-doing`'s reconciled material. Fix the current overstatement that
-   what a system can reach depends on the account and the connection "not on
-   which product you chose" (`reach-model.ts`) — product capabilities do
-   matter, and the layered distinction has to hold without erasing that.
-   *Mechanism reconciliation from `/start/what-it-is-doing`.* Sections 0–4 and
-   the reach figure are the payload, marked in that file's own comment. Choose
-   one canonical home per concept rather than copying whole sections onto
-   `/data-flows` beside what it already says — the hub's own opening and the
-   handed-over prose cover some of the same ground with different nouns, which
-   is exactly the duplication ownership is meant to remove. Preserve the
-   strongest explanations; do not rewrite prose that already earns its place.
-   After the move, `/start/what-it-is-doing` keeps only the Start-owned
-   working-shape material (sections 5–6) and an honest bridge. URL unchanged
-   unless a separately approved route decision requires it.
-   *`connect-ai-to-tools-and-data` — high priority.* 15.4 mobile screens
-   English, 16.7 German. Answers boundary and governance better than the
-   reader's actual *how do I connect this?* question; no concrete end-to-end
-   worked example. Cut the density and add one. Its page-specific stage
-   eyebrows are still live and are this slice's to remove: `Possibility` /
-   `Möglichkeit`, `Collaboration` / `Zusammenarbeit`, `Reach` / `Reichweite`,
-   `Control` / `Kontrolle`, `Reference` / `Nachschlagen` — the last of which
-   issue #145's own text omits. The shared `NextStep`/`ProductStage` leak is
-   already fixed (slice 2); what remains here is page-specific public copy,
-   and issue #145 is not fully resolved until it is. Move the control-loop and
-   verification material this page currently carries to slice 5.
-   *Single owners.* Reconcile training, consent, deletion and sovereignty
-   across `training-and-retention`, `where-knowledge-lives`,
-   `what-you-agree-to`, `getting-it-back-out` and `data-sovereignty` to one
-   owner each — the mapping is in the audit's duplication table.
-   `/data-flows/training-and-retention` was found strong by the audit; use it
-   as the quality reference and do not rewrite it for consistency.
-   *Not blocked as a whole.* The open question in `state.md` is retiring
-   `what-you-agree-to`, which removes a published URL; it blocks that route
-   decision only. The mechanism ownership, the Connect AI rewrite, the
-   Data Flows hub correction and the single-owner reconciliation do not depend
-   on it and are not solved by it.
+4. ~~**`/data-flows` and Connect AI.**~~ **Implemented; in review.**
+   `/data-flows` explains reach as an intersection — what the product supports,
+   what the connection offers, what the identity in the target system may do —
+   and is the canonical owner of the mechanism. Both hub absolutes are gone; the
+   fourth position is an identity rather than a person's account; the four
+   positions are an explanation and not a published model. Connect AI answers
+   *how* before governance and carries one worked example, with OAuth named as
+   that example's mechanism rather than the general rule, and with no claim that
+   every call is logged or that a connection runs as the human user. All five
+   page-specific stage eyebrows are gone. `/start/what-it-is-doing` keeps its
+   URL, loses six sections and opens on `Do you need a different tool — or a
+   better setup?`; `where-knowledge-lives` received the request-size and
+   three-routes material and dropped its overlapping list; `getting-it-back-out`
+   is about deletion again and links to `data-sovereignty` rather than repeating
+   it, so that page stays untouched; `what-you-agree-to` keeps its route at four
+   unique ideas. Four child pages gained a `NextStep`. Both decisions are in
+   `decisions.md` (2026-08-25). Header, footer, homepage, identity, routes,
+   sitemap and redirects verified unchanged — 363 of 379 built pages
+   byte-identical, and the 16 that changed are the ones this slice owns.
+
+   *Handed to slice 5.* Removed from `connect-ai-to-tools-and-data.ts` and
+   recoverable at commit `178e782`:
+   `git show 178e782:site/src/data/data-flows/connect-ai-to-tools-and-data.ts`.
+   Keys, EN and DE, with their destination:
+
+   | Removed key | Destination |
+   | --- | --- |
+   | `controlSteps[1]` separate resources from tools, `[2]` narrow identity, `[3]` consequence behind approval | `before-you-grant-access` |
+   | `controlSteps[0]` name one task and its manual baseline | `/secure-setup` hub, `Decide` — or drop |
+   | `controlSteps[4]` log, stop and recover | `keeping-a-record`, and the `Take it back` step |
+   | `boundaryQuestions[4]` `Recovery` / `Rückweg` | `/secure-setup`, `Take it back` |
+   | `verificationChecks` — six of seven; the read-only one stayed | `checking-the-result` |
+   | `securityEvidence`, `securitySource`, `sources.mcpSecurity` (OWASP) | travels with `controlSteps` |
+   | `controlLabel`/`controlHeading`/`controlLead`, `verificationHeading`/`verificationLead` | rewrite on arrival; do not carry over |
+
+   Fix on arrival: the German `controlHeading` says `Kontrollkreis`; the
+   established term is `Regelkreis`. Not a handoff — `collaborationForms` and its
+   labels were removed rather than moved, because `/start` owns forms of working,
+   and the `Reference` glossary block went from nine terms to four with no
+   heading.
 5. **`/secure-setup` and verification.** A reader-recognisable object and
    opening; the sequence stays, the phase nouns stop being the public spine
    where they read as project vocabulary; `Monitor` and `Take it back` get real
-   coverage; absorb what slice 4 hands over; `before-you-grant-access` serves the
-   broader job it already holds. `checking-the-result` and `keeping-a-record`
-   keep their content.
+   coverage; absorb what slice 4 handed over, per the table above;
+   `before-you-grant-access` serves the broader job it already holds.
+   `checking-the-result` and `keeping-a-record` keep their content.
 6. **Law, About, Evidence, Reference and discovery.** Law hub reader job;
    `what-may-go-in` ownership; `four-separate-questions` framing and its
    duplicated legal facts; one owner for AI Act Art. 4; About versus Evidence
@@ -180,7 +178,17 @@ implementation, not merely before merge.
    issue text omits. Its text also records one string wrongly — the rendered
    label was `Next step / Control`, not `Collaboration`. `Copyable artifact` /
    `Zum Übernehmen` was never a stage leak and was resolved separately in
-   slice 3 (`decisions.md`, 2026-08-25).
+   slice 3 (`decisions.md`, 2026-08-25). Slice 4 removed the five Connect AI
+   eyebrows, so nothing public carries stage vocabulary any more. `Stop
+   condition` / `Stoppbedingung` is not part of it and is not debt — it names a
+   reader's question rather than a position in the product model.
+   *Two findings from slice 4 land here, queued and non-blocking — see
+   `state.md`.* Export and portability have no owner anywhere on the site: this
+   slice must assign an existing owner, add coverage, or record it as
+   deliberately out of scope. And `/start/what-it-is-doing` now serves a page
+   titled `Do you need a different tool — or a better setup?`; the slug no
+   longer describes it, which is evidence for a route-quality decision, not a
+   decision itself — this slice weighs it, nothing earlier waits on it.
 
 **Not rewritten for uniformity** — the review found these strong, and a slice
 that touches them changes only what its own goal requires: the homepage;
