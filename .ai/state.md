@@ -5,11 +5,11 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 2 — global shell.** Slice 1 shipped in #158. Slice 2 is
-  implemented on `feature/slice-2-global-shell` and awaiting human review: the
-  footer cut to two groups over a reporting row and a legal bar, and
-  `RelatedNextStep` evolved into a contextual `NextStep`. Both are in
-  `decisions.md` (2026-08-24). Slice 3 is next once slice 2 merges.
+- **Now: slice 3 — `/start` as one reader journey.** Slice 2 shipped in #161.
+  The purpose is not to rewrite `/start` in place: a reader must be able to move
+  from a prerequisite role question, to choosing a useful way of working with
+  AI, into concrete work — without first understanding the project's
+  collaboration model. Scope and the page-by-page job are in `tasks.md`.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -26,8 +26,10 @@ The homepage (PR #154) is the editorial reference and is not changed by this
 objective unless a slice needs a concrete integration fix.
 
 The footer information architecture and the `NextStep` contract shipped in
-slice 2 and are in `decisions.md`. `site/INFORMATION_ARCHITECTURE.md` and
-`site/PAGE_PRIMITIVES.md` carry the implemented shape.
+slice 2 (#161) and are settled, same standing as the header and the four
+journeys above — see `decisions.md`, 2026-08-24.
+`site/INFORMATION_ARCHITECTURE.md` and `site/PAGE_PRIMITIVES.md` carry the
+implemented shape.
 
 The canonical product identity shipped in slice 1 and is settled:
 `AI Standard is an independent site for using AI at work.` /

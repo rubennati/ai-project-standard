@@ -142,3 +142,15 @@ instead of the reader benefit. Reset on 24 August, below.
   inventing a link would be worse than a gap. Slice 5 owns filling it.
 - Homepage visible copy, header, footer structure, the route set and the sitemap
   were unchanged; verified against a `main` baseline build.
+
+## 2026-08-25
+
+- **Global shell: slice 2 of seven shipped** (PR #161). The footer is cut to
+  two supporting groups — `Terms & law` / `Begriffe & Recht` and
+  `About AI Standard` / `Über AI Standard` — over an unheaded reporting row and
+  the existing legal bar; the four header journeys stay out of it. Blog left
+  persistent global navigation and its one article is now reached from About.
+  `RelatedNextStep` became `NextStep`, a contextual onward-step primitive with
+  no product-stage API; the shared `Next step / Control` and
+  `Decision path` / `Entscheidungsweg` public strings are gone. Header,
+  homepage, routes, sitemap and `security.txt` verified unchanged before merge.
