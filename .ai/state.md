@@ -5,11 +5,15 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 3 — `/start` as one reader journey.** Implemented on
-  `feature/slice-3-start-journey`, awaiting review; not merged. A reader now
-  moves from a prerequisite role question, to choosing a useful way of working
-  with AI, into concrete work, without first meeting the project's
-  collaboration model. Scope and the page-by-page job are in `tasks.md`.
+- **Now: slice 4 — `/data-flows` and Connect AI.** Slice 3 shipped in #163. The
+  reader job is *what can AI actually reach, how does that connection work, and
+  what changes when I give it access to tools, accounts or data?* This slice
+  finishes the mechanism-ownership correction slice 3 started: `/data-flows`
+  becomes the canonical explanation of model → product → connector → target
+  system, Connect AI stops answering boundary/governance better than *how do I
+  connect this?*, and the mechanism prose slice 3 preserved on
+  `/start/what-it-is-doing` (sections 0–4) reconciles into `/data-flows` by
+  concept, not by copy. Scope and the page-by-page job are in `tasks.md`.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -39,6 +43,18 @@ reads or restates it, and a conformance check holds the two static
 restatements. No slice introduces a second product statement. Slice 2 dropped
 the footer restatement — presentation only, and removing a restatement cannot
 create a second statement.
+
+`/start` as one reader journey shipped in slice 3 (#163) and is settled, same
+standing as the above: prerequisite before choice; Employee and Decision Maker
+as role questions, not two of the six working forms; the six forms named
+`Ask a question` through `Let it run without you`, not the internal
+Chat/Assistant/Agent taxonomy; `Good for` as part of the choice; Vibe Coding's
+structure, including Explore and Prototype as complete outcomes and the
+early-stopping block. The `ArtifactLink` title-first contract and the
+blueprint-status conformance boundary (`check-conformance.sh` against
+`blueprints/ai-assisted-development/blueprint.yml`) are equally settled — see
+`decisions.md`, 2026-08-25. None of this reopens without a concrete
+contradiction slice 4 or later work actually produces.
 
 ## Working constraints for this objective
 
