@@ -239,3 +239,25 @@ instead of the reader benefit. Reset on 24 August, below.
   the redirects verified unchanged: 363 of 379 built pages byte-identical
   against a `main` baseline, and the 16 that changed are the twelve Data Flows
   pages, `what-it-is-doing` and `/use-cases` in both locales.
+
+## 2026-08-25 (4)
+
+- **Slice 4 merged (#165, `f491fcc`); Homepage Correction Pass opened between
+  slice 4 and slice 5.** `state.md` and `tasks.md` record slice 4 as shipped
+  rather than in review, with the same durable outcomes as the prior entry.
+  The next objective is the Homepage Correction Pass — not slice 8, does not
+  renumber slices 5–7 — approved to fix two concrete rendered defects on the
+  PR #154 homepage rather than reopen its architecture: the German H1 `KI
+  sinnvoll im Arbeitsalltag einsetzen` names no criterion a reader can act on,
+  and the page under-fills a tall desktop viewport after its compact trust
+  close. Full scope and boundaries are in `state.md`.
+- **Issue #145 checked against the merged build and confirmed resolved on its
+  actual scope.** Its four rendered strings — `Possibility`/`Möglichkeit`,
+  `Collaboration`/`Zusammenarbeit` on `VibeCodingPage` and Connect AI,
+  `Reach`/`Reichweite` and `Control`/`Kontrolle` on Connect AI — render
+  nowhere in the built site. `PageIntroduction`'s `Decision path` eyebrow and
+  `RelatedNextStep`'s `Next step / Collaboration` label, the issue's other two
+  items, were already removed in slice 2 (`decisions.md`, 2026-08-24). Not
+  broadened: `Stop condition` was never part of the issue's scope and is not
+  treated as if it were. The issue was closed 2026-08-25 09:22 UTC, before
+  this reconciliation; nothing further needed on GitHub.
