@@ -11,15 +11,34 @@
  * Nothing here is a vendor or specification claim, so the page carries a
  * recommendation band rather than fact evidence. The stages are this project's
  * model, not a standard, and the band says so.
+ *
+ * The page said in its opening that stopping at Explore or Prototype is a
+ * complete outcome, and then every block after the stage grid served only the
+ * reader moving up: three transitions, a stop condition, an artifact that is
+ * the Deliver frame, and an onward step about granting an agent access. A
+ * quarter of the page, all of it tightening, and no structure anywhere saying
+ * what finishing looks like for the two stages the lead had committed to.
+ * "Stopping here is a result" is that structure. It is not a new claim — it is
+ * the Explore and Prototype "good enough when" values, given a block of their
+ * own — and the transitions are now conditional rather than the next thing
+ * that happens.
+ *
+ * The section eyebrows are gone. `Possibility` and `Collaboration` were the
+ * product brief's spine stages rendered as public labels, and `Stage` tagged
+ * each capability card with a position on a ladder before the reader had read
+ * the ladder. Explore, Prototype, Deliver and Operate stay: they are the
+ * page's actual subject and ordinary words, not internal vocabulary. Nothing
+ * replaced the eyebrows, because a different taxonomy would be the same
+ * mistake.
  */
 import type { SiteLocale } from "../../i18n/ui";
+import type { ArtifactStatus } from "../page-primitives";
 
 export const REVIEWED = "2026-08-18";
 
 interface Opportunity {
   title: string;
   outcome: string;
-  stage: string;
 }
 
 interface Stage {
@@ -44,14 +63,11 @@ export interface VibeCodingContent {
   fit: string;
   reviewedLabel: string;
 
-  possibilityLabel: string;
   possibilityHeading: string;
   possibilityLead: string;
   opportunities: Opportunity[];
   outcomeLabel: string;
-  stageLabel: string;
 
-  stagesLabel: string;
   stagesHeading: string;
   stagesLead: string;
   stages: Stage[];
@@ -60,6 +76,9 @@ export interface VibeCodingContent {
   humanLabel: string;
   checkLabel: string;
   stagesEvidence: string;
+
+  stoppingHeading: string;
+  stoppingParagraphs: string[];
 
   transitionsHeading: string;
   transitionsLead: string;
@@ -70,10 +89,12 @@ export interface VibeCodingContent {
 
   artifactTitle: string;
   artifactDescription: string;
-  artifactStatus: string;
+  /** The blueprint's canonical status key, not a word to render. */
+  artifactStatus: ArtifactStatus;
 
   nextTitle: string;
   nextDescription: string;
+  nextSecondaryTitle: string;
 }
 
 export const artifactHref =
@@ -86,44 +107,37 @@ const en: VibeCodingContent = {
   answer:
     "Vibe coding is a legitimate way to build, and the structure it needs follows from the consequence of the result rather than from how the code was written. Explore and prototype freely. Add ownership, review and tests before other people depend on it, and monitoring and a restore you have actually run once it works without you watching.",
   lead: "Vibe coding means leaning on AI generation and shaping the result as you go, with less planned in advance. It reaches something that runs far faster than reading first does, and for learning a domain or testing an idea that is exactly the right trade. The four stages below are not skill levels and not a ladder. Stopping at Explore or Prototype is a complete outcome in its own right. What moves a piece of work along is who depends on it, what it holds, and what happens when it is wrong.",
-  fit: "You are learning something, testing an assumption, or building something whose failure costs you an afternoon.",
+  fit: "You are learning something, testing an assumption, or building something other people will end up depending on.",
   reviewedLabel: "Reviewed",
 
-  possibilityLabel: "Possibility",
   possibilityHeading: "What working this way gets you",
   possibilityLead:
-    "The gain sits at the front of the work: you find out whether an idea holds while it is still cheap to drop. Four kinds of work benefit most, and each sits naturally at one stage.",
+    "The gain sits at the front of the work: you find out whether an idea holds while it is still cheap to drop. Four kinds of work benefit most.",
   opportunities: [
     {
       title: "Learn an unfamiliar domain",
       outcome:
         "Get a working example in a language, framework or API you have never used, then read it back to understand the shape of the thing.",
-      stage: "Explore",
     },
     {
       title: "Test an assumption cheaply",
       outcome:
         "Put the risky part in front of a real input this week, instead of designing around a guess for a month.",
-      stage: "Prototype",
     },
     {
       title: "Do the work nobody wants",
       outcome:
         "Produce the migration, the fixture data, the one-off report or the glue that nobody will read twice.",
-      stage: "Explore",
     },
     {
-      title: "Get past the empty repository",
+      title: "Get started on an empty repository",
       outcome:
         "Stand up a skeleton that builds, runs and deploys, then slow down deliberately at the parts that carry consequence.",
-      stage: "Prototype into Deliver",
     },
   ],
   outcomeLabel: "What it enables",
-  stageLabel: "Stage",
 
-  stagesLabel: "Collaboration",
-  stagesHeading: "Four stages, decided by consequence",
+  stagesHeading: "What changes when other people depend on it",
   stagesLead:
     "The same person, the same tools and the same amount of AI can sit at any of these. What changes is who is affected when the result is wrong, and with it what you own and what counts as good enough.",
   stages: [
@@ -163,21 +177,27 @@ const en: VibeCodingContent = {
   stagesEvidence:
     "The stages and their checks are a recommendation drawn from this project's own practice, not a standard. They rest on one assessment: assurance should match the consequence of failure. A team carrying regulatory duties, safety impact or a larger blast radius will draw the lines earlier than this.",
 
-  transitionsHeading: "What has to become explicit when you move on",
+  stoppingHeading: "Stopping here is a result",
+  stoppingParagraphs: [
+    "Most of what gets built this way is meant to end at Explore or Prototype, and finishing there is not stopping short. An exploration is done when you can say what you learned without rerunning the code, and nothing outside your own machine changed. A prototype is done when the assumption is answered either way, and the limits are written where the next person looks — including that this is a prototype.",
+    "Neither of those owes anyone tests, a review or a restore rehearsal. The rest of this page is for the case where the work does not stop there.",
+  ],
+
+  transitionsHeading: "What to make explicit if it moves on",
   transitionsLead:
-    "Nothing forces a stage change. It happens quietly, which is why each boundary is worth naming in advance rather than recognising afterwards.",
+    "Nothing forces a stage change, and plenty of work never has one. When it does happen it happens quietly, which is why each boundary is worth naming in advance rather than recognising afterwards.",
   transitions: [
     {
       title: "Explore to Prototype",
       question: "What exactly is being tested, and which result would make you drop it?",
       reason:
-        "An exploration with no falsifying answer easily becomes a demo that keeps getting extended.",
+        "Without a falsifying answer, an exploration becomes a demo that keeps getting extended.",
     },
     {
       title: "Prototype to Deliver",
       question: "Who depends on this now, and what does it hold that they cannot lose?",
       reason:
-        "This transition can happen without anyone deciding it: a prototype acquires users, the label stays behind, and the obligations change anyway.",
+        "This one can happen without anyone deciding it: a prototype acquires users, the label stays behind, and the obligations change anyway.",
     },
     {
       title: "Deliver to Operate",
@@ -197,9 +217,10 @@ const en: VibeCodingContent = {
     "The frame an agent works inside once a repository has to stay reviewable: what it decides itself, when it stops and asks, what it may never do, and what must be verified before anything reaches the default branch.",
   artifactStatus: "draft",
 
-  nextTitle: "Before you give an AI agent access",
+  nextTitle: "Checking the result",
   nextDescription:
-    "What to settle before a coding agent can read your files, run commands and reach the systems around them.",
+    "How to tell whether what came back is right — an answer, a change, or an action that has already happened.",
+  nextSecondaryTitle: "Before you give an AI agent access",
 };
 
 const de: VibeCodingContent = {
@@ -207,46 +228,39 @@ const de: VibeCodingContent = {
   description:
     "Wann es reicht, sich beim Bauen auf KI-Generierung zu stützen, was sich ändert, sobald andere davon abhängen, und woran du merkst, dass das Ergebnis für seine Phase gut genug ist.",
   answer:
-    "Vibe Coding ist eine legitime Art zu bauen. Wie viel Struktur nötig ist, ergibt sich aus den Folgen des Ergebnisses und nicht daraus, wie der Code entstanden ist. Erkunde und prototype frei. Verantwortung, Review und Tests kommen dazu, bevor andere sich darauf verlassen — Monitoring und ein tatsächlich geprobter Restore, sobald es ohne dich läuft.",
+    "Vibe Coding ist eine legitime Art zu bauen. Wie viel Struktur nötig ist, ergibt sich aus den Folgen des Ergebnisses und nicht daraus, wie der Code entstanden ist. Erkunde und bau Prototypen, so viel du willst. Verantwortung, Review und Tests kommen dazu, bevor andere sich darauf verlassen — Monitoring und ein tatsächlich geprobter Restore, sobald es ohne dich läuft.",
   lead: "Vibe Coding heißt, stark auf KI-Generierung zu setzen und das Ergebnis unterwegs zu formen, statt vorher viel zu planen. Damit steht schneller etwas Laufendes da, als wenn du dich erst einliest, und um ein Thema zu lernen oder eine Idee zu prüfen, ist das genau der richtige Tausch. Die vier Phasen unten sind keine Könnensstufen und keine Leiter. Bei Erkunden oder Prototyp aufzuhören ist ein vollwertiges Ergebnis. Weiter rückt eine Arbeit erst, wenn andere von ihr abhängen, wenn sie etwas enthält, das nicht verloren gehen darf, oder wenn ein Fehler teuer wird.",
-  fit: "Du lernst etwas, prüfst eine Annahme oder baust etwas, dessen Scheitern dich einen Nachmittag kostet.",
+  fit: "Du lernst etwas, prüfst eine Annahme oder baust etwas, auf das sich später andere verlassen werden.",
   reviewedLabel: "Geprüft",
 
-  possibilityLabel: "Möglichkeit",
   possibilityHeading: "Was dir diese Arbeitsweise bringt",
   possibilityLead:
-    "Der Gewinn liegt am Anfang der Arbeit: Du merkst früh, ob eine Idee trägt, solange das Verwerfen noch billig ist. Vier Arten von Arbeit profitieren besonders, und jede gehört zu einer Phase.",
+    "Der Gewinn liegt am Anfang der Arbeit: Du merkst früh, ob eine Idee trägt, solange das Verwerfen noch billig ist. Vier Arten von Arbeit profitieren besonders.",
   opportunities: [
     {
       title: "Ein fremdes Thema lernen",
       outcome:
         "Ein laufendes Beispiel in einer Sprache, einem Framework oder einer API, die du noch nie benutzt hast — und danach liest du es zurück, um die Struktur zu verstehen.",
-      stage: "Erkunden",
     },
     {
       title: "Eine Annahme billig prüfen",
       outcome:
         "Den riskanten Teil noch diese Woche gegen eine echte Eingabe stellen, statt einen Monat lang um eine Vermutung herum zu entwerfen.",
-      stage: "Prototyp",
     },
     {
       title: "Die ungeliebte Arbeit erledigen",
       outcome:
         "Die Migration, die Testdaten, den einmaligen Report oder den Glue-Code schreiben, den niemand ein zweites Mal liest.",
-      stage: "Erkunden",
     },
     {
-      title: "Am leeren Repository vorbeikommen",
+      title: "Den Anfang hinter dich bringen",
       outcome:
         "Ein Gerüst hinstellen, das baut, läuft und deployt — und danach bewusst langsamer werden, wo es Folgen hat.",
-      stage: "Prototyp Richtung Ausliefern",
     },
   ],
   outcomeLabel: "Was möglich wird",
-  stageLabel: "Phase",
 
-  stagesLabel: "Zusammenarbeit",
-  stagesHeading: "Vier Phasen, bestimmt von den Folgen",
+  stagesHeading: "Was sich ändert, sobald andere davon abhängen",
   stagesLead:
     "Dieselbe Person, dieselben Tools und gleich viel KI können in jeder dieser Phasen stecken. Was sich ändert, ist die Frage, wen ein falsches Ergebnis trifft — und damit, wofür du geradestehst und was gut genug heißt.",
   stages: [
@@ -266,7 +280,7 @@ const de: VibeCodingContent = {
     },
     {
       name: "Ausliefern",
-      work: "Andere verlassen sich auf das Ergebnis. Es hat eine Wartungszeit vor sich, und jemand ändert es, der es nicht geschrieben hat.",
+      work: "Andere verlassen sich auf das Ergebnis. Es wird über Jahre gepflegt, und irgendwann ändert es jemand, der es nicht geschrieben hat.",
       ai: "Entwirft, räumt auf und erklärt innerhalb einer geprüften Änderung — und schreibt den Test, der ohne die Korrektur fehlschlägt.",
       human: "Die Verantwortung für das Ergebnis: Review, die Entscheidungen samt Begründung und die Stellen, die nicht geraten werden dürfen — Anmeldung, personenbezogene Daten, Geld, Löschung.",
       check: "Eine zweite Person kann die Änderung prüfen und sagen, warum sie so aussieht — und eine falsche Änderung wird gestoppt, bevor sie den Hauptzweig erreicht.",
@@ -286,15 +300,21 @@ const de: VibeCodingContent = {
   stagesEvidence:
     "Die Phasen und ihre Prüfungen sind eine Empfehlung aus der Praxis dieses Projekts, kein Standard. Dahinter steht eine Einschätzung: Die Absicherung sollte zu den Folgen eines Fehlers passen. Wer regulatorische Pflichten, Sicherheitsfolgen oder eine größere Reichweite hat, zieht die Linien früher.",
 
-  transitionsHeading: "Was ausdrücklich werden muss, wenn du weitergehst",
+  stoppingHeading: "Hier aufzuhören ist ein Ergebnis",
+  stoppingParagraphs: [
+    "Das meiste, was so entsteht, soll beim Erkunden oder beim Prototyp enden — und dort fertig zu sein heißt nicht, zu früh aufzuhören. Eine Erkundung ist fertig, wenn du sagen kannst, was du gelernt hast, ohne den Code noch einmal laufen zu lassen, und sich außerhalb deines Rechners nichts verändert hat. Ein Prototyp ist fertig, wenn die Annahme beantwortet ist, so oder so, und die Grenzen dort stehen, wo die nächste Person nachsieht — einschließlich des Hinweises, dass es ein Prototyp ist.",
+    "Weder das eine noch das andere schuldet irgendwem Tests, ein Review oder einen geprobten Restore. Der Rest dieser Seite gilt dem Fall, dass die Arbeit dort eben nicht endet.",
+  ],
+
+  transitionsHeading: "Was ausdrücklich werden muss, wenn es weitergeht",
   transitionsLead:
-    "Niemand erzwingt einen Phasenwechsel. Er passiert leise — deshalb lohnt es sich, jede Grenze vorher zu benennen statt sie hinterher zu bemerken.",
+    "Niemand erzwingt einen Phasenwechsel, und viele Arbeiten haben nie einen. Wenn er passiert, passiert er leise — deshalb lohnt es sich, jede Grenze vorher zu benennen statt sie hinterher zu bemerken.",
   transitions: [
     {
       title: "Von Erkunden zu Prototyp",
       question: "Was genau wird geprüft, und welches Ergebnis würde dich die Idee verwerfen lassen?",
       reason:
-        "Eine Erkundung ohne widerlegbare Antwort wird leicht zur Demo, die immer weiter ausgebaut wird.",
+        "Ohne widerlegbare Antwort wird aus einer Erkundung eine Demo, die immer weiter ausgebaut wird.",
     },
     {
       title: "Von Prototyp zu Ausliefern",
@@ -318,11 +338,12 @@ const de: VibeCodingContent = {
   artifactTitle: "AI-assisted development",
   artifactDescription:
     "Der Rahmen, in dem ein Agent arbeitet, sobald ein Repository prüfbar bleiben muss: was er selbst entscheidet, wann er innehält und fragt, was er nie tun darf und was geprüft sein muss, bevor etwas den Hauptzweig erreicht.",
-  artifactStatus: "Entwurf",
+  artifactStatus: "draft",
 
-  nextTitle: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
+  nextTitle: "Das Ergebnis prüfen",
   nextDescription:
-    "Was geklärt sein sollte, bevor ein Coding-Agent deine Dateien liest, Befehle ausführt und die Systeme drumherum erreicht.",
+    "Woran du erkennst, ob stimmt, was zurückkommt — eine Antwort, eine Änderung oder eine Handlung, die schon passiert ist.",
+  nextSecondaryTitle: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
 };
 
 export const getVibeCoding = (locale: SiteLocale): VibeCodingContent =>

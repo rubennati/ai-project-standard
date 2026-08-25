@@ -5,12 +5,46 @@
  * work addresses decision-makers, while the person actually typing into the
  * box has no authority, a real deadline, and no idea whom to ask.
  *
+ * The page answered permission well and then stopped. Every section was
+ * permission, restriction or incident handling, and the only two content links
+ * went to risk pages, so a reader who had just resolved whether they may use a
+ * tool was left without a word about what to use it for. The last section is
+ * still the pre-prompt check, but it now closes the permission half rather
+ * than the page: what it can help you get done comes after it, and the onward
+ * step goes to the use cases rather than to another boundary.
+ *
+ * The capability section is not new material. "Whether a model helps you
+ * draft, structure, review or explain something" was already on the page, one
+ * clause deep inside a section about what is yours to decide. It is the same
+ * five kinds of work, given room.
+ *
  * Checked 2026-08-03.
  */
 import type { Article } from "../article";
 import type { SiteLocale } from "../../i18n/ui";
 
 export const CHECKED = "2026-08-03";
+
+export interface StartNextStep {
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, StartNextStep> = {
+  en: {
+    label: "What are you trying to get done?",
+    description:
+      "Six kinds of work, what AI can do for each of them, and where it stops.",
+  },
+  de: {
+    label: "Was willst du erreichen?",
+    description:
+      "Sechs Arten von Arbeit, was KI dabei leisten kann und wo sie aufhört.",
+  },
+};
+
+export const getEmployeeNextStep = (locale: SiteLocale): StartNextStep =>
+  nextStep[locale];
 
 const en: Article = {
   title: "Can I use AI at work?",
@@ -70,7 +104,7 @@ const en: Article = {
         "This is the common case, and waiting indefinitely is not a realistic answer. A workable middle position holds until someone decides.",
       ],
       list: [
-        "Use it for material that is yours: your drafts, your notes, general questions, your own learning.",
+        "Use it for your own work: your drafts, your notes, general questions, your own learning.",
         "Keep client data, personnel matters, contracts, credentials and anything under an NDA out of it entirely.",
         "Where you need help with something confidential, describe the problem in the abstract instead of pasting the document.",
         "Do not use a personal account for company material, even briefly. That is the step that is hard to undo.",
@@ -92,9 +126,23 @@ const en: Article = {
       list: [
         "Do I know whether my employer has approved a tool?",
         "Am I logged into a work account or a private one right now?",
-        "Does what I am about to send belong to me?",
+        "Am I allowed to use this material here?",
         "Would I be comfortable if my manager read this conversation?",
         "If someone asked me to delete it in six months, could I?",
+      ],
+    },
+    {
+      heading: "What it can help you get done",
+      level: "advice",
+      paragraphs: [
+        "Once it is clear which tool you may use and what may go into it, the next question is what it can help you get done. Start with work you are already allowed to do, and with material you are allowed to use for it.",
+      ],
+      list: [
+        "Drafting — a first version of the email, the summary, the outline.",
+        "Structuring — putting what you wrote into a shape someone else can follow.",
+        "Reviewing — your own text, read back for gaps, contradictions and unstated assumptions.",
+        "Explaining — getting an unfamiliar document, error message or process into language you can work with.",
+        "Researching, where you can check the source — it lays the arguments out; whether they hold is yours to confirm.",
       ],
     },
   ],
@@ -111,7 +159,7 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Sie lautet: Hat mein Arbeitgeber ein Tool freigegeben, und wofür. Die meisten fragen nie — entweder weil sie annehmen, die Antwort sei nein, oder weil sie annehmen, es störe niemanden. Beides sind Vermutungen über etwas, das eine echte Antwort hat.",
-        "Die Chance ist gut, dass die Antwort längst existiert und dir niemand Bescheid gesagt hat. Firmen kaufen einen Geschäftstarif und kündigen ihn dann nicht an, also arbeiten die Leute weiter mit ihrem privaten Konto neben einem bezahlten, das in Ordnung gewesen wäre.",
+        "Die Chance ist gut, dass die Antwort längst existiert und dir niemand Bescheid gesagt hat. Firmen kaufen einen Business-Tarif und kündigen ihn dann nicht an, also arbeiten die Leute weiter mit ihrem privaten Konto neben einem bezahlten, das in Ordnung gewesen wäre.",
       ],
     },
     {
@@ -121,7 +169,7 @@ const de: Article = {
         "IT, deine Datenschutz-Ansprechperson oder deine Führungskraft — je nachdem, was es gibt. Eine kurze Nachricht genügt, und schriftlich zu fragen ist Absicht: Es schiebt die Entscheidung zu der Person, der sie gehört.",
       ],
       list: [
-        "Gibt es ein freigegebenes KI-Tool, und haben wir dafür einen Geschäfts- oder Teamtarif?",
+        "Gibt es ein freigegebenes KI-Tool, und haben wir dafür einen Business- oder Teamtarif?",
         "Darf ich es für Arbeitsmaterial nutzen, und gibt es etwas, das ich keinesfalls hineingeben darf?",
         "Gibt es eine Richtlinie oder eine Schulung, die ich hätte sehen sollen?",
         "Falls es noch nichts gibt — wen frage ich in einem Monat noch einmal?",
@@ -141,7 +189,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Daran scheitern mehr Leute als an allem anderen auf dieser Seite. Dein privates Konto läuft auf Verbraucherbedingungen, auch wenn du damit arbeitest — und in Verbrauchertarifen ist Training mit deiner Eingabe im Regelfall die Voreinstellung, nicht die Ausnahme.",
+        "Daran scheitern mehr Leute als an allem anderen auf dieser Seite. Dein privates Konto läuft auf einem Privatkundentarif, auch wenn du damit arbeitest — und dort ist Modelltraining mit deiner Eingabe im Regelfall die Voreinstellung, nicht die Ausnahme.",
         "Für Entwicklerwerkzeuge gilt dasselbe. Ein Coding-Assistent aus einem privaten Konto erbt dessen Bedingungen, nicht den beruflichen Charakter der Arbeit.",
       ],
       links: [
@@ -158,7 +206,7 @@ const de: Article = {
         "Das ist der Normalfall, und unbegrenzt zu warten ist keine realistische Antwort. Eine tragfähige Zwischenposition hält, bis jemand entscheidet.",
       ],
       list: [
-        "Nutz es für Material, das dir gehört: deine Entwürfe, deine Notizen, allgemeine Fragen, deine eigene Einarbeitung.",
+        "Nutz es für deine eigene Arbeit: deine Entwürfe, deine Notizen, allgemeine Fragen, deine eigene Einarbeitung.",
         "Halt Kundendaten, Personalangelegenheiten, Verträge, Zugangsdaten und alles unter NDA vollständig heraus.",
         "Wenn du Hilfe bei etwas Vertraulichem brauchst, beschreib das Problem abstrakt, statt das Dokument einzufügen.",
         "Verwende kein privates Konto für Firmenmaterial, auch nicht kurz. Das ist der Schritt, der sich schlecht rückgängig machen lässt.",
@@ -180,9 +228,23 @@ const de: Article = {
       list: [
         "Weiß ich, ob mein Arbeitgeber ein Tool freigegeben hat?",
         "Bin ich gerade in einem Arbeitskonto angemeldet oder in einem privaten?",
-        "Gehört mir, was ich gleich absende?",
+        "Darf ich dieses Material hier verwenden?",
         "Wäre es mir recht, wenn meine Führungskraft diese Unterhaltung liest?",
         "Könnte ich sie löschen, wenn mich in einem halben Jahr jemand darum bittet?",
+      ],
+    },
+    {
+      heading: "Wobei KI dir helfen kann",
+      level: "advice",
+      paragraphs: [
+        "Sobald klar ist, welches Tool du verwenden darfst und was hineingehen darf, geht es um die eigentliche Arbeit: Wobei soll dir KI helfen? Fang mit Aufgaben und Material an, die du bearbeiten und dafür verwenden darfst.",
+      ],
+      list: [
+        "Entwerfen — eine erste Fassung der Mail, der Zusammenfassung, der Gliederung.",
+        "Strukturieren — Geschriebenes in eine Form bringen, der jemand anders folgen kann.",
+        "Prüfen — den eigenen Text auf Lücken, Widersprüche und unausgesprochene Annahmen durchgehen.",
+        "Erklären — ein fremdes Dokument, eine Fehlermeldung oder einen Ablauf in eine Sprache bringen, mit der du arbeiten kannst.",
+        "Recherchieren, wo du die Quelle nachprüfen kannst — es trägt die Argumente zusammen; ob sie tragen, bestätigst du.",
       ],
     },
   ],

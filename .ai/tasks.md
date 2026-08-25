@@ -58,8 +58,8 @@ implementation, not merely before merge.
 |---|---|---|---|---|
 | 1 | Product identity and acute contradictions | — | yes | **done** (#158) |
 | 2 | Global shell: footer and page-level onward path | 1 | yes | **done** (#161) |
-| 3 | `/start` as one reader journey | 2 | no | **next** |
-| 4 | `/data-flows` and Connect AI | 2 | partly | blocked |
+| 3 | `/start` as one reader journey | 2 | no | **in review** |
+| 4 | `/data-flows` and Connect AI | 3 | partly | next |
 | 5 | `/secure-setup` and verification | 4 | no | not started |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
@@ -131,7 +131,12 @@ implementation, not merely before merge.
    canonical for the model → product → connector → target explanation. Reconcile
    training, consent, deletion and sovereignty to single owners. Keep
    `training-and-retention` substantially intact.
-   *Blocked:* retiring `what-you-agree-to` removes a published URL — `state.md`.
+   *Not blocked as a whole.* The open question in `state.md` is retiring
+   `what-you-agree-to`, which removes a published URL; it blocks that route
+   decision only. The mechanism ownership, the Connect AI rewrite and the
+   single-owner reconciliation proceed after slice 3. Slice 3 handed over the
+   five mechanism sections on `/start/what-it-is-doing` without moving or
+   rewriting them — they are named in that module's comment.
 5. **`/secure-setup` and verification.** A reader-recognisable object and
    opening; the sequence stays, the phase nouns stop being the public spine
    where they read as project vocabulary; `Monitor` and `Take it back` get real

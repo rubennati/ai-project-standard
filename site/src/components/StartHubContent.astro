@@ -14,12 +14,59 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
 
 <div class="layout-wide">
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
+
+  {/*
+    One opening paragraph, not three. The page used to stack an introduction, a
+    note about products supporting several ways of working, and a bridge to
+    /use-cases before the first card — 795 px on a phone, a full screen of
+    prose before anything to choose from. Both of the smaller paragraphs said
+    something worth keeping, so they are sentences here rather than blocks.
+
+    What is deliberately gone is the sentence arguing that these are not stages
+    and the last is not the goal. It answered a ladder reading before a reader
+    could have formed one; the invariants after the cards make the same point
+    once the six are actually in view.
+  */}
   <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
-  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
   <p class="mt-4 max-w-2xl leading-7">
     {content.bridge}{" "}
     <a href={toHref(content.bridgeLink.href)}>{content.bridgeLink.label}</a>
   </p>
+
+  {/*
+    The prerequisite role questions come before the choice, not after it. They
+    are not two of the six ways of working: whether you may use AI at work, and
+    where someone responsible for other people's use starts, decide whether
+    choosing a way of working is worth doing at all.
+
+    They previously sat at the very bottom of the page under the heading "Three
+    questions this page does not answer", which framed two real reader
+    questions as the page's own limitation — and was the only inbound link to
+    the decision-maker page anywhere on the site.
+
+    The row shape is the homepage's: the question is the whole link, full-width
+    with generous padding, no supporting line to read past.
+  */}
+  <section class="prototype-section">
+    <h2>{content.prerequisiteHeading}</h2>
+    <ul class="mt-6 max-w-2xl border-t border-[var(--line)]">
+      {
+        content.prerequisites.map((item) => (
+          <li class="border-b border-[var(--line)]">
+            <a
+              href={toHref(item.href)}
+              class="flex items-center justify-between gap-4 py-4 text-lg font-medium no-underline hover:text-[var(--color-accent)]"
+            >
+              {item.question}
+              <span aria-hidden="true" class="shrink-0 text-[var(--ink-muted)]">
+                →
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 
   <section class="prototype-section">
     <h2>{content.formsHeading}</h2>
@@ -32,16 +79,12 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
             <p class="collaboration-card__description">{form.description}</p>
             <dl>
               <div>
+                <dt>{content.goodForLabel}</dt>
+                <dd>{form.goodFor}</dd>
+              </div>
+              <div>
                 <dt>{content.ownershipLabel}</dt>
                 <dd>{form.ownership}</dd>
-              </div>
-              <div>
-                <dt>{content.accessLabel}</dt>
-                <dd>{form.access}</dd>
-              </div>
-              <div>
-                <dt>{content.verificationLabel}</dt>
-                <dd>{form.verification}</dd>
               </div>
             </dl>
             {form.path && (
@@ -62,19 +105,6 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
         content.invariants.map((item) => (
           <li>
             <strong>{item.title}</strong> {item.detail}
-          </li>
-        ))
-      }
-    </ul>
-  </section>
-
-  <section class="prototype-section">
-    <h2>{content.elsewhereHeading}</h2>
-    <ul class="hub-notes">
-      {
-        content.elsewhere.map((item) => (
-          <li>
-            <a href={toHref(item.href)}>{item.label}</a>
           </li>
         ))
       }

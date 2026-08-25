@@ -1,10 +1,26 @@
 /**
- * Entry point: you decide for other people.
+ * Entry point: you are responsible for other people's use of AI.
  *
  * Anchored on AI Act Art. 4, which obliges providers *and* deployers to
  * ensure AI literacy among their staff and anyone operating AI on their
  * behalf. It has been in force since 2 February 2025, and most organisations
  * do not know it exists.
+ *
+ * The heading asks "where do I start?", so the first section is now the first
+ * action rather than the legal position. Opening with the duty answered a
+ * different question — how bad is it — and left a reader with a compliance
+ * backlog and no first move. Finding out what is already in use is what has to
+ * happen before any of the rest can be decided, and it is also what makes the
+ * Art. 4 duty concrete when it follows. None of the legal material changed.
+ *
+ * The English H1 said "I decide for others", which names an authority; the
+ * German named the responsibility, which is the wider and truer audience. The
+ * German was also the only locale attributing the training default to the
+ * vendors who publish it, and the only one carrying the caveat that a business
+ * plan is a precondition rather than a permission. Both are now in English
+ * too — see `.ai/decisions.md`, 2026-08-04, on vendor documentation as a
+ * source. Account tier and vendor defaults remain owned by
+ * `/data-flows/training-and-retention`, which this page links to.
  *
  * Checked 2026-08-03.
  */
@@ -15,14 +31,45 @@ export const CHECKED = "2026-08-03";
 
 const AI_ACT_ART_4 = "https://artificialintelligenceact.eu/article/4/";
 
+export interface StartNextStep {
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, StartNextStep> = {
+  en: {
+    label: "How do you secure this, and how do you check the result?",
+    description:
+      "The six steps of putting a decision into practice, and which ones a given task actually needs.",
+  },
+  de: {
+    label: "Wie sicherst du das ab, und wie prüfst du das Ergebnis?",
+    description:
+      "Die sechs Schritte, mit denen aus einer Entscheidung Praxis wird — und welche davon eine Aufgabe wirklich braucht.",
+  },
+};
+
+export const getDecisionMakerNextStep = (locale: SiteLocale): StartNextStep =>
+  nextStep[locale];
+
 const en: Article = {
-  title: "I decide for others — where do I start?",
+  title: "I am responsible for AI use by others — where do I start?",
   description:
-    "You already have an AI Act duty most organisations miss. What to decide first, and why banning tools produces shadow IT.",
+    "Start by finding out what is already in use. Then the AI Act duty most organisations miss, what to decide first, and why banning tools produces shadow IT.",
   lead: "The question is usually framed as whether to allow AI. That decision was made for you some time ago, by people in your organisation who needed to get something done.",
   sections: [
     {
-      heading: "You already have a duty, and it is older than you think",
+      heading: "Start by finding out what is already in use",
+      level: "assessment",
+      paragraphs: [
+        "Nothing else can be decided sensibly without this. Find out which tools are actually being used, including the ones nobody expensed — and ask rather than audit. People will answer a question about what makes their work easier; they stop answering an investigation.",
+        "They do not use their private accounts for work because they are careless. They do it because the tool helps, and because either nothing was provided or what was provided is worse than what they can buy themselves for twenty euros.",
+        "That reframes the response. A prohibition without a provided alternative does not remove the usage; it removes your visibility of it, which is strictly worse — the same material still leaves, and now nobody tells you.",
+        "The usable version is the opposite order: provide something good, say clearly what it may be used for, and only then restrict the rest. People follow a rule that leaves them a way to do their job.",
+      ],
+    },
+    {
+      heading: "The Article 4 duty already applies",
       level: "law",
       checked: CHECKED,
       paragraphs: [
@@ -31,15 +78,6 @@ const en: Article = {
         "The standard is “to their best extent”, judged against technical knowledge, experience, education and training, the context of use, and the people affected. That is a reasonable-effort test, not a certification requirement — which makes it achievable, and also means doing nothing is visibly not it.",
       ],
       links: [{ label: "AI Act, Article 4 — AI literacy", href: AI_ACT_ART_4 }],
-    },
-    {
-      heading: "Shadow IT is a procurement result, not a discipline problem",
-      level: "assessment",
-      paragraphs: [
-        "People do not use their private accounts for work because they are careless. They do it because the tool helps, and because either nothing was provided or what was provided is worse than what they can buy themselves for twenty euros.",
-        "That reframes the response. A prohibition without a provided alternative does not remove the usage; it removes your visibility of it, which is strictly worse — the same material still leaves, and now nobody tells you.",
-        "The usable version is the opposite order: provide something good, say clearly what it may be used for, and only then restrict the rest. People follow a rule that leaves them a way to do their job.",
-      ],
     },
     {
       heading: "Decide the data before the tool",
@@ -55,11 +93,11 @@ const en: Article = {
       ],
     },
     {
-      heading: "Then the tool, and the tier is the point",
+      heading: "The account type decides the defaults",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "A business or team plan is not mainly about seats and billing. It changes the default: business tiers of the major vendors do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
+        "A business or team plan is not mainly about seats and billing. It changes the default: the major vendors state that their business tiers do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
       ],
       links: [
         { label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" },
@@ -67,10 +105,11 @@ const en: Article = {
       ],
     },
     {
-      heading: "Why the business tier is usually the cheapest control you have",
+      heading: "Why a business plan is usually the cheapest thing you can do",
       level: "assessment",
       paragraphs: [
-        "Buying it is the cheapest control available to you, and it removes the reason people were using something else.",
+        "Measured against what it costs, it changes more than most other measures: it flips the defaults, it makes a processing agreement available, and it removes the reason people were reaching for a private account in the first place.",
+        "It is a precondition, not a permission. Whether particular data may go to an external service at all still depends on the purpose, the kind of data, the legal basis and your own internal rules.",
       ],
     },
     {
@@ -90,7 +129,10 @@ const en: Article = {
         "When a client or an employee asks for their data to be erased, that request lands on you as controller, not on the vendor. Answering it requires knowing which tool held what — which is a record you either keep or do not have.",
         "Same for the processing agreement: relying on a vendor's good practice is not the same as having the contract Art. 28 requires. That one is yours to hold.",
       ],
-      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
+      links: [
+        { label: "Keeping a record", href: "/secure-setup/keeping-a-record" },
+        { label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" },
+      ],
     },
     {
       heading: "Ask yourself, or ask the person you are about to hire",
@@ -99,7 +141,6 @@ const en: Article = {
         "If you cannot answer these, that is your brief — either for the next quarter or for whoever you bring in.",
       ],
       list: [
-        "Do I know which AI tools are actually in use here, including the ones nobody expensed?",
         "Have we provided something good enough that a private account is no longer tempting?",
         "Is there a written answer to what must never go in?",
         "Do we hold a processing agreement for every tool that touches personal data?",
@@ -113,9 +154,19 @@ const en: Article = {
 const de: Article = {
   title: "Ich bin für den KI-Einsatz verantwortlich — wo fange ich an?",
   description:
-    "Aus dem AI Act gilt seit Februar 2025 eine Schulungspflicht, die kaum jemand kennt. Was du zuerst entscheiden solltest und warum ein Verbot die Nutzung nicht beendet.",
+    "Fang damit an herauszufinden, was schon verwendet wird. Dann die Schulungspflicht aus dem AI Act, was du zuerst entscheiden solltest und warum ein Verbot die Nutzung nicht beendet.",
   lead: "Meist wird gefragt, ob man KI erlauben soll. Diese Entscheidung ist längst gefallen — getroffen von Leuten in deiner Organisation, die ihre Arbeit erledigen mussten.",
   sections: [
+    {
+      heading: "Verschaff dir zuerst ein Bild davon, was schon im Einsatz ist",
+      level: "assessment",
+      paragraphs: [
+        "Alles Weitere hängt daran. Finde heraus, welche Tools tatsächlich verwendet werden — auch die, für die niemand eine Rechnung eingereicht hat. Frag danach, statt es zu kontrollieren: Auf die Frage, was einem die Arbeit erleichtert, antworten Leute. Auf eine Untersuchung antworten sie nicht mehr.",
+        "Sie verwenden ihr privates Konto für Arbeit nicht aus Nachlässigkeit. Sie tun es, weil das Tool hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
+        "Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung deshalb nicht. Es beendet nur deinen Einblick in sie: Dieselben Inhalte gehen weiterhin an dieselben Dienste, nur erfährst du es nicht mehr.",
+        "Die umgekehrte Reihenfolge funktioniert besser: erst ein brauchbares Produkt bereitstellen, dann klar festlegen, wofür es verwendet werden darf, und erst danach den Rest einschränken. Eine Regel, die einen gangbaren Weg offen lässt, wird eher befolgt als eine, die keinen lässt.",
+      ],
+    },
     {
       heading: "Die Schulungspflicht aus Artikel 4 gilt bereits",
       level: "law",
@@ -126,15 +177,6 @@ const de: Article = {
         "Der Maßstab ist „nach besten Kräften“, beurteilt an technischen Kenntnissen, Erfahrung, Ausbildung und Schulung, am Einsatzkontext und an den betroffenen Personen. Es geht also um Angemessenheit, nicht um eine Zertifizierung. Das ist erreichbar — bedeutet aber auch, dass gar nichts zu tun die Anforderung erkennbar nicht erfüllt.",
       ],
       links: [{ label: "AI Act, Artikel 4 — KI-Kompetenz", href: AI_ACT_ART_4 }],
-    },
-    {
-      heading: "Schatten-IT entsteht durch fehlende Alternativen, nicht durch Nachlässigkeit",
-      level: "assessment",
-      paragraphs: [
-        "Leute verwenden ihr privates Konto für Arbeit nicht aus Nachlässigkeit. Sie tun es, weil das Tool hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
-        "Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung deshalb nicht. Es beendet nur deinen Einblick in sie: Dieselben Inhalte gehen weiterhin an dieselben Dienste, nur erfährst du es nicht mehr.",
-        "Die umgekehrte Reihenfolge funktioniert besser: erst ein brauchbares Produkt bereitstellen, dann klar festlegen, wofür es verwendet werden darf, und erst danach den Rest einschränken. Eine Regel, die einen gangbaren Weg offen lässt, wird eher befolgt als eine, die keinen lässt.",
-      ],
     },
     {
       heading: "Erst die Daten klären, dann das Produkt auswählen",
@@ -190,6 +232,7 @@ const de: Article = {
         "Ebenso beim Auftragsverarbeitungsvertrag: Sich auf die gute Praxis eines Anbieters zu verlassen ersetzt nicht den Vertrag, den Art. 28 DSGVO verlangt. Ihn abzuschließen ist deine Aufgabe.",
       ],
       links: [
+        { label: "Die Entscheidung festhalten", href: "/de/secure-setup/keeping-a-record" },
         { label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" },
       ],
     },
@@ -200,7 +243,6 @@ const de: Article = {
         "Was hier offen bleibt, ist die Arbeitsliste für das nächste Quartal — oder das Briefing für die Person, die du dafür holst.",
       ],
       list: [
-        "Weiß ich, welche KI-Tools hier tatsächlich im Einsatz sind, auch die ohne Beleg?",
         "Haben wir etwas bereitgestellt, das gut genug ist, dass ein privates Konto nicht mehr reizt?",
         "Gibt es eine schriftliche Antwort darauf, was keinesfalls hinein darf?",
         "Haben wir für jedes Tool mit Personenbezug einen Auftragsverarbeitungsvertrag?",

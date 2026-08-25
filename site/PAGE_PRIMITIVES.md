@@ -36,7 +36,7 @@ in German named an organisational approval chain. It survives as the
 | `EvidenceBand` | Joins a claim level, summary, source and check date. Fact and measured instances fail at build time without all required evidence. |
 | `StopCondition` | Marks a case where proceeding would cross a consequential boundary, and gives the safer route instead. |
 | `ImplementationStep` | Keeps action, expected result and verification together so an instruction cannot end at activity. |
-| `ArtifactLink` | Marks material to copy as an artifact rather than presenting it as another article. |
+| `ArtifactLink` | Marks material to copy as an artifact rather than presenting it as another article. Leads with the linked title; the affordance and the status follow the description as one muted line. No repository classification, no status badge — see `.ai/decisions.md`, 2026-08-25. |
 | `NextStep` | Offers the one action the reader is most likely to want next, chosen for that page. Not a related-content collection, not a rendering of global navigation, and it carries no product-stage label. |
 
 ## Composition rules
@@ -51,6 +51,10 @@ in German named an organisational approval chain. It survives as the
 - Use `EvidenceBand` for a claim that controls a decision. Existing inline
   `EvidenceLabel` remains appropriate for narrower article sections.
 - Link an artifact only when its boundary, status and verification are honest.
+  Status reaches the reader as what it means, not as the repository's word for
+  it: `ArtifactLink` takes a status key and renders the sentence.
+  `check-conformance.sh` holds the key to the blueprint manifest; the site does
+  not read the manifest itself.
 - End on one accountable next step, not a wall of loosely related links.
 - `NextStep` is optional. A page that carries a reader somewhere should say
   where it goes next; a page that closes a question may end. Nothing enforces

@@ -290,6 +290,34 @@ if [[ -f "$IDENTITY_TS" ]]; then
     fi
   fi
 
+  # The public page states what a blueprint's status means for a reader — a
+  # `draft` blueprint has a complete payload and has never been run against a
+  # real project. The site stores the status key and maps it to that sentence;
+  # it deliberately does not read blueprint.yml, so the website stays buildable
+  # on its own and repository layout stays out of the public product. That
+  # leaves one copy of a fact that has an owner, so this is the boundary that
+  # keeps the two honest: promoting a blueprint to `stable` now fails the build
+  # until the site agrees.
+  VIBE_CODING_TS="site/src/data/start/vibe-coding.ts"
+  AIAD_MANIFEST="blueprints/ai-assisted-development/blueprint.yml"
+  if [[ -f "$VIBE_CODING_TS" && -f "$AIAD_MANIFEST" ]]; then
+    canonical_status="$(grep -E '^status:' "$AIAD_MANIFEST" | head -1 | awk '{print $2}')"
+    # One entry per locale; both must name the canonical status.
+    rendered_statuses="$(grep -oE 'artifactStatus: "[a-z]+"' "$VIBE_CODING_TS" | sed 's/^artifactStatus: "//; s/"$//')"
+    if [[ -z "$rendered_statuses" ]]; then
+      note "$VIBE_CODING_TS" "no artifactStatus found — the blueprint status has nothing to agree with"
+    else
+      status_agrees=1
+      while read -r rendered; do
+        if [[ "$rendered" != "$canonical_status" ]]; then
+          note "$VIBE_CODING_TS" "artifactStatus is '$rendered' but $AIAD_MANIFEST says '$canonical_status'"
+          status_agrees=0
+        fi
+      done <<< "$rendered_statuses"
+      [[ "$status_agrees" == "1" ]] && ok "blueprint status agrees with the site: $canonical_status"
+    fi
+  fi
+
   # Framings and claims the product retired on 2026-08-24, checked only on
   # these two files. Each returned at least once after being removed.
   for stale in "AI Project Standard" "repository standard" "security practitioner" "Austria first" "Österreich zuerst"; do

@@ -1,5 +1,5 @@
 ---
-import { getPagePrimitiveCopy } from "../data/page-primitives";
+import { getPagePrimitiveCopy, type ArtifactStatus } from "../data/page-primitives";
 import type { SiteLocale } from "../i18n/ui";
 
 interface Props {
@@ -7,7 +7,15 @@ interface Props {
   title: string;
   description: string;
   href: string;
-  status?: string;
+  /**
+   * The blueprint's canonical status, as a semantic key rather than a word to
+   * render. `draft` means the payload is complete and has never been run
+   * against a real project — which is a claim about reliability a reader can
+   * act on, and not what the English word "draft" says on its own. The key is
+   * mapped to a sentence per locale in `page-primitives.ts`, and
+   * `check-conformance.sh` asserts it still agrees with `blueprint.yml`.
+   */
+  status?: ArtifactStatus;
   external?: boolean;
 }
 
@@ -15,16 +23,20 @@ const { locale, title, description, href, status, external = false } = Astro.pro
 const copy = getPagePrimitiveCopy(locale);
 ---
 
+{/*
+  Reader value first, metadata second. The linked title is the thing on offer,
+  so it opens the block; what to do with it and what is true of it follow the
+  description as one muted line.
+*/}
 <aside class="artifact-link">
-  <div class="artifact-link__header">
-    <p>{copy.copyableArtifact}</p>
-    {status && <span>{status}</span>}
-  </div>
   <h2>
     <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}>
       {title}<span aria-hidden="true"> {external ? "↗" : "→"}</span>
       {external && <span class="sr-only"> ({copy.opensInNewWindow})</span>}
     </a>
   </h2>
-  <p>{description}</p>
+  <p class="artifact-link__description">{description}</p>
+  <p class="artifact-link__meta">
+    {copy.copyableArtifact}{status && ` — ${copy.artifactStatus[status]}`}
+  </p>
 </aside>

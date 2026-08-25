@@ -924,34 +924,31 @@
     box-shadow: 0 8px 24px oklch(16% 0.03 250 / 0.06);
   }
 
-  .artifact-link__header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    color: var(--ink-muted);
-    font-size: 0.6875rem;
-    font-weight: 750;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .artifact-link__header span {
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    padding: 0.2rem 0.55rem;
-  }
-
   .artifact-link h2 {
-    margin-top: 0.75rem;
     font-size: 1.125rem;
     font-weight: 750;
   }
 
-  .artifact-link > p:last-child {
+  .artifact-link__description {
     margin-top: 0.5rem;
     color: var(--ink-muted);
     line-height: 1.6;
+  }
+
+  /*
+    The metadata comes last and stays quiet. It used to be an uppercase,
+    letter-spaced header row above the title — "COPYABLE ARTIFACT" on the left
+    and a bordered "DRAFT" pill on the right — so a reader met the repository's
+    own filing vocabulary before the thing being offered, and the pill was the
+    most emphatic object in the block. Neither was something a reader could
+    act on. What replaced them is one muted line that says what to do with the
+    artifact and what is true of it, in words that carry their own meaning.
+  */
+  .artifact-link__meta {
+    margin-top: 0.75rem;
+    color: var(--ink-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
   }
 
   .next-step {

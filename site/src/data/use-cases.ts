@@ -128,7 +128,7 @@ const de: UseCasesContent = {
         "Aus drei veröffentlichten Angeboten die Bedingungen herausziehen und nebeneinanderlegen.",
       limit: "Was sie nicht gelesen hat, kann sie dir nicht zeigen.",
       path: {
-        label: "Was ein KI-Tool tut, wenn du es benutzt",
+        label: "Was ein KI-Tool tut, während du es benutzt",
         href: "/de/start/what-it-is-doing",
       },
     },

@@ -13,9 +13,55 @@
  * on all eight sections. A label that never varies stops telling a reader
  * anything and teaches them to skip the ones that do carry weight, so the page
  * now says it once, at the top, with the same scope it always had.
+ *
+ * SLICE 4 PAYLOAD — the mechanism sections, in order:
+ *
+ *   0  There is no wire out of the model
+ *   1  The product is not the model
+ *   2  Why it forgets
+ *   3  More documents do not mean better answers
+ *   4  Three ways a tool can know about your material, with its figure
+ *
+ * `/data-flows` is the canonical owner of what technically happens and what a
+ * system can reach — model, product, connector, target system (`.ai/decisions.md`,
+ * 2026-08-24). Sections 0 and 1 restate the `/data-flows` hub's own first two
+ * layers at greater length; 2, 3 and 4 are mechanism that no `/data-flows`
+ * page currently carries at all.
+ *
+ * Slice 3 did not move them, and deliberately did not rewrite them. Cutting
+ * them before there is somewhere for them to land would take the clearest
+ * mechanism prose on the site off it for the duration. What slice 3 did is
+ * stop `/start` promoting this page as a way of working, and point the reader
+ * at the owner — inline, and as the onward step. Slice 4 absorbs the five
+ * sections into `/data-flows`, and this page keeps sections 5 and 6, which are
+ * about how you work rather than about the mechanism.
+ *
+ * The URL does not move. Ownership decides which page maintains the
+ * explanation, not where it is served from.
  */
 import type { Article } from "../article";
 import type { SiteLocale } from "../../i18n/ui";
+
+export interface StartNextStep {
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, StartNextStep> = {
+  en: {
+    label: "What can it access, and what can it do?",
+    description:
+      "Four things worth separating once a system is connected: what it can read, what stays stored, what it can change, and what it can set off.",
+  },
+  de: {
+    label: "Worauf kann es zugreifen, und was kann es tun?",
+    description:
+      "Vier Dinge, die man trennen sollte, sobald ein System angebunden ist: was es lesen kann, was gespeichert bleibt, was es ändern kann und was es auslöst.",
+  },
+};
+
+export const getWhatItIsDoingNextStep = (locale: SiteLocale): StartNextStep =>
+  nextStep[locale];
 
 /**
  * Every section of this page makes the same kind of claim, so the assessment
@@ -51,7 +97,9 @@ const en: WhatItIsDoing = {
       paragraphs: [
         "The chat box is not the model. Neither is file upload, web search, memory, or the connector to your drive. Those are features of a product that orchestrates one or more models along with search, storage and tools.",
         "This matters when comparing things. \"Which model is better\" and \"which product is better\" are different questions, and for most practical work the second one is decided by the orchestration rather than by the model.",
+        "Which of those parts a particular setup has been given, and what it can therefore reach, is a separate question from how the thing works. That one is kept up to date under Access & actions rather than here.",
       ],
+      links: [{ label: "Where the access comes from", href: "/data-flows" }],
     },
     {
       heading: "Why it forgets",
@@ -110,8 +158,7 @@ const en: WhatItIsDoing = {
     {
       heading: "What this field is called",
       paragraphs: [
-        "If you want to read further, the umbrella term is AI-supported knowledge management: capturing, structuring, indexing, retrieving, synthesising, curating and using knowledge with the help of language models and agentic systems.",
-        "Underneath it sit the terms you will meet in product pages — document intelligence, enterprise search, retrieval, semantic search, knowledge bases, knowledge graphs, memory, agents, knowledge governance. They are layers of one architecture rather than alternatives to each other, which is the single most useful thing to know before comparing any two of them.",
+        "The umbrella term is AI-supported knowledge management, and underneath it sit the words you meet on product pages: retrieval, semantic search, knowledge bases, knowledge graphs, memory, agents. They are layers of one architecture rather than alternatives to each other, which is the most useful thing to know before comparing any two of them.",
       ],
       links: [{ label: "Glossary — the terms, defined once", href: "/glossary" }],
     },
@@ -140,7 +187,9 @@ const de: WhatItIsDoing = {
       paragraphs: [
         "Das Chatfenster ist nicht das Modell. Der Dateiupload ebenso wenig, und auch nicht Websuche, Memory oder die Anbindung an deinen Speicher. Das sind Funktionen eines Produkts, das ein oder mehrere Modelle zusammen mit Suche, Speicher und Tools orchestriert.",
         "Das zählt beim Vergleichen. „Welches Modell ist besser“ und „welches Produkt ist besser“ sind verschiedene Fragen — und für die meiste praktische Arbeit entscheidet die zweite sich an der Orchestrierung, nicht am Modell.",
+        "Welche dieser Teile ein konkreter Aufbau bekommen hat und was er dadurch erreicht, ist eine andere Frage als die, wie das Ganze funktioniert. Sie wird unter Zugriff & Aktionen gepflegt, nicht hier.",
       ],
+      links: [{ label: "Woher der Zugriff kommt", href: "/de/data-flows" }],
     },
     {
       heading: "Warum es vergisst",
@@ -199,8 +248,7 @@ const de: WhatItIsDoing = {
     {
       heading: "Wie dieses Feld heißt",
       paragraphs: [
-        "Zum Weiterlesen: Der Oberbegriff ist KI-gestütztes Wissensmanagement — Wissen erfassen, strukturieren, indizieren, wiederfinden, zusammenführen, kuratieren und nutzen, mithilfe von Sprachmodellen und agentischen Systemen.",
-        "Darunter liegen die Begriffe, die dir auf Produktseiten begegnen: Dokumentenverarbeitung, Unternehmenssuche, Retrieval, semantische Suche, Wissensbasen, Wissensgraphen, Memory, Agenten, Wissens-Governance. Sie sind Schichten einer Architektur und keine Alternativen zueinander — das ist das Nützlichste, was man weiß, bevor man zwei davon vergleicht.",
+        "Der Oberbegriff ist KI-gestütztes Wissensmanagement, und darunter liegen die Begriffe, die dir auf Produktseiten begegnen: Retrieval, semantische Suche, Wissensbasen, Wissensgraphen, Memory, Agenten. Sie sind Schichten einer Architektur und keine Alternativen zueinander — das ist das Nützlichste, was man weiß, bevor man zwei davon vergleicht.",
       ],
       links: [{ label: "Glossar — die Begriffe, einmal definiert", href: "/de/glossary" }],
     },

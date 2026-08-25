@@ -39,8 +39,14 @@ const toHref = (path: string) =>
       metadata={[{ label: content.reviewedLabel, value: REVIEWED, datetime: REVIEWED }]}
     />
 
+    {/*
+      No section eyebrow. "Possibility" and "Collaboration" were the product
+      brief's spine stages printed on a public page, and in German
+      "Möglichkeit" and "Zusammenarbeit" told a reader even less. Nothing takes
+      their place: the headings say what each section answers, which is what an
+      eyebrow was standing in for.
+    */}
     <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.possibilityLabel}</p>
       <h2>{content.possibilityHeading}</h2>
       <p class="prototype-section__lead">{content.possibilityLead}</p>
 
@@ -54,10 +60,6 @@ const toHref = (path: string) =>
                   <dt>{content.outcomeLabel}</dt>
                   <dd>{opportunity.outcome}</dd>
                 </div>
-                <div>
-                  <dt>{content.stageLabel}</dt>
-                  <dd>{opportunity.stage}</dd>
-                </div>
               </dl>
             </article>
           ))
@@ -66,7 +68,6 @@ const toHref = (path: string) =>
     </section>
 
     <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.stagesLabel}</p>
       <h2>{content.stagesHeading}</h2>
       <p class="prototype-section__lead">{content.stagesLead}</p>
 
@@ -99,6 +100,18 @@ const toHref = (path: string) =>
       </div>
 
       <EvidenceBand locale={locale} level="advice" summary={content.stagesEvidence} />
+    </section>
+
+    {/*
+      The page committed to the reader who stops early in one sentence at the
+      top and then gave them no structure at all. This block is where Explore
+      and Prototype finish, so the three tightening sections that follow read
+      as the case where the work does not stop rather than as what happens
+      next.
+    */}
+    <section class="prototype-section">
+      <h2>{content.stoppingHeading}</h2>
+      {content.stoppingParagraphs.map((paragraph) => <p class="prototype-section__lead">{paragraph}</p>)}
     </section>
 
     <section class="prototype-section">
@@ -135,11 +148,22 @@ const toHref = (path: string) =>
       external
     />
 
+    {/*
+      Two destinations, because the reader job genuinely forks here. Checking
+      what came back is the next job at every stage — an answer, a change or an
+      action — while granting an agent access is only the next job for someone
+      whose work is moving on. The single exit used to be the second of those,
+      which closed the page on the one reader it had promised not to abandon.
+    */}
     <NextStep
       locale={locale}
       primary={{
         label: content.nextTitle,
         description: content.nextDescription,
+        href: toHref(getLocalizedPath(locale, "secureSetupChecking")),
+      }}
+      secondary={{
+        label: content.nextSecondaryTitle,
         href: toHref(getLocalizedPath(locale, "secureSetupAccess")),
       }}
     />
