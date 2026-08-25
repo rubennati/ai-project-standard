@@ -6,6 +6,54 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Access & actions explains how a connection works, and where reach comes from
+
+- "What can it access, and what can it do?" now opens by explaining where an AI
+  tool's reach in another system comes from — the product around the model, the
+  connection someone set up, and the identity that connection uses in the target
+  system — before pointing at the pages that answer reading, storage, changes
+  and actions in detail.
+- Corrected a claim on that page. It said what a system can reach depends on the
+  account and the connection "not on which product you chose". Products built on
+  the same model do not offer the same things, and the page now says so. The
+  opposite overstatement, that access is really a statement about the target
+  account, is gone with it.
+- The connection is described as running under an identity the target system
+  recognises — which may be a signed-in person's access, an application's own
+  identity, or another credential — rather than assuming it is always a human
+  user's account.
+- "Connect AI to tools and data" answers how a connection is made before it
+  discusses boundaries: what provides the connection, how it gets an identity
+  the target system accepts, which operations it offers, and what happens when
+  one is used.
+- That page now carries one complete worked example, from wanting a weekly
+  summary of closed tickets through to what the result looks like — including
+  what the connection cannot do, and why. The example uses an OAuth sign-in and
+  says that this is how that particular connection works, not how all of them do.
+- It also says what becomes useful once something is connected, including
+  answering from several systems at once, before any of the control material.
+- Removed the section labels that named this project's internal model —
+  "Possibility", "Collaboration", "Reach", "Control" and "Reference" — from
+  Connect AI. No public page carries them now.
+- "What an AI tool is doing when you use it" became "Do you need a different
+  tool — or a better setup?", which is what the remaining page answers. Its
+  explanation of what a tool can reach, and of how material gets in front of a
+  model, moved to Access & actions, where it is maintained. The web address is
+  unchanged.
+- "Which of your systems can be a knowledge source" now also explains how much
+  fits into one request and the three routes by which a tool comes to know about
+  your material — putting it in the request, looking it up, and training it in.
+  Its own overlapping list of setup shapes is gone.
+- "Deleting chats and data" is about deletion again. Jurisdiction, the
+  sovereignty tiers and local models are answered on "Where your data is, and
+  who can reach it", which the page now links to instead of repeating.
+- "What changes when you allow model training" keeps its four distinct ideas and
+  drops what other pages own. The vendor figures it repeated are maintained on
+  "Are your chats used for model training?" under a later check date, and it
+  links there.
+- Four pages under Access & actions now offer a next step: training and
+  retention, knowledge sources, deletion, and the model-training consent page.
+
 ### Changed — Ways of working now reads as one path, from "may I?" to "what next?"
 
 - `/start` asks the two questions that come first — whether you may use AI at

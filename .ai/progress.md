@@ -200,3 +200,42 @@ instead of the reader benefit. Reset on 24 August, below.
   retirement question in `state.md` blocks only that route decision, not the
   rest of slice 4. Issue #145's remaining scope is now Connect AI only.
   No public site content, routes or `CHANGELOG.md` changed.
+
+## 2026-08-25 (3)
+
+- **Slice 4 implemented: `/data-flows` owns the mechanism, Connect AI answers
+  how.** The hub's two absolutes are gone — that reach depends on the account
+  and connection "not on which product you chose", and that an access claim is
+  "usually a statement about the fourth box". What replaces them is scoped:
+  where a product reaches into another system, what is possible is the overlap
+  of what the product supports, what the connection offers and what the identity
+  in the target system may do. The fourth position is an identity rather than a
+  person's account. The figure now precedes the routing cards, and the cards
+  became the reader's four questions instead of a third naming of a model.
+- Connect AI answers its own title: what provides a connection, how it gets an
+  identity, which operations it offers, what a use of one amounts to — then one
+  complete worked example, then the boundary. OAuth is the example's mechanism
+  and is said to be; nothing claims every call is logged or that a connection
+  runs as the human user. Its control loop, recovery question, verification
+  checklist and OWASP evidence were removed for slice 5, with keys, destinations
+  and the recovery commit in `tasks.md`. All five stage eyebrows gone; no public
+  page carries stage vocabulary now. `Stop condition` stays and is recorded as
+  not being that kind of defect.
+- `/start/what-it-is-doing` keeps its URL and becomes `Do you need a different
+  tool — or a better setup?` at 2.6 mobile screens, down from 7.1.
+  `where-knowledge-lives` received the request-size and three-routes material
+  and dropped its own overlapping list; `getting-it-back-out` is about deletion
+  again and links to `data-sovereignty` rather than repeating it, so that page
+  is untouched; `what-you-agree-to` keeps its route at four unique ideas and
+  loses the duplicate Anthropic fact, which `training-and-retention` owns under
+  a later check date. Four child pages gained a `NextStep`.
+- Measured at 375×812, English then German. Connect AI 15.4/16.6 → 12.6/13.6
+  screens, with boundary and control down from 47% of the page to 18%.
+  `what-it-is-doing` 7.1/7.7 → 2.6/2.9. `getting-it-back-out` 6.3/6.9 →
+  4.0/4.3. `what-you-agree-to` 5.2/6.0 → 4.1/4.8. The hub 4.0/4.3 → 4.8/5.0 and
+  `where-knowledge-lives` 5.8/6.0 → 7.9/8.3, both because they absorbed material
+  that used to live elsewhere; the family is shorter overall.
+- Header, footer, homepage, identity, the 379-file route set, the sitemap and
+  the redirects verified unchanged: 363 of 379 built pages byte-identical
+  against a `main` baseline, and the 16 that changed are the twelve Data Flows
+  pages, `what-it-is-doing` and `/use-cases` in both locales.

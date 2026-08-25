@@ -16,7 +16,26 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
 <div class="layout-wide">
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
   <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
-  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
+
+  <section class="prototype-section">
+    <h2>{content.layersHeading}</h2>
+    <p class="prototype-section__lead">{content.layersLead}</p>
+
+    <ConnectionBoundaryFigure
+      nodes={content.layers.map((layer) => ({
+        label: layer.label,
+        role: layer.role,
+        boundary: layer.boundary,
+      }))}
+      caption={content.layersCaption}
+    />
+
+    {
+      content.mechanismNotes.map((note) => (
+        <p class="mt-4 max-w-2xl leading-7">{note}</p>
+      ))
+    }
+  </section>
 
   <section class="prototype-section">
     <h2>{content.capabilitiesHeading}</h2>
@@ -38,23 +57,5 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
         ))
       }
     </div>
-  </section>
-
-  <section class="prototype-section">
-    <h2>{content.layersHeading}</h2>
-    <p class="prototype-section__lead">{content.layersLead}</p>
-
-    <ConnectionBoundaryFigure
-      nodes={content.layers.map((layer) => ({
-        label: layer.label,
-        role: layer.role,
-        boundary: layer.boundary,
-      }))}
-      caption={content.layersCaption}
-    />
-
-    <p class="mt-5">
-      <a href={toHref(content.layersPath.href)}>{content.layersPath.label}</a>
-    </p>
   </section>
 </div>

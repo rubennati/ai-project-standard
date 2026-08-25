@@ -58,7 +58,7 @@ const en: UseCasesContent = {
         "Pull the terms out of three published offers and lay the trade-offs side by side.",
       limit: "It cannot show you what it did not read.",
       path: {
-        label: "What the tool is doing when you use it",
+        label: "Do you need a different tool — or a better setup?",
         href: "/start/what-it-is-doing",
       },
     },
@@ -128,7 +128,7 @@ const de: UseCasesContent = {
         "Aus drei veröffentlichten Angeboten die Bedingungen herausziehen und nebeneinanderlegen.",
       limit: "Was sie nicht gelesen hat, kann sie dir nicht zeigen.",
       path: {
-        label: "Was ein KI-Tool tut, während du es benutzt",
+        label: "Brauchst du ein anderes Tool – oder ein besseres Setup?",
         href: "/de/start/what-it-is-doing",
       },
     },

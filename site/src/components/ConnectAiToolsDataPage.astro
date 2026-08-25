@@ -1,7 +1,5 @@
 ---
-import ConnectionBoundaryFigure from "./ConnectionBoundaryFigure.astro";
 import EvidenceBand from "./EvidenceBand.astro";
-import ImplementationStep from "./ImplementationStep.astro";
 import PageIntroduction from "./PageIntroduction.astro";
 import NextStep from "./NextStep.astro";
 import StopCondition from "./StopCondition.astro";
@@ -45,9 +43,8 @@ const toHref = (path: string) =>
     />
 
     <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.possibilityLabel}</p>
-      <h2>{content.possibilityHeading}</h2>
-      <p class="prototype-section__lead">{content.possibilityLead}</p>
+      <h2>{content.capabilityHeading}</h2>
+      <p class="prototype-section__lead">{content.capabilityLead}</p>
 
       <div class="outcome-grid">
         {
@@ -71,43 +68,21 @@ const toHref = (path: string) =>
     </section>
 
     <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.collaborationLabel}</p>
-      <h2>{content.collaborationHeading}</h2>
-      <p class="prototype-section__lead">{content.collaborationLead}</p>
-
-      <div class="collaboration-grid">
+      <h2>{content.howHeading}</h2>
+      <p class="prototype-section__lead">{content.howLead}</p>
+      <ol class="boundary-questions">
         {
-          content.collaborationForms.map((form) => (
-            <article class="collaboration-card">
-              <h3>{form.title}</h3>
-              <dl>
-                <div>
-                  <dt>{content.systemLabel}</dt>
-                  <dd>{form.system}</dd>
-                </div>
-                <div>
-                  <dt>{content.humanLabel}</dt>
-                  <dd>{form.human}</dd>
-                </div>
-                <div>
-                  <dt>{content.fitLabel}</dt>
-                  <dd>{form.fit}</dd>
-                </div>
-              </dl>
-            </article>
+          content.howSteps.map((step, index) => (
+            <li>
+              <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
+              <div>
+                <h3>{step.title}</h3>
+                <p class="boundary-questions__body">{step.body}</p>
+              </div>
+            </li>
           ))
         }
-      </div>
-    </section>
-
-    <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.reachLabel}</p>
-      <h2>{content.reachHeading}</h2>
-      <p class="prototype-section__lead">{content.reachLead}</p>
-      <ConnectionBoundaryFigure
-        nodes={content.connectionNodes}
-        caption={content.connectionCaption}
-      />
+      </ol>
       <EvidenceBand
         locale={locale}
         level="fact"
@@ -116,6 +91,42 @@ const toHref = (path: string) =>
         sourceLabel={content.architectureSource}
         sourceHref={sources.architecture}
       />
+    </section>
+
+    <section class="prototype-section">
+      <h2>{content.exampleHeading}</h2>
+      <p class="prototype-section__lead">{content.exampleLead}</p>
+      <ol class="boundary-questions">
+        {
+          content.exampleBeats.map((beat, index) => (
+            <li>
+              <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
+              <div>
+                <h3>{beat.title}</h3>
+                <p class="boundary-questions__body">{beat.body}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+      <p class="mt-6 max-w-2xl text-sm leading-6 text-zinc-700 dark:text-zinc-300">
+        {content.exampleNote}
+      </p>
+      <p class="mt-3 text-sm">
+        <a href={toHref(content.exampleLink.href)}>{content.exampleLink.label}</a>
+      </p>
+    </section>
+
+    <section class="prototype-section">
+      <h2>{content.decidesHeading}</h2>
+      {
+        content.decidesParagraphs.map((paragraph) => (
+          <p class="mt-4 max-w-2xl leading-7">{paragraph}</p>
+        ))
+      }
+      <p class="mt-4">
+        <a href={toHref(content.decidesLink.href)}>{content.decidesLink.label}</a>
+      </p>
     </section>
 
     <section class="prototype-section">
@@ -135,6 +146,7 @@ const toHref = (path: string) =>
           ))
         }
       </ol>
+      <p class="mt-6 max-w-2xl leading-7">{content.boundaryClose}</p>
       <EvidenceBand
         locale={locale}
         level="fact"
@@ -151,46 +163,8 @@ const toHref = (path: string) =>
       alternative={content.unsafeAlternative}
     />
 
-    <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.controlLabel}</p>
-      <h2>{content.controlHeading}</h2>
-      <p class="prototype-section__lead">{content.controlLead}</p>
-      <ol class="implementation-steps">
-        {
-          content.controlSteps.map((step, index) => (
-            <ImplementationStep
-              locale={locale}
-              step={index + 1}
-              title={step.title}
-              action={step.action}
-              expected={step.expected}
-              verification={step.verification}
-            />
-          ))
-        }
-      </ol>
-      <EvidenceBand
-        locale={locale}
-        level="fact"
-        checked={CHECKED}
-        summary={content.securityEvidence}
-        sourceLabel={content.securitySource}
-        sourceHref={sources.mcpSecurity}
-      />
-    </section>
-
-    <section class="prototype-section verification-panel">
-      <h2>{content.verificationHeading}</h2>
-      <p class="prototype-section__lead">{content.verificationLead}</p>
-      <ul class="verification-list">
-        {content.verificationChecks.map((check) => <li>{check}</li>)}
-      </ul>
-    </section>
-
-    <section class="prototype-section">
-      <p class="prototype-section__eyebrow">{content.referenceLabel}</p>
-      <h2>{content.referenceHeading}</h2>
-      <p class="prototype-section__lead">{content.referenceLead}</p>
+    <div class="prototype-section">
+      <p class="max-w-2xl leading-7">{content.glossaryLead}</p>
       <ul class="term-link-grid">
         {
           content.glossaryLinks.map((term) => (
@@ -207,7 +181,7 @@ const toHref = (path: string) =>
           ))
         }
       </ul>
-    </section>
+    </div>
 
     <NextStep
       locale={locale}

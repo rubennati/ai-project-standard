@@ -1,10 +1,16 @@
 ---
+import NextStep from "../../components/NextStep.astro";
+import { getLocalizedPath } from "../../i18n/routes";
 import Base from "../../layouts/Base.astro";
 import EvidenceLabel from "../../components/EvidenceLabel.astro";
-import { getWhatYouAgreeTo } from "../../data/data-flows/what-you-agree-to";
+import { getWhatYouAgreeTo, getWhatYouAgreeToNextStep } from "../../data/data-flows/what-you-agree-to";
 
 const locale = "en" as const;
 const article = getWhatYouAgreeTo(locale);
+const next = getWhatYouAgreeToNextStep(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
 ---
 
 <Base
@@ -50,5 +56,13 @@ const article = getWhatYouAgreeTo(locale);
         </section>
       ))
     }
+    <NextStep
+      locale={locale}
+      primary={{
+        label: next.label,
+        description: next.description,
+        href: toHref(getLocalizedPath(locale, "dataFlowsTraining")),
+      }}
+    />
   </article>
 </Base>

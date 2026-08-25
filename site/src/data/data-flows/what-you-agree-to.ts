@@ -1,14 +1,19 @@
 /**
- * What allowing training actually means.
+ * What allowing training means.
  *
  * The reframe this page is built on: the visible question is training, the
  * operative one is storage. Consent to training is, first and before
  * anything else, consent to keeping the material.
  *
- * The processing-path section is deliberately kept at assessment level. What
- * any networked system does with a request is well understood; what a
- * specific vendor's pipeline does internally is not something this site can
- * verify, so it is not claimed as fact.
+ * Slice 4 cut it back to that job. The Anthropic training-and-retention
+ * coupling left, because `training-and-retention` states the same claim from
+ * the same source under a later check date, and two dated badges for one fact
+ * is worse than one. The request-corridor section left too:
+ * `/blog/before-you-press-enter` owns that corridor and
+ * `getting-it-back-out` owns the copies that deletion has to reach.
+ *
+ * The route is kept for now and re-tested after slice 6, which may move the
+ * Art. 4(12) material and change the answer — see `.ai/state.md`.
  *
  * Checked 2026-08-03.
  */
@@ -18,13 +23,33 @@ import type { SiteLocale } from "../../i18n/ui";
 export const CHECKED = "2026-08-03";
 
 const GDPR_ART_4 = "https://gdpr-info.eu/art-4-gdpr/";
-const CLAUDE_TRAINING =
-  "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training";
+
+export interface DataFlowsNextStep {
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, DataFlowsNextStep> = {
+  en: {
+    label: "Are your chats used for model training?",
+    description:
+      "The published defaults per provider and per plan, with the date they were checked.",
+  },
+  de: {
+    label: "Werden deine Eingaben für das Modelltraining verwendet?",
+    description:
+      "Die veröffentlichten Voreinstellungen je Anbieter und Tarif — mit dem Datum, an dem sie geprüft wurden.",
+  },
+};
+
+export const getWhatYouAgreeToNextStep = (
+  locale: SiteLocale,
+): DataFlowsNextStep => nextStep[locale];
 
 const en: Article = {
   title: "What changes when you allow model training",
   description:
-    "At some providers the same setting governs both model training and how long conversations are kept. What that setting actually covers, and what it does not.",
+    "What you agree to when you allow model training: storage first, a batched process rather than a live one, and a word that often describes something else.",
   lead: "Allowing model training can also change how long your conversations are stored. It is worth knowing what the setting actually governs before you decide either way.",
   sections: [
     {
@@ -33,26 +58,9 @@ const en: Article = {
       paragraphs: [
         "Nothing can be used for a training run that was not stored first. So the question “may I train on your data” carries a prior question that is rarely stated: may I keep it, copy it somewhere else, and put it through a pipeline.",
         "That is the operative permission. Training is the stated purpose; storage is the immediate consequence, and it takes effect at once rather than eventually.",
+        "Whether a particular vendor couples the two — and what the retention becomes if it does — is a dated question, answered on the training and retention page rather than here.",
       ],
-    },
-    {
-      heading: "At Anthropic, the same setting also governs retention",
-      level: "fact",
-      checked: CHECKED,
-      paragraphs: [
-        "This is not only a way of looking at it. At Anthropic, allowing training on a consumer plan extends retention from 30 days to five years. The training switch is a retention switch, stated as such by the vendor.",
-        "So someone weighing whether they mind contributing to a model is, in the same click, deciding how long their conversations are kept. Those are different questions with different answers, and the interface offers one control for both.",
-      ],
-      links: [{ label: "Anthropic — is my data used for model training", href: CLAUDE_TRAINING }],
-    },
-    {
-      heading: "The route the material takes",
-      level: "assessment",
-      paragraphs: [
-        "Your text does not travel from your keyboard into a model. It travels over a network to a service, through whatever sits in front of that service, into memory on a machine that produces a response, and back. Along the way it may pass caches, queues and load balancers, and if something fails it may be written to an error log — which has its own retention and its own access rules.",
-        "None of this is specific to AI. It is what happens to any request in any distributed system, and it is worth spelling out precisely because the chat window makes it look like a conversation with one thing in one place.",
-        "What a given vendor does inside that path is not something this site can verify, so it is not claimed here. The point is structural: there are more copies, in more places, for longer, than the interface suggests.",
-      ],
+      links: [{ label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" }],
     },
     {
       heading: "Not a data breach, but a loss of control over the copy",
@@ -85,8 +93,7 @@ const en: Article = {
       heading: "What to take from it",
       level: "advice",
       paragraphs: [
-        "Read the training setting as a retention setting, because at least one vendor makes it exactly that.",
-        "Assume more copies exist than the interface shows, and let that decide what you send rather than what you hope.",
+        "Read the training setting as a retention setting, then look up what yours is set to before you decide either way.",
         "Do not describe an ordinary transfer as a breach. Describe it as the point where control ends, which is both accurate and harder to argue with.",
         "When a vendor says trained on our data, ask whether they mean fine-tuning or retrieval. The answer changes the assessment.",
       ],
@@ -98,7 +105,7 @@ const en: Article = {
 const de: Article = {
   title: "Was sich ändert, wenn du Modelltraining erlaubst",
   description:
-    "Bei manchen Anbietern regelt dieselbe Einstellung Modelltraining und Aufbewahrungsdauer. Was die Einstellung tatsächlich umfasst — und was nicht.",
+    "Was du erlaubst, wenn du Modelltraining zulässt: zuerst Speicherung, dann ein gebündelter statt eines laufenden Vorgangs — und ein Wort, das oft etwas anderes meint.",
   lead: "Modelltraining zu erlauben kann zugleich verändern, wie lange deine Unterhaltungen gespeichert bleiben. Bevor du dich in die eine oder andere Richtung entscheidest, lohnt es sich zu wissen, was die Einstellung tatsächlich regelt.",
   sections: [
     {
@@ -107,28 +114,9 @@ const de: Article = {
       paragraphs: [
         "Nichts kann in einen Trainingslauf gehen, das nicht vorher gespeichert wurde. Die Frage „darf ich mit deinen Daten trainieren“ trägt also eine vorgelagerte Frage in sich, die selten ausgesprochen wird: darf ich sie behalten, anderswohin kopieren und durch eine Verarbeitungskette schicken.",
         "Das ist die eigentliche Erlaubnis. Training ist der Zweck; die Speicherung ist das, was mit deinem Material tatsächlich geschieht — und zwar sofort, nicht irgendwann.",
+        "Ob ein bestimmter Anbieter beides koppelt und wie lange dann aufbewahrt wird, ist eine datierte Frage — beantwortet auf der Seite zu Training und Aufbewahrung, nicht hier.",
       ],
-    },
-    {
-      heading: "Bei Anthropic beeinflusst dieselbe Einstellung auch die Aufbewahrungsdauer",
-      level: "fact",
-      checked: CHECKED,
-      paragraphs: [
-        "Das ist nicht bloß eine Betrachtungsweise. Bei Anthropic verlängert sich die Aufbewahrung im Verbrauchertarif von 30 Tagen auf fünf Jahre, sobald man Training erlaubt. Der Trainingsschalter ist ein Aufbewahrungsschalter — so vom Anbieter beschrieben.",
-        "Wer also abwägt, ob ihn ein Beitrag zum Modell stört, entscheidet mit demselben Klick, wie lange seine Unterhaltungen aufbewahrt werden. Zwei verschiedene Fragen mit verschiedenen Antworten, und die Oberfläche bietet eine Bedienung für beide.",
-      ],
-      links: [
-        { label: "Anthropic — werden meine Daten zum Training verwendet", href: CLAUDE_TRAINING },
-      ],
-    },
-    {
-      heading: "Welchen Weg das Material nimmt",
-      level: "assessment",
-      paragraphs: [
-        "Dein Text wandert nicht von der Tastatur in ein Modell. Er wandert über ein Netz zu einem Dienst, durch alles, was diesem Dienst vorgelagert ist, in den Arbeitsspeicher einer Maschine, die eine Antwort erzeugt, und wieder zurück. Unterwegs kann er Caches, Warteschlangen und Lastverteiler passieren, und wenn etwas fehlschlägt, kann er in einem Fehlerprotokoll landen — mit eigener Aufbewahrungsfrist und eigenen Zugriffsregeln.",
-        "Nichts daran ist KI-spezifisch. So ergeht es jeder Anfrage in jedem verteilten System. Es gehört gerade deshalb ausgesprochen, weil das Chatfenster es wie ein Gespräch mit einem Ding an einem Ort aussehen lässt.",
-        "Was ein bestimmter Anbieter innerhalb dieses Wegs tut, kann diese Seite nicht überprüfen und behauptet es deshalb nicht. Der Punkt ist struktureller Natur: Es gibt mehr Kopien, an mehr Orten, für länger, als die Oberfläche nahelegt.",
-      ],
+      links: [{ label: "Werden deine Eingaben für das Modelltraining verwendet?", href: "/de/data-flows/training-and-retention" }],
     },
     {
       heading: "Kein Datenleck, aber ein Verlust der Kontrolle über die Kopie",
@@ -163,8 +151,7 @@ const de: Article = {
       heading: "Was du daraus ableiten kannst",
       level: "advice",
       paragraphs: [
-        "Lies die Trainingseinstellung als Aufbewahrungseinstellung — mindestens ein Anbieter macht sie ausdrücklich dazu.",
-        "Geh davon aus, dass es mehr Kopien gibt, als die Oberfläche zeigt, und lass das entscheiden, was du sendest, statt zu hoffen.",
+        "Lies die Trainingseinstellung als Aufbewahrungseinstellung — und schlag nach, wie sie bei deinem Anbieter aussieht, bevor du dich entscheidest.",
         "Nenn eine gewöhnliche Übermittlung kein Leck. Nenn sie den Punkt, an dem die Kontrolle endet — das ist zutreffend und schwerer zu bestreiten.",
         "Wenn ein Anbieter sagt, es sei mit ihren Daten trainiert: frag, ob Fine-Tuning oder Retrieval gemeint ist. Die Antwort ändert die Beurteilung.",
       ],
