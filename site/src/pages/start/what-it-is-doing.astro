@@ -2,10 +2,16 @@
 import Base from "../../layouts/Base.astro";
 import EvidenceBand from "../../components/EvidenceBand.astro";
 import ReachFigure from "../../components/ReachFigure.astro";
-import { getWhatItIsDoing } from "../../data/start/what-it-is-doing";
+import NextStep from "../../components/NextStep.astro";
+import { getWhatItIsDoing, getWhatItIsDoingNextStep } from "../../data/start/what-it-is-doing";
+import { getLocalizedPath } from "../../i18n/routes";
 
 const locale = "en" as const;
 const article = getWhatItIsDoing(locale);
+const next = getWhatItIsDoingNextStep(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
 ---
 
 <Base
@@ -54,5 +60,14 @@ const article = getWhatItIsDoing(locale);
         </section>
       ))
     }
+
+    <NextStep
+      locale={locale}
+      primary={{
+        label: next.label,
+        description: next.description,
+        href: toHref(getLocalizedPath(locale, "dataFlows")),
+      }}
+    />
   </article>
 </Base>

@@ -154,3 +154,30 @@ instead of the reader benefit. Reset on 24 August, below.
   no product-stage API; the shared `Next step / Control` and
   `Decision path` / `Entscheidungsweg` public strings are gone. Header,
   homepage, routes, sitemap and `security.txt` verified unchanged before merge.
+- **`/start` as one reader journey: slice 3 of seven implemented**, on
+  `feature/slice-3-start-journey` and awaiting review. The hub resolves the two
+  prerequisite role questions before asking anyone to choose, and
+  `Three questions this page does not answer` is gone rather than renamed. The
+  six ways of working are named for the situation a reader recognises — `Ask a
+  question` through `Let it run without you` — instead of the product brief's
+  Chat/Assistant/Agent table, and each card now says what it is good for. The
+  reach and verification fields left the cards for `/data-flows` and
+  `/secure-setup`, which own them. Employee turns from permission settled to
+  what AI can help with; Decision Maker starts with finding out what is already
+  in use and only then states the Art. 4 duty, and English gained the vendor
+  attribution and the precondition-not-permission caveat the German already
+  carried. Vibe Coding gained a block where Explore and Prototype finish, lost
+  its `Möglichkeit` / `Zusammenarbeit` eyebrows and its per-card stage tag, and
+  now forks its onward step. Four pages gained a `NextStep`.
+  `/start/what-it-is-doing` keeps its mechanism prose untouched and hands
+  ownership to `/data-flows` with a bridge, a next step and a comment naming
+  the five sections slice 4 absorbs.
+- The artifact block leads with the artifact — `decisions.md`, 2026-08-25.
+  `COPYABLE ARTIFACT` and the `DRAFT` pill no longer render; the status reaches
+  a reader as `not yet used on a real project`, from a semantic key that
+  `check-conformance.sh` holds against `blueprint.yml`. The check was proved in
+  both directions on a planted mismatch.
+- Header, footer, homepage `main`, `llms.txt`, the manifest, `security.txt`,
+  the 379-file route set and the sitemap verified byte-identical against a
+  `main` baseline build. Eleven rendered pages changed: the ten slice-3 routes
+  and `/de/use-cases`, for one link label.

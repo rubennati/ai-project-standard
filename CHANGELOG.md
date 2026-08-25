@@ -6,6 +6,51 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Ways of working now reads as one path, from "may I?" to "what next?"
+
+- `/start` asks the two questions that come first — whether you may use AI at
+  work, and where to begin if you are responsible for other people's use —
+  before asking you to choose how to work. Both used to sit at the very bottom
+  of the page under a heading announcing what the page does not answer.
+- The six ways of working are named for situations rather than categories:
+  asking a question, working on a draft together, letting it work in your
+  files, letting it work in another system, giving it a goal, letting it run
+  without you.
+- Each of them now says what it is good for. Previously every card described
+  only what you own, what the system can reach and what to check — three
+  questions that are answered properly under Access & actions and Secure &
+  verify, and that left no room for what the way of working is actually for.
+- "Can I use AI at work?" no longer ends on a checklist of things that could go
+  wrong. Once permission is settled it says what AI can help you get done —
+  drafting, structuring, reviewing, explaining and research you can check — and
+  points to the use cases.
+- "I am responsible for AI use by others" starts with a first action: find out
+  what is already being used. The AI Act training duty follows it instead of
+  opening the page.
+- Vibe coding treats exploring and prototyping as finished work. A new section
+  says what "done" looks like at those stages, and what follows is explicitly
+  for the case where the work carries on.
+- Four pages that used to end abruptly — the two role pages, vibe coding and
+  the page on what a tool is doing — now offer a next step.
+
+### Fixed — Clearer wording on the pages under Ways of working
+
+- The English page for decision-makers now attributes the claim about business
+  plans not training on your input to the vendors who publish it, as the German
+  already did, and says plainly that a business plan is a precondition rather
+  than a permission.
+- A copyable artifact now leads with what it is, followed by a quiet line
+  saying you may copy it and that it has not yet been used on a real project.
+  It previously opened with an internal filing label and a "DRAFT" badge that
+  did not tell a reader what to expect.
+- German fixes on the vibe coding page: "prototype" is not a German verb,
+  "vorbeikommen" means dropping by, and "Wartungszeit" is a maintenance window
+  rather than a maintenance life.
+- Removed section labels that named this project's internal model — "Possibility",
+  "Collaboration", and a per-card stage tag — from the vibe coding page.
+- "What an AI tool is doing when you use it" now points at Access & actions,
+  which is where the explanation of what a system can reach is maintained.
+
 ### Changed — A smaller footer, and a real next step at the end of a page
 
 - The footer now focuses on supporting destinations — terms and law,

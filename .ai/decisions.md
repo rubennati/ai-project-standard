@@ -696,3 +696,40 @@ it one would put two links on every page by default.
 Rejected: a parallel component; an `<h2>` for the label, which puts furniture in
 the document outline; a build rule requiring every page to carry one, which
 would be a check written before the content it checks.
+
+## 2026-08-25 - The artifact block leads with the artifact, and its status says what it means
+
+Decision: `ArtifactLink` renders the linked title first, then the description,
+then one muted metadata line. The repository's artifact classification is not
+public: `Copyable artifact` became `Copy this`, and `Zum Übernehmen` stayed as
+it was. A blueprint's status reaches the reader as what it means — `draft`
+renders as `not yet used on a real project` /
+`noch nicht in einem echten Projekt eingesetzt` — never as the bare word, and
+never as a bordered badge.
+
+The site stores the status as a semantic key and maps it to that sentence per
+locale. It does not read `blueprint.yml`. `check-conformance.sh` asserts the key
+still matches the manifest, so promoting a blueprint fails the build until the
+public sentence follows.
+
+Rationale: at 375 px a reader met `COPYABLE ARTIFACT` and a `DRAFT` pill before
+the thing being offered, and neither was something they could act on.
+"Copyable" is a property, not an instruction; "artifact" is how this repository
+files its own material. `DRAFT` was worse than useless — it is accurate, and it
+means the payload is complete and has never been run against a real project,
+which is a reliability claim. The English word says "unfinished text", and the
+page gave a reader no way to find out otherwise. Saying what it means costs one
+line and removes the guess.
+
+The status had a canonical owner in `blueprint.yml` and a hand-typed copy per
+locale on the site, with nothing holding them together — one place per fact,
+broken, and due to break visibly the moment either blueprint is promoted. A
+build-time read would have fixed it by making the public site depend on
+repository payload, which `docs/purpose.md` refuses: repository origin does not
+determine the website. CI is where the two can be held to agreement without the
+website acquiring the dependency.
+
+Rejected: removing the affordance entirely — the block's job is to mark
+material to copy rather than another article to read, and the title alone does
+not say that. Also rejected: keeping `DRAFT` and explaining it elsewhere, which
+adds a lookup to a badge that could simply say the thing.

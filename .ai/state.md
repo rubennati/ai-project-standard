@@ -5,10 +5,10 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 3 — `/start` as one reader journey.** Slice 2 shipped in #161.
-  The purpose is not to rewrite `/start` in place: a reader must be able to move
-  from a prerequisite role question, to choosing a useful way of working with
-  AI, into concrete work — without first understanding the project's
+- **Now: slice 3 — `/start` as one reader journey.** Implemented on
+  `feature/slice-3-start-journey`, awaiting review; not merged. A reader now
+  moves from a prerequisite role question, to choosing a useful way of working
+  with AI, into concrete work, without first meeting the project's
   collaboration model. Scope and the page-by-page job are in `tasks.md`.
 
 The review itself is finished. What it established durably is in
@@ -74,8 +74,10 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
 
 ## Open, and blocking
 
-Slice 2 is not blocked. These three block slices 4 and 6 only, and are not
-answerable from repository evidence.
+Three questions, none answerable from repository evidence. Each blocks the
+specific decision it names — not the slice that decision sits in. Slice 4's
+mechanism and Connect AI work may proceed after slice 3; only the route
+retirement waits.
 
 - **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
   automatic; what happens to the 21 published URLs does not follow from that.
@@ -85,9 +87,11 @@ answerable from repository evidence.
 - **`practical-ai-collaboration` promotion target (blocks the same slice).** It
   has a real public reader and is English-only at 1,985 words. Which route does
   it become, and does promotion require the German version before it ships?
-- **Retiring `/data-flows/what-you-agree-to` (blocks part of slice 4).** Folding
-  it into `training-and-retention` removes a published URL in both locales. Fold
-  and redirect, or keep the route and cut it to its one distinct idea?
+- **Retiring `/data-flows/what-you-agree-to`.** Folding it into
+  `training-and-retention` removes a published URL in both locales. Fold and
+  redirect, or keep the route and cut it to its one distinct idea? This blocks
+  that retirement and nothing else: the mechanism ownership, the Connect AI
+  rewrite and the single-owner reconciliation in slice 4 do not depend on it.
 
 ## Active constraints
 
