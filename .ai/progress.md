@@ -154,9 +154,9 @@ instead of the reader benefit. Reset on 24 August, below.
   no product-stage API; the shared `Next step / Control` and
   `Decision path` / `Entscheidungsweg` public strings are gone. Header,
   homepage, routes, sitemap and `security.txt` verified unchanged before merge.
-- **`/start` as one reader journey: slice 3 of seven implemented**, on
-  `feature/slice-3-start-journey` and awaiting review. The hub resolves the two
-  prerequisite role questions before asking anyone to choose, and
+- **`/start` as one reader journey: slice 3 of seven shipped** (PR #163). The
+  hub resolves the two prerequisite role questions before asking anyone to
+  choose, and
   `Three questions this page does not answer` is gone rather than renamed. The
   six ways of working are named for the situation a reader recognises — `Ask a
   question` through `Let it run without you` — instead of the product brief's
@@ -181,3 +181,22 @@ instead of the reader benefit. Reset on 24 August, below.
   the 379-file route set and the sitemap verified byte-identical against a
   `main` baseline build. Eleven rendered pages changed: the ten slice-3 routes
   and `/de/use-cases`, for one link label.
+
+## 2026-08-25 (2)
+
+- **Slice 3 closed out, slice 4 opened.** `state.md` and `tasks.md` moved the
+  objective to slice 4 — `/data-flows` and Connect AI — and record `/start` as
+  one reader journey as settled, same standing as the header, the four
+  journeys and the slice 1–2 outcomes. `tasks.md` item 4 now carries the
+  concrete slice 4 scope: correct the Data Flows hub's overstatement that
+  reach depends on the account and connection "not on which product you
+  chose"; reconcile `/start/what-it-is-doing` sections 0–4 into `/data-flows`
+  by concept rather than by copy, preserving the strongest prose; cut
+  `connect-ai-to-tools-and-data`'s density and give it a concrete worked
+  example; remove its still-live page-specific eyebrows
+  (`Possibility`/`Collaboration`/`Reach`/`Control`/`Reference`); reconcile
+  training, consent, deletion and sovereignty to single owners, using
+  `training-and-retention` as the quality reference. The `what-you-agree-to`
+  retirement question in `state.md` blocks only that route decision, not the
+  rest of slice 4. Issue #145's remaining scope is now Connect AI only.
+  No public site content, routes or `CHANGELOG.md` changed.

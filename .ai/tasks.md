@@ -58,8 +58,8 @@ implementation, not merely before merge.
 |---|---|---|---|---|
 | 1 | Product identity and acute contradictions | — | yes | **done** (#158) |
 | 2 | Global shell: footer and page-level onward path | 1 | yes | **done** (#161) |
-| 3 | `/start` as one reader journey | 2 | no | **in review** |
-| 4 | `/data-flows` and Connect AI | 3 | partly | next |
+| 3 | `/start` as one reader journey | 2 | no | **done** (#163) |
+| 4 | `/data-flows` and Connect AI | 3 | partly | **next** |
 | 5 | `/secure-setup` and verification | 4 | no | not started |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
@@ -86,57 +86,70 @@ implementation, not merely before merge.
    inbound path. Both decisions are in `decisions.md` (2026-08-24). Header,
    homepage, routes, sitemap and `security.txt` verified unchanged before
    merge. Slices 3–6 still populate each family's actual destinations.
-3. **`/start` as one reader journey.** Not a rewrite of `/start` in place: a
-   reader moves from a prerequisite role question, to choosing a useful way of
-   working with AI, into concrete work — without first understanding the
-   project's collaboration model. The hub, the employee and decision-maker
-   pages and Vibe Coding, inspected together; the mechanism page only far
-   enough to hand its ownership to `/data-flows`. URLs unchanged unless a
-   separately approved decision changes them.
-   *Hub.* Prerequisite role questions resolve before the choice of working
-   form; the six ways become situations a reader recognises, named for what
-   they're useful for rather than the internal product model; the page spends
-   less space on ownership/access/checking before saying what each form does;
-   the mobile intro shortens; `Three questions this page does not answer` /
-   its German equivalent does not survive as how the page handles its own
-   limits; the page helps a reader choose rather than teaches the taxonomy.
-   *Employee.* Keeps its H1 — `Can I use AI at work?` / `Darf ich KI im Job
-   verwenden?` — and its strength at resolving permission. Makes the turn from
-   permission settled to what a reader can actually do and how to work with
-   AI; does not become a second compliance page.
-   *Decision maker.* Reframed as "I am responsible for AI use by others —
-   where do I start?", not one of the six ways of working. Keeps its legal
-   facts but gives a usable starting point, not only a compliance backlog.
-   *Vibe Coding.* High priority. Keeps its real usefulness and the balanced
-   `What the AI does` material. Fixes the shape where it promises an
-   Explore/Prototype reader and then increasingly serves only a
-   production/control reader — capability and usefulness must not disappear
-   under the later risk material. Its page-specific stage eyebrows
-   (`Möglichkeit` / `Zusammenarbeit`) are this slice's to remove; the page
-   should not expose the internal stage model merely because it is
-   internally structured by it.
-   *`ArtifactLink` on Vibe Coding — explicit, not deferred to slice 7.* At
-   375 px the `COPYABLE ARTIFACT` / `Zum Übernehmen` header and the `DRAFT`
-   badge visually outrank the linked title itself. Not a product-stage leak,
-   not covered by #145 — the general problem of internal artifact/status
-   furniture consuming reader attention. Slice 2 deliberately left
-   `ArtifactLink` untouched. Decide from the reader's job, not a pre-decided
-   outcome: whether the artifact-type label renders at all; whether `DRAFT`
-   carries real reader value and if so how prominently; whether the linked
-   title becomes the primary visual object.
-4. **`/data-flows` and Connect AI.** One ownership problem. Stop teaching the
-   four-axis model as the hub's public language; make `connect-ai-to-tools-and-data`
-   answer *how*, cut its density, add a concrete end-to-end example, and move its
-   control-loop and verification material to slice 5. `/data-flows` becomes
-   canonical for the model → product → connector → target explanation. Reconcile
-   training, consent, deletion and sovereignty to single owners. Keep
-   `training-and-retention` substantially intact.
+3. ~~**`/start` as one reader journey.**~~ **Shipped in #163.** `/start` moves
+   from a prerequisite role question to a useful way of working to concrete
+   work. Employee and Decision Maker resolve before the choice, not as two of
+   the six working forms; the six are named for situations a reader recognises
+   — `Ask a question` through `Let it run without you` — not the internal
+   Chat/Assistant/Agent taxonomy, and each carries `Good for`. The generic
+   access and verification fields left the cards for `/data-flows` and
+   `/secure-setup`, which own them; `Three questions this page does not
+   answer` is gone. Employee turns from permission settled to what AI can help
+   with; Decision Maker opens with finding out what is already in use, then
+   the Art. 4 duty. Vibe Coding treats Explore and Prototype as complete
+   outcomes, lost its `Möglichkeit` / `Zusammenarbeit` eyebrows and per-card
+   stage tag, and `ArtifactLink` leads with the artifact — `COPYABLE ARTIFACT`
+   and the `DRAFT` pill no longer render; blueprint status reaches the reader
+   as what it means, held to the canonical manifest by a CI assertion. Both
+   decisions are in `decisions.md` (2026-08-25). URLs, header, footer,
+   homepage and sitemap verified unchanged before merge.
+   *Handed to slice 4, not yet done.* `/start/what-it-is-doing` keeps its
+   mechanism prose — sections 0–4 and the reach figure — untouched, stops
+   being promoted from `/start`, and points at `/data-flows` with a bridge and
+   a `NextStep`. The five sections are named in that module's comment as the
+   slice 4 payload.
+4. **`/data-flows` and Connect AI.** One ownership problem, finished in two
+   parts: the hub's own teaching, and what slice 3 handed over.
+   *Data Flows hub.* Stop teaching the four-layer model as the page's public
+   language — it should explain the mechanism, not become a second taxonomy a
+   reader has to learn. The useful distinction (model → product → connector →
+   target system) stays; it becomes canonical here for
+   `what-it-is-doing`'s reconciled material. Fix the current overstatement that
+   what a system can reach depends on the account and the connection "not on
+   which product you chose" (`reach-model.ts`) — product capabilities do
+   matter, and the layered distinction has to hold without erasing that.
+   *Mechanism reconciliation from `/start/what-it-is-doing`.* Sections 0–4 and
+   the reach figure are the payload, marked in that file's own comment. Choose
+   one canonical home per concept rather than copying whole sections onto
+   `/data-flows` beside what it already says — the hub's own opening and the
+   handed-over prose cover some of the same ground with different nouns, which
+   is exactly the duplication ownership is meant to remove. Preserve the
+   strongest explanations; do not rewrite prose that already earns its place.
+   After the move, `/start/what-it-is-doing` keeps only the Start-owned
+   working-shape material (sections 5–6) and an honest bridge. URL unchanged
+   unless a separately approved route decision requires it.
+   *`connect-ai-to-tools-and-data` — high priority.* 15.4 mobile screens
+   English, 16.7 German. Answers boundary and governance better than the
+   reader's actual *how do I connect this?* question; no concrete end-to-end
+   worked example. Cut the density and add one. Its page-specific stage
+   eyebrows are still live and are this slice's to remove: `Possibility` /
+   `Möglichkeit`, `Collaboration` / `Zusammenarbeit`, `Reach` / `Reichweite`,
+   `Control` / `Kontrolle`, `Reference` / `Nachschlagen` — the last of which
+   issue #145's own text omits. The shared `NextStep`/`ProductStage` leak is
+   already fixed (slice 2); what remains here is page-specific public copy,
+   and issue #145 is not fully resolved until it is. Move the control-loop and
+   verification material this page currently carries to slice 5.
+   *Single owners.* Reconcile training, consent, deletion and sovereignty
+   across `training-and-retention`, `where-knowledge-lives`,
+   `what-you-agree-to`, `getting-it-back-out` and `data-sovereignty` to one
+   owner each — the mapping is in the audit's duplication table.
+   `/data-flows/training-and-retention` was found strong by the audit; use it
+   as the quality reference and do not rewrite it for consistency.
    *Not blocked as a whole.* The open question in `state.md` is retiring
    `what-you-agree-to`, which removes a published URL; it blocks that route
-   decision only. The mechanism ownership, the Connect AI rewrite and the
-   single-owner reconciliation proceed after slice 3. Slice 3 handed over the
-   five mechanism sections on `/start/what-it-is-doing` without moving or
-   rewriting them — they are named in that module's comment.
+   decision only. The mechanism ownership, the Connect AI rewrite, the
+   Data Flows hub correction and the single-owner reconciliation do not depend
+   on it and are not solved by it.
 5. **`/secure-setup` and verification.** A reader-recognisable object and
    opening; the sequence stays, the phase nouns stop being the public spine
    where they read as project vocabulary; `Monitor` and `Take it back` get real
@@ -158,14 +171,16 @@ implementation, not merely before merge.
    Negation-heavy headings, count language, meta copy, capability/limitation
    balance, the German defects the review named, `du`/`man` consistency, and a
    terminology mapping by meaning before any CI rule is added. Issue #145 is
-   partly done: slice 2 removed the shared-primitive half — `Next step /
+   not fully resolved: slice 2 removed the shared-primitive half — `Next step /
    Control`, `Decision path` / `Entscheidungsweg`, and the `ProductStage` copy
-   table behind them. What remains is page copy: the section eyebrows on Vibe
-   Coding (slice 3) and Connect AI (slice 4), including
-   `Reference` / `Nachschlagen`, which the issue text omits. Its text also
-   records one string wrongly — the rendered label was `Next step / Control`,
-   not `Collaboration`. `Copyable artifact` / `Zum Übernehmen` is not a stage
-   leak and is queued in slice 3 above.
+   table behind them — and slice 3 removed Vibe Coding's page-specific
+   `Möglichkeit` / `Zusammenarbeit` eyebrows. What remains is Connect AI's
+   page-specific eyebrows (slice 4) — `Possibility`, `Collaboration`, `Reach`,
+   `Control`, `Reference`, including `Reference` / `Nachschlagen`, which the
+   issue text omits. Its text also records one string wrongly — the rendered
+   label was `Next step / Control`, not `Collaboration`. `Copyable artifact` /
+   `Zum Übernehmen` was never a stage leak and was resolved separately in
+   slice 3 (`decisions.md`, 2026-08-25).
 
 **Not rewritten for uniformity** — the review found these strong, and a slice
 that touches them changes only what its own goal requires: the homepage;
