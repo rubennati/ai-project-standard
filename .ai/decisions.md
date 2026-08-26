@@ -810,3 +810,96 @@ Rejected: keeping a second connection figure here. An anatomy and a procedure
 are different objects, but publishing both put two four-box models with
 different nouns one link apart, which is the duplication the ownership decision
 exists to remove.
+
+## 2026-08-26 - Four questions are ordered, and two concerns are not steps
+
+Decision: `/secure-setup` keeps all six of its concepts and stops publishing
+them as a six-step lifecycle. Four are genuinely ordered and stay numbered —
+what is permitted, how a boundary holds, what to check, what to keep. Watching
+something that runs unattended, and getting an access back, are continuing
+concerns and sit in a second, unnumbered block. `Decide / Configure / Verify /
+Record / Monitor / Take it back` is not a public taxonomy in either language.
+
+Both former dead ends now route to pages that already own the parts, and no new
+route was created. Monitoring decomposes into standing access that outlived its
+reason (`before-you-grant-access`), output quality when work repeats
+(`checking-the-result`), product defaults as context, and incident detection,
+which the site states it does not cover. Getting out decomposes into stopping
+future access (`before-you-grant-access`), reconstructing what happened
+(`keeping-a-record`), and reversing an action, which belongs to the target
+system and is promised nowhere.
+
+The grammar is the one `/data-flows` shipped on 2026-08-25: reader questions as
+block names, each destination carrying the child's own title. Where one page
+answers two sub-jobs, the sub-job is named beside the link rather than by giving
+the page a second name.
+
+Rationale: the hub claimed an order that two of its entries did not have, and
+its own step six said the way back is worth having tried *before you need it* —
+which places it at the moment of granting, not sixth in a sequence. Two of six
+entries rendered with no link, and the page then spent 130 of 358 words arguing
+that not all six applied: structure that lied, followed by prose apologising for
+it. Naming what is ordered and what is continuing removes both.
+
+Rejected: keeping six numbered steps and only fixing the destinations, which
+preserves the false ordinal claim. Also rejected: dropping the numbers from all
+six, which discards a true thing — you settle what is permitted before you build
+a boundary, and check a result before you can record what was checked. Also
+rejected: an operating or monitoring route. Two hubs now point at the same
+absence — `/start`'s sixth way of working and this one — which is evidence for a
+later content-scope decision and not a reason to invent a destination.
+
+## 2026-08-26 - A boundary is enforced outside the model
+
+Decision: `before-you-grant-access` owns the distinction between an instruction
+and a boundary, and states it without a target-system monopoly. If the only
+thing stopping an action is text the model read, it is guidance. A boundary
+refuses the same operation whether or not the model chose to comply, and it can
+sit in the connection that decides which operations exist, in a credential
+scoped narrowly, in an allow-list, in the permissions the target system applies
+to the identity it sees, or in an approval required before the call goes out.
+The conceptual claim is only that it is enforced outside the model.
+
+The page also gains the three concepts Connect AI handed over — whose rights it
+acts with, what an approval has to show before it runs, and taking an access
+back — and each recovered verification sits next to the claim it proves rather
+than in a checklist block. Approval is stated without absolutes: a bare
+"continue?" is not enough, and a summary in the assistant's own words alone is
+not enough, because the concrete action may or may not already be on screen.
+Revocation is stated conditionally: an index, cache or export made while the
+access existed *may* still hold the material afterwards.
+
+Rationale: the page's central idea was section seven of eight, four screens down
+on mobile, with the actions that follow from it in section eight. The 2026-08-25
+intersection decision established that reach is assembled from several layers;
+an enforcement rule naming only the target system would have replaced that with
+a new monopoly one slice later.
+
+Rejected: carrying the OWASP MCP Security Cheat Sheet across with the recovered
+material. Its public job — least privilege per tool, scoped credentials, visible
+approval, logging — is already covered by the Agentic Skills evidence this page
+carries, and nothing that landed is a new external factual claim. A second
+source band would have been evidence furniture over advice.
+
+## 2026-08-26 - Consequence is one axis and reliance is another
+
+Decision: `checking-the-result` owns the consequence-to-control model and states
+it once. How far a result went — text you can throw away, a change you can still
+reject, something that already happened — and who is carrying it are two axes
+that combine, not one ladder said twice. The hub states the principle in a
+sentence and builds no second ladder.
+
+Reading is a useful check only where you understand enough to notice the errors
+that matter; otherwise the check is an authoritative source, someone with the
+relevant expertise, or a test that examines the property directly. Code you
+could not have written can still be checked by running it.
+
+Rationale: the page carried both axes already — one in the lead, one in the
+first heading — in different vocabulary, 500 px apart, without saying they
+compose. The old competence rule tied verification to whether the reader could
+have produced the work, which implied AI is only useful inside existing
+expertise and ruled out the two checks that actually close that gap.
+
+Rejected: moving the model to the hub. The page that turns a principle into
+something to do is where the principle belongs, and the hub would have inherited
+a framework in place of a route.

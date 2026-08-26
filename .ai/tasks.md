@@ -61,7 +61,7 @@ implementation, not merely before merge.
 | 3 | `/start` as one reader journey | 2 | no | **done** (#163) |
 | 4 | `/data-flows` and Connect AI | 3 | partly | **done** (#165) |
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
-| 5 | `/secure-setup` and verification | 4 | no | **next** |
+| 5 | `/secure-setup` and verification | 4 | no | **in review** |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
@@ -161,12 +161,27 @@ implementation, not merely before merge.
    carried forward as an active objective, and not reopened for preference or
    further polishing.
 
-5. **`/secure-setup` and verification.** A reader-recognisable object and
-   opening; the sequence stays, the phase nouns stop being the public spine
-   where they read as project vocabulary; `Monitor` and `Take it back` get real
-   coverage; absorb what slice 4 handed over, per the table above;
-   `before-you-grant-access` serves the broader job it already holds.
-   `checking-the-result` and `keeping-a-record` keep their content.
+5. **`/secure-setup` and verification.** Implemented on
+   `feature/slice-5-secure-setup`, awaiting human review — not committed, not
+   merged. The hub opens on `How do you set limits that hold — and check what
+   happened?` and carries four ordered reader questions plus two continuing
+   concerns under `Once it is set up`; the six phase nouns are gone as a public
+   spine. `Monitor` and `Take it back` were dead labels and now route to pages
+   that own their parts — no new route was created. `before-you-grant-access`
+   gained the first onward link it has ever had and three sections from the
+   slice 4 handoff (whose rights it acts with, what an approval has to show,
+   taking the access back); its enforcement rule moved from four screens down to
+   the first. A rendered-review pass then cut a newly added subtitle, the
+   account-switch section and a closing recap that had grown the page to 9+
+   mobile screens without adding a reader-facing concept — the switches are
+   `/data-flows`' facts and their universal-reader discovery is unsettled, so
+   they were removed rather than relocated; see the queued finding in
+   `state.md`. `checking-the-result` merged its two overlapping consequence
+   ladders, had three absolutes corrected, and gained a section on work that
+   repeats; `keeping-a-record` changed by two clauses and keeps its four items.
+   Three decisions are in `decisions.md` (2026-08-26). Eight built pages changed
+   and 371 are byte-identical; routes, sitemap, header, footer and homepage
+   unchanged.
 6. **Law, About, Evidence, Reference and discovery.** Law hub reader job;
    `what-may-go-in` ownership; `four-separate-questions` framing and its
    duplicated legal facts; one owner for AI Act Art. 4; About versus Evidence

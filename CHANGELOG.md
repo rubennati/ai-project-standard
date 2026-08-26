@@ -6,6 +6,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — Secure & verify stops being a six-step lifecycle
+
+- "How do you set limits that hold — and check what happened?" replaces a hub
+  that opened on "this" with nothing to point at, and named two of its own six
+  steps in the heading.
+- The page said six steps happened in order, and two of them did not. Watching
+  something that runs without you, and being able to take an access back, are
+  not the fifth and sixth things you do — the way back is something you arrange
+  while granting access. Four questions are genuinely ordered and are numbered;
+  the other two now sit under "Once it is set up".
+- Both of those used to be labels with no destination. They now route to pages
+  that answer them, and the link says which part of the question each one
+  answers.
+- The hub says up front that how much of it a task needs follows from the
+  consequence of a mistake, and no longer spends a third of the page arguing
+  that not all six steps apply.
+- "Before you give an AI agent access" had no onward link at all. It now ends
+  on checking the result.
+- The rule that page exists for — a boundary has to be enforced outside the
+  model, not written into a prompt — moved from three-quarters of the way down
+  to the top, and now says where such a boundary can live: the connection, a
+  narrow credential, the operations that are exposed at all, the target system's
+  permissions, or a required approval. It comes with two things to try.
+- New on that page: whose rights an agent acts with and how narrow they can be;
+  what an approval has to put in front of you before it runs; and how to take an
+  access back, including what withdrawing it does not do.
+- Its three account switches — training, memory and history — are gone from
+  this page. They restated three other pages in one sentence each without
+  linking to them, which was the problem; removing them rather than fixing the
+  links keeps the page to what it actually decides. The facts stay exactly
+  where they already were, on the pages that keep them current.
+- "Checking the result" stated how much checking a result deserves twice, in two
+  vocabularies. It now says it once: how far the result went, and who is
+  carrying it, decide together.
+- Three claims on that page were too absolute. The system an action happened in
+  is where you look at the resulting state, but whether it also recorded the
+  call depends on the system. Reading is a useful check where you understand
+  enough to notice the errors that matter — otherwise a source, a competent
+  reviewer or a test does the job your own reading cannot. And these systems
+  *can* produce more change than was asked for.
+- New on that page: what to check when the same work runs again and again, and
+  what to do about the run that produces something plausible and carries on.
+- "Keeping a record" is unchanged apart from two clauses: what was checked now
+  includes where a load-bearing figure came from, and a log may identify the
+  account, service identity or credential used without holding the secret
+  itself — a token value, an API key, a password.
+- German: "Entzug" and "Rückweg" where the concepts arose, rather than the
+  English terms. No "Kontrollkreis", and no "Regelkreis" introduced in its place.
+
 ### Changed — A homepage that says what AI can do at work
 
 - The homepage now leads with what AI can do and how to work with it, instead of
