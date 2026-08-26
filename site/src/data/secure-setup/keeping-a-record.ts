@@ -55,7 +55,7 @@ const en: Article = {
         "What was decided, and what was rejected. The alternative not taken is what makes a decision legible later; without it a record reads as the only thing anyone considered.",
         "Who decided. A person, not a tool. “The assistant suggested it” is not an owner, and the question that arrives later is always about a person.",
         "What the system could reach at the time. Access changes, and a record written now is the only thing that says what was true then.",
-        "What was checked, and by whom. Including the honest version: which parts nobody checked.",
+        "What was checked, and by whom — including where a load-bearing figure or claim came from, and the honest version: which parts nobody checked.",
       ],
     },
     {
@@ -72,6 +72,7 @@ const en: Article = {
       paragraphs: [
         "Where a system acted on another system, that system's log is the strongest evidence you have of what happened, and it is worth knowing it exists before you need it.",
         "It answers a narrower question than people expect. It shows that a call was made, by which account, and what it changed. It does not show that anyone was permitted to make it, that a human approved it, or that the result was correct. Those are your record, not the log's.",
+        "A log may need to identify the account, service identity, or credential identifier used, but it should not contain the secret itself — such as a token value, API key, or password. Where you are setting one up yourself, that distinction is worth deciding before it starts writing rather than afterwards.",
       ],
       links: [
         {
@@ -137,7 +138,7 @@ const de: Article = {
         "Was entschieden wurde und was verworfen. Erst die verworfene Möglichkeit macht eine Entscheidung später nachvollziehbar; ohne sie liest sich die Notiz, als hätte nie jemand etwas anderes erwogen.",
         "Wer entschieden hat. Eine Person, kein Tool. „Der Assistent hat das vorgeschlagen“ benennt niemanden, und die spätere Frage zielt immer auf einen Menschen.",
         "Worauf das System damals zugreifen konnte. Zugriffe ändern sich, und eine Notiz von heute ist das Einzige, was später sagt, was damals galt.",
-        "Was geprüft wurde und von wem. Einschließlich der ehrlichen Fassung: welche Teile niemand geprüft hat.",
+        "Was geprüft wurde und von wem — einschließlich der Quelle hinter einer tragenden Zahl oder Aussage und der ehrlichen Fassung: welche Teile niemand geprüft hat.",
       ],
     },
     {
@@ -154,6 +155,7 @@ const de: Article = {
       paragraphs: [
         "Wo ein System in einem anderen System gehandelt hat, ist dessen Protokoll der stärkste Beleg dafür, was passiert ist — und es lohnt sich zu wissen, dass es existiert, bevor du es brauchst.",
         "Es beantwortet eine engere Frage, als man erwartet. Es zeigt, dass ein Aufruf stattfand, unter welchem Konto und was er geändert hat. Es zeigt nicht, dass jemand ihn machen durfte, dass ein Mensch zugestimmt hat oder dass das Ergebnis stimmte. Dafür ist deine Aufzeichnung da, nicht das Protokoll.",
+        "Ein Protokoll kann festhalten, welches Konto, welche Dienstidentität oder welche Kennung eines Zugangsmittels verwendet wurde. Das Geheimnis selbst — etwa ein Token-Wert, API-Key oder Passwort — gehört nicht hinein. Wo du selbst eines einrichtest, entscheidest du diese Unterscheidung besser, bevor es zu schreiben beginnt, und nicht danach.",
       ],
       links: [
         {

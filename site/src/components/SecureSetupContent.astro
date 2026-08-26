@@ -15,32 +15,56 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
 <div class="layout-wide">
   <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{content.heading}</h1>
   <p class="mt-4 max-w-2xl text-lg leading-8">{content.intro}</p>
-  <p class="mt-4 max-w-2xl leading-7 text-zinc-700 dark:text-zinc-300">{content.note}</p>
 
   <section class="prototype-section">
-    <h2>{content.stagesHeading}</h2>
+    <h2>{content.questionsHeading}</h2>
 
     <ol class="boundary-questions">
       {
-        content.stages.map((stage, index) => (
+        content.questions.map((question, index) => (
           <li>
             <p class="boundary-questions__number" aria-hidden="true">{index + 1}</p>
             <div>
-              <h3>{stage.name}</h3>
-              <p class="boundary-questions__reason">{stage.meaning}</p>
-              {stage.paths && (
-                <ul class="lifecycle-stage__paths">
-                  {stage.paths.map((path) => (
-                    <li>
-                      <a href={toHref(path.href)}>{path.label}</a>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              <h3>{question.name}</h3>
+              <p class="boundary-questions__reason">{question.meaning}</p>
+              <ul class="lifecycle-stage__paths">
+                {question.paths.map((path) => (
+                  <li>
+                    <a href={toHref(path.href)}>{path.label}</a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </li>
         ))
       }
     </ol>
+  </section>
+
+  <section class="prototype-section">
+    <h2>{content.concernsHeading}</h2>
+
+    <div class="outcome-grid">
+      {
+        content.concerns.map((concern) => (
+          <article class="outcome-card">
+            <h3>{concern.name}</h3>
+            {concern.body.map((paragraph) => (
+              <p class="capability-card__body">{paragraph}</p>
+            ))}
+            <ul class="capability-card__paths">
+              {concern.paths.map((path) => (
+                <li>
+                  <a href={toHref(path.href)}>{path.label}</a>
+                  <span class="mt-0.5 block text-sm text-zinc-600 dark:text-zinc-400">
+                    {path.job}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
   </section>
 </div>

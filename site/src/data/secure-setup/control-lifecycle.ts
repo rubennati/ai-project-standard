@@ -1,34 +1,45 @@
 /**
- * The control lifecycle: decide, configure, verify, record, monitor, take back.
+ * Secure Setup: four ordered questions, and two things that do not finish.
  *
- * The hub used to list one article about day-one settings, which is step two of
- * six and the only one most people ever perform. The steps after the work —
- * checking the result, being able to explain the decision later, taking an
- * access back — are where the effort goes missing, and the hub now names them.
+ * This replaced a six-step lifecycle — decide, configure, verify, record,
+ * monitor, take it back — published verbatim from this module's own header
+ * comment. Four of those are genuinely ordered: you settle what is permitted
+ * before you build a boundary, and you check a result before you can record
+ * what was checked. The last two are not steps five and six. The old step six
+ * said the way back is "worth having tried once before you need them", which
+ * is a thing you provision while granting access, not the sixth thing you do;
+ * and monitoring only exists for work that runs unattended. Both rendered as
+ * dead ends, and the page then spent 130 of its 358 words arguing that not all
+ * six applied — structure that claimed an order it did not have, followed by
+ * prose apologising for it.
  *
- * Order matters here, unlike the six ways of working: you decide before you
- * configure and you verify before you can record. So this is deliberately a
- * numbered sequence rather than a grid — the one place on the site where a
- * sequence is the honest shape.
+ * So the numbered list carries what is ordered, and the two continuing
+ * concerns follow it with real destinations, assembled from the pages that
+ * already own the parts. Neither needed a new route.
  *
- * Monitoring and taking an access back have no path onward. Nothing on the site
- * answers either as its own question yet, and the intro says which steps a task
- * actually needs so the list does not read as six obligations for every draft.
+ * The grammar is the one `/data-flows` shipped in slice 4: reader questions as
+ * block names, each destination link carrying the child's own title. The
+ * second block reuses that hub's card markup rather than inventing a shape.
  *
- * "Take it back" pointed at "Connect AI to tools and data" — the opposite verb,
- * on a page whose own subject is building a connection. The revocation material
- * on the site does live there, as one step of that page's control loop and one
- * of its boundary questions, but it is not what that page promises and there is
- * no heading to link into. A step with no destination is more truthful than a
- * link to the reverse of what the reader asked for.
+ * How much of any of it a task needs follows from the consequence of a
+ * mistake. That belongs in the lead, where it decides how the rest is read;
+ * `checking-the-result` owns the full version, because it is the page that
+ * turns the principle into something to do.
  */
 import type { SiteLocale } from "../../i18n/ui";
 
-interface Stage {
+interface Question {
   name: string;
   meaning: string;
-  /** Omitted where no current page continues this step. */
-  paths?: { label: string; href: string }[];
+  paths: { label: string; href: string }[];
+}
+
+interface Concern {
+  name: string;
+  body: string[];
+  /** `job` names the sub-job this destination answers, because one page can
+   *  answer more than one of them and the label alone would not say which. */
+  paths: { label: string; href: string; job: string }[];
 }
 
 export interface ControlLifecycleContent {
@@ -36,26 +47,27 @@ export interface ControlLifecycleContent {
   description: string;
   heading: string;
   intro: string;
-  note: string;
-  stagesHeading: string;
-  stages: Stage[];
+  questionsHeading: string;
+  questions: Question[];
+  concernsHeading: string;
+  concerns: Concern[];
 }
 
 const en: ControlLifecycleContent = {
-  title: "How do you secure this, and how do you check the result?",
+  title: "How do you set limits that hold — and check what happened?",
   description:
-    "Six steps that keep an AI decision holding: decide what is allowed, configure it, check the result, record it, watch it, and be able to take it back.",
-  heading: "How do you secure this, and how do you check the result?",
+    "How much checking a task needs follows from the consequence of a mistake, not from the tool. What to settle first, how a boundary holds, what to check, and what to keep.",
+  // \u00A0 keeps the dash on the first line, as on the homepage: without it the
+  // two-line break at 1280 and above starts line two with the dash.
+  heading: "How do you set limits that hold\u00A0— and check what happened?",
   intro:
-    "Setting something up safely is one step of six, and it is the one people do. The others decide what happens after: whether anyone checks the result, whether the decision can still be explained in six months, and whether an access you granted can be taken back. Having those in place is what lets you use this on work someone else depends on.",
-  note:
-    "Not all six apply to every task. A draft you write alone needs the first three, and the third is a glance at what came back. Something that acts in another system, on its own, needs all six — and the difference is the consequence of a mistake, not the tool.",
-  stagesHeading: "Six steps, in the order they happen",
-  stages: [
+    "How much of this a task needs follows from what happens if the result is wrong — not from which tool produced it. A draft you write alone needs the first question and a look at what came back. Something consequential that acts in another system without you watching may need all of it.",
+  questionsHeading: "In the order they come up",
+  questions: [
     {
-      name: "Decide",
+      name: "What am I allowed to do with this material?",
       meaning:
-        "What is allowed here at all: by law, by your organisation, and for this particular material. This is the step that is skipped, because the tool works either way.",
+        "What the law and your organisation allow, for this particular material. The tool works either way, which is why this is the one that gets skipped.",
       paths: [
         { label: "Can I enter this data into an AI tool?", href: "/law/what-may-go-in" },
         {
@@ -65,9 +77,9 @@ const en: ControlLifecycleContent = {
       ],
     },
     {
-      name: "Configure",
+      name: "How do I make a boundary that holds without me?",
       meaning:
-        "The settings, accounts and permissions that make the decision hold without anyone having to remember it. A boundary in the configuration survives a busy Tuesday; a sentence in a prompt does not.",
+        "The settings, accounts and permissions that carry the decision when nobody is thinking about it. A boundary in the configuration survives a busy Tuesday; a sentence in a prompt does not.",
       paths: [
         {
           label: "Before you give an AI agent access",
@@ -76,47 +88,76 @@ const en: ControlLifecycleContent = {
       ],
     },
     {
-      name: "Verify",
+      name: "What do I check before I rely on it?",
       meaning:
-        "Check what came back, and what was done. What you check changes with how far the result already travelled — an answer, a change waiting in your files, or an action that already happened elsewhere.",
+        "What you check changes with how far the result already went: an answer on your screen, a change waiting in your files, or something that already happened somewhere else.",
       paths: [
         { label: "Checking the result", href: "/secure-setup/checking-the-result" },
       ],
     },
     {
-      name: "Record",
+      name: "What do I keep so I can explain it later?",
       meaning:
-        "What you write down so the decision can still be explained when the question arrives months later, from someone who was not there.",
+        "The question arrives months later, from someone who was not there. What you wrote down at the time is usually the only thing that answers it.",
       paths: [{ label: "Keeping a record", href: "/secure-setup/keeping-a-record" }],
     },
+  ],
+  concernsHeading: "Once it is set up",
+  concerns: [
     {
-      name: "Monitor",
-      meaning:
-        "Once something runs without you watching each time, someone has to notice when it stops being right. A setup that was correct in March is not evidence about September.",
+      name: "It runs without me watching — what changes?",
+      body: [
+        "A setup can change while it keeps running: permissions can outlive their purpose, product behaviour or defaults can change, and repeated work can fail without anyone reading every run.",
+        "How far to go follows the rule above. For a low-consequence setup, going back through it on a schedule may be enough. If a failure has to be noticed while it is happening, you need an operating or detection capability this site does not currently cover.",
+      ],
+      paths: [
+        {
+          label: "Before you give an AI agent access",
+          href: "/secure-setup/before-you-grant-access",
+          job: "for access and integrations that outlived their reason",
+        },
+        {
+          label: "Checking the result",
+          href: "/secure-setup/checking-the-result",
+          job: "for work that repeats without anyone reading every run",
+        },
+      ],
     },
     {
-      name: "Take it back",
-      meaning:
-        "Every access you grant needs a way back: removing the access itself, and restoring what it changed. Both are worth having tried once before you need them.",
+      name: "How do I get out again?",
+      body: [
+        "Three questions live inside that one. Stopping future access is the part you arrange yourself: remove the permission in the target system, disable the connector, revoke the credential, switch off the automation. Reconstructing what already happened rests on what was written down at the time, and on what the system it acted in kept.",
+        "Reversing an action is neither of those. Whether something can be undone belongs to the system it happened in and to the action itself — a version history, an undo, a restore from backup, where those exist. Find out which of them you have before you let something act.",
+      ],
+      paths: [
+        {
+          label: "Before you give an AI agent access",
+          href: "/secure-setup/before-you-grant-access",
+          job: "for stopping future access",
+        },
+        {
+          label: "Keeping a record",
+          href: "/secure-setup/keeping-a-record",
+          job: "for reconstructing what already happened",
+        },
+      ],
     },
   ],
 };
 
 const de: ControlLifecycleContent = {
-  title: "Wie sicherst du das ab, und wie prüfst du das Ergebnis?",
+  title: "Wie setzt du Grenzen, die halten — und prüfst, was passiert ist?",
   description:
-    "Sechs Schritte, damit eine Entscheidung hält: festlegen, was erlaubt ist, es einrichten, das Ergebnis prüfen, es festhalten, es beobachten und es zurücknehmen können.",
-  heading: "Wie sicherst du das ab, und wie prüfst du das Ergebnis?",
+    "Wie gründlich eine Aufgabe geprüft gehört, ergibt sich aus den Folgen eines Fehlers, nicht aus dem Tool. Was vorher zu klären ist, wie eine Grenze hält, was du prüfst und was du festhältst.",
+  heading: "Wie setzt du Grenzen, die halten\u00A0— und prüfst, was passiert ist?",
   intro:
-    "Etwas sicher einzurichten ist einer von sechs Schritten — und der, den die meisten tun. Die anderen entscheiden, was danach passiert: ob jemand das Ergebnis prüft, ob sich die Entscheidung in einem halben Jahr noch erklären lässt und ob ein erteilter Zugriff wieder zurückgenommen werden kann. Das zu haben, ist die Voraussetzung dafür, KI für Arbeit einzusetzen, auf die sich jemand anderes verlässt.",
-  note:
-    "Nicht alle sechs gelten für jede Aufgabe. Ein Entwurf, den du allein schreibst, braucht die ersten drei — und der dritte ist ein Blick auf das, was zurückkam. Etwas, das von sich aus in einem anderen System handelt, braucht alle sechs; den Unterschied macht die Folge eines Fehlers, nicht das Tool.",
-  stagesHeading: "Sechs Schritte, in der Reihenfolge, in der sie anfallen",
-  stages: [
+    "Wie viel davon eine Aufgabe braucht, hängt davon ab, was passiert, wenn das Ergebnis falsch ist — nicht davon, welches Tool es erzeugt hat. Für einen Entwurf, den du allein schreibst, reichen die erste Frage und ein Blick auf das, was zurückkam. Etwas mit spürbaren Folgen, das ohne dich in einem anderen System handelt, kann all das brauchen.",
+  questionsHeading: "In der Reihenfolge, in der sie sich stellen",
+  questions: [
     {
-      name: "Festlegen",
+      name: "Was darf ich mit diesem Material überhaupt tun?",
       meaning:
-        "Was hier überhaupt erlaubt ist: rechtlich, in deiner Organisation und für genau dieses Material. Das ist der Schritt, der übersprungen wird, weil das Tool so oder so funktioniert.",
+        "Was Gesetz und Organisation für genau dieses Material erlauben. Das Tool funktioniert so oder so — deshalb bleibt gerade diese Frage liegen.",
       paths: [
         { label: "Welche Daten darf ich in ein KI-Tool eingeben?", href: "/de/law/what-may-go-in" },
         {
@@ -126,9 +167,9 @@ const de: ControlLifecycleContent = {
       ],
     },
     {
-      name: "Einrichten",
+      name: "Wie ziehe ich eine Grenze, die auch ohne mich hält?",
       meaning:
-        "Die Einstellungen, Konten und Rechte, die die Entscheidung tragen, ohne dass jemand daran denken muss. Eine Grenze in der Konfiguration übersteht einen vollen Dienstag, ein Satz im Prompt nicht.",
+        "Die Einstellungen, Konten und Rechte, die die Entscheidung tragen, wenn gerade niemand daran denkt. Eine Grenze in der Konfiguration übersteht einen vollen Dienstag, ein Satz im Prompt nicht.",
       paths: [
         {
           label: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
@@ -137,30 +178,61 @@ const de: ControlLifecycleContent = {
       ],
     },
     {
-      name: "Prüfen",
+      name: "Was prüfe ich, bevor ich mich darauf verlasse?",
       meaning:
-        "Nachsehen, was zurückkam und was getan wurde. Was du prüfst, hängt davon ab, wie weit das Ergebnis schon gelaufen ist: eine Antwort, eine Änderung, die in deinen Dateien wartet, oder eine Handlung, die anderswo schon passiert ist.",
+        "Was du prüfst, hängt davon ab, wie weit das Ergebnis schon gekommen ist: eine Antwort auf dem Bildschirm, eine Änderung, die in deinen Dateien wartet, oder etwas, das anderswo schon geschehen ist.",
       paths: [
         { label: "Das Ergebnis prüfen", href: "/de/secure-setup/checking-the-result" },
       ],
     },
     {
-      name: "Festhalten",
+      name: "Was halte ich fest, um es später erklären zu können?",
       meaning:
-        "Was du notierst, damit sich die Entscheidung noch erklären lässt, wenn die Frage Monate später kommt — von jemandem, der nicht dabei war.",
+        "Die Frage kommt Monate später, von jemandem, der nicht dabei war. Was damals notiert wurde, ist meist das Einzige, was sie dann beantwortet.",
       paths: [
         { label: "Die Entscheidung festhalten", href: "/de/secure-setup/keeping-a-record" },
       ],
     },
+  ],
+  concernsHeading: "Wenn es eingerichtet ist",
+  concerns: [
     {
-      name: "Beobachten",
-      meaning:
-        "Sobald etwas läuft, ohne dass du jedes Mal zusiehst, muss jemand merken, wenn es nicht mehr stimmt. Ein Aufbau, der im März richtig war, belegt nichts über den September.",
+      name: "Es läuft, ohne dass ich zusehe — was ändert sich?",
+      body: [
+        "Ein Aufbau kann sich verändern, während er weiterläuft: Rechte können ihren Grund überleben, das Verhalten oder die Voreinstellungen des Produkts können sich ändern, und wiederkehrende Arbeit kann scheitern, ohne dass jemand jeden Durchlauf liest.",
+        "Wie weit du gehst, richtet sich nach der Regel oben. Wo ein Fehler wenig kostet, kann es reichen, das Ganze in festen Abständen durchzugehen. Muss ein Fehler auffallen, während er passiert, brauchst du einen Betrieb, der das erkennt — und den deckt diese Seite bisher nicht ab.",
+      ],
+      paths: [
+        {
+          label: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
+          href: "/de/secure-setup/before-you-grant-access",
+          job: "für Zugriffe und Anbindungen, deren Grund weggefallen ist",
+        },
+        {
+          label: "Das Ergebnis prüfen",
+          href: "/de/secure-setup/checking-the-result",
+          job: "für Arbeit, die sich wiederholt, ohne dass jemand jeden Durchlauf liest",
+        },
+      ],
     },
     {
-      name: "Zurücknehmen",
-      meaning:
-        "Zu jedem erteilten Zugriff gehört ein Weg zurück: den Zugriff selbst entfernen und wiederherstellen, was er verändert hat. Beides sollte man einmal ausprobiert haben, bevor man es braucht.",
+      name: "Wie komme ich wieder heraus?",
+      body: [
+        "Darin stecken drei Fragen. Künftige Zugriffe zu stoppen, ist der Teil, den du selbst in der Hand hast: das Recht im Zielsystem entfernen, die Anbindung abschalten, die Zugangsdaten entziehen, die Automatisierung ausschalten. Zu rekonstruieren, was bereits passiert ist, hängt davon ab, was damals notiert wurde und was das System aufbewahrt hat, in dem gehandelt wurde.",
+        "Eine Handlung rückgängig zu machen, ist keines von beidem. Ob sich etwas zurückholen lässt, entscheiden das System, in dem es passiert ist, und die Handlung selbst: Versionsverlauf, ein Rückgängig, eine Rücksicherung — sofern es sie gibt. Finde heraus, was davon dir zur Verfügung steht, bevor du etwas handeln lässt.",
+      ],
+      paths: [
+        {
+          label: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
+          href: "/de/secure-setup/before-you-grant-access",
+          job: "um künftige Zugriffe zu stoppen",
+        },
+        {
+          label: "Die Entscheidung festhalten",
+          href: "/de/secure-setup/keeping-a-record",
+          job: "um zu rekonstruieren, was bereits passiert ist",
+        },
+      ],
     },
   ],
 };

@@ -1,10 +1,19 @@
 ---
 import Base from "../../layouts/Base.astro";
 import EvidenceLabel from "../../components/EvidenceLabel.astro";
-import { getBeforeYouGrantAccess } from "../../data/secure-setup/before-you-grant-access";
+import NextStep from "../../components/NextStep.astro";
+import { getLocalizedPath } from "../../i18n/routes";
+import {
+  getBeforeYouGrantAccess,
+  getBeforeYouGrantAccessNextStep,
+} from "../../data/secure-setup/before-you-grant-access";
 
 const locale = "en" as const;
 const article = getBeforeYouGrantAccess(locale);
+const next = getBeforeYouGrantAccessNextStep(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) =>
+  path === "/" ? base : `${base}${path.replace(/^\//, "")}`;
 ---
 
 <Base
@@ -17,6 +26,9 @@ const article = getBeforeYouGrantAccess(locale);
 >
   <article class="layout-reading">
     <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{article.title}</h1>
+    {article.subtitle && (
+      <p class="mt-3 text-lg text-zinc-700 dark:text-zinc-300">{article.subtitle}</p>
+    )}
     <p class="mt-4 text-lg leading-8">{article.lead}</p>
 
     {
@@ -50,5 +62,14 @@ const article = getBeforeYouGrantAccess(locale);
         </section>
       ))
     }
+
+    <NextStep
+      locale={locale}
+      primary={{
+        label: next.label,
+        description: next.description,
+        href: toHref(getLocalizedPath(locale, "secureSetupChecking")),
+      }}
+    />
   </article>
 </Base>

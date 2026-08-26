@@ -5,16 +5,16 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 5 — `/secure-setup` and verification.** The Homepage Correction
-  Pass shipped in #167 and is closed; it is not carried forward as an active
-  objective and is not reopened for preference or further polishing — see
-  *Homepage Correction Pass* below for its settled outcome. Slice 5's reader
-  job: how do I set boundaries that hold, check what the system did, and keep
-  enough evidence to recover or explain the work later? Family: `/secure-setup`,
-  `before-you-grant-access`, `checking-the-result`, `keeping-a-record`. The
-  slice 4 handoff — Connect AI's removed control-loop material, recoverable at
-  commit `178e782` — is this slice's to reconcile; see *Slice 4 → slice 5
-  handoff* below. Design has not started.
+- **Now: slice 5 — `/secure-setup` and verification.** Designed and implemented
+  on `feature/slice-5-secure-setup`, awaiting human review before commit. The
+  reader job: how do I set boundaries that hold, check what the system did, and
+  keep enough evidence to recover or explain the work later? What it settled is
+  in `decisions.md` (2026-08-26) — the six concepts survive and the six-step
+  public lifecycle does not, a boundary is enforced outside the model rather
+  than by the target system alone, and consequence and reliance are two axes
+  that combine. The slice 4 handoff is reconciled; see *Slice 4 → slice 5
+  handoff* below for what landed and what was deliberately not carried. No
+  route was added, renamed or retired.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -73,6 +73,15 @@ blueprint-status conformance boundary (`check-conformance.sh` against
 `blueprints/ai-assisted-development/blueprint.yml`) are equally settled — see
 `decisions.md`, 2026-08-25. None of this reopens without a concrete
 contradiction slice 4 or later work actually produces.
+
+`/secure-setup` as four ordered questions plus two continuing concerns is
+settled to the same standard — see `decisions.md`, 2026-08-26. `Decide /
+Configure / Verify / Record / Monitor / Take it back` is not a public taxonomy
+in either language and is not reinstated. A boundary is *enforced outside the
+model*, which names several possible layers and not the target system alone;
+that phrasing exists so the 2026-08-25 intersection decision is not replaced by
+a new monopoly. Consequence and reliance are two axes that combine, stated once
+on `checking-the-result`. The four things worth recording are still four.
 
 ## Homepage Correction Pass — shipped in #167, closed
 
@@ -144,6 +153,21 @@ verification-checklist material; and the German `Kontrollkreis` →
 `Regelkreis` correction to make on arrival. Git history is the recoverable
 source — none of this prose is duplicated here.
 
+**Reconciled in slice 5.** `controlSteps[0]` was discarded — whether a task is
+worth a connection is Use Cases' and Connect AI's question, not a control.
+`[1]` and `[2]` merged into the enforcement and identity material on
+`before-you-grant-access`; `[3]` became that page's approval section; `[4]`
+split, with only the non-duplicative pieces surviving — a log may identify the
+account or credential used but must not hold the secret itself, and the
+stop-and-recover half joined
+`boundaryQuestions[4]`, which is the spine of taking an access back. The old
+control-loop and verification headings were not carried, and the recovered
+verification steps sit beside the claims they prove rather than in a checklist.
+Because no control loop was rebuilt, `Kontrollkreis` never shipped and no
+`Regelkreis` was introduced in its place — the correction retired rather than
+landed. The OWASP MCP Security Cheat Sheet was deliberately not carried; see
+`decisions.md`, 2026-08-26.
+
 ## Working constraints for this objective
 
 Not decisions. They bind this objective and expire or are reconsidered with it.
@@ -214,6 +238,27 @@ both wait for the slice 7 whole-site pass named in `tasks.md`.
   `/start/what-it-is-doing`. That mismatch is evidence for a later
   route-quality decision, not a decision itself; slice 4 kept the URL and did
   not act on it.
+- **No owner for operating something that runs unattended.** Two hubs now point
+  at the same absence by deliberate decision: `/start`'s sixth way of working
+  has no path onward, and `/secure-setup` states that detecting a failure while
+  it is happening is not covered here. Everything a reader can act on —
+  standing access, repeating output quality, product defaults — already has an
+  owner, so slice 5 built no route. Whether the remainder becomes one is a
+  content-scope decision for slice 7 or later, and it needs the change-scope
+  approval `AGENTS.md` requires.
+- **The three account switches have no home for a reader who never grants an
+  agent anything.** Slice 5's first pass compressed them onto
+  `before-you-grant-access`, linked to the `/data-flows` pages that keep the
+  facts current; a rendered-review pass then removed the section entirely,
+  because it had grown that page to 9+ mobile screens on a concept the page
+  does not own. The facts stayed exactly where they were before slice 5 —
+  `training-and-retention` and `getting-it-back-out` — and nothing moved.
+  Where a reader who only opens a chat window should meet them is still
+  unsettled. Slice 6 or 7.
+- **Product memory as a setting has no fact owner.** `training-and-retention`
+  owns training and retention and `getting-it-back-out` owns deletion, so both
+  are linked; memory across conversations is named without a link because no
+  page currently keeps that fact current.
 
 ## Active constraints
 
