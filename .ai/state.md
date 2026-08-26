@@ -5,15 +5,16 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: Homepage Correction Pass — implemented, awaiting review.** A focused
-  correction between slice 4 and slice 5, approved 2026-08-25 — not slice 8, and
-  it does not renumber the seven slices. The three-block architecture from
-  PR #154 is unchanged; the heading leads with capability instead of an
-  unmeasured quality, the lead promises only what the page routes to, one quiet
-  line of the hero names concrete work, the three reader questions carry the
-  weight of the page's main paths, and the desktop composition is fixed
-  horizontally rather than by adding length. Details below. Slice 5 remains next
-  after this pass and has not started.
+- **Now: slice 5 — `/secure-setup` and verification.** The Homepage Correction
+  Pass shipped in #167 and is closed; it is not carried forward as an active
+  objective and is not reopened for preference or further polishing — see
+  *Homepage Correction Pass* below for its settled outcome. Slice 5's reader
+  job: how do I set boundaries that hold, check what the system did, and keep
+  enough evidence to recover or explain the work later? Family: `/secure-setup`,
+  `before-you-grant-access`, `checking-the-result`, `keeping-a-record`. The
+  slice 4 handoff — Connect AI's removed control-loop material, recoverable at
+  commit `178e782` — is this slice's to reconcile; see *Slice 4 → slice 5
+  handoff* below. Design has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -29,10 +30,12 @@ enough to reopen any of it.
 The homepage's architecture from PR #154 — hero, three direct reader
 questions, two hero CTAs into Use Cases and Ways of Working, a compact
 open-development close, no duplication of the four header journeys — is
-settled and is not reopened by the Homepage Correction Pass below. What is not
-settled is whether its current H1, lead and density communicate enough; that is
-the pass's one open question. See *Homepage Correction Pass* below for its
-exact scope and boundaries.
+settled. The Homepage Correction Pass (shipped in #167) settled the rest: the
+H1, the lead, the primary CTA label, the example line, the German entry
+heading and the homepage-local width hierarchy. See *Homepage Correction Pass*
+below for the shipped outcome. None of it reopens without a concrete
+contradiction; Slice 7 may still catch an actual language or quality defect,
+but the homepage is not reopened for preference or further polishing.
 
 The footer information architecture and the `NextStep` contract shipped in
 slice 2 (#161) and are settled, same standing as the header and the four
@@ -71,70 +74,75 @@ blueprint-status conformance boundary (`check-conformance.sh` against
 `decisions.md`, 2026-08-25. None of this reopens without a concrete
 contradiction slice 4 or later work actually produces.
 
-## Homepage Correction Pass
+## Homepage Correction Pass — shipped in #167, closed
 
-Approved 2026-08-25, between slice 4 and slice 5. Implemented on
-`feature/homepage-correction-pass`, awaiting human review and merge — not yet
-shipped to `main`. The decisions below are the human-approved product/editorial
-outcomes this section now records; they do not mean the pass itself has landed.
+Approved and implemented 2026-08-25–26, between slice 4 and slice 5. Not
+slice 8, and it did not renumber the seven slices. Merged to `main` as `e249cf7`.
+Not carried forward as an active objective: this section is a durable record,
+not an open brief. It is not reopened for preference or further polishing —
+only a concrete contradiction, or an actual language/quality defect Slice 7
+finds, could touch it again.
 
-**Why.** The homepage architecture from PR #154 remains broadly valid. Two
-concrete defects were found by rendering it, not by re-litigating the
-architecture:
+**Why it existed.** The PR #154 homepage architecture — hero, three direct
+reader questions, two hero CTAs, a compact open-development close — remained
+valid. Rendered review found two real defects rather than an architectural one:
+the German H1 `KI sinnvoll im Arbeitsalltag einsetzen` named no criterion a
+reader could act on and risked the same abstract evaluative language the
+whole-site review was removing elsewhere; and the desktop composition read as
+under-filled, which measurement traced to width, not to missing content — the
+heading, lead and entry list sat at nearly the same narrow measure inside a
+rail already 192px narrower than the header and footer shell.
 
-- **H1.** German `KI sinnvoll im Arbeitsalltag einsetzen` is too abstract for
-  the whole product — `sinnvoll` names no criterion and states nothing a
-  reader can achieve. It risks the same abstract evaluative language the
-  whole-site review has been removing elsewhere. English `Use AI well at
-  work` needs the same scrutiny, not a pass because it predates the review.
-- **Density.** On a normal desktop/tall viewport the page reads as
-  under-filled: hero, three direct links, a compact trust close, then a large
-  empty area before the footer. It can read as unfinished rather than
-  deliberately minimal.
+**Shipped outcome — the three-block page stays exactly that.**
 
-**Not reopened — presumed correct unless direct inspection finds a defect.**
-The four primary journeys, header destinations and labels, footer
-architecture, the canonical identity mechanism, `/start`, `/data-flows`,
-`/secure-setup`, routes and redirects. `Start with a question` /
-`Direkt einsteigen`, the three direct reader questions, the two hero CTAs,
-the compact open-development/trust close, and the homepage's refusal to
-duplicate the four header journeys.
+1. Hero — H1, lead, two CTAs, one compact example line.
+2. Direct reader questions.
+3. Open-development / source-transparency close.
 
-**Not restored.** The old four-journey homepage grid, security-desk framing,
-`How to read this site`, a large Evidence Method section, repository-underneath
-framing, `/docs` promotion, glossary housekeeping, count/inventory language, or
-internal product taxonomy as public copy.
+- **H1** leads with capability, not a quality claim: `What AI can do at work —
+  and how to work with it` / `Was KI bei der Arbeit kann — und wie du damit
+  arbeitest`. `well` and `sinnvoll` are gone from the homepage's top-level
+  promise; `sinnvoll` stays in the `/use-cases` header label, where a
+  `Wo`-clause makes it the question under examination rather than a promise —
+  header copy was not reopened.
+- **Lead** keeps the canonical identity sentence as sentence one, still
+  interpolated from `identity.ts` — no second definition was introduced — then
+  names concrete tasks, choosing a way of working, and what changes when data,
+  tools or other systems become involved. It promises only what the page routes
+  to; `/secure-setup` is no longer promised by a page that cannot reach it.
+- **Primary CTA** — `What AI can help with` / `Wobei KI helfen kann` — names the
+  reader job rather than the route slug. Secondary CTA is unchanged, Ways of
+  Working.
+- **One compact example line** sits in the hero: illustrative, never a list, no
+  heading, no links, no cards. `/use-cases` still owns the real set.
+- **Direct-entry questions and destinations are unchanged** — same three
+  questions, same order, same links. The German heading became
+  `Mit einer Frage starten`, naming what follows; `Direkt einsteigen` only named
+  a mode.
+- **`Offen entwickelt`** stays the closing colophon, same position, same size,
+  same single GitHub action.
+- **Homepage-local width hierarchy** — wider H1, lead kept at reading width,
+  wider direct-entry list — fixed the desktop composition without any global
+  layout, shell-rail or other-hub change.
 
-**Decided, and settled by this pass.**
+Header, footer, the four primary journeys, canonical identity, routes,
+redirects and the sitemap were not reopened. Verified: 377 of 379 built pages
+byte-identical against `main`; header and footer byte-identical on the two
+that changed; route set and sitemap unchanged; homepage `<main>` holds exactly
+six links in both locales; no horizontal overflow at 375, 768, 1280, 1440 or a
+1440-tall viewport.
 
-- **The promise leads with capability, not with limits.** `What AI can do at
-  work — and how to work with it` / `Was KI bei der Arbeit kann — und wie du
-  damit arbeitest`. A limit-led H1 was considered and rejected: limits belong
-  where they change a decision, not as the product's defining promise. No vague
-  quality adjective returns — not `well`, `sinnvoll`, `responsible` or `safe`.
-- **`sinnvoll` stays in the header label for `/use-cases`.** A `Wo`-clause makes
-  it the question under examination rather than a promise, and the destination
-  answers it in both directions. Header copy was not reopened.
-- **The lead promises only what the page routes to** — what AI can help with,
-  which way of working fits, what changes when data, tools or other systems come
-  into play. `/secure-setup` is no longer promised by a page that cannot reach
-  it. The canonical identity sentence stays sentence one, still interpolated
-  from `identity.ts`; only the sentence after it is homepage copy.
-- **One quiet line of concrete work closes the hero.** Illustrative copy, never a
-  list, no heading, no links, no cards. `/use-cases` owns the real set.
-- **The desktop problem was horizontal, not vertical.** Rendered measurement
-  ruled out a vertical void — the document is the same height at 1280, 1440 and
-  1512, and a 1440-tall viewport stretched `main` by 4px. The fix is three
-  deliberate homepage-local widths and homepage-local section spacing. Global
-  layout tokens, the shell rails and the other hubs are untouched.
-- **The three reader questions, their order and their destinations are
-  unchanged.** Their rows carry more weight because they were the page's
-  quietest text while being its only in-page paths. The German heading became
-  `Mit einer Frage starten`, which names what follows; `Direkt einsteigen` only
-  named a mode.
-- **`Offen entwickelt` stays** as the closing block, in place, at its size, with
-  its single GitHub action. Its body says where a source and check date appear
-  instead of implying the link supplies them.
+## Slice 4 → slice 5 handoff
+
+Material Connect AI's control loop needs a home for, recoverable at commit
+`178e782` (`git show 178e782:site/src/data/data-flows/connect-ai-to-tools-and-data.ts`).
+The exact keys and their intended destination are the table in `tasks.md`
+under slice 4 — not restated here. At minimum it covers: the recovery/revoke/
+undo/reconstruct question; the five removed control-loop implementation steps;
+the OWASP MCP security evidence that travelled with them; the removed
+verification-checklist material; and the German `Kontrollkreis` →
+`Regelkreis` correction to make on arrival. Git history is the recoverable
+source — none of this prose is duplicated here.
 
 ## Working constraints for this objective
 
