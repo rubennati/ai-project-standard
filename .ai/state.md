@@ -5,12 +5,15 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 4 — `/data-flows` and Connect AI — implemented, awaiting review.**
-  `/data-flows` explains reach as an intersection and owns the mechanism;
-  Connect AI answers *how do I connect this?* with a worked example and hands
-  its control loop to slice 5; `/start/what-it-is-doing` keeps only the
-  Start-owned question under a new H1 and its old URL. The two decisions are in
-  `decisions.md` (2026-08-25). Slice 5 is next and has not started.
+- **Now: Homepage Correction Pass.** A focused correction between slice 4 and
+  slice 5, approved 2026-08-25 — not slice 8, and it does not renumber the
+  seven slices. Slice 4 shipped in #165. The homepage's small architecture from
+  PR #154 stays; the finding is editorial, not structural: the German H1 `KI
+  sinnvoll im Arbeitsalltag einsetzen` is too abstract to say what a reader can
+  achieve, the English needs the same scrutiny rather than a pass by default,
+  and on a tall desktop viewport the page reads as under-filled after its
+  compact trust close. Scope, boundaries and the design question are below.
+  Slice 5 remains next after this pass and has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -23,8 +26,13 @@ membership and the current bilingual header labels — unchanged from 2026-08-20
 Reference is still not a fifth journey. The review found no contradiction strong
 enough to reopen any of it.
 
-The homepage (PR #154) is the editorial reference and is not changed by this
-objective unless a slice needs a concrete integration fix.
+The homepage's architecture from PR #154 — hero, three direct reader
+questions, two hero CTAs into Use Cases and Ways of Working, a compact
+open-development close, no duplication of the four header journeys — is
+settled and is not reopened by the Homepage Correction Pass below. What is not
+settled is whether its current H1, lead and density communicate enough; that is
+the pass's one open question. See *Homepage Correction Pass* below for its
+exact scope and boundaries.
 
 The footer information architecture and the `NextStep` contract shipped in
 slice 2 (#161) and are settled, same standing as the header and the four
@@ -62,6 +70,53 @@ blueprint-status conformance boundary (`check-conformance.sh` against
 `blueprints/ai-assisted-development/blueprint.yml`) are equally settled — see
 `decisions.md`, 2026-08-25. None of this reopens without a concrete
 contradiction slice 4 or later work actually produces.
+
+## Homepage Correction Pass
+
+Approved 2026-08-25, between slice 4 and slice 5. Reconciliation only until a
+fresh design session runs it; this section is that session's brief.
+
+**Why.** The homepage architecture from PR #154 remains broadly valid. Two
+concrete defects were found by rendering it, not by re-litigating the
+architecture:
+
+- **H1.** German `KI sinnvoll im Arbeitsalltag einsetzen` is too abstract for
+  the whole product — `sinnvoll` names no criterion and states nothing a
+  reader can achieve. It risks the same abstract evaluative language the
+  whole-site review has been removing elsewhere. English `Use AI well at
+  work` needs the same scrutiny, not a pass because it predates the review.
+- **Density.** On a normal desktop/tall viewport the page reads as
+  under-filled: hero, three direct links, a compact trust close, then a large
+  empty area before the footer. It can read as unfinished rather than
+  deliberately minimal.
+
+**Not reopened — presumed correct unless direct inspection finds a defect.**
+The four primary journeys, header destinations and labels, footer
+architecture, the canonical identity mechanism, `/start`, `/data-flows`,
+`/secure-setup`, routes and redirects. `Start with a question` /
+`Direkt einsteigen`, the three direct reader questions, the two hero CTAs,
+the compact open-development/trust close, and the homepage's refusal to
+duplicate the four header journeys.
+
+**Not restored.** The old four-journey homepage grid, security-desk framing,
+`How to read this site`, a large Evidence Method section, repository-underneath
+framing, `/docs` promotion, glossary housekeeping, count/inventory language, or
+internal product taxonomy as public copy.
+
+**What the fresh session decides.**
+
+1. A stronger H1 in both locales.
+2. A lead that says concretely what AI Standard helps a reader do.
+3. Whether one compact layer of concrete work/examples belongs before
+   `Direkt einsteigen` so the page demonstrates substance before it asks a
+   reader to pick a question.
+4. Whether `Offen entwickelt` remains the right compact closing block.
+5. How the page fills a desktop viewport without adding filler.
+
+Direction to test, not approved copy: concrete reader/work language — working
+with AI, concrete tasks, choosing a way of working, what changes when tools,
+data or other systems become involved. No draft wording from any prior
+conversation is pre-approved.
 
 ## Working constraints for this objective
 
