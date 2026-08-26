@@ -13,16 +13,31 @@
  * page a directory of itself.
  *
  * The direct entries are questions, not categories, and each one links to the
- * page that answers it — `/start/employee` is titled "Darf ich KI im Job
- * verwenden?" word for word. That is why they carry no supporting line: the
- * link already promises exactly what the destination delivers. They are not a
- * fifth copy of the four journeys and must not grow into one.
+ * page that answers it — one verbatim, two as the declarative-to-interrogative
+ * turn `.ai/decisions.md` (2026-08-24) names as correct. That is why they carry
+ * no supporting line: the link already promises the reader job the destination
+ * delivers. They are not a fifth copy of the four journeys and must not grow
+ * into one.
  *
  * The lead opens with the sentence in `identity.ts` and the description is the
- * summary there, rather than repeating either. Both are the same strings this
- * page shipped with; what changed is that the footer, the manifest and
- * `llms.txt` now answer "what is this" from the same place instead of each
- * keeping its own answer.
+ * summary there, rather than repeating either. Only the sentence after the
+ * interpolation is homepage copy.
+ *
+ * The heading leads with capability. It previously asserted a quality with no
+ * criterion — `Use AI well at work` / `KI sinnvoll im Arbeitsalltag einsetzen` —
+ * and neither `well` nor `sinnvoll` said useful by what measure. Naming what AI
+ * can do and how to work with it is checkable where an adjective was not, and
+ * it keeps limits where they change a decision rather than making them the
+ * product's defining promise. `sinnvoll` stays in the header label for
+ * `/use-cases`, where a `Wo`-clause makes it the question under examination
+ * rather than a promise, and where the destination answers it in both
+ * directions.
+ *
+ * `example` is illustrative homepage copy, not a canonical inventory. It names
+ * three kinds of work that span the distance the site covers — a draft, your own
+ * material, a connected system — so the lead's "through concrete tasks" has a
+ * referent on the page. `/use-cases` owns the real set; this sentence must not
+ * grow into a list, acquire links or turn into categories.
  */
 import { getIdentity } from "./identity";
 import type { SiteLocale } from "../i18n/ui";
@@ -38,6 +53,8 @@ export interface HomeContent {
   description: string;
   heading: string;
   lead: string;
+  /** One quiet line of concrete work, closing the hero. Never a list. */
+  example: string;
   primaryAction: { label: string; href: string };
   secondaryAction: { label: string; href: string };
   entriesHeading: string;
@@ -50,9 +67,13 @@ export interface HomeContent {
 const en: HomeContent = {
   title: "AI Standard",
   description: getIdentity("en").summary,
-  heading: "Use AI well at work",
-  lead: `${getIdentity("en").identity} It starts from the task at hand and shows where AI is useful, how to work with it, and what to pay attention to.`,
-  primaryAction: { label: "See the use cases", href: "/use-cases" },
+  // \u00A0 keeps the dash on the first line: without it the balanced two-line
+  // break at 1280 and above starts line two with the dash. Same height either way.
+  heading: "What AI can do at work\u00A0— and how to work with it",
+  lead: `${getIdentity("en").identity} It shows, through concrete tasks, what AI can help with, which way of working fits, and what changes when data, tools, or other systems come into play.`,
+  example:
+    "For example: turn notes into a draft, find answers in your own material, or connect AI to an existing system.",
+  primaryAction: { label: "What AI can help with", href: "/use-cases" },
   secondaryAction: { label: "Compare the ways of working", href: "/start" },
 
   entriesHeading: "Start with a question",
@@ -70,19 +91,21 @@ const en: HomeContent = {
 
   openHeading: "Developed in the open",
   openBody:
-    "Changes are visible on GitHub. Claims that can change include their source and the date they were last checked.",
+    "Changes are visible on GitHub. Where a claim can go out of date, the page names its source and the date it was last checked.",
   openAction: "The project on GitHub",
 };
 
 const de: HomeContent = {
   title: "AI Standard",
   description: getIdentity("de").summary,
-  heading: "KI sinnvoll im Arbeitsalltag einsetzen",
-  lead: `${getIdentity("de").identity} An konkreten Aufgaben zeigt sie, wofür sich KI eignet, wie du damit arbeitest und worauf du dabei achten solltest.`,
-  primaryAction: { label: "Einsatzmöglichkeiten ansehen", href: "/de/use-cases" },
+  heading: "Was KI bei der Arbeit kann\u00A0— und wie du damit arbeitest",
+  lead: `${getIdentity("de").identity} Sie zeigt an konkreten Aufgaben, wobei KI helfen kann, welche Arbeitsweise dazu passt und was sich ändert, sobald Daten, Tools oder andere Systeme ins Spiel kommen.`,
+  example:
+    "Zum Beispiel: aus Notizen einen Entwurf machen, Wissen in eigenen Unterlagen finden oder KI mit einem bestehenden System verbinden.",
+  primaryAction: { label: "Wobei KI helfen kann", href: "/de/use-cases" },
   secondaryAction: { label: "Arbeitsweisen vergleichen", href: "/de/start" },
 
-  entriesHeading: "Direkt einsteigen",
+  entriesHeading: "Mit einer Frage starten",
   entries: [
     { question: "Darf ich KI im Job verwenden?", href: "/de/start/employee" },
     {
@@ -97,7 +120,7 @@ const de: HomeContent = {
 
   openHeading: "Offen entwickelt",
   openBody:
-    "Änderungen sind auf GitHub nachvollziehbar. Bei Angaben, die sich ändern können, stehen Quelle und Datum der letzten Prüfung dabei.",
+    "Änderungen sind auf GitHub nachvollziehbar. Wo eine Aussage veralten kann, stehen Quelle und Datum der letzten Prüfung dabei.",
   openAction: "Projekt auf GitHub",
 };
 

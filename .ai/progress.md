@@ -261,3 +261,36 @@ instead of the reader benefit. Reset on 24 August, below.
   broadened: `Stop condition` was never part of the issue's scope and is not
   treated as if it were. The issue was closed 2026-08-25 09:22 UTC, before
   this reconciliation; nothing further needed on GitHub.
+
+## 2026-08-26
+
+- **Homepage Correction Pass implemented.** The heading stops asserting a
+  quality with no criterion — `Use AI well at work` / `KI sinnvoll im
+  Arbeitsalltag einsetzen` become `What AI can do at work — and how to work with
+  it` / `Was KI bei der Arbeit kann — und wie du damit arbeitest`. `sinnvoll`
+  stays in the `/use-cases` header label, where a `Wo`-clause makes it the
+  question under examination rather than a promise. The lead names the three
+  things the page actually routes to and drops the fourth it could not reach;
+  the canonical identity sentence is still interpolated from `identity.ts`. One
+  quiet line closes the hero with concrete work. The primary button says what it
+  leads to instead of naming a filing category, taking `/use-cases` from three
+  public names to two.
+- **The desktop problem was horizontal.** Rendered measurement ruled out a
+  vertical void: the document was 1436 px at 1280, 1440 and 1512 alike, and a
+  1440-tall viewport stretched `main` by 4 px. The cause was width — the heading,
+  lead and entry list sat at 768/672/672 inside a 960 px rail that is itself
+  192 px narrower than the header and footer shell. Three deliberate
+  homepage-local widths (960/672/768) and homepage-local section spacing
+  (hero→entries 56 px, entries→close 96 px) replace it. No global token, shell
+  rail or other hub changed.
+- Measured 375×812, English then German: first reader question 566/646 →
+  758/814; `main` 966/1075 → 1202/1259 px. Desktop 1440×900: document
+  1436 → 1540 px, heading 768 → 960 px wide, entry list 672 → 768 px. Every
+  pixel of the mobile increase comes from the approved copy — the longer lead
+  (+64 px DE) and the example line (+112 px DE); grouping the line with the
+  actions and tightening its leading returned 24 px.
+- Invariants: 377 of 379 built pages byte-identical against `main`; header and
+  footer byte-identical on both homepages; route set and sitemap identical;
+  `main` holds exactly six links; outline `h1 → h2 → h2`; no horizontal overflow
+  at 375, 768, 1280, 1440 or a 1440-tall viewport. `identity.ts`, `ui.ts`,
+  `Base.astro` and `global.css` untouched.
