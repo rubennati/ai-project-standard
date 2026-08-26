@@ -294,3 +294,20 @@ instead of the reader benefit. Reset on 24 August, below.
   `main` holds exactly six links; outline `h1 → h2 → h2`; no horizontal overflow
   at 375, 768, 1280, 1440 or a 1440-tall viewport. `identity.ts`, `ui.ts`,
   `Base.astro` and `global.css` untouched.
+
+## 2026-08-26 (2)
+
+- **Homepage Correction Pass merged as #167 (`e249cf7`) and closed.** `state.md`
+  and `tasks.md` record it as shipped rather than in review, and it is no
+  longer carried as an active objective — durable outcomes are recorded once in
+  `state.md` and not reopened for preference or further polishing. Objective
+  moved to slice 5 — `/secure-setup` and verification. Reader job: how do I set
+  boundaries that hold, check what the system did, and keep enough evidence to
+  recover or explain the work later? Family confirmed against source: the hub
+  and `before-you-grant-access`, `checking-the-result`, `keeping-a-record`. The
+  slice 4 → slice 5 handoff (Connect AI's removed control-loop material,
+  recoverable at commit `178e782`) is unchanged and is this slice's to
+  reconcile — its keys and destinations stay in `tasks.md`, not duplicated in
+  `state.md`. Slice 6's two blockers and Slice 7's queued findings, including
+  the `what-you-agree-to` re-test after slice 6, are unchanged. No public site
+  content, routes or `CHANGELOG.md` changed.
