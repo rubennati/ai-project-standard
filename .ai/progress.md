@@ -311,3 +311,28 @@ instead of the reader benefit. Reset on 24 August, below.
   `state.md`. Slice 6's two blockers and Slice 7's queued findings, including
   the `what-you-agree-to` re-test after slice 6, are unchanged. No public site
   content, routes or `CHANGELOG.md` changed.
+
+## 2026-08-27
+
+- **Slice 5 merged as #169 (`948a376`, merge `8fad569`) and closed.** `state.md`
+  and `tasks.md` record it as shipped rather than in review, and it is no
+  longer carried as an active objective — durable outcomes are recorded once in
+  `state.md` and not reopened for preference or further polishing. The old
+  public six-stage lifecycle (`Decide / Configure / Verify / Record / Monitor /
+  Take it back`) is retired and no replacement taxonomy was introduced; four
+  ordered questions remain — permission, enforceable boundary, checking the
+  result, keeping a record — with monitoring and taking access back as
+  continuing concerns rather than a fifth and sixth step, and both former dead
+  ends now have honest destinations. `before-you-grant-access` is the canonical
+  owner of enforceable boundaries, stated as living outside the model across
+  several possible layers rather than as a target-system monopoly. The slice 4
+  → slice 5 handoff is reconciled and closed — disposition only is kept in
+  `state.md`, not the original prose. Objective moved to slice 6 — Law, About,
+  Evidence, Reference and discovery — which remains blocked on two open
+  decisions (`/docs/**` retirement shape, `practical-ai-collaboration`
+  promotion target) unchanged from before slice 5. Slice 7's queued findings,
+  including the `what-you-agree-to` re-test after slice 6, are unchanged plus
+  two additions slice 5 surfaced: a possible future operating route (two hubs
+  now point at the same absence) and the account switches' universal-reader
+  discovery home. No public site content, routes or `CHANGELOG.md` changed by
+  this reconciliation.

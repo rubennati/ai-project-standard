@@ -61,8 +61,8 @@ implementation, not merely before merge.
 | 3 | `/start` as one reader journey | 2 | no | **done** (#163) |
 | 4 | `/data-flows` and Connect AI | 3 | partly | **done** (#165) |
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
-| 5 | `/secure-setup` and verification | 4 | no | **in review** |
-| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
+| 5 | `/secure-setup` and verification | 4 | no | **done** (#169) |
+| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **next** |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
 1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
@@ -161,9 +161,8 @@ implementation, not merely before merge.
    carried forward as an active objective, and not reopened for preference or
    further polishing.
 
-5. **`/secure-setup` and verification.** Implemented on
-   `feature/slice-5-secure-setup`, awaiting human review — not committed, not
-   merged. The hub opens on `How do you set limits that hold — and check what
+5. ~~**`/secure-setup` and verification.**~~ **Shipped in #169.** The hub
+   opens on `How do you set limits that hold — and check what
    happened?` and carries four ordered reader questions plus two continuing
    concerns under `Once it is set up`; the six phase nouns are gone as a public
    spine. `Monitor` and `Take it back` were dead labels and now route to pages
