@@ -5,16 +5,14 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 5 — `/secure-setup` and verification.** Designed and implemented
-  on `feature/slice-5-secure-setup`, awaiting human review before commit. The
-  reader job: how do I set boundaries that hold, check what the system did, and
-  keep enough evidence to recover or explain the work later? What it settled is
-  in `decisions.md` (2026-08-26) — the six concepts survive and the six-step
-  public lifecycle does not, a boundary is enforced outside the model rather
-  than by the target system alone, and consequence and reliance are two axes
-  that combine. The slice 4 handoff is reconciled; see *Slice 4 → slice 5
-  handoff* below for what landed and what was deliberately not carried. No
-  route was added, renamed or retired.
+- **Now: slice 6 — Law, About, Evidence, Reference and discovery.** Slice 5
+  shipped in #169 (2026-08-26) and is closed; it is not carried forward as an
+  active objective — see *Settled* below for its durable outcome. Slice 6
+  depends on slice 2 (shipped) and needs the human approval `AGENTS.md` →
+  Change scope requires. Two decisions block its full scope and remain
+  unresolved: the `/docs/**` retirement shape, and the
+  `practical-ai-collaboration` promotion target — see *Open, and blocking*
+  below. Design has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -74,14 +72,30 @@ blueprint-status conformance boundary (`check-conformance.sh` against
 `decisions.md`, 2026-08-25. None of this reopens without a concrete
 contradiction slice 4 or later work actually produces.
 
-`/secure-setup` as four ordered questions plus two continuing concerns is
-settled to the same standard — see `decisions.md`, 2026-08-26. `Decide /
-Configure / Verify / Record / Monitor / Take it back` is not a public taxonomy
-in either language and is not reinstated. A boundary is *enforced outside the
-model*, which names several possible layers and not the target system alone;
-that phrasing exists so the 2026-08-25 intersection decision is not replaced by
-a new monopoly. Consequence and reliance are two axes that combine, stated once
-on `checking-the-result`. The four things worth recording are still four.
+`/secure-setup` as four ordered questions plus two continuing concerns shipped
+in slice 5 (#169) and is settled to the same standard — see `decisions.md`,
+2026-08-26. The old public six-stage lifecycle — `Decide / Configure / Verify /
+Record / Monitor / Take it back` — is retired in both languages and no
+replacement taxonomy was introduced. The four ordered questions are permission,
+enforceable boundary, checking the result and keeping a record; monitoring and
+taking access back are continuing concerns rather than a fifth and sixth step,
+and their former dead ends on the hub now have honest destinations.
+`before-you-grant-access` is the canonical owner of enforceable boundaries: a
+boundary is *enforced outside the model*, which names several possible layers —
+the connection, exposed operations, a narrow identity or credential,
+target-system permissions, a required approval — and not the target system
+alone, so the 2026-08-25 intersection decision is not replaced by a new
+monopoly. Approval is meaningful only when the concrete action is visible
+before it runs; a bare `continue?` is not enough, and `human in the loop` was
+not introduced as a phrase. Revocation does not imply deletion of copies
+already made elsewhere; that stays conditional, not universal. Consequence
+determines how much checking a task needs, stated once on `checking-the-result`
+rather than twice in different vocabulary, and reading alone is a useful check
+only where the reader understands enough to notice the errors that matter.
+`keeping-a-record` still owns the record/log/transcript distinction and the
+four things worth recording are still four; a log may identify the account,
+service identity or credential identifier used, but must not hold the secret
+itself. No operating route was created.
 
 ## Homepage Correction Pass — shipped in #167, closed
 
@@ -141,32 +155,24 @@ that changed; route set and sitemap unchanged; homepage `<main>` holds exactly
 six links in both locales; no horizontal overflow at 375, 768, 1280, 1440 or a
 1440-tall viewport.
 
-## Slice 4 → slice 5 handoff
+## Slice 4 → slice 5 handoff — reconciled, closed
 
-Material Connect AI's control loop needs a home for, recoverable at commit
-`178e782` (`git show 178e782:site/src/data/data-flows/connect-ai-to-tools-and-data.ts`).
-The exact keys and their intended destination are the table in `tasks.md`
-under slice 4 — not restated here. At minimum it covers: the recovery/revoke/
-undo/reconstruct question; the five removed control-loop implementation steps;
-the OWASP MCP security evidence that travelled with them; the removed
-verification-checklist material; and the German `Kontrollkreis` →
-`Regelkreis` correction to make on arrival. Git history is the recoverable
-source — none of this prose is duplicated here.
-
-**Reconciled in slice 5.** `controlSteps[0]` was discarded — whether a task is
-worth a connection is Use Cases' and Connect AI's question, not a control.
-`[1]` and `[2]` merged into the enforcement and identity material on
-`before-you-grant-access`; `[3]` became that page's approval section; `[4]`
-split, with only the non-duplicative pieces surviving — a log may identify the
-account or credential used but must not hold the secret itself, and the
-stop-and-recover half joined
-`boundaryQuestions[4]`, which is the spine of taking an access back. The old
-control-loop and verification headings were not carried, and the recovered
-verification steps sit beside the claims they prove rather than in a checklist.
-Because no control loop was rebuilt, `Kontrollkreis` never shipped and no
-`Regelkreis` was introduced in its place — the correction retired rather than
-landed. The OWASP MCP Security Cheat Sheet was deliberately not carried; see
-`decisions.md`, 2026-08-26.
+Connect AI's removed control-loop material (recoverable at commit `178e782`;
+the original key-by-key table is under slice 4 in `tasks.md`) was reconciled
+into `/secure-setup` in slice 5 (#169). Disposition: the manual-baseline item
+was discarded as out of family — whether a task is worth a connection is Use
+Cases' and Connect AI's question, not a control; the resource/tool-separation
+and narrow-identity material merged into `before-you-grant-access`'s
+enforcement and identity sections; the approval material landed as a
+substantial new section there; the log/stop/recovery material split, with only
+the non-duplicative pieces surviving — see the log/credential rule in
+*Settled* above — and the stop/recover half became that page's taking-access-
+back section. The old control-loop and verification headings were not carried,
+and the recovered verification steps sit beside the claims they prove rather
+than in a checklist. Because no control loop was rebuilt, `Kontrollkreis` never
+shipped and `Regelkreis` was never needed. The OWASP MCP Security Cheat Sheet
+was deliberately not carried; see `decisions.md`, 2026-08-26. Not active
+work — nothing in this handoff remains open.
 
 ## Working constraints for this objective
 
@@ -203,8 +209,8 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
 ## Open, and blocking
 
 Three, none answerable from repository evidence. Each blocks the specific
-decision it names, not the slice that decision sits in — none of them blocks
-slice 5, slice 6's other scope, or the homepage correction pass.
+decision it names, not the whole of slice 6 — the rest of that slice's scope
+is not gated by these.
 
 - **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
   automatic; what happens to the 21 published URLs does not follow from that.
@@ -223,9 +229,10 @@ slice 5, slice 6's other scope, or the homepage correction pass.
 
 ## Queued, not blocking
 
-Two things slice 4 found while reconciling ownership. Neither answerable from
-repository evidence, and neither blocks slice 5, slice 6 or anything else —
-both wait for the slice 7 whole-site pass named in `tasks.md`.
+Findings surfaced while reconciling ownership across slices 4 and 5. None are
+answerable from repository evidence and none block anything currently in
+progress; each waits for the slice it names, or for the slice 7 whole-site
+pass named in `tasks.md` where none is named.
 
 - **Export and portability have no owner.** `getting-it-back-out` answers
   deletion; nothing on the site answers *how do I get my data out*. Slice 4
