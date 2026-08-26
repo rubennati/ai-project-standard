@@ -5,15 +5,15 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: Homepage Correction Pass.** A focused correction between slice 4 and
-  slice 5, approved 2026-08-25 — not slice 8, and it does not renumber the
-  seven slices. Slice 4 shipped in #165. The homepage's small architecture from
-  PR #154 stays; the finding is editorial, not structural: the German H1 `KI
-  sinnvoll im Arbeitsalltag einsetzen` is too abstract to say what a reader can
-  achieve, the English needs the same scrutiny rather than a pass by default,
-  and on a tall desktop viewport the page reads as under-filled after its
-  compact trust close. Scope, boundaries and the design question are below.
-  Slice 5 remains next after this pass and has not started.
+- **Now: Homepage Correction Pass — implemented, awaiting review.** A focused
+  correction between slice 4 and slice 5, approved 2026-08-25 — not slice 8, and
+  it does not renumber the seven slices. The three-block architecture from
+  PR #154 is unchanged; the heading leads with capability instead of an
+  unmeasured quality, the lead promises only what the page routes to, one quiet
+  line of the hero names concrete work, the three reader questions carry the
+  weight of the page's main paths, and the desktop composition is fixed
+  horizontally rather than by adding length. Details below. Slice 5 remains next
+  after this pass and has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -73,8 +73,10 @@ contradiction slice 4 or later work actually produces.
 
 ## Homepage Correction Pass
 
-Approved 2026-08-25, between slice 4 and slice 5. Reconciliation only until a
-fresh design session runs it; this section is that session's brief.
+Approved 2026-08-25, between slice 4 and slice 5. Implemented on
+`feature/homepage-correction-pass`, awaiting human review and merge — not yet
+shipped to `main`. The decisions below are the human-approved product/editorial
+outcomes this section now records; they do not mean the pass itself has landed.
 
 **Why.** The homepage architecture from PR #154 remains broadly valid. Two
 concrete defects were found by rendering it, not by re-litigating the
@@ -103,20 +105,36 @@ duplicate the four header journeys.
 framing, `/docs` promotion, glossary housekeeping, count/inventory language, or
 internal product taxonomy as public copy.
 
-**What the fresh session decides.**
+**Decided, and settled by this pass.**
 
-1. A stronger H1 in both locales.
-2. A lead that says concretely what AI Standard helps a reader do.
-3. Whether one compact layer of concrete work/examples belongs before
-   `Direkt einsteigen` so the page demonstrates substance before it asks a
-   reader to pick a question.
-4. Whether `Offen entwickelt` remains the right compact closing block.
-5. How the page fills a desktop viewport without adding filler.
-
-Direction to test, not approved copy: concrete reader/work language — working
-with AI, concrete tasks, choosing a way of working, what changes when tools,
-data or other systems become involved. No draft wording from any prior
-conversation is pre-approved.
+- **The promise leads with capability, not with limits.** `What AI can do at
+  work — and how to work with it` / `Was KI bei der Arbeit kann — und wie du
+  damit arbeitest`. A limit-led H1 was considered and rejected: limits belong
+  where they change a decision, not as the product's defining promise. No vague
+  quality adjective returns — not `well`, `sinnvoll`, `responsible` or `safe`.
+- **`sinnvoll` stays in the header label for `/use-cases`.** A `Wo`-clause makes
+  it the question under examination rather than a promise, and the destination
+  answers it in both directions. Header copy was not reopened.
+- **The lead promises only what the page routes to** — what AI can help with,
+  which way of working fits, what changes when data, tools or other systems come
+  into play. `/secure-setup` is no longer promised by a page that cannot reach
+  it. The canonical identity sentence stays sentence one, still interpolated
+  from `identity.ts`; only the sentence after it is homepage copy.
+- **One quiet line of concrete work closes the hero.** Illustrative copy, never a
+  list, no heading, no links, no cards. `/use-cases` owns the real set.
+- **The desktop problem was horizontal, not vertical.** Rendered measurement
+  ruled out a vertical void — the document is the same height at 1280, 1440 and
+  1512, and a 1440-tall viewport stretched `main` by 4px. The fix is three
+  deliberate homepage-local widths and homepage-local section spacing. Global
+  layout tokens, the shell rails and the other hubs are untouched.
+- **The three reader questions, their order and their destinations are
+  unchanged.** Their rows carry more weight because they were the page's
+  quietest text while being its only in-page paths. The German heading became
+  `Mit einer Frage starten`, which names what follows; `Direkt einsteigen` only
+  named a mode.
+- **`Offen entwickelt` stays** as the closing block, in place, at its size, with
+  its single GitHub action. Its body says where a source and check date appear
+  instead of implying the link supplies them.
 
 ## Working constraints for this objective
 

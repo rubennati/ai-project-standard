@@ -13,22 +13,41 @@ const base = import.meta.env.BASE_URL;
 const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
 ---
 
+{/*
+  Three widths, deliberately, and all three are homepage-local. The heading takes
+  the whole `layout-wide` rail; the lead keeps a reading measure; the entry rows
+  sit between them. They used to be 768 / 672 / 672 — near-identical, so the page
+  read as one thin ribbon indented inside a header and footer that are both
+  192px wider. Nothing global changes: `--layout-wide`, the shell rails and the
+  other hubs are untouched.
+*/}
 <section class="flex flex-col gap-6">
-  <h1 class="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">{content.heading}</h1>
+  <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">{content.heading}</h1>
   <p class="max-w-2xl text-lg leading-8">{content.lead}</p>
-  <div class="flex flex-wrap gap-4">
-    <a
-      href={toHref(content.primaryAction.href)}
-      class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
-    >
-      {content.primaryAction.label}
-    </a>
-    <a
-      href={toHref(content.secondaryAction.href)}
-      class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
-    >
-      {content.secondaryAction.label}
-    </a>
+  {/*
+    The actions and the example line are one group: the line says what the two
+    destinations lead to, so it sits closer to them than the hero's own rhythm
+    would place it. One line, closing the hero rather than opening a section —
+    no heading, no list, no links, no card. It gives the lead's "concrete tasks"
+    a referent on the page, and stays quieter than the lead by leading and muted
+    ink so the two actions remain the loudest thing after the heading.
+  */}
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-wrap gap-4">
+      <a
+        href={toHref(content.primaryAction.href)}
+        class="rounded-md bg-[var(--color-accent)] px-5 py-2.5 font-medium text-[var(--color-on-accent)] no-underline hover:bg-[var(--color-accent-hover)]"
+      >
+        {content.primaryAction.label}
+      </a>
+      <a
+        href={toHref(content.secondaryAction.href)}
+        class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
+      >
+        {content.secondaryAction.label}
+      </a>
+    </div>
+    <p class="max-w-2xl leading-6 text-[var(--ink-muted)]">{content.example}</p>
   </div>
 </section>
 
@@ -38,17 +57,28 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
   targets with generous padding rather than small inline links, which is what
   makes them usable on a phone without turning the section into cards that would
   compete with the hero.
+
+  The rows carry the page's only in-page paths and used to be its quietest
+  typography, announced by a heading twice their size and set heavier than the
+  H1. Raising the rows rather than the heading keeps them under the hero and
+  above the closing colophon; `.prototype-section > h2` is shared with four
+  other pages and is not touched.
+
+  The margins are homepage-local overrides of `.prototype-section`. Tailwind
+  utilities sit in a later cascade layer than the component rule, so `mt-*` wins
+  without `!important`. The entries are the hero's third act and sit closer to
+  it; the colophon is a separate closing block and gets the wider gap.
 */}
-<section class="prototype-section">
+<section class="prototype-section mt-10 sm:mt-14">
   <h2>{content.entriesHeading}</h2>
 
-  <ul class="mt-6 max-w-2xl border-t border-[var(--line)]">
+  <ul class="mt-6 max-w-3xl border-t border-[var(--line)]">
     {
       content.entries.map((entry) => (
         <li class="border-b border-[var(--line)]">
           <a
             href={toHref(entry.href)}
-            class="flex items-center justify-between gap-4 py-4 text-lg font-medium no-underline hover:text-[var(--color-accent)]"
+            class="flex items-center justify-between gap-4 py-4 text-xl font-semibold no-underline hover:text-[var(--color-accent)]"
           >
             {entry.question}
             <span aria-hidden="true" class="shrink-0 text-[var(--ink-muted)]">
@@ -61,7 +91,7 @@ const toHref = (path: string) => `${base}${path.replace(/^\//, "")}`;
   </ul>
 </section>
 
-<section class="prototype-section">
+<section class="prototype-section mt-16 sm:mt-24">
   <h2>{content.openHeading}</h2>
   <p class="prototype-section__lead">{content.openBody}</p>
   <p class="mt-4">

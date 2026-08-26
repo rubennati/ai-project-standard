@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — A homepage that says what AI can do at work
+
+- The homepage now leads with what AI can do and how to work with it, instead of
+  promising that you will use it "well" — a word that never said by what measure.
+- The opening paragraph says concretely what the site gives you: what AI can help
+  with, which way of working fits, and what changes when data, tools or other
+  systems come into play. It no longer promises a fourth thing the page does not
+  lead to.
+- One line of the hero now names actual work — turning notes into a draft,
+  finding answers in your own material, connecting AI to an existing system — so
+  the page shows what it means before asking you to pick a question.
+- The first button now says what it leads to, "What AI can help with", rather
+  than naming the page's own filing category.
+- The three reader questions are unchanged, and now carry the weight they should:
+  they are the page's main paths and were its quietest text.
+- On a wide screen the page fills it properly. The heading, the paragraph and the
+  questions used to sit at nearly the same width in a narrow column; they now
+  have three deliberate widths, and the two sections below the hero are spaced to
+  show which one continues the opening and which one closes the page.
+- German: the direct-entry heading is now "Mit einer Frage starten", which says
+  what follows, where "Direkt einsteigen" only said to go straight in.
+
 ### Changed — Access & actions explains how a connection works, and where reach comes from
 
 - "What can it access, and what can it do?" now opens by explaining where an AI

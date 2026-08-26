@@ -60,7 +60,7 @@ implementation, not merely before merge.
 | 2 | Global shell: footer and page-level onward path | 1 | yes | **done** (#161) |
 | 3 | `/start` as one reader journey | 2 | no | **done** (#163) |
 | 4 | `/data-flows` and Connect AI | 3 | partly | **done** (#165) |
-| — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **next** |
+| — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done, in review** |
 | 5 | `/secure-setup` and verification | 4 | no | not started |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | blocked |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
@@ -150,12 +150,15 @@ implementation, not merely before merge.
    and the `Reference` glossary block went from nine terms to four with no
    heading.
 **Homepage Correction Pass — between slice 4 and slice 5, not slice 8.**
-   Approved 2026-08-25. The homepage architecture from PR #154 (hero, three
-   direct reader questions, two hero CTAs, compact open-development close) is
-   settled and not reopened; the finding is editorial and a density read, not
-   structural. Full scope, the boundaries and the design question are in
-   `state.md` under *Homepage Correction Pass* — that section is this slot's
-   brief, not restated here. Does not renumber slices 5–7.
+   **Implemented on `feature/homepage-correction-pass`; awaiting review, not
+   merged.** The PR #154 architecture is unchanged — hero, three direct reader
+   questions, two hero CTAs, compact open-development close.
+   What changed is editorial hierarchy and homepage-local composition; the
+   settled outcomes are in `state.md` under *Homepage Correction Pass* and are
+   not restated here. Only `site/src/data/home.ts` and
+   `site/src/components/HomeContent.astro` were touched: 377 of 379 built pages
+   are byte-identical, header and footer byte-identical on the two that changed,
+   routes and sitemap unchanged. Does not renumber slices 5–7.
 
 5. **`/secure-setup` and verification.** A reader-recognisable object and
    opening; the sequence stays, the phase nouns stop being the public spine
