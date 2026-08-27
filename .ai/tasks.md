@@ -298,9 +298,9 @@ badly they mislead. Nothing here is fixed yet.
 
 ## Release-readiness closeout defects — 10/10 closed, 2026-08-27
 
-Closed 2026-08-27 on `fix/close-release-readiness-defects`. Defects 1–9 are
-fixed and verified in the built site; defect 10's fix is committed but can only
-be proven after the merge deploys.
+Closed 2026-08-27 on `fix/close-release-readiness-defects` (#179). Defects 1–9
+were fixed and verified in the built site; defect 10's fix deployed with that
+merge and was verified live afterward — see item 10 below.
 
 An important correction carried out of this pass: defects 2, 3 and 6 were first
 reported as German-only. They were not — the English carried the same overreach
