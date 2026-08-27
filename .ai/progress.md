@@ -432,3 +432,44 @@ instead of the reader benefit. Reset on 24 August, below.
   case; the second-blog-post discoverability question; and internal cleanup of
   the dead `license` prop, the unused `mdx()` integration and the `docs/**`
   Pages workflow trigger. None of these block the final overall site check.
+
+## 2026-08-27 (4)
+
+- **Final overall site check shipped, then a release-readiness gate.** The
+  read-only final check (prior session) returned READY AFTER LOCAL FIXES with
+  ten bounded defects; all ten were fixed and merged as #175. In the same
+  window the maintainer requested a third footer column (Legal/Rechtliches,
+  moving Impressum/Datenschutz and the two report links up from the closing
+  bar), shipped as #176. Both merged 2026-08-27.
+- **Release-readiness gate.** Created `docs/release-readiness.md` — the
+  repository's durable Definition of Done, acceptance criteria, verification
+  checklist, severity model and verdict vocabulary for judging the website
+  release-ready; not a public route. Amended the 2026-08-24 footer decision in
+  `decisions.md` to record the three-group shape without reopening what a
+  header journey is. Removed the public Acknowledgements/Danksagung section
+  from About in both locales after confirming it carried no legal attribution
+  — repository-history copy about `AGENTS.md` conventions, not MIT, CC BY 4.0
+  or a NOTICE requirement.
+- **A real defect surfaced and was fixed in the same pass**: the footer
+  spacing fix from the prior session (commit `bc94d4a`, grouping the licence
+  line with the language switch) was pushed to `feat/footer-legal-column`
+  *four minutes after* #176 had already been merged, so it never reached
+  `main` — the live site carried the reported orphaned-licence-line bug this
+  whole time despite being reported as fixed. Cherry-picked onto this pass's
+  branch and verified live. Also corrected the desktop footer's visual
+  balance per a maintainer follow-up request: the brand no longer reads as a
+  fourth peer column — a two-zone grid (`site-footer__grid` | new
+  `site-footer__sections` wrapper) gives the three navigation groups equal
+  275px tracks at the wide breakpoint, verified by DOM measurement on the
+  homepage, About (EN/DE), Law and a secure-setup page at 375/768/1280px.
+- **Verdict: READY AFTER LOCAL FIXES.** One bounded DEFECT recorded in
+  `tasks.md`: the privacy policy's processor list omits Fastly, GitHub Pages'
+  own CDN, visible in the live response chain. Not fixed in this pass —
+  privacy-policy wording is a reserved content/legal decision. Everything
+  else found was NON-BLOCKING QUALITY or already-recorded FUTURE SCOPE; 0
+  broken internal links across 380 routes verified fresh, 0 genuinely dead
+  external sources across 89 unique links (several curl false negatives
+  traced to an unescaped-entity bug in the crawler, GitHub rate-limiting, and
+  Cloudflare bot-blocking on non-browser clients — all confirmed live via
+  real browser rendering), live privacy claims (no cookies, no tracking
+  scripts) verified against the actual production response.

@@ -1113,6 +1113,11 @@
     line-height: 1.6;
   }
 
+  .site-footer__sections {
+    display: grid;
+    gap: 2.5rem 2rem;
+  }
+
   .site-footer__section h2 {
     margin-bottom: 0.875rem;
     color: var(--ink-muted);
@@ -1161,8 +1166,19 @@
     color: inherit;
   }
 
+  .site-footer__closing-utilities {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
   @media (min-width: 40rem) {
     .site-footer__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__sections {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
@@ -1174,10 +1190,19 @@
   }
 
   @media (min-width: 64rem) {
+    /* Two zones, not four peer columns: the brand sits on its own track and
+       the three navigation groups share equal-width tracks of their own, so
+       they read as one connected navigation block beside the brand instead of
+       three auto-width columns whose widths happen to track their longest
+       link. */
     .site-footer__grid {
-      grid-template-columns: minmax(12rem, auto) repeat(3, minmax(9rem, auto));
-      justify-content: start;
+      grid-template-columns: minmax(12rem, auto) 1fr;
       column-gap: 3.5rem;
+    }
+
+    .site-footer__sections {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      column-gap: 2.5rem;
     }
   }
 
