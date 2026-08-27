@@ -106,8 +106,10 @@ const reportProblemUrl = `${repoUrl}/issues/new?${new URLSearchParams({
   body: `**${ui.reportProblemPage}:** ${title}\n**${ui.reportProblemUrl}:** ${pageUrl}\n\n**${ui.reportProblemBody}**\n\n`,
 }).toString()}`;
 
-// Two groups, because there are two questions a reader arrives at the bottom of
-// a page with: something in the way (a word, a rule), and who is behind this.
+// Three groups: something in the way (a word, a rule), who is behind this, and
+// the statutory/disclosure surfaces a reader looks for by name rather than by
+// journey — legal notice, privacy, and the two report paths, which used to sit
+// in an unheaded row and the closing legal bar respectively.
 //
 // The four header journeys are deliberately absent — see `.ai/decisions.md`,
 // 2026-08-24. A stranded reader is answered by the page's own next step, not by
@@ -130,16 +132,16 @@ const footerSections = [
       { href: repoUrl, label: ui.projectOnGithub, external: true },
     ],
   },
-];
-
-// Actions rather than destinations, so they carry no heading and no landmark of
-// their own. Kept separate because they lead to different disclosure channels:
-// a public issue and a private security advisory. The human `security.txt`
-// link is gone; `public/.well-known/security.txt` is still served for scanners
-// and still names the same advisory address.
-const footerUtilities = [
-  { href: reportProblemUrl, label: ui.reportProblem },
-  { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability },
+  {
+    id: "footer-legal",
+    heading: ui.footerLegal,
+    links: [
+      { href: localizedLegal, label: ui.legalNotice },
+      { href: localizedPrivacy, label: ui.privacyPolicy },
+      { href: reportProblemUrl, label: ui.reportProblem, external: true },
+      { href: `${repoUrl}/security/advisories/new`, label: ui.reportVulnerability, external: true },
+    ],
+  },
 ];
 ---
 
@@ -289,30 +291,18 @@ const footerUtilities = [
           }
         </div>
 
-        <ul class="site-footer__utilities">
-          {
-            footerUtilities.map((item) => (
-              <li>
-                <a href={item.href} class="site-footer__utility">
-                  {item.label}
-                  <span aria-hidden="true" class="ml-0.5">
-                    ↗
-                  </span>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-
         <div class="site-footer__closing">
-          {/* The legal bar. Legal notice and privacy sit with the copyright and
-              the two licences because that is one subject and where a reader
-              looks for it, not to save a row. They keep the fine-print size the
-              licences already use, and the muted ink measures 7.3:1 here. */}
+          {/* The legal bar. Legal notice, privacy and the two report paths
+              moved into the third column above, where a reader looks for them
+              by name. What is left here is copyright and the two licences, at
+              the fine-print size they already used. Three flex children with
+              the row's existing space-between now read as copyright, licences,
+              language — the licences sit centred between the other two rather
+              than flush against the copyright line. */}
           <p class="site-footer__fine-print">
             <span>© {copyrightYear} AI Standard</span>
-            <span><a href={localizedLegal}>{ui.legalNotice}</a></span>
-            <span><a href={localizedPrivacy}>{ui.privacyPolicy}</a></span>
+          </p>
+          <p class="site-footer__fine-print">
             <span>
               {ui.finePrintCode}{" "}
               <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>

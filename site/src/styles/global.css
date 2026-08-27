@@ -1138,24 +1138,6 @@
     text-decoration: underline;
   }
 
-  .site-footer__utilities {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 1.5rem;
-    margin-top: 2rem;
-  }
-
-  .site-footer__utility {
-    color: var(--ink-muted);
-    font-size: 0.8125rem;
-    text-decoration: none;
-  }
-
-  .site-footer__utility:hover {
-    color: var(--color-accent);
-    text-decoration: underline;
-  }
-
   .site-footer__closing {
     display: flex;
     flex-direction: column;
@@ -1193,9 +1175,9 @@
 
   @media (min-width: 64rem) {
     .site-footer__grid {
-      grid-template-columns: minmax(12rem, auto) repeat(2, minmax(11rem, auto));
+      grid-template-columns: minmax(12rem, auto) repeat(3, minmax(9rem, auto));
       justify-content: start;
-      column-gap: 4.5rem;
+      column-gap: 3.5rem;
     }
   }
 
