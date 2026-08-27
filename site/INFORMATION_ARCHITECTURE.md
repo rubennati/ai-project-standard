@@ -347,28 +347,35 @@ progression so it remains linkable, printable and accessible.
 
 ## Footer
 
-Implemented 2026-08-24 (slice 2). The footer holds supporting destinations,
-trust and a very small number of utilities. **It does not carry `/use-cases`,
-`/start`, `/data-flows` or `/secure-setup` in any language** — see
-`.ai/decisions.md`, 2026-08-24. A stranded reader is answered by the page's own
-`NextStep`, not by putting every primary destination on a third surface of one
-screen.
+Implemented 2026-08-24 (slice 2), amended 2026-08-27 to three groups. The
+footer holds supporting destinations, trust, legal disclosure and a very small
+number of utilities. **It does not carry `/use-cases`, `/start`, `/data-flows`
+or `/secure-setup` in any language** — see `.ai/decisions.md`, 2026-08-24 and
+2026-08-27. A stranded reader is answered by the page's own `NextStep`, not by
+putting every primary destination on a third surface of one screen.
 
 | Group | EN | DE | Links |
 | --- | --- | --- | --- |
 | 1 | Terms & law | Begriffe & Recht | Glossary / Glossar → `/glossary`; Law / Recht → `/law` |
-| 2 | About AI Standard | Über AI Standard | About / Über das Projekt → `/about`; How claims are checked / Wie Aussagen geprüft werden → `/glossary/evidence-method`; The project on GitHub ↗ / Projekt auf GitHub ↗ → the repository |
+| 2 | About AI Standard | Über AI Standard | About / Über das Projekt → `/about`; How claims are checked / Wie Aussagen geprüft werden → `/about/how-claims-are-checked`; The project on GitHub ↗ / Projekt auf GitHub ↗ → the repository |
+| 3 | Legal | Rechtliches | Legal Notice / Impressum → `/legal-notice`; Privacy Policy / Datenschutz → `/privacy-policy`; Report a problem ↗ / Problem melden ↗; Report a vulnerability ↗ / Sicherheitslücke melden ↗ |
 
-Beneath the groups, a visually secondary utility row with no heading and no
-landmark of its own — actions rather than destinations: Report a problem ↗ /
-Problem melden ↗, and Report a vulnerability ↗ / Sicherheitslücke melden ↗. They
-stay separate because they lead to different disclosure channels.
+The third group replaced two weaker surfaces rather than adding a new one: the
+unheaded utility row that used to carry the two reporting paths, and the legal
+notice and privacy links that used to sit in the closing bar. Both are things a
+reader looks for by name, so they read better under a name. The two reporting
+paths stay separate entries because they lead to different disclosure channels.
 
-Beneath that, the legal bar: © AI Standard, Legal Notice / Impressum, Privacy
-Policy / Datenschutz, the code licence and the site-content licence, with the
-language switch. The wordmark opens the footer and is the reader's only path
-home from the bottom of a long page, because the header does not follow them
-down.
+Beneath the groups, the closing bar: © AI Standard, the code licence and the
+site-content licence, with the language switch. The licences and the switch are
+grouped at the same edge rather than spaced apart, so the licence line does not
+read as an orphan floating in the middle of an empty row. The wordmark opens
+the footer and is the reader's only path home from the bottom of a long page,
+because the header does not follow them down.
+
+At the wide breakpoint the footer is two zones rather than four peer columns:
+the brand sits on its own track, and the three groups share equal-width tracks
+beside it, so they read as one balanced navigation block.
 
 What the footer does not carry, and why:
 
@@ -383,8 +390,11 @@ What the footer does not carry, and why:
   root.
 - **A human Security contact link.** It resolved to
   `/.well-known/security.txt`, whose only content is the advisory address
-  already linked as Report a vulnerability. The endpoint is still served for
-  scanners, byte-identical.
+  already linked as Report a vulnerability. The file is still built, but the
+  claim that the endpoint is "still served for scanners" is currently false:
+  production returns 404 for it. Recorded as an open defect in `.ai/tasks.md`;
+  the reporting route itself is unaffected, because Report a vulnerability
+  links the advisory form directly.
 - **The identity sentence.** It belongs where a reader is deciding what this is
   — the homepage lead, About, the metadata — not at the end of an article they
   have already read. `site/src/data/identity.ts` is unchanged.
@@ -397,9 +407,10 @@ guide links the relevant artifact.
 - A global link may point at a hub and at one of its descendants, but only where
   the descendant has a reader job the hub does not cover.
 - **Do not link the evidence method from the glossary index.** Its conceptual
-  owner is not the glossary, and a historical URL is not a reason to reinforce
-  that hierarchy in navigation. `/glossary/evidence-method`'s URL and ownership
-  are reserved for dedicated reference work.
+  owner is not the glossary. Slice 6 settled this by moving the page to
+  `/about/how-claims-are-checked`, where About owns it; the old
+  `/glossary/evidence-method` URLs redirect and no Reference area exists — see
+  `.ai/decisions.md`, 2026-08-27.
 - `/profiles`, `/docs/**` and `/open-source/**` remain separate discovery and
   ownership questions. None has a global link.
 

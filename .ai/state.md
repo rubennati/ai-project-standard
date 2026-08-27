@@ -7,15 +7,28 @@
   what already works. All seven are shipped. The slices, their scope and their
   dependencies are in `tasks.md`.
 - **Now: the seven-slice roadmap is complete. The final overall site check
-  shipped its ten bounded local fixes (#175) and a maintainer-requested
-  three-column footer (#176), both merged 2026-08-27.** The release-readiness
-  gate that followed closed **READY AFTER LOCAL FIXES**: one bounded DEFECT
-  remains (the privacy policy's processor list omits Fastly, visible in the
-  live response chain behind Cloudflare and GitHub Pages — exact fix in
-  `tasks.md`). This pass also recovered a footer spacing fix that had been
-  pushed to the `feat/footer-legal-column` branch four minutes *after* #176
-  was merged and so never reached `main` — the live footer carried the
-  reported bug until this pass reapplied it. There is no slice 8.
+  shipped its ten bounded local fixes (#175), a maintainer-requested
+  three-column footer (#176) and the release-readiness standard (#177), all
+  merged 2026-08-27.** There is no slice 8.
+- **Release Readiness: READY AFTER LOCAL FIXES.** Not READY. The closeout pass
+  closed the privacy delivery-chain defect and the stale footer documentation,
+  and then completed the three acceptance areas the earlier pass could not
+  evidence — exhaustive concept ownership, exhaustive strong-claim review, and
+  actual Lighthouse measurement. Those audits found **ten open defects**, listed
+  in `tasks.md` under *Release-readiness closeout defects*. Nine are content
+  corrections; one is a live infrastructure defect
+  (`/.well-known/security.txt` 404s in production). None is a BLOCKER: no
+  reader is pushed toward an unsafe or unlawful act by any of them, and the
+  errors run conservative — they over-claim scope or over-warn, rather than
+  clearing anyone to do something.
+- **Two findings worth carrying, because they are about how the audits
+  themselves failed.** First, the strong-claim defects were initially reported
+  as German-only; they are not — the English carries the same overreach in
+  every case, which means the earlier English pass under-reported and a
+  single-language audit is not evidence about the other language. Second,
+  `/.well-known/security.txt` was checked as a *built file* in the previous
+  pass and passed; it fails as a *live URL*. `docs/release-readiness.md`
+  already requires live checking, and this is what that requirement is for.
 - **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
   (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
   between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped

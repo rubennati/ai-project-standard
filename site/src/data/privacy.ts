@@ -6,11 +6,21 @@
  * than design ones.
  *
  * Every factual claim here was verified against the provider's own
- * documentation, cited inline. Two points are deliberately phrased as criteria
- * rather than assertions, because they could not be verified from an
- * authoritative source: the exact retention period, and the role each provider
- * takes (controller vs processor). Both must be confirmed before this is
- * treated as final.
+ * documentation, cited inline.
+ *
+ * Two things this page deliberately does not assert, and the omissions are
+ * settled rather than outstanding. It does not restate each provider's log
+ * retention period, and it does not classify the providers as controller or
+ * processor. Both would be this page's own characterisation of someone else's
+ * practice, drifting the moment they change it; the page links their
+ * documentation and lets it answer instead. Do not "resolve" these by writing
+ * in a period or a role — the link is the answer.
+ *
+ * The delivery chain names Cloudflare and GitHub Pages, and states that GitHub
+ * uses service providers beneath GitHub Pages, citing GitHub's own
+ * subprocessor list for Fastly. It does not transfer GitHub's IP-logging
+ * statement to Fastly, and it does not describe Fastly's own retention or
+ * logging: no authoritative source was read for either, and neither is needed.
  */
 import type { SiteLocale } from "../i18n/ui";
 import { contactEmail, operator } from "./site";
@@ -26,6 +36,8 @@ const GITHUB_PAGES_DOCS =
   "https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages";
 const GITHUB_PRIVACY =
   "https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement";
+const GITHUB_SUBPROCESSORS =
+  "https://docs.github.com/en/site-policy/privacy-policies/github-subprocessors";
 const CLOUDFLARE_PRIVACY = "https://www.cloudflare.com/privacypolicy/";
 const CLOUDFLARE_GDPR = "https://www.cloudflare.com/trust-hub/gdpr/";
 const DSB = "https://www.dsb.gv.at/";
@@ -54,7 +66,7 @@ const en: PrivacySection[] = [
   {
     heading: "What is processed when you visit",
     paragraphs: [
-      "Delivery of this site runs through two providers, and both keep server logs. That processing happens whatever the site itself does, and it is the only personal data involved.",
+      "Delivery of this site runs through Cloudflare in front of GitHub Pages, and both keep server logs. That processing happens whatever the site itself does, and it is the only personal data involved.",
       "The logs contain the usual request metadata: IP address, date and time, the URL requested, HTTP status, user agent and referrer. IP addresses are personal data under Art. 4(1) GDPR.",
       "GitHub states this plainly for GitHub Pages: the visitor's IP address is logged and stored for security purposes, whether or not the visitor is signed in to GitHub.",
     ],
@@ -73,11 +85,12 @@ const en: PrivacySection[] = [
     heading: "Recipients and international transfers",
     paragraphs: [
       "Cloudflare, Inc. (United States) delivers the site as a reverse proxy and terminates TLS. Cloudflare states that it processes this log metadata in data centres in the United States and Europe.",
-      "GitHub, Inc., part of Microsoft (United States), hosts the site through GitHub Pages.",
-      "Both are United States companies, so processing may take place outside the EU. The safeguards each relies on, and the periods they retain log data for, are set out in their own privacy documentation linked below rather than restated here, so that this page cannot drift from what they actually do.",
+      "GitHub, Inc., part of Microsoft (United States), hosts the site through GitHub Pages. GitHub in turn uses service providers for parts of its own infrastructure; its current subprocessor list names Fastly, Inc. (United States) for content delivery.",
+      "These are United States companies, so processing may take place outside the EU. The safeguards each relies on, and the periods they retain log data for, are set out in their own privacy documentation linked below rather than restated here, so that this page cannot drift from what they actually do.",
     ],
     links: [
       { label: "GitHub Privacy Statement", href: GITHUB_PRIVACY },
+      { label: "GitHub's current subprocessor list", href: GITHUB_SUBPROCESSORS },
       { label: "Cloudflare Privacy Policy", href: CLOUDFLARE_PRIVACY },
     ],
   },
@@ -122,7 +135,7 @@ const de: PrivacySection[] = [
   {
     heading: "Was beim Aufruf verarbeitet wird",
     paragraphs: [
-      "Die Auslieferung dieser Website läuft über zwei Anbieter, und beide führen Server-Protokolle. Diese Verarbeitung findet unabhängig davon statt, was die Website selbst tut, und sie betrifft die einzigen personenbezogenen Daten, um die es hier geht.",
+      "Die Auslieferung dieser Website läuft über Cloudflare vor GitHub Pages, und beide führen Server-Protokolle. Diese Verarbeitung findet unabhängig davon statt, was die Website selbst tut, und sie betrifft die einzigen personenbezogenen Daten, um die es hier geht.",
       "Die Protokolle enthalten die üblichen Anfrage-Metadaten: IP-Adresse, Datum und Uhrzeit, aufgerufene URL, HTTP-Status, User-Agent und Referrer. IP-Adressen sind nach Art. 4 Z 1 DSGVO personenbezogene Daten.",
       "GitHub hält das für GitHub Pages ausdrücklich fest: Die IP-Adresse der Besucherinnen und Besucher wird zu Sicherheitszwecken protokolliert und gespeichert, unabhängig davon, ob sie bei GitHub angemeldet sind.",
     ],
@@ -141,11 +154,12 @@ const de: PrivacySection[] = [
     heading: "Empfänger und Drittlandübermittlung",
     paragraphs: [
       "Cloudflare, Inc. (USA) liefert die Website als Reverse Proxy aus und terminiert TLS. Cloudflare gibt an, diese Protokoll-Metadaten in Rechenzentren in den USA und in Europa zu verarbeiten.",
-      "GitHub, Inc., Teil von Microsoft (USA), hostet die Website über GitHub Pages.",
-      "Beide sind US-Unternehmen, eine Verarbeitung außerhalb der EU ist daher möglich. Die jeweils herangezogenen Garantien und die Speicherdauer der Protokolldaten ergeben sich aus den unten verlinkten Datenschutzdokumenten der Anbieter und werden hier bewusst nicht wiederholt, damit diese Seite nicht von der tatsächlichen Praxis abweichen kann.",
+      "GitHub, Inc., Teil von Microsoft (USA), hostet die Website über GitHub Pages. GitHub setzt seinerseits Dienstleister für Teile der eigenen Infrastruktur ein; in der aktuellen Unterauftragsverarbeiter-Liste ist Fastly, Inc. (USA) für die Inhaltsauslieferung genannt.",
+      "Es handelt sich um US-Unternehmen, eine Verarbeitung außerhalb der EU ist daher möglich. Die jeweils herangezogenen Garantien und die Speicherdauer der Protokolldaten ergeben sich aus den unten verlinkten Datenschutzdokumenten der Anbieter und werden hier bewusst nicht wiederholt, damit diese Seite nicht von der tatsächlichen Praxis abweichen kann.",
     ],
     links: [
       { label: "GitHub Privacy Statement", href: GITHUB_PRIVACY },
+      { label: "Aktuelle Unterauftragsverarbeiter-Liste von GitHub", href: GITHUB_SUBPROCESSORS },
       { label: "Cloudflare Privacy Policy", href: CLOUDFLARE_PRIVACY },
     ],
   },
