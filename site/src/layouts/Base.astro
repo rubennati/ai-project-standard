@@ -294,31 +294,33 @@ const footerSections = [
         <div class="site-footer__closing">
           {/* The legal bar. Legal notice, privacy and the two report paths
               moved into the third column above, where a reader looks for them
-              by name. What is left here is copyright and the two licences, at
-              the fine-print size they already used. Three flex children with
-              the row's existing space-between now read as copyright, licences,
-              language — the licences sit centred between the other two rather
-              than flush against the copyright line. */}
+              by name. What is left here is copyright on one side and the two
+              licences grouped with the language switch on the other — both are
+              utility controls a returning reader scans for at the same edge,
+              rather than the licences floating alone in the middle of an empty
+              row. */}
           <p class="site-footer__fine-print">
             <span>© {copyrightYear} AI Standard</span>
           </p>
-          <p class="site-footer__fine-print">
-            <span>
-              {ui.finePrintCode}{" "}
-              <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>
-            </span>
-            <span>
-              {ui.finePrintSiteContent}{" "}
-              <a href="https://creativecommons.org/licenses/by/4.0/" rel="license"
-                >{ui.contentLicence}</a
-              >
-            </span>
-          </p>
-          <LanguageSwitch
-            currentLocale={locale}
-            enHref={enLanguageHref}
-            deHref={deLanguageHref}
-          />
+          <div class="site-footer__closing-utilities">
+            <p class="site-footer__fine-print">
+              <span>
+                {ui.finePrintCode}{" "}
+                <a href={`${repoUrl}/blob/main/LICENSE`}>MIT</a>
+              </span>
+              <span>
+                {ui.finePrintSiteContent}{" "}
+                <a href="https://creativecommons.org/licenses/by/4.0/" rel="license"
+                  >{ui.contentLicence}</a
+                >
+              </span>
+            </p>
+            <LanguageSwitch
+              currentLocale={locale}
+              enHref={enLanguageHref}
+              deHref={deLanguageHref}
+            />
+          </div>
         </div>
       </div>
     </footer>
