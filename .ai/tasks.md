@@ -62,7 +62,7 @@ implementation, not merely before merge.
 | 4 | `/data-flows` and Connect AI | 3 | partly | **done** (#165) |
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
 | 5 | `/secure-setup` and verification | 4 | no | **done** (#169) |
-| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **next** |
+| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **implemented, awaiting review** |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
 1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
@@ -181,17 +181,26 @@ implementation, not merely before merge.
    Three decisions are in `decisions.md` (2026-08-26). Eight built pages changed
    and 371 are byte-identical; routes, sitemap, header, footer and homepage
    unchanged.
-6. **Law, About, Evidence, Reference and discovery.** Law hub reader job;
-   `what-may-go-in` ownership; `four-separate-questions` framing and its
-   duplicated legal facts; one owner for AI Act Art. 4; About versus Evidence
-   Method ownership, with Evidence Method treated as trust content; glossary
-   naming and discovery; `/docs/**` publication becomes explicit;
-   `practical-ai-collaboration` preserved and later promoted; `/profiles`;
-   `/open-source/**` reconnected from development content with the
-   `No AI in this section` separation removed; `/impressum` and `/datenschutz`
-   redirected to their German counterparts; the legal-notice licence sentence
-   follows whatever `/docs/**` becomes.
-   *Blocked:* two open questions in `state.md`.
+6. **Law, About, Evidence, Reference and discovery.** Implemented on
+   `feature/slice-6-law-about-discovery`, awaiting review — four decisions in
+   `decisions.md`, 2026-08-27. The 21 `/docs/**` routes and `/profiles`
+   redirect one-to-one to their repository sources and the glob renderer is
+   removed, so publication requires a deliberate page;
+   `practical-ai-collaboration` stays a repository document, reversing its
+   planned promotion. The method page moved to
+   `/about/how-claims-are-checked`, owns dates, source authority and the
+   correction path, and About keeps a bridge. The Law hub routes with the map
+   first; the map page stopped restating trade-secret and Art. 4 material its
+   owners carry; `what-may-go-in` gained its first onward step;
+   `data-sovereignty` links the transfer question to
+   `us-cloud-and-the-gdpr`. `what-you-agree-to` narrowed to three unique
+   ideas, handing the vendor-claim decoder to `where-knowledge-lives`. Open
+   Source lost the `No AI in this section` separation, is reached from Vibe
+   Coding and About, and two articles gained the sibling step their closings
+   promised. Glossary is one name, its index honest about linking, its count
+   line filter feedback only. `/impressum` and `/datenschutz` land on the
+   German pages; the licence sentences dropped their public-`/docs/` clauses;
+   `llms.txt` matches the shipped architecture.
 7. **Site-wide voice, German and quality.** Only after ownership has stabilised.
    Negation-heavy headings, count language, meta copy, capability/limitation
    balance, the German defects the review named, `du`/`man` consistency, and a

@@ -1,10 +1,15 @@
 /**
- * About: the idea, the method, and the limits.
+ * About: what the project is and who stands behind it.
  *
  * Deliberately weighted away from biography. What earns trust on a site that
  * makes legal and security claims is not a CV — it is a stated method the
  * reader can hold the pages against, and an honest account of where the site
  * stops. The person is one short section, not the subject.
+ *
+ * The method itself — levels, source ranking, check dates, corrections — is
+ * owned by `/about/how-claims-are-checked` since 2026-08-27. This page keeps
+ * a short bridge to it instead of a hand-typed second copy, which had already
+ * drifted from the generated one. See `.ai/decisions.md`, 2026-08-27.
  */
 import type { SiteLocale } from "../i18n/ui";
 
@@ -12,6 +17,7 @@ export interface AboutSection {
   heading: string;
   paragraphs: string[];
   list?: string[];
+  links?: { label: string; href: string }[];
 }
 
 const en: AboutSection[] = [
@@ -32,28 +38,12 @@ const en: AboutSection[] = [
     ],
   },
   {
-    heading: "How the site works",
+    heading: "How claims are checked",
     paragraphs: [
-      "Every section of every article carries a label saying what kind of claim it is making. The labels are the method, and they are what you should hold the pages against:",
+      "Every section of every article carries a label saying what kind of claim it is making, and each label has conditions a claim must meet before it ships under it. The labels are the method, and they are what you should hold the pages against.",
+      "The levels themselves, how sources are ranked, what a check date does and does not do, and what happens when a claim here is wrong have their own page.",
     ],
-    list: [
-      "Fact — a narrow, checkable statement from a linked primary source, with its check date. Where the source is a vendor describing itself, the text says so.",
-      "Measured — tested here, with the setup, version and date stated so you can repeat it, and holding for that setup rather than in general.",
-      "Law — restating a named norm or official guidance, with jurisdiction and check date. Never legal advice.",
-      "Assessment — a professional judgement, forecast or observation from practice, with the reasoning and its limits left visible so you can disagree.",
-      "Recommendation — deliberately conservative: what I would do here, and which level it stands on. Not a claim that other choices are impermissible.",
-    ],
-
-  },
-  {
-    heading: "Sources, dates and being wrong",
-    paragraphs: [
-      "Sources are primary or they are not used, and they are ranked: the consolidated legal text or Official Journal first, then official guidance from the Commission or a supervisory authority, then a vendor's own published terms and documentation, then technical primary documentation, and only after all of those anything written about them. That rule has already caught an error here — an EU regulation was described as a provisional agreement because a Commission FAQ still said so, when the act had been in force for a week.",
-      "Being the source is not the same as being right. A vendor is authoritative for what it has published about itself and for nothing beyond that: its documentation states its terms, it does not audit its systems. So a page here says the vendor states something, rather than asserting the behaviour outright, and the difference is not pedantry — it is the difference between a commitment you could hold someone to and a fact you have verified.",
-      "The same line runs through the legal pages. Restating a norm and applying it to your situation are different acts needing different competence: the first is labelled Law, and the moment a sentence reaches a conclusion about a real case it is labelled Assessment, whoever wrote it.",
-      "Dates do a narrower job than a check date is often credited with. They do not make a claim true or lasting; they fix which state of a changing world it was checked against. Vendor defaults move without announcement, which is why every factual and measured claim here carries one.",
-      "Corrections are welcome and they are not a favour. Every page has a link that opens an issue with the page and its URL already filled in. If something here is wrong, that link is the fastest way to make it right, and the correction gets recorded rather than quietly patched.",
-    ],
+    links: [{ label: "How claims are checked", href: "/about/how-claims-are-checked" }],
   },
   {
     heading: "What this site is not",
@@ -67,9 +57,10 @@ const en: AboutSection[] = [
     heading: "The repository underneath",
     paragraphs: [
       "This site is built from a public repository, and the repository holds a second thing: a set of conventions for working with AI on a codebase — how several tools read the same project, what an agent may and may not do, how work stays reviewable afterwards.",
-      "The two are related but not the same. The repository is the narrower, technical subject; the site is the broader one. Where they overlap, the repository is the source: the site never contradicts it, and the documentation pages here are rendered straight from it rather than retyped.",
-      "If you do not write software, none of it is required reading. Nothing on this site depends on it.",
+      "The two are related but not the same. The repository is the narrower, technical subject; the site is the broader one. Where they overlap, the repository is the source: the site never contradicts it, and where a page here rests on something the repository holds, it links the original rather than retyping it.",
+      "If you do not write software, none of it is required reading. Nothing on this site depends on it. If you do, and what you build is meant to be published or maintained, the open source articles carry that continuation.",
     ],
+    links: [{ label: "Open source: what publishing code commits you to", href: "/open-source" }],
   },
   {
     heading: "Who writes it",
@@ -97,27 +88,12 @@ const de: AboutSection[] = [
     ],
   },
   {
-    heading: "Wie die Seite arbeitet",
+    heading: "Wie Aussagen geprüft werden",
     paragraphs: [
-      "Jeder Abschnitt jedes Beitrags trägt eine Kennzeichnung, welche Art von Aussage er macht. Diese Kennzeichnungen sind die Methode — und das, woran du die Seiten messen solltest:",
+      "Jeder Abschnitt jedes Beitrags trägt eine Kennzeichnung, welche Art von Aussage er macht — und jede Kennzeichnung hat Bedingungen, die eine Aussage erfüllen muss, bevor sie darunter erscheint. Diese Kennzeichnungen sind die Methode, und an ihnen solltest du die Seiten messen.",
+      "Die Stufen selbst, die Gewichtung der Quellen, was ein Prüfdatum leistet und was nicht, und was geschieht, wenn eine Aussage hier falsch ist, stehen auf einer eigenen Seite.",
     ],
-    list: [
-      "Fakt — eng begrenzte, prüfbare Aussage aus einer verlinkten Primärquelle, mit Prüfdatum. Wo die Quelle ein Anbieter über sich selbst ist, steht das dabei.",
-      "Gemessen — hier getestet, mit Aufbau, Version und Datum, damit du es wiederholen kannst; gültig für diesen Aufbau, nicht allgemein.",
-      "Rechtslage — Wiedergabe einer benannten Norm oder offiziellen Leitlinie, mit Rechtsraum und Prüfdatum. Nie Rechtsberatung.",
-      "Einschätzung — fachliche Beurteilung, Prognose oder Praxisbeobachtung, deren Begründung und Grenzen offenliegen, damit du widersprechen kannst.",
-      "Empfehlung — bewusst konservativ: was ich hier tun würde und auf welcher Ebene es steht. Keine Aussage, dass anderes unzulässig wäre.",
-    ],
-  },
-  {
-    heading: "Quellen, Daten und Irrtümer",
-    paragraphs: [
-      "Quellen sind primär oder werden nicht verwendet — und sie haben eine Rangfolge: zuerst der konsolidierte Rechtstext beziehungsweise das Amtsblatt, dann offizielle Leitlinien der Kommission oder einer Aufsichtsbehörde, dann die veröffentlichten Bedingungen und Unterlagen eines Anbieters, dann technische Primärdokumentation — und erst danach alles, was darüber geschrieben wurde. Diese Regel hat hier bereits einen Fehler gefangen: Eine EU-Verordnung wurde als vorläufige Einigung beschrieben, weil eine Kommissions-FAQ das noch so sagte, während der Rechtsakt seit einer Woche in Kraft war.",
-      "Quelle zu sein heißt nicht, recht zu haben. Ein Anbieter ist maßgeblich für das, was er über sich selbst veröffentlicht hat, und für nichts darüber hinaus: Seine Dokumentation gibt seine Bedingungen wieder, sie prüft nicht seine Systeme. Deshalb steht hier, dass der Anbieter etwas angibt, statt das Verhalten schlicht zu behaupten — und das ist keine Wortklauberei, sondern der Unterschied zwischen einer Zusage, an der man jemanden festhalten kann, und einer Tatsache, die man überprüft hat.",
-      "Dieselbe Linie läuft durch die Rechtsseiten. Eine Norm wiederzugeben und sie auf deine Lage anzuwenden sind zwei verschiedene Handlungen, die verschiedene Fachkunde verlangen: Das Erste trägt die Kennzeichnung Recht, und sobald ein Satz zu einem Schluss über einen konkreten Fall kommt, trägt er Einschätzung — gleich, wer ihn geschrieben hat.",
-      "Prüfdaten leisten weniger, als ihnen oft zugeschrieben wird. Sie machen eine Aussage nicht wahr und nicht dauerhaft; sie halten fest, gegen welchen Stand einer veränderlichen Welt sie geprüft wurde. Voreinstellungen der Anbieter ändern sich ohne Ankündigung — deshalb trägt hier jede Tatsachen- und jede Messaussage eines.",
-      "Korrekturen sind willkommen und kein Gefallen. Auf jeder Seite gibt es einen Link, der ein Issue mit Seite und URL bereits ausgefüllt öffnet. Wenn hier etwas falsch ist, ist das der schnellste Weg, es richtigzustellen — und die Korrektur wird festgehalten statt still nachgebessert.",
-    ],
+    links: [{ label: "Wie Aussagen geprüft werden", href: "/de/about/how-claims-are-checked" }],
   },
   {
     heading: "Was diese Seite nicht ist",
@@ -131,9 +107,10 @@ const de: AboutSection[] = [
     heading: "Das Repository darunter",
     paragraphs: [
       "Diese Seite wird aus einem öffentlichen Repository gebaut, und dieses Repository enthält noch etwas Zweites: Konventionen für die Arbeit mit KI an einer Codebasis — wie mehrere Tools dasselbe Projekt lesen, was ein Agent darf und was nicht, wie die Arbeit danach überprüfbar bleibt.",
-      "Beides hängt zusammen, ist aber nicht dasselbe. Das Repository ist der engere, technische Gegenstand; die Seite der breitere. Wo sie sich überschneiden, ist das Repository die Quelle: Die Seite widerspricht ihm nie, und die Dokumentationsseiten hier werden direkt daraus erzeugt statt abgetippt.",
-      "Wer keine Software schreibt, muss davon nichts lesen. Nichts auf dieser Seite setzt es voraus.",
+      "Beides hängt zusammen, ist aber nicht dasselbe. Das Repository ist der engere, technische Gegenstand; die Seite der breitere. Wo sie sich überschneiden, ist das Repository die Quelle: Die Seite widerspricht ihm nie, und wo eine Seite hier auf etwas beruht, das im Repository liegt, verlinkt sie das Original, statt es abzutippen.",
+      "Wer keine Software schreibt, muss davon nichts lesen. Nichts auf dieser Seite setzt es voraus. Wer Software schreibt, die veröffentlicht oder weiter betreut werden soll, findet diese Fortsetzung in den Open-Source-Beiträgen.",
     ],
+    links: [{ label: "Open Source: worauf dich Veröffentlichen festlegt", href: "/de/open-source" }],
   },
   {
     heading: "Wer schreibt",

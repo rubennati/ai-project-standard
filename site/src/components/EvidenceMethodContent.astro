@@ -1,6 +1,8 @@
 ---
 import EvidenceLegend from "./EvidenceLegend.astro";
+import NextStep from "./NextStep.astro";
 import { getEvidenceMethod } from "../data/evidence-method";
+import { getLocalizedPath } from "../i18n/routes";
 import { getUi, type SiteLocale } from "../i18n/ui";
 
 interface Props {
@@ -10,6 +12,8 @@ interface Props {
 const { locale } = Astro.props;
 const ui = getUi(locale);
 const content = getEvidenceMethod(locale);
+const base = import.meta.env.BASE_URL;
+const toHref = (path: string) => (path === "/" ? base : `${base}${path.replace(/^\//, "")}`);
 ---
 
 <article class="layout-reading">
@@ -29,5 +33,26 @@ const content = getEvidenceMethod(locale);
     <ol class="mt-4 flex list-decimal flex-col gap-2 pl-5 leading-7">
       {content.sources.map((source) => <li>{source}</li>)}
     </ol>
+    <p class="mt-4 leading-7">{content.sourcesNote}</p>
   </section>
+
+  {
+    content.sections.map((section) => (
+      <section class="mt-12">
+        <h2 class="text-xl font-semibold">{section.heading}</h2>
+        {section.paragraphs.map((paragraph) => (
+          <p class="mt-3 leading-7">{paragraph}</p>
+        ))}
+      </section>
+    ))
+  }
+
+  <NextStep
+    locale={locale}
+    primary={{
+      label: content.nextStep.label,
+      description: content.nextStep.description,
+      href: toHref(getLocalizedPath(locale, "about")),
+    }}
+  />
 </article>

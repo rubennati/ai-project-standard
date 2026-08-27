@@ -82,7 +82,7 @@ const copy: Record<SiteLocale, Record<EvidenceLevel, LevelCopy>> = {
     law: {
       label: "Rechtslage",
       meaning:
-        "Gibt eine benannte Norm oder offizielle Leitlinie wieder, mit Rechtsraum und Prüfstand. Die Anwendung auf einen konkreten Fall ist als Einschätzung gekennzeichnet. Keine Rechtsberatung.",
+        "Gibt eine benannte Norm oder offizielle Leitlinie wieder, mit Rechtsraum und Prüfdatum. Die Anwendung auf einen konkreten Fall ist als Einschätzung gekennzeichnet. Keine Rechtsberatung.",
     },
     assessment: {
       label: "Einschätzung",

@@ -4,11 +4,11 @@ The repository ships two things on two clocks, from one branch.
 
 | | The standard | The website |
 |---|---|---|
-| What | `AGENTS.md`, `docs/`, `.ai/` templates, root files, workflows | `ai-standard.rubennati.at` — `site/`, plus `docs/**/*.md` rendered under `/docs/` |
+| What | `AGENTS.md`, `docs/`, `.ai/` templates, root files, workflows | `ai-standard.rubennati.at` — built from `site/` |
 | How it ships | A human pushes a SemVer tag | Every merge to `main` touching `site/**` or `docs/**` deploys within minutes |
 | Contract | SemVer, per `CONTRIBUTING.md` → Versioning | None |
 
-They stay on one branch because `docs/**/*.md` belongs to both — it is the standard and it is web pages. Split the clocks, not the files.
+They stay on one branch because they are one project: the website explains what the repository holds and links its source. Split the clocks, not the files.
 
 ## What a tag covers
 

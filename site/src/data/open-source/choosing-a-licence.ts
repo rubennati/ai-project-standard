@@ -193,3 +193,33 @@ const de: Article = {
 };
 
 export const getChoosingALicence = (locale: SiteLocale): Article => (locale === "de" ? de : en);
+
+/**
+ * The page closes on the grant's permanence; changing a licence later needs
+ * the rights holders to agree, which raises who that actually is — the
+ * sibling's question. `code-written-at-work` itself closes the family, so it
+ * carries no onward step of its own.
+ */
+export interface OpenSourceNextStep {
+  context?: string;
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, OpenSourceNextStep> = {
+  en: {
+    context: "A licence change needs the rights holders to agree — which raises who that is.",
+    label: "Who owns code written at work?",
+    description:
+      "Rights of use, not authorship — and that decides who may relicense a project.",
+  },
+  de: {
+    context: "Eine Lizenzänderung braucht die Zustimmung der Rechteinhaber — womit die Frage aufkommt, wer das ist.",
+    label: "Wem gehört Code, der im Job entsteht?",
+    description:
+      "Nutzungsrechte statt Urheberschaft — und davon hängt ab, wer umlizenzieren darf.",
+  },
+};
+
+export const getChoosingALicenceNextStep = (locale: SiteLocale): OpenSourceNextStep =>
+  nextStep[locale];

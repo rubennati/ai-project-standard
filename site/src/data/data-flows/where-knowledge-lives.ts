@@ -17,6 +17,10 @@
  * acting inside your systems — survives as the opening of the read-versus-act
  * section, where it belongs.
  *
+ * Slice 6 added the vendor-claim decoder — "trained on our data" can name any
+ * of the three routes — from `what-you-agree-to`, which had been carrying a
+ * second copy of this page's distinction (`.ai/decisions.md`, 2026-08-27).
+ *
  * The layer figure stays on the `/data-flows` hub. This page explains how
  * material travels; it does not draw a second anatomy of a connection.
  *
@@ -118,6 +122,14 @@ const en: Article = {
           { target: "Facts that change weekly", state: "train it in", reached: "no", note: "Retraining for each change is the expensive way to do lookup" },
         ],
       },
+    },
+    {
+      heading: "\u201cTrained on our data\u201d can mean any of these",
+      level: "assessment",
+      paragraphs: [
+        "\u201cSpecialised for law\u201d or \u201cfor medicine\u201d describes the product, not which of these routes built it. Behind the phrase can sit a fine-tuned model, retrieval over a curated collection, rule-based checks on top of a general model, a system prompt — or several of those at once. All of them can make a perfectly good product, and the marketing rarely distinguishes them.",
+        "It is worth asking which one you are buying, because the answers differ in the ways that matter to you: what it cost to build, where your material ends up, and what happens when the underlying model is replaced. The words to ask with are fine-tuning and retrieval — and asking is usually enough to find out.",
+      ],
     },
     {
       heading: "Reading a mailbox and acting in one are different risks",
@@ -229,6 +241,14 @@ const de: Article = {
           { target: "Fakten, die sich wöchentlich ändern", state: "eintrainieren", reached: "no", note: "Für jede Änderung neu trainieren ist die teure Art nachzuschlagen" },
         ],
       },
+    },
+    {
+      heading: "\u201eMit unseren Daten trainiert\u201c kann jeden dieser Wege meinen",
+      level: "assessment",
+      paragraphs: [
+        "\u201eSpezialisiert auf Recht\u201c oder \u201eauf Medizin\u201c beschreibt das Produkt, nicht welcher dieser Wege dahintersteckt. Hinter der Formulierung kann ein feinabgestimmtes Modell stehen, ein Abruf über eine kuratierte Sammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
+        "Die Frage, was davon du kaufst, lohnt sich, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen man fragt, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
+      ],
     },
     {
       heading: "Ein Postfach lesen und darin handeln sind verschiedene Risiken",

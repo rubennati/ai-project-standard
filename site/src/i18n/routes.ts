@@ -62,7 +62,7 @@ export const getLocalizedPath = (
     case "glossaryIndex":
       return `${prefix}/glossary`;
     case "evidenceMethod":
-      return `${prefix}/glossary/evidence-method`;
+      return `${prefix}/about/how-claims-are-checked`;
     case "useCases":
       return `${prefix}/use-cases`;
     case "glossaryTerm":

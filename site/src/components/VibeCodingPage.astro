@@ -131,6 +131,10 @@ const toHref = (path: string) =>
           ))
         }
       </ol>
+      <p class="prototype-section__lead">
+        {content.publishing.text}{" "}
+        <a href={toHref(getLocalizedPath(locale, "openSource"))}>{content.publishing.label}</a>
+      </p>
     </section>
 
     <StopCondition

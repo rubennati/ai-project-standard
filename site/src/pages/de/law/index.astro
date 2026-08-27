@@ -10,11 +10,13 @@ const locale = "de" as const;
 const base = import.meta.env.BASE_URL;
 const ui = getUi(locale);
 
+// The map first, then the specific questions in the order they arrive:
+// may this go in, may it leave the EU, must the output be labelled.
 const articles = [
-  { ...getWhatMayGoIn(locale), href: `${base}de/law/what-may-go-in`, checked: CHECKED_IN },
-  { ...getAiActTransparency(locale), href: `${base}de/law/ai-act-transparency`, checked: CHECKED },
-  { ...getUsCloudAndTheGdpr(locale), href: `${base}de/law/us-cloud-and-the-gdpr`, checked: CHECKED_US },
   { ...getFourSeparateQuestions(locale), href: `${base}de/law/four-separate-questions`, checked: CHECKED_4Q },
+  { ...getWhatMayGoIn(locale), href: `${base}de/law/what-may-go-in`, checked: CHECKED_IN },
+  { ...getUsCloudAndTheGdpr(locale), href: `${base}de/law/us-cloud-and-the-gdpr`, checked: CHECKED_US },
+  { ...getAiActTransparency(locale), href: `${base}de/law/ai-act-transparency`, checked: CHECKED },
 ];
 ---
 

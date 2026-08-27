@@ -182,3 +182,32 @@ const de: Article = {
 };
 
 export const getWhatMayGoIn = (locale: SiteLocale): Article => (locale === "de" ? de : en);
+
+/**
+ * The page's one onward step. It used to dead-end — its only outbound link
+ * was the evidence badge. The account-type section raises a question with a
+ * dated, checkable answer, and that answer's owner is `training-and-retention`.
+ */
+export interface WhatMayGoInNextStep {
+  context: string;
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, WhatMayGoInNextStep> = {
+  en: {
+    context: "The account question above has a dated, checkable answer.",
+    label: "Are your chats used for model training?",
+    description:
+      "The published defaults per provider and per plan, with the date they were checked.",
+  },
+  de: {
+    context: "Die Kontofrage oben hat eine datierte, prüfbare Antwort.",
+    label: "Werden deine Eingaben für das Modelltraining verwendet?",
+    description:
+      "Die veröffentlichten Voreinstellungen je Anbieter und Tarif — mit dem Datum, an dem sie geprüft wurden.",
+  },
+};
+
+export const getWhatMayGoInNextStep = (locale: SiteLocale): WhatMayGoInNextStep =>
+  nextStep[locale];

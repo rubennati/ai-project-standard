@@ -5,14 +5,17 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 6 — Law, About, Evidence, Reference and discovery.** Slice 5
-  shipped in #169 (2026-08-26) and is closed; it is not carried forward as an
-  active objective — see *Settled* below for its durable outcome. Slice 6
-  depends on slice 2 (shipped) and needs the human approval `AGENTS.md` →
-  Change scope requires. Two decisions block its full scope and remain
-  unresolved: the `/docs/**` retirement shape, and the
-  `practical-ai-collaboration` promotion target — see *Open, and blocking*
-  below. Design has not started.
+- **Now: slice 6 — Law, About, Evidence, Reference and discovery —
+  implemented on `feature/slice-6-law-about-discovery`, awaiting review.**
+  The read-only design pass ran 2026-08-27 and the four change-scope decisions
+  it isolated were approved the same day: the `/docs/**` retirement shape
+  (redirect each URL to its GitHub source, remove the renderer), the
+  `practical-ai-collaboration` reversal (repository document, not promoted),
+  the evidence-method move to `/about/how-claims-are-checked`, and the
+  `/profiles` retirement. All four are implemented, with the Law hub reframe,
+  the About restructure, the Open Source reconnection and the
+  `what-you-agree-to` narrowing — see `decisions.md`, 2026-08-27. Not merged;
+  slice 7 has not started.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -96,6 +99,16 @@ only where the reader understands enough to notice the errors that matter.
 four things worth recording are still four; a log may identify the account,
 service identity or credential identifier used, but must not hold the secret
 itself. No operating route was created.
+
+Slice 6's shape is settled pending merge — see the four `decisions.md`
+entries of 2026-08-27. Publication is a deliberate page, never a filesystem
+glob; `/docs/**` and `/profiles` redirect to their repository sources; the
+method page lives at `/about/how-claims-are-checked` and owns the whole
+method while About keeps a bridge; the Law hub routes with the map first;
+Art. 4's substantive explanation stays on `/start/decision-maker`;
+`what-you-agree-to` keeps its route at three unique ideas; Open Source is
+reached from Vibe Coding and About, not from header or footer; no Reference
+area exists.
 
 ## Homepage Correction Pass — shipped in #167, closed
 
@@ -208,24 +221,11 @@ Not decisions. They bind this objective and expire or are reconsidered with it.
 
 ## Open, and blocking
 
-Three, none answerable from repository evidence. Each blocks the specific
-decision it names, not the whole of slice 6 — the rest of that slice's scope
-is not gated by these.
-
-- **`/docs/**` retirement shape (blocks slice 6).** Publication stops being
-  automatic; what happens to the 21 published URLs does not follow from that.
-  Redirect each to its GitHub source, or serve them `noindex` and drop them from
-  the sitemap? The answer also decides the licence sentence in the legal notice,
-  which names `/docs/` and grants MIT over it in both locales.
-- **`practical-ai-collaboration` promotion target (blocks the same slice).** It
-  has a real public reader and is English-only at 1,985 words. Which route does
-  it become, and does promotion require the German version before it ships?
-- **Retiring `/data-flows/what-you-agree-to` — deferred, not settled.** Slice 4
-  kept the route and cut the page to its four unique ideas: storage before
-  training, training as a batched job, what "trained on our data" usually
-  means, and the Art. 4(12) GDPR distinction between a transfer and a breach.
-  Re-test after slice 6, which may move the Art. 4(12) material to `/law`; if it
-  does, what is left may no longer earn a URL. No route change until then.
+Nothing. The three former blockers resolved on 2026-08-27: the `/docs/**`
+shape and the `practical-ai-collaboration` reversal were approved and
+implemented, and the `what-you-agree-to` re-test closed as keep-but-narrow —
+the Art. 4(12) material stayed, so the route still earns its URL. All three
+are in `decisions.md`, 2026-08-27.
 
 ## Queued, not blocking
 
@@ -261,11 +261,30 @@ pass named in `tasks.md` where none is named.
   does not own. The facts stayed exactly where they were before slice 5 —
   `training-and-retention` and `getting-it-back-out` — and nothing moved.
   Where a reader who only opens a chat window should meet them is still
-  unsettled. Slice 6 or 7.
+  unsettled. Slice 7.
 - **Product memory as a setting has no fact owner.** `training-and-retention`
   owns training and retention and `getting-it-back-out` owns deletion, so both
   are linked; memory across conversations is named without a link because no
   page currently keeps that fact current.
+- **Three legal concepts have no public owner** — rights in AI output,
+  automated decision-making (Art. 22 GDPR), and consent versus the other
+  Art. 6 legal bases (`what-may-go-in` says "name the legal basis" without
+  naming them). Slice 7 or later assigns an owner, adds coverage, or records
+  each as deliberately out of scope.
+- **Multi-session reviewability has no public owner.** "Several AI sessions
+  touched this repository — how does the work stay reviewable?" would be a
+  fresh, bilingual Open Source article if built; `practical-ai-collaboration`
+  is not it — see `decisions.md`, 2026-08-27.
+- **Glossary contextual coverage.** Five of 143 term pages have an editorial
+  inbound link. The discovery rule — link a term when understanding it is
+  necessary at that point — is stated; applying it page by page is ordinary
+  editing, slice 7 or later. The platform/UI decoder entries and the six
+  AppSec terms are untouched housekeeping candidates.
+- **Dead code left deliberately in place after the `/docs` retirement** — the
+  `license` prop on `Base.astro`/`JsonLd.astro` (every public page is now
+  CC BY 4.0), the unused `mdx()` integration, `ui.docs`, and the `docs/**`
+  path trigger in `pages.yml` (deploys still run, output unchanged). Internal
+  cleanup, not reader-facing; remove when something touches those files.
 
 ## Active constraints
 

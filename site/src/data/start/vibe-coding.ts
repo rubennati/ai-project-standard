@@ -83,6 +83,13 @@ export interface VibeCodingContent {
   transitionsHeading: string;
   transitionsLead: string;
   transitions: Transition[];
+  /**
+   * One sentence closing the transitions: Deliver can mean publishing the
+   * code itself, and the licence and ownership questions that raises are
+   * owned by `/open-source` — the primary inbound path to that family.
+   * See `.ai/decisions.md`, 2026-08-24 and 2026-08-27.
+   */
+  publishing: { text: string; label: string };
 
   unsafeDescription: string;
   unsafeAlternative: string;
@@ -206,6 +213,10 @@ const en: VibeCodingContent = {
         "Running unattended is a commitment about availability and recovery, not a deployment step.",
     },
   ],
+  publishing: {
+    text: "One form of Deliver is publishing the code itself. That raises questions of their own — what a licence permits, what it obliges you to, and who holds the rights to code written in a job.",
+    label: "Open source: what publishing commits you to",
+  },
 
   unsafeDescription:
     "Real users, personal data or another team's work now depend on something that is still being maintained as a prototype. The stage changed without anything being promoted, and the assurance around the code did not change with it.",
@@ -329,6 +340,10 @@ const de: VibeCodingContent = {
         "Unbeaufsichtigt zu laufen ist eine Zusage über Verfügbarkeit und Wiederherstellung, kein Deployment-Schritt.",
     },
   ],
+  publishing: {
+    text: "Eine Form von Ausliefern ist, den Code selbst zu veröffentlichen. Das wirft eigene Fragen auf — was eine Lizenz erlaubt, wozu sie dich verpflichtet und wem Code gehört, der im Job entstanden ist.",
+    label: "Open Source: worauf dich Veröffentlichen festlegt",
+  },
 
   unsafeDescription:
     "Echte Nutzerinnen und Nutzer, personenbezogene Daten oder die Arbeit eines anderen Teams hängen inzwischen an etwas, das weiter wie ein Prototyp gepflegt wird. Die Phase hat sich geändert, ohne dass etwas befördert wurde, und die Absicherung ist nicht mitgewachsen.",

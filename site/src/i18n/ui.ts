@@ -19,26 +19,25 @@ export const ui = {
     secureSetup: "Secure & verify",
     law: "Law",
     about: "About",
-    lawTitle: "Law",
+    lawTitle: "Which rules apply when you use AI at work?",
     lawDescription:
-      "Legal questions under EU law that matter when you use AI at work. Each claim names its legal basis and the date it was checked.",
+      "The legal questions that come up when you use AI at work: what may be entered, confidentiality and data protection, transfers outside the EU, and the AI Act's own duties.",
     lawIntro:
-      "Rules that are already in force, not ones that are coming. Each article states the question it answers and the norm it rests on.",
+      "Whether you may put material into an AI tool, what confidentiality and data protection each demand, whether data may leave the EU, and what the AI rules themselves require — these are different questions with different answers. Start with the one in front of you.",
     lawChecked: "Checked",
     openSource: "Open source",
     openSourceTitle: "Open source",
     openSourceDescription:
-      "What makes a project open source, which licence commits you to what, and who owns code written at work. No AI in this section.",
+      "What makes a project open source, which licence commits you to what, and who owns code written at work.",
     openSourceIntro:
-      "This section is about open source on its own terms — licences, rights, obligations — with no AI in it. It is the ground the rest of this site stands on: the questions here are settled before any tool is chosen.",
+      "Publishing code — your own or something you built with AI — raises questions a licence answers: what others may do with it, what obligations you take on, and who owns code created as part of a job.",
     openSourceMore:
       "More is being written: what belongs in a repository beyond the licence, how governance is sized to a project, and where engineering practice sits alongside openness rather than inside it.",
     menu: "Menu",
     primaryNavigation: "Primary navigation",
-    glossaryIndex: "Glossary Index",
+    glossaryIndex: "Glossary",
     glossary: "Glossary",
     useCases: "Where AI fits",
-    profiles: "Profiles",
     legalNotice: "Legal Notice",
     privacyPolicy: "Privacy Policy",
     footerTermsAndLaw: "Terms & law",
@@ -51,7 +50,7 @@ export const ui = {
     contentLicence: "CC BY 4.0",
     licensingHeading: "Licensing",
     licensingCode:
-      "The repository — the code and the documentation inside it, including the pages rendered from it under /docs/ — is under the MIT licence.",
+      "The repository — the code and the documentation inside it — is under the MIT licence.",
     licensingContent:
       "The texts written for this site are under Creative Commons Attribution 4.0 International. Reuse them, commercially included, as long as you credit the source.",
     aboutNextLabel: "Before you press Enter",
@@ -86,17 +85,17 @@ export const ui = {
     relatedTerms: "Related terms",
     aliases: "Aliases",
     observedIn: "Observed in",
-    backToGlossary: "Back to the glossary index",
-    glossaryTitle: "AI Term Index",
+    backToGlossary: "Back to the glossary",
+    glossaryTitle: "Glossary",
     glossaryDescription:
-      "A maintained index of AI, LLM, tooling, and product terms. Use it to find a term and open its definition page.",
+      "AI, data protection and tooling terms explained, with the confusable ones paired. Find a term and open its definition page.",
     glossaryIntro:
-      "The vocabulary the rest of the site uses, in one place. Terms are explained where they come up — this index is for when you need to look one up on its own.",
-    evidenceMethodTitle: "Evidence method and source policy",
+      "The vocabulary the rest of the site uses, in one place — for when a term is in your way and you need it explained on its own.",
+    evidenceMethodTitle: "How claims are checked",
     evidenceMethodDescription:
-      "What each claim label on this site means, what has to be true before a claim is published under it, and how sources are ranked.",
+      "What each claim label on this site means, what has to be true before a claim is published under it, how sources are ranked, and what to do when something here is wrong.",
     howToReadLead:
-      "Every section of every article says what kind of claim it is making, and factual claims carry the date they were last checked against the source. Vendor behaviour changes without notice — a claim without a date is not wrong yet, it is unfalsifiable.",
+      "Every section of every article on this site says what kind of claim it is making, and factual claims carry the date they were last checked against the source. The labels are the method: they tell you what a claim rests on, and what you can hold it to.",
 
     blogTitle: "Blog",
     blogDescription:
@@ -107,13 +106,13 @@ export const ui = {
     blogReviewed: "last reviewed",
     blogPublished: "Published",
     blogBackToIndex: "All posts",
-    aboutTitle: "About",
-    aboutDescription: "About the AI Standard, its architecture, and its maintainer.",
+    aboutTitle: "About AI Standard",
+    aboutDescription: "Why AI Standard exists, the position it argues from, what it is not, and who writes it.",
     maintainer: "Maintainer",
     license: "License",
     acknowledgements: "Acknowledgements",
     acknowledgementsCopy:
-      "The standard draws on the AGENTS.md cross-vendor convention, tool instruction formats, and broader open-source governance practices.",
+      "The collaboration conventions in the repository draw on the AGENTS.md cross-vendor convention, tool instruction formats, and broader open-source governance practices.",
     legalNoticeDescription: "Legal notice and contact address for the AI Standard website.",
     legalNoticeHeading: "Who operates this site",
     operatorLabel: "Operator",
@@ -140,26 +139,25 @@ export const ui = {
     secureSetup: "Absichern & prüfen",
     law: "Recht",
     about: "Über das Projekt",
-    lawTitle: "Recht",
+    lawTitle: "Welche Regeln gelten, wenn du KI bei der Arbeit einsetzt?",
     lawDescription:
-      "Rechtliche Fragen nach EU-Recht, die beim Einsatz von KI im Arbeitsalltag relevant sind. Jede Aussage nennt ihre Rechtsgrundlage und das Datum der Prüfung.",
+      "Die Rechtsfragen beim Einsatz von KI im Arbeitsalltag: was eingegeben werden darf, Vertraulichkeit und Datenschutz, Übermittlungen aus der EU und die Pflichten der KI-Verordnung selbst.",
     lawIntro:
-      "Regeln, die bereits gelten, nicht solche, die kommen. Jeder Beitrag nennt die Frage, die er beantwortet, und die Norm, auf der er beruht.",
+      "Ob Material überhaupt in ein KI-Tool darf, was Vertraulichkeit und Datenschutz jeweils verlangen, ob Daten die EU verlassen dürfen und was die KI-Regeln selbst fordern — das sind verschiedene Fragen mit verschiedenen Antworten. Fang bei der an, die vor dir liegt.",
     lawChecked: "Geprüft",
     openSource: "Open Source",
     openSourceTitle: "Open Source",
     openSourceDescription:
-      "Woran ein Projekt zu Open Source wird, worauf dich welche Lizenz festlegt, und wem Code gehört, der im Job entsteht. Ohne KI in diesem Bereich.",
+      "Woran ein Projekt zu Open Source wird, worauf dich welche Lizenz festlegt, und wem Code gehört, der im Job entsteht.",
     openSourceIntro:
-      "Dieser Bereich behandelt Open Source für sich — Lizenzen, Rechte, Pflichten — ohne KI darin. Er ist der Boden, auf dem der Rest dieser Seite steht: die Fragen hier sind entschieden, bevor überhaupt ein Tool ausgewählt wird.",
+      "Wer eigenen oder mit KI erstellten Code veröffentlicht, steht vor Fragen, die eine Lizenz beantwortet: Was dürfen andere damit tun, welche Pflichten übernimmst du dabei, und wem gehört Code, der im Job entstanden ist?",
     openSourceMore:
       "Weiteres entsteht: was über die Lizenz hinaus in ein Repository gehört, wie Governance zur Projektgröße passt, und wo Engineering-Praxis neben der Offenheit steht statt in ihr.",
     menu: "Menü",
     primaryNavigation: "Hauptnavigation",
-    glossaryIndex: "Glossarindex",
+    glossaryIndex: "Glossar",
     glossary: "Glossar",
     useCases: "Wo KI sinnvoll ist",
-    profiles: "Profile",
     legalNotice: "Impressum",
     privacyPolicy: "Datenschutz",
     footerTermsAndLaw: "Begriffe & Recht",
@@ -172,13 +170,13 @@ export const ui = {
     contentLicence: "CC BY 4.0",
     licensingHeading: "Lizenzen",
     licensingCode:
-      "Das Repository — der Code und die darin enthaltene Dokumentation, einschließlich der daraus erzeugten Seiten unter /docs/ — steht unter der MIT-Lizenz.",
+      "Das Repository — der Code und die darin enthaltene Dokumentation — steht unter der MIT-Lizenz.",
     licensingContent:
       "Die eigens für diese Website verfassten Texte stehen unter Creative Commons Namensnennung 4.0 International. Weiterverwendung, auch kommerziell, ist bei Nennung der Quelle erlaubt.",
     aboutNextLabel: "Bevor du Enter drückst",
     aboutNextDescription:
       "Ein Suchfeld, elf Zeichen — und was eine einzelne Eingabe schon preisgibt, bevor irgendetwas abgeschickt ist.",
-    contribute: "Mitwirken",
+    contribute: "Beitragen",
     reportProblem: "Problem melden",
     reportVulnerability: "Sicherheitslücke melden",
     reportProblemPage: "Seite",
@@ -211,17 +209,17 @@ export const ui = {
     relatedTerms: "Verwandte Begriffe",
     aliases: "Alternative Bezeichnungen",
     observedIn: "Beobachtet in",
-    backToGlossary: "Zurück zum Glossarindex",
-    glossaryTitle: "KI-Glossar",
+    backToGlossary: "Zurück zum Glossar",
+    glossaryTitle: "Glossar",
     glossaryDescription:
-      "Ein gepflegter Index für KI-, LLM-, Tooling- und Produktbegriffe. Er hilft dabei, einen Begriff zu finden und die passende Erklärungsseite zu öffnen.",
+      "KI-, Datenschutz- und Tooling-Begriffe erklärt, die verwechselbaren einander gegenübergestellt. Einen Begriff finden und seine Erklärungsseite öffnen.",
     glossaryIntro:
-      "Das Vokabular, mit dem der Rest der Seite arbeitet, an einem Ort. Begriffe werden dort erklärt, wo sie vorkommen — dieser Index ist für den Fall, dass du einen einzeln nachschlagen willst.",
-    evidenceMethodTitle: "Nachweismethode und Quellenpolitik",
+      "Das Vokabular, mit dem der Rest der Seite arbeitet, an einem Ort — für den Fall, dass dir ein Begriff im Weg steht und du ihn einzeln erklärt brauchst.",
+    evidenceMethodTitle: "Wie Aussagen geprüft werden",
     evidenceMethodDescription:
-      "Was die Aussagekennzeichnungen dieser Seite bedeuten, was gelten muss, bevor eine Aussage darunter erscheint, und wie Quellen gewichtet werden.",
+      "Was die Aussagekennzeichnungen dieser Seite bedeuten, was gelten muss, bevor eine Aussage darunter erscheint, wie Quellen gewichtet werden — und was zu tun ist, wenn hier etwas falsch ist.",
     howToReadLead:
-      "Jeder Abschnitt jedes Beitrags sagt, welche Art von Aussage er macht, und Tatsachenaussagen tragen das Datum ihrer letzten Prüfung an der Quelle. Anbieter ändern ihr Verhalten ohne Ankündigung — eine Aussage ohne Datum ist nicht falsch, sie ist unüberprüfbar.",
+      "Jeder Abschnitt jedes Beitrags auf dieser Seite sagt, welche Art von Aussage er macht, und Tatsachenaussagen tragen das Datum ihrer letzten Prüfung an der Quelle. Die Kennzeichnungen sind die Methode: Sie sagen, worauf eine Aussage beruht — und woran du sie messen kannst.",
 
     blogTitle: "Blog",
     blogDescription:
@@ -232,13 +230,13 @@ export const ui = {
     blogReviewed: "zuletzt fachlich geprüft",
     blogPublished: "Ver\u00f6ffentlicht",
     blogBackToIndex: "Alle Beitr\u00e4ge",
-    aboutTitle: "Über das Projekt",
-    aboutDescription: "Über den AI Standard, seine Architektur und seinen Maintainer.",
+    aboutTitle: "Über AI Standard",
+    aboutDescription: "Warum es AI Standard gibt, aus welcher Position argumentiert wird, was die Seite nicht ist und wer schreibt.",
     maintainer: "Maintainer",
     license: "Lizenz",
     acknowledgements: "Danksagung",
     acknowledgementsCopy:
-      "Der Standard baut auf der AGENTS.md-Konvention, Tool-Anweisungsformaten und breiteren Open-Source-Governance-Praktiken auf.",
+      "Die Kollaborationskonventionen im Repository bauen auf der AGENTS.md-Konvention, Tool-Anweisungsformaten und breiteren Open-Source-Governance-Praktiken auf.",
     legalNoticeDescription: "Impressum und Kontaktadresse der AI-Project-Standard-Website.",
     legalNoticeHeading: "Wer diese Website betreibt",
     operatorLabel: "Betreiber",

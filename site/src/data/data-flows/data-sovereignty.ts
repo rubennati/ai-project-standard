@@ -120,6 +120,7 @@ const en: Article = {
         { label: "Art. 28 GDPR — processor obligations", href: GDPR_ART_28 },
         { label: "Art. 32 GDPR — security of processing", href: GDPR_ART_32 },
         { label: "Chapter V GDPR — transfers to third countries", href: GDPR_CHAPTER_V },
+        { label: "Does a US-hosted AI tool break the GDPR?", href: "/law/us-cloud-and-the-gdpr" },
       ],
     },
     {
@@ -252,6 +253,7 @@ const de: Article = {
         { label: "Art. 28 DSGVO — Auftragsverarbeiter", href: GDPR_ART_28 },
         { label: "Art. 32 DSGVO — Sicherheit der Verarbeitung", href: GDPR_ART_32 },
         { label: "Kapitel V DSGVO — Übermittlungen an Drittländer", href: GDPR_CHAPTER_V },
+        { label: "Verstößt ein KI-Dienst mit US-Hosting gegen die DSGVO?", href: "/de/law/us-cloud-and-the-gdpr" },
       ],
     },
     {

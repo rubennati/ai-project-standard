@@ -336,3 +336,17 @@ instead of the reader benefit. Reset on 24 August, below.
   now point at the same absence) and the account switches' universal-reader
   discovery home. No public site content, routes or `CHANGELOG.md` changed by
   this reconciliation.
+
+## 2026-08-27
+
+- Slice 6 designed (read-only pass over Law, About, Evidence, Reference,
+  `/docs/**`, `/profiles`, Open Source and discovery) and implemented on
+  `feature/slice-6-law-about-discovery` after the four change-scope approvals:
+  `/docs/**` and `/profiles` retired to one-to-one repository redirects with
+  the glob renderer removed, `practical-ai-collaboration` kept
+  repository-only (promotion reversed), the method page moved to
+  `/about/how-claims-are-checked` with the About duplication dissolved, the
+  Law hub reframed around the reader's routing question, Open Source
+  reconnected from Vibe Coding, `what-you-agree-to` narrowed. Four decisions
+  appended. 355 pages build; 26 redirects; sitemap free of retired routes;
+  gates green. Awaiting review — not merged.

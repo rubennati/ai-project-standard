@@ -35,38 +35,40 @@ The three questions the site opens with, each linking to the page that answers i
 
 ## Secure & verify
 
-- [How do you secure this, and how do you check the result?](https://ai-standard.rubennati.at/secure-setup): The steps that keep an AI decision holding: decide what is allowed, configure it, check the result, record it, watch it, and be able to take it back.
-- [Before you give an AI agent access](https://ai-standard.rubennati.at/secure-setup/before-you-grant-access): What to change on day one, what to check before an agent gets a folder, and why installed skills are the part most likely to hurt you.
+- [How do you set limits that hold — and check what happened?](https://ai-standard.rubennati.at/secure-setup): How much checking a task needs follows from the consequence of a mistake, not from the tool. What to settle first, how a boundary holds, what to check, and what to keep.
+- [Before you give an AI agent access](https://ai-standard.rubennati.at/secure-setup/before-you-grant-access): What to decide before an agent gets a folder, why a boundary has to be enforced outside the model, what a useful approval shows, and how to take an access back.
 - [Checking the result](https://ai-standard.rubennati.at/secure-setup/checking-the-result): How to check what an AI system produced and what it did — proportionate to the consequence, and different for an answer, a change and an action.
-- [Keeping a record](https://ai-standard.rubennati.at/secure-setup/keeping-a-record): Why a chat history is not a record of a decision, and the four things worth writing down when AI did part of the work.
+- [Keeping a record](https://ai-standard.rubennati.at/secure-setup/keeping-a-record): Why a chat history is not a record of a decision, the four things worth writing down when AI did part of the work, and where they belong.
 
 ## Law
 
-Rules that are already in force. Each article states the question it answers and the norm it rests on.
+The legal questions that come up when you use AI at work: what may be entered, confidentiality and data protection, transfers outside the EU, and the AI Act's own duties.
 
+- [Which legal question are you asking?](https://ai-standard.rubennati.at/law/four-separate-questions): Data protection, AI regulation, confidentiality and security test different things — different answers, different sources.
 - [Can I enter this data into an AI tool?](https://ai-standard.rubennati.at/law/what-may-go-in): Personal data and confidentiality are two questions with two different answers.
-- [Four questions that are not the same question](https://ai-standard.rubennati.at/law/four-separate-questions): Data protection, AI regulation, confidentiality and security have different answers and different sources.
-- [AI Act: labelling AI-generated content](https://ai-standard.rubennati.at/law/ai-act-transparency): Article 50 has applied since 2 August 2026. What must be disclosed, who is obliged, and what the transition covers.
 - [Does a US-hosted AI tool break the GDPR?](https://ai-standard.rubennati.at/law/us-cloud-and-the-gdpr): "It runs in the US, so it is illegal" is not what the regulation says — and "it runs in the EU" is not compliance.
+- [AI Act: labelling AI-generated content](https://ai-standard.rubennati.at/law/ai-act-transparency): Article 50 has applied since 2 August 2026. What must be disclosed, who is obliged, and what the transition covers.
 
 ## Open source
 
-This section is about open source on its own terms, with no AI in it.
+Questions that arrive once software — including software built with AI — is published or maintained: the licence, the obligations, and who holds the rights.
 
 - [When is a project open source?](https://ai-standard.rubennati.at/open-source/what-makes-it-open-source): The licence decides, not visibility. Includes what GitHub's own terms permit without one.
 - [Which licence, and what does it commit you to?](https://ai-standard.rubennati.at/open-source/choosing-a-licence): Permissive, file-level copyleft, strong copyleft — and what the adoption numbers do and do not support.
 - [Who owns code written at work?](https://ai-standard.rubennati.at/open-source/code-written-at-work): § 40b Austrian and § 69b German Copyright Act give rights of use, not authorship. US work-for-hire is a different construction.
 
-## Reference
+## Glossary
 
 - [Glossary](https://ai-standard.rubennati.at/glossary): AI, data protection and tooling terms, with the confusable ones paired.
-- [Evidence method and source policy](https://ai-standard.rubennati.at/glossary/evidence-method): What each claim label means, what has to be true before a claim is published under it, and how sources are ranked.
+
+## About
+
+- [About AI Standard](https://ai-standard.rubennati.at/about): Why this site exists, the position it argues from, what it is not, and who writes it.
+- [How claims are checked](https://ai-standard.rubennati.at/about/how-claims-are-checked): What each claim label means, what has to be true before a claim is published under it, how sources are ranked, and what to do when something here is wrong.
 - [Blog](https://ai-standard.rubennati.at/blog): Authored, dated pieces that follow one question far enough to be worth reading.
-- [About](https://ai-standard.rubennati.at/about): Why this site exists, the position it argues from, what it is not, and who writes it.
 
 ## Optional
 
 - [Repository](https://github.com/rubennati/ai-project-standard): Where this site is built and reviewed in the open. MIT licensed.
-- [Documentation](https://ai-standard.rubennati.at/docs): The repository's own documentation, rendered from its source.
-- [Legal notice](https://ai-standard.rubennati.at/legal-notice): Operator details and licensing. Text written for this site is CC BY 4.0 — attribution required, commercial use permitted; `/docs` pages are MIT.
+- [Legal notice](https://ai-standard.rubennati.at/legal-notice): Operator details and licensing. Text written for this site is CC BY 4.0 — attribution required, commercial use permitted; the repository is MIT.
 - [Privacy policy](https://ai-standard.rubennati.at/privacy-policy): No cookies, no analytics, no third-party resources; what the hosting providers log.
