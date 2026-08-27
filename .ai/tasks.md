@@ -296,7 +296,7 @@ badly they mislead. Nothing here is fixed yet.
 - `site/INFORMATION_ARCHITECTURE.md`'s footer table still describes the two-group shape superseded by the 2026-08-27 three-group footer decision (`decisions.md`); update the table to match
 - ~~**DEFECT, release-readiness pass 2026-08-27:** privacy delivery chain named only Cloudflare and GitHub Pages.~~ **Closed** in the release-readiness closeout: the policy now says delivery runs through Cloudflare in front of GitHub Pages and that GitHub uses service providers beneath it, citing GitHub's own subprocessor list for Fastly. Verified at the authoritative source (GitHub subprocessor documentation), not from response headers.
 
-## Release-readiness closeout defects — nine closed, one awaiting deploy
+## Release-readiness closeout defects — 10/10 closed, 2026-08-27
 
 Closed 2026-08-27 on `fix/close-release-readiness-defects`. Defects 1–9 are
 fixed and verified in the built site; defect 10's fix is committed but can only
@@ -344,15 +344,21 @@ audit is not evidence about the other language.
    part of it" is replaced by the mechanism: the model has no access to private
    files or the current workspace, and reaching those takes a product feature,
    supplied context or a connection.
-10. **LIVE `/.well-known/security.txt` 404 — root cause found, fix committed,
-    awaiting deploy.** Not `.nojekyll`, and not Jekyll at all. Proven in three
-    steps: the GitHub Pages origin returns 404 as well, so Cloudflare is only
-    passing it through; the deployed artifact was downloaded and contains zero
-    dot-prefixed entries while `_astro/` is present; and the pinned action's own
-    source tars with `--exclude=.[^/]*` whenever `include-hidden-files` is not
-    `true`, which it defaults to. `.nojekyll` would have been dropped by that
-    same rule. Fix: `include-hidden-files: true` on the upload step in
-    `pages.yml`. Replicating the tar locally without that exclude yields exactly
-    two extra entries — `.well-known/` and `security.txt` — with `_astro/`
-    intact and no `.git`/`.github` leak. **Closes only when the live URL
-    returns the file after the merge deploys.**
+10. ~~**LIVE `/.well-known/security.txt` 404.**~~ **Closed.** Not `.nojekyll`,
+    and not Jekyll at all. Proven in three steps: the GitHub Pages origin
+    returned 404 as well, so Cloudflare was only passing it through; the
+    deployed artifact, downloaded and inspected, contained zero dot-prefixed
+    entries while `_astro/` was present; and the pinned action's own source
+    tars with `--exclude=.[^/]*` whenever `include-hidden-files` is not `true`,
+    which it defaults to. `.nojekyll` would have been dropped by that same
+    rule. Fix: `include-hidden-files: true` on the upload step in `pages.yml`
+    (shipped in #179, merge `df401b4`). Verified live after that merge's Pages
+    deployment (run `33094823651`, `success`): `GET
+    https://ai-standard.rubennati.at/.well-known/security.txt` → `200`,
+    `content-type: text/plain; charset=utf-8`, 213-byte body identical to
+    source, `Contact` → the GitHub Security Advisory route, `Preferred-
+    Languages: en, de`, `Canonical` matching the live URL, `Expires:
+    2027-06-06` in the future.
+
+All ten release-readiness defects are closed. Release Readiness: **READY** —
+see `.ai/state.md`.
