@@ -569,3 +569,28 @@ instead of the reader benefit. Reset on 24 August, below.
 - **Verdict: READY AFTER LOCAL FIXES — security.txt awaiting live
   verification.** Not READY, and deliberately not written as complete: the last
   defect is only provable against a live deploy.
+
+## 2026-08-27 (7)
+
+- **Release readiness closed.** PR #179 merged (`df401b4`); its Pages
+  deployment (run `33094823651`) succeeded. The deployed artifact was
+  downloaded and confirmed to contain `.well-known/security.txt`, then the
+  live URL was fetched directly against the public edge: `HTTP 200`,
+  `content-type: text/plain; charset=utf-8`, a 213-byte body identical to the
+  source file, `Contact` pointing at the GitHub Security Advisory route,
+  `Preferred-Languages: en, de`, `Canonical` matching the same live URL, and
+  `Expires: 2027-06-06` in the future — not an HTML 404 fallback.
+- **All ten release-readiness defects are closed.** The nine content defects
+  closed with PR #179 (2026-08-27 (6), above); the tenth — the live
+  `/.well-known/security.txt` 404 — closed with this deploy. All four
+  previously failing Definition-of-Done areas now pass: Product & coherence,
+  Claims & facts, Language & semantic parity, Security & privacy.
+- **AI Standard satisfies the repository Release Readiness Definition of Done.
+  The seven-slice whole-site review and final go-live quality gate are
+  complete.** Genuinely open work stays open and is not folded into this
+  close-out: NON-BLOCKING QUALITY items, FUTURE SCOPE, and the POST-LIVE
+  OPERATIONS checklist in `docs/release-readiness.md` (Search Console
+  submission, optional Bing Webmaster Tools, indexed-URL and crawl-error
+  monitoring, real field Core Web Vitals once traffic exists, periodic
+  vendor/legal source re-checks). None of these blocks READY; they were never
+  pre-release evidence to begin with.

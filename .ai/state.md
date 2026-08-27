@@ -10,26 +10,34 @@
   shipped its ten bounded local fixes (#175), a maintainer-requested
   three-column footer (#176) and the release-readiness standard (#177), all
   merged 2026-08-27.** There is no slice 8.
-- **Release Readiness: READY AFTER LOCAL FIXES — security.txt awaiting live
-  verification.** Nine of the ten closeout defects are closed and verified in
-  the built site. The tenth — `/.well-known/security.txt` returning 404 in
-  production — has a diagnosed root cause and a committed fix, but closes only
-  when the live URL serves the file after a deploy. No BLOCKER. Detail per
-  defect is in `tasks.md`.
+- **Release Readiness: READY.** All ten release-readiness defects are closed.
+  `/.well-known/security.txt` was the last: after PR #179 (`fix(site): close
+  release-readiness defects`, merge `df401b4`) deployed, the live URL was
+  re-verified directly — HTTP 200, `content-type: text/plain; charset=utf-8`,
+  213-byte body matching the source exactly, `Contact` pointing at the GitHub
+  Security Advisory route, `Preferred-Languages: en, de`, `Canonical` matching
+  the same live URL, `Expires: 2027-06-06` in the future. **AI Standard
+  satisfies the repository Release Readiness Definition of Done. The
+  seven-slice whole-site review and final go-live quality gate are complete.**
 - **The security.txt root cause was not what it looked like.** Not Jekyll, and
   `.nojekyll` would not have fixed it: the pinned `upload-pages-artifact`
   action tars with `--exclude=.[^/]*` unless `include-hidden-files` is `true`,
   so every dot-prefixed path was dropped at upload — `.nojekyll` included, had
   it been added. Proven by downloading the deployed artifact (zero dot entries,
   `_astro/` present) and by the GitHub Pages origin returning 404 independently
-  of Cloudflare. The fix is one input on the upload step.
-- **Two audit-method findings worth carrying.** First, defects reported as
-  German-only were not: the English carried the same overreach in defects 2, 3
-  and 6, and in defect 5 the English was independently wrong about the vendor
+  of Cloudflare. The fix was one input on the upload step, verified against two
+  further deployed artifacts: the one built from the fix (dot entries present,
+  live 404 persisted because it had not deployed yet) and the one built from
+  PR #179's merge (dot entries present, live 200).
+- **Two audit-method findings worth carrying forward.** First, defects reported
+  as German-only were not: the English carried the same overreach in defects 2,
+  3 and 6, and in defect 5 the English was independently wrong about the vendor
   role. A single-language audit is not evidence about the other language.
   Second, defect 10 passed an earlier pass because it was checked as a *built
-  file* and fails as a *live URL* — which is what `docs/release-readiness.md`'s
-  live-checking requirement exists for.
+  file* and failed as a *live URL* — which is what `docs/release-readiness.md`'s
+  live-checking requirement exists for. Neither is an open item; both are
+  recorded because they are true about how this project's own audits can fail,
+  not only about what they found.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
