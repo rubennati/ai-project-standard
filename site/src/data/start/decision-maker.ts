@@ -97,7 +97,7 @@ const en: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "A business or team plan is not mainly about seats and billing. It changes the default: the major vendors state that their business plans do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
+        "A business or team plan is not mainly about seats and billing. It changes the default: OpenAI and Anthropic both state that their business plans do not train on your input, while their consumer plans generally do unless someone opts out. It is also where a provider makes available the processing agreement Art. 28 GDPR requires when it processes personal data for you — available is not the same as concluded, and concluding it stays your job.",
       ],
       links: [
         { label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" },
@@ -196,7 +196,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Bei einem Business-Tarif geht es nicht in erster Linie um Plätze und Abrechnung, sondern um die Voreinstellungen. Die Business-Tarife der großen Anbieter verwenden Eingaben laut deren Angaben standardmäßig nicht für das Modelltraining; bei Privatkundentarifen ist es umgekehrt, solange niemand widerspricht. Dort liegt auch der Auftragsverarbeitungsvertrag, den Art. 28 DSGVO verlangt, wenn ein Anbieter personenbezogene Daten für dich verarbeitet.",
+        "Bei einem Business-Tarif geht es nicht in erster Linie um Plätze und Abrechnung, sondern um die Voreinstellungen. OpenAI und Anthropic geben für ihre Business-Tarife an, Eingaben standardmäßig nicht für das Modelltraining zu verwenden; bei ihren Privatkundentarifen ist es in der Regel umgekehrt, solange niemand widerspricht. Dort macht ein Anbieter auch den Auftragsverarbeitungsvertrag verfügbar, den Art. 28 DSGVO verlangt, wenn er personenbezogene Daten für dich verarbeitet — verfügbar heißt nicht abgeschlossen, und abschließen musst du ihn selbst.",
       ],
       links: [
         {

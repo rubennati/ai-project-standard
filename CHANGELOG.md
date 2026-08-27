@@ -6,6 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Fixed — claims bounded to what was actually checked
+
+- Every statement that generalised across "the major vendors" now names the two
+  vendors actually checked. The page that owns those facts already said the
+  pattern must not be assumed for other providers; four other statements had
+  been assuming it anyway, in both languages.
+- A business plan no longer reads as supplying the Art. 28 processing
+  agreement. It makes one available; concluding it is still the reader's job,
+  and all three pages that touch the question now say the same thing.
+- The no-licence copyright claim is sourced properly. It said nobody may copy,
+  distribute or modify a work without a licence, cited an explainer, and
+  carried a Fact label. It now restates Art. 4(1) of Directive 2009/24/EC as
+  Rechtslage, and says what the old version denied: the reservation is
+  expressly subject to statutory exceptions, so a lawful acquirer may run the
+  program, make a back-up and study how it works.
+- Two glossary absolutes became what they always were — a design rule rather
+  than a property of every model, and a mechanism rather than a claim about
+  what a model was trained on. Deleting a chat is described as the copy you can
+  reach directly rather than the only copy you control.
+- Anthropic's feedback control is attributed to the roles its own commercial
+  documentation names, and cited to that documentation rather than to the
+  consumer article, which covers different products.
+
 ### Changed — one voice in both languages, and links that keep their promise
 
 - German pages had roughly two dozen sentences that were grammatically broken

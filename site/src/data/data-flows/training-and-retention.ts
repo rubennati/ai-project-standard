@@ -32,6 +32,11 @@ const OPENAI_ENTERPRISE = "https://openai.com/enterprise-privacy/";
 const OPENAI_API_DATA = "https://developers.openai.com/api/docs/guides/your-data";
 const CLAUDE_TRAINING =
   "https://privacy.claude.com/en/articles/10023580-is-my-data-used-for-model-training";
+// The commercial counterpart. The consumer article above says in its own first
+// line that it covers Free/Pro/Max only, so the commercial defaults, the
+// feedback carve-out and the Primary Owner / Owner role are sourced here.
+const CLAUDE_COMMERCIAL_TRAINING =
+  "https://privacy.anthropic.com/en/articles/7996868-is-my-data-used-for-model-training";
 const CLAUDE_SETTINGS =
   "https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-model-improvement-privacy-settings";
 const CLAUDE_CODE_DATA = "https://code.claude.com/docs/en/data-usage";
@@ -98,11 +103,12 @@ const en: Article = {
       checked: CHECKED,
       paragraphs: [
         "Consumer plans — Free, Pro, Max — put the choice to you, and the choice has teeth. With the model training setting on, new chats and coding sessions are used for future training. Turning it off stops future runs from using them, but it cannot undo training that has already happened.",
-        "Commercial products — API, Claude for Work, Enterprise — state it plainly: inputs and outputs are not used to train models by default. The exception is feedback you actively give, such as a thumbs up or down. That feedback is de-linked from user and customer IDs and kept up to five years, and an organisation owner can switch the feedback feature off entirely.",
+        "Commercial products — API, Claude for Work, Enterprise — state it plainly: inputs and outputs are not used to train models by default. The exception is feedback you actively give, such as a thumbs up or down. That feedback is de-linked from user and customer IDs and kept up to five years, and on a Team or Enterprise plan a Primary Owner or Owner can turn off members' ability to submit it at all.",
         "Retention has carve-outs that the training switch does not reach. Anthropic states that where a chat or session is flagged by its automated trust and safety systems, inputs and outputs may be kept up to two years and the resulting classification scores up to seven — and that it may retain material longer where the law requires it or to resolve a dispute. Those apply regardless of the setting you chose.",
       ],
       links: [
         { label: "Anthropic — is my data used for model training", href: CLAUDE_TRAINING },
+        { label: "Anthropic — model training in the commercial products", href: CLAUDE_COMMERCIAL_TRAINING },
         { label: "Anthropic — changing your model improvement settings", href: CLAUDE_SETTINGS },
         { label: "Anthropic — how long personal data is stored", href: CLAUDE_RETENTION },
       ],
@@ -136,7 +142,7 @@ const en: Article = {
       paragraphs: [
         "Open the settings of every AI tool you use and find the training switch. It takes two minutes per tool and it is the single highest-value thing on this page.",
         "Check which account your coding tool runs under, not which tool it is. If it is your personal account, consumer terms apply to your client's code.",
-        "For anything belonging to a client, a business plan or the API is the floor: the training default is on your side there, rather than something you had to remember to turn off. By itself it supplies neither the client's permission, nor a legal basis, nor a processing agreement — those are separate questions and they belong to the law section.",
+        "For anything belonging to a client, a business plan or the API is the floor: the training default is on your side there, rather than something you had to remember to turn off. By itself it supplies neither the client's permission nor a legal basis, and the processing agreement it makes available still has to be concluded — those are separate questions and they belong to the law section.",
         "Write down the date you checked. This page carries one for the same reason: defaults here change without an announcement, and a setting you verified last year tells you nothing about today.",
       ],
       links: [{ label: "What changes when you allow model training", href: "/data-flows/what-you-agree-to" }],
@@ -188,11 +194,12 @@ const de: Article = {
       checked: CHECKED,
       paragraphs: [
         "Privatkundentarife — Free, Pro, Max — überlassen dir die Wahl, und die Wahl hat Gewicht. Ist die Trainingseinstellung aktiv, werden neue Chats und Coding-Sitzungen für künftiges Training verwendet. Ausschalten verhindert die Nutzung in künftigen Trainingsläufen, kann aber bereits erfolgtes Training nicht rückgängig machen.",
-        "Kommerzielle Produkte — API, Claude for Work, Enterprise — sagen es klar: Ein- und Ausgaben werden standardmäßig nicht zum Training verwendet. Ausnahme ist Feedback, das du aktiv gibst, etwa Daumen hoch oder runter. Dieses Feedback wird von Nutzer- und Kunden-IDs entkoppelt, bis zu fünf Jahre aufbewahrt, und wer die Organisation verwaltet, kann die Funktion vollständig abschalten.",
+        "Kommerzielle Produkte — API, Claude for Work, Enterprise — sagen es klar: Ein- und Ausgaben werden standardmäßig nicht zum Training verwendet. Ausnahme ist Feedback, das du aktiv gibst, etwa Daumen hoch oder runter. Dieses Feedback wird von Nutzer- und Kunden-IDs entkoppelt und bis zu fünf Jahre aufbewahrt; in einem Team- oder Enterprise-Tarif können Primary Owner oder Owner den Mitgliedern das Absenden von Feedback ganz abschalten.",
         "Bei der Aufbewahrung gibt es Ausnahmen, die der Trainingsschalter nicht erreicht. Anthropic gibt an: Wird ein Chat oder eine Sitzung von den automatischen Trust-and-Safety-Systemen markiert, können Ein- und Ausgaben bis zu zwei Jahre und die daraus entstandenen Klassifizierungswerte bis zu sieben Jahre aufbewahrt werden — und länger, wo das Gesetz es verlangt oder ein Rechtsstreit zu klären ist. Das gilt unabhängig von der gewählten Einstellung.",
       ],
       links: [
         { label: "Anthropic — werden meine Daten zum Training verwendet", href: CLAUDE_TRAINING },
+        { label: "Anthropic — Modelltraining in den kommerziellen Produkten", href: CLAUDE_COMMERCIAL_TRAINING },
         { label: "Anthropic — Einstellungen zur Modellverbesserung ändern", href: CLAUDE_SETTINGS },
         { label: "Anthropic — wie lange personenbezogene Daten gespeichert werden", href: CLAUDE_RETENTION },
       ],
@@ -226,7 +233,7 @@ const de: Article = {
       paragraphs: [
         "Öffne bei jedem KI-Tool, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Tool und ist der wirksamste Punkt auf dieser Seite.",
         "Prüfe, unter welchem Konto dein Coding-Tool läuft, nicht welches Tool es ist. Ist es dein Privatkonto, gelten Privatkundenbedingungen für den Code deines Kunden.",
-        "Für alles, was einem Kunden gehört, sind Business-Tarif oder API die Untergrenze: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
+        "Für alles, was einem Kunden gehört, sind Business-Tarif oder API die Untergrenze: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage, und der Auftragsverarbeitungsvertrag, den sie verfügbar machen, muss trotzdem abgeschlossen werden \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
         "Notier dir das Datum der Prüfung. Diese Seite trägt aus demselben Grund eines: Die Voreinstellungen ändern sich ohne Ankündigung, und eine Einstellung, die du letztes Jahr geprüft hast, sagt nichts über heute.",
       ],
       links: [{ label: "Was sich ändert, wenn du Modelltraining erlaubst", href: "/de/data-flows/what-you-agree-to" }],

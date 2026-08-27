@@ -296,82 +296,63 @@ badly they mislead. Nothing here is fixed yet.
 - `site/INFORMATION_ARCHITECTURE.md`'s footer table still describes the two-group shape superseded by the 2026-08-27 three-group footer decision (`decisions.md`); update the table to match
 - ~~**DEFECT, release-readiness pass 2026-08-27:** privacy delivery chain named only Cloudflare and GitHub Pages.~~ **Closed** in the release-readiness closeout: the policy now says delivery runs through Cloudflare in front of GitHub Pages and that GitHub uses service providers beneath it, citing GitHub's own subprocessor list for Fastly. Verified at the authoritative source (GitHub subprocessor documentation), not from response headers.
 
-## Release-readiness closeout defects — open, 2026-08-27
+## Release-readiness closeout defects — nine closed, one awaiting deploy
 
-Found by the exhaustive concept-ownership and strong-claim audits the earlier
-release-readiness pass could not complete. All are content or infrastructure
-corrections, deliberately **not** made in the closeout branch, whose scope was
-the privacy correction plus documentation coherence. Verdict stays
-**READY AFTER LOCAL FIXES** until these close.
+Closed 2026-08-27 on `fix/close-release-readiness-defects`. Defects 1–9 are
+fixed and verified in the built site; defect 10's fix is committed but can only
+be proven after the merge deploys.
 
-Important framing correction: the strong-claim defects below were first reported
-as German-only. They are not. The English carries the same overreach in every
-case, so the earlier English audit under-reported. Fix both locales together.
+An important correction carried out of this pass: defects 2, 3 and 6 were first
+reported as German-only. They were not — the English carried the same overreach
+in every case, and both locales were corrected together. A single-language
+audit is not evidence about the other language.
 
-1. **Business plan vs the Art. 28 processing agreement — internal contradiction.**
-   `law/what-may-go-in.ts:56` (EN, level `law`) says the DPA is something "the
-   business plans of the major vendors provide", and `start/decision-maker.ts:100`
-   says the plan is "where the processing agreement lives"; but
-   `data-flows/training-and-retention.ts:139` (EN) / `:229` (DE) says a business
-   plan "by itself supplies neither the client's permission, nor a legal basis,
-   nor a processing agreement". A reader cannot hold both.
-   `decision-maker.ts:111` already has the accurate middle position — it "makes a
-   processing agreement available". Smallest fix: in `training-and-retention.ts`,
-   stop denying the DPA and say it still has to be concluded — EN "…supplies
-   neither the client's permission nor a legal basis, and the processing
-   agreement still has to be in place"; DE equivalent.
-2. **"The major vendors" / "die großen Anbieter" is broader than the evidence.**
-   `decision-maker.ts:100`/`:199` (level `fact`) and `what-may-go-in.ts:56`/`:141`
-   (level `law`) generalise across major vendors, while the owner page
-   `training-and-retention.ts:148`/`:238` explicitly bounds itself: "Two vendors,
-   checked properly. Gemini, Microsoft Copilot and the European providers are not
-   covered here yet, and the pattern above should not be assumed to hold for
-   them without looking." Smallest fix: scope both to the vendors actually
-   checked, or drop to "business plans typically".
-3. **"vendors say as much" / "die Anbieter sagen das selbst" is unbounded.**
-   `getting-it-back-out.ts:72` (EN) / `:146` (DE) and
-   `blog/before-you-press-enter.ts:114` (EN) / `:244` (DE) attribute a statement
-   to vendors generally; only two were checked. Smallest fix: "the vendors
-   checked here say as much".
-4. **DE drops a hedge the EN keeps.** `decision-maker.ts:199` says "bei
-   Privatkundentarifen ist es umgekehrt" where EN says consumer plans
-   "generally" do. Add "in der Regel".
-5. **DE widens an Anthropic role name.** `training-and-retention.ts:191` says
-   "wer die Organisation verwaltet" where the EN and the source say an
-   organisation *owner*. The same repository uses "Primary Owner" verbatim
-   elsewhere. Smallest fix: "die Inhaberschaft der Organisation".
-6. **An absolute the same page already softened.**
-   `blog/before-you-press-enter.ts:139` (EN) / `:269` (DE) still says deleting a
-   conversation is "the only copy you control" / "die einzige Kopie, die du
-   kontrollierst", while lines 237 and 250 of the same file were deliberately
-   changed to "the one place you can reach directly". Align the advice line.
-7. **A legal claim at `fact` level on a bottom-tier source.**
-   `open-source/what-makes-it-open-source.ts:68` (EN) / `:139` (DE) — "Without a
-   licence, nobody else may copy, distribute or modify the work" — is labelled
-   `fact`, cites only choosealicense.com, names no jurisdiction, and states a
-   universal negative that ignores statutory exceptions (§ 69d dUrhG, § 40d
-   öUrhG, quotation rights). Per the source ranking in `decisions.md`
-   (2026-08-04), a legal claim needs statutory or official sourcing. Smallest
-   fix: re-label to `law`, cite the statute, and add "apart from the narrow
-   statutory exceptions".
-8. **A design rule stated as a property.** `terms.ts:3228` (glossary "Tool",
-   figure) says "Das Modell hält nie die Zugangsdaten." The site's own
-   "Access Token" entry frames the identical point correctly as a rule — "Die
-   Regel, die zählt: Das Token geht nie an das Modell" — and
-   `before-you-grant-access` advises keeping the secret out of the model's
-   context, which only makes sense because it can happen. Smallest fix: "Die
-   Zugangsdaten gehören nicht ins Modell."
-9. **An unknowable universal negative.** `terms.ts:802` (glossary "Foundation
-   Model") says "dein Material war nie dabei" — false for anyone whose material
-   has been published. Smallest fix: "dein internes Material war nicht dabei".
-10. **LIVE: `/.well-known/security.txt` returns HTTP 404.** The file is in
-    source (`site/public/.well-known/security.txt`) and builds correctly to
-    `dist/.well-known/security.txt`, and the deploy is current, but production
-    404s on the RFC 9116 location while every non-dot static path (`/robots.txt`,
-    `/llms.txt`, `/manifest.webmanifest`, `/_astro/*`) returns 200. This makes
-    two repository statements false: `.ai/decisions.md` (2026-08-24) and
-    `site/INFORMATION_ARCHITECTURE.md` both say the endpoint "is still served for
-    scanners". Root cause not confirmed — note that `_astro/` serving fine rules
-    out simple underscore stripping. Candidate fix: add an empty
-    `site/public/.nojekyll`. Must be verified against the live deploy after
-    merging, because it cannot be proven locally.
+1. **Business plan vs the Art. 28 processing agreement** — closed. The corpus
+   now says one thing: a plan *makes a processing agreement available*, and
+   concluding it stays the reader's job. `what-may-go-in` and `decision-maker`
+   dropped "provide"/"lives"; `training-and-retention` stopped denying the
+   agreement outright.
+2. **"The major vendors" / "die großen Anbieter"** — closed. Replaced with the
+   vendors actually checked (OpenAI and Anthropic) or with "business plans
+   typically". Zero occurrences of any market-wide vendor class remain.
+3. **"vendors say as much" / "die Anbieter sagen das selbst"** — closed. Now
+   "both vendors checked here" / "beide hier geprüften Anbieter", and the blog
+   names OpenAI and Anthropic directly.
+4. **DE dropped a hedge the EN kept** — closed. `decision-maker` DE carries
+   "in der Regel" again.
+5. **Anthropic organisation role** — closed, and it turned out the English was
+   wrong too. The source says "As a **Primary Owner or Owner** of a **Team or
+   Enterprise** plan, you can disable the ability for members of your
+   organization to submit feedback"; the page had said an "organisation owner"
+   could "switch the feedback feature off entirely". Both locales now name the
+   roles and the plans, and the commercial source article was added — the claim
+   had been cited to the consumer article, which states in its own first line
+   that it covers Free/Pro/Max only.
+6. **"the only copy you control"** — closed. Now "the one copy you can reach
+   directly" / "die eine Kopie, die du unmittelbar selbst erreichst", matching
+   the bounded wording the same page already used twice.
+7. **No-licence copyright claim** — closed, and re-levelled. Was a universal
+   negative at `fact` level citing choosealicense.com. Now `law`, dated
+   2026-08-27, citing Art. 4(1) of Directive 2009/24/EC for the restricted acts
+   and stating that the reservation is expressly subject to Arts. 5 and 6,
+   which leave a lawful acquirer room to run the program, make a back-up and
+   study it. The explainer link is gone.
+8. **Tool glossary credential absolute** — closed. "The model never holds the
+   credential" / "Das Modell hält nie die Zugangsdaten" became a stated design
+   rule, compatible with the Access Token entry's "the rule worth keeping".
+9. **Foundation Model universal negative** — closed. "your material was never
+   part of it" is replaced by the mechanism: the model has no access to private
+   files or the current workspace, and reaching those takes a product feature,
+   supplied context or a connection.
+10. **LIVE `/.well-known/security.txt` 404 — root cause found, fix committed,
+    awaiting deploy.** Not `.nojekyll`, and not Jekyll at all. Proven in three
+    steps: the GitHub Pages origin returns 404 as well, so Cloudflare is only
+    passing it through; the deployed artifact was downloaded and contains zero
+    dot-prefixed entries while `_astro/` is present; and the pinned action's own
+    source tars with `--exclude=.[^/]*` whenever `include-hidden-files` is not
+    `true`, which it defaults to. `.nojekyll` would have been dropped by that
+    same rule. Fix: `include-hidden-files: true` on the upload step in
+    `pages.yml`. Replicating the tar locally without that exclude yields exactly
+    two extra entries — `.well-known/` and `security.txt` — with `_astro/`
+    intact and no `.git`/`.github` leak. **Closes only when the live URL
+    returns the file after the merge deploys.**

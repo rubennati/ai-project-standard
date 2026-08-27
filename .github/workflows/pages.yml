@@ -62,6 +62,13 @@ jobs:
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: site/dist
+          # Without this the action tars with `--exclude=.[^/]*`, which drops
+          # every dot-prefixed entry — so `.well-known/security.txt` was built,
+          # never uploaded, and 404ed at the GitHub Pages origin while
+          # `_astro/` (underscore, not dot) served normally. `.git` and
+          # `.github` stay excluded by the action regardless, and `dist/`
+          # contains no other dot entry.
+          include-hidden-files: true
 
   deploy:
     name: Deploy to GitHub Pages
