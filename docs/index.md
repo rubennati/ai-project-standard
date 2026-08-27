@@ -16,6 +16,7 @@ This documentation set defines the project baseline and collaboration model.
 - [Adoption](./adoption.md) — taking a blueprint into your project, and staying current
 - [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
 - [Website Audit Prompt](./website-audit.md) — reusable prompt for checking a published site for legal, privacy, security and discoverability defects
+- [Release Readiness](./release-readiness.md) — AI Standard's own Definition of Done, acceptance criteria and verdict vocabulary for judging the website release-ready
 - [Forkable Repository](./forkable-repository.md) — keeping operator-specific personal data out of a public repository, so a fork publishes placeholders
 - [Language Style](./language-style.md) — how the site is written in English and German, the terminology table, and what CI enforces
 

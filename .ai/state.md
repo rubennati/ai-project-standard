@@ -6,9 +6,16 @@
   editorial and structural review in seven slices, in order, without churning
   what already works. All seven are shipped. The slices, their scope and their
   dependencies are in `tasks.md`.
-- **Now: the seven-slice roadmap is complete. Next objective: the final overall
-  site check.** Not started. There is no slice 8 — the final check is a
-  separate objective, not an eighth numbered slice.
+- **Now: the seven-slice roadmap is complete. The final overall site check
+  shipped its ten bounded local fixes (#175) and a maintainer-requested
+  three-column footer (#176), both merged 2026-08-27.** The release-readiness
+  gate that followed closed **READY AFTER LOCAL FIXES**: one bounded DEFECT
+  remains (the privacy policy's processor list omits Fastly, visible in the
+  live response chain behind Cloudflare and GitHub Pages — exact fix in
+  `tasks.md`). This pass also recovered a footer spacing fix that had been
+  pushed to the `feat/footer-legal-column` branch four minutes *after* #176
+  was merged and so never reached `main` — the live footer carried the
+  reported bug until this pass reapplied it. There is no slice 8.
 - **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
   (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
   between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped

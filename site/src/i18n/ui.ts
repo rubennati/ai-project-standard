@@ -111,9 +111,6 @@ export const ui = {
     aboutDescription: "Why AI Standard exists, the position it argues from, what it is not, and who writes it.",
     maintainer: "Maintainer",
     license: "Licence",
-    acknowledgements: "Acknowledgements",
-    acknowledgementsCopy:
-      "The collaboration conventions in the repository draw on the AGENTS.md cross-vendor convention, tool instruction formats, and broader open-source governance practices.",
     legalNoticeDescription: "Legal notice and contact address for the AI Standard website.",
     legalNoticeHeading: "Who operates this site",
     operatorLabel: "Operator",
@@ -236,9 +233,6 @@ export const ui = {
     aboutDescription: "Warum es AI Standard gibt, aus welcher Position argumentiert wird, was die Seite nicht ist und wer schreibt.",
     maintainer: "Maintainer",
     license: "Lizenz",
-    acknowledgements: "Danksagung",
-    acknowledgementsCopy:
-      "Die Kollaborationskonventionen im Repository bauen auf der AGENTS.md-Konvention, auf Tool-Anweisungsformaten und auf allgemeinen Open-Source-Governance-Praktiken auf.",
     legalNoticeDescription: "Impressum und Kontaktadresse der AI-Standard-Website.",
     legalNoticeHeading: "Wer diese Website betreibt",
     operatorLabel: "Betreiber",

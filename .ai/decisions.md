@@ -1112,3 +1112,37 @@ naming vendor export switches beyond what each vendor documents for its own
 product; generalising those switches into a rule about workplace plans;
 adding memory facts without checking them; citing a US judgment for a
 proposition it did not decide.
+
+## 2026-08-27 - The footer is three groups, and Legal is the third
+
+Decision: this amends "The footer is two questions, and Blog is not one of
+them" (2026-08-24), by the maintainer's explicit request rather than a review
+finding. The footer now holds three groups — `Terms & law` / `Begriffe &
+Recht` (Glossary, Law), `About AI Standard` / `Über AI Standard` (About, How
+claims are checked, The project on GitHub), and `Legal` / `Rechtliches`
+(Legal Notice, Privacy Policy, Report a problem, Report a vulnerability). The
+unheaded reporting row and the legal-notice/privacy links that used to sit in
+the closing bar move into the named third group; the closing bar keeps only
+copyright, the two licences and the language switch, the licences and switch
+grouped as one right-aligned cluster rather than centred alone between the
+other two. The desktop grid treats the footer as two zones — a brand track
+and a navigation zone holding the three groups at equal track width — rather
+than four peer columns of uneven auto width, corrected in the same pass.
+
+The principle the 2026-08-24 decision argued for is not reversed: the footer
+still does not carry `/use-cases`, `/start`, `/data-flows` or `/secure-setup`
+in any language, and a stranded reader is still answered by the page's own
+`NextStep`, not by the footer absorbing more of it. What changed is only the
+internal grouping of legal and reporting content — it now reads under its own
+name instead of an unheaded row plus the closing bar, which is a legibility
+change, not a reopening of what a header journey is or where one belongs.
+
+Rejected: reverting to two groups; making Legal a fourth header destination;
+duplicating the four header journeys into the footer to fill the third
+column; keeping the closing bar's original three-way `space-between`, which
+this same pass found left the licence line reading as an unintended gap
+rather than a deliberate grouping.
+
+`site/INFORMATION_ARCHITECTURE.md`'s footer table still describes the
+two-group shape; updating it is recorded as a queued documentation fix, not
+done in this pass — see `tasks.md`.
