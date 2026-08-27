@@ -30,11 +30,10 @@ list records execution order rather than restating those decisions.
    site: responsive layout, headings, links and anchors, language and hreflang,
    accessibility basics, evidence treatment and rendering. This does not mean
    every public sentence has received editorial review.
-7. [ ] Map the remaining page families onto the proven primitives and migrate
+7. [x] Map the remaining page families onto the proven primitives and migrate
    them in reviewable groups. The four hubs and the primary navigation are done
-   (#135–#140, PRs #142–#149). What is left — the Open Source reframing and the
-   `/docs/**` publication decision — is carried by slice 6 below, which also
-   holds their approval requirement.
+   (#135–#140, PRs #142–#149). The Open Source reframing and the `/docs/**`
+   publication decision shipped in slice 6 (#171).
 8. [ ] Compare Inter Variable and IBM Plex Sans locally; treat any font asset or
    dependency as a separate approval and licence decision.
 9. [x] Editorially reset the public homepage (PR #154). The page now says what
@@ -62,7 +61,7 @@ implementation, not merely before merge.
 | 4 | `/data-flows` and Connect AI | 3 | partly | **done** (#165) |
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
 | 5 | `/secure-setup` and verification | 4 | no | **done** (#169) |
-| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **implemented, awaiting review** |
+| 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **done** (#171) |
 | 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
 
 1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
@@ -181,26 +180,28 @@ implementation, not merely before merge.
    Three decisions are in `decisions.md` (2026-08-26). Eight built pages changed
    and 371 are byte-identical; routes, sitemap, header, footer and homepage
    unchanged.
-6. **Law, About, Evidence, Reference and discovery.** Implemented on
-   `feature/slice-6-law-about-discovery`, awaiting review — four decisions in
-   `decisions.md`, 2026-08-27. The 21 `/docs/**` routes and `/profiles`
-   redirect one-to-one to their repository sources and the glob renderer is
-   removed, so publication requires a deliberate page;
-   `practical-ai-collaboration` stays a repository document, reversing its
-   planned promotion. The method page moved to
-   `/about/how-claims-are-checked`, owns dates, source authority and the
-   correction path, and About keeps a bridge. The Law hub routes with the map
-   first; the map page stopped restating trade-secret and Art. 4 material its
-   owners carry; `what-may-go-in` gained its first onward step;
+6. ~~**Law, About, Evidence, Reference and discovery.**~~ **Shipped in #171.**
+   Four decisions in `decisions.md`, 2026-08-27. The 21 `/docs/**` routes
+   (`/docs` + 20 children) and `/profiles` redirect one-to-one to their
+   repository sources and the glob renderer is removed, so publication
+   requires a deliberate page; `practical-ai-collaboration` stays a
+   repository document, reversing its planned promotion. The method page
+   moved to `/about/how-claims-are-checked`, owns dates, source authority and
+   the correction path, and About keeps a bridge. The Law hub routes with
+   the map first; the map page stopped restating trade-secret and Art. 4
+   material its owners carry; `what-may-go-in` gained its first onward step;
    `data-sovereignty` links the transfer question to
    `us-cloud-and-the-gdpr`. `what-you-agree-to` narrowed to three unique
-   ideas, handing the vendor-claim decoder to `where-knowledge-lives`. Open
-   Source lost the `No AI in this section` separation, is reached from Vibe
-   Coding and About, and two articles gained the sibling step their closings
-   promised. Glossary is one name, its index honest about linking, its count
-   line filter feedback only. `/impressum` and `/datenschutz` land on the
-   German pages; the licence sentences dropped their public-`/docs/` clauses;
-   `llms.txt` matches the shipped architecture.
+   ideas, handing the vendor-claim decoder to `where-knowledge-lives` — its
+   post-slice-6 re-test is closed. Open Source lost the `No AI in this
+   section` separation, is reached from Vibe Coding and About, and two
+   articles gained the sibling step their closings promised. Glossary is one
+   name, its index honest about linking, its count line filter feedback
+   only. `/impressum` and `/datenschutz` land on the German pages; the
+   licence sentences dropped their public-`/docs/` clauses; `llms.txt`
+   matches the shipped architecture. URLs beyond the approved retirements,
+   header, footer, homepage and canonical identity verified unchanged before
+   merge.
 7. **Site-wide voice, German and quality.** Only after ownership has stabilised.
    Negation-heavy headings, count language, meta copy, capability/limitation
    balance, the German defects the review named, `du`/`man` consistency, and a

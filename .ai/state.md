@@ -5,17 +5,15 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 6 — Law, About, Evidence, Reference and discovery —
-  implemented on `feature/slice-6-law-about-discovery`, awaiting review.**
-  The read-only design pass ran 2026-08-27 and the four change-scope decisions
-  it isolated were approved the same day: the `/docs/**` retirement shape
-  (redirect each URL to its GitHub source, remove the renderer), the
-  `practical-ai-collaboration` reversal (repository document, not promoted),
-  the evidence-method move to `/about/how-claims-are-checked`, and the
-  `/profiles` retirement. All four are implemented, with the Law hub reframe,
-  the About restructure, the Open Source reconnection and the
-  `what-you-agree-to` narrowing — see `decisions.md`, 2026-08-27. Not merged;
-  slice 7 has not started.
+- **Now: slice 6 — Law, About, Evidence, Reference and discovery — shipped in
+  #171 (2026-08-27).** It is not carried forward as an active objective; see
+  *Settled* below for its durable outcome. Slice 7 — site-wide voice, German,
+  terminology and quality — is next and has not started.
+- **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
+  (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
+  between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped
+  (#171) · slice 7 next, not started. No slice 8; slice 7 is the final
+  numbered objective, followed by a final overall site check.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -100,15 +98,41 @@ four things worth recording are still four; a log may identify the account,
 service identity or credential identifier used, but must not hold the secret
 itself. No operating route was created.
 
-Slice 6's shape is settled pending merge — see the four `decisions.md`
+`Law, About, Evidence, Reference and discovery` shipped in slice 6 (#171,
+2026-08-27) and is settled to the same standard — see `decisions.md`, four
 entries of 2026-08-27. Publication is a deliberate page, never a filesystem
-glob; `/docs/**` and `/profiles` redirect to their repository sources; the
-method page lives at `/about/how-claims-are-checked` and owns the whole
-method while About keeps a bridge; the Law hub routes with the map first;
-Art. 4's substantive explanation stays on `/start/decision-maker`;
-`what-you-agree-to` keeps its route at three unique ideas; Open Source is
-reached from Vibe Coding and About, not from header or footer; no Reference
-area exists.
+glob: `/docs/**` (21 routes: `/docs` + 20 children) and `/profiles` redirect
+one-to-one to their exact repository sources, the glob renderer is removed,
+and no source Markdown was deleted. `practical-ai-collaboration` stays a
+repository document; its planned public promotion (2026-08-24) is superseded.
+The method page lives at `/about/how-claims-are-checked` — reader job: how
+AI Standard checks claims, ranks sources, uses check dates and handles
+corrections — and owns evidence levels, source ranking, what a check date
+does and does not do, source-authority limits and the correction path; old
+glossary URLs redirect there. About owns why the project exists, the
+position it argues from, what it is not, repository/project context, who
+writes it and licence framing, with only a bridge to the method page. The
+Law hub routes rather than acting as a compliance dashboard
+(`Which rules apply when you use AI at work?` /
+`Welche Regeln gelten, wenn du KI bei der Arbeit einsetzt?`); canonical
+ownership is `what-may-go-in` (entry, Art. 6/28, confidentiality/trade
+secrets), `four-separate-questions` (orientation across the four questions),
+`us-cloud-and-the-gdpr` (third-country transfer) and `ai-act-transparency`
+(provider/deployer transparency duties); Art. 4's substantive literacy
+explanation stays on `/start/decision-maker` and is not re-duplicated in Law.
+`what-you-agree-to` closed its post-slice-6 re-test as keep-but-narrow: it
+owns storage-before-training and the Art. 4(12) loss-of-control distinction,
+deliberately not moved to Law, while the vendor-claim decoder moved to
+`where-knowledge-lives`. Open Source is not a fifth journey; its reader job
+is publishing/maintaining software already built, reached contextually from
+the Vibe Coding page (primary) and About (secondary), never from header or
+footer; all three child articles remain, and the `No AI in this section`
+framing is retired — no claim that AI Standard itself was built without AI
+ever existed on the site. Glossary owns terms a reader meets and needs
+explained; Evidence Method is no longer filed under it; no Reference area
+exists or is planned. `/impressum` and `/datenschutz` redirect to their
+German pages. `llms.txt` matches the shipped architecture; canonical identity
+is unchanged.
 
 ## Homepage Correction Pass — shipped in #167, closed
 
