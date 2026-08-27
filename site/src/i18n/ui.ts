@@ -123,7 +123,7 @@ export const ui = {
     purposeLabel: "Purpose of this site:",
     privacyInline: "privacy policy",
     purposeCopy:
-      "independent guidance for using AI at work. It sells nothing, carries no advertising, sets no cookies and runs no tracking or analytics. Delivery runs through Cloudflare and GitHub Pages, which log visitors' IP addresses for security and availability \u2014 see",
+      "independent guidance for using AI at work. It sells nothing, carries no advertising, sets no cookies and runs no tracking or analytics. Delivery runs through Cloudflare and GitHub Pages, which log visitors' IP addresses for security and availability. The delivery chain, including the service providers GitHub uses beneath it, is set out in the",
     privacyPolicyDescription: "How the AI Standard website handles personal data: no cookies, no analytics, and what the hosting providers log.",
   },
   de: {
@@ -245,7 +245,7 @@ export const ui = {
     purposeLabel: "Zweck dieser Website:",
     privacyInline: "Datenschutz",
     purposeCopy:
-      "unabhängige Orientierung für den Einsatz von KI bei der Arbeit. Sie verkauft nichts, enthält keine Werbung, setzt keine Cookies und verwendet weder Tracking noch Web-Analyse. Die Auslieferung läuft über Cloudflare und GitHub Pages, die IP-Adressen der Besucher zu Sicherheits- und Verfügbarkeitszwecken protokollieren \u2014 siehe",
+      "unabhängige Orientierung für den Einsatz von KI bei der Arbeit. Sie verkauft nichts, enthält keine Werbung, setzt keine Cookies und verwendet weder Tracking noch Web-Analyse. Die Auslieferung läuft über Cloudflare und GitHub Pages, die IP-Adressen der Besucher zu Sicherheits- und Verfügbarkeitszwecken protokollieren. Die Auslieferungskette samt der Dienstleister, die GitHub darunter einsetzt, steht unter",
     privacyPolicyDescription: "Wie die AI-Standard-Website mit personenbezogenen Daten umgeht: keine Cookies, keine Analyse, und was die Hosting-Anbieter protokollieren.",
   },
 } as const;

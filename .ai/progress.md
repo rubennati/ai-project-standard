@@ -473,3 +473,53 @@ instead of the reader benefit. Reset on 24 August, below.
   Cloudflare bot-blocking on non-browser clients — all confirmed live via
   real browser rendering), live privacy claims (no cookies, no tracking
   scripts) verified against the actual production response.
+
+## 2026-08-27 (5)
+
+- **Release-readiness closeout.** Closed the privacy delivery-chain defect:
+  the policy no longer presents delivery as two infrastructure parties. It now
+  says delivery runs through Cloudflare in front of GitHub Pages and that
+  GitHub uses service providers beneath it, citing GitHub's own subprocessor
+  documentation for Fastly. Verified at that source rather than inferred from
+  response headers — deliberately no Fastly retention period, no Fastly logging
+  claim, no controller/processor classification, and GitHub's IP-logging
+  statement was not transferred to Fastly. The legal notice summary follows,
+  pointing at the privacy policy for the chain rather than repeating it.
+- **A stale internal note was retired rather than satisfied.** `privacy.ts`
+  carried a comment saying the retention period and the controller/processor
+  role "must be confirmed before this is treated as final". The page
+  deliberately asserts neither — both would be its own characterisation of
+  someone else's practice, drifting the moment it changes — so the comment now
+  records those as settled boundaries and warns against "resolving" them by
+  writing in a period or a role.
+- **`site/INFORMATION_ARCHITECTURE.md` stopped contradicting the shipped site.**
+  Its footer table described the two-group shape superseded on 2026-08-27 and
+  still pointed at the retired `/glossary/evidence-method` URL. Now three
+  groups, the current method URL, the closing bar, and the two-zone desktop
+  grid. The architectural principle is unchanged: the header owns the four
+  primary journeys and the footer does not duplicate them.
+- **The three unevidenced acceptance areas were completed.** Concept ownership
+  across 39 concepts: 38 compatible, 1 real contradiction (business plan vs the
+  Art. 28 processing agreement). Strong-claim review across both languages.
+  Lighthouse 12.8.2 on six routes, mobile and desktop, local and live.
+- **Performance has real evidence now.** Mobile, local production build:
+  homepage 100 (LCP 907 ms, CLS 0, TBT 0), `/start` 100 (1024 ms), `/law` 100
+  (1022 ms), Connect AI 100 (1145 ms), Vibe Coding 97 (1615 ms), Glossary 98
+  (1307 ms, TBT 154 ms). Live homepage 100 (LCP 1289 ms, CLS 0, TBT 15 ms,
+  14.5 KB, 5 requests, all first-party). CLS is 0 on every route measured. The
+  glossary's mobile TBT is Style & Layout over 143 entries, not script
+  evaluation (59 ms) — explained, not a defect; on desktop it is 100 with TBT 0.
+  The site ships zero JavaScript bundles and one 40 KB stylesheet.
+- **Privacy verified against the shipped corpus, not one page.** The only
+  mentions of `localStorage`/`sessionStorage` anywhere in the built site are the
+  privacy policy's own statements that they are not used; zero occurrences of
+  `document.cookie`, `indexedDB`, `sendBeacon`, `XMLHttpRequest`, `fetch(`,
+  `gtag` or `dataLayer`; zero external `src=` subresources across 380 routes.
+  Live: no `Set-Cookie` on any route sampled, and Lighthouse recorded five
+  first-party requests and no third party.
+- **Verdict: READY AFTER LOCAL FIXES, not READY.** Ten defects are open in
+  `tasks.md`. Nine are content; one is live — `/.well-known/security.txt`
+  returns 404 in production although the file is in source, builds correctly,
+  and the deploy is current. That one also falsifies two repository statements
+  claiming the endpoint is still served for scanners. The previous pass checked
+  it as a built file and passed it; checking it as a live URL is what caught it.
