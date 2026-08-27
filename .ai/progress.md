@@ -395,3 +395,40 @@ instead of the reader benefit. Reset on 24 August, below.
   375 or 1280 in either locale. Glossary search, filters, the no-JS index and
   the live count were exercised in the browser after the index shed 13% of its
   bytes; German fallback notices appear only where German actually falls back.
+
+## 2026-08-27 (3)
+
+- **Slice 7 shipped as #173** (implementation commit `db9c1345155083fdd22b7648104ea65724d95eb6`,
+  merge commit `6d81922`). `state.md` and `tasks.md` record it as shipped rather
+  than in review. This closes the seven-slice roadmap opened 2026-08-24: slice 1
+  (#158) through slice 7 (#173), with the Homepage Correction Pass (#167)
+  between slices 4 and 5. There is no slice 8. Next objective: the final
+  overall site check, not started, not another numbered slice.
+- **A legal-precision review pass preceded merge**, requested after the first
+  implementation was reviewed. It corrected the three newly added legally
+  substantive sections without reopening any other slice-7 work: the
+  AI-assisted-code section no longer asserts a universal absence of case law
+  and keeps EU originality/authorship distinct from who may exercise economic
+  rights, with US Copyright Office conclusions labelled as US law throughout;
+  the export section separates vendor-specific product facts (`fact`, dated)
+  from GDPR Art. 20's actual scope (`law`, dated) instead of one mixed
+  paragraph, and no longer implies a general workspace-export right; the
+  Art. 6 employee-consent sentence was tightened to the EDPB's own framing.
+  Route set, sitemap, evidence links and EN/DE parity were reverified
+  unchanged after the correction.
+- **Final verification before merge:** routes 380, sitemap 354, both unchanged
+  from `main`; 2,832 in-main internal links crawled, zero broken; all ten
+  EN/DE semantic-parity findings rechecked individually and passing; evidence
+  badges still resolve only to `/about/how-claims-are-checked`; no horizontal
+  overflow at 375×812 or 1280×800 in either locale on the pages touched by the
+  precision pass; `astro check`, the language check, `check-conformance.sh`
+  and `markdownlint-cli2` all clean locally, and all six GitHub Actions checks
+  passed on the PR (German language check, Link check, Markdown lint,
+  Self-conformance, Site build, Structural docs check).
+- **Genuine remaining scope**, unchanged from the slice-7 close-out: memory or
+  personalisation as a product setting (no dated fact owner); a possible
+  multi-session-reviewability Open Source article; glossary UI-label
+  housekeeping; rights in AI-generated output beyond the software/publishing
+  case; the second-blog-post discoverability question; and internal cleanup of
+  the dead `license` prop, the unused `mdx()` integration and the `docs/**`
+  Pages workflow trigger. None of these block the final overall site check.
