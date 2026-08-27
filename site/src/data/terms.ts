@@ -785,7 +785,7 @@ export const terms: TermEntry[] = [
     explanation:
       "A large model trained once on broad data and then used as the basis for many different tasks, rather than trained for one. The economics of the field follow from this: training is concentrated, use is spread.",
     aiContext:
-      "It is why a handful of organisations train and everyone else adapts. It also explains why a general model can be surprisingly weak on your specific material: it learned the world in general and your material was never part of it.",
+      "It is why a handful of organisations train and everyone else adapts. It also explains why a general model can be surprisingly weak on your specific material: it was trained for the world in general, and it has no access to your private files or your current workspace. Reaching those takes a product feature, context you supply, or a connection.",
     observedIn: ["General AI usage", "Model documentation"],
     status: "review",
     stability: "stable",
@@ -799,7 +799,7 @@ export const terms: TermEntry[] = [
         explanation:
           "Ein großes Modell, einmal auf breiten Daten trainiert und dann als Grundlage für viele verschiedene Aufgaben genutzt, statt für eine trainiert. Daraus folgt die Ökonomie des Feldes: Training ist konzentriert, Nutzung verteilt.",
         aiContext:
-          "Deshalb trainieren eine Handvoll Organisationen und alle anderen passen an. Es erklärt auch, warum ein allgemeines Modell bei deinem konkreten Material überraschend schwach sein kann: Es hat die Welt im Allgemeinen gelernt, und dein Material war nie dabei.",
+          "Deshalb trainieren eine Handvoll Organisationen und alle anderen passen an. Es erklärt auch, warum ein allgemeines Modell bei deinem konkreten Material überraschend schwach sein kann: Es ist auf die Welt im Allgemeinen trainiert und hat keinen Zugriff auf deine privaten Dateien oder deinen aktuellen Arbeitsbereich. Dafür braucht es eine Produktfunktion, Kontext, den du mitgibst, oder eine Anbindung.",
       },
     },
   },
@@ -3206,7 +3206,7 @@ export const terms: TermEntry[] = [
     analogy:
       "An assistant who can write out an order form but cannot sign it. They decide what should be ordered and fill in the form perfectly. Someone else checks it, signs it, and only their signature moves any money. The thinking and the authority sit in different hands on purpose.",
     figure:
-      "MODEL                RUNTIME                THE WORLD\n\n  decides    ──►   checks permission  ──►   sends the email\n  what to do       holds the token          changes the record\n                   may ask a human\n\nThe model never holds the credential.",
+      "MODEL                RUNTIME                THE WORLD\n\n  decides    ──►   checks permission  ──►   sends the email\n  what to do       holds the token          changes the record\n                   may ask a human\n\nDesign rule: the credential stays in the runtime, not the model.",
     observedIn: ["Developer tools", "Agent products", "General AI usage"],
     status: "review",
     stability: "stable",
@@ -3225,7 +3225,7 @@ export const terms: TermEntry[] = [
         analogy:
           "Eine Assistenz, die ein Bestellformular ausfüllen, aber nicht unterschreiben darf. Sie entscheidet, was bestellt werden soll, und füllt das Formular einwandfrei aus. Jemand anderes prüft, unterschreibt, und erst diese Unterschrift bewegt Geld. Denken und Befugnis liegen absichtlich in verschiedenen Händen.",
         figure:
-          "MODELL               LAUFZEIT               DIE WELT\n\n  entscheidet ──►  prüft die Rechte  ──►  sendet die Mail\n  was zu tun ist   hält das Token         ändert den Datensatz\n                   fragt ggf. nach\n\nDas Modell hält nie die Zugangsdaten.",
+          "MODELL               LAUFZEIT               DIE WELT\n\n  entscheidet ──►  prüft die Rechte  ──►  sendet die Mail\n  was zu tun ist   hält das Token         ändert den Datensatz\n                   fragt ggf. nach\n\nKonstruktionsregel: Das Zugangsmittel bleibt in der Laufzeit, nicht im Modell.",
       },
     },
   },

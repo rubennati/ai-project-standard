@@ -10,31 +10,26 @@
   shipped its ten bounded local fixes (#175), a maintainer-requested
   three-column footer (#176) and the release-readiness standard (#177), all
   merged 2026-08-27.** There is no slice 8.
-- **Release Readiness: READY AFTER LOCAL FIXES.** Not READY. The closeout pass
-  closed the privacy delivery-chain defect and the stale footer documentation,
-  and then completed the three acceptance areas the earlier pass could not
-  evidence — exhaustive concept ownership, exhaustive strong-claim review, and
-  actual Lighthouse measurement. Those audits found **ten open defects**, listed
-  in `tasks.md` under *Release-readiness closeout defects*. Nine are content
-  corrections; one is a live infrastructure defect
-  (`/.well-known/security.txt` 404s in production). None is a BLOCKER: no
-  reader is pushed toward an unsafe or unlawful act by any of them, and the
-  errors run conservative — they over-claim scope or over-warn, rather than
-  clearing anyone to do something.
-- **Two findings worth carrying, because they are about how the audits
-  themselves failed.** First, the strong-claim defects were initially reported
-  as German-only; they are not — the English carries the same overreach in
-  every case, which means the earlier English pass under-reported and a
-  single-language audit is not evidence about the other language. Second,
-  `/.well-known/security.txt` was checked as a *built file* in the previous
-  pass and passed; it fails as a *live URL*. `docs/release-readiness.md`
-  already requires live checking, and this is what that requirement is for.
-- **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
-  (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
-  between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped
-  (#171) · **slice 7 shipped (#173, implementation commit `db9c134`, merge
-  commit `6d81922`, 2026-08-27).** No slice 8; slice 7 was the final numbered
-  objective.
+- **Release Readiness: READY AFTER LOCAL FIXES — security.txt awaiting live
+  verification.** Nine of the ten closeout defects are closed and verified in
+  the built site. The tenth — `/.well-known/security.txt` returning 404 in
+  production — has a diagnosed root cause and a committed fix, but closes only
+  when the live URL serves the file after a deploy. No BLOCKER. Detail per
+  defect is in `tasks.md`.
+- **The security.txt root cause was not what it looked like.** Not Jekyll, and
+  `.nojekyll` would not have fixed it: the pinned `upload-pages-artifact`
+  action tars with `--exclude=.[^/]*` unless `include-hidden-files` is `true`,
+  so every dot-prefixed path was dropped at upload — `.nojekyll` included, had
+  it been added. Proven by downloading the deployed artifact (zero dot entries,
+  `_astro/` present) and by the GitHub Pages origin returning 404 independently
+  of Cloudflare. The fix is one input on the upload step.
+- **Two audit-method findings worth carrying.** First, defects reported as
+  German-only were not: the English carried the same overreach in defects 2, 3
+  and 6, and in defect 5 the English was independently wrong about the vendor
+  role. A single-language audit is not evidence about the other language.
+  Second, defect 10 passed an earlier pass because it was checked as a *built
+  file* and fails as a *live URL* — which is what `docs/release-readiness.md`'s
+  live-checking requirement exists for.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is

@@ -523,3 +523,49 @@ instead of the reader benefit. Reset on 24 August, below.
   and the deploy is current. That one also falsifies two repository statements
   claiming the endpoint is still served for scanners. The previous pass checked
   it as a built file and passed it; checking it as a live URL is what caught it.
+
+## 2026-08-27 (6)
+
+- **Nine of the ten release-readiness defects closed.** Bounded content pass,
+  no architecture, no new route, no new component. The processing-agreement
+  contradiction is resolved to one proposition across all three pages that
+  touch it — a plan makes an Art. 28 agreement *available*, and concluding it
+  stays the reader's job. Market-wide vendor claims are gone: every remaining
+  vendor statement names the vendors actually checked. The copy-control
+  absolute, the credential absolute and the training-history absolute are all
+  bounded to what is knowable.
+- **Two of the defects were worse than reported, in the English.** They had
+  been filed as German-only. Defects 2, 3 and 6 carried the identical overreach
+  in English, and defect 5 was independently wrong in English: the page said an
+  "organisation owner" could "switch the feedback feature off entirely", while
+  Anthropic's commercial article says a *Primary Owner or Owner* of a *Team or
+  Enterprise* plan can disable members' ability to *submit* feedback. That
+  claim had also been cited to the consumer article, which states in its first
+  line that it covers Free/Pro/Max only; the commercial source is now linked in
+  both locales.
+- **The no-licence copyright claim got real law.** It was a universal negative
+  at `fact` level sourced to choosealicense.com. It is now `law`, dated
+  2026-08-27, citing Art. 4(1) of Directive 2009/24/EC for the restricted acts
+  and saying plainly that the reservation is expressly subject to Arts. 5 and 6
+  — a lawful acquirer may run the program for its intended purpose, make a
+  back-up and study how it works. The page had previously implied no exceptions
+  exist.
+- **security.txt: the obvious fix would have been the wrong one.** The 404 was
+  not Jekyll, and `.nojekyll` would itself have been deleted by the same rule
+  that was deleting the file. Three pieces of evidence: the GitHub Pages origin
+  returns 404 independently of Cloudflare; the actually-deployed artifact,
+  downloaded and inspected, contains zero dot-prefixed entries while `_astro/`
+  is present; and the pinned `upload-pages-artifact` action tars with
+  `--exclude=.[^/]*` unless `include-hidden-files` is `true`, which it defaults
+  to. One input on the upload step fixes it. Replicating the tar locally
+  without that exclude adds exactly two entries — the directory and the file —
+  with `_astro/` intact and nothing from `.git`/`.github`.
+- **Verified.** 380 routes, 354 sitemap URLs, 26 redirects — all unchanged. 0
+  broken internal links across 14,374 attributes. Zero recurrence of all
+  sixteen corrected formulations in the built HTML. EN/DE parity confirmed on
+  all eight changed pages. 32 page/width combinations at 375 and 1280 in both
+  locales: no overflow, exactly one H1 each. All gates green. The privacy
+  delivery-chain disclosure from the previous pass is intact.
+- **Verdict: READY AFTER LOCAL FIXES — security.txt awaiting live
+  verification.** Not READY, and deliberately not written as complete: the last
+  defect is only provable against a live deploy.

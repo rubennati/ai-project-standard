@@ -111,7 +111,7 @@ const en: Article = {
       heading: "What “delete” can and cannot reach",
       level: "assessment",
       paragraphs: [
-        "Deleting the conversation removes the conversation. It does not reach backups that have not yet rotated, and it does not reach anything that was already used to train a model — vendors are clear that switching training off stops future runs, not past ones.",
+        "Deleting the conversation removes the conversation. It does not reach backups that have not yet rotated, and it does not reach anything that was already used to train a model — OpenAI and Anthropic are both clear that switching training off stops future runs, not past ones.",
         "Archiving reaches even less. It is a filing decision, not a deletion decision, and it is worth not confusing the two.",
       ],
       figure: {
@@ -136,7 +136,7 @@ const en: Article = {
       list: [
         "The keystroke is yours. Once it is sent, it is not.",
         "Spend one minute with the network tab on the tool you use most. You will never again wonder in the abstract.",
-        "Delete conversations that held someone else's material. It is free and it is the only copy you control.",
+        "Delete conversations that held someone else's material. It is free, and it is the one copy you can reach directly.",
         "Check the training switch — at some vendors it is also the retention switch.",
         "Ask who the contracting party is, not only where the servers stand.",
       ],
@@ -241,7 +241,7 @@ const de: Article = {
       heading: "Was „löschen“ erreicht und was nicht",
       level: "assessment",
       paragraphs: [
-        "Die Unterhaltung zu löschen entfernt die Unterhaltung. Es erreicht keine Sicherungen, die noch nicht rotiert sind, und es erreicht nichts, was bereits in ein Modelltraining eingeflossen ist — die Anbieter sagen deutlich, dass das Abschalten künftige Läufe verhindert, nicht vergangene.",
+        "Die Unterhaltung zu löschen entfernt die Unterhaltung. Es erreicht keine Sicherungen, die noch nicht rotiert sind, und es erreicht nichts, was bereits in ein Modelltraining eingeflossen ist — OpenAI und Anthropic sagen beide deutlich, dass das Abschalten künftige Läufe verhindert, nicht vergangene.",
         "Archivieren erreicht noch weniger. Es ist eine Ablage-Entscheidung, keine Lösch-Entscheidung, und die beiden sollte man nicht verwechseln.",
       ],
       figure: {
@@ -266,7 +266,7 @@ const de: Article = {
       list: [
         "Der Tastendruck gehört dir. Ab dem Absenden nicht mehr.",
         "Verbring eine Minute mit dem Netzwerk-Reiter bei dem Tool, das du am meisten nutzt. Danach rätselst du nie wieder im Abstrakten.",
-        "Lösch Unterhaltungen, die fremdes Material enthielten. Kostet nichts und ist die einzige Kopie, die du kontrollierst.",
+        "Lösch Unterhaltungen, die fremdes Material enthielten. Kostet nichts und ist die eine Kopie, die du unmittelbar selbst erreichst.",
         "Prüf den Trainingsschalter — bei manchen Anbietern ist er zugleich der Aufbewahrungsschalter.",
         "Frag, wer der Vertragspartner ist, nicht nur, wo die Server stehen.",
       ],

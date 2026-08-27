@@ -18,7 +18,11 @@ import type { SiteLocale } from "../../i18n/ui";
 export const CHECKED = "2026-08-09";
 
 const OSD = "https://opensource.org/osd";
-const NO_PERMISSION = "https://choosealicense.com/no-permission/";
+// The restricted acts and their statutory exceptions, for computer programs
+// specifically — which is this page's scope. Replaces an explainer that was
+// carrying a legal claim it could not support: see `.ai/tasks.md`, defect 7.
+const SOFTWARE_DIRECTIVE = "https://eur-lex.europa.eu/eli/dir/2009/24/oj";
+const CHECKED_LICENCE_LAW = "2026-08-27";
 const GITHUB_TOS = "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service";
 
 const en: Article = {
@@ -61,13 +65,16 @@ const en: Article = {
     },
     {
       heading: "No licence means no permission",
-      level: "fact",
-      checked: CHECKED,
+      level: "law",
+      checked: CHECKED_LICENCE_LAW,
       paragraphs: [
         "Copyright is the default, not the exception. A creative work — code included — is under exclusive copyright from the moment it exists, and publishing it changes nothing about that.",
-        "Without a licence, nobody else may copy, distribute or modify the work. Making a repository public is not a grant of rights; it is a decision about who can see it.",
+        "Without a licence, those permissions stay with the rightholder. In the EU, Art. 4(1) of Directive 2009/24/EC reserves reproducing, altering and distributing a computer program to the rightholder — to do or to authorise — and a licence is how that authorisation is given. The reservation is not absolute: Art. 4(1) is expressly subject to Arts. 5 and 6, which leave a lawful acquirer narrow room to run the program for its intended purpose, make a back-up copy and study how it works. None of that stretches to redistributing the code or building on it, which is the gap a licence closes.",
+        "Making a repository public is not a grant of rights; it is a decision about who can see it.",
       ],
-      links: [{ label: "choosealicense.com — no permission granted", href: NO_PERMISSION }],
+      links: [
+        { label: "Directive 2009/24/EC, Art. 4 — restricted acts, and Art. 5 — exceptions", href: SOFTWARE_DIRECTIVE },
+      ],
     },
     {
       heading: "On GitHub, two things are permitted anyway",
@@ -132,13 +139,16 @@ const de: Article = {
     },
     {
       heading: "Keine Lizenz heißt keine Erlaubnis",
-      level: "fact",
-      checked: CHECKED,
+      level: "law",
+      checked: CHECKED_LICENCE_LAW,
       paragraphs: [
         "Das Urheberrecht ist der Normalfall, nicht die Ausnahme. Ein Werk — Code eingeschlossen — steht ab dem Moment seiner Entstehung unter dem ausschließlichen Recht des Urhebers, und Veröffentlichen ändert daran nichts.",
-        "Ohne Lizenz darf niemand sonst das Werk kopieren, weitergeben oder verändern. Ein Repository öffentlich zu stellen ist keine Rechteeinräumung, sondern eine Entscheidung darüber, wer es sehen kann.",
+        "Ohne Lizenz bleiben diese Befugnisse beim Rechteinhaber. In der EU behält Art. 4 Abs. 1 der Richtlinie 2009/24/EG dem Rechteinhaber vor, ein Computerprogramm zu vervielfältigen, zu bearbeiten und zu verbreiten — oder genau das zu erlauben; diese Erlaubnis erteilt eine Lizenz. Absolut ist der Vorbehalt nicht: Art. 4 Abs. 1 steht ausdrücklich unter dem Vorbehalt der Art. 5 und 6, die dem rechtmäßigen Erwerber einen engen Spielraum lassen — das Programm bestimmungsgemäß zu nutzen, eine Sicherungskopie anzulegen und seine Funktionsweise zu untersuchen. Für das Weiterverbreiten oder das Aufbauen darauf reicht das nicht; genau diese Lücke schließt eine Lizenz.",
+        "Ein Repository öffentlich zu stellen ist keine Rechteeinräumung, sondern eine Entscheidung darüber, wer es sehen kann.",
       ],
-      links: [{ label: "choosealicense.com — keine Rechte eingeräumt", href: NO_PERMISSION }],
+      links: [
+        { label: "Richtlinie 2009/24/EG, Art. 4 — zustimmungsbedürftige Handlungen, Art. 5 — Ausnahmen", href: SOFTWARE_DIRECTIVE },
+      ],
     },
     {
       heading: "Auf GitHub sind zwei Dinge trotzdem erlaubt",
