@@ -1,5 +1,6 @@
 ---
 import Base from "../layouts/Base.astro";
+import { repoUrl } from "../data/site";
 const base = import.meta.env.BASE_URL;
 ---
 
@@ -22,10 +23,10 @@ const base = import.meta.env.BASE_URL;
         Go home
       </a>
       <a
-        href={`${base}docs`}
+        href={repoUrl}
         class="rounded-md border border-black/15 px-5 py-2.5 font-medium no-underline hover:bg-black/5 dark:border-white/15 dark:hover:bg-white/5"
       >
-        Browse the docs
+        The project on GitHub<span aria-hidden="true" class="ml-0.5">↗</span>
       </a>
     </div>
   </section>

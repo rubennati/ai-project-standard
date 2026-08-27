@@ -12,8 +12,12 @@
  * `/blog/before-you-press-enter` owns that corridor and
  * `getting-it-back-out` owns the copies that deletion has to reach.
  *
- * The route is kept for now and re-tested after slice 6, which may move the
- * Art. 4(12) material and change the answer — see `.ai/state.md`.
+ * The slice 6 re-test kept the route and narrowed it once more: the
+ * Art. 4(12) distinction stays here — it corrects what a reader calls the
+ * transfer, which is this page's job, not Law's — and the marketing-decoder
+ * section ("trained on our data") moved to `where-knowledge-lives`, which
+ * owns the three ways a tool can know about material. See
+ * `.ai/decisions.md`, 2026-08-27.
  *
  * Checked 2026-08-03.
  */
@@ -49,7 +53,7 @@ export const getWhatYouAgreeToNextStep = (
 const en: Article = {
   title: "What changes when you allow model training",
   description:
-    "What you agree to when you allow model training: storage first, a batched process rather than a live one, and a word that often describes something else.",
+    "What you agree to when you allow model training: storage first, and a batched process rather than a live one.",
   lead: "Allowing model training can also change how long your conversations are stored. It is worth knowing what the setting actually governs before you decide either way.",
   sections: [
     {
@@ -82,20 +86,11 @@ const en: Article = {
       ],
     },
     {
-      heading: "“Trained on our data” usually is not training",
-      level: "assessment",
-      paragraphs: [
-        "“Specialised for law” or “for medicine” describes the product, not how it was built. Behind that word can sit a fine-tuned model, retrieval over a curated document collection, rule-based checks on top of a general model, a system prompt — or several of those at once. All of them can make a perfectly good product, and the marketing rarely distinguishes them.",
-        "It is worth asking which one you are buying, because the answers differ in the ways that matter to you: what it cost to build, where your material ends up, and what happens when the underlying model is replaced. The words to ask with are fine-tuning and retrieval — and asking is usually enough to find out.",
-      ],
-    },
-    {
       heading: "What to take from it",
       level: "advice",
       paragraphs: [
         "Read the training setting as a retention setting, then look up what yours is set to before you decide either way.",
         "Do not describe an ordinary transfer as a breach. Describe it as the point where control ends, which is both accurate and harder to argue with.",
-        "When a vendor says trained on our data, ask whether they mean fine-tuning or retrieval. The answer changes the assessment.",
       ],
       links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
@@ -105,7 +100,7 @@ const en: Article = {
 const de: Article = {
   title: "Was sich ändert, wenn du Modelltraining erlaubst",
   description:
-    "Was du erlaubst, wenn du Modelltraining zulässt: zuerst Speicherung, dann ein gebündelter statt eines laufenden Vorgangs — und ein Wort, das oft etwas anderes meint.",
+    "Was du erlaubst, wenn du Modelltraining zulässt: zuerst Speicherung, dann ein gebündelter statt eines laufenden Vorgangs.",
   lead: "Modelltraining zu erlauben kann zugleich verändern, wie lange deine Unterhaltungen gespeichert bleiben. Bevor du dich in die eine oder andere Richtung entscheidest, lohnt es sich zu wissen, was die Einstellung tatsächlich regelt.",
   sections: [
     {
@@ -140,20 +135,11 @@ const de: Article = {
       ],
     },
     {
-      heading: "„Mit unseren Daten trainiert“ ist meist kein Training",
-      level: "assessment",
-      paragraphs: [
-        "„Spezialisiert auf Recht“ oder „auf Medizin“ beschreibt das Produkt, nicht seinen Aufbau. Dahinter kann ein feinabgestimmtes Modell stecken, ein Abruf über eine kuratierte Dokumentensammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
-        "Die Frage lohnt sich trotzdem, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen man fragt, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
-      ],
-    },
-    {
       heading: "Was du daraus ableiten kannst",
       level: "advice",
       paragraphs: [
         "Lies die Trainingseinstellung als Aufbewahrungseinstellung — und schlag nach, wie sie bei deinem Anbieter aussieht, bevor du dich entscheidest.",
         "Nenn eine gewöhnliche Übermittlung kein Leck. Nenn sie den Punkt, an dem die Kontrolle endet — das ist zutreffend und schwerer zu bestreiten.",
-        "Wenn ein Anbieter sagt, es sei mit ihren Daten trainiert: frag, ob Fine-Tuning oder Retrieval gemeint ist. Die Antwort ändert die Beurteilung.",
       ],
       links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
     },

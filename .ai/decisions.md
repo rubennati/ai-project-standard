@@ -903,3 +903,115 @@ expertise and ruled out the two checks that actually close that gap.
 Rejected: moving the model to the hub. The page that turns a principle into
 something to do is where the principle belongs, and the hub would have inherited
 a framework in place of a route.
+
+## 2026-08-27 - A repository document is not a web page
+
+Decision: `/docs/**` is retired from the public site and its rendering
+machinery is removed — the `docs` content collection, the two page templates
+and the sorting helper. The durable publication rule: a document in the
+repository is not automatically a web page; public content requires a
+deliberate page under `site/src/pages/` with its own reader job, and one that
+answers the product brief's admission test. The absence of an automatic
+renderer is the prevention mechanism — no allowlist to maintain, nothing for a
+new file to fall into.
+
+Each of the 21 published URLs redirects one-to-one to the exact document it
+rendered, on GitHub; `/docs` itself redirects to the `docs/` directory. No
+source Markdown is deleted. `/profiles` — English-only, orphaned, with both of
+its actions pointing at wrong or retiring destinations — redirects to the
+blueprints directory that replaced profiles; the adopter-facing tombstone
+`docs/profiles.md` stays. The licence sentences in the legal notice, About and
+the README drop their public-`/docs/` clauses; no licence changes.
+
+Rationale: publication was a filesystem glob, so 21 maintainer documents were
+indexed and sitemapped, all 60 of their in-body internal links resolved
+against the web path and 404ed, and every meta description was a truncated
+first line. Not one page passed the admission test as reader content, and
+`docs/purpose.md` — itself published — states the rule the glob broke. The
+2026-08-24 decision made publication explicit; this one settles the shape.
+
+Rejected: noindex-but-reachable (no compatibility need survived inspection,
+and it would preserve 60 broken links indefinitely); redirecting everything to
+one generic page; deleting source material because its route was wrong.
+
+## 2026-08-27 - practical-ai-collaboration stays a repository document
+
+Decision: `docs/practical-ai-collaboration.md` is not promoted to a public
+page. It retires with the rest of `/docs/**` and remains maintained as
+contributor documentation. This supersedes the promotion half of the
+2026-08-24 publication decision, which called it "preserved and later promoted
+deliberately"; preservation holds, promotion does not.
+
+Rationale: first-principles inspection found its substance is repository
+practice — `.ai/` file discipline, branch naming, draft-PR etiquette, merge
+order — narrated in a vocabulary that is not the site's. Publishing it would
+put a second, git-shaped collaboration model beside `/start`'s six ways of
+working and restate `keeping-a-record`'s question for one medium, at 17.8
+mobile screens, in English only.
+
+The reader question it brushes against is real and unowned: several AI
+sessions touched one repository — how does the work stay reviewable? If that
+is ever built, it is a fresh, bilingual Open Source article, not this
+document. Recorded as a queued gap, not built.
+
+Rejected: promoting it to `/start`, About or a standalone route; rewriting it
+into site voice now (nothing needs it yet).
+
+## 2026-08-27 - The evidence method is trust content, owned by About
+
+Decision: the method page moves from `/glossary/evidence-method` to
+`/about/how-claims-are-checked` in both locales, keeping the `evidenceMethod`
+route key so the footer and all evidence badges follow through the route
+helper; the old URLs redirect. Its H1 is the footer's own promise — `How
+claims are checked` / `Wie Aussagen geprüft werden`. It now owns the whole
+method: the five levels, source ranking, what a check date does and does not
+do, the limits of a source's authority, and the correction path. About keeps a
+two-sentence bridge; its hand-typed copy of the method — which had already
+drifted from the generated one — is gone. The retired lead claim ("a claim
+without a date is unfalsifiable") is replaced with the corrected doctrine that
+`evidence.ts` has carried since slice 1.
+
+No Reference area is created: after this move, nothing on the site is durable
+inspect-rather-than-read material except the glossary itself, and a surface
+for one item would be taxonomy for a word. The glossary is called `Glossary` /
+`Glossar` on every surface — one name instead of five — and its index stops
+claiming terms are linked wherever they occur.
+
+Rationale: a methodology explaining how the site works is not a term a reader
+meets in prose; the footer already filed the page under About, and the
+information architecture reserved the move. 244 in-body links arrive through
+one route-helper case, so the URL was the only thing disagreeing with the
+ownership.
+
+Rejected: leaving the URL and changing only the framing; a `/reference`
+surface; linking the method from the glossary index.
+
+## 2026-08-27 - One owner per legal concept
+
+Decision: `four-separate-questions` is the Law hub's orientation page and
+stops answering questions its siblings own. The substantive trade-secret
+explanation belongs to `what-may-go-in` (the map keeps a bridge); the
+substantive AI Act Art. 4 explanation belongs to `/start/decision-maker`,
+which answers the reader the duty lands on (the map keeps one sentence and a
+link); the three governance sections that were not legal content are removed.
+Its H1 drops the count and the negation for the reader's own words. The hub
+opens on the routing question `Which rules apply when you use AI at work?`,
+orders the map first, and carries no disclaimer.
+
+The slice-4 re-test of `what-you-agree-to` resolves as keep-but-narrow: the
+Art. 4(12) breach-versus-loss-of-control distinction stays there — it corrects
+what a reader calls the transfer, which is that page's job, not Law's — and
+the vendor-claim decoder moved to `where-knowledge-lives`, which owns the
+three routes it distinguishes. `data-sovereignty` links
+`us-cloud-and-the-gdpr` where Chapter V comes up, giving that page its first
+inbound link from outside Law.
+
+Rationale: the trade-secret three-condition test and the architecture-document
+example appeared near-verbatim on two pages; Art. 4 had two substantive
+explanations and the better one was already on Decision Maker, anchored there
+by design. A reader routed by the hub should meet each explanation once.
+
+Rejected: moving Art. 4(12) to Law (a definitional correction inside a
+mechanism explanation, not a permission question); merging the two law pages;
+retiring `what-you-agree-to` (three unique ideas remain and its H1 now
+matches its body).

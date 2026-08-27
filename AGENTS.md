@@ -84,7 +84,7 @@ them.
 - Public URLs, redirects included
 - The taxonomy (pillars, profiles, layers, adoption paths) anywhere it is stated
 - Anything on every page: the layout shell, the wordmark, the language switch
-- Moving files that something else reads — `docs/**` is rendered by the site
+- Moving files that something else reads — a workflow, a check, a redirect target
 
 **Proceed without asking:**
 

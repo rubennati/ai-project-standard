@@ -77,14 +77,16 @@ const sortedTerms = [...terms].sort((a, b) => {
 </section>
 
 <section class="mt-8">
+  {/* Live feedback for the filters, not an inventory line: hidden until the
+      reader actually filters or searches, then filled in by the script. */}
   <p
     class="mb-4 text-sm text-zinc-700 dark:text-zinc-300"
     data-glossary-count
     data-prefix={ui.showing}
     data-singular={ui.entry}
     data-plural={ui.entries}
+    hidden
   >
-    {ui.showing} {sortedTerms.length} {sortedTerms.length === 1 ? ui.entry : ui.entries}.
   </p>
 
   <ul class="divide-y divide-black/10 border-y border-black/10 dark:divide-white/10 dark:border-white/10" data-glossary-list>
@@ -164,6 +166,8 @@ const sortedTerms = [...terms].sort((a, b) => {
       const includeProducts = Boolean(includeProductsInput?.checked);
       const source = sourceSelect?.value ?? "";
       const queryActive = query.length > 0;
+      // The count is feedback on an active filter, not a standing inventory.
+      const filterActive = queryActive || source !== "" || includeProducts;
       const prefix = count.getAttribute("data-prefix") ?? "Showing";
       const singular = count.getAttribute("data-singular") ?? "entry";
       const plural = count.getAttribute("data-plural") ?? "entries";
@@ -185,6 +189,7 @@ const sortedTerms = [...terms].sort((a, b) => {
       }
 
       count.textContent = `${prefix} ${visible} ${visible === 1 ? singular : plural}.`;
+      count.hidden = !filterActive;
     };
 
     queryInput?.addEventListener("input", update);

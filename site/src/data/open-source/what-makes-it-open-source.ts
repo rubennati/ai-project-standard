@@ -165,3 +165,30 @@ const de: Article = {
 
 export const getWhatMakesItOpenSource = (locale: SiteLocale): Article =>
   locale === "de" ? de : en;
+
+/**
+ * The page's closing sentence promises this exact question — "Which one to
+ * pick is the next question, and it is a real one" — and used to point at
+ * nothing. Now it points at the sibling that answers it.
+ */
+export interface OpenSourceNextStep {
+  context?: string;
+  label: string;
+  description: string;
+}
+
+const nextStep: Record<SiteLocale, OpenSourceNextStep> = {
+  en: {
+    label: "Which licence, and what does it commit you to?",
+    description:
+      "Permissive, file-level copyleft, strong copyleft — what each obliges you to.",
+  },
+  de: {
+    label: "Welche Lizenz — und worauf legt sie dich fest?",
+    description:
+      "Permissiv, dateiweises Copyleft, strenges Copyleft — was jede Kategorie verlangt.",
+  },
+};
+
+export const getWhatMakesItOpenSourceNextStep = (locale: SiteLocale): OpenSourceNextStep =>
+  nextStep[locale];

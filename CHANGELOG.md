@@ -6,6 +6,69 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — supporting pages become reachable, and publication becomes deliberate
+
+- The 21 pages under `/docs/**` are retired from the public site. They were the
+  repository's own maintainer documentation, auto-published by a filesystem
+  glob, and every internal link in their bodies was broken. Each URL now
+  redirects to the exact document it rendered, on GitHub, where the links work.
+  Nothing was deleted — the documents live where they always did.
+- The renderer itself is gone: a Markdown file in the repository is no longer a
+  web page by existing. Public content requires a deliberately written page.
+- `/profiles` — a tombstone for a retired repository taxonomy, with both of its
+  buttons pointing at wrong or retiring destinations — redirects to the
+  blueprints directory that replaced profiles.
+- "How claims are checked" moved from `/glossary/evidence-method` to
+  `/about/how-claims-are-checked`. It is trust content about how this site
+  works, not a glossary term. It now also owns what a check date does and does
+  not do, the limits of a source's authority, and what to do on finding an
+  error — material About had been carrying in a second, drifting copy. The old
+  URLs redirect; every evidence badge and the footer follow the move.
+- Its lead no longer claims an undated statement is unfalsifiable — a durable
+  rule is checkable whenever you read it; dates fix which state of a changing
+  world a claim was checked against.
+- About opens on "About AI Standard", keeps its strong prose, and hands the
+  methodology to its owner. In return it gains its first internal onward
+  links: the method page, the open source articles, and the blog post it
+  already had.
+- The Law hub asks "Which rules apply when you use AI at work?" and routes
+  instead of announcing a category. The orientation page comes first, renamed
+  from a count to the reader's own words: "'Are we allowed to?' is more than
+  one question."
+- That page stops answering questions its siblings own: the trade-secret
+  explanation is a bridge to "Can I enter this data into an AI tool?", the
+  Art. 4 literacy duty is one sentence and a link to the Decision Maker page
+  that owns it, and the three governance sections that were not legal content
+  are gone.
+- "Can I enter this data into an AI tool?" — the most-linked page in the
+  family — finally has an onward step: the training-defaults page that answers
+  its account question.
+- "Where your data is" links the legal transfer question to "Does a US-hosted
+  AI tool break the GDPR?", which until now could only be found from the Law
+  hub itself.
+- "What changes when you allow model training" narrows to what its title
+  promises. The vendor-claim decoder — "trained on our data" can mean
+  fine-tuning, retrieval or a system prompt — moved to "Which of your systems
+  can be a knowledge source", which owns the three routes it distinguishes.
+- Open source stops declaring itself AI-free while claiming to be the ground
+  the site stands on. Its hub now addresses the reader it was written for —
+  someone publishing code, their own or built with AI — and the Vibe Coding
+  page links to it at the moment publishing becomes relevant. Two of the three
+  articles gained the sibling step their closing sentences already promised.
+- The glossary is called "Glossary" everywhere — one name instead of five —
+  and its index no longer claims terms are linked wherever they occur, nor
+  counts its entries at rest.
+- The German evidence label definition says `Prüfdatum` where it said
+  `Prüfstand` (a test bench), About's contribute link says `Beitragen`, and
+  the method prose names the level `Rechtslage` consistently.
+- The two German legacy URLs `/impressum` and `/datenschutz` now land on the
+  German legal pages instead of the English ones.
+- The licence statements in the legal notice, About and the README no longer
+  name public `/docs/` pages; the licences themselves are unchanged.
+- `llms.txt` matches the shipped site again: the Secure & verify entries
+  describe the four-questions structure that shipped in the last slice, the
+  invented "Reference" grouping is gone, and the retired routes left with it.
+
 ### Changed — Secure & verify stops being a six-step lifecycle
 
 - "How do you set limits that hold — and check what happened?" replaces a hub
