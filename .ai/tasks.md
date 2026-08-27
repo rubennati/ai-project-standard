@@ -45,13 +45,17 @@ list records execution order rather than restating those decisions.
 - Verify the two `draft` blueprints in real projects before either can become `stable`
 - Split the bilingual content modules into one file per locale — the structural cause of German that reads like translated English (slice 7 depends on this being decided, not on it being done)
 
-## Whole-site implementation — seven slices, 2026-08-24
+## Whole-site implementation — seven slices, 2026-08-24 — all shipped, closed 2026-08-27
 
 The review is done; these are what it converts into. One slice per branch, in
-order. The decisions that constrain them are in `decisions.md` (2026-08-24) and
-`state.md`; the findings behind them are session evidence and are not restated
-here. "Approval" means the change-scope rule in `AGENTS.md` applies before
-implementation, not merely before merge.
+order. All seven are shipped; there is no slice 8. The decisions that
+constrain them are in `decisions.md` (2026-08-24) and `state.md`; the findings
+behind them are session evidence and are not restated here. "Approval" means
+the change-scope rule in `AGENTS.md` applies before implementation, not merely
+before merge.
+
+Next objective, not a slice: the final overall site check across the shipped
+seven-slice result — see `state.md`.
 
 | # | Slice | Depends on | Approval | Status |
 |---|---|---|---|---|
@@ -62,7 +66,7 @@ implementation, not merely before merge.
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
 | 5 | `/secure-setup` and verification | 4 | no | **done** (#169) |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **done** (#171) |
-| 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | **implemented, in review** |
+| 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | **done** (#173) |
 
 1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
    `site/src/data/identity.ts` owns one product sentence per locale; the
@@ -202,7 +206,8 @@ implementation, not merely before merge.
    matches the shipped architecture. URLs beyond the approved retirements,
    header, footer, homepage and canonical identity verified unchanged before
    merge.
-7. **Site-wide voice, German and quality.** Only after ownership has stabilised.
+7. ~~**Site-wide voice, German and quality.**~~ **Shipped in #173.** Only after
+   ownership had stabilised.
    Negation-heavy headings, count language, meta copy, capability/limitation
    balance, the German defects the review named, `du`/`man` consistency, and a
    terminology mapping by meaning before any CI rule is added. Issue #145 is
@@ -219,8 +224,9 @@ implementation, not merely before merge.
    eyebrows, so nothing public carries stage vocabulary any more. `Stop
    condition` / `Stoppbedingung` is not part of it and is not debt — it names a
    reader's question rather than a position in the product model.
-   **Implemented on `feature/slice-7-site-quality`, awaiting review.** Four
-   decisions in `decisions.md`, 2026-08-27. Stale cross-references gone — the
+   Implemented on `feature/slice-7-site-quality`, shipped as #173 (implementation
+   commit `db9c134`, merge commit `6d81922`, 2026-08-27). Four decisions in
+   `decisions.md`, 2026-08-27. Stale cross-references gone — the
    retired six-step lifecycle in a next step, four labels naming the Law page by
    its old count-led title, three `llms.txt` entries describing pre-slice pages,
    and an unverifiable "fourteen things" in metadata. Ten EN/DE parity defects

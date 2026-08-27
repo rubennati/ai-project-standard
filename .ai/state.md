@@ -2,18 +2,19 @@
 
 > If this file conflicts with current git state (branch, PRs, commits), trust git.
 
-- **Objective, set 2026-08-24:** implement the whole-site editorial and
-  structural review in seven slices, in order, without churning what already
-  works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 7 — site-wide voice, German, terminology and quality —
-  implemented on `feature/slice-7-site-quality`, awaiting human review.** Not
-  shipped. Its durable outcomes are in `decisions.md` (four entries of
-  2026-08-27) and in *Settled* below.
+- **Objective, set 2026-08-24, closed 2026-08-27:** implement the whole-site
+  editorial and structural review in seven slices, in order, without churning
+  what already works. All seven are shipped. The slices, their scope and their
+  dependencies are in `tasks.md`.
+- **Now: the seven-slice roadmap is complete. Next objective: the final overall
+  site check.** Not started. There is no slice 8 — the final check is a
+  separate objective, not an eighth numbered slice.
 - **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
   (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
   between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped
-  (#171) · slice 7 implemented, in review. No slice 8; slice 7 is the final
-  numbered objective, and only the final overall site check follows it.
+  (#171) · **slice 7 shipped (#173, implementation commit `db9c134`, merge
+  commit `6d81922`, 2026-08-27).** No slice 8; slice 7 was the final numbered
+  objective.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -134,27 +135,75 @@ exists or is planned. `/impressum` and `/datenschutz` redirect to their
 German pages. `llms.txt` matches the shipped architecture; canonical identity
 is unchanged.
 
-Slice 7 — site-wide voice, German, terminology and quality — is implemented and
-in review, and settles to the same standard once merged; the four decisions of
-2026-08-27 carry it. One claim per concept in both languages, and the German
-says what the English says: ten parity defects are gone, including a frequency
-claim where the English says *can*, an inverted actor in the blog, a dropped
-*untrusted* and a dropped *public-interest*, and a trade-secret condition that
-read as past rather than continuing. `/start/what-it-is-doing` keeps its URL
-deliberately, which closes the slice-4 route question. Art. 22 GDPR is recorded
-as deliberate non-coverage. Terminology is fixed by meaning — `Privatkonto`,
-`Privatkundentarif`, `Business-Tarif`, `Zugangsmittel` against `Geheimnis`,
-`Anbindung` against `Verbindung`, `AI Act` as the reader-facing name — with no
-CI rule now or planned, and generic *tier* deliberately left without a
-mandatory German word so it cannot collide with the evidence method's `Stufen`.
-Three questions the site pointed at without answering are answered on the pages
-that already owned their neighbourhood — export and portability on
-`getting-it-back-out`, the six Art. 6(1) bases on `what-may-go-in`, and
-AI-written code on `code-written-at-work` — and no route was created for any of
-them. `/start`'s sixth way of working now reaches `/secure-setup`, which is the
-last dead end the review found. Memory as a product setting stays unowned and
-is future scope. German glossary pages stop presenting English prose as German:
-a fallback is labelled and tagged, and the observed-in values are translated.
+`Site-wide voice, German, terminology and quality` shipped in slice 7 (#173,
+2026-08-27) and is settled to the same standard as the slices above — see
+`decisions.md`, four entries of 2026-08-27. One claim per concept in both
+languages, and the German says what the English says: ten EN/DE parity defects
+are gone, including a frequency claim where the English says *can*, an inverted
+actor in the blog, a dropped *untrusted* and a dropped *public-interest*, and a
+trade-secret condition that read as past rather than continuing. German remains
+independently written rather than translated line by line; no site-wide `du`/
+`man` rule and no language or terminology CI were introduced.
+
+`/start/what-it-is-doing` **keeps its URL**, deliberately and finally — this
+closes the slice-4 route question. Every human-visible surface already carries
+the current title, and this static host only redirects by meta-refresh, so a
+rename would have second-classed the old URL for a cosmetic gain; only the
+stale `llms.txt` description was wrong, and that is fixed independently of the
+route. Art. 22 GDPR is recorded as deliberate non-coverage — no public content
+was added, and none is planned unless a concrete reader-facing gap appears.
+
+Terminology is fixed by meaning, not enforced mechanically: `personal account`
+/ `Privatkonto`, `consumer plan` / `Privatkundentarif`, `business plan` /
+`Business-Tarif`; a credential as an issued instrument is `Zugangsmittel`,
+distinct from the secret material itself (`Geheimnis`, a named token, key or
+password) — the slice-5 log rule depends on the distinction holding; the Data
+Flows connection concept is `Anbindung`, `Verbindung` stays for the network
+sense; the reader-facing statutory name is `AI Act`. Generic *tier* has no
+mandatory German word, so it cannot collide with the evidence method's
+`Stufen`. No CI rule enforces any of it, now or planned.
+
+Three questions the site pointed at without answering are now answered on the
+pages that already owned their neighbourhood, and the gaps are closed rather
+than queued:
+
+- **Export and portability** — `getting-it-back-out` is the canonical owner. It
+  distinguishes deletion, product export as a vendor-specific capability,
+  GDPR Art. 20 portability (narrower than its name suggests, and not a
+  workspace-export right), and keeping durable work product under the reader's
+  own control.
+- **Art. 6 legal bases** — `what-may-go-in` names the six Art. 6(1) bases at
+  the level needed to make its existing "name the legal basis" instruction
+  actionable. Consent is not presented as a default; legitimate interests is
+  not automatic.
+- **AI-assisted code rights** — `code-written-at-work` answers the narrow
+  software-publishing case: originality/authorship and the right to exercise
+  or license economic rights are separate questions; human contribution does
+  not automatically mean ownership; generated material is not declared
+  copyright-free as a blanket rule; the US Copyright Office's conclusions are
+  cited and labelled as US law, never generalised into EU or Austrian law.
+  General rights in arbitrary AI-generated output, beyond this software
+  scope, remain future scope and are not implied to be settled by this.
+
+`/start`'s sixth way of working (`Let it run without you`) now reaches
+`/secure-setup` contextually — the last dead end the whole-site review found.
+No operating route was created; live incident/failure detection stays future
+scope, unchanged from slice 5. Memory or personalisation as a product setting
+stays unowned and is future scope — the account-switch discovery question
+itself (whether a reader who never grants an agent anything can find the
+existing switches) was tested and judged sufficient, so it is not carried
+forward as a structural problem.
+
+German glossary pages stop presenting English prose as German: a section that
+falls back to English says so and is tagged accordingly, and `observedIn`
+values are localised. Six contextual glossary links were added at points where
+a journey page hands the reader a term; this was not a bulk linking campaign.
+The glossary index's HTML weight was reduced locally (EN 227,723 → 198,248
+bytes; DE 238,353 → 207,118 bytes) without changing routes, search, filters or
+the no-JS fallback — a measured result recorded here for history, not a
+byte-count target for future pages. `us-cloud-and-the-gdpr` stopped
+re-teaching the "EU-hosted" decoder `data-sovereignty` owns and links to it
+instead; no further architecture followed from that fix.
 
 ## Homepage Correction Pass — shipped in #167, closed
 
@@ -233,9 +282,14 @@ shipped and `Regelkreis` was never needed. The OWASP MCP Security Cheat Sheet
 was deliberately not carried; see `decisions.md`, 2026-08-26. Not active
 work — nothing in this handoff remains open.
 
-## Working constraints for this objective
+## Working constraints for the seven-slice objective — expired, closed
 
-Not decisions. They bind this objective and expire or are reconsidered with it.
+Not decisions; they bound the seven-slice objective and expire with it now that
+slice 7 has shipped. Kept here as the historical record of what governed the
+work, not as active guidance. Where a constraint became a durable outcome, it
+is restated in `decisions.md` or in *Settled* above — the terminology mapping,
+the `/start/what-it-is-doing` route decision, and the structural-parallelism
+finding all did.
 
 - Public copy starts from a question, task or situation a reader would actually
   recognise. An internal product model may structure the answer; it does not
@@ -275,8 +329,11 @@ are in `decisions.md`, 2026-08-27.
 
 ## Queued, not blocking
 
-What slice 7 did not absorb. The findings it closed are gone from this list —
-their outcomes are in `decisions.md`, 2026-08-27, and in *Settled* above.
+Genuine remaining scope after slice 7 shipped. Findings slice 7 actually closed
+— export and portability, the `/start/what-it-is-doing` route decision, the six
+Art. 6(1) bases, AI-assisted code rights for software, the unattended-operation
+route decision, and account-switch discovery — are not carried forward; their
+outcomes are in `decisions.md`, 2026-08-27, and in *Settled* above.
 
 - **Product memory as a setting has no fact owner.** `where-knowledge-lives`
   explains the mechanism; the switch itself needs per-vendor checking with
