@@ -3,6 +3,7 @@ import type { TermEntry } from "../../data/terms";
 import {
   getGlossaryPath,
   getLocalizedTermContent,
+  getObservedInLabel,
   getTermPath,
 } from "../../data/term-utils";
 import { getUi, type SiteLocale } from "../../i18n/ui";
@@ -46,21 +47,30 @@ const ui = getUi(lang);
 
     <div class="flex flex-col gap-2">
       <h1 class="text-3xl font-bold tracking-tight sm:text-4xl">{localized.term}</h1>
-      <p class="max-w-3xl text-lg">{localized.shortDefinition}</p>
+      <p class="max-w-3xl text-lg" lang={localized.isTranslated ? undefined : "en"}>{localized.shortDefinition}</p>
+      {!localized.isTranslated && (
+        <p class="text-sm text-zinc-700 dark:text-zinc-300">{ui.termTranslatedNote}</p>
+      )}
     </div>
   </header>
 
   {localized.analogy && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.termAnalogy}</h2>
-      <p class="max-w-3xl border-l-2 border-[var(--color-accent)] pl-4 leading-7">{localized.analogy}</p>
+      {localized.englishFallback.analogy && (
+        <p class="text-sm text-zinc-700 dark:text-zinc-300">{ui.termSectionEnglishNote}</p>
+      )}
+      <p class="max-w-3xl border-l-2 border-[var(--color-accent)] pl-4 leading-7" lang={localized.englishFallback.analogy ? "en" : undefined}>{localized.analogy}</p>
     </section>
   )}
 
   {localized.explanation && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.explanation}</h2>
-      <p class="max-w-3xl leading-7">{localized.explanation}</p>
+      {localized.englishFallback.explanation && (
+        <p class="text-sm text-zinc-700 dark:text-zinc-300">{ui.termSectionEnglishNote}</p>
+      )}
+      <p class="max-w-3xl leading-7" lang={localized.englishFallback.explanation ? "en" : undefined}>{localized.explanation}</p>
     </section>
   )}
 
@@ -76,14 +86,20 @@ const ui = getUi(lang);
   {localized.example && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.termExample}</h2>
-      <p class="max-w-3xl leading-7">{localized.example}</p>
+      {localized.englishFallback.example && (
+        <p class="text-sm text-zinc-700 dark:text-zinc-300">{ui.termSectionEnglishNote}</p>
+      )}
+      <p class="max-w-3xl leading-7" lang={localized.englishFallback.example ? "en" : undefined}>{localized.example}</p>
     </section>
   )}
 
   {localized.aiContext && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.aiContext}</h2>
-      <p class="max-w-3xl leading-7">{localized.aiContext}</p>
+      {localized.englishFallback.aiContext && (
+        <p class="text-sm text-zinc-700 dark:text-zinc-300">{ui.termSectionEnglishNote}</p>
+      )}
+      <p class="max-w-3xl leading-7" lang={localized.englishFallback.aiContext ? "en" : undefined}>{localized.aiContext}</p>
     </section>
   )}
 
@@ -129,7 +145,7 @@ const ui = getUi(lang);
   {term.observedIn.length > 0 && (
     <section class="flex flex-col gap-3">
       <h2 class="text-xl font-semibold">{ui.observedIn}</h2>
-      <p>{term.observedIn.join(", ")}</p>
+      <p>{term.observedIn.map((source) => getObservedInLabel(source, lang)).join(", ")}</p>
     </section>
   )}
 

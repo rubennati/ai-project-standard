@@ -108,7 +108,7 @@ const en: Article = {
       ],
     },
     {
-      heading: "The trap: a developer tool on a consumer account",
+      heading: "The trap: a developer tool on a personal account",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -159,10 +159,10 @@ const de: Article = {
   lead: "Ob deine Eingaben für das Modelltraining verwendet werden, hängt weit mehr vom Konto und Tarif ab als davon, für welchen Anbieter du dich entschieden hast. Beide unten geprüften Anbieter ziehen die Grenze an derselben Stelle.",
   sections: [
     {
-      heading: "Die Regel, die man sich merken sollte",
+      heading: "Die Regel, die du dir merken solltest",
       level: "assessment",
       paragraphs: [
-        "Verbrauchertarife trainieren mit deinen Unterhaltungen, solange du nichts anderes sagst. Geschäftstarife und die API tun es standardmäßig nicht. Dieses Muster gilt bei beiden hier geprüften Anbietern — damit ist es eine brauchbarere Faustregel als jeder Anbietervergleich.",
+        "Privatkundentarife trainieren mit deinen Unterhaltungen, solange du nichts anderes sagst. Business-Tarife und die API tun es standardmäßig nicht. Dieses Muster gilt bei beiden hier geprüften Anbietern — damit ist es eine brauchbarere Faustregel als jeder Anbietervergleich.",
         "Und es heißt: Die interessante Frage ist nicht „ist dieser Anbieter sicher“, sondern „in welchem Konto bin ich gerade angemeldet“. Das sind sehr verschiedene Fragen, und nur eine davon hat eine Antwort, mit der du etwas anfangen kannst.",
       ],
     },
@@ -171,7 +171,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Verbrauchertarife — Free, Plus, Pro — dürfen deine Unterhaltungen zum Training verwenden, solange du nicht widersprichst. Der Schalter liegt unter Einstellungen → Datenkontrollen → „Improve the model for everyone“. Ausschalten wirkt für neue Unterhaltungen.",
+        "Privatkundentarife — Free, Plus, Pro — dürfen deine Unterhaltungen zum Training verwenden, solange du nicht widersprichst. Der Schalter liegt unter Einstellungen → Datenkontrollen → „Improve the model for everyone“. Ausschalten gilt für neue Unterhaltungen.",
         "Geschäftliche Nutzung — ChatGPT Business (bis August 2025 Team), Enterprise, Edu und die API — wird standardmäßig nicht zum Training verwendet. Das ist die von OpenAI angegebene Voreinstellung, nichts, was du erst einrichten musst — und wie alles in diesem Abschnitt die Auskunft des Anbieters über sich selbst, keine unabhängige Prüfung seiner Systeme.",
         "Die viel zitierten 30 Tage sind enger, als sie klingen. Sie betreffen die Protokolle zur Missbrauchserkennung, die laut OpenAI für jede API-Nutzung anfallen und bis zu 30 Tage aufbewahrt werden, sofern das Gesetz nichts Längeres verlangt. Eine Löschfrist für alles, was durch die API läuft, ist das nicht.",
         "Der Anwendungszustand ist etwas anderes und bleibt, bis du ihn löschst: gespeicherte Antworten, hochgeladene Dateien, Vektorspeicher und Konversationsobjekte. OpenAI gibt an, dass Objekte, die nicht über API oder Dashboard gelöscht werden, unbegrenzt aufbewahrt werden — gelöschte hingegen 30 Tage nach der Löschung verschwinden. Eine Aufbewahrung von null Tagen ist auf Anfrage für geeignete Endpunkte möglich; Assistants, Threads und Vektorspeicher gehören nicht dazu, weil Speichern gerade ihr Zweck ist.",
@@ -187,8 +187,8 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Verbrauchertarife — Free, Pro, Max — überlassen dir die Wahl, und die Wahl hat Gewicht. Ist die Trainingseinstellung aktiv, werden neue Chats und Coding-Sitzungen für künftiges Training verwendet. Ausschalten verhindert die Nutzung in künftigen Trainingsläufen, kann aber bereits erfolgtes Training nicht rückgängig machen.",
-        "Kommerzielle Produkte — API, Claude for Work, Enterprise — sagen es klar: Ein- und Ausgaben werden standardmäßig nicht zum Training verwendet. Ausnahme ist Feedback, das du aktiv gibst, etwa Daumen hoch oder runter. Dieses Feedback wird von Nutzer- und Kunden-IDs entkoppelt, bis zu fünf Jahre aufbewahrt, und die Funktion lässt sich als Organisation vollständig abschalten.",
+        "Privatkundentarife — Free, Pro, Max — überlassen dir die Wahl, und die Wahl hat Gewicht. Ist die Trainingseinstellung aktiv, werden neue Chats und Coding-Sitzungen für künftiges Training verwendet. Ausschalten verhindert die Nutzung in künftigen Trainingsläufen, kann aber bereits erfolgtes Training nicht rückgängig machen.",
+        "Kommerzielle Produkte — API, Claude for Work, Enterprise — sagen es klar: Ein- und Ausgaben werden standardmäßig nicht zum Training verwendet. Ausnahme ist Feedback, das du aktiv gibst, etwa Daumen hoch oder runter. Dieses Feedback wird von Nutzer- und Kunden-IDs entkoppelt, bis zu fünf Jahre aufbewahrt, und wer die Organisation verwaltet, kann die Funktion vollständig abschalten.",
         "Bei der Aufbewahrung gibt es Ausnahmen, die der Trainingsschalter nicht erreicht. Anthropic gibt an: Wird ein Chat oder eine Sitzung von den automatischen Trust-and-Safety-Systemen markiert, können Ein- und Ausgaben bis zu zwei Jahre und die daraus entstandenen Klassifizierungswerte bis zu sieben Jahre aufbewahrt werden — und länger, wo das Gesetz es verlangt oder ein Rechtsstreit zu klären ist. Das gilt unabhängig von der gewählten Einstellung.",
       ],
       links: [
@@ -198,7 +198,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Die Falle: Entwicklerwerkzeug auf einem Verbraucherkonto",
+      heading: "Die Falle: Entwicklertool auf einem Privatkonto",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
@@ -212,7 +212,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Bei Anthropic hängt beides zusammen: Wer im Verbrauchertarif Training erlaubt, dessen Material kann in de-identifizierter Form bis zu fünf Jahre in den Trainings-Pipelines bleiben. Wer ablehnt, bei dem verschwinden gelöschte Unterhaltungen sofort aus dem Verlauf und binnen 30 Tagen aus den Backend-Speichern. Viele wägen die Trainingsfrage ab und übersehen, dass sie damit zugleich eine Aufbewahrungsfrage beantworten.",
+        "Bei Anthropic hängt beides zusammen: Wer im Privatkundentarif Training erlaubt, dessen Material kann in de-identifizierter Form bis zu fünf Jahre in den Trainings-Pipelines bleiben. Wer ablehnt, bei dem verschwinden gelöschte Unterhaltungen sofort aus dem Verlauf und binnen 30 Tagen aus den Backend-Speichern. Viele wägen die Trainingsfrage ab und übersehen, dass sie damit zugleich eine Aufbewahrungsfrage beantworten.",
         "Keine der beiden Zahlen ist eine Obergrenze. Die Trust-and-Safety- und die rechtlichen Ausnahmen oben liegen über beiden. „Ich habe Training abgeschaltet“ beantwortet also, wie das Material verwendet werden darf — nicht, wie lange jede Kopie davon existieren kann.",
       ],
       links: [
@@ -225,8 +225,8 @@ const de: Article = {
       level: "advice",
       paragraphs: [
         "Öffne bei jedem KI-Tool, das du nutzt, die Einstellungen und such den Trainingsschalter. Das dauert zwei Minuten pro Tool und ist der wirksamste Punkt auf dieser Seite.",
-        "Prüfe, unter welchem Konto dein Coding-Tool läuft, nicht welches Tool es ist. Ist es dein privates Konto, gelten Verbraucherbedingungen für den Code deines Kunden.",
-        "Für alles, was einem Kunden gehört, sind Geschäftstarif oder API die Grundlage: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
+        "Prüfe, unter welchem Konto dein Coding-Tool läuft, nicht welches Tool es ist. Ist es dein Privatkonto, gelten Privatkundenbedingungen für den Code deines Kunden.",
+        "Für alles, was einem Kunden gehört, sind Business-Tarif oder API die Untergrenze: Dort steht die Trainings-Voreinstellung auf deiner Seite, statt etwas zu sein, das du hättest ausschalten müssen. Sie liefern für sich genommen aber weder die Erlaubnis des Kunden noch eine Rechtsgrundlage oder einen Auftragsverarbeitungsvertrag \u2014 das sind eigene Fragen, und sie sind Gegenstand des Rechtsteils.",
         "Notier dir das Datum der Prüfung. Diese Seite trägt aus demselben Grund eines: Die Voreinstellungen ändern sich ohne Ankündigung, und eine Einstellung, die du letztes Jahr geprüft hast, sagt nichts über heute.",
       ],
       links: [{ label: "Was sich ändert, wenn du Modelltraining erlaubst", href: "/de/data-flows/what-you-agree-to" }],

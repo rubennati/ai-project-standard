@@ -33,9 +33,12 @@
  * start, are not two of the six ways of working — they are what has to be
  * settled before choosing one is worth doing.
  *
- * The last card has no path onward. Nothing on the site continues an automated
- * operation yet, and inventing a destination for grid symmetry would send a
- * reader somewhere that does not answer the question.
+ * The last card went without a path onward while nothing on the site continued
+ * an automated operation. `/secure-setup` now does: its `Once it is set up`
+ * block answers what changes when something runs unwatched, routes the parts
+ * that have owners, and says plainly that noticing a failure as it happens is
+ * not covered here. That is an honest destination rather than one invented for
+ * grid symmetry, so the card points at it.
  */
 import type { SiteLocale } from "../../i18n/ui";
 
@@ -169,6 +172,10 @@ const en: StartHubContent = {
         "Work that repeats on a schedule or on an event and is not worth a person's attention each time.",
       ownership:
         "That it runs at all: who is called when it goes wrong, and what may change while it is live.",
+      path: {
+        label: "How do you set limits that hold — and check what happened?",
+        href: "/secure-setup",
+      },
     },
   ],
 
@@ -182,7 +189,7 @@ const en: StartHubContent = {
     {
       title: "It reaches what it was given.",
       detail:
-        "Not the account you did not connect, not the folder you did not open. Access is granted, never assumed.",
+        "Not an account that was never connected, not a folder that was never opened. Access is granted — by you or for you — never assumed.",
     },
     {
       title: "Something has to be checked.",
@@ -267,7 +274,7 @@ const de: StartHubContent = {
         "Du gibst das Ziel vor und die Handlungen, die erlaubt sind. Welche Schritte es geht und in welcher Reihenfolge, entscheidet es selbst.",
       goodFor:
         "Arbeit, deren Schritte du vorher nicht aufzählen kannst: herausfinden, wo etwas schiefgegangen ist, oder ein Ergebnis aus mehreren Systemen zusammentragen.",
-      ownership: "Das Ziel, die erlaubten Handlungen und die Stellen zum Innehalten.",
+      ownership: "Das Ziel, die erlaubten Handlungen und die Stellen, an denen es innehält und fragt.",
       path: {
         label: "Bevor ein KI-Agent auf Dateien und Systeme zugreift",
         href: "/de/secure-setup/before-you-grant-access",
@@ -276,11 +283,15 @@ const de: StartHubContent = {
     {
       name: "Ohne dich laufen lassen",
       description:
-        "Er startet nach Zeitplan oder auf ein Ereignis hin, und niemand sieht jedem Lauf zu.",
+        "Der Ablauf startet nach Zeitplan oder auf ein Ereignis hin, und niemand sieht jedem Lauf zu.",
       goodFor:
-        "Arbeit, die sich nach Zeitplan oder auf ein Ereignis hin wiederholt und nicht jedes Mal einen Menschen binden sollte.",
+        "Arbeit, die sich nach Zeitplan oder auf ein Ereignis hin wiederholt und nicht jedes Mal die Zeit eines Menschen kosten sollte.",
       ownership:
         "Dass er überhaupt läuft: wer gerufen wird, wenn etwas schiefgeht, und was im laufenden Betrieb geändert werden darf.",
+      path: {
+        label: "Wie setzt du Grenzen, die halten — und prüfst, was passiert ist?",
+        href: "/de/secure-setup",
+      },
     },
   ],
 
@@ -289,7 +300,7 @@ const de: StartHubContent = {
     {
       title: "Etwas bleibt bei dir.",
       detail:
-        "Keine dieser Arbeitsweisen übernimmt die Verantwortung für das Ergebnis. Was bei dir bleibt, ändert die Form – es verschwindet nicht.",
+        "Keine dieser Arbeitsweisen übernimmt die Verantwortung für das Ergebnis. Was bei dir bleibt, wechselt die Form — es verschwindet nicht.",
     },
     {
       title: "Es erreicht das, was du ihm gegeben hast.",

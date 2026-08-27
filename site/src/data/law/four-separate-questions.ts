@@ -93,7 +93,7 @@ const en: Article = {
 
 const de: Article = {
   title: "Welche rechtliche Frage stellst du gerade?",
-  subtitle: "Sicher, rechtmäßig, erlaubt und reguliert prüfen Verschiedenes — eine Prüfung zu bestehen sagt nichts über die anderen.",
+  subtitle: "Sicher, rechtmäßig, erlaubt, reguliert — das sind vier verschiedene Prüfungen, und eine zu bestehen sagt nichts über die anderen.",
   description:
     "Datenschutz, KI-Regulierung, Vertraulichkeit und Sicherheit verschmelzen zu einem einzigen „dürfen wir das“. Die Antworten, die Quellen und die Folgen sind jeweils andere.",
   lead: "Kundenmaterial zu einem KI-Anbieter zu geben kann technisch sauber und trotzdem nicht erlaubt sein. Es kann vertraglich erlaubt sein und am Datenschutzrecht scheitern. Und den Datenschutz zu klären sagt nichts darüber, ob das System sicher ist. Jede dieser Prüfungen wird für sich bestanden oder nicht.",
@@ -108,7 +108,7 @@ const de: Article = {
         "Sind personenbezogene Daten enthalten? — Datenschutzrecht gilt und verlangt Rechtsgrundlage, Rollenverteilung und geeignete Maßnahmen",
         "Ist das ein KI-Anwendungsfall als solcher? — KI-Regulierung und Branchenregeln gelten, unabhängig davon, ob personenbezogene Daten im Spiel sind",
         "Ist das Material vertraulich? — Vertrag, Verschwiegenheitspflichten und Geschäftsgeheimnisrecht gelten, und keinem davon ist wichtig, ob es personenbezogen ist",
-        "Ist die Information berufsrechtlich geschützt? — Verschwiegenheitspflichten in Gesundheit, Anwaltschaft, Finanzwesen und Verwaltung kommen obendrauf",
+        "Ist die Information berufsrechtlich geschützt? — Verschwiegenheitspflichten im Gesundheitswesen, in der Anwaltschaft, im Finanzwesen und in der Verwaltung kommen obendrauf",
       ],
     },
     {
@@ -116,8 +116,8 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Ein System kann gut gebaut, verschlüsselt und zugriffsgeschützt sein, während die Verarbeitung, die es ausführt, keine Rechtsgrundlage hat. Daran ändert die Technik nichts.",
-        "Und eine rechtmäßige Anordnung kann schlecht abgesichert sein. Das Datenschutzrecht verlangt ein dem Risiko angemessenes Schutzniveau — das ist eine Untergrenze, kein Entwurf. Eine Rechtspflicht zu erfüllen heißt nicht, schwer angreifbar zu sein.",
-        "Das praktische Versagen ist ein Vorhaben, das die Frage beantwortet, mit der seine Leitung sich wohlfühlt, und die übrigen für erledigt hält.",
+        "Und eine rechtmäßige Anordnung kann schlecht abgesichert sein. Das Datenschutzrecht verlangt ein dem Risiko angemessenes Schutzniveau — das ist eine Untergrenze, keine Bauanleitung. Eine Rechtspflicht zu erfüllen heißt nicht, schwer angreifbar zu sein.",
+        "Das praktische Versagen ist ein Vorhaben, das nur die Frage beantwortet, die seinen Verantwortlichen liegt, und die übrigen für erledigt hält.",
       ],
       links: [{ label: "Art. 32 DSGVO — Sicherheit der Verarbeitung", href: GDPR_ART_32 }],
     },
@@ -127,7 +127,7 @@ const de: Article = {
       checked: CHECKED,
       paragraphs: [
         "Ob Material vertraulich ist, regeln Vertrag, Verschwiegenheitspflichten und Geschäftsgeheimnisrecht — und keines davon fragt, ob eine Person identifizierbar ist. Die Datenschutzfrage zu klären sagt hier nichts, und Material ganz ohne personenbezogene Daten kann voll geschützt sein.",
-        "Die KI-Nutzung berührt den Geheimnisschutz unmittelbar: Nach der EU-Geschäftsgeheimnis-Richtlinie behält eine Information diesen Status nur, solange sie angemessenen Geheimhaltungsmaßnahmen unterworfen war — sorgloser Umgang kann also den Schutz selbst kosten. Was das praktisch heißt, neben der Frage nach personenbezogenen Daten, steht auf einer eigenen Seite.",
+        "Die KI-Nutzung berührt den Geheimnisschutz unmittelbar: Nach der EU-Geschäftsgeheimnis-Richtlinie behält eine Information diesen Status nur, solange sie angemessenen Geheimhaltungsmaßnahmen unterworfen ist — sorgloser Umgang kann also den Schutz selbst kosten. Was das praktisch heißt, neben der Frage nach personenbezogenen Daten, steht auf einer eigenen Seite.",
       ],
       links: [
         { label: "Richtlinie (EU) 2016/943 — Geschäftsgeheimnisse", href: TRADE_SECRETS },
@@ -145,14 +145,14 @@ const de: Article = {
       links: [
         { label: "Verordnung (EU) 2024/1689 — die KI-Verordnung", href: AI_ACT },
         { label: "Die Pflicht zur KI-Kompetenz — und wo du damit anfängst", href: "/de/start/decision-maker" },
-        { label: "KI-Verordnung: Kennzeichnung KI-erzeugter Inhalte", href: "/de/law/ai-act-transparency" },
+        { label: "AI Act: Kennzeichnung KI-generierter Inhalte", href: "/de/law/ai-act-transparency" },
       ],
     },
     {
       heading: "Grenzen dieser Seite",
       level: "assessment",
       paragraphs: [
-        "Eine Landkarte, in welcher Frage man steckt — keine Antwort auf eine davon, und keine Rechtsberatung. Jede dieser Fragen hat ihr eigenes Regelwerk, und Branchenpflichten können strenger sein als der allgemeine Text.",
+        "Eine Landkarte dafür, in welcher Frage du steckst — keine Antwort auf eine davon, und keine Rechtsberatung. Jede dieser Fragen hat ihr eigenes Regelwerk, und Branchenpflichten können strenger sein als der allgemeine Text.",
         "Verhindern soll sie das eine bestimmte Versagen: eine Frage gut zu beantworten und das so zu berichten, als wären alle vier geklärt.",
       ],
     },

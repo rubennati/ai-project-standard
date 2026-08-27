@@ -114,17 +114,12 @@ const en: Article = {
       heading: "\"EU-hosted\" answers one question out of many",
       level: "assessment",
       paragraphs: [
-        "An EU data centre is worth having and it is one line of a longer answer. A provider can store and process in Europe while several other things remain open.",
-        "Each of these can move data, expose it, or extend how long it exists — and none of them is visible in the phrase \"hosted in the EU\":",
+        "An EU data centre is worth having and it is one line of a longer answer. It settles where content sits. It does not settle whether a transfer occurs, which is the question this page is about.",
+        "A provider established outside the EU can store and process on European infrastructure, and that arrangement still has to be assessed under Chapter V. What decides it is who the provider is and who can be required to hand something over — not where the racks stand.",
+        "The rest of what the phrase leaves open — sub-processors, administrative access, backups, logs, training use, retention and who holds the keys — is a question about the arrangement rather than about the transfer, and it is worked through on its own page.",
       ],
-      list: [
-        "Sub-processors, and where each of them sits",
-        "Support and administrative access, including from outside the EU",
-        "Backups and disaster-recovery copies, and their locations",
-        "Logs, telemetry and metadata, which are frequently held separately from content",
-        "Whether content is used for training, and under which tier of the contract",
-        "Retention periods, and what deletion actually removes",
-        "Encryption, and who holds the keys",
+      links: [
+        { label: "Where your data is, and who can reach it", href: "/data-flows/data-sovereignty" },
       ],
     },
     {
@@ -158,7 +153,7 @@ const de: Article = {
   title: "Verstößt ein KI-Dienst mit US-Hosting gegen die DSGVO?",
   subtitle: "Was eine Drittlandübermittlung verlangt — und warum ein Rechenzentrum in der EU die Frage ebenso wenig beantwortet.",
   description:
-    "„Läuft in den USA, also verboten“ steht so nicht in der Verordnung — und „läuft in der EU“ ist keine Rechtskonformität. Was geprüft werden muss und an welchen Artikeln.",
+    "„Läuft in den USA, also verboten“ steht so nicht in der Verordnung — und „läuft in der EU“ macht die Verarbeitung nicht rechtskonform. Was geprüft werden muss und an welchen Artikeln.",
   lead: "Die selbstbewusste Fassung geht so: Unsere Mail hängt an einem amerikanischen KI-Dienst, also haben wir ein DSGVO-Problem. Sie wird oft genug wiederholt, um wie geklärt zu wirken. In der Verordnung steht das nicht. Sie regelt, wie Übermittlungen aus der EU heraus stattfinden dürfen — und ob deine zulässig ist, hat eine Antwort. Nur lässt sie sich nicht an der Postanschrift des Anbieters ablesen.",
   sections: [
     {
@@ -206,7 +201,7 @@ const de: Article = {
       paragraphs: [
         "Der Angemessenheitsbeschluss wurde unmittelbar angegriffen. Am 3. September 2025 wies das Gericht die Klage in der Rechtssache T-553/23, Latombe/Kommission, ab. Gegen dieses Urteil wurde am 31. Oktober 2025 ein Rechtsmittel eingelegt, das beim Gerichtshof als Rechtssache C-703/25 P anhängig ist und darauf zielt, das Urteil aufzuheben und den Beschluss für nichtig zu erklären.",
         "Der Beschluss gilt also und ist heute anwendbar. Er ist zugleich die dritte Regelung dieser Art, und der Gerichtshof hat beide Vorgänger für ungültig erklärt — Safe Harbour 2015 (C-362/14) und den Privacy Shield 2020 (C-311/18, dessen Tenor feststellt, dass der Durchführungsbeschluss (EU) 2016/1250 ungültig ist). Keines der beiden Urteile hat seine Wirkungen zeitlich begrenzt.",
-        "Diese Vorgeschichte ist der Grund, die Zertifizierung als gegenwärtige und nicht als endgültige Tatsache zu behandeln — und zu wissen, auf welchen Weg nach Art. 46 man ausweichen würde. Einen Datenweg zu bauen, für den es keine Antwort gibt, falls der Beschluss fällt, ist selbst eine Entscheidung, nur eine unbewusste.",
+        "Diese Vorgeschichte ist der Grund, die Zertifizierung als gegenwärtige und nicht als endgültige Tatsache zu behandeln — und zu wissen, auf welchen Weg nach Art. 46 du ausweichen würdest. Einen Datenweg zu bauen, für den es keine Antwort gibt, falls der Beschluss fällt, ist selbst eine Entscheidung, nur eine unbewusste.",
       ],
       links: [
         { label: "Rechtssache T-553/23 — Urteil des Gerichts vom 3. September 2025", href: T_553_23 },
@@ -216,7 +211,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Ein Auftragsverarbeitungsvertrag ist ebenso wenig Rechtskonformität",
+      heading: "Ein Auftragsverarbeitungsvertrag macht ebenso wenig rechtskonform",
       level: "assessment",
       paragraphs: [
         "Der spiegelbildliche Irrtum ist ebenso verbreitet und bekommt weit weniger Aufmerksamkeit. Ein unterschriebener Auftragsverarbeitungsvertrag ist erforderlich, wenn ein Anbieter weisungsgebunden verarbeitet — Art. 28 DSGVO —, und er ist kein Zertifikat.",
@@ -235,17 +230,12 @@ const de: Article = {
       heading: "„EU-Hosting“ beantwortet eine Frage von vielen",
       level: "assessment",
       paragraphs: [
-        "Ein Rechenzentrum in der EU ist etwas wert und es ist eine Zeile einer längeren Antwort. Ein Anbieter kann in Europa speichern und verarbeiten, während mehreres offen bleibt.",
-        "Jeder dieser Punkte kann Daten bewegen, offenlegen oder ihre Lebensdauer verlängern — und keiner davon ist in der Formulierung „in der EU gehostet“ sichtbar:",
+        "Ein Rechenzentrum in der EU ist etwas wert und es ist eine Zeile einer längeren Antwort. Es klärt, wo Inhalte liegen. Es klärt nicht, ob eine Übermittlung stattfindet — und darum geht es auf dieser Seite.",
+        "Ein Anbieter mit Sitz außerhalb der EU kann auf europäischer Infrastruktur speichern und verarbeiten, und diese Konstellation ist trotzdem nach Kapitel V zu prüfen. Entscheidend ist, wer der Anbieter ist und wer zur Herausgabe gezwungen werden kann — nicht, wo die Server stehen.",
+        "Was die Formulierung sonst offenlässt — Unterauftragsverarbeiter, Administrationszugriffe, Sicherungen, Protokolle, Trainingsnutzung, Aufbewahrung und wer die Schlüssel hält — betrifft die Konstellation und nicht die Übermittlung. Das steht auf einer eigenen Seite.",
       ],
-      list: [
-        "Unterauftragsverarbeiter und deren jeweiliger Sitz",
-        "Support- und Administrationszugriffe, auch von außerhalb der EU",
-        "Sicherungen und Notfallkopien samt ihren Speicherorten",
-        "Protokolle, Telemetrie und Metadaten, die häufig getrennt vom Inhalt liegen",
-        "Ob Inhalte zum Training genutzt werden, und unter welcher Vertragsstufe",
-        "Aufbewahrungsfristen und was eine Löschung tatsächlich entfernt",
-        "Verschlüsselung und wer die Schlüssel hält",
+      links: [
+        { label: "Wo deine Daten liegen und wer herankommt", href: "/de/data-flows/data-sovereignty" },
       ],
     },
     {

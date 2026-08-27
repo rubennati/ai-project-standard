@@ -97,7 +97,7 @@ const en: Article = {
         "The machine at the end stands somewhere physical, in some country, run by a company registered in some jurisdiction. Those are three different questions and people collapse them into one.",
         "A service can run on servers in Frankfurt and belong to a company in Delaware. The location answers who has physical custody. The company's home answers who can compel disclosure. The European supervisory authorities have been explicit that those come apart — which is the single most useful thing to know when someone tells you their service is EU-hosted.",
       ],
-      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
+      links: [{ label: "Where your data is, and who can reach it", href: "/data-flows/data-sovereignty" }],
     },
     {
       heading: "The way back, and what stays",
@@ -125,6 +125,7 @@ const en: Article = {
           { target: "Archiving", state: "Reaches nothing", reached: "no", note: "it is a filing decision. The material stays exactly where it was." },
         ],
       },
+      links: [{ label: "Deleting chats and data: what goes and what stays", href: "/data-flows/getting-it-back-out" }],
     },
     {
       heading: "What to take from this in practice",
@@ -160,8 +161,8 @@ const de: Article = {
       checked: CHECKED,
       paragraphs: [
         "Ich habe „wetter wien“ in ein Suchfeld getippt und vor dem Enter aufgehört. Der Browser hatte die vollständige Eingabe zu diesem Zeitpunkt bereits für die Autovervollständigung übertragen: eine Anfrage an /ac/ mit dem Parameter q=wetter+wien. Der Server antwortete mit HTTP-Status 200.",
-        "Ein Skandal ist das nicht. Vorschlagsfelder arbeiten seit zwanzig Jahren so, und die betreffende Suchmaschine beschreibt es offen. Bemerkenswert ist etwas anderes: Es war die datenschutzbewussteste verbreitete Option — und die Eingabe lag trotzdem auf einem fremden Server, bevor ich entschieden hatte, ob ich sie abschicke.",
-        "Daraus folgt nicht, dass jeder KI-Chat genauso arbeitet. Es zeigt aber, wie einfach sich die Frage prüfen lässt: Entwicklerwerkzeuge öffnen, Reiter Netzwerk, in das Eingabefeld tippen und nachsehen, ob dabei schon Anfragen hinausgehen.",
+        "Ein Skandal ist das nicht. Vorschlagsfelder arbeiten seit zwanzig Jahren so, und die betreffende Suchmaschine beschreibt es offen. Bemerkenswert ist etwas anderes: Es war die datenschutzfreundlichste der gängigen Optionen — und die Eingabe lag trotzdem auf einem fremden Server, bevor ich entschieden hatte, ob ich sie abschicke.",
+        "Daraus folgt nicht, dass jeder KI-Chat genauso arbeitet. Es zeigt aber, wie einfach sich die Frage prüfen lässt: Entwicklertools öffnen, Reiter Netzwerk, in das Eingabefeld tippen und nachsehen, ob dabei schon Anfragen hinausgehen.",
       ],
       list: [
         "Aufbau: Chrome am Desktop, keine Erweiterungen, kein Konto, keine Anmeldung.",
@@ -226,13 +227,13 @@ const de: Article = {
         "Die Maschine am Ende steht irgendwo physisch, in irgendeinem Land, betrieben von einem Unternehmen mit Sitz in irgendeiner Rechtsordnung. Das sind drei verschiedene Fragen, und sie werden regelmäßig zu einer zusammengezogen.",
         "Ein Dienst kann auf Servern in Frankfurt laufen und einem Unternehmen in Delaware gehören. Der Standort beantwortet, wer die physische Obhut hat. Der Unternehmenssitz beantwortet, wer Herausgabe erzwingen kann. Die europäischen Aufsichtsbehörden haben ausdrücklich festgehalten, dass beides auseinanderfällt — und das ist das Nützlichste, was man wissen kann, wenn jemand sagt, sein Dienst sei EU-gehostet.",
       ],
-      links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
+      links: [{ label: "Wo deine Daten liegen und wer herankommt", href: "/de/data-flows/data-sovereignty" }],
     },
     {
       heading: "Der Rückweg — und was bleibt",
       paragraphs: [
-        "Die Antwort kommt denselben Weg zurück, über dieselben Stationen. Und dann passiert etwas leise Anderes: Sie bleibt liegen.",
-        "Deine Unterhaltung ist jetzt ein gespeichertes Objekt. Nicht weil etwas schiefging, sondern weil du dich ärgern würdest, wenn sie morgen weg wäre. Diese Bequemlichkeit ist eine Entscheidung über Speicherung, die du getroffen hast, ohne gefragt worden zu sein.",
+        "Die Antwort kommt denselben Weg zurück, über dieselben Stationen. Und dann passiert etwas leise anderes: Sie bleibt liegen.",
+        "Deine Unterhaltung ist jetzt ein gespeichertes Objekt. Nicht weil etwas schiefging, sondern weil du dich ärgern würdest, wenn sie morgen weg wäre. Diese Bequemlichkeit ist eine Entscheidung über Speicherung, die jemand für dich getroffen hat, ohne sie dir als Entscheidung vorzulegen.",
         "Den sichtbaren Chatverlauf kannst du selbst verwalten. Lässt du die Unterhaltung stehen, bleibt sie, solange die Aufbewahrungsfrist läuft. Löschst du sie, entfernst du die Kopie, die du sehen kannst — die einzige Stelle, die du unmittelbar selbst erreichst.",
       ],
     },
@@ -254,6 +255,7 @@ const de: Article = {
           { target: "Archivieren", state: "Erreicht nichts", reached: "no", note: "es ist eine Ablage-Entscheidung. Das Material bleibt genau dort, wo es war." },
         ],
       },
+      links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],
     },
     {
       heading: "Was du daraus praktisch ableiten kannst",

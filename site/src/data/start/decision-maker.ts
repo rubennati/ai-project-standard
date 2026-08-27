@@ -38,14 +38,14 @@ export interface StartNextStep {
 
 const nextStep: Record<SiteLocale, StartNextStep> = {
   en: {
-    label: "How do you secure this, and how do you check the result?",
+    label: "How do you set limits that hold — and check what happened?",
     description:
-      "The six steps of putting a decision into practice, and which ones a given task actually needs.",
+      "What to settle first, how a boundary holds, what to check and what to keep — and how much of it a task needs.",
   },
   de: {
-    label: "Wie sicherst du das ab, und wie prüfst du das Ergebnis?",
+    label: "Wie setzt du Grenzen, die halten — und prüfst, was passiert ist?",
     description:
-      "Die sechs Schritte, mit denen aus einer Entscheidung Praxis wird — und welche davon eine Aufgabe wirklich braucht.",
+      "Was vorher zu klären ist, wie eine Grenze hält, was du prüfst und was du festhältst — und wie viel davon eine Aufgabe braucht.",
   },
 };
 
@@ -97,7 +97,7 @@ const en: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "A business or team plan is not mainly about seats and billing. It changes the default: the major vendors state that their business tiers do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
+        "A business or team plan is not mainly about seats and billing. It changes the default: the major vendors state that their business plans do not train on your input, while consumer plans generally do unless someone opts out. It is also where the processing agreement lives that Art. 28 GDPR requires when a provider processes personal data for you.",
       ],
       links: [
         { label: "Are your chats used for model training?", href: "/data-flows/training-and-retention" },
@@ -162,8 +162,8 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Alles Weitere hängt daran. Finde heraus, welche Tools tatsächlich verwendet werden — auch die, für die niemand eine Rechnung eingereicht hat. Frag danach, statt es zu kontrollieren: Auf die Frage, was einem die Arbeit erleichtert, antworten Leute. Auf eine Untersuchung antworten sie nicht mehr.",
-        "Sie verwenden ihr privates Konto für Arbeit nicht aus Nachlässigkeit. Sie tun es, weil das Tool hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
-        "Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung deshalb nicht. Es beendet nur deinen Einblick in sie: Dieselben Inhalte gehen weiterhin an dieselben Dienste, nur erfährst du es nicht mehr.",
+        "Sie verwenden ihr Privatkonto nicht aus Nachlässigkeit für die Arbeit. Sie tun es, weil das Tool hilft — und weil entweder nichts bereitgestellt wurde oder das Bereitgestellte schlechter ist als das, was sie sich für zwanzig Euro selbst kaufen.",
+        "Ein Verbot ohne bereitgestellte Alternative beendet die Nutzung deshalb nicht. Es beendet nur, dass du davon erfährst: Dieselben Inhalte gehen weiterhin an dieselben Dienste, nur erfährst du es nicht mehr.",
         "Die umgekehrte Reihenfolge funktioniert besser: erst ein brauchbares Produkt bereitstellen, dann klar festlegen, wofür es verwendet werden darf, und erst danach den Rest einschränken. Eine Regel, die einen gangbaren Weg offen lässt, wird eher befolgt als eine, die keinen lässt.",
       ],
     },
@@ -182,7 +182,7 @@ const de: Article = {
       heading: "Erst die Daten klären, dann das Produkt auswählen",
       level: "advice",
       paragraphs: [
-        "Die Produktfrage wirkt dringender, ist aber die zweite. Solange unklar ist, welche Daten in deiner Organisation überhaupt anfallen und wie schutzbedürftig sie sind, lässt sie sich nur raten.",
+        "Die Produktfrage wirkt dringender, ist aber die zweite. Solange unklar ist, welche Daten in deiner Organisation überhaupt anfallen und wie schutzbedürftig sie sind, ist jede Antwort darauf geraten.",
       ],
       list: [
         "Was darf unter keinen Umständen hinaus — und steht das irgendwo, wo ein Mensch es findet?",
@@ -243,9 +243,9 @@ const de: Article = {
         "Was hier offen bleibt, ist die Arbeitsliste für das nächste Quartal — oder das Briefing für die Person, die du dafür holst.",
       ],
       list: [
-        "Haben wir etwas bereitgestellt, das gut genug ist, dass ein privates Konto nicht mehr reizt?",
+        "Haben wir etwas bereitgestellt, das gut genug ist, dass ein Privatkonto nicht mehr reizt?",
         "Gibt es eine schriftliche Antwort darauf, was keinesfalls hinein darf?",
-        "Haben wir für jedes Tool mit Personenbezug einen Auftragsverarbeitungsvertrag?",
+        "Haben wir für jedes Tool, das personenbezogene Daten verarbeitet, einen Auftragsverarbeitungsvertrag?",
         "Könnten wir ein Löschverlangen beantworten, ohne zu raten?",
         "Hat in dieser Organisation im letzten Jahr jemand eine KI-Schulung gehabt — und können wir das belegen?",
       ],

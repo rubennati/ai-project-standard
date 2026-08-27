@@ -72,14 +72,14 @@ const en: Article = {
       ],
     },
     {
-      heading: "Three shapes, three strengths",
+      heading: "What each kind of system is good at",
       level: "assessment",
       paragraphs: [
         "Worth matching to the job rather than picking a favourite.",
       ],
       figure: {
         kind: "reach",
-        caption: "What each kind of system is suited to",
+        caption: "Store, material or source — and what cannot be relied on",
         rows: [
           { target: "Workspace or wiki", state: "good as a store", reached: "yes", note: "Structured pages with owners and dates. Made for maintaining what is currently true" },
           { target: "Folder of files", state: "good for material", reached: "yes", note: "Anything of any format, readable without the tool that made it, easy to keep and to move" },
@@ -122,6 +122,7 @@ const en: Article = {
           { target: "Facts that change weekly", state: "train it in", reached: "no", note: "Retraining for each change is the expensive way to do lookup" },
         ],
       },
+      links: [{ label: "RAG, defined", href: "/glossary/rag" }],
     },
     {
       heading: "\u201cTrained on our data\u201d can mean any of these",
@@ -129,6 +130,10 @@ const en: Article = {
       paragraphs: [
         "\u201cSpecialised for law\u201d or \u201cfor medicine\u201d describes the product, not which of these routes built it. Behind the phrase can sit a fine-tuned model, retrieval over a curated collection, rule-based checks on top of a general model, a system prompt — or several of those at once. All of them can make a perfectly good product, and the marketing rarely distinguishes them.",
         "It is worth asking which one you are buying, because the answers differ in the ways that matter to you: what it cost to build, where your material ends up, and what happens when the underlying model is replaced. The words to ask with are fine-tuning and retrieval — and asking is usually enough to find out.",
+      ],
+      links: [
+        { label: "Fine-tuning, defined", href: "/glossary/fine-tuning" },
+        { label: "Retrieval, defined", href: "/glossary/retrieval" },
       ],
     },
     {
@@ -191,19 +196,19 @@ const de: Article = {
       ],
     },
     {
-      heading: "Drei Formen, drei Stärken",
+      heading: "Wofür jede Art von System taugt",
       level: "assessment",
       paragraphs: [
         "Der Aufgabe zuordnen statt einen Favoriten wählen.",
       ],
       figure: {
         kind: "reach",
-        caption: "Wofür jede Art von System taugt",
+        caption: "Speicher, Material oder Quelle — und worauf kein Verlass ist",
         rows: [
           { target: "Workspace oder Wiki", state: "gut als Speicher", reached: "yes", note: "Strukturierte Seiten mit Verantwortlichen und Daten. Gebaut, um Aktuelles zu pflegen" },
           { target: "Dateiordner", state: "gut für Material", reached: "yes", note: "Alles in jedem Format, lesbar ohne das erzeugende Tool, leicht zu behalten und zu bewegen" },
           { target: "Mail", state: "gut als Quelle", reached: "partial", note: "Zeitlich geordnet und personengebunden. Zum Auslesen, nicht als maßgebliche Antwort" },
-          { target: "Chatverlauf", state: "kein Speicher", reached: "no", note: "Was gesagt wurde, nicht was geschlossen wurde — und für andere selten sichtbar" },
+          { target: "Chatverlauf", state: "kein Speicher", reached: "no", note: "Was gesagt wurde, nicht was am Ende beschlossen wurde — und für andere selten sichtbar" },
           { target: "Dokumentensystem", state: "hält Originale", reached: "partial", note: "Die maßgebliche Fassung eines Dokuments ist nicht dasselbe wie Wissen darüber" },
         ],
       },
@@ -212,7 +217,7 @@ const de: Article = {
       heading: "Wie viel in eine Anfrage passt — und was daraus folgt",
       level: "assessment",
       paragraphs: [
-        "Jede Anfrage wird von vorn gerechnet. Was sich wie Erinnerung anfühlt, ist die Anwendung, die frühere Teile des Gesprächs erneut mitschickt oder Notizen speichert und später wieder einfügt.",
+        "Jede Anfrage beginnt bei null. Was sich wie Erinnerung anfühlt, ist die Anwendung, die frühere Teile des Gesprächs erneut mitschickt oder Notizen speichert und später wieder einfügt.",
         "Es passt nur eine begrenzte Menge hinein, und deshalb driftet ein langes Gespräch irgendwann: Etwas muss wegfallen, zusammengefasst oder umsortiert werden. Dabei ist nichts kaputt. Der Mechanismus arbeitet an seiner Grenze.",
         "Dieselbe Grenze ist kleiner als jede reale Dokumentensammlung. Ein System mit einer Million Dokumente legt dem Modell nicht eine Million Dokumente vor. Es wählt eine Handvoll aus.",
         "Die interessante Ingenieursarbeit ist deshalb die Auswahl: Was kommt hinein, was bleibt draußen, in welcher Reihenfolge, wie viel Gesprächsverlauf, welche Tool-Ergebnisse. Retrieval ist eine Art, diese Auswahl zu treffen. Memory auch. Und die Entscheidung, welche Teile einer Datei mitgehen, ebenso.",
@@ -227,8 +232,8 @@ const de: Article = {
       ],
       list: [
         "In die Anfrage legen — eine Datei hochladen oder Text einfügen. Sofort, exakt, begrenzt durch das, was hineinpasst, und mit dem Gespräch vorbei, sofern das Produkt es nicht aufbewahrt",
-        "Bei Bedarf nachschlagen — das System durchsucht dein Material und nimmt die passenden Teile auf. Trägt Sammlungen weit über eine Anfrage hinaus und kann belegen, woher eine Antwort stammt. Das meint „RAG“",
-        "Eintrainieren — ein Modell auf deinem Material anpassen. Ändert, wie das Modell schreibt und sich verhält, nicht was es belegen kann; ist teuer zu wiederholen, und ein neues Dokument heißt: noch einmal",
+        "Bei Bedarf nachschlagen — das System durchsucht dein Material und nimmt die passenden Teile auf. Funktioniert für Sammlungen, die weit größer sind, als in eine Anfrage passt, und kann belegen, woher eine Antwort stammt. Das meint „RAG“",
+        "Eintrainieren — ein Modell mit deinem Material feinabstimmen. Ändert, wie das Modell schreibt und sich verhält, nicht was es belegen kann; ist teuer zu wiederholen, und ein neues Dokument heißt: noch einmal",
       ],
       figure: {
         kind: "reach",
@@ -241,21 +246,26 @@ const de: Article = {
           { target: "Fakten, die sich wöchentlich ändern", state: "eintrainieren", reached: "no", note: "Für jede Änderung neu trainieren ist die teure Art nachzuschlagen" },
         ],
       },
+      links: [{ label: "RAG, erklärt", href: "/de/glossary/rag" }],
     },
     {
       heading: "\u201eMit unseren Daten trainiert\u201c kann jeden dieser Wege meinen",
       level: "assessment",
       paragraphs: [
         "\u201eSpezialisiert auf Recht\u201c oder \u201eauf Medizin\u201c beschreibt das Produkt, nicht welcher dieser Wege dahintersteckt. Hinter der Formulierung kann ein feinabgestimmtes Modell stehen, ein Abruf über eine kuratierte Sammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
-        "Die Frage, was davon du kaufst, lohnt sich, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen man fragt, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
+        "Die Frage, was davon du kaufst, lohnt sich, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen du fragst, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
+      ],
+      links: [
+        { label: "Fine-Tuning, erklärt", href: "/de/glossary/fine-tuning" },
+        { label: "Retrieval, erklärt", href: "/de/glossary/retrieval" },
       ],
     },
     {
       heading: "Ein Postfach lesen und darin handeln sind verschiedene Risiken",
       level: "assessment",
       paragraphs: [
-        "Über den dreien liegt eine vierte Anordnung: ein Tool, das in deinen Systemen liest und handelt, statt nur über sie zu antworten. Sie ist die nützlichste — und die einzige, bei der ein Fehler andere Menschen erreicht.",
-        "Vor der Freigabe zu trennen, denn der Zustimmungsdialog tut es meist nicht.",
+        "Über den dreien liegt eine vierte Konstellation: ein Tool, das in deinen Systemen liest und handelt, statt nur über sie zu antworten. Sie ist die nützlichste — und die einzige, bei der ein Fehler andere Menschen erreicht.",
+        "Das gehört vor der Freigabe getrennt, denn der Zustimmungsdialog trennt es meist nicht.",
         "Mail zu lesen, um eine Frage zu beantworten, ist vergleichsweise eingegrenzt: Das Risiko ist, dass etwas gelesen wird, was nicht hätte gelesen werden dürfen. Antworten, weiterleiten, senden oder löschen erreicht Menschen außerhalb der Organisation und lässt sich nicht zurücknehmen.",
         "Bietet ein Tool beides unter einer Berechtigung an, ist das ein Befund über das Tool. Wo es sich trennen lässt, trenne es — und halte das Senden hinter einer ausdrücklichen Bestätigung statt hinter einer allgemeinen Freigabe.",
       ],

@@ -184,7 +184,7 @@ const de: Article = {
       level: "advice",
       paragraphs: [
         "Wenn ein System Dateien, Datensätze oder ein Dokument bearbeitet, stammt die Beschreibung des Getanen von demselben System, das es getan hat. Sie hilft bei der Orientierung und ist kein Beleg.",
-        "Lies also die Änderung selbst. Worauf es besonders ankommt, ist der Umfang: Diese Systeme ändern oft mehr als verlangt, und das Zusätzliche wirkt plausibel genug, um einem flüchtigen Blick zu entgehen. Was einen Absatz hätte ändern sollen und neun geändert hat, verdient einen zweiten Blick, auch wenn alle neun in Ordnung aussehen.",
+        "Lies also die Änderung selbst. Worauf es besonders ankommt, ist der Umfang: Diese Systeme können mehr ändern als verlangt, und das Zusätzliche wirkt plausibel genug, um einem flüchtigen Blick zu entgehen. Was einen Absatz hätte ändern sollen und neun geändert hat, verdient einen zweiten Blick, auch wenn alle neun in Ordnung aussehen.",
       ],
       list: [
         "Vergleiche den Umfang der Änderung mit dem, was du verlangt hast.",

@@ -73,7 +73,7 @@ const en: Article = {
       paragraphs: [
         "It is tempting to call pasting something into a chat a leak. It is not, and the distinction is worth keeping, because a personal data breach has a definition: under Art. 4(12) GDPR it is a breach of security leading to accidental or unlawful destruction, loss, alteration, unauthorised disclosure of, or access to personal data.",
         "A deliberate transfer to a provider under a contract is none of those things. What it is, is a point after which you no longer decide where copies sit, how long they stay, or who sees them if something goes wrong. That is a loss of control, and it is the accurate word for it.",
-        "The distinction is not pedantry. Calling an ordinary transfer a breach makes it harder to be taken seriously about an actual one.",
+        "The distinction is worth insisting on. Calling an ordinary transfer a breach makes it harder to be taken seriously about an actual one.",
       ],
       links: [{ label: "Art. 4(12) GDPR — definition of a personal data breach", href: GDPR_ART_4 }],
     },
@@ -107,7 +107,7 @@ const de: Article = {
       heading: "Modelltraining setzt Speicherung voraus",
       level: "assessment",
       paragraphs: [
-        "Nichts kann in einen Trainingslauf gehen, das nicht vorher gespeichert wurde. Die Frage „darf ich mit deinen Daten trainieren“ trägt also eine vorgelagerte Frage in sich, die selten ausgesprochen wird: darf ich sie behalten, anderswohin kopieren und durch eine Verarbeitungskette schicken.",
+        "In einen Trainingslauf geht nur, was vorher gespeichert wurde. Die Frage „darf ich mit deinen Daten trainieren“ trägt also eine vorgelagerte Frage in sich, die selten ausgesprochen wird: darf ich sie behalten, anderswohin kopieren und durch eine Verarbeitungskette schicken.",
         "Das ist die eigentliche Erlaubnis. Training ist der Zweck; die Speicherung ist das, was mit deinem Material tatsächlich geschieht — und zwar sofort, nicht irgendwann.",
         "Ob ein bestimmter Anbieter beides koppelt und wie lange dann aufbewahrt wird, ist eine datierte Frage — beantwortet auf der Seite zu Training und Aufbewahrung, nicht hier.",
       ],
@@ -120,7 +120,7 @@ const de: Article = {
       paragraphs: [
         "Es liegt nahe, das Einfügen in einen Chat ein Leck zu nennen. Ist es nicht — und die Unterscheidung lohnt sich, denn eine Verletzung des Schutzes personenbezogener Daten ist definiert: nach Art. 4 Z 12 DSGVO eine Verletzung der Sicherheit, die zur unbeabsichtigten oder unrechtmäßigen Vernichtung, zum Verlust, zur Veränderung oder zur unbefugten Offenlegung von oder zum unbefugten Zugang zu personenbezogenen Daten führt.",
         "Eine bewusste, vertraglich gedeckte Übermittlung an einen Anbieter ist nichts davon. Was sie ist: der Punkt, ab dem du nicht mehr bestimmst, wo Kopien liegen, wie lange sie bleiben und wer sie im Fehlerfall sieht. Das ist ein Kontrollverlust, und das ist das zutreffende Wort dafür.",
-        "Das ist keine Wortklauberei. Wer eine gewöhnliche Übermittlung ein Leck nennt, wird bei einem echten schwerer ernst genommen.",
+        "Auf dieser Unterscheidung lohnt es sich zu bestehen. Wer eine gewöhnliche Übermittlung ein Leck nennt, wird bei einem echten schwerer ernst genommen.",
       ],
       links: [
         { label: "Art. 4 Z 12 DSGVO — Definition der Verletzung des Schutzes personenbezogener Daten", href: GDPR_ART_4 },
@@ -131,7 +131,7 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Ein Satz, den du tippst, wird nicht beim Tippen Teil eines Modells. Trainingsläufe werden als abgegrenzte, teure Vorgänge vorbereitet und ausgeführt, und Material wird ausgewählt, aufbereitet und gefiltert, bevor irgendetwas davon überhaupt infrage kommt.",
-        "Das wirkt in beide Richtungen. Deine Eingabe wird nicht sofort auswendig gelernt und von Fremden abrufbar — eine Befürchtung, die kursiert und so nicht funktioniert. Es heißt aber auch: Ist Material einmal in einem abgeschlossenen Lauf gewesen, entfernt das nachträgliche Löschen der Unterhaltung es nicht aus dem trainierten Modell.",
+        "Das wirkt in beide Richtungen. Deine Eingabe wird nicht sofort auswendig gelernt und von Fremden abrufbar — eine Befürchtung, die kursiert, aber so arbeiten diese Systeme nicht. Es heißt aber auch: Ist Material einmal in einem abgeschlossenen Lauf gewesen, entfernt das nachträgliche Löschen der Unterhaltung es nicht aus dem trainierten Modell.",
       ],
     },
     {

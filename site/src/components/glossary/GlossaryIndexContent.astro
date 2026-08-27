@@ -93,11 +93,10 @@ const sortedTerms = [...terms].sort((a, b) => {
     {
       sortedTerms.map((entry) => {
         const localized = getLocalizedTermContent(entry, lang);
+        // Only what the card does not already render. The term and the short
+        // definition are on the page, so the filter reads them from the DOM
+        // instead of shipping a second copy of every visible line.
         const searchText = [
-          entry.term,
-          localized.term,
-          entry.shortDefinition,
-          localized.shortDefinition,
           entry.explanation ?? "",
           localized.explanation ?? "",
           entry.aiContext ?? "",
@@ -160,6 +159,13 @@ const sortedTerms = [...terms].sort((a, b) => {
     const includeProductsInput = root.querySelector("[data-filter-include-products]");
     const sourceSelect = root.querySelector("[data-filter-source]");
     const items = Array.from(list.querySelectorAll("[data-term-item]"));
+    // The visible text plus the fields the card does not render, resolved once.
+    const searchIndex = new Map(
+      items.map((item) => [
+        item,
+        `${item.textContent ?? ""} ${item.getAttribute("data-search") ?? ""}`.toLowerCase(),
+      ]),
+    );
 
     const update = () => {
       const query = (queryInput?.value ?? "").trim().toLowerCase();
@@ -175,7 +181,7 @@ const sortedTerms = [...terms].sort((a, b) => {
       let visible = 0;
 
       for (const item of items) {
-        const searchable = item.getAttribute("data-search") ?? "";
+        const searchable = searchIndex.get(item) ?? "";
         const isProduct = item.getAttribute("data-product") === "true";
         const sourceBuckets = (item.getAttribute("data-source-buckets") ?? "").split("|");
 

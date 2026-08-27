@@ -53,7 +53,7 @@ const en: Article = {
   lead: "Which services you may use and what you may put into them is set by your employer. Knowing where that line runs is what lets you use these tools without having to guess.",
   sections: [
     {
-      heading: "The first question is not a technical one",
+      heading: "The first question is organisational, not technical",
       level: "assessment",
       paragraphs: [
         "It is: has my employer approved a tool, and for what. Most people never ask, either because they assume the answer is no, or because they assume nobody minds. Both assumptions are guesses about something that has a real answer.",
@@ -152,14 +152,14 @@ const de: Article = {
   title: "Darf ich KI im Job verwenden?",
   description:
     "Was du vor dem Einfügen von Arbeitsmaterial klärst, wen du fragst, und was du tust, wenn niemand entschieden hat.",
-  lead: "Welche Dienste du verwenden darfst und was du dort eingeben darfst, legt dein Arbeitgeber fest. Zu wissen, wo diese Grenze verläuft, ist der Unterschied zwischen sicherer Nutzung und Raten.",
+  lead: "Welche Dienste du verwenden darfst und was du dort eingeben darfst, legt dein Arbeitgeber fest. Wer weiß, wo diese Grenze verläuft, kann diese Tools nutzen, ohne raten zu müssen.",
   sections: [
     {
       heading: "Die erste Frage ist keine technische, sondern eine organisatorische",
       level: "assessment",
       paragraphs: [
         "Sie lautet: Hat mein Arbeitgeber ein Tool freigegeben, und wofür. Die meisten fragen nie — entweder weil sie annehmen, die Antwort sei nein, oder weil sie annehmen, es störe niemanden. Beides sind Vermutungen über etwas, das eine echte Antwort hat.",
-        "Die Chance ist gut, dass die Antwort längst existiert und dir niemand Bescheid gesagt hat. Firmen kaufen einen Business-Tarif und kündigen ihn dann nicht an, also arbeiten die Leute weiter mit ihrem privaten Konto neben einem bezahlten, das in Ordnung gewesen wäre.",
+        "Gut möglich, dass die Antwort längst existiert und dir nur niemand Bescheid gesagt hat. Firmen kaufen einen Business-Tarif und sagen es dann niemandem, also arbeiten die Leute weiter mit ihrem privaten Konto neben einem bezahlten, das in Ordnung gewesen wäre.",
       ],
     },
     {
@@ -181,7 +181,7 @@ const de: Article = {
       paragraphs: [
         "Innerhalb der Arbeitsweisen, die dein Arbeitgeber freigegeben hat, entscheidest du, wie du arbeitest: ob dir ein Modell beim Entwerfen, Strukturieren, Prüfen oder Erklären hilft. Welche Dienste du dafür nutzen darfst und was dort hineingehen darf, legt dein Arbeitgeber fest.",
         "Du entscheidest nicht, ob Material deines Arbeitgebers oder seiner Kunden das Unternehmen verlassen darf. Diese Entscheidung gehört dem, der die Haftung trägt — und sie bleibt seine, auch wenn er sie noch nicht getroffen hat.",
-        "Diese Unterscheidung lohnt sich, denn sie heißt: KI zu benutzen ist nicht der riskante Teil. Auszuwählen, was hineinkommt, schon.",
+        "Diese Unterscheidung lohnt sich, denn sie bedeutet: KI zu benutzen ist nicht der riskante Teil. Auszuwählen, was hineinkommt, schon.",
       ],
     },
     {
@@ -189,7 +189,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Daran scheitern mehr Leute als an allem anderen auf dieser Seite. Dein privates Konto läuft auf einem Privatkundentarif, auch wenn du damit arbeitest — und dort ist Modelltraining mit deiner Eingabe im Regelfall die Voreinstellung, nicht die Ausnahme.",
+        "Daran scheitern mehr Leute als an allem anderen auf dieser Seite. Dein Privatkonto läuft auf einem Privatkundentarif, auch wenn du damit arbeitest — und dort ist Modelltraining mit deiner Eingabe im Regelfall die Voreinstellung, nicht die Ausnahme.",
         "Für Entwicklerwerkzeuge gilt dasselbe. Ein Coding-Assistent aus einem privaten Konto erbt dessen Bedingungen, nicht den beruflichen Charakter der Arbeit.",
       ],
       links: [
@@ -207,16 +207,16 @@ const de: Article = {
       ],
       list: [
         "Nutz es für deine eigene Arbeit: deine Entwürfe, deine Notizen, allgemeine Fragen, deine eigene Einarbeitung.",
-        "Halt Kundendaten, Personalangelegenheiten, Verträge, Zugangsdaten und alles unter NDA vollständig heraus.",
+        "Lass Kundendaten, Personalangelegenheiten, Verträge, Zugangsdaten und alles unter NDA ganz draußen.",
         "Wenn du Hilfe bei etwas Vertraulichem brauchst, beschreib das Problem abstrakt, statt das Dokument einzufügen.",
-        "Verwende kein privates Konto für Firmenmaterial, auch nicht kurz. Das ist der Schritt, der sich schlecht rückgängig machen lässt.",
+        "Verwende kein Privatkonto für Firmenmaterial, auch nicht kurz. Das ist der Schritt, der sich schlecht rückgängig machen lässt.",
       ],
     },
     {
       heading: "Falls du es längst getan hast",
       level: "advice",
       paragraphs: [
-        "Sehr wahrscheinlich hast du, denn die meisten haben, bevor irgendwer darüber nachgedacht hat. Es zählt, was du jetzt tust, nicht der Rückblick.",
+        "Sehr wahrscheinlich hast du das — wie die meisten, bevor irgendwer darüber nachgedacht hat. Es zählt, was du jetzt tust, nicht der Rückblick.",
         "Lösch die Unterhaltungen, die es enthielten. Tausch alles aus, was einem Schlüssel oder Passwort ähnelte. Und sag Bescheid — der IT, deiner Führungskraft. Ein Unternehmen, das es jetzt erfährt, kann entscheiden; eines, das es in einem halben Jahr von anderer Seite erfährt, nicht mehr.",
       ],
       links: [{ label: "Chats und Daten löschen: Was entfernt wird und was bleibt", href: "/de/data-flows/getting-it-back-out" }],

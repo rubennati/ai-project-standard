@@ -100,7 +100,7 @@ const de: AboutSection[] = [
     paragraphs: [
       "Sie ist keine Rechtsberatung. Rechtsabschnitte benennen die Norm und sagen, was sie zu verlangen scheint; ob sie auf deine Lage zutrifft, ist eine Frage für einen Anwalt — und wo es darauf ankommt, steht das dabei.",
       "Sie ist nicht vollständig und tut auch nicht so. Bereiche, die noch entstehen, sagen das, statt Füllmaterial auszuliefern.",
-      "Sie ist kein Anbietervergleich. Wo Anbieter genannt werden, weil eine Aussage an ihnen zu prüfen war, steht dabei, welche geprüft wurden und welche nicht.",
+      "Sie ist kein Anbietervergleich. Wo Anbieter genannt werden, dann weil eine Aussage an ihnen zu prüfen war, nicht um sie zu bewerten; dabei steht, welche geprüft wurden und welche nicht.",
     ],
   },
   {

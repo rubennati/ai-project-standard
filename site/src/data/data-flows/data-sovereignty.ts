@@ -22,7 +22,7 @@ const en: Article = {
   title: "Where your data is, and who can reach it",
   subtitle: "Why \"EU-hosted\" and \"public AI\" are single answers to a question with several axes.",
   description:
-    "Data sovereignty is not one question with one answer. The five operating models, the axes they differ on, and the fourteen things a hosting location does not tell you.",
+    "Data sovereignty is not one question with one answer. The five operating models, the axes they differ on, and what a hosting location does and does not tell you.",
   lead: "Two phrases end this conversation prematurely. \"It's public AI\" suggests a cloud service makes your data public. \"It's EU-hosted\" suggests a location settles the matter. Neither is true, and both are used to skip the part where you find out what is happening.",
   sections: [
     {
@@ -120,6 +120,7 @@ const en: Article = {
         { label: "Art. 28 GDPR — processor obligations", href: GDPR_ART_28 },
         { label: "Art. 32 GDPR — security of processing", href: GDPR_ART_32 },
         { label: "Chapter V GDPR — transfers to third countries", href: GDPR_CHAPTER_V },
+        { label: "Can I enter this data into an AI tool?", href: "/law/what-may-go-in" },
         { label: "Does a US-hosted AI tool break the GDPR?", href: "/law/us-cloud-and-the-gdpr" },
       ],
     },
@@ -145,7 +146,7 @@ const en: Article = {
       level: "assessment",
       paragraphs: [
         "This is a framework, not a measurement. No vendor is assessed here, and nothing on this page tells you whether a particular service is suitable — the axes tell you which questions to put to it.",
-        "Nor is any position on the list better than another. On-premises is not automatically more sovereign than a governed service, and a consumer account is not automatically reckless. What matters is whether the answers on each axis are ones you know, rather than ones you assumed.",
+        "Nor is any position on the list better than another. On-premises is not automatically more sovereign than a governed service, and a personal account is not automatically reckless. What matters is whether the answers on each axis are ones you know, rather than ones you assumed.",
       ],
     },
   ],
@@ -153,10 +154,10 @@ const en: Article = {
 
 const de: Article = {
   title: "Wo deine Daten liegen und wer herankommt",
-  subtitle: "Warum „EU-Hosting“ und „öffentliche KI“ einzelne Antworten auf eine Frage mit mehreren Achsen sind.",
+  subtitle: "Warum „EU-Hosting“ und „öffentliche KI“ je nur eine Antwort auf eine Frage mit mehreren Achsen sind.",
   description:
-    "Datensouveränität ist nicht eine Frage mit einer Antwort. Die fünf Betriebsmodelle, die Achsen, auf denen sie sich unterscheiden, und die vierzehn Dinge, die ein Standort nicht verrät.",
-  lead: "Zwei Formulierungen beenden dieses Gespräch zu früh. „Das ist öffentliche KI“ legt nahe, ein Cloud-Dienst mache Daten öffentlich. „Das ist EU-gehostet“ legt nahe, ein Standort erledige die Sache. Beides stimmt nicht, und beides überspringt den Teil, in dem man herausfindet, was tatsächlich geschieht.",
+    "Datensouveränität ist nicht eine Frage mit einer Antwort. Die fünf Betriebsmodelle, die Achsen, auf denen sie sich unterscheiden, und was ein Standort verrät und was nicht.",
+  lead: "Zwei Formulierungen beenden dieses Gespräch zu früh. „Das ist öffentliche KI“ legt nahe, ein Cloud-Dienst mache Daten öffentlich. „Das ist EU-gehostet“ legt nahe, ein Standort erledige die Sache. Beides stimmt nicht, und beides überspringt den Teil, in dem man herausfindet, was mit den Daten geschieht.",
   sections: [
     {
       heading: "„Öffentliche KI“ beschreibt nichts",
@@ -173,11 +174,11 @@ const de: Article = {
         "Die nützliche Aufteilung ist nicht Cloud gegen lokal. Es sind fünf Positionen, jede mit einer anderen Antwort darauf, wer was sehen kann, wer die Bedingungen ändern kann und wer den Betriebsaufwand trägt.",
       ],
       list: [
-        "Verbraucherdienst — ein Einzelkonto zu Standardbedingungen. Am günstigsten, am wenigsten verhandelbar, und die Stufe, auf der die Trainings-Voreinstellungen am häufigsten abweichen",
+        "KI-Dienst für Privatkunden — ein Einzelkonto zu Standardbedingungen. Am günstigsten, am wenigsten verhandelbar, und der Tarif, bei dem die Trainings-Voreinstellungen am häufigsten abweichen",
         "Business- oder Enterprise-Dienst — dieselbe Technik unter Vertrag, meist mit Auftragsverarbeitungsvertrag, Administrationssteuerung und Prüfregelungen",
         "Private Cloud — dedizierte Infrastruktur, die ein Anbieter für dich betreibt; das verschiebt die Grenze, ohne den Anbieter zu entfernen",
-        "On-Premises — Betrieb auf selbst kontrollierter Infrastruktur, was mit der Kontrolle den gesamten Betriebsaufwand übernimmt",
-        "Lokal oder auf dem Gerät — nichts verlässt die Maschine, um den Preis kleinerer Modelle und eines ausreichend leistungsfähigen Geräts",
+        "On-Premises — Betrieb auf Infrastruktur, die du selbst kontrollierst; mit der Kontrolle übernimmst du auch den gesamten Betriebsaufwand",
+        "Lokal oder auf dem Gerät — nichts verlässt die Maschine, um den Preis kleinerer Modelle — und das Gerät muss leistungsfähig genug sein",
       ],
     },
     {
@@ -189,8 +190,8 @@ const de: Article = {
       list: [
         "Speicherort — wo Inhalte ruhen",
         "Verarbeitungsort — wo gerechnet wird, was vom Speicherort abweichen kann",
-        "Administrationszugriff — wer für den Support herankommt, und von wo",
-        "Trainingsnutzung — ob Inhalte ein Modell verbessern, und unter welcher Stufe",
+        "Administrationszugriff — wer für den Support daran herankommt, und von wo",
+        "Trainingsnutzung — ob Inhalte ein Modell verbessern, und in welchem Tarif",
         "Aufbewahrung — wie lange etwas existiert und was eine Löschung entfernt",
         "Schlüsselverwaltung — ob die Schlüssel bei dir oder beim Anbieter liegen",
         "Unterauftragsverarbeiter — wer sonst beteiligt ist und wo jeder davon sitzt",
@@ -224,8 +225,8 @@ const de: Article = {
       heading: "Ein lokaler Ordner heißt nicht, dass die Daten lokal bleiben",
       level: "assessment",
       paragraphs: [
-        "Der klarste Fall, in dem die Achsen auseinanderfallen. Eine Assistenz, die in einem Ordner auf deiner Maschine arbeitet, liest diese Dateien — und wenn das Modell im Rechenzentrum eines Anbieters läuft, reisen die Inhalte dorthin, um gelesen zu werden.",
-        "Der Ordner ist die Zugriffsgrenze. Er ist nicht der Datenweg. Lokale Speicherung plus gehostetes Modell ist ein gehosteter Datenweg mit lokalem Ausgangspunkt, und die einzige Anordnung, bei der nichts hinausgeht, ist die, bei der auch das Modell auf dem Gerät läuft.",
+        "Der klarste Fall, in dem die Achsen auseinanderfallen. Ein Assistent, der in einem Ordner auf deiner Maschine arbeitet, liest diese Dateien — und wenn das Modell im Rechenzentrum eines Anbieters läuft, reisen die Inhalte dorthin, um gelesen zu werden.",
+        "Der Ordner ist die Zugriffsgrenze. Er ist nicht der Datenweg. Lokale Speicherung plus gehostetes Modell ist ein gehosteter Datenweg mit lokalem Ausgangspunkt, und die einzige Konstellation, bei der nichts hinausgeht, ist die, bei der auch das Modell auf dem Gerät läuft.",
       ],
     },
     {
@@ -253,17 +254,18 @@ const de: Article = {
         { label: "Art. 28 DSGVO — Auftragsverarbeiter", href: GDPR_ART_28 },
         { label: "Art. 32 DSGVO — Sicherheit der Verarbeitung", href: GDPR_ART_32 },
         { label: "Kapitel V DSGVO — Übermittlungen an Drittländer", href: GDPR_CHAPTER_V },
+        { label: "Welche Daten darf ich in ein KI-Tool eingeben?", href: "/de/law/what-may-go-in" },
         { label: "Verstößt ein KI-Dienst mit US-Hosting gegen die DSGVO?", href: "/de/law/us-cloud-and-the-gdpr" },
       ],
     },
     {
-      heading: "Was man stattdessen fragt",
+      heading: "Was du stattdessen fragst",
       level: "advice",
       paragraphs: [
         "Ersetze „wo wird das gehostet“ durch eine kurze Liste. Für jeden ernsthaften Anbieter gibt es zu jedem dieser Punkte eine veröffentlichte Antwort — und die Punkte ohne Antwort sind selbst schon das Ergebnis.",
       ],
       list: [
-        "Auf welcher Stufe bin ich, und was ändert das an Training und Aufbewahrung",
+        "In welchem Tarif bin ich, und was ändert das an Training und Aufbewahrung",
         "Wer sind die Unterauftragsverarbeiter, und wo ist jeder niedergelassen",
         "Wer kann für den Support an meine Inhalte, und wird dieser Zugriff protokolliert",
         "Was wird wie lange aufbewahrt, und was entfernt eine Löschung tatsächlich",
@@ -278,7 +280,7 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Das ist ein Gerüst, keine Messung. Hier wird kein Anbieter bewertet, und nichts auf dieser Seite sagt dir, ob ein bestimmter Dienst geeignet ist — die Achsen sagen dir, welche Fragen du ihm stellst.",
-        "Und keine Position auf der Liste ist besser als eine andere. On-Premises ist nicht automatisch souveräner als ein gut geführter Dienst, und ein Verbraucherkonto ist nicht automatisch fahrlässig. Entscheidend ist, ob die Antworten auf jeder Achse solche sind, die du kennst — und nicht solche, die du angenommen hast.",
+        "Und keine Position auf der Liste ist besser als eine andere. On-Premises ist nicht automatisch souveräner als ein gut geführter Dienst, und ein Privatkonto ist nicht automatisch fahrlässig. Entscheidend ist, ob die Antworten auf jeder Achse solche sind, die du kennst — und nicht solche, die du angenommen hast.",
       ],
     },
   ],

@@ -72,7 +72,7 @@ const copy: Record<SiteLocale, Record<EvidenceLevel, LevelCopy>> = {
     fact: {
       label: "Fakt",
       meaning:
-        "Eng begrenzte, prüfbare Aussage aus einer verlinkten Primärquelle, mit dem Datum der letzten Prüfung. Wo die Quelle ein Anbieter über sich selbst ist, steht das dabei.",
+        "Eng begrenzte, prüfbare Aussage aus einer verlinkten Primärquelle, mit dem Datum der letzten Prüfung. Wo ein Anbieter über sich selbst Auskunft gibt, steht das dabei.",
     },
     measured: {
       label: "Gemessen",
@@ -92,7 +92,7 @@ const copy: Record<SiteLocale, Record<EvidenceLevel, LevelCopy>> = {
     advice: {
       label: "Empfehlung",
       meaning:
-        "Bewusst konservativ: was ich in der beschriebenen Lage tun würde, und auf welcher der Ebenen darüber es steht. Keine Aussage, dass andere Lösungen unzulässig wären.",
+        "Bewusst konservativ: was ich in der beschriebenen Lage tun würde und auf welcher der Stufen darüber sie beruht. Keine Aussage, dass andere Lösungen unzulässig wären.",
     },
   },
 };

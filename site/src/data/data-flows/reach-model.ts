@@ -167,7 +167,7 @@ const de: ReachModelContent = {
   layers: [
     {
       label: "Das Modell",
-      role: "Rechnet auf dem Text, den es bekommt. Von sich aus führt keine Leitung zu deiner Festplatte, deiner Mail oder irgendeinem anderen System, und es meldet sich nirgends an.",
+      role: "Rechnet auf dem Text, den es bekommt. Von ihm aus führt keine Leitung zu deiner Festplatte, deiner Mail oder irgendeinem anderen System, und es meldet sich nirgends an.",
       boundary: "Für sich genommen: nichts außerhalb der Anfrage",
     },
     {
@@ -177,7 +177,7 @@ const de: ReachModelContent = {
     },
     {
       label: "Die eingerichtete Anbindung",
-      role: "Macht aus einer Anfrage einen Aufruf in einem anderen System und bietet dafür eine festgelegte Menge an Vorgängen an. Eingerichtet hat sie jemand — du, eine Administration oder wer die Integration im Produkt gebaut hat.",
+      role: "Macht aus einer Anfrage einen Aufruf in einem anderen System und bietet dafür eine festgelegte Menge an Vorgängen an. Eingerichtet hat sie jemand — du, jemand aus der IT oder wer die Integration im Produkt gebaut hat.",
       boundary: "Welche Vorgänge angeboten werden",
     },
     {

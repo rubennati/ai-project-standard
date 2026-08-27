@@ -142,8 +142,8 @@ const de: Article = {
       heading: "Wann Betreiber KI-generierte Texte kennzeichnen müssen",
       level: "assessment",
       paragraphs: [
-        "Die Betreiberpflicht für Texte ist enger, als sie zunächst klingt. Sie knüpft an Texte an, die zur Information der Öffentlichkeit über Angelegenheiten von öffentlichem Interesse veröffentlicht werden, und greift nur, wenn kein Mensch den Text geprüft und die redaktionelle Verantwortung übernommen hat. Ein Beitrag, den du mit einem Modell entworfen und danach selbst durchgegangen bist, dürfte von diesem Wortlaut nicht erfasst sein.",
-        "Das ist eine Lesart, kein Urteil. Wer in großem Umfang veröffentlicht, zu politischen Themen oder ohne Prüfung, für den ist die Frage nicht mehr akademisch und gehört zu einem Anwalt.",
+        "Die Betreiberpflicht für Texte ist enger, als sie zunächst klingt. Sie knüpft an Texte an, die zur Information der Öffentlichkeit über Angelegenheiten von öffentlichem Interesse veröffentlicht werden, und greift nur, wenn kein Mensch den Text geprüft und die redaktionelle Verantwortung übernommen hat. Ein Beitrag, den du mit einem Modell entworfen hast und danach selbst durchgegangen bist, dürfte von diesem Wortlaut nicht erfasst sein.",
+        "Das ist eine Lesart, kein Urteil. Wer in großem Umfang veröffentlicht, zu politischen oder anderen Themen von öffentlichem Interesse oder ohne Prüfung, für den ist die Frage nicht mehr akademisch und gehört zu einem Anwalt.",
       ],
     },
     {
@@ -152,7 +152,7 @@ const de: Article = {
       paragraphs: [
         "Kläre für jedes eingesetzte System, in welcher Rolle du bist — Anbieter oder Betreiber. Fast alle, die das hier lesen, sind Betreiber, und in dieser Rolle sind die Pflichten deutlich kleiner.",
         "Wo du generierte Medien statt Text veröffentlichst: Prüfe, ob dein Tool überhaupt maschinenlesbare Herkunftskennzeichen schreibt. Viele tun es nicht, und die Pflicht liegt beim Anbieter — unmarkiert ist aber deine Ausgabe.",
-        "Halte fest, wann du zuletzt geprüft hast. Das Feld bewegt sich schnell — der Omnibus ging von einer vorläufigen Einigung im Mai zu geltendem Recht im Juli — und eine Notiz kostet nichts gegen den Zustand, selbstbewusst veraltet zu sein.",
+        "Halte fest, wann du zuletzt geprüft hast. Das Feld bewegt sich schnell — der Omnibus ging von einer vorläufigen Einigung im Mai zu geltendem Recht im Juli — und eine Notiz kostet nichts, selbstbewusst veraltet zu sein kostet mehr.",
       ],
     },
   ],

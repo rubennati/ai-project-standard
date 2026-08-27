@@ -56,7 +56,6 @@ interface WhatItIsDoing extends Article {
   assessmentSummary: string;
 }
 
-export const CHECKED = "2026-08-09";
 
 const en: WhatItIsDoing = {
   title: "Do you need a different tool — or a better setup?",
@@ -95,14 +94,14 @@ const de: WhatItIsDoing = {
   description:
     "Warum Tools für Programmierende oft gut zu Dokumentenarbeit passen, warum die nötige Absicherung keine Belohnung für Können ist, und was die Antwort ändert: ob sich außer dir jemand auf das Ergebnis verlässt.",
   assessmentSummary:
-    "Diese Seite ist die Einschätzung dieses Projekts dazu, wie Tools und Aufbauten zu echter Arbeit passen — keine Aussage über das Verhalten eines bestimmten Produkts. Deshalb trägt kein Abschnitt ein Prüfdatum.",
-  lead: "Wenn es nicht gut läuft, liegt es meist an einem von zwei Dingen, und die werden leicht verwechselt: am Tool selbst oder am Aufbau darum herum. Was davon es ist, entscheidet, was du änderst — und wie viel Aufbau du brauchst, folgt nicht daraus, wie geübt du bist.",
+    "Diese Seite ist die Einschätzung dieses Projekts dazu, wie Tools und Setups zu echter Arbeit passen — keine Aussage über das Verhalten eines bestimmten Produkts. Deshalb trägt kein Abschnitt ein Prüfdatum.",
+  lead: "Wenn es nicht gut läuft, liegt es meist an einem von zwei Dingen, und die werden leicht verwechselt: am Tool selbst oder am Setup darum herum. Was davon es ist, entscheidet, was du änderst — und wie viel Setup du brauchst, folgt nicht daraus, wie geübt du bist.",
   sections: [
     {
       heading: "Warum Tools für Programmierende gut mit Dokumenten umgehen",
       paragraphs: [
-        "Erstaunlich viele Menschen mit nicht-technischer Wissensarbeit landen bei einem Coding-Assistenten, und das ist keine Marotte.",
-        "Die entscheidende Fähigkeit ist nicht, Code zu schreiben. Sie ist, mit einem dauerhaften Satz von Dateien umzugehen: auflisten, lesen, suchen, anlegen, bearbeiten, umbenennen, vergleichen. Ein Ordner mit Notizen, Quellen und Entscheidungen ist strukturell dasselbe Problem wie ein Ordner mit Quellcode — und wer das eine kann, kann das andere.",
+        "Erstaunlich viele, deren Arbeit Wissensarbeit ist und nichts mit Code zu tun hat, landen bei einem Coding-Assistenten — und das ist keine Marotte.",
+        "Die entscheidende Fähigkeit ist nicht, Code zu schreiben. Sie ist, mit einem dauerhaften Satz von Dateien umzugehen: auflisten, lesen, suchen, anlegen, bearbeiten, umbenennen, vergleichen. Ein Ordner mit Notizen, Quellen und Entscheidungen ist strukturell dasselbe Problem wie ein Ordner mit Quellcode — und ein Tool, das das eine kann, kann auch das andere.",
         "Was du verlierst, sind die Leitplanken eines dafür gebauten Produkts. Was du gewinnst, ist, dass dein Material in gewöhnlichen Dateien bleibt, die du auch ohne das Tool lesen kannst.",
       ],
     },
@@ -110,9 +109,9 @@ const de: WhatItIsDoing = {
       heading: "Das Tool beherrschen und ein gutes System betreiben sind zwei Fähigkeiten",
       paragraphs: [
         "Zwei Dinge werden vermengt, wenn jemand fragt, ob er dafür „bereit“ sei.",
-        "Wie gut du das Tool nutzt, ist die eine Achse: Ein Fachmensch kann bewusst etwas sehr Einfaches wählen, und ein Anfänger kann täglich etwas sehr Komplexes bedienen. Wie viel System dahintersteht, ist die andere: Identität, Rechte, Prüfung, Aufbewahrung, Protokollierung.",
-        "Sie bewegen sich unabhängig, und die zweite ist keine Belohnung für die erste. Eine große Organisation kann schwere Governance um ein einfaches Chat-Tool legen; eine sorgfältige Einzelperson kann etwas weit Mächtigeres ohne all das betreiben — zu Recht, weil niemand sonst betroffen ist.",
-        "Die Linie, die die Antwort ändert, ist weder Können noch Größe. Sie ist, ob sich außer dir jemand auf das Ergebnis verlässt.",
+        "Wie gut du das Tool nutzt, ist die eine Achse: Ein Profi kann bewusst etwas sehr Einfaches wählen, und ein Anfänger kann täglich etwas sehr Komplexes bedienen. Wie viel System dahintersteht, ist die andere: Identität, Rechte, Prüfung, Aufbewahrung, Protokollierung.",
+        "Sie bewegen sich unabhängig, und die zweite ist keine Belohnung für die erste. Eine große Organisation kann ein einfaches Chat-Tool mit strenger Governance umgeben; eine sorgfältige Einzelperson kann etwas weit Mächtigeres ohne all das betreiben — zu Recht, weil niemand sonst betroffen ist.",
+        "Was die Antwort ändert, ist weder Können noch Größe, sondern ob sich außer dir jemand auf das Ergebnis verlässt.",
       ],
     },
   ],
