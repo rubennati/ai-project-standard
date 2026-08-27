@@ -1161,6 +1161,13 @@
     color: inherit;
   }
 
+  .site-footer__closing-utilities {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+  }
+
   @media (min-width: 40rem) {
     .site-footer__grid {
       grid-template-columns: repeat(2, minmax(0, 1fr));
