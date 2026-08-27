@@ -3548,7 +3548,7 @@ export const terms: TermEntry[] = [
         aiContext:
           "Die stärkste Antwort auf die Frage nach dem Datenweg — mit den klarsten Kosten: kleinere Modelle, langsamere Antworten, ein ausreichend leistungsfähiges Gerät. Deshalb leiten reale Systeme nach Aufgabe: einfache Einordnung lokal, schwierige Analyse an ein größeres Modell.",
         explanation:
-          "Das Modell läuft auf dem Gerät vor dir. Es wird nichts verschickt, weil es keinen Ort gibt, wohin — was zugleich heißt, dass das Gerät der Aufgabe gewachsen sein muss.",
+          "Das Modell läuft auf dem Gerät vor dir. Es wird nichts verschickt, weil es keinen Ort gibt, wohin es geschickt werden könnte — was zugleich heißt, dass das Gerät der Aufgabe gewachsen sein muss.",
       },
     },
   },

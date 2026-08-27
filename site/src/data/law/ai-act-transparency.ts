@@ -139,7 +139,7 @@ const de: Article = {
       ],
     },
     {
-      heading: "Wann Betreiber KI-generierte Texte kennzeichnen müssen",
+      heading: "Wann Betreiber KI-generierte Texte offenlegen müssen",
       level: "assessment",
       paragraphs: [
         "Die Betreiberpflicht für Texte ist enger, als sie zunächst klingt. Sie knüpft an Texte an, die zur Information der Öffentlichkeit über Angelegenheiten von öffentlichem Interesse veröffentlicht werden, und greift nur, wenn kein Mensch den Text geprüft und die redaktionelle Verantwortung übernommen hat. Ein Beitrag, den du mit einem Modell entworfen hast und danach selbst durchgegangen bist, dürfte von diesem Wortlaut nicht erfasst sein.",

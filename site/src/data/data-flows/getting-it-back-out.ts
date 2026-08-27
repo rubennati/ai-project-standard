@@ -30,6 +30,8 @@ const OPENAI_EXPORT =
   "https://help.openai.com/en/articles/7260999-how-do-i-export-my-chatgpt-history-and-data";
 const ANTHROPIC_EXPORT =
   "https://support.claude.com/en/articles/9450526-export-your-claude-data";
+const ANTHROPIC_ORG_EXPORT =
+  "https://support.claude.com/en/articles/13346720-export-your-organization-s-data";
 
 export interface DataFlowsNextStep {
   label: string;
@@ -93,6 +95,7 @@ const en: Article = {
       links: [
         { label: "OpenAI — exporting your ChatGPT history and data", href: OPENAI_EXPORT },
         { label: "Anthropic — export your Claude data", href: ANTHROPIC_EXPORT },
+        { label: "Anthropic — export your organization's data", href: ANTHROPIC_ORG_EXPORT },
       ],
     },
     {
@@ -166,6 +169,7 @@ const de: Article = {
       links: [
         { label: "OpenAI — ChatGPT-Verlauf und -Daten exportieren", href: OPENAI_EXPORT },
         { label: "Anthropic — Claude-Daten exportieren", href: ANTHROPIC_EXPORT },
+        { label: "Anthropic — Daten der Organisation exportieren", href: ANTHROPIC_ORG_EXPORT },
       ],
     },
     {
