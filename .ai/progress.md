@@ -355,3 +355,43 @@ instead of the reader benefit. Reset on 24 August, below.
   canonical identity and the strong Law/Open Source article substance
   verified unchanged. Slice 7 — site-wide voice, German, terminology and
   quality — is next and has not started.
+
+## 2026-08-27 (2)
+
+- **Slice 7 implemented — site-wide voice, German, terminology and quality.**
+  Designed in a read-only audit over every non-glossary public route in both
+  locales plus the glossary and the machine surfaces, then implemented against
+  the human decisions that closed the audit's open questions. Not shipped:
+  the branch is `feature/slice-7-site-quality`, awaiting review.
+- **What was wrong and is now right.** Cross-references had rotted: a next step
+  offered "the six steps" of a lifecycle retired in slice 5, four labels called
+  the Law orientation page by the count-led title slice 6 replaced, `llms.txt`
+  still described `/start`, `/start/what-it-is-doing` and `getting-it-back-out`
+  as they read before slices 3 and 4, and a meta description promised fourteen
+  things over a ten-row figure. Ten places where the German said something the
+  English did not — a frequency against "can", an inverted actor in the blog, a
+  dropped *untrusted*, a dropped *public-interest*, a trade-secret condition in
+  the past tense — now carry the same claim in both languages. Roughly two dozen
+  German grammar defects were corrected and a wider set of English-shaped
+  sentences rewritten as German, without touching the prose the review found
+  strong.
+- **Decisions taken, in `decisions.md`.** `/start/what-it-is-doing` keeps its
+  URL deliberately, closing the slice-4 route question — every human-visible
+  surface already carries the current title, and this static host only redirects
+  by meta-refresh. Art. 22 GDPR is recorded as deliberate non-coverage.
+  Terminology is fixed by meaning, with no CI rule now or planned, because every
+  defect found was a judgement about which sense a word carried. Three unowned
+  questions were answered on the pages that already owned their neighbourhood —
+  export and portability on `getting-it-back-out`, the six Art. 6(1) bases on
+  `what-may-go-in`, AI-written code on `code-written-at-work` — each sourced at
+  the primary text and dated 2026-08-27. Memory as a product setting stays
+  unowned and is future scope.
+- **Verified.** Route set and sitemap byte-identical to `main` at 380 routes and
+  354 URLs; no new public route, no redirect change. 2,830 in-main internal
+  links crawled, none broken; the last dead end is gone, since `/start`'s sixth
+  way of working now reaches `/secure-setup`. All 305 evidence badges still
+  resolve to the method page and none to the retired URL. `astro check`,
+  `check:language` and `check-conformance.sh` pass. No horizontal overflow at
+  375 or 1280 in either locale. Glossary search, filters, the no-JS index and
+  the live count were exercised in the browser after the index shed 13% of its
+  bytes; German fallback notices appear only where German actually falls back.

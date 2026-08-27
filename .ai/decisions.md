@@ -1015,3 +1015,100 @@ Rejected: moving Art. 4(12) to Law (a definitional correction inside a
 mechanism explanation, not a permission question); merging the two law pages;
 retiring `what-you-agree-to` (three unique ideas remain and its H1 now
 matches its body).
+
+## 2026-08-27 - `/start/what-it-is-doing` keeps its URL, deliberately
+
+Decision: the route stays. The queued route-quality question from slice 4 is
+closed, not deferred again. It is revisited only if the page is substantially
+rewritten.
+
+Rationale: every human-visible surface already carries the current title — both
+inbound links (one per locale, from `/use-cases`), the SERP title and the H1 —
+and the page's next step sends a mechanism-seeking reader to `/data-flows`. A
+URL-only arrival is corrected in one glance and one click, so the slug differs
+from the H1 without misleading anyone; many good URLs do not repeat their H1.
+Against that, this is a static host: Astro's redirects emit meta-refresh stubs
+with `noindex`, so renaming permanently second-classes the old URL for a
+cosmetic gain. The one thing that genuinely misled was `llms.txt`, which still
+described the pre-slice-4 mechanism page at this URL. That was a stale machine
+description, fixed independently of the route.
+
+Rejected: rename with redirect; retirement; deferring the decision a third time.
+
+## 2026-08-27 - Art. 22 GDPR is deliberate non-coverage
+
+Decision: automated decision-making under Art. 22 GDPR is not covered, and the
+absence is recorded rather than treated as a gap. If it is ever covered, it is
+one paragraph on `/law/four-separate-questions`, never a route.
+
+Rationale: the site's journeys are assistive — drafting, retrieval, connections,
+agents that stop to ask — and a reader only meets Art. 22 by building solely
+automated decisions with legal or similarly significant effect, which the
+product does not help anyone do. No current sentence misleads by the omission:
+the Law map states it is a map rather than an answer to any of its questions.
+Writing it would mean researching a regime the site's readers are not in.
+
+Rejected: a paragraph on the Law map now; a route; leaving it unrecorded so it
+resurfaces as an open question in the final check.
+
+## 2026-08-27 - Terminology is fixed by meaning, and stays out of CI
+
+Decision: three reader concepts have one word each, in both languages —
+personal account / `Privatkonto`, consumer plan / `Privatkundentarif`, business
+plan / `Business-Tarif`. `Verbrauchertarif`, `Verbraucherkonto`,
+`Geschäftstarif`, `privates Konto` and `business tier` do not survive where they
+mean exactly those. Generic *tier* gets no mandatory German word: the sentence's
+own meaning decides (`Tarif`, `Tarifvariante`, or the product's own wording),
+and `Stufe` is left to the evidence method, which already owns it. A credential
+as an issued instrument is a `Zugangsmittel`; the secret itself is a `Geheimnis`
+or a named token, key or password, and the two are not interchangeable — the
+log rule from slice 5 depends on that distinction. The Data Flows connector
+concept is a `connection` / `Anbindung`; `Verbindung` stays for the network
+sense. The reader-facing name is `AI Act`, with `Verordnung (EU) 2024/1689`
+where a citation calls for it.
+
+No CI rule enforces any of it, and none is planned. Every class of defect the
+slice 7 audit found was a judgement about meaning — which sense a word carries
+in a sentence — and a checker that cannot read the sentence would either pass
+the real defects or fail correct prose. The same reasoning already rules out a
+`du`/`man` lint: `man` is correct where a statement is genuinely general.
+
+Rejected: a terminology linter; a dash-glyph rule; a heading-style rule; making
+`Stufe` the canonical German for tier, which would have collided with the five
+evidence levels.
+
+## 2026-08-27 - Three unowned questions get sections, one setting stays unowned
+
+Decision: three questions the site pointed at without answering are answered on
+the pages that already own their neighbourhood, and none of them becomes a
+route. `getting-it-back-out` gains export and portability — its slug promised it
+and only deletion delivered. `what-may-go-in` names the six Art. 6(1) bases,
+because the page instructed readers to name the legal basis without ever naming
+them. `code-written-at-work` gains "What if the AI wrote it?", bounded to code,
+publishing and licensing.
+
+The fourth stays unowned on purpose: memory or personalisation as a product
+setting has no dated fact owner, and it does not get one here. `where-knowledge-lives`
+explains the mechanism, and the switch itself needs per-vendor checking with
+sources — which is content scope, not an editorial fix. Recorded as future
+scope. The three account switches are not duplicated anywhere; their discovery
+from `/start/employee` and the Data Flows hub was tested and found sufficient.
+
+Rationale: each of the three had a page whose own copy raised the question, so
+the smallest honest fix was a section on that page rather than a new URL. The AI
+code question shipped because the chain is code-specific and current: Art. 1(3)
+of Directive 2009/24/EC sets originality as the author's own intellectual
+creation and Art. 2(1) frames the author as a natural person save where a
+Member State allows a legal person as rightholder, § 69a(3) in Germany and
+§ 40a in Austria carry it, and § 31(1) and § 24(1) make a licence something an
+author grants over a work. The US Copyright Office's 2025 report is cited as the
+United States' own position and labelled as such, never as authority for EU or
+Austrian law. Where the line falls between what a person shaped and what the
+machine determined is judged case by case, and the page says that rather than
+inventing a threshold; it makes no claim about the state of case law.
+
+Rejected: an export route; a general AI-output-rights route; an Art. 6 tutorial;
+naming vendor export switches beyond what each vendor documents for its own
+product; generalising those switches into a rule about workplace plans;
+adding memory facts without checking them; citing a US judgment for a
+proposition it did not decide.

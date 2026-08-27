@@ -54,10 +54,35 @@ export const sourceChoiceLabels: Record<SiteLocale, Record<SourceChoice, string>
     Perplexity: "Perplexity",
     Gemini: "Gemini",
     "Microsoft Copilot": "Microsoft Copilot",
-    "Developer tools": "Entwicklerwerkzeuge",
+    "Developer tools": "Entwicklertools",
     "AI vendor/product language": "Produkt- und Anbieterbegriffe",
   },
 };
+
+/**
+ * The raw `observedIn` values are English by definition — they name where a
+ * term was seen. Product names stay as they are; the descriptive ones are
+ * translated, so a German page stops printing English values under a German
+ * heading.
+ */
+export const observedInLabels: Record<SiteLocale, Record<string, string>> = {
+  en: {},
+  de: {
+    "AI products": "KI-Produkte",
+    "AI vendor marketing": "Marketing von KI-Anbietern",
+    "Agent products": "Agent-Produkte",
+    "Developer communities": "Entwickler-Communities",
+    "Developer tools": "Entwicklertools",
+    "Enterprise AI products": "KI-Produkte für Unternehmen",
+    "General AI usage": "Allgemeiner KI-Sprachgebrauch",
+    "Knowledge systems": "Wissenssysteme",
+    "Model documentation": "Modell-Dokumentation",
+    "Vector systems": "Vektor-Systeme",
+  },
+};
+
+export const getObservedInLabel = (value: string, lang: SiteLocale) =>
+  observedInLabels[lang][value] ?? value;
 
 export const slugify = (value: string) =>
   value
@@ -97,6 +122,13 @@ export const getLocalizedTermContent = (entry: TermEntry, lang: SiteLocale) => {
   // so callers get told which language they actually received.
   const definitionLanguage: SiteLocale = translation?.shortDefinition ? lang : "en";
 
+  // The same applies field by field: an entry can have a translated definition
+  // and untranslated prose beneath it, which then renders as German under a
+  // German heading. Each prose field says whether it fell back, so the page can
+  // mark it and tag it with the language it is actually in.
+  const fellBack = (translated: string | undefined, original: string | undefined) =>
+    lang !== "en" && !translated && Boolean(original);
+
   return {
     term: translation?.term ?? entry.term,
     shortDefinition: translation?.shortDefinition ?? entry.shortDefinition,
@@ -107,6 +139,12 @@ export const getLocalizedTermContent = (entry: TermEntry, lang: SiteLocale) => {
     figure: translation?.figure ?? entry.figure,
     example: translation?.example ?? entry.example,
     aiContext: translation?.aiContext ?? entry.aiContext,
+    englishFallback: {
+      analogy: fellBack(translation?.analogy, entry.analogy),
+      explanation: fellBack(translation?.explanation, entry.explanation),
+      example: fellBack(translation?.example, entry.example),
+      aiContext: fellBack(translation?.aiContext, entry.aiContext),
+    },
     definitionLanguage,
     isTranslated: definitionLanguage === lang,
   };

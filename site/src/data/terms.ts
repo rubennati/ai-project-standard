@@ -227,11 +227,11 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Der Einsatz von KI für breitere Softwarearbeit wie Coding, Debugging, Analyse, Dokumentation oder Planung.",
+          "Der Einsatz von KI in der Softwarearbeit über das Programmieren hinaus: Coding, Debugging, Analyse, Dokumentation oder Planung.",
         explanation:
           "KI über die gesamte Arbeit am Bauen von Software einsetzen — schreiben, Fehler suchen, analysieren, dokumentieren, planen —, wobei die Struktur der Arbeit erhalten bleibt: Prüfung, Tests und eine Aufzeichnung des Entschiedenen.",
         aiContext:
-          "Der Unterschied zum Vibe Coding ist nicht die Menge an KI. Er ist, ob die Struktur überlebt. Beides kann laufende Software erzeugen; nur eines lässt jemanden Monate später beantworten, warum sie so ist, wie sie ist.",
+          "Der Unterschied zum Vibe Coding ist nicht die Menge an KI. Er liegt darin, ob die Struktur überlebt. Beides kann funktionierende Software erzeugen; nur eines lässt jemanden Monate später beantworten, warum sie so ist, wie sie ist.",
       },
     },
   },
@@ -253,7 +253,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Der Einsatz von KI für breitere Engineering-Arbeit, einschließlich Code, Systeme, Dokumentation, Arbeitsabläufe und Entscheidungen.",
+          "Der Einsatz von KI in der Engineering-Arbeit insgesamt: Code, Systeme, Dokumentation, Arbeitsabläufe und Entscheidungen.",
         explanation:
           "Der weiteste der drei: KI über die Ingenieursarbeit hinweg, einschließlich Architektur, Betrieb, Test und Prüfung — nicht nur über die Teile, die Quellcode erzeugen.",
         aiContext:
@@ -491,7 +491,7 @@ export const terms: TermEntry[] = [
         shortDefinition:
           "Ein KI-Agent für programmbezogene Aufgaben: Dateien bearbeiten, Prüfungen ausführen oder sich in einer Codebasis bewegen.",
         explanation:
-          "Eine Assistenz, die über mehrere Schritte in einer Codebasis arbeitet: Dateien lesen, Änderungen vornehmen, Befehle ausführen, das Ergebnis lesen und weitermachen — statt einen Schnipsel zum Einfügen zu liefern.",
+          "Ein Assistent, der über mehrere Schritte in einer Codebasis arbeitet: Dateien lesen, Änderungen vornehmen, Befehle ausführen, das Ergebnis lesen und weitermachen — statt einen Schnipsel zum Einfügen zu liefern.",
         aiContext:
           "Prägend ist ihr Umgang mit einem dauerhaften Dateisystem — deshalb kommt sie mit einem Ordner voller Dokumente etwa so gut zurecht wie mit einem voller Code. Die entscheidenden Kontrollen sind in beiden Fällen dieselben: was sie ändern darf und was passieren muss, bevor die Änderung bleibt.",
       },
@@ -872,12 +872,13 @@ export const terms: TermEntry[] = [
     commonConfusion: ["Guess", "Speculation"],
     translations: {
       de: {
+        term: "Halluzination",
         shortDefinition:
           "Eine Ausgabe, die glaubwürdig klingt, aber falsch, unbelegt oder erfunden ist.",
         explanation:
           "Das Modell erzeugt etwas, das sich wie eine Tatsache liest und keine ist: eine erfundene Quellenangabe, eine plausible falsche Zahl, eine Funktion, die es nicht gibt. Es ist kein Lügen, denn es gibt keine getrennte innere Aufzeichnung der Wahrheit, von der abgewichen würde.",
         aiContext:
-          "Deshalb zählt Erdung. Ein Modell, das aus einer gefundenen Passage antworten soll, lässt sich an dieser Passage prüfen; ein Modell, das aus dem Gedächtnis antwortet, nicht. Die praktische Abwehr ist kein besseres Modell, sondern eine Quellenangabe, der man folgen kann.",
+          "Deshalb zählt die Bindung an Quellen. Ein Modell, das aus einer gefundenen Passage antworten soll, lässt sich an dieser Passage prüfen; ein Modell, das aus dem Gedächtnis antwortet, nicht. Die praktische Abwehr ist kein besseres Modell, sondern eine Quellenangabe, der man folgen kann.",
       },
     },
   },
@@ -929,7 +930,7 @@ export const terms: TermEntry[] = [
         explanation:
           "Ein Modell, das auf sehr großen Textmengen trainiert wurde, um Text fortzusetzen. Zu einer Eingabe erzeugt es, was am plausibelsten folgt — deshalb kann es flüssig über Dinge schreiben, die es nicht überprüfen kann.",
         aiContext:
-          "Zwei Folgerungen, die man mitnehmen sollte. Es hat zu nichts Zugriff, solange ihm nichts etwas hinlegt — und Plausibilität ist nicht Richtigkeit: Derselbe Mechanismus, der es flüssig macht, lässt eine überzeugte falsche Antwort genauso aussehen wie eine richtige.",
+          "Zwei Folgerungen, die man mitnehmen sollte. Es hat auf nichts Zugriff, solange ihm niemand etwas hinlegt — und Plausibilität ist nicht Richtigkeit: Derselbe Mechanismus, der es flüssig macht, lässt eine selbstbewusste falsche Antwort genauso aussehen wie eine richtige.",
       },
     },
   },
@@ -1092,7 +1093,7 @@ export const terms: TermEntry[] = [
     translations: {
       de: {
         shortDefinition:
-          "Bezeichnung in der Oberfläche für einen gebündelten Arbeitsbereich, einen Kontextbehälter oder einen dauerhaften Arbeitsraum.",
+          "Bezeichnung in der Oberfläche für einen gebündelten Arbeitsbereich, einen Bereich, der Kontext bündelt oder einen dauerhaften Arbeitsraum.",
       },
     },
   },
@@ -2422,7 +2423,7 @@ export const terms: TermEntry[] = [
     explanation:
       "Once you name it, a great deal follows. If a document management system is the source of truth, then the search index, the embeddings, the chat history and any AI summary are all derived — and derived data can be wrong, stale, or visible to the wrong people without the original changing at all.",
     aiContext:
-      "This is the question behind \"where is my data\", which is really at least fourteen questions. An AI system creates several representations of the same confidential content, and each one needs its own answer about storage, access and deletion.",
+      "This is the question behind \"where is my data\", which is several questions at once. An AI system creates several representations of the same confidential content, and each one needs its own answer about storage, access and deletion.",
     analogy:
       "The signed contract in the filing cabinet, as opposed to the four photocopies people keep in their desks. When they disagree, nobody argues about which photocopy is nicer — you go to the cabinet. A system without a named source of truth is a room full of photocopies and no cabinet.",
     figure:
@@ -2443,7 +2444,7 @@ export const terms: TermEntry[] = [
         explanation:
           "Ist er benannt, folgt vieles daraus. Ist ein Dokumentenmanagement der Source of Truth, dann sind Suchindex, Embeddings, Chatverlauf und jede KI-Zusammenfassung abgeleitet — und Abgeleitetes kann falsch, veraltet oder für die falschen Personen sichtbar sein, ohne dass sich am Original etwas ändert.",
         aiContext:
-          "Das ist die Frage hinter „wo sind meine Daten“, und die zerfällt in mindestens vierzehn Fragen. Ein KI-System erzeugt mehrere Repräsentationen desselben vertraulichen Inhalts, und jede braucht ihre eigene Antwort zu Speicherung, Zugriff und Löschung.",
+          "Das ist die Frage hinter „wo sind meine Daten“, und die zerfällt in mehrere Fragen auf einmal. Ein KI-System erzeugt mehrere Repräsentationen desselben vertraulichen Inhalts, und jede braucht ihre eigene Antwort zu Speicherung, Zugriff und Löschung.",
         analogy:
           "Der unterschriebene Vertrag im Aktenschrank, im Unterschied zu den vier Fotokopien in den Schreibtischen. Widersprechen sie sich, streitet niemand darüber, welche Kopie schöner ist — man geht zum Schrank. Ein System ohne benannten Source of Truth ist ein Raum voller Fotokopien ohne Schrank.",
         figure:
@@ -2602,7 +2603,7 @@ export const terms: TermEntry[] = [
         aiContext:
           "Genau das passiert, wenn ein KI-Tool um Verbindung zu deiner Mail oder deinem Speicher bittet. Was du erteilst, ist ein Scope — und der ist meist weiter gefasst als die Aufgabe vor dir.",
         explanation:
-          "Statt einer Anwendung dein Passwort zu geben, wirst du zu dem Dienst geschickt, bei dem du bereits ein Konto hast, bestätigst dort einen bestimmten Umfang, und die Anwendung erhält ein Token, das auf diesen Umfang begrenzt ist. Es lässt sich zurückziehen, ohne dein Passwort zu ändern.",
+          "Statt einer Anwendung dein Passwort zu geben, wirst du zu dem Dienst geschickt, bei dem du bereits ein Konto hast, bestätigst dort einen bestimmten Scope, und die Anwendung erhält ein Token, das auf diesen Scope begrenzt ist. Es lässt sich zurückziehen, ohne dein Passwort zu ändern.",
       },
     },
   },

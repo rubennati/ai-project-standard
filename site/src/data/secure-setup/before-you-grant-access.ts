@@ -96,6 +96,7 @@ const en: Article = {
         "Least privilege, need to know and separation of duties were not retired because the interface became conversational. An agent is software acting with credentials somebody handed it, and it should hold fewer rights than you do rather than the same ones. The failure mode is specific: people grant broad access because narrowing it is fiddly and the tool works better with more — a trade made silently and never revisited, which is precisely how standing over-permission accumulates in any system.",
         "Where the system allows it, narrowing means an identity of its own rather than yours: its own account or token, the smallest scope that still does the job, and a limited lifetime where one is offered. Keep the credential out of the model's context and out of anything it writes.",
       ],
+      links: [{ label: "Scope, defined", href: "/glossary/scope" }],
     },
     {
       heading: "What an approval has to show you",
@@ -124,6 +125,7 @@ const en: Article = {
         "The compounding is the part to understand. Each skill you add widens what an agent can reach, and they share the same session. One compromised skill does not endanger only its own function — it sits inside a context that may hold your keys, your files and your other tools.",
       ],
       links: [
+        { label: "Connectors, defined", href: "/glossary/connectors" },
         { label: "OWASP Agentic Skills Top 10", href: OWASP_SKILLS },
         { label: "OWASP GenAI security project", href: OWASP_LLM },
       ],
@@ -181,7 +183,7 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Einem Modell zu sagen, was es nicht tun darf, ist eine Bitte. Das Modell hält sich vielleicht daran, aber das macht daraus keine durchsetzbare Grenze. Wenn das Einzige, was eine Handlung aufhält, ein Text ist, den das Modell gelesen hat, hast du eine Leitlinie.",
-        "Eine Grenze wird außerhalb des Modells durchgesetzt: Sie weist denselben Vorgang ab, ob das Modell sich daran halten wollte oder nicht — und ob es deine Anweisung je gelesen hat oder nicht. Sie kann an mehreren Stellen liegen: ein Server, der vier Operationen anbietet statt einer Datenbank; Zugangsdaten, die auf einen Ordner zugeschnitten sind statt geteilt; eine Positivliste von Befehlen statt einer Shell; die Rechte, die das Zielsystem der Identität zugesteht, die es sieht; oder eine Freigabe, die vor dem Aufruf erfolgen muss. Gemeinsam ist ihnen, dass nicht das Modell entscheidet.",
+        "Eine Grenze wird außerhalb des Modells durchgesetzt: Sie weist denselben Vorgang ab, ob das Modell sich daran halten wollte oder nicht — und ob es deine Anweisung je gelesen hat oder nicht. Sie kann an mehreren Stellen liegen: ein Server, der vier Operationen anbietet statt einer Datenbank; ein Zugangsmittel, das auf einen Ordner zugeschnitten ist statt geteilt; eine Positivliste von Befehlen statt einer Shell; die Rechte, die das Zielsystem der Identität zugesteht, die es sieht; oder eine Freigabe, die vor dem Aufruf erfolgen muss. Gemeinsam ist ihnen, dass nicht das Modell entscheidet.",
         "Du kannst herausfinden, was von beidem du hast. Verlang eine Datei außerhalb des freigegebenen Verzeichnisses und eine Änderung, die du nicht freigegeben hast. Beides sollte scheitern, weil etwas es abgewiesen hat — nicht, weil das Modell sich dagegen entschieden hat.",
       ],
     },
@@ -189,9 +191,10 @@ const de: Article = {
       heading: "Mit wessen Rechten es handelt",
       level: "assessment",
       paragraphs: [
-        "Least Privilege, Need-to-know und Funktionstrennung wurden nicht außer Kraft gesetzt, weil die Oberfläche jetzt ein Gespräch ist. Ein Agent ist Software, die mit Zugangsdaten handelt, die ihm jemand gegeben hat, und er sollte weniger Rechte haben als du, nicht dieselben. Das Versagensmuster ist konkret: Man gibt breiten Zugriff, weil das Einschränken mühsam ist und das Tool mit mehr Rechten besser läuft — ein Handel, der stillschweigend geschlossen und nie überprüft wird, und genau so entstehen in jedem System dauerhaft zu weite Berechtigungen.",
-        "Wo das System es zulässt, heißt Einschränken: eine eigene Identität statt deiner — ein eigenes Konto oder Token, der kleinste Umfang, der die Aufgabe noch erfüllt, und eine begrenzte Laufzeit, sofern es eine gibt. Halte die Zugangsdaten aus dem Kontext des Modells heraus und aus allem, was es schreibt.",
+        "Least Privilege, Need-to-know und Funktionstrennung wurden nicht außer Kraft gesetzt, weil die Oberfläche jetzt ein Gespräch ist. Ein Agent ist Software, die mit einem Zugangsmittel handelt, das ihm jemand gegeben hat, und er sollte weniger Rechte haben als du, nicht dieselben. Das Versagensmuster ist konkret: Man gibt breiten Zugriff, weil das Einschränken mühsam ist und das Tool mit mehr Rechten besser läuft — ein Handel, der stillschweigend geschlossen und nie überprüft wird, und genau so entstehen in jedem System dauerhaft zu weite Berechtigungen.",
+        "Wo das System es zulässt, heißt Einschränken: eine eigene Identität statt deiner — ein eigenes Konto oder Token, der kleinste Zuschnitt, der für die Aufgabe noch reicht, und eine begrenzte Laufzeit, sofern es eine gibt. Halte das Geheimnis selbst aus dem Kontext des Modells heraus und aus allem, was es schreibt.",
       ],
+      links: [{ label: "Scope, erklärt", href: "/de/glossary/scope" }],
     },
     {
       heading: "Was eine Freigabe zeigen muss",
@@ -216,10 +219,11 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Einen Skill oder Connector zu installieren ist eine Lieferkettenentscheidung — behandelt wird sie wie das Installieren einer Browser-Erweiterung. OWASP pflegt für genau diese Schicht eine Top-Ten-Liste, und ihre Kategorien lesen sich wie eine Aufzählung dessen, was Leute für unmöglich halten: überprivilegierte Skills, kompromittierte Lieferkette, schwache Isolation, nicht vertrauenswürdige externe Anweisungen, und die Wiederverwendung desselben Skills über Plattformen hinweg.",
+        "Einen Skill oder Connector zu installieren ist eine Lieferkettenentscheidung — behandelt wird sie wie das Installieren einer Browser-Erweiterung. OWASP pflegt für genau diese Schicht eine Top-Ten-Liste, und ihre Kategorien lesen sich wie eine Aufzählung dessen, was Leute für unmöglich halten: überprivilegierte Skills, kompromittierte Lieferkette, schwache Isolation, nicht vertrauenswürdige externe Anweisungen und die Wiederverwendung desselben Skills über Plattformen hinweg.",
         "Entscheidend ist die Verstärkung. Jeder zusätzliche Skill erweitert, was ein Agent erreichen kann, und alle teilen sich dieselbe Sitzung. Ein kompromittierter Skill gefährdet nicht nur seine eigene Funktion — er sitzt in einem Kontext, in dem deine Schlüssel, deine Dateien und deine übrigen Tools liegen können.",
       ],
       links: [
+        { label: "Connectors, erklärt", href: "/de/glossary/connectors" },
         { label: "OWASP Agentic Skills Top 10", href: OWASP_SKILLS },
         { label: "OWASP GenAI Security Project", href: OWASP_LLM },
       ],
@@ -228,8 +232,8 @@ const de: Article = {
       heading: "Ein Schlüssel im Chat ist ein offengelegter Schlüssel",
       level: "advice",
       paragraphs: [
-        "Betrachte ihn ab dem Absenden als offengelegt und tausch ihn aus. Nicht weil bekannt wäre, dass etwas schiefging, sondern weil du nicht mehr kontrollierst, wo die Kopie liegt, wie lange sie bleibt, und ob sie in einem Fehlerprotokoll landet.",
-        "Dasselbe gilt für Konfiguration, die man zum Debuggen hineinkopiert. Verbindungszeichenfolgen und Tokens stecken mitten in Dateien, die im Ganzen geteilt werden, weil das Kürzen eine Minute dauern würde.",
+        "Betrachte ihn ab dem Absenden als offengelegt und tausch ihn aus. Nicht weil bekannt wäre, dass etwas schiefging, sondern weil du nicht mehr kontrollierst, wo die Kopie liegt, wie lange sie bleibt und ob sie in einem Fehlerprotokoll landet.",
+        "Dasselbe gilt für Konfiguration, die du zum Debuggen hineinkopierst. Verbindungszeichenfolgen und Tokens stecken mitten in Dateien, die im Ganzen geteilt werden, weil das Kürzen eine Minute dauern würde.",
         "Rate nicht, ob du eines hineinkopiert hast — Chatverlauf, Shell-History und ein Secret-Scanner über das Repository beantworten das in wenigen Minuten. Tausch aus, was dabei auftaucht: Passwörter, API-Schlüssel, Zugriffstoken, Sitzungs-Cookies, private Schlüssel, Wiederherstellungscodes, Verbindungszeichenfolgen.",
       ],
     },
@@ -242,7 +246,7 @@ const de: Article = {
       list: [
         "Das Recht im Zielsystem entfernen — die Ebene, die entscheidet, was die Identität dort darf.",
         "Die Anbindung abschalten und die entfernen, die du nicht mehr nutzt. Jede davon ist dauerhafter Zugriff, den du erteilt und aus dem Blick verloren hast.",
-        "Die verwendeten Zugangsdaten entziehen und danach nachsehen, ob der nächste Aufruf scheitert. Bis du das gesehen hast, weißt du, dass es den Schalter gibt, nicht, dass er wirkt.",
+        "Das verwendete Zugangsmittel entziehen und danach nachsehen, ob der nächste Aufruf scheitert. Bis du das gesehen hast, weißt du, dass es den Schalter gibt, nicht, dass er wirkt.",
         "Die Automatisierung selbst ausschalten, wenn etwas nach Zeitplan oder auf ein Ereignis hin startet, statt nur wegzunehmen, worauf sie zugreift.",
       ],
     },

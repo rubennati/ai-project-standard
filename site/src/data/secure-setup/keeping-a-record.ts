@@ -90,7 +90,7 @@ const en: Article = {
       ],
       links: [
         {
-          label: "Four questions that are not the same question",
+          label: "Which legal question are you asking?",
           href: "/law/four-separate-questions",
         },
       ],
@@ -155,7 +155,7 @@ const de: Article = {
       paragraphs: [
         "Wo ein System in einem anderen System gehandelt hat, ist dessen Protokoll der stärkste Beleg dafür, was passiert ist — und es lohnt sich zu wissen, dass es existiert, bevor du es brauchst.",
         "Es beantwortet eine engere Frage, als man erwartet. Es zeigt, dass ein Aufruf stattfand, unter welchem Konto und was er geändert hat. Es zeigt nicht, dass jemand ihn machen durfte, dass ein Mensch zugestimmt hat oder dass das Ergebnis stimmte. Dafür ist deine Aufzeichnung da, nicht das Protokoll.",
-        "Ein Protokoll kann festhalten, welches Konto, welche Dienstidentität oder welche Kennung eines Zugangsmittels verwendet wurde. Das Geheimnis selbst — etwa ein Token-Wert, API-Key oder Passwort — gehört nicht hinein. Wo du selbst eines einrichtest, entscheidest du diese Unterscheidung besser, bevor es zu schreiben beginnt, und nicht danach.",
+        "Ein Protokoll kann festhalten, welches Konto, welche Dienstidentität oder welche Kennung eines Zugangsmittels verwendet wurde. Das Geheimnis selbst — etwa ein Token-Wert, API-Key oder Passwort — gehört nicht hinein. Wo du selbst eines einrichtest, triffst du diese Unterscheidung besser, bevor es zu schreiben beginnt, und nicht danach.",
       ],
       links: [
         {
@@ -173,7 +173,7 @@ const de: Article = {
       ],
       links: [
         {
-          label: "Vier Fragen, die nicht dieselbe Frage sind",
+          label: "Welche rechtliche Frage stellst du gerade?",
           href: "/de/law/four-separate-questions",
         },
       ],

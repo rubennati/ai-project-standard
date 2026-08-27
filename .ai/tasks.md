@@ -62,7 +62,7 @@ implementation, not merely before merge.
 | — | Homepage Correction Pass (between 4 and 5, not renumbered) | 4 | no | **done** (#167) |
 | 5 | `/secure-setup` and verification | 4 | no | **done** (#169) |
 | 6 | Law, About, Evidence, Reference and discovery | 2 | yes | **done** (#171) |
-| 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | not started |
+| 7 | Site-wide voice, German and quality enforcement | 3–6 | partly | **implemented, in review** |
 
 1. ~~**Product identity and acute contradictions.**~~ **Shipped in #158.**
    `site/src/data/identity.ts` owns one product sentence per locale; the
@@ -219,13 +219,23 @@ implementation, not merely before merge.
    eyebrows, so nothing public carries stage vocabulary any more. `Stop
    condition` / `Stoppbedingung` is not part of it and is not debt — it names a
    reader's question rather than a position in the product model.
-   *Two findings from slice 4 land here, queued and non-blocking — see
-   `state.md`.* Export and portability have no owner anywhere on the site: this
-   slice must assign an existing owner, add coverage, or record it as
-   deliberately out of scope. And `/start/what-it-is-doing` now serves a page
-   titled `Do you need a different tool — or a better setup?`; the slug no
-   longer describes it, which is evidence for a route-quality decision, not a
-   decision itself — this slice weighs it, nothing earlier waits on it.
+   **Implemented on `feature/slice-7-site-quality`, awaiting review.** Four
+   decisions in `decisions.md`, 2026-08-27. Stale cross-references gone — the
+   retired six-step lifecycle in a next step, four labels naming the Law page by
+   its old count-led title, three `llms.txt` entries describing pre-slice pages,
+   and an unverifiable "fourteen things" in metadata. Ten EN/DE parity defects
+   corrected, so the German makes the same claim as the English; roughly two
+   dozen German grammar defects and a further set of naturalness fixes, none of
+   them broad rewrites. Two headings changed and no others: a count that
+   disagreed with its own figure, and a negation the German already resolved.
+   Terminology fixed by meaning with no CI rule. `/start` card six reaches
+   `/secure-setup`, the last dead end. `us-cloud-and-the-gdpr` stopped
+   re-teaching the decoder `data-sovereignty` owns. Six contextual glossary
+   links, and German glossary pages now label an English fallback instead of
+   presenting it as German. Three approved additions on existing owners —
+   export and portability, the six Art. 6(1) bases, AI-written code — and no new
+   route, component or concept. Both slice-4 findings are closed:
+   `/start/what-it-is-doing` keeps its URL deliberately, and export has an owner.
 
 **Not rewritten for uniformity** — the review found these strong, and a slice
 that touches them changes only what its own goal requires: the homepage;

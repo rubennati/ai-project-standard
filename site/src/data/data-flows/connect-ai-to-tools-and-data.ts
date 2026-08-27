@@ -229,7 +229,7 @@ const en: ConnectAiToolsDataContent = {
     "Three places have to allow it: the product has to offer the mechanism, the connection has to expose the operation, and the identity has to be permitted to use it in the target system. Widening one of them does not widen the others.",
   ],
   decidesLink: {
-    label: "Where the access comes from",
+    label: "What can it access, and what can it do?",
     href: "/data-flows",
   },
   boundaryHeading: "Decide the boundary before connecting",
@@ -288,6 +288,11 @@ const en: ConnectAiToolsDataContent = {
       label: "Scope",
       description: "What an issued credential is allowed to do.",
     },
+    {
+      slug: "prompt-injection",
+      label: "Prompt injection",
+      description: "Instructions hidden in content the model reads.",
+    },
   ],
   nextTitle: "Before you give an AI agent access",
   nextDescription:
@@ -299,7 +304,7 @@ const de: ConnectAiToolsDataContent = {
   description:
     "Wie ein KI-Produkt an ein anderes System angebunden wird, was die Anbindung dann sehen und tun kann und wo die Grenze liegt. Mit einem vollständigen Beispiel.",
   answer:
-    "Das Modell selbst meldet sich nirgends an. Die Anbindung stellt das Produkt, die Anwendung oder der Agent-Host darum herum bereit: eine festgelegte Menge an Vorgängen, ausgeführt unter einer Identität, die das Zielsystem kennt. Was die KI tatsächlich tun kann, müssen alle drei zulassen — das Produkt, die Anbindung und diese Identität.",
+    "Das Modell selbst meldet sich nirgends an. Die Anbindung kommt vom Produkt, von der Anwendung oder vom Agent-Host darum herum: eine festgelegte Menge an Vorgängen, ausgeführt unter einer Identität, die das Zielsystem kennt. Was die KI tatsächlich tun kann, müssen alle drei zulassen — das Produkt, die Anbindung und diese Identität.",
   lead: "Eine Anbindung kann Wissen durchsuchen, Arbeit in einem anderen System vorbereiten oder dort eine festgelegte Aktion ausführen. Damit werden Inhalte aus diesem System aber auch zu Modellinput — und Modellausgaben können Handlungen auslösen.",
   fit: "Die Aufgabe wiederholt sich, die Quelle ändert sich zu oft für sicheres Kopieren oder das Ergebnis muss über einen kontrollierten Vorgang in ein System zurück.",
   checkedLabel: "Quellen geprüft",
@@ -319,7 +324,7 @@ const de: ConnectAiToolsDataContent = {
       outcome:
         "Ticket, Dokument und Nachricht, die zur selben Frage gehören, in einer Antwort zusammenführen, statt drei Tools zu öffnen.",
       simplerWhen:
-        "Alles Nötige in einem System liegt oder du ohnehin weißt, welche wenigen Stellen du ansehen musst.",
+        "Alles Nötige liegt in einem System, oder du weißt ohnehin, welche wenigen Stellen du ansehen musst.",
     },
     {
       title: "Arbeit am richtigen Ort vorbereiten",
@@ -333,14 +338,14 @@ const de: ConnectAiToolsDataContent = {
       outcome:
         "Nach Prüfung von Auftrag und Parametern ein Ticket anlegen, einen Datensatz ändern oder einen bekannten Befehl starten.",
       simplerWhen:
-        "Die Aktion selten vorkommt, schwer rückgängig zu machen ist oder in der Oberfläche des Zielsystems sicherer gelingt.",
+        "Die Aktion kommt selten vor, ist schwer rückgängig zu machen oder gelingt in der Oberfläche des Zielsystems sicherer.",
     },
     {
       title: "Mehrere Schritte koordinieren",
       outcome:
         "Einen Agenten zwischen freigegebenen Tools wählen lassen, während ein Mensch Ziel, Haltepunkte und Abnahme verantwortet.",
       simplerWhen:
-        "Die Reihenfolge vorhersehbar ist. Ein fester Workflow lässt sich leichter testen, kostet weniger und bleibt besser prüfbar.",
+        "Die Reihenfolge ist vorhersehbar. Ein fester Workflow lässt sich leichter testen, kostet weniger und bleibt besser prüfbar.",
     },
   ],
   outcomeLabel: "Was es ermöglicht",
@@ -418,12 +423,12 @@ const de: ConnectAiToolsDataContent = {
     "Drei Stellen müssen es zulassen: Das Produkt muss den Mechanismus anbieten, die Anbindung muss den Vorgang bereitstellen, und die Identität muss ihn im Zielsystem verwenden dürfen. Eine davon zu erweitern erweitert die anderen nicht.",
   ],
   decidesLink: {
-    label: "Woher der Zugriff kommt",
+    label: "Worauf kann es zugreifen, und was kann es tun?",
     href: "/de/data-flows",
   },
   boundaryHeading: "Lege die Grenze vor dem Verbinden fest",
   boundaryLead:
-    "Der Zustimmungsdialog kommt zu spät, um darin erst die Regeln zu erfinden. Drei Antworten vorher; daraus folgen Identität, Vorgänge und nötige Freigaben.",
+    "Der Zustimmungsdialog kommt zu spät, um darin erst die Regeln zu erfinden. Erst drei Antworten; aus ihnen folgen Identität, Vorgänge und nötige Freigaben.",
   boundaryQuestions: [
     {
       title: "Lesen und handeln",
@@ -451,9 +456,9 @@ const de: ConnectAiToolsDataContent = {
     "Für HTTP-Verbindungen verwendet die MCP-Autorisierung Protected Resource Metadata und OAuth. Clients sollen nur die für den aktuellen Vorgang nötigen Scopes anfordern; Server dürfen nur Tokens akzeptieren, die für genau diesen Server bestimmt sind.",
   authorizationSource: "MCP-Spezifikation — Autorisierung, Revision 2026-07-28",
   boundaryClose:
-    "Was immer du entscheidest — die erste Fassung kann nur lesen. Funktioniert die Aufgabe auch ganz ohne Schreibfähigkeit, hast du etwas erfahren, was eine gelungene Vorführung nicht zeigen konnte.",
+    "Was immer du entscheidest — die erste Fassung kann nur lesen. Funktioniert die Aufgabe auch ganz ohne Schreibzugriff, hast du etwas erfahren, was eine gelungene Vorführung nicht zeigen konnte.",
   unsafeDescription:
-    "Lass eine Verbindung nicht zugleich fremde Inhalte aufnehmen und sensible Handlungen ausführen, ohne dazwischen eine eigene Regelprüfung zu setzen. Mail, Dokument oder Tool-Ergebnis können Anweisungen enthalten, die das Modell vom Auftrag des Menschen weglenken.",
+    "Lass eine Anbindung nicht zugleich Inhalte von außen aufnehmen, denen du nicht trauen kannst, und sensible Handlungen ausführen, ohne dazwischen eine eigene Regelprüfung zu setzen. Mail, Dokument oder Tool-Ergebnis können Anweisungen enthalten, die das Modell vom Auftrag des Menschen weglenken.",
   unsafeAlternative:
     "Trenne Lesen und Handeln, beginne mit Nur-Lese-Zugriff und lass sensible Aufrufe durch einen Menschen oder eine deterministische Regel gegen den ursprünglichen Auftrag prüfen.",
   glossaryLead: "Die Begriffe, die dabei auftauchen — einmal definiert:",
@@ -478,10 +483,15 @@ const de: ConnectAiToolsDataContent = {
       label: "Scope",
       description: "Was ein ausgegebenes Zugangsmittel tun darf.",
     },
+    {
+      slug: "prompt-injection",
+      label: "Prompt Injection",
+      description: "Anweisungen, die in Inhalten stecken, die das Modell liest.",
+    },
   ],
   nextTitle: "Bevor du einem KI-Agenten Zugriff gibst",
   nextDescription:
-    "Mach aus der Verbindungsgrenze eine konkrete Zugriffsentscheidung, bevor weitere Tools oder mehr Autonomie dazukommen.",
+    "Mach aus der Grenze der Anbindung eine konkrete Zugriffsentscheidung, bevor weitere Tools oder mehr Autonomie dazukommen.",
 };
 
 const content: Record<SiteLocale, ConnectAiToolsDataContent> = { en, de };

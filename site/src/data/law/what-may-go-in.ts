@@ -13,7 +13,20 @@ import type { SiteLocale } from "../../i18n/ui";
 
 export const CHECKED = "2026-08-03";
 
-const GDPR_ART_6 = "https://eur-lex.europa.eu/eli/reg/2016/679/oj";
+/**
+ * The legal-basis section carries its own, later date. Art. 6(1) and Art. 28(1)
+ * were re-read against the consolidated text on 2026-08-27 when the six bases
+ * were named, and the regulation has no amendment beyond the 2018 corrigendum.
+ * The EDPB's position on consent at work is Guidelines 05/2020, paras. 21-22,
+ * read the same day.
+ */
+export const LEGAL_BASIS_CHECKED = "2026-08-27";
+
+const GDPR_ART_6 = "https://eur-lex.europa.eu/eli/reg/2016/679/art_6/oj/eng";
+const EDPB_CONSENT =
+  "https://www.edpb.europa.eu/system/files/documents/files/file1/edpb_guidelines_202005_consent_en.pdf";
+const EDPB_CONSENT_DE =
+  "https://www.edpb.europa.eu/system/files/documents/files/file1/edpb_guidelines_202005_consent_de.pdf";
 const GDPR_ART_28 = "https://gdpr-info.eu/art-28-gdpr/";
 const TRADE_SECRETS = "https://eur-lex.europa.eu/eli/dir/2016/943/oj";
 
@@ -35,14 +48,17 @@ const en: Article = {
     {
       heading: "Personal data needs a legal basis",
       level: "law",
-      checked: CHECKED,
+      checked: LEGAL_BASIS_CHECKED,
       paragraphs: [
         "There is no general prohibition on processing personal data with an AI tool. There is a requirement to have a legal basis for it under Art. 6 GDPR, and to be able to name which one.",
-        "If the vendor processes the data on your instructions, they are a processor, and Art. 28 GDPR requires a contract governing that processing and that you use only processors offering sufficient guarantees. In practice: a data processing agreement, which the business tiers of the major vendors provide and the consumer tiers generally do not.",
+        "Art. 6(1) lists six, in short: consent, performance of a contract with the person concerned, a legal obligation on the controller, vital interests, a task in the public interest or the exercise of official authority, and legitimate interests. Which one fits is a question about the processing rather than about the tool, and this page does not pick one for you. Two of them carry a warning. Legitimate interests is not a free pass: it applies only where your interests are not overridden by the interests or fundamental rights and freedoms of the person concerned. And consent is weaker than it looks where the data is about your own staff — the EDPB considers it problematic for an employer to rely on an employee's consent, because the dependency in that relationship makes it unlikely to be freely given. It is not ruled out, but in employment the EDPB treats freely given consent as exceptional: refusing it must have no adverse consequences at all.",
+        "A legal basis is necessary and not on its own sufficient. The principles in Art. 5 still apply, special categories of data — health, biometrics, trade union membership and the rest — additionally need a ground under Art. 9, and using an external provider additionally needs the processor arrangement below.",
+        "If the vendor processes the data on your instructions, they are a processor, and Art. 28 GDPR requires a contract governing that processing and that you use only processors offering sufficient guarantees. In practice: a data processing agreement, which the business plans of the major vendors provide and the consumer plans generally do not.",
         "Replacing names with placeholders lowers the risk considerably and is worth doing. It does not take you out of the GDPR — data you can re-identify is pseudonymised, not anonymised, and pseudonymised data is still personal data.",
       ],
       links: [
         { label: "Art. 6 GDPR — lawfulness of processing", href: GDPR_ART_6 },
+        { label: "EDPB Guidelines 05/2020 on consent — imbalance of power", href: EDPB_CONSENT },
         { label: "Art. 28 GDPR — processor obligations", href: GDPR_ART_28 },
       ],
     },
@@ -74,7 +90,7 @@ const en: Article = {
       list: [
         "Is it mine to share? If it belongs to a client or an employer, that decision is not yours alone.",
         "Is there personal data in it? If yes, name the legal basis and check that a processing agreement exists for the tool you are about to use.",
-        "Am I on the right account? Business tier for anything that is not mine, every time.",
+        "Am I on the right account? An approved business plan for anything that is not mine, every time. That is the floor, not permission to process: whether you may disclose the material at all is the question before it.",
         "Can I reduce what I send? Send the smallest extract the task needs and replace direct identifiers. Whether what remains is low-risk enough depends on the content — context, rarity and what the recipient already knows can identify someone with no name in sight.",
         "Would I be comfortable explaining this exact step to the client afterwards? That question catches more than the other four.",
       ],
@@ -111,20 +127,23 @@ const de: Article = {
       paragraphs: [
         "Stecken personenbezogene Daten drin? Das ist eine Datenschutzfrage, und die DSGVO beantwortet sie.",
         "Ist es vertraulich — Quellcode eines Kunden, ein unveröffentlichtes Konzept, etwas unter NDA? Das ist eine Vertrags- und Geschäftsgeheimnisfrage, und dazu sagt die DSGVO nichts.",
-        "Material kann keines von beidem sein, eines, oder beides. Ein Architekturdokument eines Kunden ohne einen einzigen Namen ist vollständig vertraulich und enthält keine personenbezogenen Daten. Die erste Frage zu klären klärt die zweite nicht — und es ist die zweite, an der häufiger eine Zusammenarbeit endet.",
+        "Material kann keines von beidem sein, eines oder beides. Ein Architekturdokument eines Kunden ohne einen einzigen Namen ist vollständig vertraulich und enthält keine personenbezogenen Daten. Die erste Frage zu klären klärt die zweite nicht — und es ist die zweite, an der häufiger eine Zusammenarbeit endet.",
       ],
     },
     {
       heading: "Personenbezogene Daten brauchen eine Rechtsgrundlage",
       level: "law",
-      checked: CHECKED,
+      checked: LEGAL_BASIS_CHECKED,
       paragraphs: [
         "Es gibt kein allgemeines Verbot, personenbezogene Daten mit einem KI-Tool zu verarbeiten. Es gibt die Pflicht, dafür eine Rechtsgrundlage nach Art. 6 DSGVO zu haben — und sie benennen zu können.",
-        "Verarbeitet der Anbieter die Daten weisungsgebunden für dich, ist er Auftragsverarbeiter. Art. 28 DSGVO verlangt dann einen Vertrag über diese Verarbeitung und dass du nur Auftragsverarbeiter einsetzt, die hinreichende Garantien bieten. Praktisch heißt das: ein Auftragsverarbeitungsvertrag, den die Geschäftstarife der großen Anbieter bereitstellen und die Verbrauchertarife in der Regel nicht.",
+        "Art. 6 Abs. 1 nennt sechs, verkürzt: Einwilligung, Erfüllung eines Vertrags mit der betroffenen Person, rechtliche Verpflichtung des Verantwortlichen, lebenswichtige Interessen, eine Aufgabe im öffentlichen Interesse oder in Ausübung öffentlicher Gewalt und berechtigte Interessen. Welche passt, entscheidet die Verarbeitung und nicht das Tool — und diese Seite sucht sie nicht für dich aus. Bei zweien ist Vorsicht angebracht. Berechtigte Interessen sind kein Freibrief: Sie greifen nur, soweit nicht die Interessen oder Grundrechte und Grundfreiheiten der betroffenen Person überwiegen. Und die Einwilligung trägt weniger, als sie aussieht, wenn es um Daten der eigenen Beschäftigten geht: Der EDSA hält es für problematisch, wenn Arbeitgeber sich darauf stützen, weil die Abhängigkeit in diesem Verhältnis eine freiwillige Einwilligung unwahrscheinlich macht. Ausgeschlossen ist sie nicht, aber im Beschäftigungsverhältnis ist eine freiwillige Einwilligung nach dem EDSA die Ausnahme: Eine Verweigerung darf keinerlei nachteilige Folgen haben.",
+        "Eine Rechtsgrundlage ist notwendig und für sich genommen nicht ausreichend. Die Grundsätze des Art. 5 gelten weiter, besondere Kategorien personenbezogener Daten — Gesundheit, biometrische Daten, Gewerkschaftszugehörigkeit und die übrigen — brauchen zusätzlich einen Erlaubnistatbestand nach Art. 9, und ein externer Anbieter zusätzlich die Auftragsverarbeitung weiter unten.",
+        "Verarbeitet der Anbieter die Daten weisungsgebunden für dich, ist er Auftragsverarbeiter. Art. 28 DSGVO verlangt dann einen Vertrag über diese Verarbeitung und dass du nur Auftragsverarbeiter einsetzt, die hinreichende Garantien bieten. Praktisch heißt das: ein Auftragsverarbeitungsvertrag, den die Business-Tarife der großen Anbieter bereitstellen und die Privatkundentarife in der Regel nicht.",
         "Namen durch Platzhalter zu ersetzen senkt das Risiko erheblich und ist sinnvoll. Aus der DSGVO führt es nicht heraus — was du wieder zuordnen kannst, ist pseudonymisiert, nicht anonymisiert, und pseudonymisierte Daten bleiben personenbezogen.",
       ],
       links: [
         { label: "Art. 6 DSGVO — Rechtmäßigkeit der Verarbeitung", href: GDPR_ART_6 },
+        { label: "EDSA-Leitlinien 05/2020 zur Einwilligung — Ungleichgewicht der Macht", href: EDPB_CONSENT_DE },
         { label: "Art. 28 DSGVO — Auftragsverarbeiter", href: GDPR_ART_28 },
       ],
     },
@@ -133,8 +152,8 @@ const de: Article = {
       level: "law",
       checked: CHECKED,
       paragraphs: [
-        "Nach der EU-Geschäftsgeheimnis-Richtlinie ist eine Information nur dann ein Geschäftsgeheimnis, wenn drei Dinge zutreffen: Sie ist geheim, sie hat gerade deshalb wirtschaftlichen Wert, und sie war den Umständen nach angemessenen Geheimhaltungsmaßnahmen unterworfen.",
-        "Bei dieser dritten Bedingung lohnt es sich innezuhalten. Sorgloser Umgang riskiert nicht nur den Abfluss — er kann der Information den Status als Geschäftsgeheimnis überhaupt kosten, und damit den Schutz, auf den du dich sonst berufen würdest. Kundenmaterial in ein Konto zu kopieren, dessen Bedingungen Training damit erlauben, lässt sich schwer als angemessene Maßnahme beschreiben.",
+        "Nach der EU-Geschäftsgeheimnis-Richtlinie ist eine Information nur dann ein Geschäftsgeheimnis, wenn drei Dinge zutreffen: Sie ist geheim, sie hat gerade deshalb wirtschaftlichen Wert, und sie ist den Umständen nach angemessenen Geheimhaltungsmaßnahmen unterworfen.",
+        "Bei dieser dritten Bedingung lohnt es sich innezuhalten. Sorgloser Umgang riskiert nicht nur den Abfluss — er kann die Information ihren Status als Geschäftsgeheimnis gleich ganz kosten, und damit den Schutz, auf den du dich sonst berufen würdest. Kundenmaterial in ein Konto zu kopieren, dessen Bedingungen Training damit erlauben, lässt sich schwer als angemessene Maßnahme beschreiben.",
         "Daneben stehen deine eigenen Verträge. Eine Verschwiegenheitsvereinbarung kann die Übermittlung an einen externen Anbieter untersagen — unabhängig davon, ob dort jemand den Inhalt tatsächlich liest. Empfänger ist rechtlich das Unternehmen, das den Dienst betreibt, nicht das Modell.",
       ],
       links: [
@@ -154,11 +173,11 @@ const de: Article = {
       level: "advice",
       paragraphs: ["Frag in dieser Reihenfolge und hör beim ersten Nein auf."],
       list: [
-        "Gehört es mir zum Weitergeben? Gehört es einem Kunden oder Arbeitgeber, ist das nicht allein deine Entscheidung.",
+        "Ist es überhaupt meins? Gehört es einem Kunden oder Arbeitgeber, ist die Weitergabe nicht allein deine Entscheidung.",
         "Stecken personenbezogene Daten drin? Wenn ja: Rechtsgrundlage benennen und prüfen, ob für das Tool ein Auftragsverarbeitungsvertrag besteht.",
-        "Bin ich im richtigen Konto? Für fremdes Material ein freigegebener Geschäftstarif — jedes Mal. Das ist die Untergrenze, keine Verarbeitungserlaubnis: Ob du die Daten überhaupt offenlegen darfst, ist die Frage davor.",
+        "Bin ich im richtigen Konto? Für fremdes Material ein freigegebener Business-Tarif — jedes Mal. Das ist die Untergrenze, keine Verarbeitungserlaubnis: Ob du die Daten überhaupt offenlegen darfst, ist die Frage davor.",
         "Kann ich weniger schicken? Schick den kleinsten Auszug, den die Aufgabe braucht, und ersetz direkte Identifikatoren. Ob das Verbleibende risikoarm genug ist, hängt vom Inhalt ab — Kontext, Seltenheit und was der Empfänger ohnehin weiß, können eine Person auch ohne Namen erkennbar machen.",
-        "Würde ich dem Kunden diesen Schritt hinterher in Ruhe erklären? Diese Frage fängt mehr ab als die anderen vier.",
+        "Könnte ich dem Kunden genau diesen Schritt hinterher guten Gewissens erklären? Diese Frage fängt mehr ab als die anderen vier.",
       ],
     },
     {
@@ -175,7 +194,7 @@ const de: Article = {
       level: "assessment",
       paragraphs: [
         "Das ist ein Denkgerüst, keine Rechtsberatung. Branchenregeln — Gesundheit, Anwaltschaft, Finanzwesen — bringen Pflichten mit, die diese Seite nicht berührt, und ein Arbeitsvertrag kann strenger sein als das Gesetz.",
-        "Gehört das Material einem Kunden und die Antwort ist nicht offensichtlich, ist Nachfragen der billigste Schritt. Es ist auch der, der die Beziehung erhält, falls die Antwort nein lautet.",
+        "Gehört das Material einem Kunden und ist die Antwort nicht offensichtlich, ist Nachfragen der billigste Schritt. Es ist auch der, der die Beziehung erhält, falls die Antwort nein lautet.",
       ],
     },
   ],

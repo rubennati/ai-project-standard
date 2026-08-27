@@ -96,14 +96,14 @@ const de: Article = {
   title: "Wann ist ein Projekt Open Source?",
   description:
     "Öffentlicher Code ist nicht Open Source. Entscheidend ist die Lizenz — und ein Repository ohne sie räumt fast nichts ein. Mit einer Ausnahme, die auf GitHub selbst gilt.",
-  lead: "Open Source hängt an der Lizenz, nicht daran, dass man den Code sehen kann. Ein öffentliches Repository ohne Lizenzdatei ist kein Open Source, und der Unterschied hat Folgen für jeden, der damit arbeiten will.",
+  lead: "Open Source hängt an der Lizenz, nicht daran, dass man den Code sehen kann. Ein öffentliches Repository ohne Lizenzdatei ist nicht Open Source, und der Unterschied hat Folgen für jeden, der damit arbeiten will.",
   sections: [
     {
       heading: "Die Definition ist ein Dokument mit zehn Punkten",
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "Die Open Source Initiative veröffentlicht die Open Source Definition. Sie steht bei Version 1.9, zuletzt geändert am 22. März 2007. Das ist beim Zitieren erwähnenswert: der Text ist knapp zwanzig Jahre alt und hat sich nicht bewegt, während die Branche um ihn herum das sehr wohl getan hat.",
+        "Die Open Source Initiative veröffentlicht die Open Source Definition. Sie steht bei Version 1.9, zuletzt geändert am 22. März 2007. Das ist beim Zitieren erwähnenswert: Der Text ist knapp zwanzig Jahre alt und hat sich nicht bewegt, während die Branche um ihn herum das sehr wohl getan hat.",
         "Eine Lizenz muss alle zehn Kriterien erfüllen. Eines zu verfehlen genügt, um aus der Definition zu fallen.",
       ],
       list: [

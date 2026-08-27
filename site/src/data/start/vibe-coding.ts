@@ -256,7 +256,7 @@ const de: VibeCodingContent = {
     {
       title: "Eine Annahme billig prüfen",
       outcome:
-        "Den riskanten Teil noch diese Woche gegen eine echte Eingabe stellen, statt einen Monat lang um eine Vermutung herum zu entwerfen.",
+        "Den riskanten Teil noch diese Woche an einer echten Eingabe prüfen, statt einen Monat lang auf einer Vermutung aufzubauen.",
     },
     {
       title: "Die ungeliebte Arbeit erledigen",
@@ -294,7 +294,7 @@ const de: VibeCodingContent = {
       work: "Andere verlassen sich auf das Ergebnis. Es wird über Jahre gepflegt, und irgendwann ändert es jemand, der es nicht geschrieben hat.",
       ai: "Entwirft, räumt auf und erklärt innerhalb einer geprüften Änderung — und schreibt den Test, der ohne die Korrektur fehlschlägt.",
       human: "Die Verantwortung für das Ergebnis: Review, die Entscheidungen samt Begründung und die Stellen, die nicht geraten werden dürfen — Anmeldung, personenbezogene Daten, Geld, Löschung.",
-      check: "Eine zweite Person kann die Änderung prüfen und sagen, warum sie so aussieht — und eine falsche Änderung wird gestoppt, bevor sie den Hauptzweig erreicht.",
+      check: "Eine zweite Person kann die Änderung prüfen und sagen, warum sie so aussieht — und eine falsche Änderung wird gestoppt, bevor sie den Default-Branch erreicht.",
     },
     {
       name: "Betreiben",
@@ -317,7 +317,7 @@ const de: VibeCodingContent = {
     "Weder das eine noch das andere schuldet irgendwem Tests, ein Review oder einen geprobten Restore. Der Rest dieser Seite gilt dem Fall, dass die Arbeit dort eben nicht endet.",
   ],
 
-  transitionsHeading: "Was ausdrücklich werden muss, wenn es weitergeht",
+  transitionsHeading: "Was benannt sein muss, wenn es weitergeht",
   transitionsLead:
     "Niemand erzwingt einen Phasenwechsel, und viele Arbeiten haben nie einen. Wenn er passiert, passiert er leise — deshalb lohnt es sich, jede Grenze vorher zu benennen statt sie hinterher zu bemerken.",
   transitions: [
@@ -329,7 +329,7 @@ const de: VibeCodingContent = {
     },
     {
       title: "Von Prototyp zu Ausliefern",
-      question: "Wer hängt inzwischen daran, und was enthält es, das diese Leute nicht verlieren dürfen?",
+      question: "Wer hängt inzwischen daran, und was davon dürfen diese Leute nicht verlieren?",
       reason:
         "Dieser Übergang kann passieren, ohne dass ihn jemand entscheidet: Ein Prototyp bekommt Nutzerinnen und Nutzer, die Bezeichnung bleibt zurück, und die Pflichten ändern sich trotzdem.",
     },
@@ -346,13 +346,13 @@ const de: VibeCodingContent = {
   },
 
   unsafeDescription:
-    "Echte Nutzerinnen und Nutzer, personenbezogene Daten oder die Arbeit eines anderen Teams hängen inzwischen an etwas, das weiter wie ein Prototyp gepflegt wird. Die Phase hat sich geändert, ohne dass etwas befördert wurde, und die Absicherung ist nicht mitgewachsen.",
+    "Echte Nutzerinnen und Nutzer, personenbezogene Daten oder die Arbeit eines anderen Teams hängen inzwischen an etwas, das weiter wie ein Prototyp gepflegt wird. Die Phase hat sich geändert, ohne dass es jemand entschieden hätte, und die Absicherung ist nicht mitgewachsen.",
   unsafeAlternative:
     "Baue keine Funktionen mehr dazu. Halte fest, was darin steckt und wer davon abhängt, und bring es dann in die Phase, in der es tatsächlich ist: Tests an den Stellen, die wehtun, ein Review, das eine zweite Person leisten kann, und ein Restore, den du durchgespielt und nicht nur geplant hast.",
 
   artifactTitle: "AI-assisted development",
   artifactDescription:
-    "Der Rahmen, in dem ein Agent arbeitet, sobald ein Repository prüfbar bleiben muss: was er selbst entscheidet, wann er innehält und fragt, was er nie tun darf und was geprüft sein muss, bevor etwas den Hauptzweig erreicht.",
+    "Der Rahmen, in dem ein Agent arbeitet, sobald ein Repository prüfbar bleiben muss: was er selbst entscheidet, wann er innehält und fragt, was er nie tun darf und was geprüft sein muss, bevor etwas den Default-Branch erreicht.",
   artifactStatus: "draft",
 
   nextTitle: "Das Ergebnis prüfen",

@@ -6,6 +6,58 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ## [Unreleased]
 
+### Changed — one voice in both languages, and links that keep their promise
+
+- German pages had roughly two dozen sentences that were grammatically broken
+  or built out of English sentence logic, and ten places where the German made
+  a different claim than the English: a frequency where the English said "can",
+  a decision the reader supposedly made themselves where the vendor made it for
+  them, a dropped "untrusted", a dropped "public-interest", a trade-secret
+  condition in the past tense. Each is now the same claim in both languages,
+  written as German rather than translated.
+- Several links promised a page that no longer exists under that name. The
+  Decision Maker page offered "the six steps" of a lifecycle retired two slices
+  ago; four links still called the Law orientation page by its old count-led
+  title. `llms.txt` was still advertising three pages as they read before slices
+  3 and 4.
+- The Data Sovereignty page promised "the fourteen things a hosting location
+  does not tell you" over a figure with ten rows. The count is gone rather than
+  corrected — the page never needed one.
+- The blog's jurisdiction section linked to the deletion page; it now links to
+  the page that answers who can compel disclosure, and the deletion link moved
+  down to the deletion question.
+- "Let it run without you" was the only way of working with nowhere to go. It
+  now points at Secure & verify, which since slice 5 answers what changes when
+  something runs unwatched and says plainly which part it does not cover.
+- The Law page on US hosting stopped re-teaching the "EU-hosted" decoder that
+  Data Sovereignty owns, and keeps the half that is actually about transfers.
+- German glossary pages no longer present English prose as though it were
+  German: where a section falls back, it says so and is tagged as English. The
+  "observed in" values are translated, and the filter says "Angezeigt: 12
+  Einträge" rather than "Zeige 12 Einträge".
+- One concept, one word, in both languages: personal account / Privatkonto,
+  consumer plan / Privatkundentarif, business plan / Business-Tarif.
+
+### Added — three answers the site pointed at without giving
+
+- "Can I enter this data into an AI tool?" told readers to name the legal basis
+  and never named them. It now names the six in Art. 6(1) GDPR, warns that
+  legitimate interests carries a balancing test, and says why consent is weaker
+  than it looks for your own staff's data — without picking one for you.
+- "Deleting chats and data" now separates getting a copy out from deleting what
+  the product keeps: an export is a product capability rather than an
+  entitlement, on workplace plans it can sit at workspace level rather than with
+  each member — the rule differs by product and plan, and both vendors' current
+  positions are given — and Art. 20 portability is a narrower right than its
+  name suggests.
+- "Who owns code written at work?" answers what happens when the AI wrote it. A
+  licence grants only what the licensor holds; the originality test for a
+  computer program does not change because a tool helped; and where sufficient
+  human authorship cannot be identified in a generated part, that part should
+  not be assumed to be protected or yours to license. Whether you may exercise
+  the economic rights is a separate question from originality, and the boundary
+  is assessed case by case rather than by a share of the lines.
+
 ### Changed — supporting pages become reachable, and publication becomes deliberate
 
 - The 21 pages under `/docs/**` are retired from the public site. They were the

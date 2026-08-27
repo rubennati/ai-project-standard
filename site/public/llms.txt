@@ -20,16 +20,16 @@ The three questions the site opens with, each linking to the page that answers i
 
 ## Ways of working
 
-- [How do you want to work with AI?](https://ai-standard.rubennati.at/start): Six ways of working, from asking a question to something that runs without you. What stays yours, what the system can reach or do, and what to check in each.
-- [What an AI tool is doing when you use it](https://ai-standard.rubennati.at/start/what-it-is-doing): Why a model cannot reach your files on its own, why it forgets, why more documents do not mean better answers, and why the product is not the model.
-- [I decide for others — where do I start?](https://ai-standard.rubennati.at/start/decision-maker): The AI literacy duty under AI Act Art. 4, what to decide first, and why banning tools produces shadow IT.
+- [How do you want to work with AI?](https://ai-standard.rubennati.at/start): Six ways of working, from asking a question to something that runs without you. What each is good for, and what stays yours in every one of them.
+- [Do you need a different tool — or a better setup?](https://ai-standard.rubennati.at/start/what-it-is-doing): Why a tool problem and a setup problem look alike and are fixed differently, and why how much setup you need does not follow from how skilled you are.
+- [I am responsible for AI use by others — where do I start?](https://ai-standard.rubennati.at/start/decision-maker): Start by finding out what is already in use. Then the AI literacy duty under AI Act Art. 4, what to decide first, and why banning tools produces shadow IT.
 
 ## Access & actions
 
 - [What can it access, and what can it do?](https://ai-standard.rubennati.at/data-flows): Four things worth separating when an AI system is connected to something: what it can read, what stays stored, what it can change, and what it can set off elsewhere.
 - [Are your chats used for model training?](https://ai-standard.rubennati.at/data-flows/training-and-retention): Training depends on the product, the account type and the settings, not on the vendor. Includes the trap of a developer tool on a personal account.
 - [What changes when you allow model training](https://ai-standard.rubennati.at/data-flows/what-you-agree-to): At some providers one setting governs both training and how long conversations are kept.
-- [Deleting chats and data: what goes and what stays](https://ai-standard.rubennati.at/data-flows/getting-it-back-out): What deleting a chat actually removes, which deletion duties exist, and where a local model genuinely fits.
+- [Deleting chats and data: what goes and what stays](https://ai-standard.rubennati.at/data-flows/getting-it-back-out): What deleting a chat actually removes, which deletion duties exist, and why getting a copy out is a separate question from deleting one.
 - [Where your data is, and who can reach it](https://ai-standard.rubennati.at/data-flows/data-sovereignty): The operating models, the axes they differ on, and what a hosting location does not tell you.
 - [Which of your systems can be a knowledge source](https://ai-standard.rubennati.at/data-flows/where-knowledge-lives): Why mail is a poor place to keep what you know, and what each kind of system is good at.
 
@@ -44,8 +44,9 @@ The three questions the site opens with, each linking to the page that answers i
 
 The legal questions that come up when you use AI at work: what may be entered, confidentiality and data protection, transfers outside the EU, and the AI Act's own duties.
 
+- [Which rules apply when you use AI at work?](https://ai-standard.rubennati.at/law): The four legal questions, and which page answers each of them.
 - [Which legal question are you asking?](https://ai-standard.rubennati.at/law/four-separate-questions): Data protection, AI regulation, confidentiality and security test different things — different answers, different sources.
-- [Can I enter this data into an AI tool?](https://ai-standard.rubennati.at/law/what-may-go-in): Personal data and confidentiality are two questions with two different answers.
+- [Can I enter this data into an AI tool?](https://ai-standard.rubennati.at/law/what-may-go-in): Personal data and confidentiality are two questions with two different answers. Includes the six legal bases under Art. 6 GDPR and why consent is rarely the one at work.
 - [Does a US-hosted AI tool break the GDPR?](https://ai-standard.rubennati.at/law/us-cloud-and-the-gdpr): "It runs in the US, so it is illegal" is not what the regulation says — and "it runs in the EU" is not compliance.
 - [AI Act: labelling AI-generated content](https://ai-standard.rubennati.at/law/ai-act-transparency): Article 50 has applied since 2 August 2026. What must be disclosed, who is obliged, and what the transition covers.
 
@@ -53,9 +54,10 @@ The legal questions that come up when you use AI at work: what may be entered, c
 
 Questions that arrive once software — including software built with AI — is published or maintained: the licence, the obligations, and who holds the rights.
 
+- [Open source](https://ai-standard.rubennati.at/open-source): Where creating, publishing and maintaining software continues, including software built with AI.
 - [When is a project open source?](https://ai-standard.rubennati.at/open-source/what-makes-it-open-source): The licence decides, not visibility. Includes what GitHub's own terms permit without one.
 - [Which licence, and what does it commit you to?](https://ai-standard.rubennati.at/open-source/choosing-a-licence): Permissive, file-level copyleft, strong copyleft — and what the adoption numbers do and do not support.
-- [Who owns code written at work?](https://ai-standard.rubennati.at/open-source/code-written-at-work): § 40b Austrian and § 69b German Copyright Act give rights of use, not authorship. US work-for-hire is a different construction.
+- [Who owns code written at work?](https://ai-standard.rubennati.at/open-source/code-written-at-work): § 40b Austrian and § 69b German Copyright Act give rights of use, not authorship. US work-for-hire is a different construction, and AI-written portions raise a further question about what a licence can grant.
 
 ## Glossary
 

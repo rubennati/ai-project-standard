@@ -71,7 +71,7 @@ const en: ControlLifecycleContent = {
       paths: [
         { label: "Can I enter this data into an AI tool?", href: "/law/what-may-go-in" },
         {
-          label: "Four questions that are not the same question",
+          label: "Which legal question are you asking?",
           href: "/law/four-separate-questions",
         },
       ],
@@ -161,7 +161,7 @@ const de: ControlLifecycleContent = {
       paths: [
         { label: "Welche Daten darf ich in ein KI-Tool eingeben?", href: "/de/law/what-may-go-in" },
         {
-          label: "Vier Fragen, die nicht dieselbe Frage sind",
+          label: "Welche rechtliche Frage stellst du gerade?",
           href: "/de/law/four-separate-questions",
         },
       ],
@@ -200,7 +200,7 @@ const de: ControlLifecycleContent = {
       name: "Es läuft, ohne dass ich zusehe — was ändert sich?",
       body: [
         "Ein Aufbau kann sich verändern, während er weiterläuft: Rechte können ihren Grund überleben, das Verhalten oder die Voreinstellungen des Produkts können sich ändern, und wiederkehrende Arbeit kann scheitern, ohne dass jemand jeden Durchlauf liest.",
-        "Wie weit du gehst, richtet sich nach der Regel oben. Wo ein Fehler wenig kostet, kann es reichen, das Ganze in festen Abständen durchzugehen. Muss ein Fehler auffallen, während er passiert, brauchst du einen Betrieb, der das erkennt — und den deckt diese Seite bisher nicht ab.",
+        "Wie weit du gehst, richtet sich nach der Regel oben. Wo ein Fehler wenig kostet, kann es reichen, das Ganze in festen Abständen durchzugehen. Muss ein Fehler auffallen, während er passiert, brauchst du laufende Überwachung, die das erkennt — und die deckt diese Website bisher nicht ab.",
       ],
       paths: [
         {
@@ -218,7 +218,7 @@ const de: ControlLifecycleContent = {
     {
       name: "Wie komme ich wieder heraus?",
       body: [
-        "Darin stecken drei Fragen. Künftige Zugriffe zu stoppen, ist der Teil, den du selbst in der Hand hast: das Recht im Zielsystem entfernen, die Anbindung abschalten, die Zugangsdaten entziehen, die Automatisierung ausschalten. Zu rekonstruieren, was bereits passiert ist, hängt davon ab, was damals notiert wurde und was das System aufbewahrt hat, in dem gehandelt wurde.",
+        "Darin stecken drei Fragen. Künftige Zugriffe zu stoppen, ist der Teil, den du selbst in der Hand hast: das Recht im Zielsystem entfernen, die Anbindung abschalten, das Zugangsmittel entziehen, die Automatisierung ausschalten. Zu rekonstruieren, was bereits passiert ist, hängt davon ab, was damals notiert wurde und was das System aufbewahrt hat, in dem gehandelt wurde.",
         "Eine Handlung rückgängig zu machen, ist keines von beidem. Ob sich etwas zurückholen lässt, entscheiden das System, in dem es passiert ist, und die Handlung selbst: Versionsverlauf, ein Rückgängig, eine Rücksicherung — sofern es sie gibt. Finde heraus, was davon dir zur Verfügung steht, bevor du etwas handeln lässt.",
       ],
       paths: [

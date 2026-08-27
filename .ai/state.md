@@ -5,15 +5,15 @@
 - **Objective, set 2026-08-24:** implement the whole-site editorial and
   structural review in seven slices, in order, without churning what already
   works. The slices, their scope and their dependencies are in `tasks.md`.
-- **Now: slice 6 — Law, About, Evidence, Reference and discovery — shipped in
-  #171 (2026-08-27).** It is not carried forward as an active objective; see
-  *Settled* below for its durable outcome. Slice 7 — site-wide voice, German,
-  terminology and quality — is next and has not started.
+- **Now: slice 7 — site-wide voice, German, terminology and quality —
+  implemented on `feature/slice-7-site-quality`, awaiting human review.** Not
+  shipped. Its durable outcomes are in `decisions.md` (four entries of
+  2026-08-27) and in *Settled* below.
 - **Ledger:** slice 1 shipped (#158) · slice 2 shipped (#161) · slice 3 shipped
   (#163) · slice 4 shipped (#165) · Homepage Correction Pass shipped (#167,
   between 4 and 5, not slice 8) · slice 5 shipped (#169) · slice 6 shipped
-  (#171) · slice 7 next, not started. No slice 8; slice 7 is the final
-  numbered objective, followed by a final overall site check.
+  (#171) · slice 7 implemented, in review. No slice 8; slice 7 is the final
+  numbered objective, and only the final overall site check follows it.
 
 The review itself is finished. What it established durably is in
 `decisions.md` (2026-08-24) and in the slice list; the finding set behind it is
@@ -134,6 +134,28 @@ exists or is planned. `/impressum` and `/datenschutz` redirect to their
 German pages. `llms.txt` matches the shipped architecture; canonical identity
 is unchanged.
 
+Slice 7 — site-wide voice, German, terminology and quality — is implemented and
+in review, and settles to the same standard once merged; the four decisions of
+2026-08-27 carry it. One claim per concept in both languages, and the German
+says what the English says: ten parity defects are gone, including a frequency
+claim where the English says *can*, an inverted actor in the blog, a dropped
+*untrusted* and a dropped *public-interest*, and a trade-secret condition that
+read as past rather than continuing. `/start/what-it-is-doing` keeps its URL
+deliberately, which closes the slice-4 route question. Art. 22 GDPR is recorded
+as deliberate non-coverage. Terminology is fixed by meaning — `Privatkonto`,
+`Privatkundentarif`, `Business-Tarif`, `Zugangsmittel` against `Geheimnis`,
+`Anbindung` against `Verbindung`, `AI Act` as the reader-facing name — with no
+CI rule now or planned, and generic *tier* deliberately left without a
+mandatory German word so it cannot collide with the evidence method's `Stufen`.
+Three questions the site pointed at without answering are answered on the pages
+that already owned their neighbourhood — export and portability on
+`getting-it-back-out`, the six Art. 6(1) bases on `what-may-go-in`, and
+AI-written code on `code-written-at-work` — and no route was created for any of
+them. `/start`'s sixth way of working now reaches `/secure-setup`, which is the
+last dead end the review found. Memory as a product setting stays unowned and
+is future scope. German glossary pages stop presenting English prose as German:
+a fallback is labelled and tagged, and the observed-in values are translated.
+
 ## Homepage Correction Pass — shipped in #167, closed
 
 Approved and implemented 2026-08-25–26, between slice 4 and slice 5. Not
@@ -253,62 +275,38 @@ are in `decisions.md`, 2026-08-27.
 
 ## Queued, not blocking
 
-Findings surfaced while reconciling ownership across slices 4 and 5. None are
-answerable from repository evidence and none block anything currently in
-progress; each waits for the slice it names, or for the slice 7 whole-site
-pass named in `tasks.md` where none is named.
+What slice 7 did not absorb. The findings it closed are gone from this list —
+their outcomes are in `decisions.md`, 2026-08-27, and in *Settled* above.
 
-- **Export and portability have no owner.** `getting-it-back-out` answers
-  deletion; nothing on the site answers *how do I get my data out*. Slice 4
-  deliberately did not build it or stretch the deletion page to cover it. Slice
-  7 must assign an existing owner, add coverage, or record it as deliberately
-  out of scope — it is a queued content gap, not a reason later work should
-  stop.
-- **`/start/what-it-is-doing`'s H1 no longer matches its slug.** The page now
-  reads `Do you need a different tool — or a better setup?` at
-  `/start/what-it-is-doing`. That mismatch is evidence for a later
-  route-quality decision, not a decision itself; slice 4 kept the URL and did
-  not act on it.
-- **No owner for operating something that runs unattended.** Two hubs now point
-  at the same absence by deliberate decision: `/start`'s sixth way of working
-  has no path onward, and `/secure-setup` states that detecting a failure while
-  it is happening is not covered here. Everything a reader can act on —
-  standing access, repeating output quality, product defaults — already has an
-  owner, so slice 5 built no route. Whether the remainder becomes one is a
-  content-scope decision for slice 7 or later, and it needs the change-scope
-  approval `AGENTS.md` requires.
-- **The three account switches have no home for a reader who never grants an
-  agent anything.** Slice 5's first pass compressed them onto
-  `before-you-grant-access`, linked to the `/data-flows` pages that keep the
-  facts current; a rendered-review pass then removed the section entirely,
-  because it had grown that page to 9+ mobile screens on a concept the page
-  does not own. The facts stayed exactly where they were before slice 5 —
-  `training-and-retention` and `getting-it-back-out` — and nothing moved.
-  Where a reader who only opens a chat window should meet them is still
-  unsettled. Slice 7.
-- **Product memory as a setting has no fact owner.** `training-and-retention`
-  owns training and retention and `getting-it-back-out` owns deletion, so both
-  are linked; memory across conversations is named without a link because no
-  page currently keeps that fact current.
-- **Three legal concepts have no public owner** — rights in AI output,
-  automated decision-making (Art. 22 GDPR), and consent versus the other
-  Art. 6 legal bases (`what-may-go-in` says "name the legal basis" without
-  naming them). Slice 7 or later assigns an owner, adds coverage, or records
-  each as deliberately out of scope.
+- **Product memory as a setting has no fact owner.** `where-knowledge-lives`
+  explains the mechanism; the switch itself needs per-vendor checking with
+  sources, which is content scope rather than editing. Slice 7 deliberately did
+  not add it. Future scope.
 - **Multi-session reviewability has no public owner.** "Several AI sessions
   touched this repository — how does the work stay reviewable?" would be a
   fresh, bilingual Open Source article if built; `practical-ai-collaboration`
   is not it — see `decisions.md`, 2026-08-27.
-- **Glossary contextual coverage.** Five of 143 term pages have an editorial
-  inbound link. The discovery rule — link a term when understanding it is
-  necessary at that point — is stated; applying it page by page is ordinary
-  editing, slice 7 or later. The platform/UI decoder entries and the six
-  AppSec terms are untouched housekeeping candidates.
-- **Dead code left deliberately in place after the `/docs` retirement** — the
-  `license` prop on `Base.astro`/`JsonLd.astro` (every public page is now
-  CC BY 4.0), the unused `mdx()` integration, `ui.docs`, and the `docs/**`
-  path trigger in `pages.yml` (deploys still run, output unchanged). Internal
-  cleanup, not reader-facing; remove when something touches those files.
+- **Glossary housekeeping.** Contextual discovery is answered: six terms are now
+  linked where a journey page hands the reader the word. What remains is the
+  entries themselves — the hedged Claude-Desktop UI labels, `Browse Plugin`
+  whose definition disagrees with its own name, and the `Codex` /
+  `ChatGPT Codex` pair for one shifting product. A retire-or-verify pass, not
+  editing. Exposure is limited: product labels are hidden on the index unless a
+  reader asks for them.
+- **Rights in AI output beyond code.** `code-written-at-work` now answers the
+  code, publishing and licensing case. Generated text and images in general are
+  a different question with a different audience, and no page raises it. Future
+  scope.
+- **Dead code left deliberately in place** — the `license` prop on
+  `Base.astro`/`JsonLd.astro` (no caller passes it; the CC BY 4.0 default is
+  correct on every page), the unused `mdx()` integration and its dependency,
+  and the `docs/**` path trigger in `pages.yml` (a docs-only push deploys an
+  unchanged site). None affects public output. Remove when something touches
+  those files; `ui.docs` and the dead `CHECKED` export in `what-it-is-doing`
+  went in slice 7 because it was editing those files anyway.
+- **A second blog post makes `/blog` hard to reach.** The index is reachable
+  only from its own article's byline. Fine for one post; worth revisiting
+  before a second ships.
 
 ## Active constraints
 

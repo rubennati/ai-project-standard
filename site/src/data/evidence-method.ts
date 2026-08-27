@@ -86,7 +86,7 @@ const de: EvidenceMethodContent = {
     "Alles, was darüber geschrieben wurde.",
   ],
   sourcesNote:
-    "Diese Rangfolge hat hier bereits einen Fehler gefangen: Eine EU-Verordnung wurde als vorläufige Einigung beschrieben, weil eine Kommissions-FAQ das noch so sagte, während der Rechtsakt seit einer Woche in Kraft war.",
+    "Diese Rangfolge hat hier schon einmal einen Fehler aufgedeckt: Eine EU-Verordnung wurde als vorläufige Einigung beschrieben, weil eine Kommissions-FAQ das noch so sagte, während der Rechtsakt seit einer Woche in Kraft war.",
   sections: [
     {
       heading: "Was ein Prüfdatum leistet",
@@ -98,14 +98,14 @@ const de: EvidenceMethodContent = {
     {
       heading: "Quelle zu sein heißt nicht, recht zu haben",
       paragraphs: [
-        "Ein Anbieter ist maßgeblich für das, was er über sich selbst veröffentlicht hat, und für nichts darüber hinaus: Seine Dokumentation gibt seine Bedingungen wieder, sie prüft nicht seine Systeme. Deshalb steht hier, dass der Anbieter etwas angibt, statt das Verhalten schlicht zu behaupten — und das ist keine Wortklauberei, sondern der Unterschied zwischen einer Zusage, an der man jemanden festhalten kann, und einer Tatsache, die man überprüft hat.",
+        "Ein Anbieter ist maßgeblich für das, was er über sich selbst veröffentlicht hat, und für nichts darüber hinaus: Seine Dokumentation gibt seine Bedingungen wieder, sie prüft nicht seine Systeme. Deshalb steht hier, dass der Anbieter etwas angibt, statt das Verhalten schlicht zu behaupten — und das ist keine Wortklauberei, sondern der Unterschied zwischen einer Zusage, bei der man jemanden beim Wort nehmen kann, und einer Tatsache, die man überprüft hat.",
         "Dieselbe Linie läuft durch die Rechtsseiten. Eine Norm wiederzugeben und sie auf deine Lage anzuwenden sind zwei verschiedene Handlungen, die verschiedene Fachkunde verlangen: Das Erste trägt die Kennzeichnung Rechtslage, und sobald ein Satz zu einem Schluss über einen konkreten Fall kommt, trägt er Einschätzung — gleich, wer ihn geschrieben hat.",
       ],
     },
     {
       heading: "Wenn hier etwas falsch ist",
       paragraphs: [
-        "Korrekturen sind willkommen und kein Gefallen. Jede Seite — auch diese — endet mit einem Link „Problem melden“, der ein Issue mit Seite und URL bereits ausgefüllt öffnet. Wenn hier etwas falsch ist, ist das der schnellste Weg, es richtigzustellen — und die Korrektur wird festgehalten statt still nachgebessert.",
+        "Korrekturen sind willkommen und kein Gefallen. Jede Seite — auch diese — endet mit einem Link „Problem melden“, der ein Issue öffnet, in dem Seite und URL schon eingetragen sind. Wenn hier etwas falsch ist, ist das der schnellste Weg, es richtigzustellen — und die Korrektur wird festgehalten statt still nachgebessert.",
       ],
     },
   ],
