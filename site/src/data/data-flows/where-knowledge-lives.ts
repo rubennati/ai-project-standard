@@ -252,7 +252,7 @@ const de: Article = {
       heading: "\u201eMit unseren Daten trainiert\u201c kann jeden dieser Wege meinen",
       level: "assessment",
       paragraphs: [
-        "\u201eSpezialisiert auf Recht\u201c oder \u201eauf Medizin\u201c beschreibt das Produkt, nicht welcher dieser Wege dahintersteckt. Hinter der Formulierung kann ein feinabgestimmtes Modell stehen, ein Abruf über eine kuratierte Sammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
+        "\u201eSpezialisiert auf Recht\u201c oder \u201eauf Medizin\u201c beschreibt das Produkt, nicht welcher dieser Wege dahintersteckt. Hinter der Formulierung kann ein feinabgestimmtes Modell stehen, ein Retrieval über eine kuratierte Sammlung, regelbasierte Prüfungen über einem allgemeinen Modell, ein System-Prompt — oder mehreres davon zugleich. Alles davon kann ein gutes Produkt ergeben, und das Marketing unterscheidet es selten.",
         "Die Frage, was davon du kaufst, lohnt sich, denn die Antworten unterscheiden sich genau in dem, was dich betrifft: was der Aufbau gekostet hat, wo dein Material landet, und was geschieht, wenn das zugrunde liegende Modell ausgetauscht wird. Die Wörter, mit denen du fragst, sind Fine-Tuning und Retrieval — und Fragen genügt meist, um es zu erfahren.",
       ],
       links: [

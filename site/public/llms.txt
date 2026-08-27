@@ -54,7 +54,7 @@ The legal questions that come up when you use AI at work: what may be entered, c
 
 Questions that arrive once software — including software built with AI — is published or maintained: the licence, the obligations, and who holds the rights.
 
-- [Open source](https://ai-standard.rubennati.at/open-source): Where creating, publishing and maintaining software continues, including software built with AI.
+- [Open source](https://ai-standard.rubennati.at/open-source): What makes a project open source, which licence commits you to what, and who owns code written at work.
 - [When is a project open source?](https://ai-standard.rubennati.at/open-source/what-makes-it-open-source): The licence decides, not visibility. Includes what GitHub's own terms permit without one.
 - [Which licence, and what does it commit you to?](https://ai-standard.rubennati.at/open-source/choosing-a-licence): Permissive, file-level copyleft, strong copyleft — and what the adoption numbers do and do not support.
 - [Who owns code written at work?](https://ai-standard.rubennati.at/open-source/code-written-at-work): § 40b Austrian and § 69b German Copyright Act give rights of use, not authorship. US work-for-hire is a different construction, and AI-written portions raise a further question about what a licence can grant.

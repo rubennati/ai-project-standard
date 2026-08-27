@@ -291,7 +291,7 @@ const de: VibeCodingContent = {
     },
     {
       name: "Ausliefern",
-      work: "Andere verlassen sich auf das Ergebnis. Es wird über Jahre gepflegt, und irgendwann ändert es jemand, der es nicht geschrieben hat.",
+      work: "Andere verlassen sich auf das Ergebnis. Es muss gepflegt werden, und irgendwann ändert es jemand, der es nicht geschrieben hat.",
       ai: "Entwirft, räumt auf und erklärt innerhalb einer geprüften Änderung — und schreibt den Test, der ohne die Korrektur fehlschlägt.",
       human: "Die Verantwortung für das Ergebnis: Review, die Entscheidungen samt Begründung und die Stellen, die nicht geraten werden dürfen — Anmeldung, personenbezogene Daten, Geld, Löschung.",
       check: "Eine zweite Person kann die Änderung prüfen und sagen, warum sie so aussieht — und eine falsche Änderung wird gestoppt, bevor sie den Default-Branch erreicht.",

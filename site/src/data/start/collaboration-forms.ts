@@ -305,7 +305,7 @@ const de: StartHubContent = {
     {
       title: "Es erreicht das, was du ihm gegeben hast.",
       detail:
-        "Nicht das Konto, das du nicht verbunden hast, nicht den Ordner, den du nicht geöffnet hast. Zugriff wird erteilt, nicht vorausgesetzt.",
+        "Nicht ein Konto, das nie verbunden wurde, nicht ein Ordner, der nie geöffnet wurde. Zugriff wird erteilt — von dir oder für dich — nicht vorausgesetzt.",
     },
     {
       title: "Etwas muss geprüft werden.",

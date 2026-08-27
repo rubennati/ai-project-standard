@@ -145,7 +145,7 @@ const de: Article = {
       level: "fact",
       checked: CHECKED,
       paragraphs: [
-        "In der absoluten Fassung stimmt der vorige Abschnitt ausgerechnet dort nicht, wo die meisten stehen. Die Nutzungsbedingungen von GitHub räumen in Abschnitt D.5 jedem anderen Nutzer das Recht ein, öffentliche Inhalte über den Dienst anzusehen, darzustellen und durch Forken zu vervielfältigen.",
+        "In der absoluten Fassung stimmt der vorige Abschnitt ausgerechnet dort nicht, wo die meisten stehen. Machst du ein Repository öffentlich, räumst du nach Abschnitt D.5 der GitHub-Nutzungsbedingungen jedem anderen Nutzer eine nicht ausschließliche, weltweite Lizenz ein, deinen Inhalt über den Dienst zu nutzen, darzustellen, wiederzugeben und durch Forken zu vervielfältigen.",
         "Ansehen und Forken auf der Plattform sind also auch ganz ohne Lizenzdatei zulässig. Alles darüber hinaus — ausführen, ausliefern, darauf aufbauen — nicht.",
         "Die praktische Lage eines unlizenzierten öffentlichen Repositorys ist damit eng statt leer: lesbar und forkbar dort, wo es liegt, unbrauchbar überall sonst.",
       ],
