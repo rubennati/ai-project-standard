@@ -26,12 +26,6 @@ and by team size. That cut asked the adopter to already know the answer.
   [`.ai/decisions.md`](./.ai/decisions.md), 2026-09-14. Nothing lives there
   yet; the next step is a real trigger — a concrete question worth running —
   not a placeholder lab.
-- **Turn the website product brief into one reader experience.** Inventory every
-  public page against its ten questions, derive the information architecture
-  from reader journeys, define the page-template system, then prototype one
-  complete topic path before changing navigation or public URLs. MCP and Vibe
-  Coding are the two candidates because both cross possibility, collaboration,
-  reach, control and repository artifacts.
 - **Build the two planned blueprints**, in this order. Both have their scope,
   their boundaries and their open questions written down; neither has a payload.
   - [`agent-maintained-knowledge-base`](./blueprints/agent-maintained-knowledge-base/)
@@ -43,19 +37,18 @@ and by team size. That cut asked the adopter to already know the answer.
     beats direct integration. Drop 2 and drop 6 argue opposite sides and nobody
     attaches a number to "many tools". Building before that is answered would be
     this project adding a component because it is possible.
-- **Fold the security positions into what already ships.** P1 to P5 in
-  [DERIVED.md](./research/knowledge-management/DERIVED.md) — the model never
-  holds the credential, human permission is not agent permission, a threat model
-  that does not assume an attacker, semantic trust boundaries, knowledge
-  poisoning. They belong in `docs/security-baseline.md` and in the
-  `ai-assisted-development` payload, not in a blueprint of their own.
-- **Write the three named concepts.** Tool access and integration, the knowledge
-  lifecycle, and agent action control — see
-  [concepts/README.md](./concepts/README.md). The technical half of the research
-  has a home now; most of it is still in the queue.
-- **Empty the research queue onto the website.** Roughly seventy glossary terms
-  and the positions listed under *bound for the website* in
-  [DERIVED.md](./research/knowledge-management/DERIVED.md).
+- **Finish folding the security positions into the `ai-assisted-development`
+  payload.** P1, P3, P4, P5 and the `docs/` half of P2 in
+  [DERIVED.md](./research/knowledge-management/DERIVED.md) are now in
+  `docs/security-baseline.md`. What remains: P2's other half — human permission
+  is not agent permission, three identities — is not yet written into
+  `blueprints/ai-assisted-development/files/AGENTS.md`.
+- **Empty `research/knowledge-management/`.** The routing is closed —
+  [research/ROUTING.md](./research/ROUTING.md) accounts for all 166 sections,
+  the glossary now carries 143 terms, and the concepts and `docs/` rules the
+  routing pointed at are written. What `research/README.md`'s own contract
+  still calls for is unfinished: the eight drop files remain in place after
+  their content shipped.
 - **Two corrections, as articles.** Why removing names rarely produces anonymous
   data in the legal sense, and why "EU-hosted" answers a different question from
   the one people mean. Both correct a widely repeated claim, so both need a
