@@ -34,10 +34,11 @@ It also rules out three cuts that look natural and are wrong:
 - **By maturity** — `starter/`, `advanced/`. Same objection, and it implies
   everyone is heading for the top.
 
-`ROADMAP.md` currently names the next blueprints as *"open source with AI, open
-source with AI for a team, LLM wiki, MCP servers and interfaces"* — which is
-size-cut, technology-cut, and uses a retired name. It contradicts this
-derivation and must be rewritten.
+`ROADMAP.md` once named the next blueprints as *"open source with AI, open
+source with AI for a team, LLM wiki, MCP servers and interfaces"* — size-cut,
+technology-cut, and using a retired name. That contradicted this derivation.
+**Resolved:** `ROADMAP.md` now states the trigger cut directly, in its own
+"How the blueprint set is cut" section.
 
 ### The triggers, and what each one becomes
 
@@ -67,8 +68,8 @@ Drop 7, section 12: separate reasoning from authority. The model decides *what*
 should happen; the runtime holds the token and decides *whether it may*. Drop 3
 says the same from the architecture side.
 
-This repository already works this way and has never written it down.
-**Destination:** `docs/security-baseline.md`.
+This repository already works this way. **Landed** — `docs/security-baseline.md`
+now states it, under "What changes when a system holds knowledge and acts".
 
 ### P2 — human permission is not agent permission
 
@@ -77,7 +78,10 @@ service account underneath — and the agent's permissions are a *subset* chosen
 per task, not an inheritance. The repository's approval model already draws this
 line for merges and branch protection without naming the principle.
 
-**Destination:** `docs/security-baseline.md`, and the `AGENTS.md` payload.
+**Landed in `docs/security-baseline.md`.** Not yet in the `ai-assisted-development`
+payload's `AGENTS.md` — its Security section carries P4 (file contents and tool
+output as data, not instructions) but not the three-identities distinction this
+position states.
 
 ### P3 — a threat model that does not assume an attacker
 
@@ -90,7 +94,8 @@ may matter more than confidentiality**, because five different routes produce
 the same output — false knowledge, published, retrieved, acted on — and only one
 of them involves an attacker.
 
-**Destination:** `docs/security-baseline.md`. Nothing there covers it today.
+**Landed** — `docs/security-baseline.md` now states it, under "Model the threat
+in four classes, not one".
 
 ### P4 — trust boundaries are semantic, not network
 
@@ -100,7 +105,8 @@ against write tools; low-impact against high-impact actions. The
 contents, web pages and tool output as data, not instructions — as one line in a
 list. This generalises it.
 
-**Destination:** `docs/security-baseline.md`, generalising the existing rule.
+**Landed** — `docs/security-baseline.md` states it as "The trust boundary is
+semantic, not network", generalising the existing rule.
 
 ### P5 — knowledge poisoning, and the knowledge base as a security asset
 
@@ -109,7 +115,8 @@ knowledge. Plant a false instruction where an agent will ingest it, and an
 administrator later acts on it in good faith. A knowledge base is therefore an
 asset to be protected, not a convenience to be filled.
 
-**Destination:** `docs/security-baseline.md`.
+**Landed** — `docs/security-baseline.md` states it under "Knowledge is an asset
+to be protected, not a convenience to be filled".
 
 ### P6 — six kinds of state, kept apart
 
@@ -120,7 +127,10 @@ This repository already separates operational state (`.ai/`) from governance
 (`docs/`) — drop 5 derives the principle *from* here — but `docs/` does not state
 the general rule, only this instance of it.
 
-**Destination:** `docs/ai-workspace-layer.md`.
+**Landed**, though not where predicted — the six kinds of state are in
+[`concepts/knowledge-lifecycle.md`](../../concepts/knowledge-lifecycle.md)
+rather than `docs/ai-workspace-layer.md`, once `concepts/` existed as a
+destination.
 
 ### P7 — no problem, no component
 
@@ -130,8 +140,10 @@ The question to ask instead:
 
 > What is the smallest architecture that solves the problem well enough?
 
-**Destination:** `docs/standard.md` as a stated principle, because it also
-governs the size of the blueprint set itself.
+**Landed**, though not where predicted — the rule is in
+[`docs/sizing.md`](../../docs/sizing.md) ("No problem, no component"), a file
+that did not exist when this was written, rather than `docs/standard.md`. It
+also governs the size of the blueprint set itself.
 
 ### P8 — irreplaceable against reconstructable
 
@@ -139,7 +151,8 @@ Drop 6, section 13. Sources, curated knowledge and human decisions cannot be
 regenerated. Embeddings, search indexes and caches can. The backup policy
 follows from the classification, not from the storage bill.
 
-**Destination:** `docs/security-baseline.md`, availability section.
+**Landed** — `docs/security-baseline.md` states it under "Back up by
+replaceability, not by storage cost".
 
 ## Positions bound for a blueprint payload
 
@@ -232,9 +245,9 @@ artifact, not an essay.
 | ACL-aware retrieval, and why an admin-built index leaks | 3 | Same — **written** |
 | The failure model by stage, and integrity over confidentiality | 6, 7 | Same — **written** |
 | Evaluating the stages separately | 6 | Same — **written** |
-| Connector against MCP, precisely; upload as its own case | 3, 4 | Planned concept — tool access and integration |
-| The knowledge lifecycle, and the six kinds of state | 4, 5 | Planned concept — knowledge lifecycle |
-| Action classification and graded control | 6, 7 | Planned concept — agent action control |
+| Connector against MCP, precisely; upload as its own case | 3, 4 | [tool-access](../../concepts/tool-access.md) — **written** |
+| The knowledge lifecycle, and the six kinds of state | 4, 5 | [knowledge-lifecycle](../../concepts/knowledge-lifecycle.md) — **written** |
+| Action classification and graded control | 6, 7 | [agent-action-control](../../concepts/agent-action-control.md) — **written** |
 
 ## Positions bound for the website
 
