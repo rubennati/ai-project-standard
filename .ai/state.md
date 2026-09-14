@@ -390,7 +390,9 @@ outcomes are in `decisions.md`, 2026-08-27, and in *Settled* above.
 
 ## Active constraints
 
-- No application code during standard-definition phase.
+- No product application code in this repository — see `docs/purpose.md`.
+  Runnable code is expected inside blueprint payloads and inside `labs/`
+  (`docs/labs.md`; `.ai/decisions.md`, 2026-09-14).
 - Keep `.ai/` files concise and low-overhead.
 - Use the project branch prefixes (`feature/*`, `fix/*`, `docs/*`,
   `refactor/*`, `experiment/*`); do not use `codex/` branch names.

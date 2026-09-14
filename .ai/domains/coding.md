@@ -3,6 +3,8 @@
 This repository has code: an Astro site under `site/` (TypeScript and `.astro`),
 shell checks under `.github/scripts/`, and Node scripts under `site/scripts/`.
 The payload files under `blueprints/*/files/` are code someone else will run.
+`labs/<id>/` holds code that runs here, once a lab exists — see
+`docs/labs.md`.
 
 - Smallest change that solves the stated problem. Refactors are their own branch.
 - Match the surrounding file — its naming, comment density and idiom. A file

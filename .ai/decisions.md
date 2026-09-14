@@ -1146,3 +1146,39 @@ rather than a deliberate grouping.
 `site/INFORMATION_ARCHITECTURE.md`'s footer table still describes the
 two-group shape; updating it is recorded as a queued documentation fix, not
 done in this pass — see `tasks.md`.
+
+## 2026-09-14 - `labs/` becomes the fifth first-class area, for reproducible technical work
+
+Decision: `labs/` is added as a new top-level area, alongside `docs/`,
+`concepts/`, `blueprints/` and `research/`. It holds reproducible
+implementations, experiments and evaluations — runnable technical work that
+does not fit any of the four existing forms: `docs/` and `concepts/` carry no
+payload, `blueprints/` is copied rather than run and does not persist its own
+results, and `research/` is a queue that empties and holds nothing normative.
+A lab is none of those: it is code that runs, kept in place, and its
+evaluation results are evidence that carries a method and a date. The
+contract is in [docs/labs.md](../docs/labs.md).
+
+Evaluations and lab-specific tooling stay inside the lab that needs them.
+`labs/` does not get `tools/` or `evaluations/` siblings — the same "cut by
+trigger, not by technology" discipline that already governs `blueprints/` and
+`concepts/` (`docs/blueprints.md`, `concepts/README.md`) applies here: a
+technology-shaped top-level split invites exactly the drift those two
+documents already argue against.
+
+This also narrows `.ai/state.md`'s "No application code during
+standard-definition phase." That line was sized for a documents-only phase
+and blocked the kind of content this decision now allows. It is replaced with
+a rule scoped to what it actually protects: the repository still ships no
+product application, but runnable code is expected inside blueprint payloads
+and inside `labs/`.
+
+Rejected: folding labs into `concepts/`, which is deliberately payload-free
+and would blur the "no payload" boundary; a new `engineering/` umbrella
+grouping labs with existing blueprints and concepts, which would duplicate
+boundaries that already exist and answer a question nobody asked; separate
+`tools/` and `evaluations/` top-level areas, rejected for the same
+by-technology reasoning that already rules out per-technology blueprints and
+concepts; leaving `.ai/state.md`'s blanket prohibition in place and treating
+labs as a silent exception to it, which would create two contradicting rules
+about the same thing rather than one correct one.

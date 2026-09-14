@@ -61,8 +61,9 @@ product.
 | | Job |
 | --- | --- |
 | **Website** | The public product. Possibilities, collaboration, technical explanation, decisions, implementation paths and evidence — organised around reader questions |
-| **Repository** | The production, source and artifact system. Website source, canonical rules, technical material, review history and checks |
+| **Repository** | The production, source and artifact system — the technical engineering workbench behind the product. Website source, canonical rules, technical material, review history and checks |
 | **Blueprints** | Copyable artifacts within that system. Decisions already made for a stated trigger, with their limits and verification visible |
+| **Labs** | Reproducible technical work within that system. Implementations, experiments and evaluations, checked in and re-run rather than copied |
 
 The website stands on its own. A reader does not need to understand the
 repository to use it. It is not split into a knowledge base and a developer
