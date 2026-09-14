@@ -13,6 +13,7 @@ This documentation set defines the project baseline and collaboration model.
 - [Blueprints](./blueprints.md) — what a blueprint is, its shape, and how to add one
 - [Sizing](./sizing.md) — how much system a problem actually needs: the rule, the triggers, the order of questions, and the five tags for placing anything new
 - [Concepts](./concepts.md) — technical reference for building something: what a concept is, the five questions it answers, and why it is not a rule or a payload
+- [Labs](./labs.md) — reproducible technical work: implementations, experiments and evaluations, checked in and re-run rather than copied
 - [Adoption](./adoption.md) — taking a blueprint into your project, and staying current
 - [Security Baseline](./security-baseline.md) — minimum security posture, CI hardening, OWASP LLM Top 10 reference
 - [Website Audit Prompt](./website-audit.md) — reusable prompt for checking a published site for legal, privacy, security and discoverability defects

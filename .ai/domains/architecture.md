@@ -3,10 +3,12 @@
 The structure is stated in `docs/purpose.md` and derives from the destination.
 Anything that reorganises it is an architectural change, not a tidy-up.
 
-- **Boundaries before abstractions.** `blueprints/` is copied, `docs/` is read,
+- **Boundaries before abstractions.** `blueprints/` is copied, `docs/` is
+  read, `concepts/` is technical reference with no payload, `research/` is a
+  queue that empties, `labs/` is technical work that runs and stays,
   `site/` is published, root is this instance. A file that does not obviously
-  belong to one of them is a sign the boundary is wrong, not that a fifth is
-  needed.
+  belong to one of these is a sign the boundary is wrong, not that a new one
+  is needed.
 - **Record structural decisions in `../decisions.md`** with what was rejected.
   The rejected option is what a future reader needs.
 - **One place per fact.** If something is true in two files, one is a copy that

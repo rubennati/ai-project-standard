@@ -19,6 +19,13 @@ and by team size. That cut asked the adopter to already know the answer.
 
 ## Near term
 
+- **Give the repository's engineering-workbench role a first artifact.**
+  `labs/` is now a first-class area for reproducible implementations,
+  experiments and evaluations, alongside `research/`, `concepts/` and
+  `blueprints/` — see [docs/labs.md](./docs/labs.md) and
+  [`.ai/decisions.md`](./.ai/decisions.md), 2026-09-14. Nothing lives there
+  yet; the next step is a real trigger — a concrete question worth running —
+  not a placeholder lab.
 - **Turn the website product brief into one reader experience.** Inventory every
   public page against its ten questions, derive the information architecture
   from reader journeys, define the page-template system, then prototype one

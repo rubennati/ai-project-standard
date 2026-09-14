@@ -37,6 +37,7 @@ its website and its research — none of which belongs in your project. See
 | Path | What it is |
 |---|---|
 | `blueprints/` | The artifacts. Files you copy, MIT-0 |
+| `labs/` | Reproducible technical work — implementations, experiments, evaluations. Checked in, not copied |
 | `docs/` | The rules, stated once. This reader |
 | `.ai/` | This project's own operational workspace — the working model a blueprint ships a copy of |
 | `research/` | Material being verified. Not published, not normative |
