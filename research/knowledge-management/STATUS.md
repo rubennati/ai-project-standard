@@ -6,11 +6,13 @@ buzzwords at this point".
 The first is unsourced; the second and third carry citations and were partly
 verified. Each drop corrects the one before it.
 
-- [foundations.md](./foundations.md) — RAG, knowledge graphs, source access, LLM
-  wiki, agents against chat, practical decisions. **No individual citations.**
-- [figures.md](./figures.md) — four diagrams recorded as data, because the site
-  renders diagrams as markup and never as images. Carries material that appears
-  nowhere in the prose.
+- `foundations.md` — RAG, knowledge graphs, source access, LLM wiki, agents
+  against chat, practical decisions. **No individual citations.** Removed after
+  every section routed — see [`../ROUTING.md`](../ROUTING.md).
+- `figures.md` — four diagrams recorded as data, because the site renders
+  diagrams as markup and never as images. Carried material that appeared
+  nowhere in the prose. Removed after every section routed — see
+  [`../ROUTING.md`](../ROUTING.md).
 - [security.md](./security.md) — seventh drop, 2026-08-09. **The second half of
   the model**: security as a horizontal control layer over everything, not a
   topic appended at the end. Seven citations to standards bodies and regulators

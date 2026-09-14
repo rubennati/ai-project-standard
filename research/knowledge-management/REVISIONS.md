@@ -16,7 +16,7 @@ because the repository and the website may only carry the surviving version.
 
 | # | File | Commit | What it did |
 |---|---|---|---|
-| 1 | [foundations.md](./foundations.md), [figures.md](./figures.md) | `2b29ef3` | First pass — RAG, knowledge graph, LLM wiki, agents |
+| 1 | `foundations.md`, `figures.md` (removed after routing — see [`../ROUTING.md`](../ROUTING.md)) | `2b29ef3` | First pass — RAG, knowledge graph, LLM wiki, agents |
 | 2 | [layers.md](./layers.md) | `8e6cffa` | Took the terms apart into layers; first self-correction |
 | 3 | [architecture.md](./architecture.md) | `ac7e34c` | Reference architecture; three corrections |
 | 4 | [primitives.md](./primitives.md) | `00516d1` | Level zero and the lexicon; the terminology correction |
