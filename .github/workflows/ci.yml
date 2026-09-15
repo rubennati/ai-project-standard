@@ -5,8 +5,18 @@ on:
   push:
     branches: [main]
   schedule:
-    # Weekly strict link check (Mondays 06:00 UTC).
+    # Weekly strict link check (Mondays 06:00 UTC). Every other job below is
+    # skipped on this trigger (see each job's `if:`) — the schedule exists for
+    # exactly one property, a full-repo link sweep that fails on rot instead of
+    # only reporting it, and re-running the rest weekly verifies nothing new.
     - cron: '0 6 * * 1'
+
+# Cancel a superseded run in the same group. The scheduled run gets its own
+# fixed group name so an ordinary push or PR can never cancel the weekly
+# strict check — only a second overlapping weekly run could, which is safe.
+concurrency:
+  group: ci-${{ github.event_name == 'schedule' && 'weekly-link-check' || github.ref }}
+  cancel-in-progress: true
 
 # Minimum permissions for the whole workflow; jobs may broaden as needed.
 # See docs/security-baseline.md for the rationale.
@@ -16,6 +26,7 @@ permissions:
 jobs:
   docs-check:
     name: Structural docs check
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -35,6 +46,7 @@ jobs:
 
   conformance:
     name: Self-conformance
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -48,58 +60,9 @@ jobs:
       - name: Repository follows its own rules
         run: bash .github/scripts/check-conformance.sh
 
-  language-check:
-    name: German language check
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      # Vocabulary and form of address only. A review found the German text had
-      # been built from English sentence logic; these two are the parts a script
-      # can catch. See docs/language-style.md.
-      - name: Check German content vocabulary and address
-        run: node site/scripts/check-language.mjs
-
-  site-build:
-    name: Site build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          # `npm ci` and the build run third-party code; keep GITHUB_TOKEN out
-          # of .git/config, same reasoning as the Pages build job.
-          persist-credentials: false
-
-      - name: Setup Node
-        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-
-      - name: Install dependencies
-        working-directory: site
-        run: npm ci
-
-      - name: Type check
-        working-directory: site
-        run: npm run check
-
-      # Build only — the deploy stays in pages.yml, gated on `main`. Without
-      # this job a broken build is green on the PR and surfaces in the deploy
-      # afterwards; that is how PR #75 (Astro 7) reached `main`.
-      # No fetch-depth: 0: the sitemap's git-derived lastmod needs full history,
-      # but this job discards its output and only has to prove the build runs.
-      - name: Build
-        working-directory: site
-        env:
-          ASTRO_TELEMETRY_DISABLED: '1'
-        run: npm run build
-
   markdown-lint:
     name: Markdown lint
+    if: github.event_name != 'schedule'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

@@ -37,12 +37,12 @@ An exception, not the default. A topic branch that outlives its work has become 
 
 ## What a merge to `main` publishes
 
-`main` is not only the stable branch, it is the published one. A merge touching `site/**` or `docs/**` deploys the website within minutes. There is no staging environment.
+`main` is not only the stable branch, it is the published one. A merge touching `site/**` deploys the website within minutes. There is no staging environment. `docs/**` does not: `/docs/**` on the live site is a static redirect to each file's GitHub source, not rendered content, so editing a `docs/*.md` file changes nothing published — see [`site/astro.config.mjs`](../site/astro.config.mjs) and `.ai/decisions.md`, 2026-08-27.
 
-- `ci.yml` runs on every pull request and push to `main`. It builds the site (`site-build`) and never deploys it, so a broken build fails before the merge.
-- `pages.yml` builds *and* deploys, only on pushes to `main` touching `site/**`, `docs/**` or itself, plus manual `workflow_dispatch`.
-- `docs/**/*.md` is website content — the site renders it under `/docs/`. Editing documentation publishes it.
+- `ci.yml` runs cheap, repository-wide checks — structural, self-conformance, Markdown lint, link check — on every pull request and push to `main`, plus a weekly strict link sweep. It never builds or deploys the site.
+- `site-ci.yml` typechecks and builds the site, on pull requests touching `site/**` only. `main` only changes through a merged pull request, so this already ran before anything reached `main`; `pages.yml` does not repeat it.
+- `pages.yml` builds *and* deploys, only on pushes to `main` touching `site/**` or itself, plus manual `workflow_dispatch`.
 
-There is deliberately no long-lived `site` or `gh-pages` branch: the deploy source is the Actions build artifact, not a branch, and splitting the site off `main` would separate the `/docs/` pages from the files they are made of.
+There is deliberately no long-lived `site` or `gh-pages` branch: the deploy source is the Actions build artifact, not a branch.
 
 See [Release Process](./release-process.md) for how this relates to versioned releases.
