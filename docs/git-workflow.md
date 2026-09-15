@@ -40,7 +40,7 @@ An exception, not the default. A topic branch that outlives its work has become 
 `main` is not only the stable branch, it is the published one. A merge touching `site/**` deploys the website within minutes. There is no staging environment. `docs/**` does not: `/docs/**` on the live site is a static redirect to each file's GitHub source, not rendered content, so editing a `docs/*.md` file changes nothing published — see [`site/astro.config.mjs`](../site/astro.config.mjs) and `.ai/decisions.md`, 2026-08-27.
 
 - `ci.yml` runs cheap, repository-wide checks — structural, self-conformance, Markdown lint, link check — on every pull request and push to `main`, plus a weekly strict link sweep. It never builds or deploys the site.
-- `site-ci.yml` typechecks and builds the site, on pull requests touching `site/**` only. `main` only changes through a merged pull request, so this already ran before anything reached `main`; `pages.yml` does not repeat it.
+- `site-ci.yml` typechecks and builds the site, on pull requests touching `site/**` or the workflows that build and deploy it (`pages.yml`, and itself). `main` only changes through a merged pull request, so this already ran before anything reached `main`; `pages.yml` does not repeat it.
 - `pages.yml` builds *and* deploys, only on pushes to `main` touching `site/**` or itself, plus manual `workflow_dispatch`.
 
 There is deliberately no long-lived `site` or `gh-pages` branch: the deploy source is the Actions build artifact, not a branch.

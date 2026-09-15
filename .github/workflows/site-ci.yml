@@ -12,6 +12,7 @@ on:
     paths:
       - 'site/**'
       - '.github/workflows/site-ci.yml'
+      - '.github/workflows/pages.yml'
 
 # Cancel a superseded run on the same PR/branch — safe here because neither
 # job below has a side effect outside its own runner.
