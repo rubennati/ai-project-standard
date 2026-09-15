@@ -379,11 +379,12 @@ outcomes are in `decisions.md`, 2026-08-27, and in *Settled* above.
   scope.
 - **Dead code left deliberately in place** — the `license` prop on
   `Base.astro`/`JsonLd.astro` (no caller passes it; the CC BY 4.0 default is
-  correct on every page), the unused `mdx()` integration and its dependency,
-  and the `docs/**` path trigger in `pages.yml` (a docs-only push deploys an
-  unchanged site). None affects public output. Remove when something touches
+  correct on every page), and the unused `mdx()` integration and its
+  dependency. Neither affects public output. Remove when something touches
   those files; `ui.docs` and the dead `CHECKED` export in `what-it-is-doing`
-  went in slice 7 because it was editing those files anyway.
+  went in slice 7 because it was editing those files anyway, and the
+  `docs/**` path trigger in `pages.yml` left the same way in the CI/CD
+  resource-efficiency cleanup, 2026-09-15.
 - **A second blog post makes `/blog` hard to reach.** The index is reachable
   only from its own article's byline. Fine for one post; worth revisiting
   before a second ships.

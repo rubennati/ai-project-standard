@@ -1182,3 +1182,48 @@ by-technology reasoning that already rules out per-technology blueprints and
 concepts; leaving `.ai/state.md`'s blanket prohibition in place and treating
 labs as a silent exception to it, which would create two contradicting rules
 about the same thing rather than one correct one.
+
+## 2026-09-15 - Split `ci.yml`; `site-ci.yml` is pull-request-only
+
+Decision: `language-check` and `site-build` move out of `ci.yml` into a new
+`site-ci.yml`, triggered on `pull_request` only, scoped to `site/**`. They no
+longer run on push to `main`. `pages.yml` drops `docs/**` from its trigger
+paths. `ci.yml` keeps `docs-check`, `conformance`, `markdown-lint` and
+`link-check` unconditional on `pull_request` and push to `main`; every job
+except `link-check` is skipped on the weekly `schedule` event via `if:
+github.event_name != 'schedule'`, so the schedule now runs only the strict
+link sweep it exists for. Both workflows gain `concurrency` blocks that
+cancel a superseded run in the same group; `ci.yml`'s group key is fixed to
+`weekly-link-check` on the schedule event specifically so an ordinary push or
+PR can never cancel it.
+
+Verified before deciding, not assumed: `site/astro.config.mjs` shows
+`/docs/**` is a static redirect map to GitHub blob URLs, not content read
+from the filesystem at build time — grepped the whole `site/` tree for any
+read of `docs/` and found none. Editing a `docs/*.md` file's content therefore
+changes nothing the site builds or serves; the `docs/**` path in `pages.yml`
+was already dead weight, self-diagnosed in `.ai/state.md`'s dead-code note
+before this decision resolved it. Also checked the live branch-protection
+ruleset (`gh api .../rulesets/16179701`): it enforces PR-required, no
+force-push, no deletion, with no `required_status_checks` rule at all — so
+no CI job here is currently a GitHub-enforced required check, which is what
+makes moving jobs between workflow files safe: no path-filtered workflow can
+leave a PR blocked on a check nothing requires.
+
+Removing `site-build` from push-to-main does not lose verification: branch
+protection requires every change to reach `main` through a pull request and
+allows no bypass (`current_user_can_bypass: never`), so any site change on
+`main` already passed the typechecked `site-build` job as a PR check;
+`pages.yml`'s own build step (no typecheck) still runs before every deploy.
+
+Rejected: a third-party changed-files action (e.g. `dorny/paths-filter`) to
+compute per-job conditions inside one file — native per-workflow `paths:`
+filtering does the same job without a new action to SHA-pin and audit, and
+this repository already uses that pattern (`pages.yml`). Keeping `site-build`
+on push to `main` "as a backstop" — rejected because it would re-run a
+typechecked build that already passed on the same commit as a PR check, which
+is the duplication this decision removes. A single `if: github.event_name ==
+'schedule'`-gated job inside one combined file instead of splitting out
+`site-ci.yml` — rejected because native path filtering is workflow-level, not
+job-level, and `language-check`/`site-build` need a path scope
+(`site/**`) that the rest of `ci.yml`'s jobs must not have.
